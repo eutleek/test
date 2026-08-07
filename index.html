@@ -1464,8 +1464,8 @@
     -webkit-appearance: none;
     appearance: none;
     width: 60px;
-    height: 4px;
-    border-radius: 2px;
+    height: 2px;
+    border-radius: 1px;
     background: var(--card-border);
     outline: none;
     cursor: pointer;
@@ -2232,8 +2232,8 @@
   }
 
   .layout-minimal .search-inline {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 0;
     background: transparent;
     border: 1px solid transparent;
@@ -2247,22 +2247,22 @@
   }
 
   .layout-minimal .search-inline.expanded {
-    width: 160px;
+    width: 132px;
     border: 1px solid #1d1d1f;
   }
 
   .layout-minimal .search-inline .search-icon {
     fill: #1d1d1f;
-    left: 9px;
-    width: 16px;
-    height: 16px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
   }
 
   .layout-minimal .search-inline input {
-    left: 32px;
-    width: 116px;
+    left: 27px;
+    width: 94px;
     color: #1d1d1f;
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .layout-minimal .search-inline input::placeholder {
@@ -2338,24 +2338,24 @@
     }
 
     .layout-minimal .search-inline {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
     }
 
     .layout-minimal .search-inline.expanded {
-      width: 120px;
+      width: 108px;
     }
 
     .layout-minimal .search-inline .search-icon {
-      left: 7px;
-      width: 16px;
-      height: 16px;
+      left: 6px;
+      width: 14px;
+      height: 14px;
     }
 
     .layout-minimal .search-inline input {
-      left: 28px;
-      width: 84px;
-      font-size: 11px;
+      left: 24px;
+      width: 76px;
+      font-size: 10px;
     }
 
     .layout-minimal .category-tabs {
@@ -4589,46 +4589,44 @@
   body.background-image-mode .search-inline.expanded,
   body.background-image-mode.layout-minimal .search-inline:hover,
   body.background-image-mode.layout-minimal .search-inline.expanded {
-    background: rgba(255, 255, 255, 0.94) !important;
-    border-color: rgba(255, 255, 255, 0.88) !important;
-    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.2) !important;
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: none !important;
   }
 
   body.background-image-mode .search-inline input,
   body.background-image-mode.layout-minimal .search-inline input {
-    color: #111827 !important;
-    text-shadow: none !important;
+    color: rgba(255, 255, 255, 0.96) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.72) !important;
   }
 
   body.background-image-mode .search-inline input::placeholder,
   body.background-image-mode.layout-minimal .search-inline input::placeholder {
-    color: rgba(17, 24, 39, 0.62) !important;
-    text-shadow: none !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 10px rgba(0, 0, 0, 0.72) !important;
   }
 
   body.background-image-mode .search-inline .search-icon,
   body.background-image-mode.layout-minimal .search-inline .search-icon {
-    fill: #111827 !important;
-    filter: none !important;
+    fill: rgba(255, 255, 255, 0.94) !important;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.75)) !important;
   }
 
   body.background-image-mode .music-volume {
-    background: rgba(255, 255, 255, 0.72) !important;
-    box-shadow:
-      0 0 0 1px rgba(0, 0, 0, 0.28),
-      0 1px 8px rgba(0, 0, 0, 0.42) !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: none !important;
   }
 
   body.background-image-mode .music-volume::-webkit-slider-thumb {
     background: #ffffff !important;
-    border: 2px solid rgba(17, 24, 39, 0.72) !important;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.55) !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   body.background-image-mode .music-volume::-moz-range-thumb {
     background: #ffffff !important;
-    border: 2px solid rgba(17, 24, 39, 0.72) !important;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.55) !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   body.background-image-mode::after {
@@ -6842,6 +6840,17 @@ const mbEffectDisplay = {
   'N1':'瀑布流','N3':'潮汐涨落','N4':'星座连线','N6':'弹力绳','N13':'极光丝带','N22':'光纤束'
 };
 
+const mbEffectStorageKey = 'kisstr_music_bar_effect_v1';
+(function initSavedMusicEffect() {
+  const savedEffect = localStorage.getItem(mbEffectStorageKey);
+  const savedIndex = Number.parseInt(savedEffect, 10);
+  if (Number.isInteger(savedIndex) && savedIndex >= 0 && savedIndex < mbEffectNames.length) {
+    mbEffect = savedIndex;
+    return;
+  }
+  mbEffect = Math.floor(Math.random() * mbEffectNames.length);
+})();
+
 function mbResize() {
   const dpr = window.devicePixelRatio || 1;
   mbW = window.innerWidth;
@@ -7210,6 +7219,7 @@ function mbUpdateTitles() {
 // 切换效果
 musicFxBtn.addEventListener('click', (e) => {
   mbEffect = (mbEffect + 1) % mbEffectNames.length;
+  localStorage.setItem(mbEffectStorageKey, String(mbEffect));
   mbParticles = [];
   mbUpdateTitles();
   mbResetAutoHide();
@@ -7731,17 +7741,10 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
         localStorage.removeItem(storageKey);
       }
     }
-    /* 没有用户选择时，随机使用默认纯色主题与精选壁纸 */
-    var defaultThemeIds = ['theme-white', 'theme-dawn', 'theme-mint'];
-    var defaultImageIds = ['星夜', '雨读', '林茶'];
-    var defaultOptions = pureBackgrounds.filter(function(o) {
-      return defaultThemeIds.indexOf(o.id) >= 0;
-    }).concat(imageBackgrounds.filter(function(o) {
-      return defaultImageIds.indexOf(o.id) >= 0;
-    }));
-    if (defaultOptions.length > 0) {
-      var randomIdx = Math.floor(Math.random() * defaultOptions.length);
-      applySelection(defaultOptions[randomIdx], false, false);
+    /* 没有用户选择时，默认从全部壁纸图片中随机；用户手动选择后仍按保存值恢复 */
+    if (imageBackgrounds.length > 0) {
+      var randomIdx = Math.floor(Math.random() * imageBackgrounds.length);
+      applySelection(imageBackgrounds[randomIdx], false, false);
     } else {
       applySelection(pureBackgrounds[0], false, false);
     }
