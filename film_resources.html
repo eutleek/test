@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="影视播放、片源资料、影评数据库与观影工具导航">
+<title>影视资源 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>影视资源</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1040 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">影视资源 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "影视资源",
+    "icon": "🎞️",
+    "color": "linear-gradient(135deg, #2d3436, #fd79a8)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "IMDb (Internet Movie Database)",
+            "url": "https://www.imdb.com",
+            "description": "全球最大的电影、电视节目、演职员及影评数据库，提供权威评分、演职员表、花絮与预告片。"
+          },
+          {
+            "name": "Rotten Tomatoes (烂番茄)",
+            "url": "https://www.rottentomatoes.com",
+            "description": "著名的影评聚合网站，以“新鲜度”和“爆米花指数”代表专业影评人与普通观众的评价。"
+          },
+          {
+            "name": "Letterboxd",
+            "url": "https://letterboxd.com",
+            "description": "全球影迷极力推荐的电影社交与观影记录平台，支持创建私人书单、评分、撰写影评与追踪观影动态。"
+          },
+          {
+            "name": "Douban Movie (豆瓣电影)",
+            "url": "https://movie.douban.com",
+            "description": "中国最权威的影视作品评分、影评撰写、观影记录与同好交流的影视文化社区。"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com",
+            "description": "全球最大的流媒体视频订阅平台，拥有海量独家高品质自制剧集、电影及纪录片。"
+          },
+          {
+            "name": "Amazon Prime Video",
+            "url": "https://www.primevideo.com",
+            "description": "亚马逊旗下全球流媒体平台，提供独家原创剧集、热门院线电影及频道订阅服务。"
+          },
+          {
+            "name": "Disney+",
+            "url": "https://www.disneyplus.com",
+            "description": "迪士尼官方流媒体平台，汇集迪士尼、皮克斯、漫威、星球大战、国家地理及Star等品牌内容。"
+          },
+          {
+            "name": "Max (HBO Max)",
+            "url": "https://www.max.com",
+            "description": "华纳兄弟探索旗下流媒体，拥有HBO经典剧集、DC宇宙、华纳电影及各种纪录片。"
+          },
+          {
+            "name": "Apple TV+",
+            "url": "https://tv.apple.com",
+            "description": "苹果公司旗下的高清流媒体平台，主打高品质自制原创剧集、独家电影与纪录片。"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://www.hulu.com",
+            "description": "北美知名流媒体平台，以快速更新当前电视热播剧集、电影及独家自制剧集见长。"
+          },
+          {
+            "name": "YouTube Movies & TV",
+            "url": "https://www.youtube.com/feed/storefront",
+            "description": "YouTube官方影视频道，提供最新院线大片的数字版租借、购买及免费含广告电影。"
+          },
+          {
+            "name": "Peacock",
+            "url": "https://www.peacocktv.com",
+            "description": "NBC环球旗下的流媒体平台，提供环球影业电影、NBC经典剧集、体育赛事直播及独家节目。"
+          },
+          {
+            "name": "Paramount+",
+            "url": "https://www.paramountplus.com",
+            "description": "派拉蒙旗下的流媒体服务，包含派拉蒙影业电影、CBS剧集、星际迷航系列及各类体育直播。"
+          },
+          {
+            "name": "Tubi TV",
+            "url": "https://tubitv.com",
+            "description": "北美最大的免费含广告流媒体服务平台(AVOD)，提供上万部正版电影与电视节目。"
+          },
+          {
+            "name": "Pluto TV",
+            "url": "https://pluto.tv",
+            "description": "派拉蒙旗下的免费流媒体电视频道服务，提供数百个流媒体直播频道及海量免费点播影视。"
+          },
+          {
+            "name": "Vudu (Fandango at Home)",
+            "url": "https://www.vudu.com",
+            "description": "北美知名的数字影视购买与租借平台，提供高清/4K UHD影片在线点播服务。"
+          },
+          {
+            "name": "MUBI",
+            "url": "https://mubi.com",
+            "description": "面向艺术电影与独立电影爱好者的流媒体与策展平台，每日精心推荐并上线高品质佳作。"
+          },
+          {
+            "name": "The Criterion Channel",
+            "url": "https://www.criterionchannel.com",
+            "description": "标准收藏(CC)官方流媒体，汇聚全球经典大师名作、艺术电影及独家花絮解析。"
+          },
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com",
+            "description": "全球最大的正版日本动漫流媒体平台，同步更新最新日本热门动画及漫画。"
+          },
+          {
+            "name": "Bilibili (哔哩哔哩/B站)",
+            "url": "https://www.bilibili.com",
+            "description": "中国知名的文化社区与视频平台，拥有正版动漫、纪录片、影视剧及庞大的PUGV创作内容。"
+          },
+          {
+            "name": "iQIYI (爱奇艺)",
+            "url": "https://www.iqiyi.com",
+            "description": "中国领先的高清品质视频在线播放平台，拥有丰富的高清国产剧、综艺及独家自制剧。"
+          },
+          {
+            "name": "Tencent Video (腾讯视频)",
+            "url": "https://v.qq.com",
+            "description": "中国综合性视频平台，提供海量热门电视剧、自制动漫、电影、综艺与体育赛事。"
+          },
+          {
+            "name": "Youku (优酷)",
+            "url": "https://www.youku.com",
+            "description": "中国老牌视频分享与播放平台，包含丰富剧集、电影、文化纪录片与自制综艺。"
+          },
+          {
+            "name": "Mango TV (芒果TV)",
+            "url": "https://www.mgtv.com",
+            "description": "湖南广电旗下互联网视频平台，以独家强档综艺节目、青春偶像剧与娱乐内容著称。"
+          },
+          {
+            "name": "Viki (Rakuten Viki)",
+            "url": "https://www.viki.com",
+            "description": "专注于亚洲影视剧(韩剧、国产剧、日剧等)的全球流媒体平台，提供多语言粉丝字幕。"
+          },
+          {
+            "name": "Metacritic Movies",
+            "url": "https://www.metacritic.com/movie",
+            "description": "权威媒体影评聚合平台，将全球顶级影评人的评价转换为标准加权百分制得分。"
+          },
+          {
+            "name": "TMDB (The Movie Database)",
+            "url": "https://www.themoviedb.org",
+            "description": "强大的社区驱动型开放影视数据库，为全球众多影视软件与Plex等媒体库提供数据API。"
+          },
+          {
+            "name": "Box Office Mojo",
+            "url": "https://www.boxofficemojo.com",
+            "description": "全球最权威的电影票房数据统计网站，实时追踪全球及北美院线票房排行榜。"
+          },
+          {
+            "name": "JustWatch",
+            "url": "https://www.justwatch.com",
+            "description": "全球影视流媒体指南，帮助用户快速查询某部电影或剧集在哪个平台(Netflix/Max等)合法上线。"
+          },
+          {
+            "name": "Trakt.tv",
+            "url": "https://trakt.tv",
+            "description": "强大的影视追踪与历史记录平台，可自动同步各类播放器观影记录并生成统计图表。"
+          },
+          {
+            "name": "Plex",
+            "url": "https://www.plex.tv",
+            "description": "著名的个人媒体服务器软件，同时提供免费点播电影、电视节目及 live 电视直播。"
+          },
+          {
+            "name": "Jellyfin",
+            "url": "https://jellyfin.org",
+            "description": "完全免费开源的个人影视媒体服务器系统，无任何追踪与付费限制，极受硬件发烧友喜爱。"
+          },
+          {
+            "name": "Emby",
+            "url": "https://emby.media",
+            "description": "强大的个人家庭影院媒体服务器，支持跨平台转码、多用户管理与优雅的海报墙展示。"
+          },
+          {
+            "name": "Stremio",
+            "url": "https://www.stremio.com",
+            "description": "现代化影视聚合播放器，可通过插件整合各类流媒体平台与磁力资源进行统一观看。"
+          },
+          {
+            "name": "Kodi",
+            "url": "https://kodi.tv",
+            "description": "开源免费的跨平台家庭影院软件，支持丰富的插件扩展，打造全能型大屏影视播放终端。"
+          },
+          {
+            "name": "Subscene",
+            "url": "https://subscene.com",
+            "description": "全球历史最悠久的知名多语言电影与电视剧字幕下载社区之一。"
+          },
+          {
+            "name": "OpenSubtitles",
+            "url": "https://www.opensubtitles.org",
+            "description": "全球最大的开源影视字幕数据库，提供上百万种语言版本的字幕文件下载与API集成。"
+          },
+          {
+            "name": "Zimuku (字幕库)",
+            "url": "https://zimuku.org",
+            "description": "中国知名的多语言影视字幕下载网站，提供精准匹配的射手网继承字幕与爱好者翻译。"
+          },
+          {
+            "name": "R3SUB (SubHD)",
+            "url": "https://subhd.tv",
+            "description": "优秀的中文影视字幕分享交流平台，涵盖海量电影、美剧、英剧的高质量字幕。"
+          },
+          {
+            "name": "A4k Subtitles",
+            "url": "https://a4k.net",
+            "description": "界面简洁清爽的高品质中英文字幕搜索与下载站点。"
+          },
+          {
+            "name": "YIFY Subtitles",
+            "url": "https://yifysubtitles.org",
+            "description": "专为 YIFY/YTS 压制组影片提供精准匹配字幕的多语言字幕下载网。"
+          },
+          {
+            "name": "Podnapisi",
+            "url": "https://www.podnapisi.net",
+            "description": "国际知名多语言字幕下载网，提供高匹配度且经过审核的电影与剧集字幕。"
+          },
+          {
+            "name": "TVSubtitles",
+            "url": "https://www.tvsubtitles.net",
+            "description": "专注于电视剧集(美剧、日韩剧等)字幕下载的专题类字幕数据库。"
+          },
+          {
+            "name": "Addic7ed",
+            "url": "https://www.addic7ed.com",
+            "description": "专注于最新美剧、英剧快翻字幕的专业字幕组发布与交流网站。"
+          },
+          {
+            "name": "MovieLabs (影视实验室)",
+            "url": "https://movielabs.com",
+            "description": "由好 Why 著名制片厂联合发起的影视技术标准研究与次世代视听技术平台。"
+          },
+          {
+            "name": "FilmAffinity",
+            "url": "https://www.filmaffinity.com",
+            "description": "著名的影视推荐与电影评分网，可根据用户喜好匹配个性化电影推荐。"
+          },
+          {
+            "name": "Blu-ray.com",
+            "url": "https://www.blu-ray.com",
+            "description": "全球最大的蓝光光盘、4K UHD超高清盘片、影音硬件及画质测评社区。"
+          },
+          {
+            "name": "DVD-Compare",
+            "url": "https://www.dvdcompare.net",
+            "description": "权威的全球不同版本影碟(Blu-ray/4K UHD/DVD)画质、音轨与剪辑版本对比网。"
+          },
+          {
+            "name": "Movie-Censorship",
+            "url": "https://www.movie-censorship.com",
+            "description": "专门对比电影不同剪辑版(导演剪辑版、公映版、删减版)镜头差异的硬核站点。"
+          },
+          {
+            "name": "High-Def Digest",
+            "url": "https://www.highdefdigest.com",
+            "description": "权威的高清影音新闻、蓝光/4K盘片评测与家庭影院设备硬件测试网。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Cinephilia & Beyond",
+            "url": "https://cinephiliabeyond.org",
+            "description": "资深影迷与电影从业者的宝藏网站，提供电影剧本原稿、大师采访与深度制作解析。"
+          },
+          {
+            "name": "Screen Rant",
+            "url": "https://screenrant.com",
+            "description": "著名的影视文化新闻网，提供电影爆料、剧集彩蛋解析、漫改影视前瞻与排行榜。"
+          },
+          {
+            "name": "Collider",
+            "url": "https://collider.com",
+            "description": "权威娱乐与影视新闻网，提供电影首映报道、独家专访、预告片解析及深度影评。"
+          },
+          {
+            "name": "Variety (好莱坞报道/综艺)",
+            "url": "https://variety.com",
+            "description": "好莱坞最权威的影视娱乐商业报刊网站，报道影视投资、票房、项目推进与行业动态。"
+          },
+          {
+            "name": "The Hollywood Reporter",
+            "url": "https://www.hollywoodreporter.com",
+            "description": "娱乐行业权威新闻媒体，报道好莱坞影视制作、明星动态、奖项预测与行业趋势。"
+          },
+          {
+            "name": "Deadline Hollywood",
+            "url": "https://deadline.com",
+            "description": "娱乐界Breaking News第一发源地，即时报道电影项目绿灯、选角、版权交易及票房快讯。"
+          },
+          {
+            "name": "Indiewire",
+            "url": "https://www.indiewire.com",
+            "description": "专注于独立电影、艺术电影、国际影展及电影制作工艺的权威媒体。"
+          },
+          {
+            "name": "CinemaBlend",
+            "url": "https://www.cinemablend.com",
+            "description": "提供流行电影与电视新闻、影评、预告片解读及流媒体指南的娱乐站点。"
+          },
+          {
+            "name": "Empire Online (帝国杂志)",
+            "url": "https://www.empireonline.com",
+            "description": "英国著名电影杂志《Empire》官方网站，提供权威电影评测、独家剧照与探班报道。"
+          },
+          {
+            "name": "Sight & Sound (BFI)",
+            "url": "https://www.bfi.org.uk/sight-and-sound",
+            "description": "英国电影协会(BFI)旗下的传奇影评杂志，每十年评选一次“史上最伟大电影”。"
+          },
+          {
+            "name": "Cahiers du Cinéma (电影手册)",
+            "url": "https://www.cahiersducinema.com",
+            "description": "法国传奇电影杂志，影评界与“新浪潮”运动发源地，刊登高度艺术导向的深度影评。"
+          },
+          {
+            "name": "World of Reel",
+            "url": "https://www.worldofreel.com",
+            "description": "著名的好莱坞与国际电影试映、爆料、奖项风向标及试映口碑追踪博客。"
+          },
+          {
+            "name": "Film Comment",
+            "url": "https://www.filmcomment.com",
+            "description": "极具深度的艺术电影与学术影评杂志，由林肯中心电影协会主办。"
+          },
+          {
+            "name": "British Film Institute (BFI)",
+            "url": "https://www.bfi.org.uk",
+            "description": "英国电影协会官网，保存电影历史遗产，推广电影艺术及主办伦敦电影节。"
+          },
+          {
+            "name": "American Film Institute (AFI)",
+            "url": "https://www.afi.com",
+            "description": "美国电影学会官网，以颁发终身成就奖及每年公布“AFI年度十大电影”闻名。"
+          },
+          {
+            "name": "Oscars Official Site",
+            "url": "https://www.oscars.org",
+            "description": "奥斯卡金像奖(美国电影艺术与科学学院)官方网站，公布入围名单及颁奖礼资讯。"
+          },
+          {
+            "name": "Festival de Cannes (戛纳电影节)",
+            "url": "https://www.festival-cannes.com",
+            "description": "全球最高规格的戛纳国际电影节官方网站，发布金棕榈奖竞赛片与入围资讯。"
+          },
+          {
+            "name": "La Biennale di Venezia (威尼斯电影节)",
+            "url": "https://www.labiennale.org/en/cinema",
+            "description": "世界上历史最悠久的威尼斯国际电影节官方主页。"
+          },
+          {
+            "name": "Berlinale (柏林国际电影节)",
+            "url": "https://www.berlinale.de",
+            "description": "德国柏林国际电影节官方网站，展示主竞赛单元及金熊奖最新动态。"
+          },
+          {
+            "name": "TIFF (多伦多国际电影节)",
+            "url": "https://tiff.net",
+            "description": "北美最具影响力的多伦多国际电影节官网，其“人民选择奖”为奥斯卡重要风向标。"
+          },
+          {
+            "name": "Sundance Film Festival (圣丹斯电影节)",
+            "url": "https://www.sundance.org",
+            "description": "全球最大的独立首映电影节官网，发掘新锐导演与独立制作佳作。"
+          },
+          {
+            "name": "Asian Film Awards Academy",
+            "url": "https://www.afa-academy.com",
+            "description": "亚洲电影大奖官方网站，表彰亚洲年度优秀电影制作与演员。"
+          },
+          {
+            "name": "Hong Kong Film Awards (香港电影金像奖)",
+            "url": "https://www.hkfaa.com",
+            "description": "香港电影金像奖官方网站，发布入围名册、颁奖典礼动态与历届得奖档案。"
+          },
+          {
+            "name": "Golden Horse Awards (台北金马影展)",
+            "url": "https://www.goldenhorse.org.tw",
+            "description": "华语影坛历史悠久的金马奖与金马国际影展官方网站。"
+          },
+          {
+            "name": "FilmFreeway",
+            "url": "https://filmfreeway.com",
+            "description": "全球最大的电影人投片平台，独立导演提交作品参与全球各大电影节的统一门户。"
+          },
+          {
+            "name": "ShotOnSet / ShotOnRED",
+            "url": "https://www.shotonwhat.com",
+            "description": "查询各大电影与剧集拍摄所使用的摄像机、镜头、胶片格式等摄影器材数据库。"
+          },
+          {
+            "name": "Internet Movie Firearms Database (IMFDB)",
+            "url": "https://www.imfdb.org",
+            "description": "维基百科风格的影视道具枪械数据库，精确分析影视作品中出现的各类武器。"
+          },
+          {
+            "name": "Internet Movie Cars Database (IMCDb)",
+            "url": "https://www.imcdb.org",
+            "description": "专门收录与鉴定各类电影、电视剧及MV中出现过的所有汽车品牌与型号的网。"
+          },
+          {
+            "name": "Movie-Locations",
+            "url": "https://www.movie-locations.com",
+            "description": "详细记录全球各大经典电影实景拍摄地的寻踪与旅游探访指南网站。"
+          },
+          {
+            "name": "FilmGrab",
+            "url": "https://film-grab.com",
+            "description": "极受视觉设计师与摄影师喜爱的电影剧照网，整理了数万张高画质经典电影截帧。"
+          },
+          {
+            "name": "MovieStillsDB",
+            "url": "https://www.moviestillsdb.com",
+            "description": "全球庞大的官方高清电影剧照、现场工作照与宣传照海报数据库。"
+          },
+          {
+            "name": "IMP Awards (Internet Movie Poster Awards)",
+            "url": "http://www.impawards.com",
+            "description": "全球最大的电影官方海报展示与设计交流网站，收录历年各版本海报。"
+          },
+          {
+            "name": "FilmAffinity List",
+            "url": "https://www.filmaffinity.com/en/topgen.php",
+            "description": "基于全球影迷真实投票生成的电影历史总榜与分类佳作推荐。"
+          },
+          {
+            "name": "TasteKid / TasteDive",
+            "url": "https://tastedive.com",
+            "description": "基于算法的跨媒体推荐引擎，输入喜欢的电影自动推荐风格相似的影视作品。"
+          },
+          {
+            "name": "Cinetropa",
+            "url": "https://cinetropa.com",
+            "description": "专注于欧洲电影、艺术影片与独立制作新闻与评价的专题平台。"
+          },
+          {
+            "name": "FilmIn (Spain)",
+            "url": "https://www.filmin.es",
+            "description": "西班牙著名的艺术与独立电影流媒体服务，拥有极高的策展品味。"
+          },
+          {
+            "name": "AsianWiki",
+            "url": "https://asianwiki.com",
+            "description": "最全面且更新及时的亚洲影视(日本、韩国、中国等)剧集、电影与演员百科。"
+          },
+          {
+            "name": "HanCinema",
+            "url": "https://www.hancinema.net",
+            "description": "专注于韩国电影与韩剧领域的综合数据库，包含剧情介绍、演员表及播出安排。"
+          },
+          {
+            "name": "DramaWiki",
+            "url": "https://wiki.daddylive.me",
+            "description": "著名的日剧、韩剧及亚洲电视连续剧爱好者维护的权威资料库。"
+          },
+          {
+            "name": "MyDramaList (MDL)",
+            "url": "https://mydramalist.com",
+            "description": "全球最大的亚洲电视剧与电影(韩剧、国产剧、日剧、泰剧等)社区与观影追踪网。"
+          },
+          {
+            "name": "Bangumi (番组计划)",
+            "url": "https://bgm.tv",
+            "description": "专注于动漫、音乐、日剧与游戏记录与交流的ACG界“豆瓣”风格数据库。"
+          },
+          {
+            "name": "AniList",
+            "url": "https://anilist.co",
+            "description": "现代化界面的全球动漫与漫画跟踪社区，支持可视化数据统计与社区交流。"
+          },
+          {
+            "name": "MyAnimeList (MAL)",
+            "url": "https://myanimelist.net",
+            "description": "全球最大的英文动漫与漫画数据库与交流社区，其Anime Top 100排行榜极具影响力。"
+          },
+          {
+            "name": "Anime News Network (ANN)",
+            "url": "https://www.animenewsnetwork.com",
+            "description": "权威的全球动漫新闻网站，提供即时产业爆料、动画制作人员库与评测。"
+          },
+          {
+            "name": "Anime-Planet",
+            "url": "https://www.anime-planet.com",
+            "description": "拥有官方授权的在线动漫与漫画追踪平台，根据个人口味推荐动漫作品。"
+          },
+          {
+            "name": "MangaUpdates (Baka-Updates Manga)",
+            "url": "https://www.mangaupdates.com",
+            "description": "全球最详尽的漫画与轻小说更新状态、章节出版进度与汉化/英化追踪网。"
+          },
+          {
+            "name": "Animate Times",
+            "url": "https://www.animatetimes.com",
+            "description": "日本知名动漫门户，提供声优专访、动画前瞻与官方周边活动资讯。"
+          },
+          {
+            "name": "Natalie (コミックナタリー)",
+            "url": "https://natalie.mu/comic",
+            "description": "日本最权威的动漫、影视与流行文化即时新闻站点。"
+          },
+          {
+            "name": "Tokyo Otaku Mode",
+            "url": "https://otakumode.com",
+            "description": "传播日本流行文化、动漫二次元影视资讯与正版周边的国际平台。"
+          },
+          {
+            "name": "Kurenai / AniDB",
+            "url": "https://anidb.net",
+            "description": "硬核动漫数据库，详尽记载每部动画的编码、版本、制作人员及关系网。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "TED Talks (Video)",
+            "url": "https://www.ted.com",
+            "description": "全球思想家与行业领袖的高清演讲视频库，包含许多科技与影视艺术深度思考。"
+          },
+          {
+            "name": "Vimeo",
+            "url": "https://vimeo.com",
+            "description": "全球独立电影人、摄影师与CG艺术家展示高清高码率短片与作品集的优质视频社区。"
+          },
+          {
+            "name": "Dailymotion",
+            "url": "https://www.dailymotion.com",
+            "description": "法国著名视频分享网站，提供大量各类新闻、娱乐与影视视频资源。"
+          },
+          {
+            "name": "Internet Archive - Moving Image Archive",
+            "url": "https://archive.org/details/movies",
+            "description": "互联网档案馆动画与影视藏馆，包含上万部无版权公有领域电影、早期纪录片与短片。"
+          },
+          {
+            "name": "BFI Player",
+            "url": "https://player.bfi.org.uk",
+            "description": "英国电影协会官方在线流媒体，可租借与观看大量罕见英国经典影片与档案史料。"
+          },
+          {
+            "name": "National Film Board of Canada (NFB)",
+            "url": "https://www.nfb.ca",
+            "description": "加拿大国家电影局官方网站，免费提供数千部高品质纪录片与先锋动画短片。"
+          },
+          {
+            "name": "UBUWEB",
+            "url": "http://www.ubu.com",
+            "description": "专注于先锋派艺术、实验电影、影像艺术与声音艺术的数字档案博物馆。"
+          },
+          {
+            "name": "Documentary Area",
+            "url": "https://www.documentaryarea.com",
+            "description": "整理与收录全球各类自然、历史、科学与社会人文纪录片在线观看索引。"
+          },
+          {
+            "name": "PBS Video",
+            "url": "https://www.pbs.org/video/",
+            "description": "美国公共电视台官方视频网，免费播放高质量纪录片(如《Frontline》)、历史剧等。"
+          },
+          {
+            "name": "Arte.tv",
+            "url": "https://www.arte.tv",
+            "description": "德法联合艺术电视台官方流媒体，提供高品味的纪录片、文化节目与欧洲艺术电影。"
+          },
+          {
+            "name": "Film Independent",
+            "url": "https://www.filmindependent.org",
+            "description": "著名的非营利影视组织，主办独立精神奖(Independent Spirit Awards)。"
+          },
+          {
+            "name": "Sundance TV",
+            "url": "https://www.sundancetv.com",
+            "description": "圣丹斯频道官方网站，专注高品质独立戏剧、特色电影及文化节目。"
+          },
+          {
+            "name": "Short of the Week",
+            "url": "https://www.shortoftheweek.com",
+            "description": "专门发现与策展全球最顶尖短片电影(Short Films)的权威推介网站。"
+          },
+          {
+            "name": "Film Shortage",
+            "url": "https://filmshortage.com",
+            "description": "展示顶尖独立短片、预告片及音乐录影带(MV)的在线电影短片平台。"
+          },
+          {
+            "name": "Viddsee",
+            "url": "https://www.viddsee.com",
+            "description": "专注于亚洲微电影与独立短片传播的流媒体平台，汇聚大量青年导演作品。"
+          },
+          {
+            "name": "CGMeetup",
+            "url": "https://www.cgmeetup.com",
+            "description": "全球顶尖3D动画短片、特效解密(VFX Breakdown)与CG艺术作品展示网。"
+          },
+          {
+            "name": "Motionographer",
+            "url": "https://motionographer.com",
+            "description": "动态图形设计(Motion Graphics)、视觉特效与概念动画电影设计的行业灵感网。"
+          },
+          {
+            "name": "Stash Media",
+            "url": "https://www.stashmedia.tv",
+            "description": "专注于设计、动画与视觉特效领域的月刊与高品质项目视频展示库。"
+          },
+          {
+            "name": "Art of the Title",
+            "url": "https://www.artofthetitle.com",
+            "description": "专门探讨与剖析电影、电视剧及游戏片头字幕设计艺术(Title Sequence)的权威网。"
+          },
+          {
+            "name": "FXGuide",
+            "url": "https://www.fxguide.com",
+            "description": "影视特效(VFX)界的硬核行业媒体，深度解析好莱坞大片的特效制作细节。"
+          },
+          {
+            "name": "Animation World Network (AWN)",
+            "url": "https://www.awn.com",
+            "description": "全球最大的动画产业资讯网，覆盖2D/3D动画、视觉特效与游戏动画。"
+          },
+          {
+            "name": "Cartoon Brew",
+            "url": "https://www.cartoonbrew.com",
+            "description": "独立客观的动画产业新闻网，报道全球动画电影、独立动画人与技术突破。"
+          },
+          {
+            "name": "Catsuka",
+            "url": "https://www.catsuka.com",
+            "description": "法国著名动画艺术网站，专注于推介全球罕见的优秀动画短片与概念设计。"
+          },
+          {
+            "name": "Anime News Network Database",
+            "url": "https://www.animenewsnetwork.com/encyclopedia/",
+            "description": "庞大的日本动画制作人员(原画师、导演、编剧)与声优百科全书。"
+          },
+          {
+            "name": "Sakugabooru",
+            "url": "https://www.sakugabooru.com",
+            "description": "专注于日本动画中作画(Sakuga)高光片段片段赏析与原画师归档的画廊社区。"
+          },
+          {
+            "name": "Anime Characters Database",
+            "url": "https://www.animecharactersdatabase.com",
+            "description": "通过发型、眼睛颜色等视觉特征快速检索动漫人物与影视角色的数据库。"
+          },
+          {
+            "name": "Behind The Voice Actors (BTVA)",
+            "url": "https://www.behindthevoiceactors.com",
+            "description": "配音演员(声优)数据库，收录各类动漫、电影、游戏背后的配音角色。"
+          },
+          {
+            "name": "TuneFind",
+            "url": "https://www.tunefind.com",
+            "description": "强大的影视插曲与配乐查询网，精确查找某部电影/剧集某集某分秒播放的背景音乐。"
+          },
+          {
+            "name": "WhatSong",
+            "url": "https://www.what-song.com",
+            "description": "查询热门影视剧、电影与 Netflix 剧集中所有出现过的歌曲与原声带(OST)。"
+          },
+          {
+            "name": "Filmtracks",
+            "url": "https://www.filmtracks.com",
+            "description": "专业电影配乐评论网站，由专业乐评人对历年电影原声大碟进行打分与点评。"
+          },
+          {
+            "name": "Soundtrack.Net",
+            "url": "https://www.soundtrack.net",
+            "description": "全球知名的电影与电视配乐数据库，包含详细的OST曲目单与预告片配乐信息。"
+          },
+          {
+            "name": "Movie Music UK",
+            "url": "https://moviemusicuk.us",
+            "description": "资深乐评人 Jonathan Broxton 主笔的专业影视原声带评论与分析网站。"
+          },
+          {
+            "name": "VGMdb (Video Game Music Database)",
+            "url": "https://vgmdb.net",
+            "description": "兼顾游戏与动漫影视原声大碟(OST)、同人音乐的详尽唱片数据库。"
+          },
+          {
+            "name": "Sheet Music Plus (Film)",
+            "url": "https://www.sheetmusicplus.com",
+            "description": "全球最大的音乐乐谱网，提供海量经典电影配乐与影视交响乐官方总谱。"
+          },
+          {
+            "name": "MobyGames (Cutscenes)",
+            "url": "https://www.mobygames.com",
+            "description": "知名游戏数据库，记载大量互动电影与游戏过场动画(Cutscenes)演职员表。"
+          },
+          {
+            "name": "IMVDb (Internet Music Video Database)",
+            "url": "https://imvdb.com",
+            "description": "互联网音乐录影带(MV)数据库，记录MV导演、摄影师、演员与制作团队。"
+          },
+          {
+            "name": "Film Studies For Free",
+            "url": "https://filmstudiesforfree.blogspot.com",
+            "description": "聚合全球开源学术界关于电影学、电影理论与影视文化研究的论文与电子资源。"
+          },
+          {
+            "name": "Screen-Space",
+            "url": "https://screen-space.squarespace.com",
+            "description": "澳大利亚资深影评人创立的电影评论与电影节现场报道网站。"
+          },
+          {
+            "name": "Film Threat",
+            "url": "https://filmthreat.com",
+            "description": "创立于1985年的颠覆性电影媒体，专门推介被主流好莱坞忽视的独立电影与地下电影。"
+          },
+          {
+            "name": "Reverse Shot",
+            "url": "https://reverseshot.org",
+            "description": "纽约移动图像博物馆旗下的线上影评杂志，提供极具批判视角的电影长文。"
+          },
+          {
+            "name": "Senses of Cinema",
+            "url": "https://sensesofcinema.com",
+            "description": "澳大利亚关于传统与现代电影艺术的同行评审学术研究与深度批评期刊。"
+          },
+          {
+            "name": "Bright Lights Film Journal",
+            "url": "https://brightlightsfilm.com",
+            "description": "历史悠久的电影普及与文化评论网，以通俗深入的方式探讨各类类型片。"
+          },
+          {
+            "name": "Offscreen",
+            "url": "https://offscreen.com",
+            "description": "专注于电影哲学、恐怖片研究及加拿大当地电影文化的线上学术杂志。"
+          },
+          {
+            "name": "Cineaste Magazine",
+            "url": "https://www.cineaste.com",
+            "description": "北美著名的电影与政治、艺术和文化交汇评论季刊官方网站。"
+          },
+          {
+            "name": "MovieWeb",
+            "url": "https://movieweb.com",
+            "description": "报道最新好莱坞电影新闻、爆料、剧集指南与娱乐动态的综合综合媒体。"
+          },
+          {
+            "name": "Screen Daily",
+            "url": "https://www.screendaily.com",
+            "description": "英国著名《Screen International》官方网站，追踪全球电影市场与独立制作。"
+          },
+          {
+            "name": "Cinema Australia",
+            "url": "https://cinemaaustralia.com.au",
+            "description": "专注于报道澳大利亚本土独立电影、纪录片与影人的特色网站。"
+          },
+          {
+            "name": "Screen Anarchy",
+            "url": "https://screenanarchy.com",
+            "description": "专注报道全球邪典电影(Cult Cinema)、动作片、恐怖片及类型片的新闻网。"
+          },
+          {
+            "name": "Bloody Disgusting",
+            "url": "https://bloody-disgusting.com",
+            "description": "全球最大的恐怖电影与恐怖文化主题门户，提供第一手恐怖片快讯与评测。"
+          },
+          {
+            "name": "Dread Central",
+            "url": "https://www.dreadcentral.com",
+            "description": "权威的恐怖、惊悚与奇幻题材影视剧、黑暗pop文化综合新闻网。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "SciFi Japan",
+            "url": "http://www.scifijapan.com",
+            "description": "专注于日本特摄电影(哥斯拉、奥特曼、卡美拉等)与科幻影视的英文网站。"
+          },
+          {
+            "name": "Tokusatsu Network",
+            "url": "https://tokusatsunetwork.com",
+            "description": "专注于报道日本假面骑士、超级战队等特摄影视与文化的前沿新闻网。"
+          },
+          {
+            "name": "SuperHeroHype",
+            "url": "https://www.superherohype.com",
+            "description": "专注于漫威、DC及超级英雄主题电影、电视剧与漫改作品的专题网站。"
+          },
+          {
+            "name": "ComicBook.com Gaming/TV",
+            "url": "https://comicbook.com",
+            "description": "专注于漫画改编影视、星战、漫威MCU与Pop流行文化的新闻平台。"
+          },
+          {
+            "name": "The Digital Bits",
+            "url": "https://thedigitalbits.com",
+            "description": "历史悠久的家庭影院与光盘发布资讯网，以精准预测4K UHD光盘发布闻名。"
+          },
+          {
+            "name": "DVD Talk",
+            "url": "https://www.dvdtalk.com",
+            "description": "经典的影碟评测与家庭影院爱好者论坛，包含海量DVD与蓝光盘片测评。"
+          },
+          {
+            "name": "Home Theater Forum",
+            "url": "https://www.hometheaterforum.com",
+            "description": "极具深度的家庭影院发烧友交流社区，讨论音响配置、投影及经典电影修复。"
+          },
+          {
+            "name": "AVS Forum",
+            "url": "https://www.avsforum.com",
+            "description": "全球最大的音视频发烧友社区，涵盖电视画质调校、显示设备、影音播放器评测。"
+          },
+          {
+            "name": "Cinefex (Archive)",
+            "url": "https://cinefex.com",
+            "description": "传奇的影视特效杂志《Cinefex》官方档案库，记录好莱坞数十年来视觉特效演变。"
+          },
+          {
+            "name": "American Cinematographer (ASC)",
+            "url": "https://ascmag.com",
+            "description": "美国电影摄影师协会(ASC)官方杂志，深入剖析大片摄影构图与灯光技术。"
+          },
+          {
+            "name": "Motion Picture Association (MPA)",
+            "url": "https://www.motionpictures.org",
+            "description": "美国电影协会官方网站，负责电影分级制度(PG-13, R等)管理与版权保护。"
+          },
+          {
+            "name": "Film-TV-Video.de",
+            "url": "https://www.film-tv-video.de",
+            "description": "德国专业的广播电视工程、数字电影制作技术与摄像设备行业媒体。"
+          },
+          {
+            "name": "DVXuser",
+            "url": "https://www.dvxuser.com",
+            "description": "面向独立摄影师、导演与剪辑师的电影摄影与摄像装备技术讨论论坛。"
+          },
+          {
+            "name": "Reduser",
+            "url": "https://www.reduser.net",
+            "description": "RED数字摄影机官方与用户技术社区，讨论顶级电影摄影机与流程。"
+          },
+          {
+            "name": "Blackmagic Design Forum",
+            "url": "https://forum.blackmagicdesign.com",
+            "description": "著名的达芬奇(DaVinci Resolve)剪辑/调色软件与电影摄像机官方交流社区。"
+          },
+          {
+            "name": "Creative COW",
+            "url": "https://www.creativecow.net",
+            "description": "历史悠久的视频后期制作、影视特效与视频剪辑专业人员问答社区。"
+          },
+          {
+            "name": "Frame.io Blog",
+            "url": "https://blog.frame.io",
+            "description": "极高水准的影视后期协作平台博客，分享顶尖的视频剪辑、流程管理与色彩科学。"
+          },
+          {
+            "name": "Premiere Pro User Guide",
+            "url": "https://helpx.adobe.com/premiere-pro/user-guide.html",
+            "description": "Adobe 官方 Premiere Pro 剪辑软件权威操作指南与影视工作流。"
+          },
+          {
+            "name": "Final Cut Pro Resources",
+            "url": "https://www.apple.com/final-cut-pro/resources/",
+            "description": "苹果官方 Final Cut Pro 剪辑生态、插件与专业工作流资源。"
+          },
+          {
+            "name": "CineD",
+            "url": "https://www.cined.com",
+            "description": "专业的影视拍摄器材评测网站，提供严格实验室测试下的摄像机宽容度与画质数据。"
+          },
+          {
+            "name": "NewsShooter",
+            "url": "https://www.newsshooter.com",
+            "description": "面向新闻纪录片摄影师与独立电影人的专业摄影器材与灯光配件评测网。"
+          },
+          {
+            "name": "No Film School",
+            "url": "https://nofilmschool.com",
+            "description": "全球最受欢迎的独立电影制作社区，提供大量的摄影、编剧、剪辑教程与器材评测。"
+          },
+          {
+            "name": "Filmmaker Magazine",
+            "url": "https://filmmakermagazine.com",
+            "description": "独立电影制作人协会(IFP)出版的专注独立电影制作艺术与技术的杂志。"
+          },
+          {
+            "name": "Moviemaker Magazine",
+            "url": "https://www.moviemaker.com",
+            "description": "专注于电影制作实战、剧本创作、资金筹集与电影节参赛指南的权威媒体。"
+          },
+          {
+            "name": "Script Reader Pro",
+            "url": "https://www.scriptreaderpro.com",
+            "description": "专业的电影剧本分析与编剧指导网站，提供海量好莱坞经典剧本PDF下载。"
+          },
+          {
+            "name": "Simply Scripts",
+            "url": "https://www.simplyscripts.com",
+            "description": "海量免费电影剧本、电视剧剧本、广播剧与戏剧剧本数据库。"
+          },
+          {
+            "name": "IMSDb (Internet Movie Script Database)",
+            "url": "https://imsdb.com",
+            "description": "全球最大的网络免费电影剧本库，提供各类好莱坞电影的文本版本。"
+          },
+          {
+            "name": "Script Slug",
+            "url": "https://www.scriptslug.com",
+            "description": "界面优雅排版精美的电影与电视剧剧本PDF免费阅读与下载网站。"
+          },
+          {
+            "name": "The Black List",
+            "url": "https://blcklst.com",
+            "description": "好莱坞知名的未制作优秀剧本黑名单，也是新人编剧对接好莱坞制片人的平台。"
+          },
+          {
+            "name": "Coverfly",
+            "url": "https://www.coverfly.com",
+            "description": "全球最大的编剧比赛、剧本创投与新人剧本筛选聚合平台。"
+          },
+          {
+            "name": "Writers Guild of America (WGA)",
+            "url": "https://www.wga.org",
+            "description": "美国编剧工会官方网站，提供剧本版权登记、合约标准与奖项资讯。"
+          },
+          {
+            "name": "Screenwriters Network",
+            "url": "https://screenwritersnetwork.org",
+            "description": "全球编剧爱好者交流社区，提供剧本互评与写作马拉松活动。"
+          },
+          {
+            "name": "ScreenCraft",
+            "url": "https://screencraft.org",
+            "description": "专注于帮助编剧提升技能、参加专业剧本竞赛并与好莱坞建立联系的站点。"
+          },
+          {
+            "name": "Go Into The Story",
+            "url": "https://gointothestory.blcklst.com",
+            "description": "好莱坞 Black List 官方编剧博客，提供上千篇编剧技巧与大师剧本拆解。"
+          },
+          {
+            "name": "Screenwriting Life",
+            "url": "https://www.thescreenwritinglife.com",
+            "description": "由好莱坞资深编剧创办的播客与交流平台，探讨编剧心理与创作技巧。"
+          },
+          {
+            "name": "Daily Script",
+            "url": "https://www.dailyscript.com",
+            "description": "搜集了大量好莱坞大片与经典电视剧原版剧本的纯文本归档网站。"
+          },
+          {
+            "name": "Drew's Script-O-Rama",
+            "url": "http://www.script-o-rama.com",
+            "description": "创立于1995年的老牌影视剧本与台词脚本(Transcript)下载网。"
+          },
+          {
+            "name": "Weekly Script",
+            "url": "https://www.weeklyscript.com",
+            "description": "专注于每周更新最新好莱坞电影剧本PDF的个人剧本分享站点。"
+          },
+          {
+            "name": "Script-Fix",
+            "url": "https://www.script-fix.com",
+            "description": "提供专业剧本修改意见、结构分析与剧情诊断服务的编剧咨询平台。"
+          },
+          {
+            "name": "Save the Cat!",
+            "url": "https://savethecat.com",
+            "description": "基于 Blake Snyder 传奇编剧书《救猫咪》的剧本三幕式结构分析与编剧教学网。"
+          },
+          {
+            "name": "Cinephilia & Beyond Scripts",
+            "url": "https://cinephiliabeyond.org/category/scripts/",
+            "description": "深入解析好莱坞大师(如诺兰、库布里克等)电影剧本手稿的专题专栏。"
+          },
+          {
+            "name": "BBC Writers",
+            "url": "https://www.bbc.co.uk/writers",
+            "description": "英国 BBC 官方编剧中心，提供 BBC 热门剧本库与编剧扶持计划。"
+          },
+          {
+            "name": "Australian Writers' Guild",
+            "url": "https://awg.com.au",
+            "description": "澳大利亚编剧工会官方网站，保障剧作者权益与推动剧本创作。"
+          },
+          {
+            "name": "Euroscript",
+            "url": "https://www.euroscript.co.uk",
+            "description": "英国与欧洲知名的剧本开发、编剧培训与剧本诊断机构。"
+          },
+          {
+            "name": "Final Draft",
+            "url": "https://www.finaldraft.com",
+            "description": "全球好莱坞工业标准剧本写作软件 Final Draft 官方网站。"
+          },
+          {
+            "name": "Celtx",
+            "url": "https://www.celtx.com",
+            "description": "一站式全流程云端影视剧本创作、故事板绘制与前期筹备管理系统。"
+          },
+          {
+            "name": "WriterDuet",
+            "url": "https://www.writerduet.com",
+            "description": "支持多名编剧实时协同在线创作的高效专业剧本编写软件平台。"
+          },
+          {
+            "name": "Fade In Professional Screenwriting",
+            "url": "https://www.fadeinpro.com",
+            "description": "现代化高性价比专业好莱坞剧本写作软件官方网站。"
+          },
+          {
+            "name": "Highland 2",
+            "url": "https://quoteunquoteapps.com/highland-2/",
+            "description": "著名编剧 John August 开发的极简 Plain Text 格式剧本写作软件。"
+          },
+          {
+            "name": "Scrivener (Screenwriting)",
+            "url": "https://www.literatureandlatte.com/scrivener/overview",
+            "description": "强大的长篇写作软件 Scrivener 官方影视剧本与故事架构模块。"
+          }
         ]
       }
     ]
@@ -5292,6 +5969,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

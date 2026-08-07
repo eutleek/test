@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="网站排行 - 全球网站 TOP 200 排行导航">
+<title>网站排行 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,12 +4448,11 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>网站排行</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
 <div class="category-tabs" id="categoryTabs"></div>
-
 <div class="music-bar-bottom-container">
   <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
   <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
@@ -4484,363 +4483,211 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">排行 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
+    name: "网站排行",
+    icon: "🏆",
+    color: "linear-gradient(135deg, #f5af19, #f12711)",
     subcategories: [
       {
-        name: "动漫",
-        enName: "Anime",
+        name: "全球网站排行",
+        enName: "TOP 200",
         links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
-        ]
-      },
-      {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
-        ]
-      },
-      {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
-        ]
-      },
-      {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+          { name: "Google", url: "https://google.com", description: "全球最大搜索引擎" },
+          { name: "YouTube", url: "https://youtube.com", description: "全球最大视频分享平台" },
+          { name: "Facebook", url: "https://facebook.com", description: "全球社交网络" },
+          { name: "Instagram", url: "https://instagram.com", description: "图片与短视频社交平台" },
+          { name: "WhatsApp", url: "https://whatsapp.com", description: "全球即时通讯平台" },
+          { name: "X", url: "https://x.com", description: "原Twitter - 社交/新闻平台" },
+          { name: "维基百科", url: "https://wikipedia.org", description: "自由的网络百科全书" },
+          { name: "Yahoo!", url: "https://yahoo.com", description: "雅虎 - 综合新闻门户与邮箱" },
+          { name: "Reddit", url: "https://reddit.com", description: "美国知名社区与新闻发帖论坛" },
+          { name: "雅虎日本", url: "https://yahoo.co.jp", description: "日本最大的综合门户网站" },
+          { name: "百度", url: "https://baidu.com", description: "中国最大的搜索引擎" },
+          { name: "Yandex", url: "https://yandex.ru", description: "俄罗斯最大的搜索引擎" },
+          { name: "TikTok", url: "https://tiktok.com", description: "抖音国际版 - 短视频平台" },
+          { name: "Amazon", url: "https://amazon.com", description: "亚马逊 - 全球最大在线零售" },
+          { name: "OpenAI", url: "https://openai.com", description: "ChatGPT - 人工智能智能助手" },
+          { name: "Netflix", url: "https://netflix.com", description: "网飞 - 全球在线流媒体影音" },
+          { name: "Microsoft Office", url: "https://office.com", description: "微软在线办公套件" },
+          { name: "Outlook / Live", url: "https://live.com", description: "微软邮箱与登录服务" },
+          { name: "Microsoft", url: "https://microsoft.com", description: "微软官方门户与软件" },
+          { name: "Bing", url: "https://bing.com", description: "必应 - 微软旗下搜索引擎" },
+          { name: "LinkedIn", url: "https://linkedin.com", description: "领英 - 全球职场社交网络" },
+          { name: "Naver", url: "https://naver.com", description: "韩国第一大门户与搜索引擎" },
+          { name: "VKontakte", url: "https://vk.com", description: "俄罗斯最大社交网络" },
+          { name: "哔哩哔哩", url: "https://bilibili.com", description: "B站 - 中国弹幕视频社区" },
+          { name: "Twitch", url: "https://twitch.tv", description: "全球知名游戏与实况直播平台" },
+          { name: "Dzen", url: "https://dzen.ru", description: "俄罗斯流行内容推荐与资讯门户" },
+          { name: "Pinterest", url: "https://pinterest.com", description: "图片视觉探索与灵感平台" },
+          { name: "The Weather Channel", url: "https://weather.com", description: "全球天气预报" },
+          { name: "Temu", url: "https://temu.com", description: "拼多多海外版 - 电商巨头" },
+          { name: "DuckDuckGo", url: "https://duckduckgo.com", description: "隐私搜索引擎" },
+          { name: "腾讯网", url: "https://qq.com", description: "中国综合门户与社交枢纽" },
+          { name: "Telegram", url: "https://t.me", description: "电报应用网页端/短链" },
+          { name: "Fandom", url: "https://fandom.com", description: "全球最大影视游戏Wiki社区" },
+          { name: "雅虎日本新闻", url: "https://news.yahoo.co.jp", description: "雅虎日本新闻频道" },
+          { name: "Quora", url: "https://quora.com", description: "全球在线问答社区" },
+          { name: "AliExpress", url: "https://aliexpress.com", description: "速卖通 - 跨境电商" },
+          { name: "MSN", url: "https://msn.com", description: "微软新闻与资讯门户" },
+          { name: "eBay", url: "https://ebay.com", description: "全球在线拍卖与购物网站" },
+          { name: "Globo", url: "https://globo.com", description: "巴西最大新闻媒体门户" },
+          { name: "Roblox", url: "https://roblox.com", description: "罗布乐思 - 大型多人在线游戏" },
+          { name: "Canva", url: "https://canva.com", description: "在线图形设计与设计工具" },
+          { name: "SAPO", url: "https://sapo.pt", description: "葡萄牙主流门户网站" },
+          { name: "BBC", url: "https://bbc.com", description: "英国广播公司新闻服务" },
+          { name: "Mail.ru", url: "https://mail.ru", description: "俄罗斯电子邮箱与门户" },
+          { name: "IMDb", url: "https://imdb.com", description: "互联网电影与影视资料库" },
+          { name: "Indeed", url: "https://indeed.com", description: "全球最大求职招聘网站" },
+          { name: "Booking.com", url: "https://booking.com", description: "缤客 - 全球酒旅预订" },
+          { name: "日本乐天", url: "https://rakuten.co.jp", description: "日本大型综合电商/金融" },
+          { name: "ESPN", url: "https://espn.com", description: "全球著名体育新闻与直播网" },
+          { name: "搜狐", url: "https://sohu.com", description: "中国综合新闻与资讯门户" },
+          { name: "Spotify", url: "https://spotify.com", description: "全球流媒体音乐与播客" },
+          { name: "Adobe", url: "https://adobe.com", description: "图像与创意软件官方门户" },
+          { name: "Steam", url: "https://steampowered.com", description: "全球最大PC电子游戏分销平台" },
+          { name: "Etsy", url: "https://etsy.com", description: "全球手工艺品与复古商品电商" },
+          { name: "Walmart", url: "https://walmart.com", description: "沃尔玛官方线上购物" },
+          { name: "Allegro", url: "https://allegro.pl", description: "波兰最大综合电商平台" },
+          { name: "SHEIN", url: "https://shein.com", description: "希音 - 全球快时尚跨境电商" },
+          { name: "The New York Times", url: "https://nytimes.com", description: "纽约时报" },
+          { name: "Daily Mail", url: "https://dailymail.co.uk", description: "英国每日邮报新闻网" },
+          { name: "LINE", url: "https://line.me", description: "亚洲主流即时通讯工具" },
+          { name: "Craigslist", url: "https://craigslist.org", description: "分类信息与二手交易" },
+          { name: "Mercado Libre 阿根廷", url: "https://mercadolibre.com.ar", description: "拉美电商" },
+          { name: "GitHub", url: "https://github.com", description: "全球开发者代码托管与开源社区" },
+          { name: "Mercado Livre 巴西站", url: "https://mercadolivre.com.br", description: "拉美最大电商" },
+          { name: "Speedtest", url: "https://speedtest.net", description: "Ookla网络测速" },
+          { name: "Taboola", url: "https://taboola.com", description: "全球网络广告与内容推荐" },
+          { name: "Target", url: "https://target.com", description: "美国塔吉特大型百货" },
+          { name: "PayPal", url: "https://paypal.com", description: "全球在线支付与转账" },
+          { name: "Zoom", url: "https://zoom.us", description: "全球在线视频会议" },
+          { name: "Outbrain", url: "https://outbrain.com", description: "计算与数字内容营销" },
+          { name: "UOL", url: "https://uol.com.br", description: "巴西大型互联网综合门户" },
+          { name: "Investing.com", url: "https://investing.com", description: "英为财情 - 财经金融" },
+          { name: "Healthline", url: "https://healthline.com", description: "全球医学与健康资讯" },
+          { name: "Coursera", url: "https://coursera.org", description: "全球知名在线高等教育平台" },
+          { name: "Chess.com", url: "https://chess.com", description: "全球最大在线国际象棋平台" },
+          { name: "Internet Archive", url: "https://archive.org", description: "数字图书馆/网页时光机" },
+          { name: "亚马逊日本站", url: "https://amazon.co.jp", description: "Amazon Japan" },
+          { name: "亚马逊德国站", url: "https://amazon.de", description: "Amazon Germany" },
+          { name: "亚马逊英国站", url: "https://amazon.co.uk", description: "Amazon UK" },
+          { name: "Cricbuzz", url: "https://cricbuzz.com", description: "全球最大板球资讯与比分" },
+          { name: "Fox News", url: "https://foxnews.com", description: "美国福克斯新闻" },
+          { name: "CNN", url: "https://cnn.com", description: "美国有线电视新闻网" },
+          { name: "DeepL", url: "https://deepl.com", description: "高质量AI机器翻译" },
+          { name: "SAPO资讯", url: "https://sapo.pt", description: "SAPO资讯与邮件门户" },
+          { name: "Avito", url: "https://avito.ru", description: "俄罗斯最大的分类信息与二手交易" },
+          { name: "Medium", url: "https://medium.com", description: "全球内容创作与博客写作平台" },
+          { name: "速卖通美国站", url: "https://aliexpress.us", description: "AliExpress US" },
+          { name: "Roblox体验门户", url: "https://roblox.com", description: "Roblox体验入口" },
+          { name: "Zendesk", url: "https://zendesk.com", description: "SaaS客户服务与支持平台" },
+          { name: "微博", url: "https://weibo.com", description: "中国社交媒体与实时热搜" },
+          { name: "Discord", url: "https://discord.com", description: "玩家与社群实时语音社区" },
+          { name: "GMX", url: "https://gmx.net", description: "德国与欧洲主流免费邮箱" },
+          { name: "Salesforce", url: "https://force.com", description: "全球领先的企业CRM服务" },
+          { name: "Wildberries", url: "https://wildberries.ru", description: "俄罗斯最大的在线电商平台" },
+          { name: "Tokopedia", url: "https://tokopedia.com", description: "印度尼西亚本土电商巨头" },
+          { name: "Shopee印尼站", url: "https://shopee.co.id", description: "虾皮购物 - 印尼站" },
+          { name: "Shopee台湾站", url: "https://shopee.tw", description: "虾皮购物 - 台湾站" },
+          { name: "Disney+", url: "https://disneyplus.com", description: "迪士尼在线流媒体视频" },
+          { name: "Apple", url: "https://apple.com", description: "苹果公司官方网站" },
+          { name: "Behance", url: "https://behance.net", description: "Adobe旗下的设计师作品展示网" },
+          { name: "Pixiv", url: "https://pixiv.net", description: "日本插画师与艺术创作社区" },
+          { name: "Kinopoisk", url: "https://kinopoisk.ru", description: "俄罗斯最大影视数据库与影评网" },
+          { name: "Amazon Prime Video", url: "https://primevideo.com", description: "亚马逊影音" },
+          { name: "豆瓣", url: "https://douban.com", description: "中国图书、电影、音乐评论社区" },
+          { name: "知乎", url: "https://zhihu.com", description: "中国深度问答与知识社区" },
+          { name: "Fast.com", url: "https://fast.com", description: "Netflix提供的极简网速测试" },
+          { name: "The Guardian", url: "https://theguardian.com", description: "英国卫报" },
+          { name: "The Home Depot", url: "https://homedepot.com", description: "家得宝 - 家居建材零售" },
+          { name: "TripAdvisor", url: "https://tripadvisor.com", description: "猫途鹰 - 全球旅游点评" },
+          { name: "Notion", url: "https://notion.so", description: "全能笔记、知识库与协作软件" },
+          { name: "Figma", url: "https://figma.com", description: "在线协同UI/UX设计软件" },
+          { name: "Stack Exchange", url: "https://stackexchange.com", description: "专业技术问答网络" },
+          { name: "Stack Overflow", url: "https://stackoverflow.com", description: "全球程序员代码问答社区" },
+          { name: "Cloudflare", url: "https://cloudflare.com", description: "网络安全、CDN与云服务" },
+          { name: "HuffPost", url: "https://huffpost.com", description: "赫芬顿邮报 - 新闻资讯" },
+          { name: "La Gazzetta dello Sport", url: "https://gazzetta.it", description: "意大利米兰体育报" },
+          { name: "红网", url: "https://rednet.cn", description: "中国区域新闻门户" },
+          { name: "Naver日本", url: "https://naver.jp", description: "Naver日本相关服务站点" },
+          { name: "ChatGPT", url: "https://chatgpt.com", description: "ChatGPT独立域名界面" },
+          { name: "Claude", url: "https://claude.ai", description: "Anthropic旗下AI大模型助手" },
+          { name: "Subito", url: "https://subito.it", description: "意大利分类信息与二手交易" },
+          { name: "OLX波兰", url: "https://olx.pl", description: "欧洲区域二手交易与服务" },
+          { name: "Ozon", url: "https://ozon.ru", description: "俄罗斯顶级B2C电商平台" },
+          { name: "Best Buy", url: "https://bestbuy.com", description: "百思买 - 消费电子产品零售" },
+          { name: "Nike", url: "https://nike.com", description: "耐克官方运动品牌商城" },
+          { name: "FedEx", url: "https://fedex.com", description: "联邦快递在线包裹追踪" },
+          { name: "UPS", url: "https://ups.com", description: "联合包裹全球服务" },
+          { name: "USPS", url: "https://usps.com", description: "美国邮政署官方门户" },
+          { name: "缤客中国区", url: "https://booking.cn", description: "缤客中国区预订服务" },
+          { name: "DuckDuckGo搜索", url: "https://duckduckgo.com", description: "DuckDuckGo搜索子服务" },
+          { name: "WebMD", url: "https://webmd.com", description: "美国在线医疗与健康咨询" },
+          { name: "Forbes", url: "https://forbes.com", description: "福布斯 - 商业与财富杂志" },
+          { name: "Business Insider", url: "https://businessinsider.com", description: "商业内幕" },
+          { name: "Bloomberg", url: "https://bloomberg.com", description: "彭博社 - 金融与全球商业" },
+          { name: "The Washington Post", url: "https://washingtonpost.com", description: "华盛顿邮报" },
+          { name: "IGN", url: "https://ign.com", description: "全球知名电子游戏与娱乐媒体" },
+          { name: "Gamepedia", url: "https://gamepedia.com", description: "游戏专业百科维基" },
+          { name: "Grammarly", url: "https://grammarly.com", description: "语法检查与AI写作助手" },
+          { name: "Duolingo", url: "https://duolingo.com", description: "多邻国 - 语言学习平台" },
+          { name: "Scribd", url: "https://scribd.com", description: "数字图书、文档与电子书库" },
+          { name: "Hulu", url: "https://hulu.com", description: "美国流媒体视频" },
+          { name: "Max", url: "https://max.com", description: "原HBO Max - 电影与剧集流媒体" },
+          { name: "ESPNcricinfo", url: "https://espncricinfo.com", description: "板球赛事信息" },
+          { name: "网易", url: "https://163.com", description: "中国综合门户与邮箱系统" },
+          { name: "新浪", url: "https://sina.com.cn", description: "中国新闻门户与财经资讯" },
+          { name: "今日头条", url: "https://toutiao.com", description: "资讯推荐平台" },
+          { name: "爱奇艺", url: "https://iqiyi.com", description: "中国高清视频流媒体" },
+          { name: "优酷", url: "https://youku.com", description: "中国视频分享平台" },
+          { name: "Daum", url: "https://daum.net", description: "韩国第二大综合门户与搜索引擎" },
+          { name: "DMM.com", url: "https://dmm.com", description: "日本综合娱乐/游戏与数字内容" },
+          { name: "Niconico频道", url: "https://nicochannel.jp", description: "Niconico频道服务" },
+          { name: "Kakaku", url: "https://kakaku.com", description: "日本著名的价格比较与比价网" },
+          { name: "小説家になろう", url: "https://syosetu.com", description: "日本最大的小说投稿阅读网" },
+          { name: "Zoho", url: "https://zoho.com", description: "企业级在线办公与云端应用" },
+          { name: "Dropbox", url: "https://dropbox.com", description: "全球网盘与云端存储服务" },
+          { name: "Vimeo", url: "https://vimeo.com", description: "高清视频专业分享平台" },
+          { name: "SlideShare", url: "https://slideshare.net", description: "PPT与专业文档分享平台" },
+          { name: "Patreon", url: "https://patreon.com", description: "创作者众筹与会员赞助平台" },
+          { name: "SoundCloud", url: "https://soundcloud.com", description: "独立音乐人与音频分享平台" },
+          { name: "Genius", url: "https://genius.com", description: "全球流行歌词与音乐解读社区" },
+          { name: "MyAnimeList", url: "https://myanimelist.net", description: "MAL - 动漫数据库与社区" },
+          { name: "GameFault", url: "https://gamefault.com", description: "游戏资讯与社区门户" },
+          { name: "Costco", url: "https://costco.com", description: "好市多 - 开市客线上超市" },
+          { name: "IKEA", url: "https://ikea.com", description: "宜家家居全球门户" },
+          { name: "ASOS", url: "https://asos.com", description: "英国知名快时尚时尚电商" },
+          { name: "Wayfair", url: "https://wayfair.com", description: "美国大型家具与家居电商" },
+          { name: "Zillow", url: "https://zillow.com", description: "美国最大的房地产交易与租赁平台" },
+          { name: "Redfin", url: "https://redfin.com", description: "美国在线房产中介与估值平台" },
+          { name: "Realtor.com", url: "https://realtor.com", description: "美国官方房产listings平台" },
+          { name: "KAYAK", url: "https://kayak.com", description: "全球机票、酒店与租车比价" },
+          { name: "Expedia", url: "https://expedia.com", description: "全球综合在线旅游预订" },
+          { name: "Airbnb", url: "https://airbnb.com", description: "爱彼迎 - 全球民宿预订" },
+          { name: "Skyscanner", url: "https://skyscanner.net", description: "天巡 - 全球机票搜索比价" },
+          { name: "Trip.com", url: "https://trip.com", description: "携程海外版 - 国际酒旅预订" },
+          { name: "美国国家气象局", url: "https://weather.gov", description: "NWS官方网站" },
+          { name: "AccuWeather", url: "https://accuweather.com", description: "精准全球天气预报" },
+          { name: "Coursera全球入口", url: "https://coursera.com", description: "Coursera全球入口" },
+          { name: "Udemy", url: "https://udemy.com", description: "全球技能课程学习超市" },
+          { name: "ResearchGate", url: "https://researchgate.net", description: "全球科研人员社交与学术论文" },
+          { name: "ScienceDirect", url: "https://sciencedirect.com", description: "Elsevier旗下学术文献库" },
+          { name: "arXiv", url: "https://arxiv.org", description: "预印本学术论文预印库" },
+          { name: "Nature", url: "https://nature.com", description: "《自然》科学期刊官方网站" },
+          { name: "美国国家卫生研究院", url: "https://nih.gov", description: "NIH官方门户" },
+          { name: "Mayo Clinic", url: "https://mayoclinic.org", description: "妙佑医疗国际 - 医疗健康" },
+          { name: "克利夫兰诊所", url: "https://clevelandclinic.org", description: "权威医疗健康资讯" },
+          { name: "Investor's Business Daily", url: "https://investors.com", description: "投资者商业日报" },
+          { name: "MarketWatch", url: "https://marketwatch.com", description: "道琼斯旗下金融市场新闻" },
+          { name: "CNBC", url: "https://cnbc.com", description: "全球财经新闻与市场直播" },
+          { name: "TradingView", url: "https://tradingview.com", description: "全球金融图表分析与交易社区" }
         ]
       }
     ]
@@ -5292,6 +5139,28 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  // 点击返回主页：复用已打开的主页面标签页，若已关闭则新建
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

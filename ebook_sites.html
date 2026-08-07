@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="电子书、公版书、学术图书、有声书与阅读平台导航">
+<title>电子书网站 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>电子书网站</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1035 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">电子书网站 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "电子书网站",
+    "icon": "📖",
+    "color": "linear-gradient(135deg, #00cec9, #6c5ce7)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Project Gutenberg (古腾堡计划)",
+            "url": "https://www.gutenberg.org",
+            "description": "全球最早的数字公有领域图书电子书库，提供超过7万本免费公有领域图书(无版权纠纷)，支持EPUB、Kindle格式下载。"
+          },
+          {
+            "name": "Internet Archive (互联网档案馆)",
+            "url": "https://archive.org",
+            "description": "巨大的非营利数字图书馆，提供数百万本免费电子书、历史文献、扫描图书及网页历史快照的在线借阅与下载。"
+          },
+          {
+            "name": "Open Library (开放图书馆)",
+            "url": "https://openlibrary.org",
+            "description": "Internet Archive 旗下的开放图书目录项目，旨在为每一本书创建一个网页，提供数百万册电子书的借阅与阅读。"
+          },
+          {
+            "name": "Z-Library",
+            "url": "https://z-lib.gs",
+            "description": "全球最大的数字图书馆之一，包含数千万册图书和学术文章，支持多种格式搜索与下载(注:镜像域名可能随时间调整)。"
+          },
+          {
+            "name": "安娜的档案",
+            "url": "https://annas-archive.org",
+            "description": "著名的开源影印数字图书馆搜索引擎，整合了Z-Library、Library Genesis、Sci-Hub等多个项目的元数据与图书索引。"
+          },
+          {
+            "name": "Library Genesis (LibGen)",
+            "url": "https://libgen.is",
+            "description": "著名的学术文献与电子书搜索引擎，提供大量科学论文、学术专著、教材及大众图书的免费下载。"
+          },
+          {
+            "name": "Standard Ebooks",
+            "url": "https://standardebooks.org",
+            "description": "由志愿者发起的公有领域电子书精排项目，提供排版优雅、无错别字、完全免费且适配现代阅读器的公有领域图书。"
+          },
+          {
+            "name": "Feedbooks",
+            "url": "https://www.feedbooks.com",
+            "description": "著名的电子书分发平台，包含大量优质的免费公有领域图书以及付费当代出版物下载。"
+          },
+          {
+            "name": "ManyBooks",
+            "url": "https://manybooks.net",
+            "description": "提供超过5万本免费电子书的阅读与下载平台，涵盖多种文学流派，界面友好，支持多种阅读设备格式。"
+          },
+          {
+            "name": "LibriVox",
+            "url": "https://librivox.org",
+            "description": "著名的免费公有领域有声书平台，由全球志愿者朗读并录制，所有音频均可免费下载和听讲。"
+          },
+          {
+            "name": "Wikibooks (维基教科书)",
+            "url": "https://www.wikibooks.org",
+            "description": "维基媒体基金会旗下的开源免费教科书创作平台，包含大量由社区协作编写的教学指南与技术教材。"
+          },
+          {
+            "name": "Wikisource (维基文库)",
+            "url": "https://wikisource.org",
+            "description": "维基媒体基金会维护的自由自由内容源文本库，包含大量历史文献、古典文学、法律条文与古籍的完整电子版。"
+          },
+          {
+            "name": "Google Books (谷歌图书)",
+            "url": "https://books.google.com",
+            "description": "谷歌打造的全球海量图书索引与全文检索平台，提供公有领域图书全文阅读以及版权图书的在线预览与购买。"
+          },
+          {
+            "name": "Amazon Kindle Store",
+            "url": "https://www.amazon.com/kindle-dbs/storefront",
+            "description": "全球最大的商业电子书分发商店，拥有海量的英文及多语言电子书、限时特惠及 Kindle Unlimited 订阅服务。"
+          },
+          {
+            "name": "Rakuten Kobo",
+            "url": "https://www.kobo.com",
+            "description": "全球知名电子书与有声书零售平台，提供庞大的多语言图书目录及硬件阅读器生态配套。"
+          },
+          {
+            "name": "Apple Books",
+            "url": "https://www.apple.com/apple-books/",
+            "description": "苹果公司官方电子书与有声书商店，专为iOS与Mac设备打造，提供优质的精装排版与阅读体验。"
+          },
+          {
+            "name": "Barnes & Noble NOOK",
+            "url": "https://www.barnesandnoble.com/b/ebooks/",
+            "description": "美国老牌连锁书店 Barnes & Noble 旗下的电子书平台，提供百万册电子书、杂志与 NOOK 电子书阅读器。"
+          },
+          {
+            "name": "Smashwords",
+            "url": "https://www.smashwords.com",
+            "description": "全球最大的独立电子书出版与分发平台，聚集大量独立作者作品，包含数万本免费及低价图书。"
+          },
+          {
+            "name": "Draft2Digital",
+            "url": "https://www.draft2digital.com",
+            "description": "著名的独立作者电子书自助出版与全球零售渠道分发平台。"
+          },
+          {
+            "name": "BookBub",
+            "url": "https://www.bookbub.com",
+            "description": "著名的免费与限时折扣电子书推荐服务，根据读者喜好每日推送各平台(Kindle, Kobo等)的优惠图书。"
+          },
+          {
+            "name": "Scribd",
+            "url": "https://www.scribd.com",
+            "description": "全球知名的数字订阅服务，付费用户可无限制阅读海量电子书、有声书、杂志、文档及学术论文。"
+          },
+          {
+            "name": "Perlego",
+            "url": "https://www.perlego.com",
+            "description": "被称为“学术界Netflix”的电子书订阅平台，提供超百万本学术教材、专业书籍与非虚构类经典著作。"
+          },
+          {
+            "name": "O'Reilly Higher Education / Learning",
+            "url": "https://www.oreilly.com",
+            "description": "全球顶尖的计算机、IT、编程与商业电子书平台，汇聚众多权威技术“黑皮书”与在线视频课程。"
+          },
+          {
+            "name": "SpringerLink",
+            "url": "https://link.springer.com",
+            "description": "全球最大科技与医学出版商之一 Springer 的学术平台，提供海量高质量学术专著、期刊与电子图书。"
+          },
+          {
+            "name": "ScienceDirect (Elsevier)",
+            "url": "https://www.sciencedirect.com",
+            "description": "埃尔塞维尔(Elsevier)旗下的世界顶级科学、技术与医学全文学术数据库与电子书平台。"
+          },
+          {
+            "name": "Wiley Online Library",
+            "url": "https://onlinelibrary.wiley.com",
+            "description": "全球知名出版商 Wiley 的学术资源库，涵盖科学、社会科学与人文领域的数千种期刊与数万册电子书。"
+          },
+          {
+            "name": "Taylor & Francis Online",
+            "url": "https://www.tandfonline.com",
+            "description": "权威学术出版集团 Taylor & Francis 的电子书与期刊平台，涵盖人文、社科、理工科权威专著。"
+          },
+          {
+            "name": "Cambridge Core",
+            "url": "https://www.cambridge.org/core",
+            "description": "剑桥大学出版社的官方学术内容平台，包含高水平学术著作、教材以及数万本优质电子书。"
+          },
+          {
+            "name": "Oxford Academic",
+            "url": "https://academic.oup.com",
+            "description": "牛津大学出版社学术图书与期刊中心，提供权威的学术研究成果、参考书目与电子版专著。"
+          },
+          {
+            "name": "JSTOR",
+            "url": "https://www.jstor.org",
+            "description": "知名数字学术资料库，汇集数千种学术期刊、公有领域图书以及优质学术出版物的电子章节。"
+          },
+          {
+            "name": "DOAB (Directory of Open Access Books)",
+            "url": "https://www.doabooks.org",
+            "description": "开放获取图书目录，专门提供经同行评审的开源学术电子书检索与免费下载服务。"
+          },
+          {
+            "name": "OAPEN Library",
+            "url": "https://oapen.org",
+            "description": "欧洲开源学术电子书托管与分发平台，专注于人文与社会科学领域的开放获取图书。"
+          },
+          {
+            "name": "National Academies Press (NAP)",
+            "url": "https://nap.nationalacademies.org",
+            "description": "美国国家科学院出版物平台，提供数千本科学、工程和医学权威报告与电子书的免费PDF下载。"
+          },
+          {
+            "name": "IntechOpen",
+            "url": "https://www.intechopen.com",
+            "description": "全球领先的科学、技术与医学(STM)开放获取(Open Access)电子书出版商。"
+          },
+          {
+            "name": "IEEE Xplore",
+            "url": "https://ieeexplore.ieee.org",
+            "description": "电气电子工程师学会官方数字图书馆，包含大量电子工程、计算机科学领域的标准、期刊与电子图书。"
+          },
+          {
+            "name": "ACM Digital Library",
+            "url": "https://dl.acm.org",
+            "description": "国际计算机学会官方数字图书馆，收录计算机科学领域最顶尖的研讨会论文、期刊与专业电子书籍。"
+          },
+          {
+            "name": "Bookboon",
+            "url": "https://bookboon.com",
+            "description": "专注于大学生教材与职场技能实用电子书的平台，提供免费与付费的高效PDF电子书。"
+          },
+          {
+            "name": "Free-eBooks.net",
+            "url": "https://www.free-ebooks.net",
+            "description": "涵盖小说、非虚构类、学术与商务类图书的免费电子书下载社区，支持多种电子书格式。"
+          },
+          {
+            "name": "Planet eBook",
+            "url": "https://www.planetebook.com",
+            "description": "专注于提供高品质、排版精美且完全免费的经典古典文学电子书PDF与EPUB下载。"
+          },
+          {
+            "name": "Global Grey Ebooks",
+            "url": "https://www.globalgreyebooks.com",
+            "description": "个人维护的高品质免费公有领域电子书网站，专注于神秘学、哲学、历史及经典文学。"
+          },
+          {
+            "name": "Loyal Books",
+            "url": "http://www.loyalbooks.com",
+            "description": "提供免费公有领域电子书与对应免费有声书下载的经典图书平台。"
+          },
+          {
+            "name": "ReadPrint",
+            "url": "http://www.readprint.com",
+            "description": "免费在线阅读图书馆，为学生、教师和文学爱好者提供数千本经典名著在线阅读与书评。"
+          },
+          {
+            "name": "Authorama",
+            "url": "http://www.authorama.com",
+            "description": "简单清爽的公有领域电子书在线阅读网站，收集了大量经典作者的无版权书籍。"
+          },
+          {
+            "name": "PageByPage Books",
+            "url": "http://www.pagebypagebooks.com",
+            "description": "免费在线电子书库，将数百本经典古典名著按页面划分，非常适合网页端快速阅读。"
+          },
+          {
+            "name": "Literature.org",
+            "url": "https://literature.org",
+            "description": "经典文学作品在线阅览库，包含诸多世界名著的纯文本在线版。"
+          },
+          {
+            "name": "Digital Book Index",
+            "url": "http://www.digitalbookindex.org",
+            "description": "综合性数字图书索引网站，指向超过16万册来自大学、出版商和公共机构的免费电子书。"
+          },
+          {
+            "name": "Perseus Digital Library",
+            "url": "https://www.perseus.tufts.edu",
+            "description": "塔夫茨大学维护的古典学数字图书馆，收录大量古希腊、古罗马文学与历史文本。"
+          },
+          {
+            "name": "Online Books Page (UPenn)",
+            "url": "https://onlinebooks.library.upenn.edu",
+            "description": "宾夕法尼亚大学图书馆主办的免费电子书索引网，汇集超300万本网络可免费获取的图书。"
+          },
+          {
+            "name": "Classic Reader",
+            "url": "http://www.classicreader.com",
+            "description": "经典的公共领域名著在线阅读库，包含数千本小说、诗歌、戏剧与短篇故事。"
+          },
+          {
+            "name": "Baen Free Library",
+            "url": "https://www.baen.com/allbooks/category/index/id/2012",
+            "description": "著名科幻与奇幻出版商 Baen 提供的免费科幻/奇幻电子书正版下载专区。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Tor.com (Reactor)",
+            "url": "https://reactormag.com",
+            "description": "著名科幻出版商 Tor 旗下的线上流行文化杂志，经常免费提供科幻中短篇小说与电子书下载。"
+          },
+          {
+            "name": "Leanpub",
+            "url": "https://leanpub.com",
+            "description": "独特的电子书创作与销售平台，专注软件开发、编程语言与技术图书，支持“边写边卖”与自定义价格。"
+          },
+          {
+            "name": "GitHub / Free Programming Books",
+            "url": "https://github.com/EbookFoundation/free-programming-books",
+            "description": "全球最大的开源免费编程电子书与技术文档社区整理列表(支持数十种语言)。"
+          },
+          {
+            "name": "Goalkicker (Programming Notes for Professionals)",
+            "url": "https://goalkicker.com",
+            "description": "基于 Stack Overflow 问答数据编译的免费高质量编程语言与技术专业电子书PDF汇总网。"
+          },
+          {
+            "name": "FreeTechBooks",
+            "url": "https://www.freetechbooks.com",
+            "description": "免费计算机科学、工程、编程语言教材、讲义与电子书的合法链接索引网。"
+          },
+          {
+            "name": "TechBooksForFree",
+            "url": "http://www.techbooksforfree.com",
+            "description": "提供科技、计算机、网络、操作系统及编程领域免费电子书的在线索引。"
+          },
+          {
+            "name": "OnlineProgrammingBooks",
+            "url": "https://www.onlineprogrammingbooks.com",
+            "description": "专注于免费计算机、编程、Web开发、移动开发及数据科学电子书的分享站点。"
+          },
+          {
+            "name": "Syncfusion Succinctly Series",
+            "url": "https://www.syncfusion.com/succinctly-free-ebooks",
+            "description": "Syncfusion 提供的“简明系列”免费技术电子书，每本约100页，快速掌握某项开发技术。"
+          },
+          {
+            "name": "Microsoft Learn / Technical Documentation",
+            "url": "https://learn.microsoft.com",
+            "description": "微软官方技术文档与学习平台，提供大量的官方免费技术指南、教程与电子版开发手册。"
+          },
+          {
+            "name": "Red Hat Books",
+            "url": "https://www.redhat.com/en/resources/ebooks",
+            "description": "红帽(Red Hat)官方提供的云计算、Linux、Kubernetes与企业级IT架构免费电子书专区。"
+          },
+          {
+            "name": "O'Reilly Free Security/Data/AI Ebooks",
+            "url": "https://www.oreilly.com/radar/reports/",
+            "description": "O'Reilly 提供的免费行业报告、白皮书与技术前沿电子书下载库。"
+          },
+          {
+            "name": "Packt Free Learning",
+            "url": "https://www.packtpub.com",
+            "description": "知名技术出版商 Packt 经常举办的免费电子书赠送与优惠活动专区。"
+          },
+          {
+            "name": "DevDocs",
+            "url": "https://devdocs.io",
+            "description": "整合了数十种编程语言与框架官方 API 文档的离线/在线快速电子查阅手册。"
+          },
+          {
+            "name": "Runoob (菜鸟教程)",
+            "url": "https://www.runoob.com",
+            "description": "中国著名的Web技术与编程语言入门教程网，非常适合作为在线技术手册查阅。"
+          },
+          {
+            "name": "W3Schools",
+            "url": "https://www.w3schools.com",
+            "description": "全球最大的Web开发前端与后端入门教程与参考手册平台。"
+          },
+          {
+            "name": "Read the Docs",
+            "url": "https://readthedocs.org",
+            "description": "全球开源社区最流行的开源技术文档与开源电子书免费托管与阅读平台。"
+          },
+          {
+            "name": "GitBook",
+            "url": "https://www.gitbook.com",
+            "description": "现代化的文档与电子书在线创作、托管与发布平台，极受软件开发团队欢迎。"
+          },
+          {
+            "name": "BookStack",
+            "url": "https://www.bookstackapp.com",
+            "description": "免费开源的类似图书结构的个人与团队文档/电子书自托管系统。"
+          },
+          {
+            "name": "MDN Web Docs",
+            "url": "https://developer.mozilla.org",
+            "description": "Mozilla 维护的权威 Web 技术(HTML, CSS, JavaScript)开发者文档与学习中心。"
+          },
+          {
+            "name": "Khan Academy (可汗学院)",
+            "url": "https://www.khanacademy.org",
+            "description": "全球著名的免费教育平台，包含海量交互式数学、科学、历史与计算机教材。"
+          },
+          {
+            "name": "MIT OpenCourseWare (MIT OCW)",
+            "url": "https://ocw.mit.edu",
+            "description": "麻省理工学院开放课程计划，提供大量的免费课程教材、讲义与电子版参考书。"
+          },
+          {
+            "name": "Coursera",
+            "url": "https://www.coursera.org",
+            "description": "全球知名在线教育平台，与顶尖大学合作提供课程附带的免费阅读材料与电子讲义。"
+          },
+          {
+            "name": "edX",
+            "url": "https://www.edx.org",
+            "description": "由哈佛与麻省理工联合创立的在线学习平台，提供大量大学级别的开源教程与电子参考资料。"
+          },
+          {
+            "name": "Saylor Academy",
+            "url": "https://www.saylor.org",
+            "description": "提供免费、开放的大学级别在线课程与配套免费开源教材。"
+          },
+          {
+            "name": "OpenStax (Rice University)",
+            "url": "https://openstax.org",
+            "description": "莱斯大学发起的非营利项目，提供经过同行评审、完全免费的高质量大学标准教材(PDF/网页版)。"
+          },
+          {
+            "name": "LibreTexts",
+            "url": "https://libretexts.org",
+            "description": "由美国国家科学基金会支持的开放教育资源(OER)平台，构建了海量免费高校 STEM 教材。"
+          },
+          {
+            "name": "BCcampus Open Textbooks",
+            "url": "https://open.bccampus.ca",
+            "description": "加拿大不列颠哥伦比亚省发起的开放教材库，提供大量可免费下载与修改的学术教材。"
+          },
+          {
+            "name": "Open Textbook Library",
+            "url": "https://open.umn.edu/opentextbooks",
+            "description": "明尼苏达大学维护的开放教材图书馆，收录数百种经教师审核的免费大学教材。"
+          },
+          {
+            "name": "CK-12 Foundation",
+            "url": "https://www.ck12.org",
+            "description": "专注于K-12(中小学)STEM教育的非营利机构，提供可定制的免费数字 FlexBooks 教材。"
+          },
+          {
+            "name": "Curriki",
+            "url": "https://www.curriki.org",
+            "description": "面向K-12教师与学生的开放教育资源(OER)与数字教材创作与分享社区。"
+          },
+          {
+            "name": "ManyBooks Chinese Section",
+            "url": "https://manybooks.net/language/chinese",
+            "description": "ManyBooks 网站上的中文公有领域古典文学与免费电子书专区。"
+          },
+          {
+            "name": "Haodoo (好读网站)",
+            "url": "http://www.haodoo.net",
+            "description": "台湾著名的繁体中文电子书网站，保存了大量经过精心校对的武侠、历史与文学经典。"
+          },
+          {
+            "name": "CNKI (中国知网)",
+            "url": "https://www.cnki.net",
+            "description": "中国最大的学术电子期刊、博硕士论文、会议论文及学术专著数字文献数据库。"
+          },
+          {
+            "name": "Wanfang Data (万方数据)",
+            "url": "https://www.wanfangdata.com.cn",
+            "description": "中国大型综合性学术数据库，提供海量学术期刊、学位论文与电子图书检索。"
+          },
+          {
+            "name": "VIP Paper (维普网)",
+            "url": "http://www.cqvip.com",
+            "description": "中国著名的期刊学术文献与哲学社会科学数字图书检索数据库。"
+          },
+          {
+            "name": "National Library of China (中国国家图书馆数字共享)",
+            "url": "http://www.nlc.cn",
+            "description": "中国国家图书馆官方数字门户，提供海量珍贵古籍、地方志、电子图书及数字资源检索。"
+          },
+          {
+            "name": "DuXiu (超星读秀)",
+            "url": "https://www.duxiu.com",
+            "description": "中国庞大的学术图书数据库与全文检索平台，涵盖数百万册中文图书元数据与试读。"
+          },
+          {
+            "name": "National Social Sciences Database (国家哲学社会科学学术期刊数据库)",
+            "url": "http://www.nass.org.cn",
+            "description": "中国公益性国家级社会科学学术期刊与学术图书数字开放获取平台。"
+          },
+          {
+            "name": "CADAL (大学数字图书馆国际合作计划)",
+            "url": "https://www.cadal.edu.cn",
+            "description": "汇聚国内外高校珍贵中外文古籍、民国图书与学术专著的高校数字图书馆。"
+          },
+          {
+            "name": "CTEXT (中国哲学书电子化计划)",
+            "url": "https://ctext.org/zh",
+            "description": "著名的先秦两汉及历代中国古籍在线原典数据库，提供精准的文本检索与英文对照。"
+          },
+          {
+            "name": "Shuge (书格)",
+            "url": "https://shuge.org",
+            "description": "专注于自由开放的在线古籍图书馆，提供排版典雅的高清彩色版画古籍PDF免费下载。"
+          },
+          {
+            "name": "SouYun (搜韵)",
+            "url": "https://sou-yun.cn",
+            "description": "优秀的诗词文史诗歌电子数据库，提供精确的诗词格律校验、典故检索与古籍查阅。"
+          },
+          {
+            "name": "SouGuji (搜古籍)",
+            "url": "https://www.souguji.com",
+            "description": "专业的古籍全文检索与电子版古籍文献查询工具平台。"
+          },
+          {
+            "name": "Kanripo (汉籍リポジトリ)",
+            "url": "https://www.kanripo.org",
+            "description": "国际学者维护的汉籍全文数据库，收集了大量经部、史部、子部、集部经典电子文本。"
+          },
+          {
+            "name": "OpenGutenberg Chinese Ebooks",
+            "url": "https://www.gutenberg.org/browse/languages/zh",
+            "description": "古腾堡计划中的中文公有领域电子书专区(收录红楼梦、三国演义等经典)。"
+          },
+          {
+            "name": "WeChat Read (微信读书)",
+            "url": "https://weread.qq.com",
+            "description": "腾讯旗下的跨平台移动阅读与社交读书平台，拥有海量出版图书、网络小说与精美排版。"
+          },
+          {
+            "name": "Douban Read (豆瓣阅读)",
+            "url": "https://read.douban.com",
+            "description": "专注于高质量独家原创文学、中短篇小说与精选出版电子书的阅读平台。"
+          },
+          {
+            "name": "China Literature / Qidian (起点中文网)",
+            "url": "https://www.qidian.com",
+            "description": "阅文集团旗下中国最大的网络原创文学阅读平台，涵盖玄幻、都市、科幻等海量网文。"
+          },
+          {
+            "name": "Jinjiang Literature City (晋江文学城)",
+            "url": "https://www.jjwxc.net",
+            "description": "中国最具影响力的女性向网络原创文学与电子书创作阅读平台。"
+          },
+          {
+            "name": "Zongheng Literature (纵横中文网)",
+            "url": "https://www.zongheng.com",
+            "description": "中国知名的海量网络小说与原创数字文学阅读门户网站。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "17k Literature (17k小说网)",
+            "url": "https://www.17k.com",
+            "description": "中文在线旗下的网文创作与数字阅读平台，提供丰富的网络小说电子书。"
+          },
+          {
+            "name": "Zhang閱 / Palm Read (掌阅科技)",
+            "url": "https://www.ireader.com.cn",
+            "description": "中国领先的数字阅读服务商，提供移动端与iReader电纸书生态阅读服务。"
+          },
+          {
+            "name": "Jingdong Ebooks (京东读书)",
+            "url": "https://read.jd.com",
+            "description": "京东旗下的数字电子书与有声书零售平台，支持云端同步与多端阅读。"
+          },
+          {
+            "name": "Dangdang Ebooks (当当云阅读)",
+            "url": "http://e.dangdang.com",
+            "description": "当当网官方电子书平台，拥有海量正版出版物电子书与限时免费阅读资源。"
+          },
+          {
+            "name": "Duokan (多看阅读)",
+            "url": "https://www.duokan.com",
+            "description": "小米旗下的优质电子书阅读平台，以出色的图文排版、精致版式与图书质量著称。"
+          },
+          {
+            "name": "Ximalaya (喜马拉雅FM)",
+            "url": "https://www.ximalaya.com",
+            "description": "中国最大的有声书与音频分享平台，拥有庞大的有声电子书与朗读资源。"
+          },
+          {
+            "name": "Lazy Audio (懒人听书)",
+            "url": "https://www.lrts.me",
+            "description": "著名的有声电子书与有声读物听书平台，涵盖网络小说与经典名著。"
+          },
+          {
+            "name": "Dragon Read (番茄小说/番茄免费小说)",
+            "url": "https://fanqienovel.com",
+            "description": "字节跳动旗下的主打正版免费阅读的数字网络文学与电子书平台。"
+          },
+          {
+            "name": "Read738 (738Kindle/电子书分享社区)",
+            "url": "http://www.read738.com",
+            "description": "专注于EPUB、MOBI格式电子书推介与交流的读者社区。"
+          },
+          {
+            "name": "Gutenberg Australia",
+            "url": "http://gutenberg.net.au",
+            "description": "澳大利亚古腾堡计划，收录因版权期限差异而在澳大利亚属于公有领域的文学电子书。"
+          },
+          {
+            "name": "Gutenberg Canada",
+            "url": "http://gutenberg.ca",
+            "description": "加拿大古腾堡计划，专注于保存与分发符合加拿大版权法的历史文献与文学电子书。"
+          },
+          {
+            "name": "Ebook Foundation",
+            "url": "https://ebookfoundation.org",
+            "description": "电子书基金会官方网站，致力于推动无障碍阅读与开放电子书生态系统建设。"
+          },
+          {
+            "name": "HathiTrust Digital Library",
+            "url": "https://www.hathitrust.org",
+            "description": "由全球大型学术与研究型图书馆合作建立的大型数字学术藏书与合作平台。"
+          },
+          {
+            "name": "World Digital Library (WDL / UNESCO)",
+            "url": "https://www.wdl.org",
+            "description": "联合国教科文组织与美国国会图书馆联合创办的文化遗产电子图书与历史文件平台。"
+          },
+          {
+            "name": "Gallica (法国国家图书馆)",
+            "url": "https://gallica.bnf.fr",
+            "description": "法国国家图书馆的数字图书馆，提供数百万册法文电子书、手稿、地图与图像。"
+          },
+          {
+            "name": "Deutsche Digitale Bibliothek (德国数字图书馆)",
+            "url": "https://www.deutsche-digitale-bibliothek.de",
+            "description": "德国文化与科学领域的中央数字图书馆，包含海量德文电子图书与历史档案。"
+          },
+          {
+            "name": "Europeana",
+            "url": "https://www.europeana.eu",
+            "description": "欧洲数字文化遗产门户，汇集欧洲数千家档案馆、图书馆和博物馆的电子书与文献。"
+          },
+          {
+            "name": "British Library Digital Collections",
+            "url": "https://www.bl.uk/collection-items",
+            "description": "英国图书馆的数字藏品中心，提供珍贵历史图书、手稿及古籍的高清电子版。"
+          },
+          {
+            "name": "National Diet Library Digital Collections (日本国立国会图书馆)",
+            "url": "https://dl.ndl.go.jp",
+            "description": "日本国立国会图书馆数字藏书平台，收录大量日文古籍、近现代图书与政府出版物。"
+          },
+          {
+            "name": "BNE Digital (西班牙国家图书馆)",
+            "url": "https://www.bne.es/en/Catalogos/BibliotecaDigitalHispanica",
+            "description": "西班牙国家图书馆数字平台，提供大量西班牙语历史文献与公有领域电子书。"
+          },
+          {
+            "name": "Scribd Documents (SlideShare)",
+            "url": "https://www.slideshare.net",
+            "description": "全球最大的专业演讲幻灯片、PDF文档、电子报告与学术电子书分享平台。"
+          },
+          {
+            "name": "Doc88 (道客巴巴)",
+            "url": "https://www.doc88.com",
+            "description": "中国知名的在线文档分享平台，包含海量行业报告、学术论文与电子文档。"
+          },
+          {
+            "name": "Wenku Baidu (百度文库)",
+            "url": "https://wenku.baidu.com",
+            "description": "百度旗下的海量文档与电子书共享平台，涵盖教育、职场、法律与专业资料。"
+          },
+          {
+            "name": "Book118 (原创力文档)",
+            "url": "https://max.book118.com",
+            "description": "大型实用文档与电子图书分享平台，汇集大量教学课件与行业标准。"
+          },
+          {
+            "name": "Docin (豆丁网)",
+            "url": "https://www.docin.com",
+            "description": "中国老牌的文档与电子书分享交流平台，支持在线阅读与各类文档下载。"
+          },
+          {
+            "name": "360 Doc (360个人图书馆)",
+            "url": "http://www.360doc.com",
+            "description": "个人知识管理与文章摘抄分享平台，沉淀了大量网络精选电子书与长文。"
+          },
+          {
+            "name": "Academia.edu",
+            "url": "https://www.academia.edu",
+            "description": "学术社交网络平台，研究人员在此免费分享数千万篇学术论文、电子书与研究预印本。"
+          },
+          {
+            "name": "ResearchGate",
+            "url": "https://www.researchgate.net",
+            "description": "全球最大的科研人员社交平台，支持学者交流并免费下载海量科研文献与电子专著。"
+          },
+          {
+            "name": "SSRN (Social Science Research Network)",
+            "url": "https://www.ssrn.com",
+            "description": "涵盖社会科学、法律、经济及人文领域的权威预印本与电子学术论文数据库。"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org",
+            "description": "康奈尔大学维护的物理学、数学、计算机科学与量化生物学预印本免费电子文献库。"
+          },
+          {
+            "name": "bioRxiv",
+            "url": "https://www.biorxiv.org",
+            "description": "专注于生物学领域的未出版预印本免费电子文献与研究报告平台。"
+          },
+          {
+            "name": "medRxiv",
+            "url": "https://www.medrxiv.org",
+            "description": "专注于医学、临床研究与健康科学领域的免费预印本数字文献平台。"
+          },
+          {
+            "name": "CORE",
+            "url": "https://core.ac.uk",
+            "description": "全球最大的开放获取(Open Access)研究论文与学术电子书聚合搜索引擎。"
+          },
+          {
+            "name": "PubMed Central (PMC)",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/",
+            "description": "美国国家生物技术信息中心(NCBI)旗下的免费生物医学与生命科学全文电子文献库。"
+          },
+          {
+            "name": "Unpaywall",
+            "url": "https://unpaywall.org",
+            "description": "著名的开放获取文献索引工具，帮助用户合法寻找付费学术电子书背后的免费版本。"
+          },
+          {
+            "name": "Audible",
+            "url": "https://www.audible.com",
+            "description": "亚马逊旗下的全球最大商业有声书制作与发行平台，拥有数十万有声电子书。"
+          },
+          {
+            "name": "Storytel",
+            "url": "https://www.storytel.com",
+            "description": "欧洲领先的有声书与电子书流媒体订阅服务平台，支持数十种语言。"
+          },
+          {
+            "name": "Chirp Books",
+            "url": "https://www.chirpbooks.com",
+            "description": "著名的无月费折扣有声书买断平台，每日推送限时优惠有声电子书。"
+          },
+          {
+            "name": "Downpour",
+            "url": "https://www.downpour.com",
+            "description": "知名独立有声书销售与无DRM限制有声电子书下载平台。"
+          },
+          {
+            "name": "Audiobooks.com",
+            "url": "https://www.audiobooks.com",
+            "description": "知名有声书订阅服务，提供超30万本优质有声电子书阅读与下载。"
+          },
+          {
+            "name": "Blinkist",
+            "url": "https://www.blinkist.com",
+            "description": "专注于非虚构类经典图书的“15分钟电子书精华速读与速听”平台。"
+          },
+          {
+            "name": "Shortform",
+            "url": "https://www.shortform.com",
+            "description": "高质量非虚构类商业、心理与哲学电子书深度导读与提炼总结平台。"
+          },
+          {
+            "name": "GetAbstract",
+            "url": "https://www.getabstract.com",
+            "description": "专注于商业、管理与职场领域的精简电子书摘要与知识提炼服务网。"
+          },
+          {
+            "name": "Sumizen (速读/图书摘要)",
+            "url": "https://www.sumizen.com",
+            "description": "专注于提供经典书籍与前沿非虚构电子书核心要点总结的平台。"
+          },
+          {
+            "name": "OverDrive / Libby",
+            "url": "https://www.overdrive.com",
+            "description": "全球数万家公共图书馆与学校采用的数字电子书与有声书免费借阅生态系统。"
+          },
+          {
+            "name": "Hoopla Digital",
+            "url": "https://www.hoopladigital.com",
+            "description": "与北美公共图书馆合作的数字媒体平台，凭图书馆卡免费借阅电子书、漫画与音乐。"
+          },
+          {
+            "name": "BorrowBox",
+            "url": "https://www.borrowbox.com",
+            "description": "英国、澳洲等地公共图书馆主流的电子书与有声书移动借阅平台。"
+          },
+          {
+            "name": "Palace Project",
+            "url": "https://thepalaceproject.org",
+            "description": "旨在为公共图书馆提供开放、平等的电子书访问与管理平台的非营利项目。"
+          },
+          {
+            "name": "CloudLibrary",
+            "url": "https://www.yourcloudlibrary.com",
+            "description": "图书馆电子书与有声书借阅服务，为读者提供流畅的数字借阅读书体验。"
+          },
+          {
+            "name": "Calibre Web",
+            "url": "https://github.com/janeczku/calibre-web",
+            "description": "优秀的开源自建电子书 Web 界面，可连接 Calibre 图书库进行在线阅读与推送。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-199",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Kavita",
+            "url": "https://www.kavitareader.com",
+            "description": "现代化、功能强大的自建电子书、漫画与动漫轻小说数字图书馆服务器。"
+          },
+          {
+            "name": "Audiobookshelf",
+            "url": "https://www.audiobookshelf.org",
+            "description": "开源自建有声书与 Podcast 托管服务器，支持多端同步阅读进度。"
+          },
+          {
+            "name": "COPS (Calibre OPDS Server)",
+            "url": "https://github.com/mikespub-org/seblucas-cops",
+            "description": "轻量级自建电子书 OPDS 服务端，适合低功耗设备搭建个人电子书库。"
+          },
+          {
+            "name": "Komga",
+            "url": "https://komga.org",
+            "description": "专门针对漫画、绘本与电子书搭建的自建式媒体服务器平台。"
+          },
+          {
+            "name": "Comicsology (Amazon Comixology)",
+            "url": "https://www.amazon.com/comixology",
+            "description": "亚马逊旗下的全球最大数字漫画商店，拥有漫威、直流等海量美漫电子书。"
+          },
+          {
+            "name": "WEBTOON",
+            "url": "https://www.webtoons.com",
+            "description": "全球最大的韩漫与条漫数字阅读平台，提供海量免费与付费数字漫画。"
+          },
+          {
+            "name": "Tapas",
+            "url": "https://tapas.io",
+            "description": "著名的独立数字漫画与轻小说出版平台，汇聚大量青年读者与创作者。"
+          },
+          {
+            "name": "Manga Plus (Shueisha)",
+            "url": "https://mangaplus.shueisha.co.jp",
+            "description": "集英社官方推出的免费正版日本漫画数字平台(同步更新《航海王》等)。"
+          },
+          {
+            "name": "BookWalker",
+            "url": "https://bookwalker.jp",
+            "description": "角川(KADOKAWA)旗下的直营正版电子书商店，专注日本轻小说与漫画数字版。"
+          },
+          {
+            "name": "Shonen Jump App / Viz Media",
+            "url": "https://www.viz.com/shonenjump",
+            "description": "VIZ Media 旗下的正版少年Jump数字漫画订阅与阅读平台。"
+          },
+          {
+            "name": "Kobo Writing Life",
+            "url": "https://www.kobo.com/us/en/p/writinglife",
+            "description": "乐天 Kobo 提供的独立作者电子书自助出版与全球分发门户。"
+          },
+          {
+            "name": "Kindle Direct Publishing (KDP)",
+            "url": "https://kdp.amazon.com",
+            "description": "亚马逊官方电子书自助出版平台，让作者可将作品直接推向全球Kindle市场。"
+          },
+          {
+            "name": "Apple Books for Authors",
+            "url": "https://authors.apple.com",
+            "description": "苹果官方图书出版服务，帮助作者在 Apple Books 平台撰写、排版与销售电子书。"
+          },
+          {
+            "name": "Reedsy",
+            "url": "https://reedsy.com",
+            "description": "为电子书作者提供专业编辑、排版工具、封面设计及电子书出版服务的平台。"
+          },
+          {
+            "name": "Pressbooks",
+            "url": "https://pressbooks.com",
+            "description": "基于 WordPress 的高品质开源/商业电子书排版与学术 Open Textbook 制作平台。"
+          },
+          {
+            "name": "Sigil Ebook",
+            "url": "https://sigil-ebook.com",
+            "description": "全球最流行且完全免费开源的跨平台 EPUB 电子书创作与编辑软件官网。"
+          },
+          {
+            "name": "Calibre Ebook Management",
+            "url": "https://calibre-ebook.com",
+            "description": "全球最强大的开源免费电子书管理、格式转换、阅读与推送到设备软件官网。"
+          },
+          {
+            "name": "Pandoc",
+            "url": "https://pandoc.org",
+            "description": "被称为“瑞士军刀”的开源文档转换工具，支持将 Markdown、HTML等完美转换为 EPUB/PDF。"
+          },
+          {
+            "name": "Jutoh",
+            "url": "https://www.jutoh.com",
+            "description": "专业的跨平台电子书创作工具，可轻松快速地创建 EPUB 和 Kindle 格式电子书。"
+          },
+          {
+            "name": "Vellum",
+            "url": "https://vellum.pub",
+            "description": "macOS 平台最优雅的电子书排版与软件，可一键生成媲美大出版商的 EPUB/PDF。"
+          },
+          {
+            "name": "Goodreads",
+            "url": "https://www.goodreads.com",
+            "description": "全球最大的图书书评、阅读社交、书单推荐与个人书架管理社区。"
+          },
+          {
+            "name": "Douban Books (豆瓣读书)",
+            "url": "https://book.douban.com",
+            "description": "中国最权威的图书评分、书评撰写、阅读记录与高分书单推荐社区。"
+          },
+          {
+            "name": "StoryGraph",
+            "url": "https://www.thestorygraph.com",
+            "description": "Goodreads 的强有力替代品，提供深度的阅读数据统计、无广告及个性化书单推荐。"
+          },
+          {
+            "name": "LibraryThing",
+            "url": "https://www.librarything.com",
+            "description": "强大的个人图书收藏编目、图书社交与读者图书推荐网站。"
+          },
+          {
+            "name": "Bookish",
+            "url": "https://www.bookish.com",
+            "description": "专门提供图书推荐、作者专访、读书会指南与新书前瞻的文学网站。"
+          },
+          {
+            "name": "Litcharts",
+            "url": "https://www.litcharts.com",
+            "description": "由 SparkNotes 原班人马打造的文学名著深度解析、角色分析与电子导读网。"
+          },
+          {
+            "name": "SparkNotes",
+            "url": "https://www.sparknotes.com",
+            "description": "美国极受欢迎的文学名著学习指南、章节总结与考试复习电子资料库。"
+          },
+          {
+            "name": "CliffsNotes",
+            "url": "https://www.cliffsnotes.com",
+            "description": "著名的文学与学术名著文学指南、章节梗概与电子分析辅导网。"
+          },
+          {
+            "name": "BookRags",
+            "url": "https://www.bookrags.com",
+            "description": "提供详尽的文学作品研究指南、电子课案与名著章节分析库。"
+          },
+          {
+            "name": "Wiley E-Textbooks",
+            "url": "https://www.wiley.com/en-us/education/students",
+            "description": "Wiley 官方学生电子教材商店，提供可交互的数字版本教材。"
+          },
+          {
+            "name": "Cengage Group",
+            "url": "https://www.cengage.com",
+            "description": "知名教育出版巨头 Cengage 官方电子教材与无限借阅(Cengage Unlimited)平台。"
+          },
+          {
+            "name": "Pearson+",
+            "url": "https://www.pearson.com/en-us/peer/pearson-plus.html",
+            "description": "培生教育集团(Pearson)官方数字教材订阅平台，包含数千本大学电子教材。"
+          },
+          {
+            "name": "McGraw Hill Higher Education",
+            "url": "https://www.mheducation.com/highered",
+            "description": "麦格劳-希尔官方教育平台，提供 Connect 交互式电子教材与学习工具。"
+          },
+          {
+            "name": "VitalSource",
+            "url": "https://www.vitalsource.com",
+            "description": "全球高等教育领域领先的数字教材与电子书零售及在线阅读平台。"
+          },
+          {
+            "name": "RedShelf",
+            "url": "https://redshelf.com",
+            "description": "专注于高校数字教材分发与软件服务的电子书提供商。"
+          },
+          {
+            "name": "Chegg Ebooks",
+            "url": "https://www.chegg.com/books",
+            "description": "美国著名的大学教材租赁、二手书与电子教材在线借阅平台。"
+          },
+          {
+            "name": "Kobo Writing Life Portal",
+            "url": "https://www.kobo.com/writinglife",
+            "description": "Kobo 专为自出版作者打造的电子书数据追踪与销售统计后台。"
+          },
+          {
+            "name": "Draft2Digital Blog & Tools",
+            "url": "https://www.draft2digital.com/blog",
+            "description": "独立电子书出版领域最具实用价值的行业趋势分析与自出版教程博客。"
+          },
+          {
+            "name": "Alliance of Independent Authors (ALLi)",
+            "url": "https://www.allianceindependentauthors.org",
+            "description": "国际独立作者联盟，提供电子书自出版指南、平台评级与版权保护。"
+          },
+          {
+            "name": "Author Earnings / WordsRating",
+            "url": "https://wordsrating.com",
+            "description": "提供电子书出版市场、Kindle销售趋势与图书行业数据的统计分析网站。"
+          },
+          {
+            "name": "Publisher Weekly Ebooks Section",
+            "url": "https://www.publishersweekly.com",
+            "description": "出版商周刊电子书专栏，追踪全球数字出版、电子书销售与技术革新。"
+          },
+          {
+            "name": "The Digital Reader",
+            "url": "https://the-digital-reader.com",
+            "description": "专注于电子书阅读器(Kindle, Kobo等)、数字出版与电子书科技的新闻网。"
+          },
+          {
+            "name": "Good e-Reader",
+            "url": "https://goodereader.com",
+            "description": "全球专注于电子墨水屏(E-ink)、电子书阅读器与数字出版前沿的科技媒体。"
+          },
+          {
+            "name": "E-Ink Official",
+            "url": "https://www.eink.com",
+            "description": "全球电子纸/电子墨水屏技术龙头 E Ink 元太科技官方网站。"
+          },
+          {
+            "name": "Onyx BOOX",
+            "url": "https://www.boox.com",
+            "description": "知名开放式安卓系统电子书阅读器 BOOX 文石官方网站。"
+          },
+          {
+            "name": "Remarkable Official",
+            "url": "https://remarkable.com",
+            "description": "著名极简数字纸张与手写电子书阅读器 reMarkable 官方网站。"
+          },
+          {
+            "name": "PocketBook Official",
+            "url": "https://pocketbook.ch",
+            "description": "欧洲著名电子书阅读器品牌 PocketBook 官方网站与电子书服务。"
+          },
+          {
+            "name": "Supernote (超级笔记)",
+            "url": "https://supernote.com",
+            "description": "专注于高效电子墨水屏笔记与电子书阅读设备 Supernote 官方网站。"
+          },
+          {
+            "name": "Hanvon (汉王科技)",
+            "url": "http://www.hanvon.com.cn",
+            "description": "中国老牌电子书阅读器与手写电纸书硬件官方主页。"
+          }
         ]
       }
     ]
@@ -5292,6 +5964,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

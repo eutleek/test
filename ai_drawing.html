@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="AI绘图、生成式视觉、模型社区与创作工具导航">
+<title>AI绘图 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>AI绘图</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1030 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">AI绘图 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "AI绘图",
+    "icon": "🖌️",
+    "color": "linear-gradient(135deg, #e84393, #6c5ce7)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "1｜Midjourney｜",
+            "url": "https://www.midjourney.com｜顶级AI艺术生成平台",
+            "description": "，擅长电影感、概念设计、幻想艺术、高质量视觉作品"
+          },
+          {
+            "name": "2｜OpenAI ChatGPT Image｜",
+            "url": "https://chat.openai.com｜基于GPT图像模型",
+            "description": "，支持文字生成图片、图片编辑、创意设计"
+          },
+          {
+            "name": "3｜DALL-E｜",
+            "url": "https://openai.com/dall-e｜OpenAI图像生成模型",
+            "description": "，适合插画、概念图、创意图片生成"
+          },
+          {
+            "name": "4｜Adobe Firefly｜",
+            "url": "https://firefly.adobe.com｜Adobe官方AI绘图工具",
+            "description": "，适合商业设计、海报、产品视觉"
+          },
+          {
+            "name": "5｜Leonardo AI｜",
+            "url": "https://leonardo.ai｜专业AI艺术生成平台",
+            "description": "，适合游戏素材、角色设计、概念艺术"
+          },
+          {
+            "name": "6｜Stable Diffusion Web｜",
+            "url": "https://stablediffusionweb.com｜在线Stable",
+            "description": "Diffusion绘图平台，支持AI图片生成"
+          },
+          {
+            "name": "7｜Stability AI｜",
+            "url": "https://stability.ai｜Stable",
+            "description": "Diffusion官方开发公司，提供AI图像模型"
+          },
+          {
+            "name": "8｜FLUX AI｜",
+            "url": "https://fluxai.com｜新一代高质量AI绘图模型",
+            "description": "，擅长真实摄影和艺术生成"
+          },
+          {
+            "name": "9｜Black Forest Labs｜",
+            "url": "https://blackforestlabs.ai｜FLUX模型开发团队",
+            "description": "，提供先进图像生成模型"
+          },
+          {
+            "name": "10｜Ideogram｜",
+            "url": "https://ideogram.ai｜擅长文字生成图片",
+            "description": "，海报、Logo、广告设计效果优秀"
+          },
+          {
+            "name": "11｜Recraft AI｜",
+            "url": "https://www.recraft.ai｜专业矢量设计AI",
+            "description": "，适合Logo、品牌视觉设计"
+          },
+          {
+            "name": "12｜Playground AI｜",
+            "url": "https://playground.com｜在线AI图片生成平台",
+            "description": "，适合快速创作"
+          },
+          {
+            "name": "13｜Krea AI｜",
+            "url": "https://www.krea.ai｜实时AI绘图工具",
+            "description": "，支持增强、放大、风格转换"
+          },
+          {
+            "name": "14｜NightCafe｜",
+            "url": "https://creator.nightcafe.studio｜AI艺术社区",
+            "description": "，支持多种模型生成艺术作品"
+          },
+          {
+            "name": "15｜Artbreeder｜",
+            "url": "https://www.artbreeder.com｜AI人物、头像、艺术混合生成平台",
+            "description": "15｜Artbreeder｜ - 精选资源"
+          },
+          {
+            "name": "16｜Canva AI｜",
+            "url": "https://www.canva.com｜在线设计平台",
+            "description": "，内置AI图片生成和编辑功能"
+          },
+          {
+            "name": "17｜Microsoft Designer｜",
+            "url": "https://designer.microsoft.com｜微软AI设计工具",
+            "description": "，适合社交媒体图片制作"
+          },
+          {
+            "name": "18｜Bing Image Creator｜",
+            "url": "https://www.bing.com/images/create｜微软AI图片生成服务",
+            "description": "18｜Bing Image Creator｜ - 精选资源"
+          },
+          {
+            "name": "19｜Google Imagen｜",
+            "url": "https://imagen.research.google｜Google图像生成模型",
+            "description": "，强调真实感和理解能力"
+          },
+          {
+            "name": "20｜Google Gemini Image｜",
+            "url": "https://gemini.google.com｜Google",
+            "description": "Gemini AI图片生成和编辑"
+          },
+          {
+            "name": "21｜DreamStudio｜",
+            "url": "https://dreamstudio.ai｜Stability",
+            "description": "AI官方绘图界面"
+          },
+          {
+            "name": "22｜Mage Space｜",
+            "url": "https://www.mage.space｜在线AI绘图平台",
+            "description": "，支持Stable Diffusion模型"
+          },
+          {
+            "name": "23｜Tensor.Art｜",
+            "url": "https://tensor.art｜AI模型社区",
+            "description": "，提供大量Stable Diffusion模型"
+          },
+          {
+            "name": "24｜Civitai｜",
+            "url": "https://civitai.com｜AI绘图模型分享社区",
+            "description": "，拥有大量LoRA和Checkpoint模型"
+          },
+          {
+            "name": "25｜Hugging Face Spaces｜",
+            "url": "https://huggingface.co/spaces｜AI模型在线体验平台",
+            "description": "25｜Hugging Face Spaces｜ - 精选资源"
+          },
+          {
+            "name": "26｜Hugging Face Models｜",
+            "url": "https://huggingface.co/models｜开源AI模型库",
+            "description": "，可查找绘图模型"
+          },
+          {
+            "name": "27｜ComfyUI｜",
+            "url": "https://github.com/comfyanonymous/ComfyUI｜节点式Stable",
+            "description": "Diffusion工作流工具"
+          },
+          {
+            "name": "28｜Automatic1111 WebUI｜",
+            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui｜经典Stable",
+            "description": "Diffusion本地绘图界面"
+          },
+          {
+            "name": "29｜Fooocus｜",
+            "url": "https://github.com/lllyasviel/Fooocus｜简单易用的Stable",
+            "description": "Diffusion绘图软件"
+          },
+          {
+            "name": "30｜InvokeAI｜",
+            "url": "https://invoke.ai｜专业AI绘图工作流工具",
+            "description": "30｜InvokeAI｜ - 精选资源"
+          },
+          {
+            "name": "31｜Dream by WOMBO｜",
+            "url": "https://dream.ai｜AI艺术生成应用",
+            "description": "31｜Dream by WOMBO｜ - 精选资源"
+          },
+          {
+            "name": "32｜PixAI｜",
+            "url": "https://pixai.art｜动漫风格AI绘图平台",
+            "description": "32｜PixAI｜ - 精选资源"
+          },
+          {
+            "name": "33｜SeaArt AI｜",
+            "url": "https://www.seaart.ai｜AI绘画社区",
+            "description": "，支持角色和二次元生成"
+          },
+          {
+            "name": "34｜NovelAI｜",
+            "url": "https://novelai.net｜动漫角色和小说插画AI生成平台",
+            "description": "34｜NovelAI｜ - 精选资源"
+          },
+          {
+            "name": "35｜Waifu Labs｜",
+            "url": "https://waifulabs.com｜AI动漫人物生成工具",
+            "description": "35｜Waifu Labs｜ - 精选资源"
+          },
+          {
+            "name": "36｜Fotor AI Image Generator｜",
+            "url": "https://www.fotor.com｜在线AI图片生成和照片编辑",
+            "description": "36｜Fotor AI Image Generator｜ - 精选资源"
+          },
+          {
+            "name": "37｜Picsart AI｜",
+            "url": "https://picsart.com｜图片编辑+AI生成综合平台",
+            "description": "37｜Picsart AI｜ - 精选资源"
+          },
+          {
+            "name": "38｜PhotoRoom AI｜",
+            "url": "https://www.photoroom.com｜AI商品图、背景处理工具",
+            "description": "38｜PhotoRoom AI｜ - 精选资源"
+          },
+          {
+            "name": "39｜Clipdrop｜",
+            "url": "https://clipdrop.co｜AI图片编辑、去背景、增强工具",
+            "description": "39｜Clipdrop｜ - 精选资源"
+          },
+          {
+            "name": "40｜Cleanup.pictures｜",
+            "url": "https://cleanup.pictures｜AI智能去除图片物体",
+            "description": "40｜Cleanup.pictures｜ - 精选资源"
+          },
+          {
+            "name": "41｜Remove.bg｜",
+            "url": "https://www.remove.bg｜AI自动抠图工具",
+            "description": "41｜Remove.bg｜ - 精选资源"
+          },
+          {
+            "name": "42｜Upscayl｜",
+            "url": "https://upscayl.org｜AI图片高清放大工具",
+            "description": "42｜Upscayl｜ - 精选资源"
+          },
+          {
+            "name": "43｜Magnific AI｜",
+            "url": "https://magnific.ai｜AI超高清放大和细节增强工具",
+            "description": "43｜Magnific AI｜ - 精选资源"
+          },
+          {
+            "name": "44｜Topaz Photo AI｜",
+            "url": "https://www.topazlabs.com｜专业AI图片增强软件",
+            "description": "44｜Topaz Photo AI｜ - 精选资源"
+          },
+          {
+            "name": "45｜Let’s Enhance｜",
+            "url": "https://letsenhance.io｜AI图片放大增强平台",
+            "description": "45｜Let’s Enhance｜ - 精选资源"
+          },
+          {
+            "name": "46｜VanceAI｜",
+            "url": "https://vanceai.com｜AI图片增强、修复、放大工具",
+            "description": "46｜VanceAI｜ - 精选资源"
+          },
+          {
+            "name": "47｜DeepAI Image Generator｜",
+            "url": "https://deepai.org｜AI图片生成API平台",
+            "description": "47｜DeepAI Image Generator｜ - 精选资源"
+          },
+          {
+            "name": "48｜Craiyon｜",
+            "url": "https://www.craiyon.com｜免费AI图片生成工具",
+            "description": "48｜Craiyon｜ - 精选资源"
+          },
+          {
+            "name": "49｜Artguru AI｜",
+            "url": "https://www.artguru.ai｜AI头像和艺术图片生成",
+            "description": "49｜Artguru AI｜ - 精选资源"
+          },
+          {
+            "name": "50｜Hotpot AI｜",
+            "url": "https://hotpot.ai｜AI图片生成、设计辅助工具",
+            "description": "50｜Hotpot AI｜ - 精选资源"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "51｜Runway｜",
+            "url": "https://runwayml.com｜AI创意工具平台",
+            "description": "，支持图片生成、视频生成、图像编辑"
+          },
+          {
+            "name": "52｜Pika｜",
+            "url": "https://pika.art｜AI视频和图片生成平台",
+            "description": "，支持动画效果制作"
+          },
+          {
+            "name": "53｜Kaiber AI｜",
+            "url": "https://www.kaiber.ai｜AI视频生成工具",
+            "description": "，可将图片转换成动态视频"
+          },
+          {
+            "name": "54｜Luma AI｜",
+            "url": "https://lumalabs.ai｜AI视觉生成平台",
+            "description": "，支持图片、视频和3D生成"
+          },
+          {
+            "name": "55｜Dream Machine｜",
+            "url": "https://lumalabs.ai/dream-machine｜Luma推出的AI视频生成模型",
+            "description": "55｜Dream Machine｜ - 精选资源"
+          },
+          {
+            "name": "56｜Genmo｜",
+            "url": "https://www.genmo.ai｜AI图像和视频创作平台",
+            "description": "56｜Genmo｜ - 精选资源"
+          },
+          {
+            "name": "57｜PixVerse｜",
+            "url": "https://pixverse.ai｜AI视频生成平台",
+            "description": "，支持图片转视频"
+          },
+          {
+            "name": "58｜Hailuo AI｜",
+            "url": "https://hailuoai.video｜国产AI视频生成平台",
+            "description": "，支持文本和图片生成视频"
+          },
+          {
+            "name": "59｜可灵AI Kling｜",
+            "url": "https://klingai.kuaishou.com｜快手推出AI视频生成模型",
+            "description": "，支持图生视频"
+          },
+          {
+            "name": "60｜即梦AI Jimeng｜",
+            "url": "https://jimeng.jianying.com｜字节跳动AI创作平台",
+            "description": "，支持AI绘画和视频"
+          },
+          {
+            "name": "61｜通义万相｜",
+            "url": "https://tongyi.aliyun.com/wanxiang｜阿里通义AI绘画平台",
+            "description": "61｜通义万相｜ - 精选资源"
+          },
+          {
+            "name": "62｜腾讯混元生图｜",
+            "url": "https://hunyuan.tencent.com｜腾讯AI图像生成模型",
+            "description": "62｜腾讯混元生图｜ - 精选资源"
+          },
+          {
+            "name": "63｜百度文心一格｜",
+            "url": "https://yige.baidu.com｜百度AI艺术创作平台",
+            "description": "63｜百度文心一格｜ - 精选资源"
+          },
+          {
+            "name": "64｜智谱清影｜",
+            "url": "https://chatglm.cn｜智谱AI图像生成能力平台",
+            "description": "64｜智谱清影｜ - 精选资源"
+          },
+          {
+            "name": "65｜LiblibAI｜",
+            "url": "https://www.liblib.art｜中国大型AI绘画模型社区",
+            "description": "65｜LiblibAI｜ - 精选资源"
+          },
+          {
+            "name": "66｜哩布哩布AI｜",
+            "url": "https://www.liblib.art｜AI模型和作品分享社区",
+            "description": "66｜哩布哩布AI｜ - 精选资源"
+          },
+          {
+            "name": "67｜海艺AI｜",
+            "url": "https://www.seaart.ai｜AI绘画创作社区",
+            "description": "67｜海艺AI｜ - 精选资源"
+          },
+          {
+            "name": "68｜触站AI｜",
+            "url": "https://www.huazhan.com｜AI绘画和艺术社区",
+            "description": "68｜触站AI｜ - 精选资源"
+          },
+          {
+            "name": "69｜秒画AI｜",
+            "url": "https://miaohua.sensetime.com｜商汤科技AI绘画平台",
+            "description": "69｜秒画AI｜ - 精选资源"
+          },
+          {
+            "name": "70｜画宇宙｜",
+            "url": "https://www.huayuzhou.com｜AI图片生成和创作平台",
+            "description": "70｜画宇宙｜ - 精选资源"
+          },
+          {
+            "name": "71｜NovelAI Diffusion｜",
+            "url": "https://novelai.net｜动漫插画AI模型",
+            "description": "71｜NovelAI Diffusion｜ - 精选资源"
+          },
+          {
+            "name": "72｜Waifu Diffusion｜",
+            "url": "https://huggingface.co/hakurei/waifu-diffusion｜动漫风格Stable",
+            "description": "Diffusion模型"
+          },
+          {
+            "name": "73｜Anything AI｜",
+            "url": "https://civitai.com｜动漫模型生态平台",
+            "description": "73｜Anything AI｜ - 精选资源"
+          },
+          {
+            "name": "74｜DreamShaper｜",
+            "url": "https://civitai.com/models/4384/dreamshaper｜热门Stable",
+            "description": "Diffusion艺术模型"
+          },
+          {
+            "name": "75｜Realistic Vision｜",
+            "url": "https://civitai.com｜真实摄影风AI模型",
+            "description": "75｜Realistic Vision｜ - 精选资源"
+          },
+          {
+            "name": "76｜Deliberate AI｜",
+            "url": "https://civitai.com｜高质量艺术模型",
+            "description": "76｜Deliberate AI｜ - 精选资源"
+          },
+          {
+            "name": "77｜Absolute Reality｜",
+            "url": "https://civitai.com｜真实人物生成模型",
+            "description": "77｜Absolute Reality｜ - 精选资源"
+          },
+          {
+            "name": "78｜Juggernaut AI｜",
+            "url": "https://civitai.com｜高质量综合绘图模型",
+            "description": "78｜Juggernaut AI｜ - 精选资源"
+          },
+          {
+            "name": "80｜Stable Cascade｜",
+            "url": "https://stability.ai｜Stability",
+            "description": "AI新一代图像模型"
+          },
+          {
+            "name": "81｜Kandinsky AI｜",
+            "url": "https://www.kandinsky.ai｜俄罗斯AI图像生成模型",
+            "description": "81｜Kandinsky AI｜ - 精选资源"
+          },
+          {
+            "name": "82｜DeepFloyd IF｜",
+            "url": "https://github.com/deep-floyd/IF｜开源文本生成图片模型",
+            "description": "82｜DeepFloyd IF｜ - 精选资源"
+          },
+          {
+            "name": "83｜Imagen 3｜",
+            "url": "https://deepmind.google/technologies/imagen｜Google最新图像生成模型",
+            "description": "83｜Imagen 3｜ - 精选资源"
+          },
+          {
+            "name": "84｜Parti AI｜",
+            "url": "https://parti.research.google｜Google研究型文本图像模型",
+            "description": "84｜Parti AI｜ - 精选资源"
+          },
+          {
+            "name": "85｜Midjourney Niji｜",
+            "url": "https://nijijourney.com｜Midjourney动漫专用模型",
+            "description": "85｜Midjourney Niji｜ - 精选资源"
+          },
+          {
+            "name": "86｜Niji Journey｜",
+            "url": "https://nijijourney.com｜动漫、游戏角色AI绘图工具",
+            "description": "86｜Niji Journey｜ - 精选资源"
+          },
+          {
+            "name": "87｜Scenario｜",
+            "url": "https://www.scenario.com｜游戏素材AI生成平台",
+            "description": "87｜Scenario｜ - 精选资源"
+          },
+          {
+            "name": "88｜Layer AI｜",
+            "url": "https://www.layer.ai｜游戏美术AI辅助工具",
+            "description": "88｜Layer AI｜ - 精选资源"
+          },
+          {
+            "name": "89｜Leonardo Motion｜",
+            "url": "https://leonardo.ai｜Leonardo",
+            "description": "AI动态视觉功能"
+          },
+          {
+            "name": "90｜Scenario AI｜",
+            "url": "https://www.scenario.com｜AI游戏资产生成工具",
+            "description": "90｜Scenario AI｜ - 精选资源"
+          },
+          {
+            "name": "91｜Meshy AI｜",
+            "url": "https://www.meshy.ai｜AI生成3D模型平台",
+            "description": "91｜Meshy AI｜ - 精选资源"
+          },
+          {
+            "name": "92｜Spline AI｜",
+            "url": "https://spline.design｜AI辅助3D设计工具",
+            "description": "92｜Spline AI｜ - 精选资源"
+          },
+          {
+            "name": "93｜Kaedim｜",
+            "url": "https://www.kaedim3d.com｜AI图片转3D模型",
+            "description": "93｜Kaedim｜ - 精选资源"
+          },
+          {
+            "name": "94｜Tripo AI｜",
+            "url": "https://www.tripo3d.ai｜AI",
+            "description": "3D模型生成工具"
+          },
+          {
+            "name": "95｜Masterpiece X｜",
+            "url": "https://www.masterpiecex.com｜AI",
+            "description": "3D创作平台"
+          },
+          {
+            "name": "96｜CSM AI｜",
+            "url": "https://3d.csm.ai｜图片生成3D模型工具",
+            "description": "96｜CSM AI｜ - 精选资源"
+          },
+          {
+            "name": "97｜Scenario AI Studio｜",
+            "url": "https://www.scenario.com｜AI游戏视觉生成平台",
+            "description": "97｜Scenario AI Studio｜ - 精选资源"
+          },
+          {
+            "name": "98｜Meshcapade｜",
+            "url": "https://meshcapade.com｜AI人体3D建模平台",
+            "description": "98｜Meshcapade｜ - 精选资源"
+          },
+          {
+            "name": "99｜Spline｜",
+            "url": "https://spline.design｜在线3D设计和AI辅助创作",
+            "description": "99｜Spline｜ - 精选资源"
+          },
+          {
+            "name": "100｜Kaiber｜",
+            "url": "https://www.kaiber.ai｜AI艺术动画生成平台",
+            "description": "100｜Kaiber｜ - 精选资源"
+          },
+          {
+            "name": "101｜Designs.ai｜",
+            "url": "https://designs.ai｜AI设计工具集合",
+            "description": "，支持Logo、海报、视频、图片生成"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "102｜Looka AI｜",
+            "url": "https://looka.com｜AI品牌Logo和视觉识别设计平台",
+            "description": "102｜Looka AI｜ - 精选资源"
+          },
+          {
+            "name": "103｜Brandmark AI｜",
+            "url": "https://brandmark.io｜AI",
+            "description": "Logo设计和品牌生成工具"
+          },
+          {
+            "name": "104｜LogoAI｜",
+            "url": "https://www.logoai.com｜AI自动生成Logo和品牌素材",
+            "description": "104｜LogoAI｜ - 精选资源"
+          },
+          {
+            "name": "105｜Tailor Brands｜",
+            "url": "https://www.tailorbrands.com｜AI品牌设计平台",
+            "description": "，生成企业视觉系统"
+          },
+          {
+            "name": "106｜Uizard AI｜",
+            "url": "https://uizard.io｜AI",
+            "description": "UI界面设计工具，可生成APP和网页设计"
+          },
+          {
+            "name": "107｜Galileo AI｜",
+            "url": "https://www.usegalileo.ai｜AI生成UI设计和产品界面",
+            "description": "107｜Galileo AI｜ - 精选资源"
+          },
+          {
+            "name": "108｜Visily AI｜",
+            "url": "https://www.visily.ai｜AI原型设计和界面生成工具",
+            "description": "108｜Visily AI｜ - 精选资源"
+          },
+          {
+            "name": "109｜Figma AI｜",
+            "url": "https://www.figma.com｜专业设计工具",
+            "description": "，集成AI辅助设计功能"
+          },
+          {
+            "name": "110｜Framer AI｜",
+            "url": "https://www.framer.com｜AI网页设计生成工具",
+            "description": "110｜Framer AI｜ - 精选资源"
+          },
+          {
+            "name": "111｜Webflow AI｜",
+            "url": "https://webflow.com｜AI辅助网站设计和开发平台",
+            "description": "111｜Webflow AI｜ - 精选资源"
+          },
+          {
+            "name": "112｜Relume AI｜",
+            "url": "https://www.relume.io｜AI网站架构和组件生成工具",
+            "description": "112｜Relume AI｜ - 精选资源"
+          },
+          {
+            "name": "113｜Diagram AI｜",
+            "url": "https://diagram.com｜AI设计辅助工具",
+            "description": "113｜Diagram AI｜ - 精选资源"
+          },
+          {
+            "name": "114｜Kittl AI｜",
+            "url": "https://www.kittl.com｜AI海报、字体、插画设计平台",
+            "description": "114｜Kittl AI｜ - 精选资源"
+          },
+          {
+            "name": "115｜VistaCreate AI｜",
+            "url": "https://create.vista.com｜在线AI视觉设计工具",
+            "description": "115｜VistaCreate AI｜ - 精选资源"
+          },
+          {
+            "name": "116｜Designify｜",
+            "url": "https://www.designify.com｜AI自动生成商品图片设计",
+            "description": "116｜Designify｜ - 精选资源"
+          },
+          {
+            "name": "117｜Pebblely｜",
+            "url": "https://www.pebblely.com｜AI商品背景生成工具",
+            "description": "117｜Pebblely｜ - 精选资源"
+          },
+          {
+            "name": "118｜Booth AI｜",
+            "url": "https://www.booth.ai｜AI产品摄影生成平台",
+            "description": "118｜Booth AI｜ - 精选资源"
+          },
+          {
+            "name": "119｜Flair AI｜",
+            "url": "https://flair.ai｜AI商业产品图片生成工具",
+            "description": "119｜Flair AI｜ - 精选资源"
+          },
+          {
+            "name": "120｜Mokker AI｜",
+            "url": "https://www.mokker.ai｜AI商品场景图生成工具",
+            "description": "120｜Mokker AI｜ - 精选资源"
+          },
+          {
+            "name": "121｜Claid AI｜",
+            "url": "https://claid.ai｜AI商业图片增强和生成平台",
+            "description": "121｜Claid AI｜ - 精选资源"
+          },
+          {
+            "name": "122｜Pixelcut AI｜",
+            "url": "https://www.pixelcut.ai｜AI商品图编辑工具",
+            "description": "122｜Pixelcut AI｜ - 精选资源"
+          },
+          {
+            "name": "123｜Photoroom AI｜",
+            "url": "https://www.photoroom.com｜AI电商图片制作工具",
+            "description": "123｜Photoroom AI｜ - 精选资源"
+          },
+          {
+            "name": "124｜Erase.bg｜",
+            "url": "https://www.erase.bg｜AI图片背景移除工具",
+            "description": "124｜Erase.bg｜ - 精选资源"
+          },
+          {
+            "name": "125｜BgRem｜",
+            "url": "https://bgrem.ai｜AI抠图和背景生成工具",
+            "description": "125｜BgRem｜ - 精选资源"
+          },
+          {
+            "name": "126｜Facet AI｜",
+            "url": "https://facet.ai｜AI创意图像编辑平台",
+            "description": "126｜Facet AI｜ - 精选资源"
+          },
+          {
+            "name": "128｜Genie AI｜",
+            "url": "https://genieai.co｜AI创意生成辅助平台",
+            "description": "128｜Genie AI｜ - 精选资源"
+          },
+          {
+            "name": "129｜OpenArt｜",
+            "url": "https://openart.ai｜AI绘画社区和模型平台",
+            "description": "129｜OpenArt｜ - 精选资源"
+          },
+          {
+            "name": "130｜ArtSmart AI｜",
+            "url": "https://artsmart.ai｜AI图片生成和营销素材工具",
+            "description": "130｜ArtSmart AI｜ - 精选资源"
+          },
+          {
+            "name": "131｜Getimg.ai｜",
+            "url": "https://getimg.ai｜AI图片生成、编辑和扩展平台",
+            "description": "131｜Getimg.ai｜ - 精选资源"
+          },
+          {
+            "name": "132｜Stable Horde｜",
+            "url": "https://stablehorde.net｜分布式Stable",
+            "description": "Diffusion绘图平台"
+          },
+          {
+            "name": "133｜DiffusionBee｜",
+            "url": "https://diffusionbee.com｜Mac端Stable",
+            "description": "Diffusion绘图软件"
+          },
+          {
+            "name": "134｜Draw Things｜",
+            "url": "https://drawthings.ai｜苹果设备AI绘图应用",
+            "description": "134｜Draw Things｜ - 精选资源"
+          },
+          {
+            "name": "135｜Diffusers｜",
+            "url": "https://huggingface.co/docs/diffusers｜Hugging",
+            "description": "Face开源扩散模型库"
+          },
+          {
+            "name": "136｜Replicate AI｜",
+            "url": "https://replicate.com｜AI模型运行平台",
+            "description": "，支持图片生成模型"
+          },
+          {
+            "name": "137｜Together AI｜",
+            "url": "https://www.together.ai｜AI模型服务平台",
+            "description": "137｜Together AI｜ - 精选资源"
+          },
+          {
+            "name": "138｜Fal AI｜",
+            "url": "https://fal.ai｜AI生成模型API平台",
+            "description": "138｜Fal AI｜ - 精选资源"
+          },
+          {
+            "name": "139｜Leonardo API｜",
+            "url": "https://leonardo.ai/api｜Leonardo图像生成接口服务",
+            "description": "139｜Leonardo API｜ - 精选资源"
+          },
+          {
+            "name": "140｜Stability AI API｜",
+            "url": "https://platform.stability.ai｜Stable",
+            "description": "Diffusion官方API服务"
+          },
+          {
+            "name": "141｜OpenAI API Images｜",
+            "url": "https://platform.openai.com｜OpenAI图像生成接口",
+            "description": "141｜OpenAI API Images｜ - 精选资源"
+          },
+          {
+            "name": "142｜Google Vertex AI Imagen｜",
+            "url": "https://cloud.google.com/vertex-ai｜Google云端AI图像生成服务",
+            "description": "142｜Google Vertex AI Imagen｜ - 精选资源"
+          },
+          {
+            "name": "143｜Amazon Bedrock Image｜",
+            "url": "https://aws.amazon.com/bedrock｜亚马逊AI模型服务平台",
+            "description": "143｜Amazon Bedrock Image｜ - 精选资源"
+          },
+          {
+            "name": "144｜NVIDIA Canvas｜",
+            "url": "https://www.nvidia.com/en-us/studio/canvas｜AI风景绘画工具",
+            "description": "144｜NVIDIA Canvas｜ - 精选资源"
+          },
+          {
+            "name": "145｜NVIDIA Picasso｜",
+            "url": "https://www.nvidia.com/en-us/gpu-cloud/picasso｜NVIDIA生成式AI服务",
+            "description": "145｜NVIDIA Picasso｜ - 精选资源"
+          },
+          {
+            "name": "146｜PaintsChainer｜",
+            "url": "https://paintschainer.preferred.tech｜AI自动上色工具",
+            "description": "146｜PaintsChainer｜ - 精选资源"
+          },
+          {
+            "name": "147｜Petalica Paint｜",
+            "url": "https://petalica-paint.pixiv.dev｜AI线稿自动上色工具",
+            "description": "147｜Petalica Paint｜ - 精选资源"
+          },
+          {
+            "name": "148｜Pixiv Sketch AI｜",
+            "url": "https://sketch.pixiv.net｜Pixiv艺术社区AI功能",
+            "description": "148｜Pixiv Sketch AI｜ - 精选资源"
+          },
+          {
+            "name": "149｜Pixiv AI｜",
+            "url": "https://www.pixiv.net｜日本插画社区",
+            "description": "，支持AI创作生态"
+          },
+          {
+            "name": "150｜Clip Studio AI｜",
+            "url": "https://www.clipstudio.net｜专业漫画插画软件",
+            "description": "，加入AI辅助功能"
+          },
+          {
+            "name": "151｜Procreate AI｜",
+            "url": "https://procreate.com｜iPad专业绘画软件",
+            "description": "，提供AI辅助创作方向"
+          },
+          {
+            "name": "152｜Krita AI Diffusion｜",
+            "url": "https://krita.org｜开源数字绘画软件",
+            "description": "，可结合AI绘图插件"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-198",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "153｜GIMP AI Plugins｜",
+            "url": "https://www.gimp.org｜开源图像编辑软件",
+            "description": "，可扩展AI插件"
+          },
+          {
+            "name": "154｜Photoshop Generative Fill｜",
+            "url": "https://www.adobe.com/products/photoshop.html｜Adobe",
+            "description": "Photoshop生成式填充AI功能"
+          },
+          {
+            "name": "155｜Lightroom AI｜",
+            "url": "https://www.adobe.com/products/photoshop-lightroom.html｜Adobe摄影后期AI增强工具",
+            "description": "155｜Lightroom AI｜ - 精选资源"
+          },
+          {
+            "name": "156｜Luminar Neo AI｜",
+            "url": "https://skylum.com/luminar｜AI摄影增强和图片编辑软件",
+            "description": "156｜Luminar Neo AI｜ - 精选资源"
+          },
+          {
+            "name": "157｜ON1 Photo RAW AI｜",
+            "url": "https://www.on1.com｜AI照片编辑和增强工具",
+            "description": "157｜ON1 Photo RAW AI｜ - 精选资源"
+          },
+          {
+            "name": "158｜DxO PureRAW AI｜",
+            "url": "https://www.dxo.com｜AI摄影降噪和画质增强软件",
+            "description": "158｜DxO PureRAW AI｜ - 精选资源"
+          },
+          {
+            "name": "159｜Topaz Gigapixel AI｜",
+            "url": "https://www.topazlabs.com/gigapixel-ai｜AI图片超分辨率放大工具",
+            "description": "159｜Topaz Gigapixel AI｜ - 精选资源"
+          },
+          {
+            "name": "160｜Topaz Photo AI｜",
+            "url": "https://www.topazlabs.com/photo-ai｜AI照片修复增强软件",
+            "description": "160｜Topaz Photo AI｜ - 精选资源"
+          },
+          {
+            "name": "161｜Vmake AI｜",
+            "url": "https://vmake.ai｜AI电商图片生成和优化工具",
+            "description": "161｜Vmake AI｜ - 精选资源"
+          },
+          {
+            "name": "162｜Stylar AI｜",
+            "url": "https://www.stylar.ai｜AI室内设计和空间视觉生成",
+            "description": "162｜Stylar AI｜ - 精选资源"
+          },
+          {
+            "name": "163｜RoomGPT｜",
+            "url": "https://www.roomgpt.io｜AI房间装修效果生成工具",
+            "description": "163｜RoomGPT｜ - 精选资源"
+          },
+          {
+            "name": "164｜Interior AI｜",
+            "url": "https://interiorai.com｜AI室内设计图片生成平台",
+            "description": "164｜Interior AI｜ - 精选资源"
+          },
+          {
+            "name": "165｜REimagineHome AI｜",
+            "url": "https://reimaginehome.ai｜AI家居设计和空间改造工具",
+            "description": "165｜REimagineHome AI｜ - 精选资源"
+          },
+          {
+            "name": "166｜HomeDesigns AI｜",
+            "url": "https://homedesigns.ai｜AI建筑和室内设计生成",
+            "description": "166｜HomeDesigns AI｜ - 精选资源"
+          },
+          {
+            "name": "167｜ArchitectGPT｜",
+            "url": "https://architectgpt.io｜AI建筑概念设计工具",
+            "description": "167｜ArchitectGPT｜ - 精选资源"
+          },
+          {
+            "name": "168｜PromeAI｜",
+            "url": "https://www.promeai.pro｜AI建筑、设计、渲染生成平台",
+            "description": "168｜PromeAI｜ - 精选资源"
+          },
+          {
+            "name": "169｜Vizcom AI｜",
+            "url": "https://www.vizcom.ai｜AI工业设计草图渲染工具",
+            "description": "169｜Vizcom AI｜ - 精选资源"
+          },
+          {
+            "name": "170｜Autodesk AI｜",
+            "url": "https://www.autodesk.com｜AI辅助建筑、工业设计软件",
+            "description": "170｜Autodesk AI｜ - 精选资源"
+          },
+          {
+            "name": "171｜Runway Gen-3｜",
+            "url": "https://runwayml.com｜新一代AI视频和视觉生成模型",
+            "description": "171｜Runway Gen-3｜ - 精选资源"
+          },
+          {
+            "name": "172｜Synthesia｜",
+            "url": "https://www.synthesia.io｜AI数字人视频生成平台",
+            "description": "172｜Synthesia｜ - 精选资源"
+          },
+          {
+            "name": "173｜HeyGen｜",
+            "url": "https://www.heygen.com｜AI头像、数字人和视频生成平台",
+            "description": "173｜HeyGen｜ - 精选资源"
+          },
+          {
+            "name": "174｜D-ID Creative Reality｜",
+            "url": "https://www.d-id.com｜AI数字人图片动画工具",
+            "description": "174｜D-ID Creative Reality｜ - 精选资源"
+          },
+          {
+            "name": "175｜DeepBrain AI｜",
+            "url": "https://www.deepbrain.io｜AI虚拟人视频制作平台",
+            "description": "175｜DeepBrain AI｜ - 精选资源"
+          },
+          {
+            "name": "176｜Hour One AI｜",
+            "url": "https://hourone.ai｜AI数字人视频生成工具",
+            "description": "176｜Hour One AI｜ - 精选资源"
+          },
+          {
+            "name": "177｜Colossyan｜",
+            "url": "https://www.colossyan.com｜企业AI视频生成平台",
+            "description": "177｜Colossyan｜ - 精选资源"
+          },
+          {
+            "name": "178｜Elai.io｜",
+            "url": "https://elai.io｜AI虚拟讲师视频生成工具",
+            "description": "178｜Elai.io｜ - 精选资源"
+          },
+          {
+            "name": "179｜VEED AI｜",
+            "url": "https://www.veed.io｜在线视频编辑和AI生成工具",
+            "description": "179｜VEED AI｜ - 精选资源"
+          },
+          {
+            "name": "180｜CapCut AI｜",
+            "url": "https://www.capcut.com｜剪映国际版",
+            "description": "，支持AI图片和视频创作"
+          },
+          {
+            "name": "181｜Canva Magic Media｜",
+            "url": "https://www.canva.com｜Canva",
+            "description": "AI图像生成功能"
+          },
+          {
+            "name": "182｜Picsart Generator｜",
+            "url": "https://picsart.com｜AI图片生成和编辑功能",
+            "description": "182｜Picsart Generator｜ - 精选资源"
+          },
+          {
+            "name": "183｜Fotor GoArt｜",
+            "url": "https://www.fotor.com｜AI艺术风格转换工具",
+            "description": "183｜Fotor GoArt｜ - 精选资源"
+          },
+          {
+            "name": "184｜BeFunky AI｜",
+            "url": "https://www.befunky.com｜AI照片编辑和艺术效果工具",
+            "description": "184｜BeFunky AI｜ - 精选资源"
+          },
+          {
+            "name": "185｜Photoleap AI｜",
+            "url": "https://www.photoleapapp.com｜移动端AI图片创作应用",
+            "description": "185｜Photoleap AI｜ - 精选资源"
+          },
+          {
+            "name": "186｜Lensa AI｜",
+            "url": "https://prisma-ai.com/lensa｜AI头像生成和照片编辑应用",
+            "description": "186｜Lensa AI｜ - 精选资源"
+          },
+          {
+            "name": "187｜Remini AI｜",
+            "url": "https://www.remini.ai｜AI照片增强和高清修复工具",
+            "description": "187｜Remini AI｜ - 精选资源"
+          },
+          {
+            "name": "188｜YouCam AI｜",
+            "url": "https://www.perfectcorp.com｜AI美容、人像编辑工具",
+            "description": "188｜YouCam AI｜ - 精选资源"
+          },
+          {
+            "name": "189｜FaceApp AI｜",
+            "url": "https://www.faceapp.com｜AI人像编辑应用",
+            "description": "189｜FaceApp AI｜ - 精选资源"
+          },
+          {
+            "name": "190｜Prisma AI｜",
+            "url": "https://prisma-ai.com｜AI艺术滤镜和图片转换工具",
+            "description": "190｜Prisma AI｜ - 精选资源"
+          },
+          {
+            "name": "191｜DeepArt.io｜",
+            "url": "https://deepart.io｜AI艺术风格转换平台",
+            "description": "191｜DeepArt.io｜ - 精选资源"
+          },
+          {
+            "name": "192｜GoArt AI｜",
+            "url": "https://goart.fotor.com｜AI艺术画风转换工具",
+            "description": "192｜GoArt AI｜ - 精选资源"
+          },
+          {
+            "name": "193｜Artisto AI｜",
+            "url": "https://artisto.my.com｜AI艺术视频滤镜工具",
+            "description": "193｜Artisto AI｜ - 精选资源"
+          },
+          {
+            "name": "194｜Neural.love｜",
+            "url": "https://neural.love｜AI图片增强、生成和修复平台",
+            "description": "194｜Neural.love｜ - 精选资源"
+          },
+          {
+            "name": "195｜VQGAN+CLIP｜",
+            "url": "https://github.com/nerdyrodent/VQGAN-CLIP｜经典AI艺术生成技术",
+            "description": "195｜VQGAN+CLIP｜ - 精选资源"
+          },
+          {
+            "name": "196｜Disco Diffusion｜",
+            "url": "https://github.com/alembics/disco-diffusion｜早期AI艺术生成项目",
+            "description": "196｜Disco Diffusion｜ - 精选资源"
+          },
+          {
+            "name": "197｜Deep Dream Generator｜",
+            "url": "https://deepdreamgenerator.com｜Google",
+            "description": "Deep Dream艺术生成工具"
+          },
+          {
+            "name": "198｜RunDiffusion｜",
+            "url": "https://rundiffusion.com｜云端Stable",
+            "description": "Diffusion绘图平台"
+          },
+          {
+            "name": "199｜ThinkDiffusion｜",
+            "url": "https://www.thinkdiffusion.com｜云端AI绘图工作站",
+            "description": "199｜ThinkDiffusion｜ - 精选资源"
+          },
+          {
+            "name": "200｜Vast.ai AI GPU｜",
+            "url": "https://vast.ai｜提供AI绘图模型运行GPU云服务",
+            "description": "200｜Vast.ai AI GPU｜ - 精选资源"
+          }
         ]
       }
     ]
@@ -5292,6 +5959,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

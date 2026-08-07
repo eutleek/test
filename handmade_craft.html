@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="手作工艺、造物设计、材料教程与匠人社区导航">
+<title>手工造物 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>手工造物</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1040 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">手工造物 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "手工造物",
+    "icon": "🧶",
+    "color": "linear-gradient(135deg, #a29bfe, #fdcb6e)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Instructables",
+            "url": "https://www.instructables.com/",
+            "description": "全球最大的DIY与手工制作社区，包含木工、皮革、电子、缝纫等详细步骤教程。"
+          },
+          {
+            "name": "Etsy",
+            "url": "https://www.etsy.com/",
+            "description": "全球著名的原创手工作品、独立设计与古董交易平台。"
+          },
+          {
+            "name": "Craftsy",
+            "url": "https://www.craftsy.com/",
+            "description": "提供高品质手工课程的在线学习平台，涵盖编织、缝纫、刺绣、烘焙等。"
+          },
+          {
+            "name": "Wikihow - Crafts",
+            "url": "https://www.wikihow.com/Category:Crafts",
+            "description": "图文并茂的各类生活手工、布艺、纸艺与微缩模型制作指南。"
+          },
+          {
+            "name": "Pinterest",
+            "url": "https://www.pinterest.com/",
+            "description": "全球创意手工灵感、图纸、设计图样与制作参考汇聚平台。"
+          },
+          {
+            "name": "Ravelry",
+            "url": "https://www.ravelry.com/",
+            "description": "全球顶尖的编织(棒针与钩针)爱好者社区与图纸数据库。"
+          },
+          {
+            "name": "Miniatures.com",
+            "url": "https://www.miniatures.com/",
+            "description": "专注于娃娃屋、微缩模型、家具与微缩景观材料的专业网站。"
+          },
+          {
+            "name": "Spoonflower",
+            "url": "https://www.spoonflower.com/",
+            "description": "支持独立设计师印花布料、壁纸与手工缝纫面料定制平台。"
+          },
+          {
+            "name": "Joann",
+            "url": "https://www.joann.com/",
+            "description": "美国知名的手作材料、面料、缝纫机及DIY工具零售巨头官网。"
+          },
+          {
+            "name": "Michaels",
+            "url": "https://www.michaels.com/",
+            "description": "提供丰富的手工DIY材料、美术用品、框艺及节日手作教学。"
+          },
+          {
+            "name": "Hobbycraft",
+            "url": "https://www.hobbycraft.co.uk/",
+            "description": "英国大型手工艺术用品商店，包含丰富的针织、纸艺、泥塑教程。"
+          },
+          {
+            "name": "Hackster.io",
+            "url": "https://www.hackster.io/",
+            "description": "专注于硬件DIY、创客造物、开源电子与智能手工装置的项目分享平台。"
+          },
+          {
+            "name": "Make: Magazine",
+            "url": "https://makezine.com/",
+            "description": "《Make》创客杂志官网，汇集机械造物、木工、3D打印与电子DIY。"
+          },
+          {
+            "name": "Thingiverse",
+            "url": "https://www.thingiverse.com/",
+            "description": "全球最大的开源3D打印模型社区，提供海量造物模型免费下载。"
+          },
+          {
+            "name": "Printables",
+            "url": "https://www.printables.com/",
+            "description": "Prusa推出的高品质3D打印造物分享社区，含丰富的机械与生活实用构件。"
+          },
+          {
+            "name": "MyMiniFactory",
+            "url": "https://www.myminifactory.com/",
+            "description": "专注于高品质手办、微缩模型、雕塑与桌游棋子的3D打印建模平台。"
+          },
+          {
+            "name": "Leatherworker.net",
+            "url": "https://leatherworker.net/",
+            "description": "国际权威的手工皮艺论坛，探讨皮具设计、打孔、缝线与染料工艺。"
+          },
+          {
+            "name": "Tandy Leather",
+            "url": "https://tandyleather.com/",
+            "description": "经典皮革手艺工具、原皮皮革、五金配件与皮艺入门教学网站。"
+          },
+          {
+            "name": "Weaving Today",
+            "url": "https://www.handwovenmagazine.com/",
+            "description": "手工织布与纺织艺术专业平台，提供织布机使用与线材搭配图纸。"
+          },
+          {
+            "name": "Cross Stitching",
+            "url": "https://www.gathered.how/arts-crafts/cross-stitch/",
+            "description": "汇集十字绣、现代刺绣图案、法式刺绣针法教学的专业网站。"
+          },
+          {
+            "name": "Needlepoint.com",
+            "url": "https://needlepoint.com/",
+            "description": "专注于针绣艺术、网格绣、线材选择与刺绣画框架的专业网店与博客。"
+          },
+          {
+            "name": "Origami.me",
+            "url": "https://origami.me/",
+            "description": "专注于折纸艺术的门户网站，提供从入门到高难度的折纸图解与视频。"
+          },
+          {
+            "name": "British Origami Society",
+            "url": "https://www.britishorigami.org/",
+            "description": "英国折纸协会官网，分享折纸历史、几何折纸设计与实战教程。"
+          },
+          {
+            "name": "Papercraft World",
+            "url": "https://papercraftworld.com/",
+            "description": "提供立体纸模、纸雕动物、三维几何纸艺模型的专业设计网站。"
+          },
+          {
+            "name": "Polymer Clay Central",
+            "url": "http://www.polymerclaycentral.com/",
+            "description": "软陶(软陶泥/超轻粘土)手艺人的灵感社区，含塑造与烘烤技巧。"
+          },
+          {
+            "name": "Polymer Clay Daily",
+            "url": "https://polymerclaydaily.com/",
+            "description": "每日展示全球顶尖软陶艺术家作品、珠宝手作与材质肌理创新。"
+          },
+          {
+            "name": "PotteryCrafters",
+            "url": "https://potterycrafters.com/",
+            "description": "专注于手工陶瓷、拉坯、釉料调制与陶艺拉坯机使用的教程指南。"
+          },
+          {
+            "name": "Ceramic Arts Network",
+            "url": "https://ceramicartsnetwork.org/",
+            "description": "全球陶艺家交流平台，汇集陶瓷雕塑、成型工艺与烧窑技术。"
+          },
+          {
+            "name": "Fine Woodworking",
+            "url": "https://www.finewoodworking.com/",
+            "description": "顶级手工木工杂志官网，探讨榫卯结构、木工凿削与家具制作。"
+          },
+          {
+            "name": "Woodworking Network",
+            "url": "https://www.woodworkingnetwork.com/",
+            "description": "提供传统木工手艺、数控木工造物与木材加工技术的综合门户。"
+          },
+          {
+            "name": "Popular Woodworking",
+            "url": "https://www.popularwoodworking.com/",
+            "description": "适合木工爱好者的造物指南，含图纸设计、工具保养与表面涂装。"
+          },
+          {
+            "name": "LumberJocks",
+            "url": "https://www.lumberjocks.com/",
+            "description": "木工造物者互动社区，分享自定义家具、木雕与手工木工工具。"
+          },
+          {
+            "name": "Carver's Companion",
+            "url": "http://www.carverscompanion.com/",
+            "description": "手工木雕艺术在线杂志，包含立体木雕、印第安木雕与刀具研磨。"
+          },
+          {
+            "name": "Glass Craftsman",
+            "url": "https://glasscraftsman.com/",
+            "description": "玻璃艺术造物网站，涵盖吹制玻璃、彩色镶嵌玻璃与熔凝玻璃工艺。"
+          },
+          {
+            "name": "Warm Glass",
+            "url": "https://www.warmglass.com/",
+            "description": "专注于热熔玻璃、窑融玻璃与玻璃首饰制作的专业技术论坛。"
+          },
+          {
+            "name": "Society of American Silversmiths",
+            "url": "https://www.silversmithing.com/",
+            "description": "美国银匠协会官网，展示传统手工打银、金属锻造与首饰修复。"
+          },
+          {
+            "name": "Ganoksin Orchid",
+            "url": "https://www.ganoksin.com/",
+            "description": "针对手工首饰制作、金工锻造、宝石镶嵌的全球最大专业知识库。"
+          },
+          {
+            "name": "Metal Clay Academy",
+            "url": "https://www.metalclayacademy.com/",
+            "description": "金属粘土(银粘土、铜粘土)造物学习网，从烧结到抛光全流程。"
+          },
+          {
+            "name": "Soap Making Forum",
+            "url": "https://www.soapmakingforum.com/",
+            "description": "手工冷制皂、热制皂与精油香皂制作的全球手艺人交流论坛。"
+          },
+          {
+            "name": "Bramble Berry",
+            "url": "https://www.brambleberry.com/",
+            "description": "手工香皂、蜡烛、身体乳DIY材料供应及高品质手作配方网站。"
+          },
+          {
+            "name": "Candle Science",
+            "url": "https://www.candlescience.com/",
+            "description": "专注于大豆蜡、大豆精油蜡烛、香氛造物的配方比对与材料供应。"
+          },
+          {
+            "name": "Candle DIY Guide",
+            "url": "https://www.candlemaking.com/",
+            "description": "介绍手工蜡烛灌装、芯线选择、调色调香的入门与进阶指南。"
+          },
+          {
+            "name": "LoveCrafts",
+            "url": "https://www.lovecrafts.com/",
+            "description": "汇集毛线编织、钩针、十字绣、面料缝纫的综合性手作艺术社区。"
+          },
+          {
+            "name": "The Spruce Crafts",
+            "url": "https://www.thesprucecrafts.com/",
+            "description": "包含上百种传统与现代手作(纸艺、编织、植物染)的百科全书。"
+          },
+          {
+            "name": "Gathered",
+            "url": "https://www.gathered.how/",
+            "description": "整合缝纫、编织、纸艺、刺绣等多种手作杂志内容的创意造物平台。"
+          },
+          {
+            "name": "Martha Stewart Crafts",
+            "url": "https://www.marthastewart.com/1502474/crafts-diy",
+            "description": "经典居家手工、节日装饰、烘焙造物与手工礼品制作灵感。"
+          },
+          {
+            "name": "DoItYourself",
+            "url": "https://www.doityourself.com/",
+            "description": "涵盖家居木工造物、庭院翻新、手工修缮与金属加工的实战网站。"
+          },
+          {
+            "name": "DIY Network (Magnolia)",
+            "url": "https://magnolia.com/",
+            "description": "专注于手工家具改色、旧物改造、房屋造物与生活美学创意的网站。"
+          },
+          {
+            "name": "Cut Out + Keep",
+            "url": "https://www.cutoutandkeep.net/",
+            "description": "充满活力的独立手作社区，分享服装改裁、饰品制作与手工礼物。"
+          },
+          {
+            "name": "Hackaday",
+            "url": "https://hackaday.com/",
+            "description": "极客与创客造物者的日更博客，汇集硬件重构、3D打印与机械装置。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Instructables - Leather",
+            "url": "https://www.instructables.com/craft/leather/",
+            "description": "Instructables的皮革专区，含钱包、鞍具、皮鞋制作全流程。"
+          },
+          {
+            "name": "Instructables - Woodworking",
+            "url": "https://www.instructables.com/workshop/woodworking/",
+            "description": "专业木工步骤图解，从简易书架到榫卯桌椅一应俱全。"
+          },
+          {
+            "name": "Instructables - Metalworking",
+            "url": "https://www.instructables.com/workshop/metalworking/",
+            "description": "手工金工、打铁锻造、焊接与金属模型制作指南。"
+          },
+          {
+            "name": "Skillshare - Crafts",
+            "url": "https://www.skillshare.com/browse/crafts",
+            "description": "在线创意技能平台的手工专区，含纸艺、印染、陶瓷与篆刻。"
+          },
+          {
+            "name": "Domestika - Craft",
+            "url": "https://www.domestika.org/en/courses/category/11-craft",
+            "description": "全球高品质艺术手作视频课程，涉及针毯、植物染色、花艺。"
+          },
+          {
+            "name": "Creativebug",
+            "url": "https://www.creativebug.com/",
+            "description": "提供数千集艺术与手作视频教程，由知名艺术家亲自演示讲授。"
+          },
+          {
+            "name": "Threadsmagazine",
+            "url": "https://www.threadsmagazine.com/",
+            "description": "高级定制缝纫、裁剪版型、打版与服装造物的专业缝纫杂志。"
+          },
+          {
+            "name": "Seamwork",
+            "url": "https://www.seamwork.com/",
+            "description": "现代手工制衣社区，提供可打印样板、面料挑选与缝纫技术指导。"
+          },
+          {
+            "name": "Mood Fabrics Sewing Network",
+            "url": "https://www.moodfabrics.com/blog/",
+            "description": "著名面料店Mood的博客，免费分享时尚服装版型与DIY裁缝教程。"
+          },
+          {
+            "name": "Tilly and the Buttons",
+            "url": "https://www.tillyandthebuttons.com/",
+            "description": "专为初学者设计的现代手工缝纫与服饰自制图文指南。"
+          },
+          {
+            "name": "Purl Soho",
+            "url": "https://www.purlsoho.com/create/",
+            "description": "设计感极强的编制、拼布、刺绣与毯绣造物灵感与免费图纸。"
+          },
+          {
+            "name": "Wool and the Gang",
+            "url": "https://www.woolandthegang.com/",
+            "description": "时尚棒针与钩针手作品牌，主打环保线材与现代化编织包。"
+          },
+          {
+            "name": "WEBS - America's Yarn Store",
+            "url": "https://www.yarn.com/",
+            "description": "美国大型毛线与编织工具网店，含海量编织图纸与线材搭配。"
+          },
+          {
+            "name": "Lion Brand Yarn",
+            "url": "https://www.lionbrand.com/",
+            "description": "经典毛线品牌官网，提供数千款免费棒针与钩针编织图案。"
+          },
+          {
+            "name": "KnitPicks",
+            "url": "https://www.knitpicks.com/",
+            "description": "提供高质量编制针、毛线与编织电子书的专业DIY社区。"
+          },
+          {
+            "name": "AllFreeCrochet",
+            "url": "https://www.allfreecrochet.com/",
+            "description": "完全免费的钩针编织图案库，包含毯子、娃娃、衣服与帽子。"
+          },
+          {
+            "name": "Crochet Pattern Central",
+            "url": "https://www.crochetpatterncentral.com/",
+            "description": "分门别类的经典钩针图纸索引网，搜集数万个开源图纸。"
+          },
+          {
+            "name": "FeltMagnet",
+            "url": "https://feltmagnet.com/",
+            "description": "涵盖羊毛毡、扎染、画框制作与黏土工艺的通俗手作指南。"
+          },
+          {
+            "name": "Needlecrafter",
+            "url": "http://www.needlecrafter.com/",
+            "description": "汇集古董刺绣图案、钩针图谱与复古针织样式的历史资源库。"
+          },
+          {
+            "name": "Sublime Stitching",
+            "url": "https://sublimestitching.com/",
+            "description": "刺绣艺术家Jenny Hart创立的现代刺绣转印纸与刺绣造物网。"
+          },
+          {
+            "name": "DMC Official",
+            "url": "https://www.dmc.com/",
+            "description": "国际顶级刺绣线品牌官网，提供大量免费刺绣图纸与针法演示。"
+          },
+          {
+            "name": "Cross-Stitch Patterns",
+            "url": "https://www.cross-stitch-patterns.online/",
+            "description": "免费矢量化十字绣图案下载与转换工具网站。"
+          },
+          {
+            "name": "3D Hubs (Hubs)",
+            "url": "https://www.hubs.com/",
+            "description": "链接全球手艺人与制造工厂的精密加工、3D打印与数控造物网。"
+          },
+          {
+            "name": "Shapeways",
+            "url": "https://www.shapeways.com/",
+            "description": "提供3D打印设计、金属铸造与个性化手作产品定制制造服务。"
+          },
+          {
+            "name": "GrabCAD",
+            "url": "https://grabcad.com/",
+            "description": "工程师与机械造物者的CAD模型库，含海量结构件与机械图纸。"
+          },
+          {
+            "name": "Cults3D",
+            "url": "https://cults3d.com/",
+            "description": "国际化3D打印造物模型交易与分享市场，含许多设计师原创构件。"
+          },
+          {
+            "name": "Instructables - 3D Printing",
+            "url": "https://www.instructables.com/technology/3d-printing/",
+            "description": "结合3D打印与后期涂装、拼装的手工造物案例。"
+          },
+          {
+            "name": "Leathercraft Masterclass",
+            "url": "https://www.leathercraftmasterclass.com/",
+            "description": "顶级高端奢华皮具手工制作(缝线、油边、烫金)在线课程。"
+          },
+          {
+            "name": "Leathercraft Library",
+            "url": "https://www.leathercraftlibrary.com/",
+            "description": "搜集经典皮艺图纸、雕花图案与皮雕艺术教程的电子图书馆。"
+          },
+          {
+            "name": "Leather Tools Australia",
+            "url": "https://leathertoolbox.com/",
+            "description": "专注于手工皮艺工具鉴别、皮革硬度分析与皮具制作教程。"
+          },
+          {
+            "name": "Wood Magazine",
+            "url": "https://www.woodmagazine.com/",
+            "description": "权威木工工具测评、车床木工、木雕与家具设计图纸网站。"
+          },
+          {
+            "name": "Woodworking Former (WoodNet)",
+            "url": "https://forums.woodnet.net/",
+            "description": "历史悠久的木工爱好者论坛，讨论旧工具修整与榫卯设计。"
+          },
+          {
+            "name": "Japanese Woodworking",
+            "url": "https://www.japanesewoodworking.com/",
+            "description": "专注于日本传统手工木工工具(刨刀、凿子)与接榫技术。"
+          },
+          {
+            "name": "Sawmill Creek",
+            "url": "https://www.sawmillcreek.org/",
+            "description": "极其活跃的木工、车木、激光雕刻与木艺造物交流社区。"
+          },
+          {
+            "name": "Woodworkers Institute",
+            "url": "https://www.woodworkersinstitute.com/",
+            "description": "涵盖车木、木雕、柜体制作与家具修复的综合木艺网。"
+          },
+          {
+            "name": "Wood Central",
+            "url": "http://www.woodcentral.com/",
+            "description": "包含木工消息、手工工具使用技巧、木材烘干与抛光研讨。"
+          },
+          {
+            "name": "Handtool Woodworking Institute",
+            "url": "https://www.woodwrightschool.com/",
+            "description": "著名木工大师Roy Underhill创办的纯传统纯手工无电动工具木工网。"
+          },
+          {
+            "name": "Clay-Times Magazine",
+            "url": "https://www.claytimes.com/",
+            "description": "陶艺家与手工泥塑爱好者杂志，探讨陶泥收缩与窑炉烧制。"
+          },
+          {
+            "name": "Studio Potter",
+            "url": "https://studiopotter.org/",
+            "description": "非营利性陶艺文化交流网站，关注传统陶艺传承与当代陶瓷造物。"
+          },
+          {
+            "name": "Mudtools",
+            "url": "https://mudtools.com/",
+            "description": "专业陶艺手工塑形工具、修坯刮板与拉坯轮设计制造者官网。"
+          },
+          {
+            "name": "Glazy",
+            "url": "https://glazy.org/",
+            "description": "全球陶艺家共享的陶瓷釉料配方、三角锥测温与烧成效果数据库。"
+          },
+          {
+            "name": "Glass Art Society",
+            "url": "https://www.glassart.org/",
+            "description": "国际玻璃艺术协会官网，促进手工玻璃吹制、铸造与雕刻。"
+          },
+          {
+            "name": "Society of Glass Beadmakers",
+            "url": "https://www.isgb.org/",
+            "description": "专注于灯工玻璃珠(Lampworking)与灯工手饰制作的专业协会。"
+          },
+          {
+            "name": "Stained Glass Association",
+            "url": "https://stainedglass.org/",
+            "description": "美国彩色镶嵌玻璃协会，提供教堂玻璃、彩色镶嵌玻璃工法。"
+          },
+          {
+            "name": "Delphi Glass",
+            "url": "https://www.delphiglass.com/",
+            "description": "彩色玻璃、马赛克拼贴、玻璃熔融与灯工工具材料供应网。"
+          },
+          {
+            "name": "Warm Glass UK",
+            "url": "https://www.warmglass.org.uk/",
+            "description": "欧洲权威的热熔玻璃造物技术指导、模具制作与窑熔指南。"
+          },
+          {
+            "name": "Society of North American Goldsmiths",
+            "url": "https://www.snagmetalsmith.org/",
+            "description": "北美金工协会，推动当代首饰设计、金工锻造与金属雕塑。"
+          },
+          {
+            "name": "Metal Clay Society",
+            "url": "https://www.amcaaw.info/",
+            "description": "汇集全球金属粘土(PMC)艺术家的造物作品与烧结配方。"
+          },
+          {
+            "name": "Jewellers Academy",
+            "url": "https://www.jewellersacademy.com/",
+            "description": "提供手工珠宝、蜡模雕刻、金工锯切与包镶技术的在线学院。"
+          },
+          {
+            "name": "Rio Grande",
+            "url": "https://www.riogrande.com/",
+            "description": "全球最大的珠宝首饰手作工具、金银板材与铸造设备供应商。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Stuller",
+            "url": "https://www.stuller.com/",
+            "description": "珠宝造物者工具、宝石裸石、铸件与定制金工配件专业网站。"
+          },
+          {
+            "name": "Soap Guild",
+            "url": "https://www.soapguild.org/",
+            "description": "手工香皂与化妆品造物者协会，提供配方安全与制作标准。"
+          },
+          {
+            "name": "Soap Queen",
+            "url": "https://www.soapqueen.com/",
+            "description": "Bramble Berry创办人的手作香皂、泡泡弹与身体磨砂膏教学博客。"
+          },
+          {
+            "name": "Modern Candle Making",
+            "url": "https://craftresourcenetwork.com/",
+            "description": "现代手工香氛蜡烛、容器挑选与精油溶解度测试论坛。"
+          },
+          {
+            "name": "Paper Mill Store",
+            "url": "https://www.thepapermillstore.com/",
+            "description": "专注于手工造纸、艺术卡纸、手工书绑定与纸艺材料网。"
+          },
+          {
+            "name": "Hand Papermaking",
+            "url": "https://www.handpapermaking.org/",
+            "description": "致力于传承传统手工造纸术、植物纤维造纸与纸艺术。"
+          },
+          {
+            "name": "Bookbinding.com",
+            "url": "https://www.societyofbookbinders.com/",
+            "description": "英国手工书籍装帧协会，包含线装书、西洋皮革装帧工艺。"
+          },
+          {
+            "name": "DAS Bookbinding",
+            "url": "https://www.youtube.com/c/DASBookbinding",
+            "description": "(配套官网资源) 全球知名的古典与现代手工装帧与书籍修缮教程。"
+          },
+          {
+            "name": "Guild of Book Workers",
+            "url": "https://guildofbookworkers.org/",
+            "description": "美国手工装帧、古籍修复、手工大理石纹理纸制作协会。"
+          },
+          {
+            "name": "Paper Mache Resource",
+            "url": "https://www.ultimatepapermache.com/",
+            "description": "专注于纸浆雕塑、纸浆面具与纸浆复合材料造物教程。"
+          },
+          {
+            "name": "Miniatures.org (NAME)",
+            "url": "https://www.miniatures.org/",
+            "description": "国家微缩艺术协会，推广1:12比例娃娃屋与场景造物。"
+          },
+          {
+            "name": "Greenleaf Dollhouses",
+            "url": "https://www.greenleafdollhouses.com/",
+            "description": "专注于木质激光切割娃娃屋套件、拼装与微缩改装社区。"
+          },
+          {
+            "name": "DIY Dolls House",
+            "url": "https://www.dollhouseminiatures.com/",
+            "description": "汇集微缩家具制作、微缩布艺与微缩灯光电路布置网。"
+          },
+          {
+            "name": "Model Scenery World",
+            "url": "https://www.modelsceneryworld.com/",
+            "description": "微缩地形、沙盘场景、树木与建筑手工制作技术分享。"
+          },
+          {
+            "name": "Fine Miniature Association",
+            "url": "https://www.igma.org/",
+            "description": "国际微缩艺术工匠协会，代表全球最高精度的微缩造物水准。"
+          },
+          {
+            "name": "Botanical PaperWorks",
+            "url": "https://www.botanicalpaperworks.com/",
+            "description": "专注于种子纸(可发芽的手工纸)制作与植物纸艺设计。"
+          },
+          {
+            "name": "Paper Flower Academy",
+            "url": "https://www.paperfloweracademy.com/",
+            "description": "顶级手工褶皱纸花、仿真植物与纸艺花束造物网。"
+          },
+          {
+            "name": "Papercraft Museum",
+            "url": "https://www.papercraftmuseum.com/",
+            "description": "搜集各类动漫、机械与建筑纸模型图纸的免费下载站。"
+          },
+          {
+            "name": "Canon Creative Park",
+            "url": "https://creativepark.canon/",
+            "description": "佳能官方纸艺造物库，免费提供立体纸模、建筑与节日手工图纸。"
+          },
+          {
+            "name": "Yamaha Papercraft",
+            "url": "https://global.yamaha-motor.com/showroom/papercraft/",
+            "description": "雅马哈官方超精细摩托车与动物立体纸模型造物库。"
+          },
+          {
+            "name": "Cardboard Modeling",
+            "url": "https://www.cardboardmodel.com/",
+            "description": "瓦楞纸箱改造、瓦楞纸家具与硬纸板创意造物指南。"
+          },
+          {
+            "name": "Terrarium Tribe",
+            "url": "https://terrariumtribe.com/",
+            "description": "专注于微景观瓶、生态缸造物、苔藓微缩制作的专业指南。"
+          },
+          {
+            "name": "SerpaDesign Shop/Blog",
+            "url": "https://www.serpadesign.com/",
+            "description": "知名生态缸造物大师Tanner Serpa的植物缸与水陆缸指南。"
+          },
+          {
+            "name": "Budo Dragon Arts",
+            "url": "https://www.bonsaiempire.com/",
+            "description": "全球盆景艺术网，含植物剪枝、造型绑扎与盆景盆造物。"
+          },
+          {
+            "name": "Floral Design Magazine",
+            "url": "https://www.floraldesignmag.com/",
+            "description": "手工花艺设计、压花艺术、干花制作与压花框架造物。"
+          },
+          {
+            "name": "Pressed Flower Guild",
+            "url": "https://www.pressedflowerguild.org.uk/",
+            "description": "英国压花艺术协会，分享植物标本压制与植物色彩保持技术。"
+          },
+          {
+            "name": "Resin Crafts Blog",
+            "url": "https://resincraftsblog.com/",
+            "description": "专注于滴胶(水晶滴胶/环氧树脂)手作、河流桌与封样造物。"
+          },
+          {
+            "name": "Resin Obsession",
+            "url": "https://www.resinobsession.com/",
+            "description": "环氧树脂模具、滴胶首饰、气泡消除与颜料混合教程网。"
+          },
+          {
+            "name": "Smooth-On",
+            "url": "https://www.smooth-on.com/",
+            "description": "全球工业与艺术翻模材料巨头，含极其详细的硅胶翻模与树脂浇铸视频。"
+          },
+          {
+            "name": "Reynolds Advanced Materials",
+            "url": "https://www.reynoldsam.com/",
+            "description": "提供特效化妆、雕塑翻模、人体翻模与道具造物指南。"
+          },
+          {
+            "name": "Stan Winston School",
+            "url": "https://www.stanwinstonschool.com/",
+            "description": "顶级电影道具、怪兽雕塑、特效机械与手套造物在线大师课。"
+          },
+          {
+            "name": "Replica Prop Forum (RPF)",
+            "url": "https://www.therpf.com/",
+            "description": "全球最大的电影道具、Cosplay盔甲与影视装备DIY造物论坛。"
+          },
+          {
+            "name": "Cosplay Central",
+            "url": "https://www.cosplaycentral.com/",
+            "description": "服装打样、EVA泡沫道具切割、热塑板(Worbla)塑形网。"
+          },
+          {
+            "name": "Kamui Cosplay",
+            "url": "https://www.kamuicosplay.com/",
+            "description": "道具大师Kamui的官方博客，提供EVA泡沫盔甲与LED道具教程。"
+          },
+          {
+            "name": "Foamsmithing (Punished Props)",
+            "url": "https://www.punishedprops.com/",
+            "description": "专注于泡沫造物、道具上色、3D打印道具与模型制作。"
+          },
+          {
+            "name": "Armor Archive",
+            "url": "http://www.armorarchive.org/",
+            "description": "古代金属铠甲、板甲手工打制、冷锻与结构图纸历史资料库。"
+          },
+          {
+            "name": "Knifeforums",
+            "url": "https://www.knifeforums.com/",
+            "description": "手工做刀、热处理、刀柄雕刻与手工锻打刀具专业社区。"
+          },
+          {
+            "name": "BladeForums - Custom",
+            "url": "https://www.bladeforums.com/",
+            "description": "汇集全球顶尖手工定制刀匠、锻造工艺与皮革刀鞘制作。"
+          },
+          {
+            "name": "American Bladesmith Society",
+            "url": "https://www.americanbladesmith.org/",
+            "description": "美国锻造刀匠协会，推广花纹钢(大马士革钢)手工锻造。"
+          },
+          {
+            "name": "Australian Blacksmith Network",
+            "url": "https://www.blacksmith.org.au/",
+            "description": "传统铁艺锻造、铁匠炉搭建、手工铁器制作教程。"
+          },
+          {
+            "name": "Anvilfire",
+            "url": "https://www.anvilfire.com/",
+            "description": "传统铁匠与金属造物网，含打铁工具自制、打铁技巧与锻造图纸。"
+          },
+          {
+            "name": "Custom Rod Builders",
+            "url": "https://www.rodbuilding.org/",
+            "description": "手工钓鱼竿定制、缠线工艺、轮座固定与漆面处理论坛。"
+          },
+          {
+            "name": "Luthier Com (Musical DIY)",
+            "url": "https://www.lutherie.net/",
+            "description": "手工乐器制造(吉他、提琴)技术讨论与声学木材选择。"
+          },
+          {
+            "name": "Project Guitar",
+            "url": "https://www.projectguitar.com/",
+            "description": "专注于手工电吉他与木吉他自制、拾音器接线与琴颈打磨。"
+          },
+          {
+            "name": "Musical Instrument Makers Guild",
+            "url": "https://www.mimf.com/",
+            "description": "交互式乐器制造论坛，探讨各类弦乐器、管乐器手工造物。"
+          },
+          {
+            "name": "StewMac",
+            "url": "https://www.stewmac.com/",
+            "description": "顶级乐器制作工具与修复材料网，含丰富的吉他造物视频指南。"
+          },
+          {
+            "name": "Violin Making",
+            "url": "https://www.violinist.com/making/",
+            "description": "手工提琴制作工艺、面板刮削、漆料调制与音柱调校。"
+          },
+          {
+            "name": "Kites.org",
+            "url": "https://www.kite.org/",
+            "description": "美国风筝协会，提供传统手工风筝骨架绑扎、蒙面与飞行结构。"
+          },
+          {
+            "name": "Model Airplane News",
+            "url": "https://www.modelairplanenews.com/",
+            "description": "航模造物网站，包含轻木航模切割、蒙皮与动力组装。"
+          },
+          {
+            "name": "Outerzone",
+            "url": "https://outerzone.co.uk/",
+            "description": "海量复古轻木模型飞机制作图纸(PDF)免费下载数据库。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Model Ship World",
+            "url": "https://modelshipworld.com/",
+            "description": "全球顶级手工木质船模制作论坛，含古代帆船龙骨拼装。"
+          },
+          {
+            "name": "Ships in Scale",
+            "url": "https://seawatchbooks.com/",
+            "description": "专注于高精度比例船模造物、索具绑扎与船体贴板书籍与指南。"
+          },
+          {
+            "name": "Scratchbuilt Model Railroading",
+            "url": "https://www.scratchbuilder.org/",
+            "description": "火车模型与铁道场景手工纯自制(Scratchbuild)论坛。"
+          },
+          {
+            "name": "Scalemates",
+            "url": "https://www.scalemates.com/",
+            "description": "塑料拼装模型、战车、高达造物者最大的比例模型数据库。"
+          },
+          {
+            "name": "Armorama",
+            "url": "https://www.armorama.com/",
+            "description": "军事模型、手工场景铺设、做旧旧化与泥效果制作指南。"
+          },
+          {
+            "name": "Model Painting Guides",
+            "url": "https://www.taleofpainters.com/",
+            "description": "手办与微缩模型涂装博客，含喷笔技巧、干刷与渍洗法。"
+          },
+          {
+            "name": "Putty & Paint",
+            "url": "https://www.puttyandpaint.com/",
+            "description": "全球顶尖模型雕刻与手办涂装艺术家的作品展示与剖析平台。"
+          },
+          {
+            "name": "Tabletop Terrain DIY",
+            "url": "https://www.dconstruct.org/",
+            "description": "桌游手作地形、泡沫雕刻战棋地图与废土场景造物指南。"
+          },
+          {
+            "name": "Terragenesis",
+            "url": "https://www.terragenesis.co.uk/",
+            "description": "专注于废弃材料改造桌面战棋与微缩地形造物的老牌社区。"
+          },
+          {
+            "name": "Cardboard Automata",
+            "url": "https://www.exploratorium.edu/pie/ideas/automata.html",
+            "description": "旧金山探索馆推出的纸板机械凸轮与动能雕塑手作指南。"
+          },
+          {
+            "name": "Cabaret Mechanical Theatre",
+            "url": "https://cabaret.co.uk/",
+            "description": "自动化机械木偶(Automata)艺术网站，展示巧妙机械结构。"
+          },
+          {
+            "name": "Timberkits",
+            "url": "https://www.timberkits.com/",
+            "description": "传统木质自动化机械模型设计，提供木质齿轮与传动系统。"
+          },
+          {
+            "name": "Kinetic Art World",
+            "url": "https://www.kinetic-art.org/",
+            "description": "动态雕塑与风力机械造物(如Theo Jansen风力巨兽)灵感库。"
+          },
+          {
+            "name": "Clockmaker.it",
+            "url": "http://www.clockmaker.it/",
+            "description": "纯手工木质摆钟、铜质时钟齿轮加工与钟表造物技术论坛。"
+          },
+          {
+            "name": "Horology Source",
+            "url": "https://www.bhi.co.uk/",
+            "description": "英国钟表机构官网，传承传统手工钟表制作与精密机械修复。"
+          },
+          {
+            "name": "Custom Fly Tying",
+            "url": "https://www.flytyingforum.com/",
+            "description": "飞钓(Fly Fishing)手工毛钩绑扎论坛，结合羽毛与兽毛手艺。"
+          },
+          {
+            "name": "Feather Craft",
+            "url": "https://www.feather-craft.com/",
+            "description": "羽毛手工艺、飞钓假饵绑扎与天然羽毛染色材料网。"
+          },
+          {
+            "name": "Taxidermy.net",
+            "url": "https://www.taxidermy.net/",
+            "description": "标本制作与动物塑形网，包含传统标本制作、剥制与骨骼重组。"
+          },
+          {
+            "name": "Bone Clones Academy",
+            "url": "https://boneclones.com/",
+            "description": "骨骼复制品、铸造翻模与自然历史微缩道具制造技术。"
+          },
+          {
+            "name": "Insect Mounting Guides",
+            "url": "https://www.amateurentomologists.org/",
+            "description": "昆虫标本整姿、展翅、包埋与标本盒制作官方指南。"
+          },
+          {
+            "name": "Entomology Craft",
+            "url": "https://www.bugunderglass.com/",
+            "description": "现代昆虫艺术、立体昆虫画框与植物干花复合造物博客。"
+          },
+          {
+            "name": "Dried Flower Guild",
+            "url": "https://www.driedflowercraft.co.uk/",
+            "description": "干花脱水处理、永生花制作与花环绑扎手作指南。"
+          },
+          {
+            "name": "Wreath Making Guide",
+            "url": "https://www.wreathpro.com/",
+            "description": "传统手工花环、藤条编织与节日门环造物技术。"
+          },
+          {
+            "name": "Macrame Pattern Central",
+            "url": "https://www.macrameknots.com/",
+            "description": "绳结艺术(Macrame)图谱，含手工壁挂、花盆吊篮编织。"
+          },
+          {
+            "name": "Knotty Crafts",
+            "url": "https://www.netknots.com/",
+            "description": "全球最全的实用与装饰绳结打法动画演示与绳艺造物。"
+          },
+          {
+            "name": "Paracord Guild",
+            "url": "https://www.paracordguild.com/",
+            "description": "伞绳手作指南，包含伞绳手链、工具柄包裹与野外生存编织。"
+          },
+          {
+            "name": "Kumihimo Resource",
+            "url": "https://kumihimoresource.com/",
+            "description": "日本传统编绳(组纽)艺术，使用圆盘进行精细手链线材编织。"
+          },
+          {
+            "name": "Tatting Patterns",
+            "url": "https://www.tattingpatterncentral.com/",
+            "description": "梭织蕾丝(Tatting)图案索引，利用梭子制作古典蕾丝网花。"
+          },
+          {
+            "name": "Bobbin Lace Guild",
+            "url": "https://www.laceguild.org/",
+            "description": "传统枕式线轴蕾丝(Bobbin Lace)手艺保护与编织图纸。"
+          },
+          {
+            "name": "Rug Hooking Magazine",
+            "url": "https://www.rughookingonline.com/",
+            "description": "手工戳戳绣、地毯钩织与布条戳绣造物杂志官网。"
+          },
+          {
+            "name": "Punch Needle World",
+            "url": "https://punchneedleworld.com/",
+            "description": "现代戳戳绣(Punch Needle)入门、针法、图案与家居造物。"
+          },
+          {
+            "name": "Tufting Nation",
+            "url": "https://tuftingnation.com/",
+            "description": "簇绒枪(Tufting)簇绒地毯手作、框架搭建与地毯修剪指南。"
+          },
+          {
+            "name": "Felt Craft / Wool Felt",
+            "url": "https://www.feltingcrafts.com/",
+            "description": "针刺羊毛毡与湿羊毛毡造物，从立体小动物到羊毛毡帽子。"
+          },
+          {
+            "name": "Wet Felting Institute",
+            "url": "https://www.wetfelting.com/",
+            "description": "传统湿毡无缝成型工艺，利用水与肥皂制作羊毛包与靴子。"
+          },
+          {
+            "name": "Spinning Wheel Resource",
+            "url": "https://www.spin-off.com/",
+            "description": "《Spin Off》杂志网，关注手工纺纱、纺车使用与天然纤维。"
+          },
+          {
+            "name": "Natural Dyeing (Botanical Colors)",
+            "url": "https://botanicalcolors.com/",
+            "description": "天然植物染色(草木染)、蓝染(Indigo)与媒染剂使用。"
+          },
+          {
+            "name": "Maiwa School of Textiles",
+            "url": "https://maiwa.com/",
+            "description": "专注于全球传统纺织工艺、块印(Block Printing)与靛蓝素染。"
+          },
+          {
+            "name": "Tie-Dye Your Summer",
+            "url": "https://www.tiedyedyped.com/",
+            "description": "扎染(Tie-Dye)螺旋、折叠图案配方与冷水染料手作。"
+          },
+          {
+            "name": "Marbling Paper / Ebru",
+            "url": "https://www.ebrumarmara.com/",
+            "description": "土耳其水上湿染(Ebru)与大理石纹纸手工制作技术。"
+          },
+          {
+            "name": "Guild of Straw Craftsmen",
+            "url": "https://www.strawcraftsmen.co.uk/",
+            "description": "传统麦秆编织、稻草人手作与草编工艺保护协会。"
+          },
+          {
+            "name": "Basketmakers' Association",
+            "url": "https://www.basketmakersassociation.org.uk/",
+            "description": "篮筐编织协会，包含柳条编织、竹编与藤条造物。"
+          },
+          {
+            "name": "Bamboo Craft Japan",
+            "url": "https://www.bamboocraft.jp/",
+            "description": "日本传统竹艺、剖竹、竹编破削与竹器制作图录。"
+          },
+          {
+            "name": "Broommaking",
+            "url": "https://www.craftschools.org/",
+            "description": "传统手工高粱扫帚绑扎、木柄削制与高粱秆编织。"
+          },
+          {
+            "name": "Mosaic Art Supply",
+            "url": "https://www.mosaicartsupply.com/",
+            "description": "马赛克剪切、马赛克拼贴磁砖、玻璃颗粒与接缝剂造物。"
+          },
+          {
+            "name": "British Mosaic Society",
+            "url": "https://www.bamm.org.uk/",
+            "description": "英国现代与古典马赛克艺术协会，含墙体与地面拼贴技术。"
+          },
+          {
+            "name": "Terrazzo DIY",
+            "url": "https://www.terrazzo.org/",
+            "description": "水磨石造物指南，含水泥与树脂骨料混合、打磨与抛光。"
+          },
+          {
+            "name": "Concrete Crafts",
+            "url": "https://www.concretecrafts.com/",
+            "description": "手工水泥浇筑、清水混凝土花盆、硅胶模具水泥制件。"
+          },
+          {
+            "name": "Sand Art World",
+            "url": "https://www.sandartworld.com/",
+            "description": "沙画艺术、瓶中彩色沙画堆叠与沙雕立体造物指南。"
+          },
+          {
+            "name": "Pyrography Resource",
+            "url": "https://www.pyrographyonline.com/",
+            "description": "烙画(木烙画、皮烙画)专业网站，含烙铁笔温度控制与阴影。"
+          },
+          {
+            "name": "Scrimshaw Arts",
+            "url": "https://www.scrimshaw.net/",
+            "description": "传统猛犸象牙/牛骨雕刻与针刺描黑(Scrimshaw)古老细工手艺。"
+          }
         ]
       }
     ]
@@ -5292,6 +5969,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

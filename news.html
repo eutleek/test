@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="全球新闻媒体与国际时事阅读导航">
+<title>新闻 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>新闻</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,546 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">新闻 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "新闻媒体",
+    "icon": "📰",
+    "color": "linear-gradient(135deg, #0984e3, #00cec9)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "北美地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Associated Press (AP News)",
+            "url": "https://apnews.com",
+            "description": "全球最大通讯社之一，客观中立的国际新闻第一源头。"
+          },
+          {
+            "name": "Reuters",
+            "url": "https://www.reuters.com",
+            "description": "全球顶级路透社国际新闻网，商业与全球时事结合。"
+          },
+          {
+            "name": "NPR (National Public Radio)",
+            "url": "https://www.npr.org",
+            "description": "美国国家公共广播电台，深度的国际人文与新闻特写。"
+          },
+          {
+            "name": "PBS NewsHour",
+            "url": "https://www.pbs.org/newshour",
+            "description": "美国公共电视台旗下的深度严肃国际新闻门户。"
+          },
+          {
+            "name": "CNN International",
+            "url": "https://edition.cnn.com",
+            "description": "全球极具影响力的 24 小时国际新闻大刊。"
+          },
+          {
+            "name": "ABC News (US)",
+            "url": "https://abcnews.go.com",
+            "description": "美国广播公司国际与本土综合新闻网。"
+          },
+          {
+            "name": "CBS News",
+            "url": "https://www.cbsnews.com",
+            "description": "传统三大网之一，国际热点与专题报道。"
+          },
+          {
+            "name": "NBC News",
+            "url": "https://www.nbcnews.com",
+            "description": "北美主流新闻大刊，图文与视频流并重。"
+          },
+          {
+            "name": "USA Today",
+            "url": "https://www.usatoday.com",
+            "description": "报版排版风格，快节奏全美及国际新闻。"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com",
+            "description": "专注于全球宏观经济、国际市场与财经新闻。"
+          },
+          {
+            "name": "POLITICO (US)",
+            "url": "https://www.politico.com",
+            "description": "专注于北美与国际地缘政治、政策解读。"
+          },
+          {
+            "name": "The Hill",
+            "url": "https://thehill.com",
+            "description": "华盛顿政治、政策与国际关系核心网媒。"
+          },
+          {
+            "name": "Foreign Policy",
+            "url": "https://foreignpolicy.com",
+            "description": "国际外交、地缘战略与全球时事智库网(开放文章丰富)。"
+          },
+          {
+            "name": "Vox",
+            "url": "https://www.vox.com",
+            "description": "主打“解释型新闻”(Explainer)，图文并茂解析国际事件背景。"
+          },
+          {
+            "name": "Axios",
+            "url": "https://www.axios.com",
+            "description": "独创短小精炼的“Smart Brevity”流派，快速浏览全球大事件。"
+          },
+          {
+            "name": "CBC News (Canada)",
+            "url": "https://www.cbc.ca/news",
+            "description": "加拿大国家广播公司，北美极具权威的国际观察角度。"
+          },
+          {
+            "name": "The Globe and Mail",
+            "url": "https://www.theglobeandmail.com",
+            "description": "加拿大老牌全国性日报国际版。"
+          },
+          {
+            "name": "Global News Canada",
+            "url": "https://globalnews.ca",
+            "description": "加拿大全天候国际与本土新闻门户。"
+          },
+          {
+            "name": "CTV News",
+            "url": "https://www.ctvnews.ca",
+            "description": "加拿大主流电视新闻网。"
+          },
+          {
+            "name": "National Post",
+            "url": "https://nationalpost.com",
+            "description": "加拿大深度国际评论与时事分析网。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "欧洲地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "BBC News",
+            "url": "https://www.bbc.com/news",
+            "description": "全球公认最权威的国际新闻与公共广播门户。"
+          },
+          {
+            "name": "The Guardian",
+            "url": "https://www.theguardian.com",
+            "description": "英国《卫报》，完全开放的高质量国际新闻与深度调查。"
+          },
+          {
+            "name": "The Independent",
+            "url": "https://www.independent.co.uk",
+            "description": "英国独立报，纯数字化的全球新闻大刊。"
+          },
+          {
+            "name": "Sky News (UK)",
+            "url": "https://news.sky.com",
+            "description": "英国 24 小时快讯与国际现场新闻。"
+          },
+          {
+            "name": "Channel 4 News",
+            "url": "https://www.channel4.com/news",
+            "description": "英国深度调查与人权/国际冲突报道。"
+          },
+          {
+            "name": "Euronews",
+            "url": "https://www.euronews.com",
+            "description": "欧洲新闻台，多语种视角全方位报道欧洲及全球局势。"
+          },
+          {
+            "name": "France 24 (English)",
+            "url": "https://www.france24.com/en",
+            "description": "法国官方国际新闻网，极具法式国际视野。"
+          },
+          {
+            "name": "Le Monde (English)",
+            "url": "https://www.lemonde.fr/en",
+            "description": "法国《世界报》英文版，欧洲外交与思想智库新闻。"
+          },
+          {
+            "name": "RFI (Radio France Internationale)",
+            "url": "https://www.rfi.fr/en",
+            "description": "法国国际广播电台全球快讯。"
+          },
+          {
+            "name": "Le Figaro",
+            "url": "https://www.lefigaro.fr",
+            "description": "法国历史最悠久的综合性主流新闻网。"
+          },
+          {
+            "name": "Deutsche Welle (DW)",
+            "url": "https://www.dw.com",
+            "description": "德国之声，德国官方面向全球的国际新闻大刊。"
+          },
+          {
+            "name": "Der Spiegel (International)",
+            "url": "https://www.spiegel.de/international",
+            "description": "德国《镜报》国际版，深度调查报道标杆。"
+          },
+          {
+            "name": "Tagesschau",
+            "url": "https://www.tagesschau.de",
+            "description": "德国第一电视台 flagship 每日新闻网。"
+          },
+          {
+            "name": "ZEIT ONLINE",
+            "url": "https://www.zeit.de/index",
+            "description": "德国《时代周报》，聚焦政治、文化与国际思想流派。"
+          },
+          {
+            "name": "Swissinfo (SWI)",
+            "url": "https://www.swissinfo.ch/eng",
+            "description": "瑞士资讯，以中立国视角提供全球与欧洲新闻。"
+          },
+          {
+            "name": "NZZ (Neue Zürcher Zeitung)",
+            "url": "https://www.nzz.ch",
+            "description": "瑞士苏黎世报，欧洲极具深度的国际政经新闻。"
+          },
+          {
+            "name": "ANSA (English)",
+            "url": "https://www.ansa.it/english",
+            "description": "意大利国家通讯社，地中海与欧洲动态。"
+          },
+          {
+            "name": "Corriere della Sera",
+            "url": "https://www.corriere.it",
+            "description": "意大利《晚邮报》，本土最大的新闻门户。"
+          },
+          {
+            "name": "El País (English)",
+            "url": "https://english.elpais.com",
+            "description": "西班牙《国家报》英文版，南欧与拉美外交焦点。"
+          },
+          {
+            "name": "RTVE",
+            "url": "https://www.rtve.es/noticias",
+            "description": "西班牙国家广播电视台国际新闻。"
+          },
+          {
+            "name": "Dutchnews",
+            "url": "https://www.dutchnews.nl",
+            "description": "荷兰核心国际与本土时事网。"
+          },
+          {
+            "name": "NOS News",
+            "url": "https://nos.nl",
+            "description": "荷兰公共广播机构直观新闻门户。"
+          },
+          {
+            "name": "Euractiv",
+            "url": "https://www.euractiv.com",
+            "description": "专注于布鲁塞尔欧盟总部政策、法案与欧洲一体化新闻。"
+          },
+          {
+            "name": "POLITICO Europe",
+            "url": "https://www.politico.eu",
+            "description": "欧洲政治中心(布鲁塞尔)的顶尖政经快讯网。"
+          },
+          {
+            "name": "The Barents Observer",
+            "url": "https://thebarentsobserver.com",
+            "description": "专注于北极圈、斯堪的纳维亚与极地地缘政治的小众权威网。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "亚太地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "NHK WORLD-JAPAN",
+            "url": "https://www3.nhk.or.jp/nhkworld",
+            "description": "日本放送协会官方国际新闻网，权威准确。"
+          },
+          {
+            "name": "The Japan Times",
+            "url": "https://www.japantimes.co.jp",
+            "description": "日本最老牌的英文国际新闻门户。"
+          },
+          {
+            "name": "Kyodo News (共同社)",
+            "url": "https://english.kyodonews.net",
+            "description": "日本最大的国家级通讯社。"
+          },
+          {
+            "name": "Asahi Shimbun (English)",
+            "url": "https://www.asahi.com/ajw",
+            "description": "朝日新闻英文版，深度社会与国际观察。"
+          },
+          {
+            "name": "Mainichi Shimbun (English)",
+            "url": "https://mainichi.jp/english",
+            "description": "每日新闻英文门户。"
+          },
+          {
+            "name": "Yonhap News Agency (韩联社)",
+            "url": "https://en.yna.co.kr",
+            "description": "韩国国家通讯社，东北亚局势第一一手源头。"
+          },
+          {
+            "name": "The Korea Herald",
+            "url": "https://www.koreaherald.com",
+            "description": "韩国最大英文综合新闻大刊。"
+          },
+          {
+            "name": "The Korea Times",
+            "url": "https://www.koreatimes.co.kr",
+            "description": "韩国主流国际政经与社会动态网。"
+          },
+          {
+            "name": "KBS WORLD News",
+            "url": "https://world.kbs.co.kr/service/news_main.htm?lang=e",
+            "description": "韩国国家电视台国际新闻。"
+          },
+          {
+            "name": "Channel NewsAsia (CNA)",
+            "url": "https://www.channelnewsasia.com",
+            "description": "新加坡亚洲新闻台，东南亚乃至全球极佳的视角的门户。"
+          },
+          {
+            "name": "The Straits Times",
+            "url": "https://www.straitstimes.com",
+            "description": "新加坡《海峡时报》，东南亚政经风向标。"
+          },
+          {
+            "name": "South China Morning Post (SCMP)",
+            "url": "https://www.scmp.com",
+            "description": "香港《南华早报》，中国与亚太国际关系的权威大刊。"
+          },
+          {
+            "name": "HKFP (Hong Kong Free Press)",
+            "url": "https://hongkongfp.com",
+            "description": "香港独立非营利英文新闻网。"
+          },
+          {
+            "name": "中央社 (CNA Taiwan)",
+            "url": "https://www.cna.com.tw",
+            "description": "中国台湾官方通讯社，提供实时华语国际新闻。"
+          },
+          {
+            "name": "Focus Taiwan",
+            "url": "https://focustaiwan.tw",
+            "description": "中央社英文版，亚太动态视角。"
+          },
+          {
+            "name": "Taipei Times",
+            "url": "https://www.taipeitimes.com",
+            "description": "中国台湾老牌英文每日新闻。"
+          },
+          {
+            "name": "RFA (Radio Free Asia)",
+            "url": "https://www.rfa.org/english",
+            "description": "自由亚洲电台，专注于亚洲地缘与社会议题。"
+          },
+          {
+            "name": "ABC News (Australia)",
+            "url": "https://www.abc.net.au/news",
+            "description": "澳大利亚广播公司，南半球与太平洋地区第一权威网。"
+          },
+          {
+            "name": "The Sydney Morning Herald",
+            "url": "https://www.smh.com.au",
+            "description": "悉尼先驱晨报，澳洲主流国际视野。"
+          },
+          {
+            "name": "The Age",
+            "url": "https://www.theage.com.au",
+            "description": "墨尔本主流综合新闻大刊。"
+          },
+          {
+            "name": "SBS News (Australia)",
+            "url": "https://www.sbs.com.au/news",
+            "description": "澳洲多语种与国际文化新闻门户。"
+          },
+          {
+            "name": "RNZ (Radio New Zealand)",
+            "url": "https://www.rnz.co.nz",
+            "description": "新西兰国家广播电台国际新闻。"
+          },
+          {
+            "name": "NZ Herald",
+            "url": "https://www.nzherald.co.nz",
+            "description": "新西兰先驱报，大洋洲重点新闻。"
+          },
+          {
+            "name": "Bangkok Post",
+            "url": "https://www.bangkokpost.com",
+            "description": "泰国最大英文新闻网，东盟核心观察点。"
+          },
+          {
+            "name": "The Jakarta Post",
+            "url": "https://www.thejakartapost.com",
+            "description": "印尼主流英文国际新闻门户。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "中东与南亚地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Al Jazeera (English)",
+            "url": "https://www.aljazeera.com",
+            "description": "半岛电视台英文网，全球非西方视角的权威国际新闻。"
+          },
+          {
+            "name": "Al Arabiya (English)",
+            "url": "https://english.alarabiya.net",
+            "description": "沙特阿拉伯资助的阿拉伯世界主流门户。"
+          },
+          {
+            "name": "The National (UAE)",
+            "url": "https://www.thenationalnews.com",
+            "description": "阿联酋阿布扎比顶尖中东与国际英文大刊。"
+          },
+          {
+            "name": "Gulf News",
+            "url": "https://gulfnews.com",
+            "description": "迪拜主流英语新闻与中东政经网。"
+          },
+          {
+            "name": "Haaretz (English)",
+            "url": "https://www.haaretz.com",
+            "description": "以色列《哈阿雷兹》报，中东局势深度分析。"
+          },
+          {
+            "name": "The Jerusalem Post",
+            "url": "https://www.jpost.com",
+            "description": "以色列耶路撒冷邮报，实时中东冲突与外交新闻。"
+          },
+          {
+            "name": "Times of Israel",
+            "url": "https://www.timesofisrael.com",
+            "description": "独立的中东快讯与现场报道。"
+          },
+          {
+            "name": "Arab News",
+            "url": "https://www.arabnews.com",
+            "description": "中东地区广泛阅读的英文中东与国际日报。"
+          },
+          {
+            "name": "TRT World",
+            "url": "https://www.trtworld.com",
+            "description": "土耳其国家广播公司国际网，极具西亚与欧亚大陆视角。"
+          },
+          {
+            "name": "Hurriyet Daily News",
+            "url": "https://www.hurriyetdailynews.com",
+            "description": "土耳其历史最悠久的英文新闻网。"
+          },
+          {
+            "name": "The Times of India",
+            "url": "https://timesofindia.indiatimes.com",
+            "description": "印度最大英文媒体，南亚与全球动态。"
+          },
+          {
+            "name": "The Hindu",
+            "url": "https://www.thehindu.com",
+            "description": "印度严肃高质的国际新闻与外交政策报纸。"
+          },
+          {
+            "name": "NDTV News",
+            "url": "https://www.ndtv.com",
+            "description": "印度全天候电视新闻网门户。"
+          },
+          {
+            "name": "Indian Express",
+            "url": "https://indianexpress.com",
+            "description": "印度深度调查与国际政治新闻网。"
+          },
+          {
+            "name": "Dawn (Pakistan)",
+            "url": "https://www.dawn.com",
+            "description": "巴基斯坦历史最悠久的英文新闻门户。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "拉丁美洲与非洲地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Buenos Aires Times",
+            "url": "https://www.batimes.com.ar",
+            "description": "阿根廷主流英文国际新闻大刊。"
+          },
+          {
+            "name": "Rio Times",
+            "url": "https://www.riotimesonline.com",
+            "description": "巴西及南美洲动态英文新闻网。"
+          },
+          {
+            "name": "Folha de S.Paulo (English)",
+            "url": "https://www1.folha.uol.com.br/internacional/en",
+            "description": "巴西最大的《圣保罗页报》英文网。"
+          },
+          {
+            "name": "El Universal (Mexico)",
+            "url": "https://www.eluniversal.com.mx",
+            "description": "墨西哥主流大报国际版。"
+          },
+          {
+            "name": "Mexico News Daily",
+            "url": "https://mexiconewsdaily.com",
+            "description": "专注于墨西哥与中美洲时事英文网。"
+          },
+          {
+            "name": "Santiago Times",
+            "url": "https://santiagotimes.cl",
+            "description": "智利独立英文国际新闻。"
+          },
+          {
+            "name": "TeleSUR (English)",
+            "url": "https://www.telesuretv.net/english",
+            "description": "拉美多国联合创办的拉美视角国际新闻网。"
+          },
+          {
+            "name": "News24 (South Africa)",
+            "url": "https://www.news24.com",
+            "description": "南非最大的综合新闻与全非动态门户。"
+          },
+          {
+            "name": "The Mail & Guardian (SA)",
+            "url": "https://mg.co.za",
+            "description": "南非权威深度国际调查与政治周报。"
+          },
+          {
+            "name": "SABC News",
+            "url": "https://www.sabcnews.com/sabcnews",
+            "description": "南非国家广播公司国际快讯。"
+          },
+          {
+            "name": "AllAfrica",
+            "url": "https://allafrica.com",
+            "description": "汇总全非洲各大国家与媒体最新新闻的巨大聚合网。"
+          },
+          {
+            "name": "The EastAfrican",
+            "url": "https://www.theeastafrican.co.ke",
+            "description": "肯尼亚及东非地区主流国际视野大刊。"
+          },
+          {
+            "name": "The Guardian Nigeria",
+            "url": "https://guardian.ng",
+            "description": "尼日利亚(西非最大经济体)主流每日新闻网。"
+          },
+          {
+            "name": "Premium Times (Nigeria)",
+            "url": "https://www.premiumtimesng.com",
+            "description": "尼日利亚深度调查与国际新闻。"
+          },
+          {
+            "name": "Africanews",
+            "url": "https://www.africanews.com",
+            "description": "Euronews 旗下的全非洲 24 小时国际新闻网。"
+          }
         ]
       }
     ]
@@ -5292,6 +5475,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

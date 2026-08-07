@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="户外运动、自然探索、露营徒步与生态影像资源">
+<title>户外自然 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>户外自然</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1040 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">户外自然 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "户外自然",
+    "icon": "🏕️",
+    "color": "linear-gradient(135deg, #00b894, #55efc4)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "National Geographic",
+            "url": "https://www.nationalgeographic.com/",
+            "description": "全球知名的地理、自然、野生动物与科学探索综合门户网站。"
+          },
+          {
+            "name": "AllTrails",
+            "url": "https://www.alltrails.com/",
+            "description": "全球最大的徒步路线与户外徒步步道数据库及导航平台。"
+          },
+          {
+            "name": "Komoot",
+            "url": "https://www.komoot.com/",
+            "description": "智能户外路线规划与路线探索平台，涵盖徒步、越野与自行车路线。"
+          },
+          {
+            "name": "Outdooractive",
+            "url": "https://www.outdooractive.com/",
+            "description": "欧洲领先的户外数字导航与路线规划平台，涵盖多种户外运动。"
+          },
+          {
+            "name": "Wikiloc",
+            "url": "https://www.wikiloc.com/",
+            "description": "社区驱动的全球户外路线分享平台，包含GPS轨迹与实地照片。"
+          },
+          {
+            "name": "Gaia GPS",
+            "url": "https://www.gaiagps.com/",
+            "description": "专业的离线野外地图、拓扑图与越野探险导航工具官网。"
+          },
+          {
+            "name": "Strava",
+            "url": "https://www.strava.com/",
+            "description": "全球最大的户外跑步、骑行与户外追踪运动社区。"
+          },
+          {
+            "name": "REI Co-op",
+            "url": "https://www.rei.com/",
+            "description": "美国顶尖的户外装备零售商，兼具丰富的户外技能教程与活动指导。"
+          },
+          {
+            "name": "Patagonia",
+            "url": "https://www.patagonia.com/",
+            "description": "著名环保户外品牌，致力于环境保护理念推广与高端户外服装装备。"
+          },
+          {
+            "name": "Arc'teryx",
+            "url": "https://arcteryx.com/",
+            "description": "加拿大顶级户外服饰品牌，专注于高山攀登与极端环境装备。"
+          },
+          {
+            "name": "Outdoor Gear Lab",
+            "url": "https://www.outdoorgearlab.com/",
+            "description": "极其客观权威的户外装备评测与实验室对比检测网站。"
+          },
+          {
+            "name": "Section Hiker",
+            "url": "https://sectionhiker.com/",
+            "description": "深度专注于轻量化徒步、露营装备评测与野外生存技巧的博客。"
+          },
+          {
+            "name": "CleverHiker",
+            "url": "https://www.cleverhiker.com/",
+            "description": "提供高品质徒步教程、背包客指南及装备推荐的专业徒步网。"
+          },
+          {
+            "name": "Backpacking Light",
+            "url": "https://backpackinglight.com/",
+            "description": "全球轻量化(UL)徒步与超轻量露营领域的权威论坛与社区。"
+          },
+          {
+            "name": "Outdoor Life",
+            "url": "https://www.outdoorlife.com/",
+            "description": "历史悠久的户外生活杂志，涵盖野外生存、钓鱼、猎捕与装备评测。"
+          },
+          {
+            "name": "Field & Stream",
+            "url": "https://www.fieldandstream.com/",
+            "description": "专注于传统户外运动、钓鱼、野营与荒野求生的经典杂志官网。"
+          },
+          {
+            "name": "Backpacker Magazine",
+            "url": "https://www.backpacker.com/",
+            "description": "专注于野外背包客徒步、国家公园路线与野外装备指南。"
+          },
+          {
+            "name": "Outside Online",
+            "url": "https://www.outsideonline.com/",
+            "description": "涵盖户外文化、极限运动、荒野冒险与户外健康的综合在线杂志。"
+          },
+          {
+            "name": "Adventure Journal",
+            "url": "https://www.adventure-journal.com/",
+            "description": "专注于深入探讨户外文化、荒野美学与探险故事的独立媒体。"
+          },
+          {
+            "name": "The Dyrt",
+            "url": "https://thedyrt.com/",
+            "description": "全球最大的露营地查找、营地预订与露营者评价社区。"
+          },
+          {
+            "name": "Hipcamp",
+            "url": "https://www.hipcamp.com/",
+            "description": "汇集私人农场、森林、露营地与木屋租赁的户外住宿预订平台。"
+          },
+          {
+            "name": "Recreation.gov",
+            "url": "https://www.recreation.gov/",
+            "description": "美国联邦公共土地、国家公园露营地与户外许可证官方预订平台。"
+          },
+          {
+            "name": "National Park Service (NPS)",
+            "url": "https://www.nps.gov/",
+            "description": "美国国家公园管理局官网，提供国家公园地图、指南与实时路况。"
+          },
+          {
+            "name": "Parks Canada",
+            "url": "https://parks.canada.ca/",
+            "description": "加拿大国家公园管理局官网，保护并展示加拿大丰富的自然遗产。"
+          },
+          {
+            "name": "European Wilderness Society",
+            "url": "https://wilderness-society.org/",
+            "description": "欧洲野生自然保护协会，致力于欧洲荒野自然保护与野化项目。"
+          },
+          {
+            "name": "WWF (World Wildlife Fund)",
+            "url": "https://www.worldwildlife.org/",
+            "description": "世界自然基金会官网，致力于全球野生动物与自然生态保护。"
+          },
+          {
+            "name": "Nature Serve",
+            "url": "https://www.natureserve.org/",
+            "description": "提供北美物种、生物多样性和生态系统数据的权威自然科研门户。"
+          },
+          {
+            "name": "iNaturalist",
+            "url": "https://www.inaturalist.org/",
+            "description": "由国家地理与加州科学院联合发起的全球自然生物识别与观察社区。"
+          },
+          {
+            "name": "eBird",
+            "url": "https://ebird.org/",
+            "description": "由康奈尔鸟类学实验室创建的全球观鸟者观察记录与分布数据库。"
+          },
+          {
+            "name": "Merlin Bird ID",
+            "url": "https://merlin.allaboutbirds.org/",
+            "description": "基于AI的声音与照片识别全球野生鸟类的权威观鸟应用官网。"
+          },
+          {
+            "name": "Xeno-canto",
+            "url": "https://xeno-canto.org/",
+            "description": "全球野生鸟类鸣声与鸣叫录音的共享数据库网站。"
+          },
+          {
+            "name": "PlantNet",
+            "url": "https://plantnet.org/",
+            "description": "专注于野生植物识别、植物生物多样性调查的公众科学平台。"
+          },
+          {
+            "name": "Seek by iNaturalist",
+            "url": "https://www.inaturalist.org/pages/seek_app",
+            "description": "适合家庭与个人的自然植物、昆虫与野生动物图像识别门户。"
+          },
+          {
+            "name": "Leave No Trace",
+            "url": "https://lnt.org/",
+            "description": "“无痕山林”国际组织官网，推广户外环保伦理与荒野保护原则。"
+          },
+          {
+            "name": "Mountain Project",
+            "url": "https://www.mountainproject.com/",
+            "description": "全球最大的攀岩路线、攀岩点指南与野外攀岩社区。"
+          },
+          {
+            "name": "SummitPost",
+            "url": "https://www.summitpost.org/",
+            "description": "面向登山者与攀岩者的全球高山、峰顶路线与登山报告数据库。"
+          },
+          {
+            "name": "Peakbagger",
+            "url": "https://www.peakbagger.com/",
+            "description": "全球山峰数据库，供登山爱好者记录登顶日志与山脉统计。"
+          },
+          {
+            "name": "14ers.com",
+            "url": "https://www.14ers.com/",
+            "description": "专注于美国科罗拉多州及各大4000米以上高山登顶路线的专业网站。"
+          },
+          {
+            "name": "Himalayan Database",
+            "url": "https://www.himalayandatabase.com/",
+            "description": "喜马拉雅山脉探险与探险队历史登顶记录的权威数据库。"
+          },
+          {
+            "name": "Trekking Partners",
+            "url": "https://www.trekkingpartners.com/",
+            "description": "为全球长途徒步与高原结伴寻找队友的交流平台。"
+          },
+          {
+            "name": "Pacific Crest Trail Association",
+            "url": "https://www.pcta.org/",
+            "description": "美国太平洋屋脊步道(PCT)官方组织，提供徒步许可证与步道信息。"
+          },
+          {
+            "name": "Appalachian Trail Conservancy",
+            "url": "https://appalachiantrail.org/",
+            "description": "阿巴拉契亚小径保护协会官网，提供全线长途徒步指南。"
+          },
+          {
+            "name": "Continental Divide Trail Coalition",
+            "url": "https://continentaldividetrail.org/",
+            "description": "美国大陆分水岭步道(CDT)官方保护与长途徒步指南网站。"
+          },
+          {
+            "name": "Continental Divide Trail Society",
+            "url": "http://www.cdtsociety.org/",
+            "description": "致力于保护与推广大陆分水岭徒步路线的历史网站。"
+          },
+          {
+            "name": "Long Distance Walkers Association",
+            "url": "https://www.ldwa.org.uk/",
+            "description": "英国长途徒步爱好者协会，包含英国所有的长途步道数据。"
+          },
+          {
+            "name": "Ramblers",
+            "url": "https://www.ramblers.org.uk/",
+            "description": "英国最大的徒步者慈善组织，维护公共步道与组织乡村徒步活动。"
+          },
+          {
+            "name": "American Hiking Society",
+            "url": "https://americanhiking.org/",
+            "description": "美国徒步者协会，致力于维护国家步道系统与倡导徒步健康。"
+          },
+          {
+            "name": "Bushwalk Australia",
+            "url": "https://bushwalk.com/",
+            "description": "澳大利亚最活跃的荒野徒步、丛林穿越与露营论坛。"
+          },
+          {
+            "name": "NZ DOC (Department of Conservation)",
+            "url": "https://www.doc.govt.nz/",
+            "description": "新西兰环境保护署，提供著名的“九大步道”与山屋预订。"
+          },
+          {
+            "name": "Walkhighlands",
+            "url": "https://www.walkhighlands.co.uk/",
+            "description": "苏格兰高地徒步与高山路线的最全面免费指南网站。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "UKHillwalking",
+            "url": "https://www.ukhillwalking.com/",
+            "description": "英国徒步、登山与越野跑的权威社区及装备评测网。"
+          },
+          {
+            "name": "UKClimbing",
+            "url": "https://www.ukclimbing.com/",
+            "description": "英国及欧洲最大的攀岩、抱石与登山攀冰综合门户网站。"
+          },
+          {
+            "name": "Climbing Magazine",
+            "url": "https://www.climbing.com/",
+            "description": "国际知名攀岩杂志官网，包含攀岩技术、野外安全与岩场推荐。"
+          },
+          {
+            "name": "Rock and Ice",
+            "url": "https://www.rockandice.com/",
+            "description": "经典攀岩与竞技冰攀杂志，分享极限攀登故事与技术细节。"
+          },
+          {
+            "name": "Gripped Magazine",
+            "url": "https://gripped.com/",
+            "description": "加拿大攀岩杂志，涵盖运动攀、大岩壁与冰雪攀登新闻。"
+          },
+          {
+            "name": "Alpinist",
+            "url": "https://www.alpinist.com/",
+            "description": "专注于高山攀登艺术、纯粹阿式攀登(Alpine Style)的深度的文学杂志。"
+          },
+          {
+            "name": "International Climbing and Mountaineering Federation (UIAA)",
+            "url": "https://www.theuiaa.org/",
+            "description": "国际登山联合会官网，制定攀岩安全标准与高山环境保护。"
+          },
+          {
+            "name": "American Alpine Club",
+            "url": "https://americanalpineclub.org/",
+            "description": "美国阿列斯克登山俱乐部，提供高山救援保险、图书馆与探险基金。"
+          },
+          {
+            "name": "Alpine Club",
+            "url": "https://www.alpine-club.org.uk/",
+            "description": "全球历史上第一个登山俱乐部(英国阿尔卑斯俱乐部)官网。"
+          },
+          {
+            "name": "British Mountaineering Council (BMC)",
+            "url": "https://www.thebmc.co.uk/",
+            "description": "英国登山理事会，维护攀岩场地、高山安全与户外培训。"
+          },
+          {
+            "name": "Wilderness Medical Society",
+            "url": "https://wms.org/",
+            "description": "荒野医学会官网，提供野外急救、高原病防治与荒野医学认证。"
+          },
+          {
+            "name": "NOLS (National Outdoor Leadership School)",
+            "url": "https://www.nols.edu/",
+            "description": "全球权威的户外领导力与荒野急救(WFA/WFR)培训学校。"
+          },
+          {
+            "name": "Outward Bound",
+            "url": "https://www.outwardbound.org/",
+            "description": "著名的国际野外生存训练与青少年户外野外拓展机构。"
+          },
+          {
+            "name": "Bushcraft USA",
+            "url": "https://bushcraftusa.com/",
+            "description": "全球最大的荒野求生、传统野外生存技能(Bushcraft)论坛。"
+          },
+          {
+            "name": "Primitive Skills Group",
+            "url": "https://primitiveskills.org/",
+            "description": "专注于原始野外生存技能、摩擦起火与燧石制刃的手工技能网。"
+          },
+          {
+            "name": "Survivalist Boards",
+            "url": "https://www.survivalistboards.com/",
+            "description": "涵盖防灾准备、野外生存、紧急避难与荒野技能的综合论坛。"
+          },
+          {
+            "name": "Wilderness Survival Info",
+            "url": "https://www.wilderness-survival.net/",
+            "description": "收集丰富野外生存手册、庇护所搭设与求生植物知识网。"
+          },
+          {
+            "name": "Sea Kayaker Magazine",
+            "url": "https://www.seakayakermag.com/",
+            "description": "专注于海洋皮划艇、海上远航探险与水上安全的专业档案库。"
+          },
+          {
+            "name": "Paddling.com",
+            "url": "https://paddling.com/",
+            "description": "独木舟、皮划艇与桨板(SUP)路线查找、装备评测与技巧网。"
+          },
+          {
+            "name": "American Whitewater",
+            "url": "https://www.americanwhitewater.org/",
+            "description": "保护与恢复白水河流的组织，提供水流级别与漂流路线。"
+          },
+          {
+            "name": "International Mountain Bicycling Association (IMBA)",
+            "url": "https://www.imba.com/",
+            "description": "国际山地自行车协会，致力于山地车步道规划与骑行环境维护。"
+          },
+          {
+            "name": "Pinkbike",
+            "url": "https://www.pinkbike.com/",
+            "description": "全球最大的山地自行车(MTB)新闻、越野赛事与骑行视频门户。"
+          },
+          {
+            "name": "Trailforks",
+            "url": "https://www.trailforks.com/",
+            "description": "全球最大的山地自行车越野路线地图与步道状况数据库。"
+          },
+          {
+            "name": "Singletracks",
+            "url": "https://www.singletracks.com/",
+            "description": "山地车路线搜索、山地装备评测与越野骑行指南。"
+          },
+          {
+            "name": "Bikerumor",
+            "url": "https://bikerumor.com/",
+            "description": "追踪自行车新技术、越野山地车与瓜车(Gravel)新品的媒体。"
+          },
+          {
+            "name": "Bikepacking.com",
+            "url": "https://bikepacking.com/",
+            "description": "专注于山地自行车长途越野露营与自负重骑行(Bikepacking)的权威网站。"
+          },
+          {
+            "name": "FarOut Guides",
+            "url": "https://faroutguides.com/",
+            "description": "专为长途徒步与荒野骑行设计的离线步道地图指南平台。"
+          },
+          {
+            "name": "Wildsnow",
+            "url": "https://www.wildsnow.com/",
+            "description": "专注于野雪巡回(Backcountry Skiing)、登山滑雪与雪崩安全。"
+          },
+          {
+            "name": "Avalanche.org",
+            "url": "https://avalanche.org/",
+            "description": "北美雪崩预警与雪崩安全教育官方整合门户网站。"
+          },
+          {
+            "name": "European Avalanche Warning Services",
+            "url": "https://www.avalanches.org/",
+            "description": "欧洲雪崩预警服务联盟，提供阿尔卑斯山脉雪崩等级。"
+          },
+          {
+            "name": "POW (Protect Our Winters)",
+            "url": "https://protectourwinters.org/",
+            "description": "由户外运动爱好者发起的应对全球气候变暖与保护冬雪的组织。"
+          },
+          {
+            "name": "International Dark-Sky Association (DarkSky)",
+            "url": "https://darksky.org/",
+            "description": "国际暗夜协会，致力于保护夜空自然环境与暗夜公园认证。"
+          },
+          {
+            "name": "Clear Dark Sky",
+            "url": "http://www.cleardarksky.com/",
+            "description": "专为观星者与夜间户外摄影设计的北美天光透明度预报网。"
+          },
+          {
+            "name": "Light Pollution Map",
+            "url": "https://www.lightpollutionmap.info/",
+            "description": "全球光污染地图，协助户外爱好者寻找最佳露营与观星地点。"
+          },
+          {
+            "name": "AstroTrails / PhotoPills",
+            "url": "https://www.photopills.com/",
+            "description": "户外风景摄影与星空摄影规划工具，提供日出日落与银河位置。"
+          },
+          {
+            "name": "Earth Observatory (NASA)",
+            "url": "https://earthobservatory.nasa.gov/",
+            "description": "NASA地球观测站，发布全球自然景观、自然灾害与卫星图像。"
+          },
+          {
+            "name": "USGS Earth Explorer",
+            "url": "https://earthexplorer.usgs.gov/",
+            "description": "美国地质调查局提供的高精地理拓扑、地质与遥感地形数据。"
+          },
+          {
+            "name": "OpenTopoMap",
+            "url": "https://opentopomap.org/",
+            "description": "基于OpenStreetMap数据的开源高线地形图，适合户外路线设计。"
+          },
+          {
+            "name": "CalTopo",
+            "url": "https://caltopo.com/",
+            "description": "极其强大的高阶户外地形图打印与搜索救援(SAR)定制绘图工具。"
+          },
+          {
+            "name": "Fatmap",
+            "url": "https://fatmap.com/",
+            "description": "结合3D卫星图像的高清晰度户外登山、滑雪与徒步三维地图。"
+          },
+          {
+            "name": "PeakFinder",
+            "url": "https://www.peakfinder.org/",
+            "description": "只要输入坐标即可3D渲染并显示周围所有山峰名称的视觉工具。"
+          },
+          {
+            "name": "Windfinder",
+            "url": "https://www.windfinder.com/",
+            "description": "专业的风速、浪高与天气预报网，适用于水上运动与户外风况评估。"
+          },
+          {
+            "name": "Windy.com",
+            "url": "https://www.windy.com/",
+            "description": "全球高精度风场、气压、云层与雷暴实时动态风场气象预报网。"
+          },
+          {
+            "name": "Mountain Weather (MeteoBlue)",
+            "url": "https://www.meteoblue.com/",
+            "description": "提供高海拔高山地区微气候与山峰气象模型的专业网站。"
+          },
+          {
+            "name": "Mountain Forecast",
+            "url": "https://www.mountain-forecast.com/",
+            "description": "针对全球数千座山峰不同海拔高度的专业山峰天气预报网。"
+          },
+          {
+            "name": "Snow Forecast",
+            "url": "https://www.snow-forecast.com/",
+            "description": "全球滑雪场与野雪山峰的降雪预报及雪况监测门户。"
+          },
+          {
+            "name": "Wilderness Society",
+            "url": "https://www.wilderness.org/",
+            "description": "美国荒野协会，致力于保护公共土地与原始森林不受开发破坏。"
+          },
+          {
+            "name": "Sierra Club",
+            "url": "https://www.sierraclub.org/",
+            "description": "美国历史最悠久、规模最大的探索自然与生态环境保护组织。"
+          },
+          {
+            "name": "The Nature Conservancy",
+            "url": "https://www.nature.org/",
+            "description": "全球著名的自然环保组织，保护对生物多样性至关重要陆地和水域。"
+          },
+          {
+            "name": "Conservation International",
+            "url": "https://www.conservation.org/",
+            "description": "保护国际基金会，致力于保护地球自然的生物多样性与人类福祉。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Audubon Society",
+            "url": "https://www.audubon.org/",
+            "description": "专注于野生鸟类及其栖息地保护的保护协会门户。"
+          },
+          {
+            "name": "Earth Island Institute",
+            "url": "https://www.earthisland.org/",
+            "description": "支持环境保护活动家与环境创新的全球自然生态网络。"
+          },
+          {
+            "name": "Marine Conservation Society",
+            "url": "https://www.mcsuk.org/",
+            "description": "英国海洋保护协会，致力于海洋生物、洁净沙滩与海洋生态保护。"
+          },
+          {
+            "name": "Ocean Conservancy",
+            "url": "https://oceanconservancy.org/",
+            "description": "专注于解决海洋垃圾、保护海洋野生动物与极地海洋生态。"
+          },
+          {
+            "name": "Sea Shepherd Conservation Society",
+            "url": "https://seashepherd.org/",
+            "description": "著名的海洋守护者协会，采取直接行动保护海洋野生动物。"
+          },
+          {
+            "name": "Coral Reef Alliance",
+            "url": "https://coral.org/",
+            "description": "致力于保护全球珊瑚礁生态系统免受污染与气候变化破坏。"
+          },
+          {
+            "name": "Rainforest Alliance",
+            "url": "https://www.rainforest-alliance.org/",
+            "description": "热带雨林联盟，推广可持续林业、农业与热带生态保护。"
+          },
+          {
+            "name": "Rainforest Foundation",
+            "url": "https://rainforestfoundation.org/",
+            "description": "致力于保护雨林并捍卫原住民在雨林中的土地权利。"
+          },
+          {
+            "name": "Trees for Life",
+            "url": "https://treesforlife.org.uk/",
+            "description": "致力于恢复苏格兰高地原始卡利多尼安森林的生态野化组织。"
+          },
+          {
+            "name": "Rewilding Europe",
+            "url": "https://rewilding-europe.com/",
+            "description": "欧洲野生自然重构计划，旨在让欧洲土地重新恢复野生自然状态。"
+          },
+          {
+            "name": "Rewilding Britain",
+            "url": "https://www.rewildingbritain.org.uk/",
+            "description": "致力于让英国大自然恢复野性与生态多样性的倡导组织。"
+          },
+          {
+            "name": "International Union for Conservation of Nature (IUCN)",
+            "url": "https://www.iucn.org/",
+            "description": "世界自然保护联盟，发布著名的濒危物种红皮书。"
+          },
+          {
+            "name": "Global Forest Watch",
+            "url": "https://www.globalforestwatch.org/",
+            "description": "实时监测全球森林砍伐、森林火灾与树木覆盖变化的地图平台。"
+          },
+          {
+            "name": "Wildlands Network",
+            "url": "https://wildlandsnetwork.org/",
+            "description": "致力于建立野生动物迁徙走廊，连接北美三大洲际荒野。"
+          },
+          {
+            "name": "Planet Foundation",
+            "url": "https://www.planet.com/",
+            "description": "利用卫星高频成像监测全球自然环境变化与地理地貌。"
+          },
+          {
+            "name": "Bat Conservation International",
+            "url": "https://www.batcon.org/",
+            "description": "专注于全球蝙蝠物种保护及其自然栖息地维护的专业机构。"
+          },
+          {
+            "name": "Buglife",
+            "url": "https://www.buglife.org.uk/",
+            "description": "欧洲唯一致力于保护所有无脊椎动物及其栖息地的自然保护机构。"
+          },
+          {
+            "name": "Butterfly Conservation",
+            "url": "https://butterfly-conservation.org/",
+            "description": "专注于蝴蝶与蛾类生态研究、栖息地维护的自然网。"
+          },
+          {
+            "name": "Botanical Society of Britain & Ireland",
+            "url": "https://bsbi.org/",
+            "description": "不列颠群岛植物学会，研究并记录野生植物分布地图。"
+          },
+          {
+            "name": "Native Plant Trust",
+            "url": "https://www.nativeplanttrust.org/",
+            "description": "美国最悠久的野生植物保护组织，专注于保护野生花卉与植物。"
+          },
+          {
+            "name": "Kew Gardens (Royal Botanic Gardens)",
+            "url": "https://www.kew.org/",
+            "description": "英国皇家植物园，全球植物与真菌科学研究的顶尖机构。"
+          },
+          {
+            "name": "Missouri Botanical Garden",
+            "url": "https://www.missouribotanicalgarden.org/",
+            "description": "世界顶级的植物科研机构，拥有庞大的植物标本与物种库。"
+          },
+          {
+            "name": "Calflora",
+            "url": "https://www.calflora.org/",
+            "description": "致力于记录与研究加州所有野生植物分布与生态的数据库。"
+          },
+          {
+            "name": "USDA Plants Database",
+            "url": "https://plants.usda.gov/",
+            "description": "美国农业部野生与栽培植物权威分类数据库。"
+          },
+          {
+            "name": "MushroomExpert",
+            "url": "https://www.mushroomexpert.com/",
+            "description": "北美真菌与野生蘑菇分类、鉴定与野外辨识的专业网站。"
+          },
+          {
+            "name": "Fungus101 (Fungi Magazine)",
+            "url": "https://www.fungimag.com/",
+            "description": "专注于野生真菌、蘑菇采集与真菌生态学的专业杂志。"
+          },
+          {
+            "name": "British Mycological Society",
+            "url": "https://www.britmycolsoc.org.uk/",
+            "description": "英国真菌学会，促进真菌科学、野外观察与真菌保护。"
+          },
+          {
+            "name": "North American Mycological Association",
+            "url": "https://namyco.org/",
+            "description": "北美真菌学协会，为野外蘑菇采集与鉴赏爱好者提供指南。"
+          },
+          {
+            "name": "Wild Food UK",
+            "url": "https://www.wildfooduk.com/",
+            "description": "英国野外采集(Foraging)指南，教你安全识别野生可食用植物与蘑菇。"
+          },
+          {
+            "name": "Foraging Texas",
+            "url": "https://www.foragingtexas.com/",
+            "description": "详细介绍南方荒野植物可食度、药用价值与识别特征的采集网。"
+          },
+          {
+            "name": "Falling Fruit",
+            "url": "https://fallingfruit.org/",
+            "description": "全球城市与荒野边缘可食用植物、果树位置的共享地图。"
+          },
+          {
+            "name": "Tracker Certification (Track & Sign)",
+            "url": "https://www.trackandsign.org/",
+            "description": "荒野动物足迹追踪、行为分析与追踪师认证官方网站。"
+          },
+          {
+            "name": "CyberTracker",
+            "url": "https://www.cybertracker.org/",
+            "description": "全球动物足迹追踪技术与荒野生态保护监测评估系统。"
+          },
+          {
+            "name": "International Wolf Center",
+            "url": "https://wolf.org/",
+            "description": "致力于狼群自然生存、生态地位科普与狼群栖息地保护。"
+          },
+          {
+            "name": "Bear Trust International",
+            "url": "https://beartrust.org/",
+            "description": "专注于全球野生熊类及其自然生态系统保护的非营利网站。"
+          },
+          {
+            "name": "Save the Elephants",
+            "url": "https://www.savetheelephants.org/",
+            "description": "致力于保护野生非洲象免受盗猎并维护其迁徙通道。"
+          },
+          {
+            "name": "Cheetah Conservation Fund",
+            "url": "https://cheetah.org/",
+            "description": "全球致力于保护野生猎豹及其非洲稀树草原生态的机构。"
+          },
+          {
+            "name": "Snow Leopard Trust",
+            "url": "https://snowleopard.org/",
+            "description": "致力于保护高山雪豹及其高原荒野栖息地的国际组织。"
+          },
+          {
+            "name": "International Crane Foundation",
+            "url": "https://www.savingcranes.org/",
+            "description": "致力于全球15种野生鹤类及其湿地生态系统的保护网。"
+          },
+          {
+            "name": "Hawk Mountain Sanctuary",
+            "url": "https://www.hawkmountain.org/",
+            "description": "全球首个保护猛禽的自然保护区，专注于猛禽迁徙监测。"
+          },
+          {
+            "name": "Raptors Conservation",
+            "url": "https://www.peregrinefund.org/",
+            "description": "游隼基金会，致力于保护全球濒危鹰、隼、鸮等猛禽物种。"
+          },
+          {
+            "name": "International Otters Protection",
+            "url": "https://otter.org/",
+            "description": "专注于全球水獭物种及其河流湿地环境保护的网站。"
+          },
+          {
+            "name": "Wildfowl & Wetlands Trust (WWT)",
+            "url": "https://www.wwt.org.uk/",
+            "description": "英国湿地与野鸭保护信托，保护自然湿地与水鸟生态。"
+          },
+          {
+            "name": "Ducks Unlimited",
+            "url": "https://www.ducks.org/",
+            "description": "北美最大的湿地与水鸟栖息地恢复与自然保护非营利组织。"
+          },
+          {
+            "name": "Trout Unlimited",
+            "url": "https://www.tu.org/",
+            "description": "致力于保护冷水鱼类(冷水鳟鱼与鲑鱼)及其流域生态。"
+          },
+          {
+            "name": "Native Fish Coalition",
+            "url": "https://nativefishcoalition.org/",
+            "description": "致力于保护北美原生淡水鱼类与原始溪流环境。"
+          },
+          {
+            "name": "Bonefish & Tarpon Trust",
+            "url": "https://www.bonetarp.org/",
+            "description": "专注于热带浅滩与浅海鱼类栖息地生态保护的组织。"
+          },
+          {
+            "name": "Fly Fishing Forum",
+            "url": "https://www.flyfishingforum.com/",
+            "description": "飞钓(Fly Fishing)爱好者社区，讨论溪流生态与飞钓技巧。"
+          },
+          {
+            "name": "Midcurrent",
+            "url": "https://midcurrent.com/",
+            "description": "飞钓文学、溪流艺术、飞钓技术与自然水体保护综合网站。"
+          },
+          {
+            "name": "Moldy Chum",
+            "url": "https://www.moldychum.com/",
+            "description": "充满活力的野外飞钓、溪流探险与环保新闻博客。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Catch Magazine",
+            "url": "https://www.catchmagazine.net/",
+            "description": "高清照片与视频展示全球顶尖飞钓地点与荒野水域的摄影杂志。"
+          },
+          {
+            "name": "AnglingTimes",
+            "url": "https://www.anglingtimes.co.uk/",
+            "description": "英国著名钓鱼杂志，关注自然河流、湖泊钓鱼与生态平衡。"
+          },
+          {
+            "name": "American Canoe Association (ACA)",
+            "url": "https://americancanoe.org/",
+            "description": "推广皮划艇、独木舟与水上安全的美国官方paddle教育网。"
+          },
+          {
+            "name": "Canoe & Kayak",
+            "url": "https://www.canoekayak.com/",
+            "description": "经典水上运动杂志，包含划艇路线、水上探险与装备。"
+          },
+          {
+            "name": "Rapid Media",
+            "url": "https://paddlingmag.com/",
+            "description": "包含皮划艇、独木舟与水上漂流的《Paddling Magazine》官网。"
+          },
+          {
+            "name": "National Whitewater Centre",
+            "url": "https://www.wateractivity.co.uk/",
+            "description": "英国国家白水水上运动中心，提供白水漂流与划艇指南。"
+          },
+          {
+            "name": "River Runner",
+            "url": "https://river-runner.theoutrageousokapi.com/",
+            "description": "可以在地图上任意点点击并模拟一滴水流向大海整个流域过程的奇妙网站。"
+          },
+          {
+            "name": "RiverMap",
+            "url": "https://www.rivermap.org/",
+            "description": "欧洲河流实时水位、水温与漂流可行性监测地图。"
+          },
+          {
+            "name": "Freecampsites.net",
+            "url": "https://freecampsites.net/",
+            "description": "汇集全球免费野营点、野外驻扎点与车宿位置的开源社区。"
+          },
+          {
+            "name": "Campendium",
+            "url": "https://www.campendium.com/",
+            "description": "房车(RV)与野外露营地详细评测、手机信号强弱反馈网。"
+          },
+          {
+            "name": "iOverlander",
+            "url": "https://www.ioverlander.com/",
+            "description": "全球越野自驾与自负重露营爱好者维护的越野营地与资源数据库。"
+          },
+          {
+            "name": "Overland Journal",
+            "url": "https://overlandjournal.com/",
+            "description": "专注于自驾越野探险、荒野远征与越野装备的印刷与在线杂志。"
+          },
+          {
+            "name": "Expedition Portal",
+            "url": "https://expeditionportal.com/",
+            "description": "全球最大的越野车辆改造、荒野远征与全球自驾社区。"
+          },
+          {
+            "name": "Outdoor Journal",
+            "url": "https://www.outdoorjournal.com/",
+            "description": "国际探险与文化杂志，探讨极限探险、荒野文化与生态。"
+          },
+          {
+            "name": "SOTO Outdoors",
+            "url": "https://sotooutdoors.com/",
+            "description": "专注于高品质野外炉具、户外炊具与抗风科技网站。"
+          },
+          {
+            "name": "Snow Peak",
+            "url": "https://www.snowpeak.com/",
+            "description": "日本顶尖精致露营(Glamping)品牌，倡导自然与生活的融合。"
+          },
+          {
+            "name": "MSR (Mountain Safety Research)",
+            "url": "https://www.msrgear.com/",
+            "description": "专注于户外安全、帐篷、净水器与雪地装备的研发网。"
+          },
+          {
+            "name": "Black Diamond Equipment",
+            "url": "https://www.blackdiamond装备.com/",
+            "description": "顶级攀岩、登山、头灯与滑雪装备设计官方网站。"
+          },
+          {
+            "name": "Petzl",
+            "url": "https://www.petzl.com/",
+            "description": "攀登装备、探洞装备与垂直高空安全作业器材的权威网站。"
+          },
+          {
+            "name": "Hyperlite Mountain Gear",
+            "url": "https://www.hyperlitemountaingear.com/",
+            "description": "采用大力马(Dyneema)面料的顶级超轻徒步背包与金字塔帐篷。"
+          },
+          {
+            "name": "Zpacks",
+            "url": "https://zpacks.com/",
+            "description": "超轻量长途徒步装备专家，主打超轻超强力超轻帐篷与睡袋。"
+          },
+          {
+            "name": "Tarptent",
+            "url": "https://www.tarptent.com/",
+            "description": "专注于轻量化庇护所与创新户外帐篷设计的专业网站。"
+          },
+          {
+            "name": "Nemo Equipment",
+            "url": "https://www.nemoequipment.com/",
+            "description": "专注于户外露营气垫、睡袋与创新露营装备设计的品牌官网。"
+          },
+          {
+            "name": "Sea to Summit",
+            "url": "https://seatosummit.com/",
+            "description": "澳大利亚知名轻量化露营配件、防水袋与户外餐具品牌。"
+          },
+          {
+            "name": "Therm-a-Rest",
+            "url": "https://www.thermarest.com/",
+            "description": "户外露营睡垫、充气垫与睡袋舒适度标准的业内领跑者。"
+          },
+          {
+            "name": "Cascade Designs",
+            "url": "https://www.cascadedesigns.com/",
+            "description": "旗下包含MSR、Therm-a-Rest、Platypus等户外品牌的母公司门户。"
+          },
+          {
+            "name": "Hilleberg",
+            "url": "https://hilleberg.com/",
+            "description": "瑞典顶级帐篷品牌(被称为“帐篷之王”)，专为极端环境设计。"
+          },
+          {
+            "name": "Big Agnes",
+            "url": "https://www.bigagnes.com/",
+            "description": "专注于舒适露营帐篷、轻量睡袋与露营家具的户外品牌。"
+          },
+          {
+            "name": "Osprey Packs",
+            "url": "https://www.osprey.com/",
+            "description": "全球著名的专业户外徒步背包与旅行背包品牌官网。"
+          },
+          {
+            "name": "Gregory Packs",
+            "url": "https://gregorypacks.com/",
+            "description": "专注于人体工程学重载徒步背包与舒适背负系统的品牌网。"
+          },
+          {
+            "name": "Mystery Ranch",
+            "url": "https://www.mysteryranch.com/",
+            "description": "神农(神秘农场)背包官网，主打高强度重载与军特种户外背负。"
+          },
+          {
+            "name": "Deuter",
+            "url": "https://www.deuter.com/",
+            "description": "德国百年背包品牌，专注于登山、徒步与户外骑行包。"
+          },
+          {
+            "name": "Lowa Boots",
+            "url": "https://www.lowaboots.com/",
+            "description": "德国顶级手工登山鞋与徒步靴品牌官网。"
+          },
+          {
+            "name": "Salomon",
+            "url": "https://www.salomon.com/",
+            "description": "越野跑鞋、越野装备与滑雪装备的国际知名品牌。"
+          },
+          {
+            "name": "La Sportiva",
+            "url": "https://www.lasportiva.com/",
+            "description": "意大利顶级攀岩鞋、高山靴与越野跑装备制造商。"
+          },
+          {
+            "name": "Scarpa",
+            "url": "https://www.scarpa.com/",
+            "description": "意大利经典户外鞋履品牌，专长于滑雪靴、攀岩鞋与登山鞋。"
+          },
+          {
+            "name": "Hanwag",
+            "url": "https://www.hanwag.com/",
+            "description": "德国传统手工制鞋品牌，专注于耐用徒步靴与高山登山鞋。"
+          },
+          {
+            "name": "Meindl",
+            "url": "https://www.meindl.de/",
+            "description": "德国经典皮质徒步鞋品牌，传承百年手工造鞋工艺。"
+          },
+          {
+            "name": "Primus",
+            "url": "https://www.primus.us/",
+            "description": "瑞典百年户外炉具品牌，专注于野外移动烹饪设备。"
+          },
+          {
+            "name": "Jetboil",
+            "url": "https://www.jetboil.com/",
+            "description": "专注于快速煮沸的高效一体式户外户外个人炉具系统。"
+          },
+          {
+            "name": "Katadyn",
+            "url": "https://www.katadyn.com/",
+            "description": "全球野外水净化系统与便携净水器领域的权威品牌。"
+          },
+          {
+            "name": "Sawyers Products",
+            "url": "https://sawyer.com/",
+            "description": "知名野外净水过滤器、防蚊液与野外急救用品网站。"
+          },
+          {
+            "name": "Garmin Outdoor",
+            "url": "https://www.garmin.com/en-US/c/outdoor-recreation/",
+            "description": "佳明户外专区，包含手持GPS、户外手车表与InReach卫星通讯仪。"
+          },
+          {
+            "name": "SPOT Satellite Tracker",
+            "url": "https://www.findmespot.com/",
+            "description": "荒野 SOS 求救、卫星定位与轨迹追踪设备官网。"
+          },
+          {
+            "name": "Suunto",
+            "url": "https://www.suunto.com/",
+            "description": "芬兰专业户外潜水电脑表、登山指南针与运动手表官网。"
+          },
+          {
+            "name": "Silva",
+            "url": "https://silvaweden.com/",
+            "description": "瑞典指南针发明者，专注于高精度定向越野指南针与头灯。"
+          },
+          {
+            "name": "Brunton",
+            "url": "https://www.brunton.com/",
+            "description": "专注于地质学、野外导航与高精度地质指南针工具官网。"
+          },
+          {
+            "name": "Ordnance Survey (OS Maps)",
+            "url": "https://www.ordnancesurvey.co.uk/",
+            "description": "英国官方国家测绘局，提供最精确的英国户外拓扑地图。"
+          },
+          {
+            "name": "IGN Rando",
+            "url": "https://ignrando.fr/",
+            "description": "法国国家地理研究所推出的法国户外徒步与地形路线平台。"
+          },
+          {
+            "name": "Swisstopo",
+            "url": "https://www.swisstopo.admin.ch/",
+            "description": "瑞士国家地形测绘局，全球制图精度最高、艺术感最强的地图门户。"
+          }
         ]
       }
     ]
@@ -5292,6 +5969,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

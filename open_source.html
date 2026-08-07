@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="开源软件、开源项目与开源文化资源">
+<title>开源项目 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>开源项目</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1046 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">开源项目 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "开源项目",
+    "icon": "🧩",
+    "color": "linear-gradient(135deg, #00b894, #6c5ce7)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "托管平台、代码仓与开源组织 (001-040)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "GitHub",
+            "url": "https://github.com",
+            "description": "全球极大的代码托管与开发者社区，开源项目协作、版本控制与代码开源的首选平台。"
+          },
+          {
+            "name": "GitLab",
+            "url": "https://gitlab.com",
+            "description": "强大的 DevOps 平台与开源代码托管服务，支持完备的 CI/CD 持续集成与代码审核。"
+          },
+          {
+            "name": "Codeberg",
+            "url": "https://codeberg.org",
+            "description": "由非营利组织运营的纯粹开源托管平台，基于 Forgejo/Gitea，主打隐私与去中心化。"
+          },
+          {
+            "name": "SourceForge",
+            "url": "https://sourceforge.net",
+            "description": "老牌开源软件托管平台，提供庞大的桌面端与服务器端免费开源软件下载库。"
+          },
+          {
+            "name": "Apache Software Foundation (ASF)",
+            "url": "https://www.apache.org",
+            "description": "全球极大的开源软件基金会，托管了 Spark、Kafka、HTTP Server 等无数大数据与企业级项目。"
+          },
+          {
+            "name": "Linux Foundation",
+            "url": "https://www.linuxfoundation.org",
+            "description": "推动 Linux 内核及现代开源技术(云原生、网络、区块链)发展的非营利性技术联盟。"
+          },
+          {
+            "name": "Eclipse Foundation",
+            "url": "https://www.eclipse.org",
+            "description": "知名开源软件基金会，提供 Eclipse IDE 以及众多企业级 Java、物联网与开发工具。"
+          },
+          {
+            "name": "Free Software Foundation (FSF)",
+            "url": "https://www.fsf.org",
+            "description": "自由软件基金会，由 Stallman 创办，致力于保障计算机用户的自由与 GNU 协议推广。"
+          },
+          {
+            "name": "Open Source Initiative (OSI)",
+            "url": "https://opensource.org",
+            "description": "开源倡议组织，定义与认可“开源许可协议(OSI Approved)”的全球权威标准机构。"
+          },
+          {
+            "name": "Cloud Native Computing Foundation (CNCF)",
+            "url": "https://www.cncf.io",
+            "description": "云原生计算基金会，托管 Kubernetes、Prometheus、Envoy 等现代云原生核心开源项目。"
+          },
+          {
+            "name": "OpenInfra Foundation",
+            "url": "https://openinfra.dev",
+            "description": "开放基础设施基金会，推动 OpenStack、Kata Containers 等开源基础设施的发展。"
+          },
+          {
+            "name": "Python Software Foundation (PSF)",
+            "url": "https://www.python.org/psf",
+            "description": "支持与推广 Python 开源编程语言及其庞大生态系统的非营利组织。"
+          },
+          {
+            "name": "Rust Foundation",
+            "url": "https://rustfoundation.org",
+            "description": "致力于维护、发展与资助 Rust 开源编程语言生态及社区的官方基金会。"
+          },
+          {
+            "name": "Node.js Foundation (OpenJS)",
+            "url": "https://openjsf.org",
+            "description": "OpenJS 基金会，托管 Node.js、Electron、Appium 等核心 JavaScript 开源项目。"
+          },
+          {
+            "name": "Mozilla Foundation",
+            "url": "https://www.mozilla.org",
+            "description": "开源先驱基金会，致力于维护开放互联网，推出 Firefox、Thunderbird 等知名开源软件。"
+          },
+          {
+            "name": "Software Freedom Conservancy (SFC)",
+            "url": "https://sfconservancy.org",
+            "description": "为 Git、Inkscape、Samba 等数十个知名开源项目提供法律援助与行政支持的非营利机构。"
+          },
+          {
+            "name": "Software in the Public Interest (SPI)",
+            "url": "https://www.spi-inc.org",
+            "description": "协助 Debian、Arch Linux、PostgreSQL 等开源项目处理财政与法律事务的非营利组织。"
+          },
+          {
+            "name": "OWASP Foundation",
+            "url": "https://owasp.org",
+            "description": "开放 Web 应用程序安全项目，提供大量开源安全工具、文档与Web安全漏洞标准。"
+          },
+          {
+            "name": "Gitee (码云)",
+            "url": "https://gitee.com",
+            "description": "中国本土知名的代码托管与研发协作平台，托管了大量优质国产开源项目。"
+          },
+          {
+            "name": "OpenAtom Foundation (开放原子开源基金会)",
+            "url": "https://www.openatom.org",
+            "description": "中国首个开源基金会，托管 OpenHarmony、openEuler 等核心开源基础设施项目。"
+          },
+          {
+            "name": "Framagit",
+            "url": "https://framagit.org",
+            "description": "由法国 Framasoft 提供的非营利 GitLab 实例，倡导数字去中心化与自由软件。"
+          },
+          {
+            "name": "Savannah (GNU)",
+            "url": "https://savannah.gnu.org",
+            "description": "自由软件基金会创办的官方代码托管平台，专为 GNU 计划及自由软件项目提供服务。"
+          },
+          {
+            "name": "OSDN",
+            "url": "https://osdn.net",
+            "description": "开源软件开发网络，为开源项目提供下载镜像、编译与项目托管服务。"
+          },
+          {
+            "name": "Bitbucket",
+            "url": "https://bitbucket.org",
+            "description": "Atlassian 旗下的代码托管平台，深度集成 Jira，对 Git 与 Mercurial 提供良好支持。"
+          },
+          {
+            "name": "Launchpad",
+            "url": "https://launchpad.net",
+            "description": "Canonical 开发的开源协作平台，Ubuntu 及其相关开源组件的翻译、 Bug 追踪与托管大本营。"
+          },
+          {
+            "name": "Radicle",
+            "url": "https://radicle.xyz",
+            "description": "基于 P2P 网络与密码学的去中心化开源代码托管与协作协议。"
+          },
+          {
+            "name": "GitGutter / Forgejo",
+            "url": "https://forgejo.org",
+            "description": "由社区驱动的轻量级去中心化开源 Git 服务软件，旨在替代商业托管平台。"
+          },
+          {
+            "name": "Open Source Collective",
+            "url": "https://opencollective.com/opensource",
+            "description": "为开源项目提供透明化筹款、资金托管与财务管理的筹款平台。"
+          },
+          {
+            "name": "GitHub Sponsors",
+            "url": "https://github.com/sponsors",
+            "description": "GitHub 官方设立的开源资助渠道，允许赞助者直接向独立开源作者与维护者按月打赏。"
+          },
+          {
+            "name": "Tidelift",
+            "url": "https://tidelift.com",
+            "description": "企业级开源软件供应链保障平台，直接向开源维护者付费以获取可控的商业支持。"
+          },
+          {
+            "name": "NumFOCUS",
+            "url": "https://numfocus.org",
+            "description": "支持 NumPy、Pandas、SciPy、Jupyter 等科学计算与数据科学开源项目的非营利机构。"
+          },
+          {
+            "name": "Blender Foundation",
+            "url": "https://www.blender.org/foundation",
+            "description": "支持顶级开源 3D 创作套件 Blender 持续研发与创新的非营利基金会。"
+          },
+          {
+            "name": "KDE e.V.",
+            "url": "https://ev.kde.org",
+            "description": "代表 KDE 开源社区的非营利组织，推动 KDE Plasma 桌面环境及开源应用的发展。"
+          },
+          {
+            "name": "GNOME Foundation",
+            "url": "https://www.gnome.org/foundation",
+            "description": "支持 GNOME 自由桌面环境及周边开源生态系统发展的官方组织。"
+          },
+          {
+            "name": "Document Foundation",
+            "url": "https://www.documentfoundation.org",
+            "description": "知名开源办公套件 LibreOffice 背后的独立驱动基金会。"
+          },
+          {
+            "name": "VideoLAN",
+            "url": "https://www.videolan.org",
+            "description": "知名开源媒体播放器 VLC 以及 x264/x265 视频解码库背后的非营利开发组织。"
+          },
+          {
+            "name": "Matrix.org Foundation",
+            "url": "https://matrix.org",
+            "description": "开放去中心化实时通信协议 Matrix 的官方维护与标准制定基金会。"
+          },
+          {
+            "name": "RISC-V International",
+            "url": "https://riscv.org",
+            "description": "开放指令集架构 RISC-V 的国际标准化组织，推动开源硬件基础设施的变革。"
+          },
+          {
+            "name": "Open3D Engine (O3DE)",
+            "url": "https://o3de.org",
+            "description": "Linux 基金会托管的 AAA 级开源跨平台 3D 游戏引擎项目。"
+          },
+          {
+            "name": "OpenSSF (Open Source Security Foundation)",
+            "url": "https://openssf.org",
+            "description": "专注于提升全球开源软件供应链安全、漏洞修复与防御机制的跨行业联盟。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "操作系统、云原生与基础架构开源项目 (041-080)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Linux Kernel Archives",
+            "url": "https://www.kernel.org",
+            "description": "Linux 操作系统内核官方源码发布库与主线更新大本营。"
+          },
+          {
+            "name": "Debian",
+            "url": "https://www.debian.org",
+            "description": "老牌纯粹由社区维护的开源 Linux 发行版，以极致的稳定性与自由软件契约著称。"
+          },
+          {
+            "name": "Ubuntu",
+            "url": "https://ubuntu.com",
+            "description": "全球极受欢迎的开源 Linux 操作系统，广泛应用于桌面、服务器与云端。"
+          },
+          {
+            "name": "Fedora Project",
+            "url": "https://fedoraproject.org",
+            "description": "由红帽赞助的先锋开源 Linux 发行版，集中展示最新的 Linux 内核与桌面技术。"
+          },
+          {
+            "name": "Arch Linux",
+            "url": "https://www.archlinux.org",
+            "description": "以极简、滚动更新(Rolling Release)和高度自定义著称的轻量级 Linux 发行版。"
+          },
+          {
+            "name": "Alpine Linux",
+            "url": "https://alpinelinux.org",
+            "description": "基于 musl libc 和 busybox 的超轻量级开源 Linux 发行版，容器镜像的首选基础包。"
+          },
+          {
+            "name": "FreeBSD",
+            "url": "https://www.freebsd.org",
+            "description": "高性能的开源类 Unix 操作系统，广泛用于服务器、网络设备与高性能计算。"
+          },
+          {
+            "name": "OpenBSD",
+            "url": "https://www.openbsd.org",
+            "description": "以极致安全性、主动代码审计和严谨开发著称的开源类 Unix 操作系统。"
+          },
+          {
+            "name": "OpenWrt",
+            "url": "https://openwrt.org",
+            "description": "专为嵌入式设备(如无线路由器)打造的强大开源 Linux 固件系统。"
+          },
+          {
+            "name": "Proxmox VE",
+            "url": "https://www.proxmox.com",
+            "description": "基于 Debian 的开源企业级虚拟化管理平台，集成了 KVM 与 LXC 容器技术。"
+          },
+          {
+            "name": "Kubernetes",
+            "url": "https://kubernetes.io",
+            "description": "谷歌开源的自动化容器编排系统，现代云原生基础架构的绝对事实标准。"
+          },
+          {
+            "name": "Docker Open Source",
+            "url": "https://www.docker.com",
+            "description": "颠覆软件交付方式的容器化平台，提供了引擎与容器镜像开源技术。"
+          },
+          {
+            "name": "Terraform (OpenTofu)",
+            "url": "https://opentofu.org",
+            "description": "OpenTofu 是基于 MPL 协议完全开源的“基础设施即代码(IaC)”工具，替代商业化协议版本。"
+          },
+          {
+            "name": "Prometheus",
+            "url": "https://prometheus.io",
+            "description": "云原生计算基金会(CNCF)旗下的开源系统监控与报警工具包。"
+          },
+          {
+            "name": "Grafana",
+            "url": "https://grafana.com",
+            "description": "极具影响力的开源时序数据分析与可视化面板，广泛用于系统监控与日志展示。"
+          },
+          {
+            "name": "Envoy Proxy",
+            "url": "https://www.envoyproxy.io",
+            "description": "高质轻量的开源边缘与服务网关(Service Mesh)，专为云原生架构设计。"
+          },
+          {
+            "name": "Istio",
+            "url": "https://istio.io",
+            "description": "开源的服务网关(Service Mesh)控制平面，提供流量管理、安全与可观测性。"
+          },
+          {
+            "name": "Ansible",
+            "url": "https://www.ansible.com",
+            "description": "简单易用的开源自动化运维工具，支持配置管理、应用部署与任务自动化。"
+          },
+          {
+            "name": "OpenStack",
+            "url": "https://www.openstack.org",
+            "description": "巨型开源云计算平台，用于构建公共云与私有云基础设施。"
+          },
+          {
+            "name": "Ceph",
+            "url": "https://ceph.io",
+            "description": "开源的分布式存储系统，提供高扩展性的对象存储、块存储和文件系统存储。"
+          },
+          {
+            "name": "PostgreSQL",
+            "url": "https://www.postgresql.org",
+            "description": "功能极其强大的开源对象关系型数据库系统，以高标准兼容 SQL 与稳定性闻名。"
+          },
+          {
+            "name": "MariaDB",
+            "url": "https://mariadb.org",
+            "description": "由 MySQL 原班人马打造的开源关系型数据库，完全兼容 MySQL 接口。"
+          },
+          {
+            "name": "Redis / Valkey",
+            "url": "https://valkey.io",
+            "description": "Valkey 是由 Linux 基金会托管的完全开源内存数据存储项目，用以延续原 Redis 协议精神。"
+          },
+          {
+            "name": "ClickHouse",
+            "url": "https://clickhouse.com",
+            "description": "面向列的开源分布式联机分析处理(OLAP)数据库，具备极高的查询性能。"
+          },
+          {
+            "name": "Apache Kafka",
+            "url": "https://kafka.apache.org",
+            "description": "高吞吐量的分布式开源事件流处理平台，广泛应用于实时数据管道与消息队列。"
+          },
+          {
+            "name": "Apache Spark",
+            "url": "https://spark.apache.org",
+            "description": "开源的多语言数据处理引擎，专为大规模数据分析、机器学习与图计算打造。"
+          },
+          {
+            "name": "RabbitMQ",
+            "url": "https://www.rabbitmq.com",
+            "description": "基于 AMQP 协议的经典开源分布式消息代理中间件。"
+          },
+          {
+            "name": "Nginx",
+            "url": "https://nginx.org",
+            "description": "高性能开源 HTTP Web 服务器与反向代理，同时支持负载均衡与邮件代理。"
+          },
+          {
+            "name": "Caddy",
+            "url": "https://caddyserver.com",
+            "description": "基于 Go 语言编写的现代开源 Web 服务器，具备默认自动 HTTPS 证书配置功能。"
+          },
+          {
+            "name": "Traefik",
+            "url": "https://traefik.io",
+            "description": "现代开源反向代理与负载均衡器，专为微服务与容器自动化部署设计。"
+          },
+          {
+            "name": "Keycloak",
+            "url": "https://www.keycloak.org",
+            "description": "红帽开源的单点登录(SSO)与身份认证管理解决方案，支持 OAuth 2.0 与 OpenID Connect。"
+          },
+          {
+            "name": "HashiCorp Vault (OpenBao)",
+            "url": "https://openbao.org",
+            "description": "OpenBao 是在 Linux 基金会下托管的完全开源密码与密钥管理解决方案。"
+          },
+          {
+            "name": "Home Assistant",
+            "url": "https://www.home-assistant.io",
+            "description": "全球极受欢迎的开源智能家居控制中心，强调本地化控制与隐私保护。"
+          },
+          {
+            "name": "Pi-hole",
+            "url": "https://pi-hole.net",
+            "description": "基于 DNS 的开源网络级广告与跟踪器拦截工具，可部署在树莓派或服务器上。"
+          },
+          {
+            "name": "TrueNAS CORE",
+            "url": "https://www.truenas.com",
+            "description": "基于 OpenZFS 文件系统的强大开源网络附加存储(NAS)操作系统。"
+          },
+          {
+            "name": "OPNSense",
+            "url": "https://opnsense.org",
+            "description": "基于 HardenedBSD 的开源防火墙与路由平台，界面现代且具备强悍的安全特性。"
+          },
+          {
+            "name": "pfSense",
+            "url": "https://www.pfsense.org",
+            "description": "经典开源防火墙与路由器软件，广泛应用于企业级网络安全边界部署。"
+          },
+          {
+            "name": "WireGuard",
+            "url": "https://www.wireguard.com",
+            "description": "极其快速、现代化且代码量小巧的开源安全网络隧道/VPN 协议。"
+          },
+          {
+            "name": "Tailscale (open-source client)",
+            "url": "https://tailscale.com/opensource",
+            "description": "基于 WireGuard 构建的打洞网络服务，其客户端代码与控制端实现均为开源。"
+          },
+          {
+            "name": "Headscale",
+            "url": "https://github.com/juanfont/headscale",
+            "description": "Tailscale 控制平面的开源自我托管实现，允许用户构建完全独立的专有 Mesh 网络。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "开发者工具、编程语言与 AI 基础设施 (081-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Visual Studio Code (VSCodium)",
+            "url": "https://vscodium.com",
+            "description": "VSCodium 是移除微软遥测与商业追踪的纯粹开源 VS Code 二进制构建版本。"
+          },
+          {
+            "name": "Neovim",
+            "url": "https://neovim.io",
+            "description": "旨在重构与扩展 Vim 的开源高扩展性文本编辑器，具备强悍的插件生态与 Lsp 支持。"
+          },
+          {
+            "name": "GCC (GNU Compiler Collection)",
+            "url": "https://gcc.gnu.org",
+            "description": "GNU 编译器套件，支持 C、C++、Fortran 等语言，开源计算世界的绝对基石。"
+          },
+          {
+            "name": "LLVM / Clang",
+            "url": "https://llvm.org",
+            "description": "模块化与可重用的开源编译器和工具链技术集合，广受现代编程语言青睐。"
+          },
+          {
+            "name": "Git",
+            "url": "https://git-scm.com",
+            "description": "Linus Torvalds 开发的分布式版本控制系统，现代所有软件开发流程的核心。"
+          },
+          {
+            "name": "Curl",
+            "url": "https://curl.se",
+            "description": "全球广泛使用的命令行开源数据传输工具与库，支持数十种网络协议。"
+          },
+          {
+            "name": "FFmpeg",
+            "url": "https://ffmpeg.org",
+            "description": "极其强悍的开源音视频处理工具与音视频编解码跨平台套件。"
+          },
+          {
+            "name": "Python",
+            "url": "https://www.python.org",
+            "description": "广泛用于 Web 开发、数据分析、AI 与脚本自动化的开源高级编程语言。"
+          },
+          {
+            "name": "Rust",
+            "url": "https://www.rust-lang.org",
+            "description": "注重内存安全与并发性能的现代开源系统级编程语言。"
+          },
+          {
+            "name": "Go Language",
+            "url": "https://go.dev",
+            "description": "谷歌开发的开源静态类型编程语言，具备极致的并发处理能力与高效编译性能。"
+          },
+          {
+            "name": "Node.js",
+            "url": "https://nodejs.org",
+            "description": "基于 Chrome V8 引擎构建的开源、跨平台 JavaScript 运行时环境。"
+          },
+          {
+            "name": "Deno",
+            "url": "https://deno.com",
+            "description": "由 Node.js 创造者打造的现代开源 JavaScript/TypeScript 安全运行时。"
+          },
+          {
+            "name": "Bun",
+            "url": "https://bun.sh",
+            "description": "速度极快的全能型开源 JavaScript 运行时、打包工具、测试运行器与包管理器。"
+          },
+          {
+            "name": "React",
+            "url": "https://react.dev",
+            "description": "Meta 开源的构建用户界面的 JavaScript 库，声明式与组件化前端开发的代表。"
+          },
+          {
+            "name": "Vue.js",
+            "url": "https://vuejs.org",
+            "description": "独立社区驱动的渐进式 JavaScript 框架，以易上手和优雅的性能著称。"
+          },
+          {
+            "name": "Svelte",
+            "url": "https://svelte.dev",
+            "description": "无虚拟 DOM 的编译型开源前端框架，提供极致的运行速度与代码简洁度。"
+          },
+          {
+            "name": "Tailwind CSS",
+            "url": "https://tailwindcss.com",
+            "description": "实用工具优先(Utility-First)的开源 CSS 框架，极大提升前端 UI 开发效率。"
+          },
+          {
+            "name": "Flutter",
+            "url": "https://flutter.dev",
+            "description": "谷歌开源的 UI 软件开发工具包，用于从单一代码库构建跨平台的原生应用。"
+          },
+          {
+            "name": "React Native",
+            "url": "https://reactnative.dev",
+            "description": "允许使用 React 和 JavaScript 构建原生 iOS 与 Android 应用的开源框架。"
+          },
+          {
+            "name": "Electron",
+            "url": "https://www.electronjs.org",
+            "description": "使用 Web 技术(JavaScript、HTML、CSS)构建跨平台桌面应用的开源框架。"
+          },
+          {
+            "name": "Tauri",
+            "url": "https://tauri.app",
+            "description": "基于 Rust 构建的轻量级跨平台桌面应用开源框架，资源占用远低于 Electron。"
+          },
+          {
+            "name": "PyTorch",
+            "url": "https://pytorch.org",
+            "description": "Linux 基金会托管的开源深度学习框架，广泛用于 AI 研究与大模型训练。"
+          },
+          {
+            "name": "TensorFlow",
+            "url": "https://www.tensorflow.org",
+            "description": "谷歌开源的端到端机器学习平台，拥有完备的生态系统与部署工具。"
+          },
+          {
+            "name": "Hugging Face Transformers",
+            "url": "https://huggingface.co/docs/transformers",
+            "description": "极受欢迎的开源 NLP 与 AI 大模型库，提供数万个预训练模型的简便调用。"
+          },
+          {
+            "name": "Ollama",
+            "url": "https://ollama.com",
+            "description": "在本地快速运行、配置与管理开源大语言模型(如 Llama、Qwen)的工具。"
+          },
+          {
+            "name": "LocalAI",
+            "url": "https://localai.io",
+            "description": "兼容 OpenAI API 规范的开源本地 AI 推理引擎，支持无 GPU 部署。"
+          },
+          {
+            "name": "LangChain",
+            "url": "https://www.langchain.com",
+            "description": "用于构建大语言模型(LLM)驱动的应用和 Agent 的开源开发框架。"
+          },
+          {
+            "name": "LlamaIndex",
+            "url": "https://www.llamaindex.ai",
+            "description": "专门为 LLM 应用连接私有数据源与构建 RAG(检索增强生成)系统的开源数据框架。"
+          },
+          {
+            "name": "vLLM",
+            "url": "https://vllm.ai",
+            "description": "高吞吐量、低延迟的开源 LLM 推理与服务引擎，采用 PagedAttention 内存管理。"
+          },
+          {
+            "name": "llama.cpp",
+            "url": "https://github.com/ggerganov/llama.cpp",
+            "description": "纯 C/C++ 实现的无依赖 LLM 推理引擎，支持大模型在各类普通设备上硬件加速。"
+          },
+          {
+            "name": "Stable Diffusion WebUI",
+            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+            "description": "基于 Gradio 构建的图像生成大模型 Stable Diffusion 的功能完备开源 Web 界面。"
+          },
+          {
+            "name": "ComfyUI",
+            "url": "https://github.com/comfyanonymous/ComfyUI",
+            "description": "基于模块化结点图(Node-based)的极高自由度 Stable Diffusion/AIGC 流程工作台。"
+          },
+          {
+            "name": "Dify",
+            "url": "https://dify.ai",
+            "description": "开源的大模型 LLMOps 平台，支持可视化构建 AI Workflow 与 Agent 应用。"
+          },
+          {
+            "name": "AnythingLLM",
+            "url": "https://anythingllm.com",
+            "description": "全能型开源企业级 RAG 应用，支持导入文档与本地/云端 LLM 进行私密对话。"
+          },
+          {
+            "name": "DB-GPT",
+            "url": "https://github.com/eosphoros-ai/DB-GPT",
+            "description": "结合大模型与原生数据库的开源 AI 数据智能化与私有化 RAG 解决方案。"
+          },
+          {
+            "name": "Supabase",
+            "url": "https://supabase.com",
+            "description": "开源的 Firebase 替代品，内置 PostgreSQL 数据库、身份验证、存储与实时订阅。"
+          },
+          {
+            "name": "PocketBase",
+            "url": "https://pocketbase.io",
+            "description": "由单个 Go 文件构建的开源实时后端服务，集成了嵌入式 SQLite 与用户管理。"
+          },
+          {
+            "name": "Appwrite",
+            "url": "https://appwrite.io",
+            "description": "开源的开发者后端服务(BaaS)，为 Web、移动端与 Flutter 提供完备 API。"
+          },
+          {
+            "name": "Meilisearch",
+            "url": "https://www.meilisearch.com",
+            "description": "速度极快、开箱即用的开源搜索引擎，旨在提供卓越的网站与应用搜索体验。"
+          },
+          {
+            "name": "Typesense",
+            "url": "https://typesense.org",
+            "description": "开源的容错型高实时搜索引擎，被广泛用作 Algolia 的无缝开源替代品。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "生产力工具、桌面应用与生活软件 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "LibreOffice",
+            "url": "https://www.libreoffice.org",
+            "description": "功能强大的开源免费办公套件，支持文字处理、电子表格、演示文稿等。"
+          },
+          {
+            "name": "OnlyOffice",
+            "url": "https://www.onlyoffice.com",
+            "description": "高度兼容微软 Office 格式的开源办公套件，支持协同编辑与私有化部署。"
+          },
+          {
+            "name": "Thunderbird",
+            "url": "https://www.thunderbird.net",
+            "description": "Mozilla 旗下的开源跨平台邮件客户端、日历与联系人管理软件。"
+          },
+          {
+            "name": "OBS Studio",
+            "url": "https://obsproject.com",
+            "description": "免费开源的视频录制与直播推流软件，功能极其强悍，被全球主播广泛使用。"
+          },
+          {
+            "name": "Blender",
+            "url": "https://www.blender.org",
+            "description": "全能开源 3D 建模、动画、渲染、复合与视频编辑创作套件。"
+          },
+          {
+            "name": "GIMP",
+            "url": "https://www.gimp.org",
+            "description": "跨平台开源图像处理与修图软件，经典且功能丰富的 Adobe Photoshop 替代品。"
+          },
+          {
+            "name": "Inkscape",
+            "url": "https://inkscape.org",
+            "description": "功能强悍的开源矢量图形编辑器，原生采用 SVG 格式，Adobe Illustrator 的优秀替换者。"
+          },
+          {
+            "name": "Krita",
+            "url": "https://krita.org",
+            "description": "专为概念艺术家、插画师与纹理画家打造的免费开源数字绘画与概念设计软件。"
+          },
+          {
+            "name": "Darktable",
+            "url": "https://www.darktable.org",
+            "description": "开源的 RAW 格式摄影照片后期处理软件与非破坏性图像编辑器，Adobe Lightroom 替代品。"
+          },
+          {
+            "name": "RawTherapee",
+            "url": "https://rawtherapee.com",
+            "description": "专注于 RAW 格式高级调色与细节还原的跨平台开源数字暗房工具。"
+          },
+          {
+            "name": "Audacity",
+            "url": "https://www.audacityteam.org",
+            "description": "开源跨平台多轨音频录制与编辑软件，音频剪辑与播客录制的标配工具。"
+          },
+          {
+            "name": "Shotcut",
+            "url": "https://shotcut.org",
+            "description": "免费开源的跨平台视频编辑器，支持数百种音视频格式与 4K 剪辑。"
+          },
+          {
+            "name": "Kdenlive",
+            "url": "https://kdenlive.org",
+            "description": "基于 KDE 框架的开源非线性视频剪辑软件，功能丰富且适合日常创作。"
+          },
+          {
+            "name": "VLC Media Player",
+            "url": "https://www.videolan.org/vlc",
+            "description": "跨平台开源多媒体播放器，支持无需另外安装编解码包播放几乎所有格式。"
+          },
+          {
+            "name": "HandBrake",
+            "url": "https://handbrake.fr",
+            "description": "开源的跨平台视频压制与格式转换工具，内置丰富的预设参数。"
+          },
+          {
+            "name": "KeePassXC",
+            "url": "https://keepassxc.org",
+            "description": "完全开源且本地存储的跨平台密码管理器，用户掌握绝对数据控制权。"
+          },
+          {
+            "name": "Bitwarden Open Source",
+            "url": "https://bitwarden.com",
+            "description": "知名的跨平台开源密码管理服务，支持全端同步与私有化本地部署。"
+          },
+          {
+            "name": "7-Zip",
+            "url": "https://www.7-zip.org",
+            "description": "高压缩率的开源文件归档与解压缩软件，其 7z 格式具备极强的压缩比。"
+          },
+          {
+            "name": "ShareX",
+            "url": "https://getsharex.com",
+            "description": "Windows 平台下极其强大的开源截图、录屏与文件上传工具。"
+          },
+          {
+            "name": "Flameshot",
+            "url": "https://flameshot.org",
+            "description": "功能丰富、支持标注且界面美观的开源 Linux/Windows/macOS 截图工具。"
+          },
+          {
+            "name": "Joplin",
+            "url": "https://joplinapp.org",
+            "description": "支持端到端加密(E2EE)的开源 Markdown 笔记与待办事项软件，Evernote 替代品。"
+          },
+          {
+            "name": "Obsidian (Open Ecosystem)",
+            "url": "https://obsidian.md",
+            "description": "虽然核心软件闭源，但拥有完全透明的开放本地 Markdown 存储格式与庞大开源插件生态。"
+          },
+          {
+            "name": "Logseq",
+            "url": "https://logseq.com",
+            "description": "专注于大纲结构与知识图谱的开源隐私优先本地知识库软件。"
+          },
+          {
+            "name": "AppFlowy",
+            "url": "https://www.appflowy.io",
+            "description": "基于 Flutter 和 Rust 构建的开源 Notion 替代品，强调本地存储与隐私保护。"
+          },
+          {
+            "name": "Focalboard",
+            "url": "https://www.focalboard.com",
+            "description": "Mattermost 开发的开源项目管理与看板工具，Trello 和 Notion 看板的替代品。"
+          },
+          {
+            "name": "Calibre",
+            "url": "https://calibre-ebook.com",
+            "description": "功能极其庞大的开源电子书管理、转换与阅读管理神器。"
+          },
+          {
+            "name": "Sumatrapdf",
+            "url": "https://www.sumatrapdfreader.org",
+            "description": "极其轻量、启动迅速的 Windows 平台开源 PDF、ePub、MOBI 阅读器。"
+          },
+          {
+            "name": "Zotero",
+            "url": "https://www.zotero.org",
+            "description": "全球学者与学生广泛使用的开源文献管理工具，支持自动收集与引用排版。"
+          },
+          {
+            "name": "Transmission",
+            "url": "https://transmissionbt.com",
+            "description": "极简且资源占用极低的开源 BitTorrent 客户端，广泛运行于各类 NAS 系统。"
+          },
+          {
+            "name": "qBittorrent",
+            "url": "https://www.qbittorrent.org",
+            "description": "功能完备的开源 BT/PT 下载客户端，内置 Web UI 界面与强大磁力搜寻。"
+          },
+          {
+            "name": "Syncthing",
+            "url": "https://syncthing.net",
+            "description": "去中心化、端到端加密的开源连续文件同步程序，无需经过第三方云服务器。"
+          },
+          {
+            "name": "FileZilla",
+            "url": "https://filezilla-project.org",
+            "description": "经典且功能丰富的开源 FTP、SFTP 和 FTPS 跨平台客户端。"
+          },
+          {
+            "name": "Wireshark",
+            "url": "https://www.wireshark.org",
+            "description": "全球极知名的开源网络数据包分析工具，深入网络协议分析与排障必备。"
+          },
+          {
+            "name": "BleachBit",
+            "url": "https://www.bleachbit.org",
+            "description": "开源的系统垃圾清理与隐私保护工具，CCleaner 的开源替换工具。"
+          },
+          {
+            "name": "Nextcloud",
+            "url": "https://nextcloud.com",
+            "description": "强大的自托管开源网盘与协同云平台，包含文件同步、日历、在线文档与通讯。"
+          },
+          {
+            "name": "OwnCloud",
+            "url": "https://owncloud.com",
+            "description": "经典自托管开源云存储平台，为个人与企业提供数据自主权。"
+          },
+          {
+            "name": "Immich",
+            "url": "https://immich.app",
+            "description": "功能强悍的自托管开源相册备份与管理系统，具备人脸识别与 AI 语义搜索。"
+          },
+          {
+            "name": "Jellyfin",
+            "url": "https://jellyfin.org",
+            "description": "完全无广告、无订阅费的开源媒体服务器，自由管理自己的电影与音乐库。"
+          },
+          {
+            "name": "Calibre-Web",
+            "url": "https://github.com/janeczku/calibre-web",
+            "description": "基于 Calibre 数据库的优雅开源 Web 电子书书库与在线阅读平台。"
+          },
+          {
+            "name": "Paperless-ngx",
+            "url": "https://docs.paperless-ngx.com",
+            "description": "带 OCR 文字识别的开源个人文档管理系统，将纸质文件全面数字索引化。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "开源文化、文化许可与开源学堂 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Creative Commons (CC)",
+            "url": "https://creativecommons.org",
+            "description": "知识共享组织，提供标准化的开源文化许可协议(如 CC BY-SA)，赋能文字、艺术与媒体共享。"
+          },
+          {
+            "name": "Choose an Open Source License",
+            "url": "https://choosealicense.com",
+            "description": "GitHub 制作的极简指南，帮助开发者快速为自己的开源项目挑选合适的许可协议。"
+          },
+          {
+            "name": "TLDRLegal",
+            "url": "https://tldrlegal.com",
+            "description": "用通俗易懂的语言解释各类开源许可协议(GPL、MIT、Apache 等)的权利与限制。"
+          },
+          {
+            "name": "Open Source Guides",
+            "url": "https://opensource.guides",
+            "description": "GitHub 官方编写的开源指南，涵盖如何创建、维护与贡献开源项目的全方位教程。"
+          },
+          {
+            "name": "First Contributions",
+            "url": "https://firstcontributions.github.io",
+            "description": "专为开源新手设计的实战引导项目，5 分钟内带你完成人生第一次 GitHub PR。"
+          },
+          {
+            "name": "Google Summer of Code (GSoC)",
+            "url": "https://summerofcode.withgoogle.com",
+            "description": "谷歌举办的全球性活动，资助学生向各类开源软件组织贡献代码并接受导师指导。"
+          },
+          {
+            "name": "Hacktoberfest",
+            "url": "https://hacktoberfest.com",
+            "description": "每年 10 月举办的开源庆祝活动，鼓励全球开发者向开源项目提交高质量 Pull Request。"
+          },
+          {
+            "name": "Open Source Initiative Blog",
+            "url": "https://opensource.org/blog",
+            "description": "探讨开源定义演变、许可协议合规以及 AI 模型“开源”标准界定的权威博客。"
+          },
+          {
+            "name": "GNU Operating System Essay Archive",
+            "url": "https://www.gnu.org/philosophy",
+            "description": "自由软件之父 Stallman 的哲学文章合集，深刻阐述自由软件与开源的区别。"
+          },
+          {
+            "name": "Open Source Weekly / News",
+            "url": "https://opensource.com",
+            "description": "红帽发起的开源新闻与知识分享社区，涵盖 Linux、开源工具与开发技巧。"
+          },
+          {
+            "name": "Upstream (Tidelift Podcast)",
+            "url": "https://tidelift.com/about/podcast",
+            "description": "探讨开源维护者生存现状、软件供应链安全与开源商业化伦理的深度访谈。"
+          },
+          {
+            "name": "SustainOSS",
+            "url": "https://sustainoss.org",
+            "description": "专注于“开源可持续性”的社区与 Podcast，探讨如何保障开源项目与维护者的长远生存。"
+          },
+          {
+            "name": "The Architecture of Open Source Applications (AOSA)",
+            "url": "https://aosabook.org",
+            "description": "免费在线图书，剖析 Git、LLVM、Nginx 等数十个优秀开源项目的内部设计架构。"
+          },
+          {
+            "name": "Open Source Diversity",
+            "url": "https://opensourcediversity.org",
+            "description": "致力于促进开源社区多样性、包容性与消除偏见的交流与招聘平台。"
+          },
+          {
+            "name": "Changelog Podcast",
+            "url": "https://changelog.com",
+            "description": "知名开发者 PodCast，深度采访各类热门开源项目背后的作者与核心维护者。"
+          },
+          {
+            "name": "GitHub Innovation Graph",
+            "url": "https://innovationgraph.github.com",
+            "description": "GitHub 推出的全球开源趋势与代码贡献数据图谱，直观展现各国开源影响力。"
+          },
+          {
+            "name": "OSS Capital Blog",
+            "url": "https://oss.capital",
+            "description": "专注商业化开源(COSS)领域的风险投资机构，探讨开源创业公司模式。"
+          },
+          {
+            "name": "Linux Weekly News (LWN.net)",
+            "url": "https://lwn.net",
+            "description": "深度的 Linux 内核开发动态、自由软件新闻与开源法律事务新闻周刊。"
+          },
+          {
+            "name": "FOSDEM",
+            "url": "https://fosdem.org",
+            "description": "欧洲极具规模的免费开源软件开发者盛会，提供数千个主题演讲的视频档案。"
+          },
+          {
+            "name": "OSCON (O'Reilly Open Source Conference Archive)",
+            "url": "https://www.oreilly.com",
+            "description": "O'Reilly 经典的开源大会遗产，见证了二十年来开源技术的演变历程。"
+          },
+          {
+            "name": "Open Source Hardware Association (OSHWA)",
+            "url": "https://www.oshwa.org",
+            "description": "开源硬件协会，定义开源硬件标准并提供开源硬件产品认证体系。"
+          },
+          {
+            "name": "Arduino Open Source",
+            "url": "https://www.arduino.cc",
+            "description": "全球知名的开源电子原型平台，推动了开源硬件与创客运动的爆发。"
+          },
+          {
+            "name": "Raspberry Pi Open Documentation",
+            "url": "https://www.raspberrypi.com/documentation",
+            "description": "树莓派开源文档库，展示微型计算机在教育、工业与单板计算领域的应用。"
+          },
+          {
+            "name": "Open Source Seeds",
+            "url": "https://opensourceseeds.org",
+            "description": "将开源许可理念延伸至农业种子领域，防止基因垄断与专利封锁。"
+          },
+          {
+            "name": "Open COVID License",
+            "url": "https://opencovidpledge.org",
+            "description": "科技界在应对公共危机时免费共享专利与开源技术的历史档案。"
+          },
+          {
+            "name": "Open Knowledge Foundation (OKF)",
+            "url": "https://okfn.org",
+            "description": "倡导开放数据、开放科学与开源文化在公共政策领域应用的国际组织。"
+          },
+          {
+            "name": "OpenStreetMap (OSM)",
+            "url": "https://www.openstreetmap.org",
+            "description": "被称为“地图界的维基百科”，全球志愿者协同构建的自由开源地理数据库。"
+          },
+          {
+            "name": "Wikimedia Commons",
+            "url": "https://commons.wikimedia.org",
+            "description": "维基媒体共享资源库，收录数千万张基于自由许可(CC/公有领域)的照片与媒体。"
+          },
+          {
+            "name": "Gutenberg Project",
+            "url": "https://www.gutenberg.org",
+            "description": "古腾堡计划，全球极老牌的公有领域(Public Domain)经典图书数字化开源图书馆。"
+          },
+          {
+            "name": "Archive.org Open Library",
+            "url": "https://openlibrary.org",
+            "description": "互联网档案馆旗下的开放图书项目，致力于为出版的每一本书建立开源网页与借阅。"
+          },
+          {
+            "name": "Internet Archive Software Library",
+            "url": "https://archive.org/details/software",
+            "description": "互联网档案馆的开源与复古软件档案馆，可在浏览器中直接运行早期历史软件。"
+          },
+          {
+            "name": "Open Game Art",
+            "url": "https://opengameart.org",
+            "description": "为独立游戏开发者提供的开源/自由许可游戏素材(2D、3D、音效、音乐)大本营。"
+          },
+          {
+            "name": "Public Domain Vectors",
+            "url": "https://publicdomainvectors.org",
+            "description": "提供数十万张完全进入公有领域(CC0)、可免费无限制商业使用的矢量剪贴画。"
+          },
+          {
+            "name": "Open Music Archive",
+            "url": "https://openmusicarchive.org",
+            "description": "致力于寻找、数字录制与分发版权过期的公有领域音乐录音的开源艺术项目。"
+          },
+          {
+            "name": "Sourceware.org",
+            "url": "https://sourceware.org",
+            "description": "为 GDB、Valgrind、Cygwin 等核心底层开源开发工具提供基础设施的平台。"
+          },
+          {
+            "name": "Open Source Metrics (CHAOSS)",
+            "url": "https://chaoss.community",
+            "description": "Linux 基金会旗下，用科学指标与分析软件评估开源社区健康度与参与度的项目。"
+          },
+          {
+            "name": "Linux Foundation Research",
+            "url": "https://www.linuxfoundation.org/research",
+            "description": "发布权威的开源技术发展报告、开源人才需求与全球开源经济价值洞察。"
+          },
+          {
+            "name": "Linux Story (开源工场)",
+            "url": "https://linuxstory.org",
+            "description": "专注开源文化普及、Linux 社区动态与开源软件新闻翻译的中文平台。"
+          },
+          {
+            "name": "开源中国 (OSCHINA)",
+            "url": "https://www.oschina.net",
+            "description": "国内历史悠久的开源技术社区，提供开源软件资讯、项目评测与开发者交流。"
+          },
+          {
+            "name": "GitHub Awesome Lists",
+            "url": "https://github.com/sindresorhus/awesome",
+            "description": "GitHub 极具传奇色彩的开源项目，汇总了全球开发者精心整理的各领域优质开源资源清单。"
+          }
         ]
       }
     ]
@@ -5292,6 +5975,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

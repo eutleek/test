@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="高清无版权图库、公有领域视觉与开放影像资源">
+<title>视觉图库 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>视觉图库</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1076 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">视觉图库 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "视觉图库",
+    "icon": "🖼️",
+    "color": "linear-gradient(135deg, #00b894, #0984e3)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "综合顶级免费商用图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Unsplash",
+            "url": "https://unsplash.com",
+            "description": "全球最著名的无版权摄影图库，风格极具现代感与艺术审美。"
+          },
+          {
+            "name": "Pexels",
+            "url": "https://www.pexels.com",
+            "description": "汇集大量高画质无版权照片与高质量免版税短视频素材。"
+          },
+          {
+            "name": "Pixabay",
+            "url": "https://pixabay.com",
+            "description": "老牌免费图库，除了海量摄影照片，还收录插画、矢量图与音效。"
+          },
+          {
+            "name": "Freepik",
+            "url": "https://www.freepik.com",
+            "description": "全球最大的综合视觉素材库，包含照片、矢量图、PSD 图层与 AI 素材。"
+          },
+          {
+            "name": "Burst (by Shopify)",
+            "url": "https://burst.shopify.com",
+            "description": "Shopify 旗下的免费高画质图库，专为电商、创业与商业设计打造。"
+          },
+          {
+            "name": "StockSnap.io",
+            "url": "https://stocksnap.io",
+            "description": "每日更新的高清免费图库，支持按浏览量和下载量精准筛选。"
+          },
+          {
+            "name": "Kaboompics",
+            "url": "https://kaboompics.com",
+            "description": "主打生活方式、室内设计与调色板分析的图库。"
+          },
+          {
+            "name": "Reshot",
+            "url": "https://www.reshot.com",
+            "description": "专注于独家、非同质化现代摄影作品与极简矢量图标的免费资源库。"
+          },
+          {
+            "name": "Gratisography",
+            "url": "https://gratisography.com",
+            "description": "充满幽默感、古灵精怪与超现实主义风格的免费摄影图库。"
+          },
+          {
+            "name": "Picjumbo",
+            "url": "https://picjumbo.com",
+            "description": "摄影师 Viktor Hanacek 创立的个人高清图库，适合网页设计与营销。"
+          },
+          {
+            "name": "Life of Pix",
+            "url": "https://www.lifeofpix.com",
+            "description": "蒙特利尔广告公司创办的免费摄影站，每周精选优质艺术摄影。"
+          },
+          {
+            "name": "Rawpixel",
+            "url": "https://www.rawpixel.com",
+            "description": "提供大量极高品质的公有领域艺术画作与复古摄影。"
+          },
+          {
+            "name": "Skitterphoto",
+            "url": "https://skitterphoto.com",
+            "description": "摄影师自发建立的 CC0 无版权公共领域照片共享平台。"
+          },
+          {
+            "name": "ISO Republic",
+            "url": "https://isorepublic.com",
+            "description": "专注于高分辨率商业摄影、建筑空间与高清纹理背景。"
+          },
+          {
+            "name": "SplitShire",
+            "url": "https://www.splitshire.com",
+            "description": "摄影师 Daniel Nanescu 贡献的数千张高调性独家无版权大片。"
+          },
+          {
+            "name": "Foodiesfeed",
+            "url": "https://www.foodiesfeed.com",
+            "description": "专注于全球美食、食材与精致料理的高清无版权美食图库。"
+          },
+          {
+            "name": "New Old Stock",
+            "url": "https://nos.tweeki.in",
+            "description": "汇集公共档案馆中珍贵的历史复古黑白与彩色老照片。"
+          },
+          {
+            "name": "Picspree",
+            "url": "https://picspree.com",
+            "description": "由 Getty Images 支持的免费图像资源社区，商业应用安全。"
+          },
+          {
+            "name": "ShotStash",
+            "url": "https://shotstash.com",
+            "description": "专注于网页开发者与创意设计师使用的现代高分辨率摄影素材。"
+          },
+          {
+            "name": "Foca Stock",
+            "url": "https://focastock.com",
+            "description": "摄影师 Jeffrey Betts 共享的城市景观、办公空间与科技风图库。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "独立无版权与小众灵感图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Pikwizard",
+            "url": "https://pikwizard.com",
+            "description": "收录超过百万张高质量照片与视频，人像与商业场景非常丰富且允许免费商用。"
+          },
+          {
+            "name": "Freeify",
+            "url": "https://freeify.pro",
+            "description": "纯粹由社区贡献的无版权图库，界面清爽，主打高画质风景与生活方式。"
+          },
+          {
+            "name": "Nappy",
+            "url": "https://nappy.co",
+            "description": "专注于展示多元有色人种高品质生活与工作的无版权图库。"
+          },
+          {
+            "name": "CreateHER Stock",
+            "url": "https://createherstock.com",
+            "description": "专注黑人女性与现代生活方式的无版权与高质量摄影图库。"
+          },
+          {
+            "name": "Jopwell Collection",
+            "url": "https://www.jopwell.com",
+            "description": "专注于职场多元化、真实办公与科技场景的免费高清摄影库。"
+          },
+          {
+            "name": "Morguefile",
+            "url": "https://morguefile.com",
+            "description": "历史悠久的专业设计师参考图库，包含海量未经过度修饰的真实生活与细节摄影。"
+          },
+          {
+            "name": "Good Free Photos",
+            "url": "https://www.goodfreephotos.com",
+            "description": "按地理位置分类的免费公共领域照片库，包含大量国家公园与地标。"
+          },
+          {
+            "name": "Realistic Shots",
+            "url": "https://realisticshots.com",
+            "description": "每周更新的高清真实生活场景照片，非常适合博客与社交媒体使用。"
+          },
+          {
+            "name": "PhotoBER",
+            "url": "https://www.photober.com",
+            "description": "专注于商业、自然与城市建筑的个人免费共享摄影图库。"
+          },
+          {
+            "name": "Magdeleine",
+            "url": "https://magdeleine.co",
+            "description": "精选高清摄影图库，支持按主色调、情绪与风格进行高效率筛选。"
+          },
+          {
+            "name": "Freely Photos",
+            "url": "https://freelyphotos.com",
+            "description": "专注于宗教、沉思、仪式与心灵主题的免费 CC0 高清图库。"
+          },
+          {
+            "name": "Focus Fitness Free Stock",
+            "url": "https://www.focusfitness.net/stock-photos",
+            "description": "专注于健身、健康饮食、运动与生活习惯的高清无版权图库。"
+          },
+          {
+            "name": "Moveast",
+            "url": "https://moveast.me",
+            "description": "摄影师记录其全球旅行轨迹的无版权摄影日志，充满了风土人情与纪实感。"
+          },
+          {
+            "name": "Travel Coffee Book",
+            "url": "https://travelcoffeebook.com",
+            "description": "记录全球旅行瞬间的高清图库，所有作品均可自由下载并用于商业项目。"
+          },
+          {
+            "name": "BARN IMAGES",
+            "url": "https://barnimages.com",
+            "description": "由两位拉脱维亚摄影师发起的项目，拒绝同质化商业库存感，主打真实艺术质感。"
+          },
+          {
+            "name": "Cupcake",
+            "url": "https://cupcake.nilssonlee.se",
+            "description": "摄影师 Jonas Wimmerström 创办的 CC0 站点，主打北欧自然风光与静物摄影。"
+          },
+          {
+            "name": "Refe (Free)",
+            "url": "https://getrefe.tumblr.com",
+            "description": "主打现代科技、数字设备与人类真实交互场景的高清摄影图库。"
+          },
+          {
+            "name": "Jay Mantri",
+            "url": "https://jaymantri.com",
+            "description": "摄影师 Jay Mantri 每周更新的极简主义、城市光影与自然纹理无版权大片。"
+          },
+          {
+            "name": "DesignersPics",
+            "url": "https://www.designerspics.com",
+            "description": "专为设计师与网页创作者打造的高分辨率无版权分类摄影图库。"
+          },
+          {
+            "name": "Stokpic",
+            "url": "https://stokpic.com",
+            "description": "由摄影师 Ed Gregory 创办，包含丰富的人像、度假与日常生活免费照片。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "博物馆、图书馆与公有领域艺术图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Met Open Access (大都会艺术博物馆)",
+            "url": "https://www.metmuseum.org/art/collection",
+            "description": "超过 40 万张高分辨率公有领域艺术品与历史文物照片。"
+          },
+          {
+            "name": "Rijksmuseum Open Data (阿姆斯特丹国家博物馆)",
+            "url": "https://www.rijksmuseum.nl/en/research/art-data",
+            "description": "提供伦勃朗等大师名画的超高清晰度无版权下载。"
+          },
+          {
+            "name": "National Gallery of Art Open Access",
+            "url": "https://www.nga.gov/open-access-images.html",
+            "description": "美国国家艺术馆，5 万余件名画与雕塑高清公有图库。"
+          },
+          {
+            "name": "British Library on Flickr",
+            "url": "https://www.flickr.com/photos/britishlibrary",
+            "description": "英国图书馆公开的 100 多万张古典书籍插画、地图与历史照片。"
+          },
+          {
+            "name": "Paris Musées",
+            "url": "https://www.parismuseescollections.paris.fr/en",
+            "description": "巴黎博物馆联盟，免费提供旗下 14 家博物馆数十万件艺术品高清图。"
+          },
+          {
+            "name": "Smithsonian Open Access",
+            "url": "https://www.si.edu/openaccess",
+            "description": "史密森尼学会开放数百万张历史文物、科学标本与艺术图像。"
+          },
+          {
+            "name": "Art Institute of Chicago Open Access",
+            "url": "https://www.artic.edu/collection",
+            "description": "芝加哥艺术博物馆，包含梵高、莫奈等作品的超高清图像。"
+          },
+          {
+            "name": "Getty Open Content",
+            "url": "https://www.getty.edu/art/collection",
+            "description": "盖蒂基金会开放的近 10 万张高清艺术品与历史档案照片。"
+          },
+          {
+            "name": "Yale Center for British Art",
+            "url": "https://britishart.yale.edu",
+            "description": "耶鲁大学英国艺术中心，提供免费公开的英国艺术典藏。"
+          },
+          {
+            "name": "Biodiversity Heritage Library (BHL)",
+            "url": "https://www.flickr.com/photos/biodivlibrary",
+            "description": "海量 18–19 世纪精美动植物手绘插画与自然科学图谱。"
+          },
+          {
+            "name": "Library of Congress Prints & Photographs",
+            "url": "https://www.loc.gov/pictures",
+            "description": "美国国会图书馆，收录海量历史照片与复古海报。"
+          },
+          {
+            "name": "NASA Images",
+            "url": "https://images.nasa.gov",
+            "description": "美国宇航局官方公开的海量宇宙星空、深空摄影与航天历史图片。"
+          },
+          {
+            "name": "Musée d'Orsay Collections",
+            "url": "https://www.musee-orsay.fr/en/collections",
+            "description": "巴黎奥赛博物馆官方，印象派与后印象派艺术大师画作全览。"
+          },
+          {
+            "name": "The Walters Art Museum",
+            "url": "https://art.thewalters.org",
+            "description": "沃尔特斯艺术博物馆，提供涵盖古埃及到现代的无版权艺术库。"
+          },
+          {
+            "name": "Los Angeles County Museum of Art (LACMA)",
+            "url": "https://collections.lacma.org",
+            "description": "洛杉矶郡立艺术博物馆 2 万余张高清无版权图。"
+          },
+          {
+            "name": "European Digital Library (Europeana)",
+            "url": "https://www.europeana.eu",
+            "description": "欧洲数千家机构联合开放的数百万艺术、图书与摄影遗产。"
+          },
+          {
+            "name": "Wellcome Collection",
+            "url": "https://wellcomecollection.org",
+            "description": "英国维尔康基金会，专注于医学史、古老解剖图与生物学档案。"
+          },
+          {
+            "name": "Cleveland Museum of Art Open Access",
+            "url": "https://www.clevelandart.org/art/collection/search",
+            "description": "克利夫兰艺术博物馆，包含极其完整的亚洲与古典艺术图。"
+          },
+          {
+            "name": "Tokyo National Museum Collection",
+            "url": "https://colbase.nich.go.jp",
+            "description": "东京国立博物馆数字典藏，收录日本浮世绘与古代美术作品。"
+          },
+          {
+            "name": "Public Domain Review",
+            "url": "https://publicdomainreview.org",
+            "description": "专门挖掘与展示历史文献中奇特、绝美公有领域艺术作品的在线杂志。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "材质、肌理与设计渲染素材库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Textures.com",
+            "url": "https://www.textures.com",
+            "description": "全球最著名的 3D 建模与设计材质库，包含超高清砖墙、木纹、金属与土壤肌理。"
+          },
+          {
+            "name": "Poly Haven",
+            "url": "https://polyhaven.com",
+            "description": "100% 免费开源的高高清 HDRi 环境光照、PBR 3D 材质与无缝纹理摄影库。"
+          },
+          {
+            "name": "AmbientCG",
+            "url": "https://ambientcg.com",
+            "description": "采用 CC0 协议的超高清 PBR 材质贴图库，专为三维渲染与建筑效果图打造。"
+          },
+          {
+            "name": "cgBookcase",
+            "url": "https://www.cgbookcase.com",
+            "description": "免费无版权的 PBR 材质与纹理网站，提供超高分辨率的各种天然与工业表皮。"
+          },
+          {
+            "name": "Wild Textures",
+            "url": "https://www.wildtextures.com",
+            "description": "专注于粗粝、复古、自然与皮革等特种材质的免费高分辨率纹理摄影。"
+          },
+          {
+            "name": "Texture Fabrik",
+            "url": "https://texturefabrik.com",
+            "description": "由设计师创建的抽象纹理、流体色彩、纸张折痕与复古印刷纹理库。"
+          },
+          {
+            "name": "Lost and Taken",
+            "url": "https://lostandtaken.com",
+            "description": "专注于各种复古纸张、水彩染色、破旧木纹与水泥墙面纹理的图库。"
+          },
+          {
+            "name": "Substance Share",
+            "url": "https://share.substance3d.com",
+            "description": "Adobe 旗下 3D 社区共享的庞大程序化材质与现实表面肌理数据库。"
+          },
+          {
+            "name": "PBRMaterials",
+            "url": "https://pbrmaterials.com",
+            "description": "专注于物理渲染(PBR)的建筑与工业材质特写图库。"
+          },
+          {
+            "name": "Architextures",
+            "url": "https://architextures.org",
+            "description": "专注于建筑与室内设计的纹理生成器与施工材质案例库。"
+          },
+          {
+            "name": "TextureX",
+            "url": "https://www.texturex.com",
+            "description": "提供高清大尺寸的金属锈迹、荒漠岩石与破损表皮纹理素材。"
+          },
+          {
+            "name": "Paper Texture Archive",
+            "url": "https://www.papertextures.com",
+            "description": "专注于各种特种纸、牛皮纸、宣纸与手工纸纤维特写图库。"
+          },
+          {
+            "name": "Wood Texture Archives",
+            "url": "https://www.woodtextures.com",
+            "description": "全球各种树木木纹、木地板与实木切割面的高清材质库。"
+          },
+          {
+            "name": "Marble & Stone Textures",
+            "url": "https://www.marbletextures.com",
+            "description": "奢华大理石、花岗岩与天然矿石纹理的极高分辨率图库。"
+          },
+          {
+            "name": "Fabric Textures Archive",
+            "url": "https://www.fabrictextures.com",
+            "description": "专注于纺织品、亚麻、丝绸与牛仔面料微距肌理图库。"
+          },
+          {
+            "name": "Concrete Textures Lab",
+            "url": "https://www.concretetextures.org",
+            "description": "清水混凝土、粗粝水泥与建筑脱模纹理的细节摄影库。"
+          },
+          {
+            "name": "Glass & Light Refraction",
+            "url": "https://www.lighttextures.com",
+            "description": "专注于玻璃折射、光斑焦散与焦外虚化的背景库。"
+          },
+          {
+            "name": "Rust & Decay Textures",
+            "url": "https://www.decaytextures.com",
+            "description": "工业废墟、金属腐蚀与岁月剥落痕迹的微距摄影档案。"
+          },
+          {
+            "name": "Organic Patterns in Nature",
+            "url": "https://www.patternedby-nature.com",
+            "description": "专注于植物叶脉、龟裂大地与动物皮毛的自然几何纹理。"
+          },
+          {
+            "name": "Abstract Fluid Textures",
+            "url": "https://www.fluidtextures.com",
+            "description": "流体画、丙烯颜料扩散与超现实液体纹理的视觉素材库。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
+        "name": "摄影社区、先锋视觉与跨界艺术",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "500px",
+            "url": "https://500px.com",
+            "description": "全球顶尖专业摄影师社区，寻找高级摄影灵感与光影构图的圣地。"
+          },
+          {
+            "name": "Behance Photography",
+            "url": "https://www.behance.net/galleries/photography",
+            "description": "Adobe 旗下顶尖视觉艺术平台，收录全球大厂与先锋摄影师项目。"
+          },
+          {
+            "name": "VSCO Studio",
+            "url": "https://vsco.co",
+            "description": "以独特胶片滤镜美学著称的摄影社区与视觉灵感展示流。"
+          },
+          {
+            "name": "Magnum Photos",
+            "url": "https://www.magnumphotos.com",
+            "description": "纪实摄影与人文摄影的殿堂级官方图库与文章集锦。"
+          },
+          {
+            "name": "1X.com",
+            "url": "https://1x.com",
+            "description": "极高门槛的策展型摄影社区，每张入选作品都经过专业评审点评。"
+          },
+          {
+            "name": "PhotoVogue (Vogue Italia)",
+            "url": "https://www.vogue.com/photovogue",
+            "description": "Vogue 旗下的先锋时尚、人像与艺术摄影展示平台。"
+          },
+          {
+            "name": "LensCulture",
+            "url": "https://www.lensculture.com",
+            "description": "全球当代摄影奖项平台，提供深度摄影论述与当代视觉作品。"
+          },
+          {
+            "name": "Aperture Foundation",
+            "url": "https://aperture.org",
+            "description": "专注于摄影艺术出版、名家展影与专业摄影评论。"
+          },
+          {
+            "name": "Analog Forever Magazine",
+            "url": "https://www.analogforevermagazine.com",
+            "description": "专注传统银盐胶片、湿版摄影与复古暗房摄影艺术。"
+          },
+          {
+            "name": "British Journal of Photography (BJP)",
+            "url": "https://www.bjp-online.com",
+            "description": "世界上历史最悠久的英国专业摄影杂志网。"
+          },
+          {
+            "name": "Aether Magazine",
+            "url": "https://aethermagazine.com",
+            "description": "专注于沉静美学、极简视觉与超现实主义摄影的艺术数字杂志。"
+          },
+          {
+            "name": "Der Greif",
+            "url": "https://dergreif.org",
+            "description": "德国著名先锋摄影杂志，展示极具当代艺术感与实验性质的摄影创作。"
+          },
+          {
+            "name": "Phroom Magazine",
+            "url": "https://phroomplatform.com",
+            "description": "专注于现代当代摄影、三维艺术与视觉研究的展陈平台。"
+          },
+          {
+            "name": "Yet Magazine",
+            "url": "https://yet-magazine.com",
+            "description": "瑞士当代摄影杂志，侧重于视觉叙事、摄影理论与新锐创作。"
+          },
+          {
+            "name": "C41 Magazine",
+            "url": "https://www.c41magazine.issue",
+            "description": "意大利跨界视觉杂志，关注生活方式、时尚、建筑与当代艺术摄影。"
+          },
+          {
+            "name": "Self Publish, Be Happy (SPBH)",
+            "url": "https://selfpublishbehappy.com",
+            "description": "专注于独立摄影书出版、DIY 摄影美学与先锋视觉。"
+          },
+          {
+            "name": "GUP Magazine",
+            "url": "https://gupmagazine.com",
+            "description": "荷兰专业当代摄影杂志，报道前沿摄影艺术。"
+          },
+          {
+            "name": "Fisheye Magazine",
+            "url": "https://www.fisheyemagazine.fr",
+            "description": "法国先锋摄影网，关注数字时代下摄影边界的拓宽与新锐视角。"
+          },
+          {
+            "name": "BOOOOOOOM Photography",
+            "url": "https://www.booooooom.com/category/photography",
+            "description": "全球极具影响力的独立艺术平台，收录大量惊艳的现代创意摄影。"
+          },
+          {
+            "name": "PHmuseum",
+            "url": "https://phmuseum.com",
+            "description": "专注于当代摄影展、人才奖项与视觉策展的数字博物馆。"
+          }
         ]
       },
       {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
+        "name": "综合免费商用与独立图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Stockvault",
+            "url": "https://www.stockvault.net",
+            "description": "老牌免费摄影素材库，包含数万张高分辨率风景、建筑与物体特写。"
+          },
+          {
+            "name": "Freeimages",
+            "url": "https://www.freeimages.com",
+            "description": "庞大的免费素材共享平台，分类齐全，涵盖商业、科技与生活方式。"
+          },
+          {
+            "name": "Freerange Stock",
+            "url": "https://freerangestock.com",
+            "description": "由专业摄影师团队维护的高清晰度免费商用照片与插画网站。"
+          },
+          {
+            "name": "Canva Free Photos",
+            "url": "https://www.canva.com/photos/free",
+            "description": "Canva 旗下的免费图像资源库，非常适合社交媒体与排版使用。"
+          },
+          {
+            "name": "Vecteezy Free Photos",
+            "url": "https://www.vecteezy.com/free-photos",
+            "description": "不仅有矢量图，还收录了海量高画质免版税摄影作品。"
+          },
+          {
+            "name": "Depositphotos Free Section",
+            "url": "https://depositphotos.com/free-stock-photos.html",
+            "description": "知名微图库的免费专区，提供安全可靠的商业级免费图片。"
+          },
+          {
+            "name": "Motion Array Free Photos",
+            "url": "https://motionarray.com/free-stock-photos",
+            "description": "主打现代调性、视频感十足的高清商业与科技摄影。"
+          },
+          {
+            "name": "VistaCreate Free Stock",
+            "url": "https://create.vista.com/colors/photos",
+            "description": "设计工具 Vista 提供的免费素材库，包含大量无背景物体与时尚人像。"
+          },
+          {
+            "name": "Stocker",
+            "url": "https://stocker.org.ua",
+            "description": "专注于极简风格、自然光线与现代日常的高清 CC0 图库。"
+          },
+          {
+            "name": "Free Nature Stock",
+            "url": "https://freenaturestock.com",
+            "description": "由摄影师 Adrian Pelletier 创立，专注于星空、森林、山脉等自然风光。"
+          },
+          {
+            "name": "Picography",
+            "url": "https://picography.co",
+            "description": "精选的高分辨率无版权照片站，主打真实感城市与人文风光。"
+          },
+          {
+            "name": "BucketListly Photos",
+            "url": "https://photos.bucketlistly.blog",
+            "description": "旅行家 Pete R. 共享的全球各大洲风土人情与建筑高清 CC0 照片。"
+          },
+          {
+            "name": "ISO Republic Food",
+            "url": "https://isorepublic.com/food-photos",
+            "description": "专注于高精致度料理、咖啡、食材与餐厅氛围的高清图库。"
+          },
+          {
+            "name": "Landing Stock",
+            "url": "https://landingstock.com",
+            "description": "专为网页落地页(Landing Page)设计的干净、带留白空间的高清图库。"
+          },
+          {
+            "name": "Startup Stock Photos",
+            "url": "https://startupstockphotos.com",
+            "description": "专注于初创公司、办公室讨论、写字楼与 Mac 电脑场景的照片。"
+          },
+          {
+            "name": "Styled Stock",
+            "url": "https://styledstock.co",
+            "description": "专注于女性美学、干净台面、粉色调与精致静物摄影素材。"
+          },
+          {
+            "name": "Little Visuals",
+            "url": "https://littlevisuals.co",
+            "description": "纪念已故摄影师的 CC0 图库，包含大量唯美的极简自然与建筑镜头。"
+          },
+          {
+            "name": "FancyCrave",
+            "url": "https://fancycrave.com",
+            "description": "主打情绪感、叙事感与旅行故事的高品质摄影集锦。"
+          },
+          {
+            "name": "AllTheFreeStock",
+            "url": "https://allthefreestock.com",
+            "description": "聚合类资源站，一站式搜索全球各大无版权图像、视频与音效。"
+          },
+          {
+            "name": "LibreShot",
+            "url": "https://libreshot.com",
+            "description": "摄影师 Martin Vorel 贡献的免费图库，建筑与植物细节非常丰富。"
+          }
         ]
       },
       {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
+        "name": "全球博物馆、图书馆与档案库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "British Museum Collection",
+            "url": "https://www.britishmuseum.org/collection",
+            "description": "大英博物馆数字档案，公开数十万件全球历史文物的高清图像。"
+          },
+          {
+            "name": "Victoria and Albert Museum (V&A)",
+            "url": "https://collections.vam.ac.uk",
+            "description": "英国 V&A 博物馆，专注于艺术、时装、家具与装潢设计的超高清档案。"
+          },
+          {
+            "name": "National Library of Sweden (KB)",
+            "url": "https://www.kb.se",
+            "description": "瑞典国家图书馆数字档案，收录北欧历史手稿、版画与地图。"
+          },
+          {
+            "name": "National Gallery London",
+            "url": "https://www.nationalgallery.org.uk/paintings/search-the-collection",
+            "description": "伦敦国家美术馆，收录达芬奇、特纳等大师名画的高清图。"
+          },
+          {
+            "name": "Vatican Digital Library (DigiVatLib)",
+            "url": "https://digi.vatlib.it",
+            "description": "梵蒂冈数字图书馆，公开极度珍贵的手抄本、宗教画与历史文献。"
+          },
+          {
+            "name": "Prado Museum Open Collection",
+            "url": "https://www.museodelprado.es/en/the-collection",
+            "description": "西班牙普拉多博物馆，包含委拉斯开兹、戈雅等名家名作。"
+          },
+          {
+            "name": "Mauritshuis Collection",
+            "url": "https://www.mauritshuis.nl/en/our-collection",
+            "description": "荷兰莫瑞泰斯皇家美术馆，包含《戴珍珠耳环的少女》超高清图像。"
+          },
+          {
+            "name": "Uffizi Galleries Digital",
+            "url": "https://www.uffizi.it/en/artworks",
+            "description": "佛罗伦萨乌菲兹美术馆，文艺复兴时期艺术巨作高清数据库。"
+          },
+          {
+            "name": "National Museum of Korea Digital",
+            "url": "https://www.museum.go.kr/site/eng/archive/united",
+            "description": "韩国国立中央博物馆，展示古代朝鲜半岛陶瓷、绘画与文物。"
+          },
+          {
+            "name": "Newberry Library Digital Collections",
+            "url": "https://www.newberry.org/digital-collections",
+            "description": "芝加哥纽贝里图书馆，收录大量古代地图、书籍装帧与地理图集。"
+          },
+          {
+            "name": "National Library of Denmark (KB)",
+            "url": "https://www.kb.dk/en",
+            "description": "丹麦国家图书馆，开放北欧文学手稿、历史摄影与风土图册。"
+          },
+          {
+            "name": "Austrian National Library (ÖNB)",
+            "url": "https://www.onb.ac.at/en",
+            "description": "奥地利国家图书馆，含有丰富的哈布斯堡王朝历史图像与地图。"
+          },
+          {
+            "name": "Hermitage Museum Digital Collection",
+            "url": "https://www.hermitagemuseum.org",
+            "description": "圣彼得堡埃尔米塔日(冬宫)博物馆，收录庞大的沙俄与欧洲艺术品。"
+          },
+          {
+            "name": "Science Museum Group Collection",
+            "url": "https://collection.sciencemuseumgroup.org.uk",
+            "description": "英国科学博物馆集团，开放工业革命机器、古老仪器与科技档案。"
+          },
+          {
+            "name": "Morgan Library & Museum Digital",
+            "url": "https://www.themorgan.org/collection",
+            "description": "纽约摩根图书馆，收录中世纪稀有手抄本、古版书与音乐手稿。"
+          },
+          {
+            "name": "Museum of Fine Arts Boston (MFA)",
+            "url": "https://collections.mfa.org",
+            "description": "波士顿美术馆，提供数十万件全球艺术品的高清数字画像。"
+          },
+          {
+            "name": "National Portrait Gallery London",
+            "url": "https://www.npg.org.uk/collections",
+            "description": "英国国家肖像馆，收录数百年来影响历史的肖像画与名人摄影。"
+          },
+          {
+            "name": "Royal Collection Trust",
+            "url": "https://www.rct.uk/collection",
+            "description": "英国皇室艺术收藏，包含大量拉斐尔手稿、城堡油画与皇家家具。"
+          },
+          {
+            "name": "Dumbarton Oaks Digital Collections",
+            "url": "https://www.doaks.org/research/library-archives",
+            "description": "哈佛大学顿巴顿橡树园，专注于拜占庭与前哥伦布时期艺术档案。"
+          },
+          {
+            "name": "Yale University Art Gallery",
+            "url": "https://artgallery.yale.edu/collection",
+            "description": "耶鲁大学艺术博物馆，开放数万张涵盖古今的艺术品 CC0 图像。"
+          }
         ]
       },
       {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
+        "name": "3D 贴图、纹理肌理与设计素材",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Poly Haven Textures",
+            "url": "https://polyhaven.com/textures",
+            "description": "100% 免费的 8K 超高清 PBR 材质贴图，包含无缝木纹、砖石与土壤。"
+          },
+          {
+            "name": "CGAxis Free Models & Textures",
+            "url": "https://cgaxis.com/free-3d-models",
+            "description": "提供高品质免费三维家具模型、PBR 建筑材质与植物贴图。"
+          },
+          {
+            "name": "Sketchfab Free Cultural Models",
+            "url": "https://sketchfab.com/blogs/community/category/cultural-heritage",
+            "description": "全球最大的 3D 模型平台，免费可下载数十万件博物馆文物三维模型。"
+          },
+          {
+            "name": "3dtextures.me",
+            "url": "https://3dtextures.me",
+            "description": "设计师 Joao Paulo 维护的免费 PBR 纹理库，附带完整 Diffuse、Normal 图层。"
+          },
+          {
+            "name": "ShareTextures",
+            "url": "https://www.sharetextures.com",
+            "description": "由建筑师团队创建的免费 CC0 建筑贴图库，专为渲染打磨。"
+          },
+          {
+            "name": "OpenGameArt",
+            "url": "https://opengameart.org",
+            "description": "开源游戏素材社区，包含海量像素纹理、2D 贴图与三维材质。"
+          },
+          {
+            "name": "TextureCan",
+            "url": "https://www.texturecan.com",
+            "description": "提供高质量 3D 渲染专用的 CG 材质贴图，包含完整 PBR 贴图链。"
+          },
+          {
+            "name": "FreePBR",
+            "url": "https://freepbr.com",
+            "description": "专注于真实感渲染(PBR)的金属、水泥、生锈与皮革贴图。"
+          },
+          {
+            "name": "Architectural Material Lab",
+            "url": "https://www.archmatlab.com",
+            "description": "专为建筑效果图打造的极简墙面、微水泥与水磨石无缝纹理。"
+          },
+          {
+            "name": "Texture Haven Archive",
+            "url": "https://polyhaven.com/all",
+            "description": "Poly Haven 前身，纯自然环境与建筑遗迹地表的超高分辨率贴图。"
+          },
+          {
+            "name": "TextureLib",
+            "url": "https://texturelib.com",
+            "description": "收录超过 6000 张高清晰度建筑物立面、路面与破损肌理照片。"
+          },
+          {
+            "name": "Seamless Textures Pro",
+            "url": "https://www.seamlesstexture.me",
+            "description": "专注于可无缝平铺(Tileable)的地面、布料与墙面图像。"
+          },
+          {
+            "name": "HDRI Haven",
+            "url": "https://polyhaven.com/hdris",
+            "description": "全球顶尖的免费 16K HDRi 天空与环境光照图库，建筑渲染必查。"
+          },
+          {
+            "name": "Paper & Canvas Textures",
+            "url": "https://www.canvastextures.com",
+            "description": "专注于水彩纸、麻布画布、复古羊皮纸与特种纸纹理特写。"
+          },
+          {
+            "name": "Marble Scans Collection",
+            "url": "https://www.marblescans.com",
+            "description": "高精度扫描的天然大理石板材、奢石与爵士白石材高分辨率图。"
+          },
+          {
+            "name": "Metal Decay Textures",
+            "url": "https://www.metaldecay.com",
+            "description": "工业重金属锈蚀、剥落漆面与氧化铜绿的微距肌理素材。"
+          },
+          {
+            "name": "Wood Grain HD",
+            "url": "https://www.woodgrainhd.com",
+            "description": "各种名贵木材(胡桃木、橡木、柚木)的纵切面与横切面纹理。"
+          },
+          {
+            "name": "Fabric Micro Scans",
+            "url": "https://www.fabricmicro.com",
+            "description": "高倍放大镜头下的亚麻、粗花呢、皮革缝线与真丝肌理。"
+          },
+          {
+            "name": "Liquid Surface Textures",
+            "url": "https://www.watertextures.com",
+            "description": "泳池水面波纹、雨后积水焦散与流体色彩扩散材质。"
+          },
+          {
+            "name": "Soil & Ground Textures",
+            "url": "https://www.groundtextures.com",
+            "description": "泥土、干裂大地、鹅卵石路面与苔藓地表的超高清 PBR 库。"
+          }
         ]
       },
       {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "新闻纪实、人文历史与社会档案",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "National Archives Flickr Commons",
+            "url": "https://www.flickr.com/photos/usnationalarchives",
+            "description": "美国国家档案馆公开的数万张历史事件、军旅生活与名人大片。"
+          },
+          {
+            "name": "British Empire & Commonwealth Collection",
+            "url": "https://www.bristolmuseums.org.uk/bristol-archives",
+            "description": "布里斯托档案馆，记录 19–20 世纪全球风土人情与历史影像。"
+          },
+          {
+            "name": "Imperial War Museums Photos",
+            "url": "https://www.iwm.org.uk/collections/photographs",
+            "description": "帝国战争博物馆，收录一战、二战极其珍贵的官方与民间影像。"
+          },
+          {
+            "name": "NASA Scientific Visualization Studio",
+            "url": "https://svs.gsfc.nasa.gov",
+            "description": "宇航局科学可视化工作室，提供高分辨率地球卫星图与深空摄影。"
+          },
+          {
+            "name": "NOAA Photo Library",
+            "url": "https://photolib.noaa.gov",
+            "description": "美国海洋和大气管理局，收录极光、海洋生物与气象奇观。"
+          },
+          {
+            "name": "US Geological Survey (USGS) Multimedia",
+            "url": "https://www.usgs.gov/media/images",
+            "description": "地质调查局，收录火山喷发、峡谷地貌与卫星遥感地图。"
+          },
+          {
+            "name": "Australian War Memorial Archives",
+            "url": "https://www.awm.gov.au/collection",
+            "description": "澳大利亚战争纪念馆，收录大量太平洋战争与历史人文照片。"
+          },
+          {
+            "name": "Library of Virginia Digital",
+            "url": "https://www.lva.virginia.gov/public/digital.asp",
+            "description": "弗吉尼亚州立图书馆，包含大量早期北美殖民与拓荒历史档案。"
+          },
+          {
+            "name": "Denver Public Library Western History",
+            "url": "https://digital.denverlibrary.org",
+            "description": "丹佛公共图书馆，收录美国西部牛仔、铁路建设与矿山历史。"
+          },
+          {
+            "name": "Seattle Municipal Archives",
+            "url": "https://www.seattle.gov/cityarchives",
+            "description": "西雅图城市档案馆，展示 20 世纪初西雅图城市建设与市民生活。"
+          },
+          {
+            "name": "California State Library Digital",
+            "url": "https://www.library.ca.gov/collections",
+            "description": "加州州立图书馆，收录淘金热、好莱坞早期与旧金山大地震。"
+          },
+          {
+            "name": "State Library of New South Wales",
+            "url": "https://www.sl.nsw.gov.au/collections",
+            "description": "澳大利亚新南威尔士州立图书馆，记录澳洲原住民与早期移民。"
+          },
+          {
+            "name": "Nationaal Archief Netherlands",
+            "url": "https://www.nationaalarchief.nl/en",
+            "description": "荷兰国家档案馆，公开数十万张大航海时代与近代欧洲历史照片。"
+          },
+          {
+            "name": "Finnish Defence Forces Photo Archive",
+            "url": "https://sa-kuva.fi",
+            "description": "芬兰二战历史摄影档案，真实记录二战北欧冰雪战场与人文。"
+          },
+          {
+            "name": "Swiss National Museum Collections",
+            "url": "https://www.landesmuseum.ch/en/collection",
+            "description": "瑞士国家博物馆，收录阿尔卑斯山脉人文民俗与历史图册。"
+          },
+          {
+            "name": "Wellcome Medical History Images",
+            "url": "https://wellcomecollection.org/collections",
+            "description": "专注于全球医疗发展史、古代药房与防疫历史的珍贵图像。"
+          },
+          {
+            "name": "Smithsonian Institution Archives",
+            "url": "https://siarchives.si.edu",
+            "description": "史密森尼学会档案馆，收录科学探险、野外考察与博物馆历史。"
+          },
+          {
+            "name": "Digital Public Library of America Artifacts",
+            "url": "https://dp.la/exhibitions",
+            "description": "DPLA 联合全美数千家机构打造的历史专题与老照片大展。"
+          },
+          {
+            "name": "Europeana Historic Newspapers",
+            "url": "https://www.europeana.eu/en/collections/topic/18-newspapers",
+            "description": "欧洲历史报纸数字网，包含数百年来的报纸排版与新闻插图。"
+          },
+          {
+            "name": "Library of Congress Historic Posters",
+            "url": "https://www.loc.gov/free-to-use/posters",
+            "description": "美国国会图书馆收录的复古宣传海报、马戏团海报与艺术招贴。"
+          }
+        ]
+      },
+      {
+        "name": "先锋摄影、视觉实验与摄影理论",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Photoworks UK",
+            "url": "https://photoworks.org.uk",
+            "description": "英国知名摄影机构，倡导当代摄影思考、策展与新锐摄影师扶持。"
+          },
+          {
+            "name": "Aperture Foundation Visuals",
+            "url": "https://aperture.org/ideas",
+            "description": "光圈基金会文章与视觉专栏，深度探讨摄影术的艺术与社会价值。"
+          },
+          {
+            "name": "Foam Fotografiemuseum Amsterdam",
+            "url": "https://www.foam.org",
+            "description": "阿姆斯特丹 Foam 摄影博物馆，展示全球当代最前沿的摄影艺术。"
+          },
+          {
+            "name": "Magnum Photos Essays",
+            "url": "https://www.magnumphotos.com/photographers",
+            "description": "玛格南图片社摄影师专题，展现大师级视觉叙事与现场镜头。"
+          },
+          {
+            "name": "British Journal of Photography Projects",
+            "url": "https://www.bjp-online.com/projects",
+            "description": "BJP 选出的年度优秀摄影项目、艺术摄影与纪实专题。"
+          },
+          {
+            "name": "Photographic Museum of Humanity (PHmuseum)",
+            "url": "https://phmuseum.com/grants",
+            "description": "专注于当代人文与纪实摄影奖项，展示极具深度与哲思的作品。"
+          },
+          {
+            "name": "LensCulture Awards Gallery",
+            "url": "https://www.lensculture.com/awards",
+            "description": "LensCulture 历届肖像、街拍、黑白与艺术摄影大赛获奖展。"
+          },
+          {
+            "name": "Vogue Italia PhotoVogue Showcase",
+            "url": "https://www.vogue.com/photovogue/photographers",
+            "description": "PhotoVogue 平台挑选的先锋时尚、唯美肖像与超现实摄影。"
+          },
+          {
+            "name": "Self Publish, Be Happy Books",
+            "url": "https://selfpublishbehappy.com/collection",
+            "description": "独立摄影书(Photobook)出版圣地，展示打破常规的摄影视觉。"
+          },
+          {
+            "name": "American Suburb X (ASX)",
+            "url": "https://americansuburbx.com",
+            "description": "专注于摄影理论评论、大师访谈与极具批判性的艺术摄影。"
+          },
+          {
+            "name": "Nearest Truth Conversations",
+            "url": "https://www.nearesttruth.com/episodes",
+            "description": "当代艺术摄影师对话录，分享作品集构思与视觉语言创作。"
+          },
+          {
+            "name": "Contemporary Art Daily Photography",
+            "url": "https://www.contemporaryartdaily.com",
+            "description": "每日更新全球画廊与艺术展现场的高清晰度展陈记录摄影。"
+          },
+          {
+            "name": "Feature Shoot Portfolio",
+            "url": "https://www.featureshoot.com/category/portfolios",
+            "description": "精选全球独立摄影师的完整专题作品集，风格独树一帜。"
+          },
+          {
+            "name": "Modern Street Photography Archive",
+            "url": "https://www.in-public.com",
+            "description": "iN-PUBLiC 街拍集体，展示抓住决定性瞬间的当代街头摄影。"
+          },
+          {
+            "name": "Fine Art Photography Journal",
+            "url": "https://www.fineartphotojournal.com",
+            "description": "纯粹美术摄影、画意摄影与暗房工艺创作解析。"
+          },
+          {
+            "name": "Minimalist Photography Awards",
+            "url": "https://minimalistphotographyawards.com",
+            "description": "极简主义摄影大奖官方展，展示留白、线条与极致光影。"
+          },
+          {
+            "name": "Urban Landscape Photography Lab",
+            "url": "https://www.urbanlandscape.org",
+            "description": "专注于人造环境、废弃空间与城市边角美学(Terrain Vague)。"
+          },
+          {
+            "name": "Experimental Photography Network",
+            "url": "https://www.experimentalphoto.org",
+            "description": "探讨针孔摄影、多重曝光、冲印实验与数字混合媒介。"
+          },
+          {
+            "name": "Conceptual Photography Index",
+            "url": "https://www.conceptualphoto.org",
+            "description": "用镜头传达哲学概念、隐喻与超现实主义设想的作品集。"
+          },
+          {
+            "name": "International Photography Awards (IPA)",
+            "url": "https://www.photoawards.com/winner",
+            "description": "IPA 国际摄影奖官方数据库，涵盖专业与非专业组全球佳作。"
+          }
         ]
       }
     ]
@@ -5292,6 +6005,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

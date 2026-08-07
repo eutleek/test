@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="设计、建筑权威媒体与商业空间灵感导航">
+<title>设计建筑 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>设计建筑</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1076 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">设计建筑 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "设计建筑",
+    "icon": "🏛️",
+    "color": "linear-gradient(135deg, #6c5ce7, #00cec9)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "全球顶级建筑与设计权威媒体",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "ArchDaily",
+            "url": "https://www.archdaily.com",
+            "description": "全球访问量最大的建筑门户，每日更新世界最新建成的建筑项目、高清图集与施工图纸。"
+          },
+          {
+            "name": "Dezeen",
+            "url": "https://www.dezeen.com",
+            "description": "英国著名设计与建筑杂志，涵盖先锋室内、建筑、产品及前沿设计趋势。"
+          },
+          {
+            "name": "Designboom",
+            "url": "https://www.designboom.com",
+            "description": "全球首家在线设计杂志，侧重建筑、工业设计、科技与艺术的跨界创新。"
+          },
+          {
+            "name": "Architizer",
+            "url": "https://architizer.com",
+            "description": "连接建筑师与品牌的开放平台，拥有庞大的全球项目库及著名的 A+Awards 获奖作品集。"
+          },
+          {
+            "name": "Architectural Digest (AD)",
+            "url": "https://www.architecturaldigest.com",
+            "description": "知名《建筑摘要》，聚焦全球名流豪宅、顶尖室内设计与高端生活美学。"
+          },
+          {
+            "name": "Frame Magazine",
+            "url": "https://frameweb.com",
+            "description": "荷兰国际室内设计权威，主打商业空间、品牌展厅、零售店面与体验空间。"
+          },
+          {
+            "name": "Wallpaper*",
+            "url": "https://www.wallpaper.com",
+            "description": "英国极具影响力的生活方式与设计杂志，报道高端建筑、时尚、艺术及工业设计。"
+          },
+          {
+            "name": "Detail Magazine",
+            "url": "https://www.detail-online.com",
+            "description": "德国专业建筑细节杂志，以提供极其精准规范的建筑结构剖面图与施工节点图闻名。"
+          },
+          {
+            "name": "Architectural Review (AR)",
+            "url": "https://www.architectural-review.com",
+            "description": "英国百年建筑评论杂志，侧重批判性建筑思考、城市化与建筑理论探讨。"
+          },
+          {
+            "name": "The Architect’s Newspaper (AN)",
+            "url": "https://www.archpaper.com",
+            "description": "北美权威建筑新闻源，追踪报道建筑设计、城市规划与营建资讯。"
+          },
+          {
+            "name": "Domus Web",
+            "url": "https://www.domusweb.it/en.html",
+            "description": "意大利传奇建筑与设计杂志 Domus 官方网，充满了浓厚的人文色彩与现代主义思潮。"
+          },
+          {
+            "name": "Casabella",
+            "url": "https://casabellaweb.eu",
+            "description": "意大利历史悠久的建筑杂志，专注国际先锋建筑解析与建筑史研讨。"
+          },
+          {
+            "name": "Metropolis Magazine",
+            "url": "https://metropolismag.com",
+            "description": "关注可持续建筑、城市规划、人性化室内设计与社会责任。"
+          },
+          {
+            "name": "Yellowtrace",
+            "url": "https://www.yellowtrace.com.au",
+            "description": "澳大利亚顶尖室内设计博客，以极具审美活力的商业与住宅空间推荐著称。"
+          },
+          {
+            "name": "Divisare",
+            "url": "https://divisare.com",
+            "description": "极简主义建筑数据库，纯粹以高质量图片和图纸展示世界各地的小众与经典建筑。"
+          },
+          {
+            "name": "Architectural Record",
+            "url": "https://www.architecturalrecord.com",
+            "description": "美国建筑师协会(AIA)指定合作杂志，涵盖商业建筑与工程技术分析。"
+          },
+          {
+            "name": "A+U (Architecture and Urbanism)",
+            "url": "https://au-magazine.com",
+            "description": "日本知名中英双语杂志，每期深度剖析全球顶尖建筑师作品。"
+          },
+          {
+            "name": "Gooood (谷德设计网)",
+            "url": "https://www.gooood.cn",
+            "description": "亚洲极具影响力的建筑与景观设计网，中英双语报道优质案例。"
+          },
+          {
+            "name": "Design Anthology",
+            "url": "https://design-anthology.com",
+            "description": "聚焦亚洲及欧洲高端住宅、精品酒店与室内设计的生活方式杂志。"
+          },
+          {
+            "name": "Archello",
+            "url": "https://archello.com",
+            "description": "连接建筑师、室内设计师与建材产品的开放式案例展示平台。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "室内设计、软装与住宅灵感",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Architonic",
+            "url": "https://www.architonic.com",
+            "description": "全球最大的高端家具、建材与室内设计案例数据库。"
+          },
+          {
+            "name": "Remodelista",
+            "url": "https://www.remodelista.com",
+            "description": "注重极简、复古与自然质感的室内装潢与家居改造指南。"
+          },
+          {
+            "name": "Est Living",
+            "url": "https://www.estliving.com",
+            "description": "澳大利亚高端住宅设计媒体，充满柔和自然光线与极简奢华风。"
+          },
+          {
+            "name": "Sight Unseen",
+            "url": "https://www.sightunseen.com",
+            "description": "专注先锋室内设计、小众独立家具与艺术设计的在线杂志。"
+          },
+          {
+            "name": "Minimalissimo",
+            "url": "https://minimalissimo.com",
+            "description": "极简主义设计圣地，涵盖极简建筑、室内、家具与产品设计。"
+          },
+          {
+            "name": "Nonagon Style",
+            "url": "https://nonagon.style",
+            "description": "汇集全球新锐室内设计师的灵感集锦与空间配色案例。"
+          },
+          {
+            "name": "Leibal",
+            "url": "https://leibal.com",
+            "description": "专注于极简主义的建筑、室内与家具产品设计博客。"
+          },
+          {
+            "name": "Interior Design Magazine",
+            "url": "https://interiordesign.net",
+            "description": "美国《室内设计》官方网，商业空间、办公空间与酒店设计的行业标杆。"
+          },
+          {
+            "name": "Design Milk",
+            "url": "https://design-milk.com",
+            "description": "流行设计博客，涵盖现代室内设计、建筑、艺术及技术跨界。"
+          },
+          {
+            "name": "Apartment Therapy",
+            "url": "https://www.apartmenttherapy.com",
+            "description": "全球知名的真实住宅改造、小户型空间利用与家居灵感社区。"
+          },
+          {
+            "name": "Vogue Living",
+            "url": "https://www.vogue.com.au/vogue-living",
+            "description": "时尚巨头旗下生活方式网，报道全球高端住宅、艺术藏家空间与软装搭配。"
+          },
+          {
+            "name": "Dwell",
+            "url": "https://www.dwell.com",
+            "description": "现代住宅建筑与小屋设计圣地，倡导优雅、实用与可持续生活。"
+          },
+          {
+            "name": "IGNANT",
+            "url": "https://www.ignant.com",
+            "description": "德国跨界设计网，遴选极其唯美、自然与艺术感并存的建筑和室内作品。"
+          },
+          {
+            "name": "Contemporist",
+            "url": "https://www.contemporist.com",
+            "description": "关注现代建筑、室内设计、景观与艺术灵感图库。"
+          },
+          {
+            "name": "Office Snapshots",
+            "url": "https://officesnapshots.com",
+            "description": "全球最大的办公空间设计数据库，收录 Google、Meta 等顶级公司的办公室。"
+          },
+          {
+            "name": "Hospitality Design (HD)",
+            "url": "https://hospitalitydesign.com",
+            "description": "全球酒店、餐厅、酒吧与度假村设计的专业行业洞察。"
+          },
+          {
+            "name": "Retail Design Blog",
+            "url": "https://retaildesignblog.net",
+            "description": "专注全球商业零售店面、橱窗设计、品牌快闪店与展厅。"
+          },
+          {
+            "name": "Restless Living",
+            "url": "https://restless.co.uk",
+            "description": "专注于豪华住宅、现代别墅与高空公寓室内视觉体验。"
+          },
+          {
+            "name": "Milk Decoration",
+            "url": "https://www.milkdecoration.com",
+            "description": "法国高端家居装饰杂志 Milk Decoration 官网，呈现法式优雅与复古折衷主义。"
+          },
+          {
+            "name": "Houzz",
+            "url": "https://www.houzz.com",
+            "description": "全球最大的家居改造、室内设计图片与业主交流社区。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "品牌商业、零售与展陈空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Superflux",
+            "url": "https://superflux.in",
+            "description": "专注于未来场景、沉浸式展陈与艺术装置设计的先锋工作室。"
+          },
+          {
+            "name": "Retail Trends",
+            "url": "https://www.retailtrends.nl",
+            "description": "专注于全球顶级时尚品牌快闪店、概念店与零售空间案例。"
+          },
+          {
+            "name": "Spatial Design / Brand Spaces",
+            "url": "https://www.spatialdesign.info",
+            "description": "探索品牌形象如何完美转化为线下物理空间的视觉灵感站。"
+          },
+          {
+            "name": "VMSD",
+            "url": "https://www.vmsd.com",
+            "description": "全球视觉陈列与商店零售空间设计的权威行业杂志。"
+          },
+          {
+            "name": "Exhibition Design Awards",
+            "url": "https://www.exhibitoronline.com",
+            "description": "全球各大博览会、展馆与品牌展位设计获奖案例库。"
+          },
+          {
+            "name": "Gensler Research Institute",
+            "url": "https://www.gensler.com/research-insight",
+            "description": "建筑巨头 Gensler 发布的关于商业、办公与公共体验空间的前沿研究。"
+          },
+          {
+            "name": "Shopcore Architecture",
+            "url": "https://www.shopcore.com",
+            "description": "专注于商场、商业综合体与社区零售空间规划。"
+          },
+          {
+            "name": "Store age",
+            "url": "https://www.store-age.com",
+            "description": "聚焦零售体验创新、数字互动空间与商业美学。"
+          },
+          {
+            "name": "Pop Up City",
+            "url": "https://popupcity.net",
+            "description": "专注于城市临时建筑、快闪空间与灵活商业业态创意。"
+          },
+          {
+            "name": "Event Design Style",
+            "url": "https://www.eventdesign.com",
+            "description": "展示舞美、品牌发布会、时装周秀场及大型活动空间设计。"
+          },
+          {
+            "name": "Interior Design Show (IDS)",
+            "url": "https://toronto.interiordesignshow.com",
+            "description": "加拿大国际室内设计展，展示当代顶尖商业与住宅软装。"
+          },
+          {
+            "name": "Storefront for Art and Architecture",
+            "url": "https://storefrontnews.org",
+            "description": "纽约著名的前沿建筑展厅，聚焦艺术与建筑交汇的装置。"
+          },
+          {
+            "name": "Shop Design Magazine",
+            "url": "https://shotenkenchiku.com",
+            "description": "日本专业商店设计杂志《商店建筑》关联国际案例库。"
+          },
+          {
+            "name": "Design Diffusion (DDN)",
+            "url": "https://www.designdiffusion.com",
+            "description": "意大利知名设计网，主打米兰设计周、豪宅与高端商业空间。"
+          },
+          {
+            "name": "Frame Store Index",
+            "url": "https://frameweb.com/stores",
+            "description": "Frame 杂志旗下精选的全球百大概念零售店与旗舰店指南。"
+          },
+          {
+            "name": "Trendland Architecture",
+            "url": "https://trendland.com/category/architecture",
+            "description": "涵盖时尚、室内、建筑与艺术跨界的高调性灵感站。"
+          },
+          {
+            "name": "Space Matrix",
+            "url": "https://www.spacematrix.com",
+            "description": "专注于现代数字化办公空间与灵活工位规划的设计案例库。"
+          },
+          {
+            "name": "Luxe Interiors + Design",
+            "url": "https://luxesource.com",
+            "description": "北美高端住宅与商业豪宅领域的室内设计杂志。"
+          },
+          {
+            "name": "Creative Retail Architecture",
+            "url": "https://www.creativeretail.co.uk",
+            "description": "聚集独立买手店、精品咖啡馆与小众展厅设计。"
+          },
+          {
+            "name": "Commercial Interior Design (CID)",
+            "url": "https://www.commercialinteriordesign.com",
+            "description": "中东及全球中空商业、奢华酒店与餐饮空间标杆。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "景观建筑、公建与城市规划",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Landezine",
+            "url": "https://landezine.com",
+            "description": "全球权威的景观建筑网，展示公园、广场、公共空间与地景艺术。"
+          },
+          {
+            "name": "Landscape Architecture Magazine (LAM)",
+            "url": "https://landscapearchitecturemagazine.org",
+            "description": "美国景观建筑师协会官方杂志，报道生态与城市设计。"
+          },
+          {
+            "name": "World Landscape Architecture (WLA)",
+            "url": "https://worldlandscapearchitect.com",
+            "description": "全球景观设计竞赛、行业新闻与顶尖景观项目。"
+          },
+          {
+            "name": "Urban Land Institute (ULI)",
+            "url": "https://uli.org",
+            "description": "专注于城市规划、可持续房地产开发与城市更新。"
+          },
+          {
+            "name": "Curbed",
+            "url": "https://www.curbed.com",
+            "description": "Vox 旗下网站，报道城市建筑、社区发展、地标变迁与历史建筑保护。"
+          },
+          {
+            "name": "Bloomberg CityLab",
+            "url": "https://www.bloomberg.com/citylab",
+            "description": "彭博旗下的城市未来设计、公共交通、住房与建筑发展洞察。"
+          },
+          {
+            "name": "ASLA",
+            "url": "https://www.asla.org",
+            "description": "美国景观设计大奖与生态设计数据库。"
+          },
+          {
+            "name": "Rethinking The Future (RTF)",
+            "url": "https://www.re-thinkingthefuture.com",
+            "description": "致力于探讨建筑未来形态、城市可持续性与全球建筑奖项。"
+          },
+          {
+            "name": "E-architect",
+            "url": "https://www.e-architect.com",
+            "description": "涵盖全球主要城市(伦敦、纽约、东京等)建筑新闻与新地标索引。"
+          },
+          {
+            "name": "European Prize for Urban Public Space",
+            "url": "https://www.publicspace.org",
+            "description": "欧洲城市公共空间奖官方数据库，关注社区与广场。"
+          },
+          {
+            "name": "Inhabitat",
+            "url": "https://inhabitat.com",
+            "description": "专注于绿色环保建筑、太阳能建筑与可持续空间解决方案。"
+          },
+          {
+            "name": "Archiposition (有方)",
+            "url": "https://www.archiposition.com",
+            "description": "中国建筑文化与学术传播机构，提供高质量建筑剖析与考察路线。"
+          },
+          {
+            "name": "SuperArchitects",
+            "url": "https://www.super-architects.com",
+            "description": "聚焦先锋概念建筑、学生毕业设计与未来的实验性结构。"
+          },
+          {
+            "name": "Architecture Hunter",
+            "url": "https://architecturehunter.com",
+            "description": "拥有数百万粉丝的视觉媒体，以极具冲击力的视频与高分辨率图片展示豪宅建筑。"
+          },
+          {
+            "name": "World Architecture Community (WAC)",
+            "url": "https://worldarchitecture.org",
+            "description": "全球建筑师互联网络，收录大量发展中国家及独立建筑师项目。"
+          },
+          {
+            "name": "Phaidon Architecture",
+            "url": "https://www.phaidon.com/store/architecture",
+            "description": "顶尖艺术出版商 Phaidon 旗下的建筑书籍与世界建筑图库。"
+          },
+          {
+            "name": "Tactical Urbanism Materials",
+            "url": "https://tacticalurbanismguide.com",
+            "description": "战术性城市主义与社区小微空间改造方案库。"
+          },
+          {
+            "name": "Archiscene",
+            "url": "https://www.archiscene.net",
+            "description": "涵盖时尚、艺术与现代建筑空间结合的跨界视觉网。"
+          },
+          {
+            "name": "Concept Architecture",
+            "url": "https://www.conceptarchitecture.com",
+            "description": "专注建筑概念渲染图、未实现的设计构想与科幻建筑风格。"
+          },
+          {
+            "name": "CTBUH",
+            "url": "https://www.ctbuh.org",
+            "description": "世界高层建筑与都市人居学会，全球摩天大楼权威数据库。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
+        "name": "小众探索、极简小屋与野奢空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Uncrate Shelter",
+            "url": "https://uncrate.com/shelter",
+            "description": "男士高端生活方式网 Uncrate 选出的极简黑魂与野奢建筑。"
+          },
+          {
+            "name": "Treehugger Architecture",
+            "url": "https://www.treehugger.com/design-architecture-4846011",
+            "description": "极简木屋、离网住宅与超低能耗被动房。"
+          },
+          {
+            "name": "A-Frame House Archives",
+            "url": "https://aframehouse.com",
+            "description": "三角木屋爱好者大本营，充满复古与山野灵感。"
+          },
+          {
+            "name": "The Off-Grid Cabin",
+            "url": "https://www.offgridcabin.com",
+            "description": "远离尘嚣的自给自足式小型住宅与太阳能住宅实践。"
+          },
+          {
+            "name": "Container Home Plans",
+            "url": "https://www.containerhomeplans.org",
+            "description": "全球集装箱建筑改造、模块化住宅与创意空间。"
+          },
+          {
+            "name": "Minimalist Architecture World",
+            "url": "https://www.minimalistarchitecture.org",
+            "description": "纯粹极简主义、白色系与包豪斯线条住宅图库。"
+          },
+          {
+            "name": "Desert Architecture Journal",
+            "url": "https://www.desertarchitecture.com",
+            "description": "荒漠建筑、极简黏土住宅与耐旱地景结合的宅邸。"
+          },
+          {
+            "name": "Floating Homes Architecture",
+            "url": "https://www.floatinghomes.org",
+            "description": "水上住宅、浮动社区与应对海平面上升的建筑。"
+          },
+          {
+            "name": "Prefab Housing World",
+            "url": "https://www.prefabhousing.com",
+            "description": "高端预制装配式住宅、工厂化建房与快速组装别墅。"
+          },
+          {
+            "name": "Glamping Architecture Index",
+            "url": "https://www.glampingarchitecture.com",
+            "description": "野奢帐篷、野外星空房与高海拔度假小木屋设计。"
+          },
+          {
+            "name": "Cave Homes & Underground Houses",
+            "url": "https://www.undergroundhomes.com",
+            "description": "洞穴住宅、覆土建筑与地下自然调温空间。"
+          },
+          {
+            "name": "Glass House Collection",
+            "url": "https://theglasshouse.org",
+            "description": "全通透玻璃房、阳光房与自然无缝融合的先锋住宅。"
+          },
+          {
+            "name": "Japanese House Design",
+            "url": "https://japanhousedesign.com",
+            "description": "专注日本狭小住宅、极窄面宽住宅与神奇收纳建筑。"
+          },
+          {
+            "name": "Courtyard Homes Index",
+            "url": "https://www.courtyardhomes.org",
+            "description": "进深天井、中庭合院与东方内向型住宅空间灵感。"
+          },
+          {
+            "name": "Hillside House Engineering",
+            "url": "https://www.hillsidehomes.com",
+            "description": "陡峭山坡住宅、悬崖悬挑别墅与工程奇迹。"
+          },
+          {
+            "name": "Boathouse Architecture",
+            "url": "https://www.boathousejournal.com",
+            "description": "船屋、码头建筑与亲水休闲空间摄影网。"
+          },
+          {
+            "name": "Passive House Institute (PHI)",
+            "url": "https://passivehouse.com",
+            "description": "德国被动房研究所，全球极高保温性能住宅权威。"
+          },
+          {
+            "name": "Serpentine Pavilion Archives",
+            "url": "https://www.serpentinegalleries.org/whats-on/architecture",
+            "description": "伦敦蛇形画廊历年夏季展亭(由顶尖大师设计)大全。"
+          },
+          {
+            "name": "Pritzker Architecture Prize Official",
+            "url": "https://www.pritzkerprize.com",
+            "description": "普利兹克建筑奖(建筑界诺贝尔)历届获奖者作品集。"
+          },
+          {
+            "name": "The Architectural League of New York",
+            "url": "https://archleague.org",
+            "description": "纽约建筑联盟，展示年轻建筑师与新兴先锋事物。"
+          }
         ]
       },
       {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
+        "name": "国际先锋建筑与设计媒体",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Architectural Digest Italy",
+            "url": "https://www.ad-italia.it",
+            "description": "AD 杂志意大利版，专注于地中海高端豪宅、历史别演变与顶级意式室内美学。"
+          },
+          {
+            "name": "Architectural Digest France",
+            "url": "https://www.admagazine.fr",
+            "description": "AD 杂志法国版，聚焦法式古典与现代折衷主义结合的顶尖住宅与艺术空间。"
+          },
+          {
+            "name": "Baunetz Interior|Design",
+            "url": "https://www.baunetz-id.de",
+            "description": "德国权威建筑网旗下的室内设计专刊，以严谨的德式极简主义与空间结构分析著称。"
+          },
+          {
+            "name": "Design Diffusion News (DDN)",
+            "url": "https://www.designdiffusion.com/en",
+            "description": "欧洲高端室内与家具设计网，追踪米兰设计周及欧洲顶尖展厅空间。"
+          },
+          {
+            "name": "Surface Magazine",
+            "url": "https://www.surfacemag.com",
+            "description": "美国当代设计与建筑杂志，涵盖先锋商业空间、艺术装置与高端酒店。"
+          },
+          {
+            "name": "Habitus Living",
+            "url": "https://www.habitusliving.com",
+            "description": "专注于亚太地区(澳大利亚、东南亚)人文住宅与自然融合的建筑设计。"
+          },
+          {
+            "name": "Metropolis Japan",
+            "url": "https://metropolisjapan.com",
+            "description": "记录日本本土最新商业地标、现代建筑与城市空间演变的文化媒体。"
+          },
+          {
+            "name": "Architect Magazine",
+            "url": "https://www.architectmagazine.com",
+            "description": "美国建筑师学会(AIA)官方期刊，涵盖工程技术、项目案例与行业趋势。"
+          },
+          {
+            "name": "Architecture AU",
+            "url": "https://architectureau.com",
+            "description": "澳大利亚权威建筑门户，涵盖澳洲现代住宅、公共建筑与景观规划。"
+          },
+          {
+            "name": "Indesignlive",
+            "url": "https://www.indesignlive.com",
+            "description": "聚焦亚太地区商业办公、零售及高端酒店室内设计的专业视觉媒体。"
+          },
+          {
+            "name": "Interior Design India",
+            "url": "https://www.architecturaldigest.in",
+            "description": "AD 印度版，展示南亚浓郁色彩、材质纹理与现代奢华融合的特色空间。"
+          },
+          {
+            "name": "Arquitectura Viva (AV)",
+            "url": "https://arquitecturaviva.com",
+            "description": "西班牙著名建筑杂志，以精美的摄影、剖面图与建筑理论深度分析闻名。"
+          },
+          {
+            "name": "Plot Magazine",
+            "url": "https://www.revistaplot.com",
+            "description": "阿根廷先锋建筑杂志，关注拉丁美洲及全球的实验性建筑与城市空间。"
+          },
+          {
+            "name": "Curbed New York",
+            "url": "https://ny.curbed.com",
+            "description": "深度报道纽约顶级天际线、地标大楼与历史公寓改建的建筑专栏。"
+          },
+          {
+            "name": "Architectural Design (AD Journal)",
+            "url": "https://www.wiley.com/en-us/Architectural+Design-c-3810",
+            "description": "英国 Wiley 出版的学术型建筑期刊，探讨参数化、空间理论与未来城市。"
+          },
+          {
+            "name": "Metropolis Magazine Design Index",
+            "url": "https://metropolismag.com/projects",
+            "description": "Metropolis 旗下的精选项目库，关注可持续发展与人居体验空间。"
+          },
+          {
+            "name": "Architect's Newspaper Specsheet",
+            "url": "https://www.archpaper.com/category/projects",
+            "description": "北美建筑师报项目专栏，聚焦前沿外立面与建筑工程落地案例。"
+          },
+          {
+            "name": "Archiseek",
+            "url": "https://www.archiseek.com",
+            "description": "关注爱尔兰与欧洲建筑历史、现代建筑结构及遗迹保护的数据库。"
+          },
+          {
+            "name": "Livingedge Projects",
+            "url": "https://livingedge.com.au/projects",
+            "description": "澳洲高端商业与住宅空间展示，聚焦世界名家家具在空间中的配置。"
+          },
+          {
+            "name": "Enki Magazine",
+            "url": "https://enkimagazine.com",
+            "description": "英国专注于可持续建筑、极简生态木屋与环境友好型住宅的杂志。"
+          }
         ]
       },
       {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
+        "name": "住宅、公寓与高端私人空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Spatial Magazine",
+            "url": "https://www.spatialmagazine.com",
+            "description": "专注于极简公寓、水泥工业风住宅与纯粹几何空间排布的独立杂志。"
+          },
+          {
+            "name": "Hunting for George",
+            "url": "https://www.huntingforgeorge.com",
+            "description": "澳大利亚住宅改造与室内设计博客，提供极具活力的家居灵感与视频巡礼。"
+          },
+          {
+            "name": "The Design Files",
+            "url": "https://thedesignfiles.net",
+            "description": "澳洲极具影响力的住宅设计博客，展示充满烟火气与艺术感的真实住宅。"
+          },
+          {
+            "name": "The Nordroom",
+            "url": "https://www.thenordroom.com",
+            "description": "专注于北欧风(Nordic)、斯堪的纳维亚暖色调住宅与复古公寓改建。"
+          },
+          {
+            "name": "Coco Kelley",
+            "url": "https://www.cocokelley.com",
+            "description": "专注于美式现代、古典拉丝与优雅精致软装搭配的住宅设计博客。"
+          },
+          {
+            "name": "Style by Emily Henderson",
+            "url": "https://stylebyemilyhenderson.com",
+            "description": "知名室内设计师 Emily 的住宅改造指南，主打色彩搭配与家居挑选。"
+          },
+          {
+            "name": "Desire to Inspire",
+            "url": "https://www.desiretoinspire.net",
+            "description": "由加拿大与澳大利亚两位博主联合打造，汇集全球奇特折衷主义住宅。"
+          },
+          {
+            "name": "SF Girl By Bay",
+            "url": "https://www.sfgirlbybay.com",
+            "description": "旧金山波西米亚与复古现代风室内美学博客，充满色彩与艺术挂画灵感。"
+          },
+          {
+            "name": "Domino Magazine",
+            "url": "https://www.domino.com",
+            "description": "流行家居杂志，主打小户型改造、软装色彩搭配与潮流生活空间。"
+          },
+          {
+            "name": "Design Hunter",
+            "url": "https://www.designhunter.co.uk",
+            "description": "英国极简主义与现代奢华住宅设计博客，聚焦持久耐用的家居美学。"
+          },
+          {
+            "name": "Mad About The House",
+            "url": "https://www.madaboutthehouse.com",
+            "description": "英国知名室内设计记者 Kate Watson 打造的住宅空间策划与配色指南。"
+          },
+          {
+            "name": "Italian Bark",
+            "url": "https://www.italianbark.com",
+            "description": "由意大利建筑师主导，预测欧洲室内设计配色、材质与家居趋势。"
+          },
+          {
+            "name": "Cate St Hill",
+            "url": "https://catesthill.com",
+            "description": "伦敦极简主义住宅博客，专注于营造安静、舒适与自然光的家。"
+          },
+          {
+            "name": "These Four Walls",
+            "url": "https://thesefourwallsblog.com",
+            "description": "专注于日式北欧风(Japandi)、柔和中性色住宅与慢生活空间。"
+          },
+          {
+            "name": "Vosgesparis",
+            "url": "https://www.vosgesparis.com",
+            "description": "荷兰暗黑极简主义与黑白灰色调室内空间博客，工业感与艺术感十足。"
+          },
+          {
+            "name": "Mysa Scandinavian Homes",
+            "url": "https://mysascandinavianhomes.com",
+            "description": "专注于纯正北欧原木风、大白墙与极简采光住宅空间展示。"
+          },
+          {
+            "name": "Coffeeklatch",
+            "url": "https://coffeeklatch.be",
+            "description": "比利时慢生活室内杂志，以随性真实的镜头记录艺术家与设计师的家。"
+          },
+          {
+            "name": "House & Garden UK",
+            "url": "https://www.houseandgarden.co.uk",
+            "description": "英国老牌庄园、乡村别墅与经典英伦风格室内设计的集大成者。"
+          },
+          {
+            "name": "Modern Luxury Interiors",
+            "url": "https://modernluxuryinteriors.com",
+            "description": "北美高端奢华大宅、海景别墅与私人庄园室内设计与景观展示。"
+          },
+          {
+            "name": "Australian Design Review Interiors",
+            "url": "https://www.australiandesignreview.com/interiors",
+            "description": "澳洲室内设计界前沿案例，主打通透自然光与开放式客餐厅布局。"
+          }
         ]
       },
       {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
+        "name": "商业空间、精品酒店与餐饮快闪",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Hospitality Interiors",
+            "url": "https://www.hospitality-interiors.net",
+            "description": "国际奢华酒店、度假村、高级会所与水疗中心室内设计的行业媒体。"
+          },
+          {
+            "name": "Sleeper Magazine",
+            "url": "https://www.sleepermagazine.com",
+            "description": "全球跨国酒店体验与酒店建筑设计杂志，关注品牌酒店的体验创新。"
+          },
+          {
+            "name": "Supper Magazine",
+            "url": "https://www.suppermagazine.co.uk",
+            "description": "专注于全球顶级餐厅、高端酒吧与餐饮空间室内美学与照明设计。"
+          },
+          {
+            "name": "Retail Focus",
+            "url": "https://www.retail-focus.co.uk",
+            "description": "英国零售空间设计媒体，展示概念旗舰店、橱窗陈列与品牌体验店。"
+          },
+          {
+            "name": "Store Layout Gallery",
+            "url": "https://www.architecturalrecord.com/topics/266-retail-interiors",
+            "description": "专注于商业动线排布、陈列货架设计与品牌空间转化的工程案例。"
+          },
+          {
+            "name": "Hotel Designs",
+            "url": "https://hoteldesigns.net",
+            "description": "国际酒店设计师与建筑师必备网，追踪精品酒店室内与软装案例。"
+          },
+          {
+            "name": "Boutique Hotelier",
+            "url": "https://www.boutiquehotelier.com",
+            "description": "专注于独立精品酒店、历史老建筑改建酒店与野奢度假空间。"
+          },
+          {
+            "name": "Fast Company Design Spaces",
+            "url": "https://www.fastcompany.com/co-design",
+            "description": "专注于科技公司创新办公室、共创空间与灵活办公环境设计。"
+          },
+          {
+            "name": "Workplace Insight",
+            "url": "https://workplaceinsight.net",
+            "description": "英国办公空间体验杂志，关注人性化办公、声学环境与空间效率。"
+          },
+          {
+            "name": "MIX Interiors",
+            "url": "https://www.mixinteriors.com",
+            "description": "商业办公、公共教育空间与大型商业综合体室内设计网。"
+          },
+          {
+            "name": "Commercial Design India",
+            "url": "https://www.commercialdesignindia.com",
+            "description": "关注南亚与中东地区大型商业写字楼、高档餐厅与公共展厅。"
+          },
+          {
+            "name": "World Interiors News (WIN)",
+            "url": "https://www.worldinteriorsnews.com",
+            "description": "全球室内设计大奖平台，展示顶尖商业空间与文化场馆。"
+          },
+          {
+            "name": "Retail Environment",
+            "url": "https://www.shopassociation.org",
+            "description": "美国零售设计协会网，主打商场中庭、品牌快闪与美妆展台空间。"
+          },
+          {
+            "name": "Restaurant & Bar Design Awards Official",
+            "url": "https://restaurantandbardesignawards.com",
+            "description": "全球顶尖餐厅与酒吧设计大奖，汇聚极具视觉冲击力的餐饮空间。"
+          },
+          {
+            "name": "Luxury Retail Spaces",
+            "url": "https://www.dezeen.com/tag/luxury-retail",
+            "description": "Dezeen 精选的高奢品牌(如香奈儿、爱马仕)全球概念店空间集锦。"
+          },
+          {
+            "name": "Pop-up Store Index",
+            "url": "https://www.insider-trends.com/category/retail-trends",
+            "description": "专注报道全球各大品牌最前沿的快闪店、沉浸式体验空间。"
+          },
+          {
+            "name": "Coffee Shop Interior Gallery",
+            "url": "https://www.archdaily.com/tag/coffee-shop",
+            "description": "ArchDaily 汇总的全球极简、工业风及温馨木质咖啡馆室内案例。"
+          },
+          {
+            "name": "Showroom Design Collection",
+            "url": "https://frameweb.com/work/showrooms",
+            "description": "Frame 挑选的全球顶级家具、高科技产品与建材品牌的展厅设计。"
+          },
+          {
+            "name": "Coworking Space Architecture",
+            "url": "https://officesnapshots.com/tag/coworking",
+            "description": "全球知名联合办公空间(如 WeWork、Spaces)设计案例集锦。"
+          },
+          {
+            "name": "Exhibition Design International",
+            "url": "https://www.designboom.com/design/exhibition-design",
+            "description": "设计邦精选的博物馆展厅、艺术博览会展位与交互空间装置。"
+          }
         ]
       },
       {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "景观、生态与公共空间设计",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Land8: Landscape Architects Network",
+            "url": "https://land8.com",
+            "description": "景观设计师最大网络社区，分享项目案例、剖面图与施工细节。"
+          },
+          {
+            "name": "Landscape Architecture Today",
+            "url": "https://www.landscape-today.com",
+            "description": "欧洲景观设计动态，关注公园、广场、滨水步道与雨水花园设计。"
+          },
+          {
+            "name": "Terrain.org",
+            "url": "https://www.terrain.org",
+            "description": "关注文理交融的景观生态、乡村地景与人与自然关系的空间杂志。"
+          },
+          {
+            "name": "Landscape Institute UK",
+            "url": "https://www.landscapeinstitute.org",
+            "description": "英国景观学会官方网，发布英国国家公园、城市绿化与生态修复项目。"
+          },
+          {
+            "name": "Public Space Architecture",
+            "url": "https://www.publicspace.org/works",
+            "description": "欧洲城市公共空间大奖案例库，关注社区广场、口袋公园与街区改造。"
+          },
+          {
+            "name": "Waterfront Architecture Index",
+            "url": "https://www.archdaily.com/tag/waterfront",
+            "description": "全球滨水公园、码头改造与海岸线生态景观案例库。"
+          },
+          {
+            "name": "Urban Design Group (UDG)",
+            "url": "https://www.udg.org.uk",
+            "description": "英国城市设计学会，关注慢行系统、城市微更新与步行街规划。"
+          },
+          {
+            "name": "Green Infrastructure Resource",
+            "url": "https://www.asla.org/greeninfrastructure.aspx",
+            "description": "海绵城市、绿化屋顶与生态滤水景观设计技术库。"
+          },
+          {
+            "name": "Playground Architecture Index",
+            "url": "https://www.archdaily.com/tag/playground",
+            "description": "全球充满创意、安全性与无障碍设计的儿童公园与游乐场空间。"
+          },
+          {
+            "name": "Rooftop Garden Architecture",
+            "url": "https://www.landscapearchitecture.org.cn",
+            "description": "高空屋顶花园、高空观景台与空中绿廊空间案例。"
+          },
+          {
+            "name": "Botanical Garden Design Archives",
+            "url": "https://www.bgci.org",
+            "description": "国际植物园保护联盟，汇集全球大温室、植物园建筑与景观。"
+          },
+          {
+            "name": "Cemetery & Memorial Architecture",
+            "url": "https://www.archdaily.com/tag/memorial",
+            "description": "专注于纪念性建筑、纪念公园与沉思空间的静谧美学设计。"
+          },
+          {
+            "name": "Urban Plaza Gallery",
+            "url": "https://www.landezine.com/category/typology/plaza",
+            "description": "Landezine 挑选的全球经典硬质景观、城市广场与市民中心。"
+          },
+          {
+            "name": "Vertical Forest Architecture",
+            "url": "https://www.stefanoboeriarchitetti.net",
+            "description": "垂直森林缔造者博埃里建筑事务所，展示建筑与植被融合的生态高楼。"
+          },
+          {
+            "name": "Pocket Park Architecture",
+            "url": "https://www.planning.org/greatplaces",
+            "description": "美国规划协会遴选的街角口袋公园、社区微型绿地案例。"
+          },
+          {
+            "name": "Campus Landscape Architecture",
+            "url": "https://www.archdaily.com/tag/campus-landscape",
+            "description": "全球知名大学校园、科技园区景观规划与中庭绿化案例。"
+          },
+          {
+            "name": "Resort Landscape Collection",
+            "url": "https://www.worldlandscapearchitect.com/category/resort",
+            "description": "全球度假酒店、海岛庄园与热带雨林度假村景观设计。"
+          },
+          {
+            "name": "Bridge & Pedestrian Architecture",
+            "url": "https://www.bridgearchitecture.com",
+            "description": "景观人行桥、跨河景观构筑物与城市连廊设计。"
+          },
+          {
+            "name": "Lighting Landscape Index",
+            "url": "https://www.arc-magazine.com",
+            "description": "专注于户外夜景照明、建筑外立面泛光与景观灯光艺术。"
+          },
+          {
+            "name": "Ecological Restoration Architecture",
+            "url": "https://www.ser.org",
+            "description": "生态复垦、废弃矿山改造公园与湿地公园设计案例。"
+          }
+        ]
+      },
+      {
+        "name": "极简避世、山野与概念空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Cabin Anthologies",
+            "url": "https://www.cabinanthologies.com",
+            "description": "汇集全球极简避世木屋、高山庇护所与森林宿营空间。"
+          },
+          {
+            "name": "Micro Apartment Architecture",
+            "url": "https://www.nevertoosmall.com",
+            "description": "著名的 Never Too Small 团队，展示全球极致微型公寓与收纳空间。"
+          },
+          {
+            "name": "Small House Bliss",
+            "url": "https://smallhousebliss.com",
+            "description": "专注于 100 平方米以下精致小住宅、乡村小屋与模块化房子。"
+          },
+          {
+            "name": "Desert Homes Architecture",
+            "url": "https://www.desert-homes.com",
+            "description": "加州棕榈泉、泥土色调与荒漠极简主义别墅建筑案例。"
+          },
+          {
+            "name": "Floating Architecture Network",
+            "url": "https://www.floatingarchitecture.com",
+            "description": "荷兰及全球浮动住宅、水上社区与应对海平面上升的设计。"
+          },
+          {
+            "name": "Modular House Index",
+            "url": "https://www.modularhomeowners.com",
+            "description": "模块化集成房屋、预制钢结构小屋与工厂定制化空间。"
+          },
+          {
+            "name": "Alpine Architecture",
+            "url": "https://www.archdaily.com/tag/alpine-architecture",
+            "description": "阿尔卑斯山脉极简雪山木屋、滑雪度假村与高空观景台。"
+          },
+          {
+            "name": "Treehouse Guides",
+            "url": "https://www.treehouseguides.com",
+            "description": "全球树屋建筑、高空悬挂小屋与森林避世体验空间。"
+          },
+          {
+            "name": "Cliffhouse Architecture",
+            "url": "https://www.archdaily.com/tag/cliff-house",
+            "description": "建造在悬崖边缘、拥有无敌海景的极致工程住宅。"
+          },
+          {
+            "name": "Minimalist Concrete Homes",
+            "url": "https://www.minimalistconcretenetwork.com",
+            "description": "纯粹灰色清水混凝土、极简线条与光影交织的住宅集锦。"
+          },
+          {
+            "name": "Bamboo Houses International",
+            "url": "https://www.bamboohouse.org",
+            "description": "东南亚及南美原生态竹造住宅、自然降温建筑与曲面屋顶。"
+          },
+          {
+            "name": "Earthship Eco Architecture",
+            "url": "https://www.earthshipbiotecture.com",
+            "description": "自给自足式生态地球船住宅、循环利用废料建造的绿色空间。"
+          },
+          {
+            "name": "Minimalist Glass Pavilions",
+            "url": "https://www.glasspavilions.com",
+            "description": "全透明玻璃亭、庭院茶室与消隐于自然中的建筑设计。"
+          },
+          {
+            "name": "Cave Architecture Collection",
+            "url": "https://www.archdaily.com/tag/cave",
+            "description": "地下洞穴住宅、天然岩洞酒店与地中海天然石窟空间。"
+          },
+          {
+            "name": "Off-Grid Tiny Houses",
+            "url": "https://tinyliving.com",
+            "description": "离网太阳能微型移动房屋、车轮上的小屋与房车空间改造。"
+          },
+          {
+            "name": "Courtyard Villa Index",
+            "url": "https://www.courtyardvillas.org",
+            "description": "专注于新中式合院、日式枯山水庭院与地中海中庭住宅。"
+          },
+          {
+            "name": "Brutalist Residential Gallery",
+            "url": "https://www.brutalistresidential.com",
+            "description": "野兽派风格私人住宅、雕塑感强烈的混凝土生活空间。"
+          },
+          {
+            "name": "Sustainable Cabins",
+            "url": "https://www.sustainablecabins.com",
+            "description": "采用低碳排木材、雨水收集与零碳排放的野外庇护所。"
+          },
+          {
+            "name": "Prefabricated Luxury",
+            "url": "https://www.luxuryprefab.com",
+            "description": "奢华预制胶合木住宅、高科技智能定制模块化空间。"
+          },
+          {
+            "name": "Architectural Sanctuary",
+            "url": "https://www.architecturalsanctuary.com",
+            "description": "专注于冥想室、修道院、水疗静室与心灵避难所建筑。"
+          }
         ]
       }
     ]
@@ -5292,6 +6005,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

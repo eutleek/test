@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="AI API、模型开发、向量数据库、算力与工程工具导航">
+<title>AI开发 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>AI开发</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1040 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">AI开发 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "AI开发",
+    "icon": "🧠",
+    "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "OpenAI API",
+            "url": "https://platform.openai.com",
+            "description": "全球领先的大语言模型 API 平台，提供 GPT-4o、DALL-E、Whisper 等模型能力调用与微调接口。"
+          },
+          {
+            "name": "Anthropic Console",
+            "url": "https://console.anthropic.com",
+            "description": "Claude 系列大模型官方 API 开发平台，支持高长文本上下文与强推理能力的 Claude 3.5 Sonnet 等模型。"
+          },
+          {
+            "name": "Google AI Studio",
+            "url": "https://aistudio.google.com",
+            "description": "谷歌官方 Gemini 模型开发与原型构建平台，提供极其宽裕的免费 Token 配额与多模态 API 开发环境。"
+          },
+          {
+            "name": "Hugging Face",
+            "url": "https://huggingface.co",
+            "description": "全球最大的开源 AI 社区与模型托管平台，汇聚海量开源 LLM、数据集、Spaces 部署与 Transformer 库。"
+          },
+          {
+            "name": "Replicate",
+            "url": "https://replicate.com",
+            "description": "云端开源 AI 模型 API 运行与部署平台，开发者可通过简单的 API 快速调用 Stable Diffusion、Llama 等。"
+          },
+          {
+            "name": "Groq Cloud",
+            "url": "https://console.groq.com",
+            "description": "基于 LPU 芯片打造的超高速 AI 推理平台，提供极致响应速度的开源大模型 API 服务。"
+          },
+          {
+            "name": "Together AI",
+            "url": "https://www.together.ai",
+            "description": "高性能云端 AI 推理与训练平台，以极高性价比提供各类开源大模型的 API 访问与微调服务。"
+          },
+          {
+            "name": "DeepSeek Open Platform",
+            "url": "https://platform.deepseek.com",
+            "description": "深度求索官方开发平台，提供高性价比、强推理与代码能力的 DeepSeek 系列模型 API。"
+          },
+          {
+            "name": "Qwen Open Platform (通义千问)",
+            "url": "https://dashscope.aliyun.com",
+            "description": "阿里云 DashScope 平台，提供通义千问 Qwen 系列开源及商业化大模型的 API 接入与定制。"
+          },
+          {
+            "name": "Mistral AI Console",
+            "url": "https://console.mistral.ai",
+            "description": "欧洲顶尖 AI 实验室 Mistral 官方平台，提供 Mistral Large、Codestral 等轻量高效模型的 API。"
+          },
+          {
+            "name": "LangChain",
+            "url": "https://www.langchain.com",
+            "description": "全球最流行的大语言模型应用开发框架，支持 Agent 构建、Prompt 链式调用及 RAG 架构搭建。"
+          },
+          {
+            "name": "LlamaIndex",
+            "url": "https://www.llamaindex.ai",
+            "description": "专注于大模型数据连接与检索增强生成(RAG)的技术框架，帮助开发者高效对接私有数据源。"
+          },
+          {
+            "name": "Vercel AI SDK",
+            "url": "https://sdk.vercel.ai",
+            "description": "适用于 Next.js 与 TypeScript 开发者的流式 AI 交互开发库，极大地简化了 AI UI 界面的构建。"
+          },
+          {
+            "name": "Ollama",
+            "url": "https://ollama.com",
+            "description": "极受欢迎的本地大模型运行与管理工具，可一键在本地 Mac/Windows/Linux 上部署并运行开源 LLM。"
+          },
+          {
+            "name": "vLLM",
+            "url": "https://github.com/vllm-project/vllm",
+            "description": "高性能大模型推理与服务引擎，采用 PagedAttention 技术，极大地提升了 LLM 的吞吐量。"
+          },
+          {
+            "name": "LM Studio",
+            "url": "https://lmstudio.ai",
+            "description": "可视化本地大模型运行与测试工具，支持离线加载 GGUF 格式模型并提供 OpenAI 兼容的本地 API 服务。"
+          },
+          {
+            "name": "PyTorch Official",
+            "url": "https://pytorch.org",
+            "description": "全球最主流的开源深度学习框架，由 Meta 主导维护，广受学术界与工业界 AI 开发者青睐。"
+          },
+          {
+            "name": "TensorFlow",
+            "url": "https://www.tensorflow.org",
+            "description": "谷歌开发的工业级深度学习与机器学习全流程开源框架，拥有完善的生产部署生态。"
+          },
+          {
+            "name": "Keras",
+            "url": "https://keras.io",
+            "description": "高级深度学习 API 库，支持在 PyTorch、TensorFlow 及 JAX 之上进行快速原型设计与模型构建。"
+          },
+          {
+            "name": "JAX (Google)",
+            "url": "https://jax.readthedocs.io",
+            "description": "谷歌推出的高性能数值计算与机器学习库，支持自动微分与 GPU/TPU 高效加速。"
+          },
+          {
+            "name": "RunPod",
+            "url": "https://www.runpod.io",
+            "description": "专为 AI 开发者与研究员打造的高性价比 GPU 云服务器平台，支持一键部署 PyTorch 与 Docker 容器。"
+          },
+          {
+            "name": "Vast.ai",
+            "url": "https://vast.ai",
+            "description": "去中心化的高性价比算力租用平台，提供按小时计费的全球算力 GPU 实例。"
+          },
+          {
+            "name": "Lambda Labs",
+            "url": "https://lambdalabs.com",
+            "description": "专注于深度学习算力服务的云平台，提供高性能 NVIDIA H100/A100 GPU 云集群与工作站。"
+          },
+          {
+            "name": "Pinecone",
+            "url": "https://www.pinecone.io",
+            "description": "高性能托管型向量数据库平台，为 AI 语义检索、RAG 系统与长期记忆提供实时高扩展支持。"
+          },
+          {
+            "name": "Milvus",
+            "url": "https://milvus.io",
+            "description": "开源的高度可扩展向量数据库，专门用于大规模密集向量数据的存储、索引与快速相似度检索。"
+          },
+          {
+            "name": "Chroma DB",
+            "url": "https://www.trychroma.com",
+            "description": "开源易用的轻量级嵌入式向量数据库，深受 LLM 与 RAG 应用开发者的喜爱。"
+          },
+          {
+            "name": "Qdrant",
+            "url": "https://qdrant.tech",
+            "description": "基于 Rust 开发的高性能矢量相似度搜索引擎与向量数据库，提供极高的查询效率。"
+          },
+          {
+            "name": "Weaviate",
+            "url": "https://weaviate.io",
+            "description": "开源的云原生向量数据库，支持结合标量过滤与向量搜索的混合检索能力。"
+          },
+          {
+            "name": "MongoDB Atlas Vector Search",
+            "url": "https://www.mongodb.com/products/platform/atlas-vector-search",
+            "description": "MongoDB 推出的原生向量检索服务，方便开发者直接在文档数据库中集成 AI 向量功能。"
+          },
+          {
+            "name": "Neon (Postgres Vector)",
+            "url": "https://neon.tech",
+            "description": "无服务器 Postgres 数据库，完美结合 pgvector 扩展，适合快速构建带有向量能力的 AI 应用。"
+          },
+          {
+            "name": "Weights & Biases (W&B)",
+            "url": "https://wandb.ai",
+            "description": "业界领先的机器学习实验追踪、模型训练可视化、超参数调优与 MLOps 协作平台。"
+          },
+          {
+            "name": "MLflow",
+            "url": "https://mlflow.org",
+            "description": "开源的端到端机器学习生命周期管理平台，涵盖实验跟踪、模型打包、评估与注册部署。"
+          },
+          {
+            "name": "ComfyUI",
+            "url": "https://github.com/comfyanonymous/ComfyUI",
+            "description": "基于模块化节点流设计的 Stable Diffusion 与多模态生成式 AI 本地工作流引擎。"
+          },
+          {
+            "name": "Automatic1111 (SD WebUI)",
+            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+            "description": "最经典且功能丰富的开源 Stable Diffusion Web 界面与开发者插件生态。"
+          },
+          {
+            "name": "Civitai",
+            "url": "https://civitai.com",
+            "description": "全球最大的 AI 图形生成模型社区，开发者可在此分享、下载或微调 LoRA 与 Checkpoint 模型。"
+          },
+          {
+            "name": "Fal.ai",
+            "url": "https://fal.ai",
+            "description": "专为生成式媒体打造的高性能推理 API 平台，支持极速生成图像、音频与视频模型调用。"
+          },
+          {
+            "name": "DeepL API",
+            "url": "https://www.deepl.com/pro-api",
+            "description": "全球高精度机器翻译 API 接口，为开发人员提供高质量的跨语言翻译支持。"
+          },
+          {
+            "name": "ElevenLabs Developer Portal",
+            "url": "https://elevenlabs.io/api",
+            "description": "顶级 AI 语音合成与声音克隆 API 平台，提供极具情感张力与真实度的多语言 TTS。"
+          },
+          {
+            "name": "AssemblyAI",
+            "url": "https://www.assemblyai.com",
+            "description": "基于 AI 的语音转文字与语音理解 API 平台，提供转录、情感分析与摘要功能。"
+          },
+          {
+            "name": "Deepgram",
+            "url": "https://deepgram.com",
+            "description": "超低延迟的高性能 AI 语音识别(STT)与语音合成(TTS) API 服务平台。"
+          },
+          {
+            "name": "Coqui TTS",
+            "url": "https://github.com/coqui-ai/TTS",
+            "description": "开源的深度学习文本转语音框架，支持多语言、多发音人及快速声音克隆。"
+          },
+          {
+            "name": "GitHub Copilot",
+            "url": "https://github.com/features/copilot",
+            "description": "微软与 GitHub 联合推出的 AI 编程助手，集成于各大主流 IDE 中协助代码自动补全。"
+          },
+          {
+            "name": "Cursor Editor",
+            "url": "https://www.cursor.com",
+            "description": "专为 AI 编程打造的下一代 IDE，深度集成 GPT-4o 与 Claude 3.5，支持全局代码库分析与改写。"
+          },
+          {
+            "name": "Codeium / Windsurf",
+            "url": "https://codeium.com",
+            "description": "强大的 AI 辅助编程平台与 Windsurf 编辑器，提供免费的高性能代码补全与智能重构。"
+          },
+          {
+            "name": "Replit Agent",
+            "url": "https://replit.com",
+            "description": "支持云端全栈代码生成、一键环境搭建与 AI Agent 自动部署的在线编程平台。"
+          },
+          {
+            "name": "Tabby",
+            "url": "https://tabby.tabbyml.com",
+            "description": "开源且可自托管的 AI 代码助手，允许企业在本地部署专属的代码自动补全服务。"
+          },
+          {
+            "name": "Aider",
+            "url": "https://aider.chat",
+            "description": "基于命令行(CLI)的 AI 结对编程工具，直接对接 git 仓库并支持对本地代码进行智能修改。"
+          },
+          {
+            "name": "Dify",
+            "url": "https://dify.ai",
+            "description": "开源的大语言模型应用开发平台(LLMOps)，提供可视化的 Prompt 编排、Agent 与 RAG 开发。"
+          },
+          {
+            "name": "Coze (扣子)",
+            "url": "https://www.coze.cn",
+            "description": "字节跳动推出的一站式 AI Bot 开发平台，支持低代码快速编排插件、工作流与智能体。"
+          },
+          {
+            "name": "Flowise",
+            "url": "https://flowiseai.com",
+            "description": "基于 Node.js 的开源拖拽式可视化 LangChain UI 界面，极大地降低了 AI Agent 的开发门槛。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Langflow",
+            "url": "https://www.langflow.org",
+            "description": "基于 Python 的图形化 AI 应用构建工具，支持直观地搭建 RAG 工作流与复杂 LLM 链。"
+          },
+          {
+            "name": "FastAPI",
+            "url": "https://fastapi.tiangolo.com",
+            "description": "现代、高性能的 Python Web 框架，已成为搭建 AI 模型服务 API 的行业标准选择。"
+          },
+          {
+            "name": "Gradio",
+            "url": "https://www.gradio.app",
+            "description": "开源 Python 库，允许开发者在几行代码内为机器学习模型构建美观的交互式 Web 测试界面。"
+          },
+          {
+            "name": "Streamlit",
+            "url": "https://streamlit.io",
+            "description": "专为数据科学与 AI 打造的开源 Python 框架，快速将数据脚本转化为可共享的 Web 应用。"
+          },
+          {
+            "name": "Modal",
+            "url": "https://modal.com",
+            "description": "专注于 Serverless 运行 AI 代码与无服务器 GPU 推理的开发者平台，免去服务器运维打扰。"
+          },
+          {
+            "name": "Banyan / Baseten",
+            "url": "https://www.baseten.co",
+            "description": "Serverless 模型部署平台，帮助开发者快速将开源大模型打包并发布为高可用生产级 API。"
+          },
+          {
+            "name": "Anyscale",
+            "url": "https://www.anyscale.com",
+            "description": "基于 Ray 打造的大规模分布式 AI 训练与推理云平台，支持极致扩展的 LLM 工作负载。"
+          },
+          {
+            "name": "Ray Official",
+            "url": "https://www.ray.io",
+            "description": "开源的分布式 Python 框架，专门用于扩展 AI 与机器学习计算(如 Ray Train, Ray Serve)。"
+          },
+          {
+            "name": "Unsloth",
+            "url": "https://github.com/unslothai/unsloth",
+            "description": "极速开源大模型微调框架，大幅降低显存占用并提升 Llama 3/Qwen 等 LLM 的微调速度。"
+          },
+          {
+            "name": "Axolotl",
+            "url": "https://github.com/axolotl-ai-cloud/axolotl",
+            "description": "一站式大语言模型微调工具，简化了各种开源 LLM 的 LoRA、QLoRA 与全量参数训练配置。"
+          },
+          {
+            "name": "TRL (Hugging Face)",
+            "url": "https://github.com/huggingface/trl",
+            "description": "Hugging Face 推出的强化学习微调库，支持 SFT、DPO 与 PPO 等 LLM 对齐训练算法。"
+          },
+          {
+            "name": "DeepSpeed",
+            "url": "https://github.com/microsoft/DeepSpeed",
+            "description": "微软开源的深度学习优化库，通过 ZeRO 技术实现超大规模模型的极速分布式训练。"
+          },
+          {
+            "name": "Megatron-LM",
+            "url": "https://github.com/NVIDIA/Megatron-LM",
+            "description": "英伟达开发的大规模 Transformer 模型训练框架，支持模型并行与流水线并行。"
+          },
+          {
+            "name": "NVIDIA TensorRT-LLM",
+            "url": "https://github.com/NVIDIA/TensorRT-LLM",
+            "description": "英伟达官方的大模型推理加速引擎，提供极致的显存优化与 GPU 吞吐性能。"
+          },
+          {
+            "name": "Triton Inference Server",
+            "url": "https://developer.nvidia.com/triton-inference-server",
+            "description": "NVIDIA 开源的企业级多框架模型推理服务器，支持 PyTorch、TensorFlow、ONNX 等。"
+          },
+          {
+            "name": "ONNX Runtime",
+            "url": "https://onnxruntime.ai",
+            "description": "跨平台高性能机器学习推理引擎，支持将模型转换为通用 ONNX 格式后部署到各类端侧设备。"
+          },
+          {
+            "name": "OpenVINO",
+            "url": "https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit.html",
+            "description": "英特尔推出的开源 AI 推理优化工具包，专门针对 Intel CPU、GPU 及边缘设备进行深度加速。"
+          },
+          {
+            "name": "Apple MLX",
+            "url": "https://github.com/ml-explore/mlx",
+            "description": "苹果专门为 Apple Silicon 芯片设计的开源机器学习框架，高效利用 Mac 统一内存运行 LLM。"
+          },
+          {
+            "name": "TensorRT",
+            "url": "https://developer.nvidia.com/tensorrt",
+            "description": "NVIDIA 高性能深度学习推理 SDK，提供算子融合与量化等优化技术。"
+          },
+          {
+            "name": "Apache TVM",
+            "url": "https://tvm.apache.org",
+            "description": "开源的深度学习编译框架，将机器学习模型编译为可高效运行于任何硬件后端的机器码。"
+          },
+          {
+            "name": "Baidu PaddlePaddle (飞桨)",
+            "url": "https://www.paddlepaddle.org.cn",
+            "description": "百度开源的产业级深度学习平台，拥有丰富的中文 NLP、CV 预训练模型与套件。"
+          },
+          {
+            "name": "MindSpore (昇思)",
+            "url": "https://www.mindspore.cn",
+            "description": "华为开源的全场景 AI 计算框架，深度适配昇腾(Ascend)硬件生态与大模型开发。"
+          },
+          {
+            "name": "Kimi Developer Platform",
+            "url": "https://platform.moonshot.cn",
+            "description": "月之暗面 Moonshot AI 官方平台，提供支持长上下文文本理解与处理的 Kimi API 服务。"
+          },
+          {
+            "name": "Zhipu AI Platform (智谱清言)",
+            "url": "https://open.bigmodel.cn",
+            "description": "智谱 AI 开放平台，提供 GLM-4 系列大模型、多模态及 Agent 接口能力。"
+          },
+          {
+            "name": "Baidu Qianfan (百度文心千帆)",
+            "url": "https://qianfan.cloud.baidu.com",
+            "description": "百度智能云一站式大模型开发与服务平台，内置文心一言及多种主流开源模型。"
+          },
+          {
+            "name": "Tencent Hunyuan (腾讯混元)",
+            "url": "https://hunyuan.tencent.com",
+            "description": "腾讯混元大模型官方平台，提供强大中文文本生成、多模态理解与 API 接入。"
+          },
+          {
+            "name": "ByteDance Volcengine (火山引擎)",
+            "url": "https://www.volcengine.com/product/doubao",
+            "description": "字节跳动旗下云服务平台，提供豆包大模型 API 及全面的 LLM 应用开发套件。"
+          },
+          {
+            "name": "Minimax Open Platform",
+            "url": "https://platform.minimaxi.com",
+            "description": "Minimax 开放平台，提供语音合成、文本生成及多模态大模型 API。"
+          },
+          {
+            "name": "StepFun (阶跃星辰)",
+            "url": "https://www.stepfun.com",
+            "description": "阶跃星辰官方开发平台，提供多模态与超长上下文大模型 API。"
+          },
+          {
+            "name": "Baichuan AI (百川智能)",
+            "url": "https://www.baichuan-ai.com",
+            "description": "百川智能开发平台，提供专注于医疗与知识检索增强的开源及商业化 LLM。"
+          },
+          {
+            "name": "Yi (零一万物)",
+            "url": "https://platform.lingyiwanwu.com",
+            "description": "李开复创办的零一万物开放平台，提供高品质 Yi 系列大语言模型 API。"
+          },
+          {
+            "name": "SenseNova (商汤日日新)",
+            "url": "https://sensenova.sensetime.com",
+            "description": "商汤科技大模型开放平台，提供大语言模型、文生图及数字人 API 服务。"
+          },
+          {
+            "name": "iFLYTEK Spark (科大讯飞星火)",
+            "url": "https://xinghuo.xfyun.cn/sparkapi",
+            "description": "科大讯飞星火认知大模型 API 平台，擅长语音交互、公文写作与行业定制。"
+          },
+          {
+            "name": "Kaggle",
+            "url": "https://www.kaggle.com",
+            "description": "全球最大的数据科学与机器学习竞赛社区，提供免费 GPU 算力、海量数据集与 Notebook 环境。"
+          },
+          {
+            "name": "Papers with Code",
+            "url": "https://paperswithcode.com",
+            "description": "追踪前沿 AI 论文及其官方开源代码实现的权威平台，AI 学术与开发者的必访之地。"
+          },
+          {
+            "name": "ArXiv (cs.AI)",
+            "url": "https://arxiv.org/list/cs.AI/recent",
+            "description": "康奈尔大学预印本库计算机科学与人工智能板块，全球最新 AI 论文首发阵地。"
+          },
+          {
+            "name": "Hugging Face Datasets",
+            "url": "https://huggingface.co/datasets",
+            "description": "托管上万种用于 NLP、语音、图像与大模型训练的公共数据集平台。"
+          },
+          {
+            "name": "Label Studio",
+            "url": "https://labelstud.io",
+            "description": "灵活开源的多媒体数据标注工具，支持图像、文本、音频与视频的 AI 训练集标注。"
+          },
+          {
+            "name": "CVAT (Computer Vision Annotation Tool)",
+            "url": "https://www.cvat.ai",
+            "description": "业界标准的开源计算机视觉标注工具，支持图像与视频的高效框选和分割标注。"
+          },
+          {
+            "name": "Docugami / Unstructured.io",
+            "url": "https://unstructured.io",
+            "description": "专为大模型与 RAG 打造的数据预处理库，将 PDF、Word、HTML 快速解析为干净文本。"
+          },
+          {
+            "name": "AnyParser",
+            "url": "https://www.cambio.ai",
+            "description": "利用视觉大模型高效抽取复杂 PDF、表格与文档数据的 AI 结构化提取工具。"
+          },
+          {
+            "name": "LlamaParse",
+            "url": "https://www.llamaindex.ai/llamaparse",
+            "description": "LlamaIndex 官方出品的高级文档解析 API，专门处理复杂 PDF 表格与图表。"
+          },
+          {
+            "name": "CrewAI",
+            "url": "https://www.crewai.com",
+            "description": "备受瞩目的开源多 Agent 协同框架，轻松组建具备不同角色的 AI 智能体团队。"
+          },
+          {
+            "name": "AutoGen (Microsoft)",
+            "url": "https://microsoft.github.io/autogen/",
+            "description": "微软开源的下一代多 Agent 对话与协作开发框架，支持复杂的任务自动拆解与执行。"
+          },
+          {
+            "name": "MetaGPT",
+            "url": "https://github.com/geekan/MetaGPT",
+            "description": "输入一行需求即可自动输出 PRD、架构设计和全栈代码的智能体软件公司框架。"
+          },
+          {
+            "name": "ChatDev",
+            "url": "https://github.com/OpenBMB/ChatDev",
+            "description": "基于 Multi-Agent 的虚拟软件开发公司，模拟 CEO、程序员、测试员协同编写软件。"
+          },
+          {
+            "name": "Mem0 (Embedchain)",
+            "url": "https://mem0.ai",
+            "description": "为 AI Agent 与大模型应用打造的高效个性化长期记忆层管理框架。"
+          },
+          {
+            "name": "DSPy (Stanford)",
+            "url": "https://github.com/stanfordnlp/dspy",
+            "description": "斯坦福大学推出的声明式 Prompt 优化框架，用代码逻辑取代手工编写繁琐提示词。"
+          },
+          {
+            "name": "Promptlooop / Promptflow",
+            "url": "https://microsoft.github.io/promptflow/",
+            "description": "微软开源的提示词工程开发工具，可视化构建、测试与评估大模型工作流。"
+          },
+          {
+            "name": "Arize Phoenix",
+            "url": "https://phoenix.arize.com",
+            "description": "开源的 AI & LLM 观察性与评估平台，支持对 RAG 链路、Agent 步长与 Prompt 进行追踪调试。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "LangSmith",
+            "url": "https://www.langchain.com/langsmith",
+            "description": "LangChain 官方开发的大模型应用调试、测试、评估与全链路追踪监控平台。"
+          },
+          {
+            "name": "Helicone",
+            "url": "https://www.helicone.ai",
+            "description": "开源的 LLM API 代理与监控平台，几行代码即可实现大模型调用的缓存、限流与成本监控。"
+          },
+          {
+            "name": "Portkey",
+            "url": "https://portkey.ai",
+            "description": "企业级 LLM 网关与观察平台，提供负载均衡、备用路由与智能重试等生产保障能力。"
+          },
+          {
+            "name": "LiteLLM",
+            "url": "https://www.litellm.ai",
+            "description": "轻量级大模型统一网关，将 100+ 不同厂商的 LLM 统一转换为 OpenAI API 格式。"
+          },
+          {
+            "name": "OpenRouter",
+            "url": "https://openrouter.ai",
+            "description": "全球大模型统一 API 聚合平台，支持通过单一接口按需调用各大商业与开源 LLM。"
+          },
+          {
+            "name": "SiliconFlow (硅基流动)",
+            "url": "https://siliconflow.cn",
+            "description": "国内知名的一站式开源大模型托管与极速推理 API 平台，提供优质免费配额。"
+          },
+          {
+            "name": "One API",
+            "url": "https://github.com/songquanpeng/one-api",
+            "description": "极其流行的开源大模型 API 聚合与分发系统，支持多种 LLM 接口转接与额度管理。"
+          },
+          {
+            "name": "BentoML",
+            "url": "https://www.bentoml.com",
+            "description": "用于将机器学习模型与 AI 工作流打包、构建和部署为高可用微服务 API 的开源框架。"
+          },
+          {
+            "name": "Cortex.cpp",
+            "url": "https://cortex.so",
+            "description": "开源的本地 AI 平台，支持在本地设备上通过 C++ 高效运行 LLM 并暴露 REST API。"
+          },
+          {
+            "name": "LocalAI",
+            "url": "https://localai.io",
+            "description": "开源的 OpenAI 替代品，允许在本地完全离线运行各种 LLM、音频生成与图像模型。"
+          },
+          {
+            "name": "llama.cpp",
+            "url": "https://github.com/ggerganov/llama.cpp",
+            "description": "传奇级开源 C/C++ 库，实现了在普通 PC 和 Mac 上无依赖高效率运行大语言模型。"
+          },
+          {
+            "name": "Whisper.cpp",
+            "url": "https://github.com/ggerganov/whisper.cpp",
+            "description": "OpenAI Whisper 模型的轻量级 C/C++ 移植版，实现极其高效的本地离线语音识别。"
+          },
+          {
+            "name": "Piper TTS",
+            "url": "https://github.com/rhasspy/piper",
+            "description": "极其快速、本地离线的极轻量级开源 Neural 文本转语音引擎。"
+          },
+          {
+            "name": "Bark (Suno)",
+            "url": "https://github.com/suno-ai/bark",
+            "description": "Suno 开源的转换器架构文本提示语音与音效生成模型。"
+          },
+          {
+            "name": "Audiocraft (Meta)",
+            "url": "https://github.com/facebookresearch/audiocraft",
+            "description": "Meta 开源的 AI 音乐与音效生成库(包含 MusicGen 与 AudioGen)。"
+          },
+          {
+            "name": "Suno AI API",
+            "url": "https://suno.com",
+            "description": "全球领先的 AI 音乐生成平台，支持通过文本 Prompt 快速创作高品质歌曲。"
+          },
+          {
+            "name": "Udio",
+            "url": "https://www.udio.com",
+            "description": "顶尖的生成式 AI 音乐创作平台，支持高保真多风格音乐生成与轨道编辑。"
+          },
+          {
+            "name": "Runway Developer Platform",
+            "url": "https://runwayml.com",
+            "description": "生成式视频行业标杆，提供 Gen-2 与 Gen-3 Alpha 等高品质视频生成模型 API。"
+          },
+          {
+            "name": "Luma AI Dream Machine API",
+            "url": "https://lumalabs.ai",
+            "description": "Luma AI 官方平台，提供高画质、符合物理规律的视频生成 API 与 3D 捕捉技术。"
+          },
+          {
+            "name": "Pika Labs",
+            "url": "https://pika.art",
+            "description": "AI 视频生成与动画制作平台，支持文本/图像转视频及局修局部重绘。"
+          },
+          {
+            "name": "HeyGen API",
+            "url": "https://www.heygen.com",
+            "description": "领先的 AI 播报数字人与视频翻译 API 平台，支持极高保真的口型同步与声音克隆。"
+          },
+          {
+            "name": "Synthesia",
+            "url": "https://www.synthesia.io",
+            "description": "企业级 AI 数字人视频生成平台，快速将文本转换为专业的主播演示视频。"
+          },
+          {
+            "name": "Midjourney Community API",
+            "url": "https://www.midjourney.com",
+            "description": "全球最高图像品质的 AI 艺术生成平台(官方逐步开放网页端与 API)。"
+          },
+          {
+            "name": "Stability AI Developer Platform",
+            "url": "https://platform.stability.ai",
+            "description": "Stable Diffusion 官方开发平台，提供 SD3、FLUX 合作及 3D/音频生成 API。"
+          },
+          {
+            "name": "Black Forest Labs (FLUX.1)",
+            "url": "https://blackforestlabs.ai",
+            "description": "由 SD 核心团队创立的实验室，推出新一代性能极强且文本理解极佳的 FLUX.1 图像模型。"
+          },
+          {
+            "name": "Ideogram",
+            "url": "https://ideogram.ai",
+            "description": "以出色的文字排版显示能力著称的生成式 AI 图像平台，提供强大设计级图像生成。"
+          },
+          {
+            "name": "Recraft.ai",
+            "url": "https://www.recraft.ai",
+            "description": "专为设计师打造的 AI 图形生成平台，支持直接导出 SVG 矢量图与 3D 渲染图。"
+          },
+          {
+            "name": "Magnific AI",
+            "url": "https://magnific.ai",
+            "description": "革命性的 AI 图像超分辨率重采样与细节增强放大工具。"
+          },
+          {
+            "name": "Vectorizer.AI",
+            "url": "https://vectorizer.ai",
+            "description": "利用深度学习技术将位图(PNG/JPG)自动无损转换为高精度 SVG 矢量图的工具。"
+          },
+          {
+            "name": "Clipdrop API",
+            "url": "https://clipdrop.co/apis",
+            "description": "Jasper/Stability 旗下的图像处理 API 平台，提供抠图、扩图、去水印与打光功能。"
+          },
+          {
+            "name": "Remove.bg API",
+            "url": "https://www.remove.bg/api",
+            "description": "老牌高精度 AI 自动抠图 API 接口，专门用于人像与商品背景移除。"
+          },
+          {
+            "name": "Roboflow",
+            "url": "https://roboflow.com",
+            "description": "专注于计算机视觉(CV)模型开发的端到端平台，涵盖数据集管理、标注与部署。"
+          },
+          {
+            "name": "Ultralytics YOLO",
+            "url": "https://www.ultralytics.com",
+            "description": "全球最流行的目标检测算法 YOLOv8 / YOLOv11 官方框架与训练开发平台。"
+          },
+          {
+            "name": "OpenCV Official",
+            "url": "https://opencv.org",
+            "description": "全球最大的开源计算机视觉与图像处理库，AI 视觉开发者的基础设施。"
+          },
+          {
+            "name": "MMDetection (OpenMMLab)",
+            "url": "https://github.com/open-mmlab/mmdetection",
+            "description": "上海人工智能实验室开源的计算机视觉目标检测与分割算法 toolbox。"
+          },
+          {
+            "name": "OpenXLab (浦启平台)",
+            "url": "https://openxlab.org.cn",
+            "description": "国内开源 AI 模型与数据集共享平台，提供算力支持与轻量级应用展示。"
+          },
+          {
+            "name": "ModelScope (魔搭社区)",
+            "url": "https://www.modelscope.cn",
+            "description": "阿里达摩院发起的开源模型创新社区，汇聚丰富的中英文 AI 模型与 Demo 体验。"
+          },
+          {
+            "name": "PaddleOCR",
+            "url": "https://github.com/PaddlePaddle/PaddleOCR",
+            "description": "极受欢迎的开源超轻量级 OCR 识别套件，支持 80+ 种语言识别与表格提取。"
+          },
+          {
+            "name": "Tesseract OCR",
+            "url": "https://github.com/tesseract-ocr/tesseract",
+            "description": "谷歌支持的历史悠久的开源经典光学字符识别(OCR)引擎。"
+          },
+          {
+            "name": "EasyOCR",
+            "url": "https://github.com/JaidedAI/EasyOCR",
+            "description": "基于 PyTorch 开源的 Python OCR 库，几行代码即可支持多种语言的图片文字识别。"
+          },
+          {
+            "name": "Surya OCR",
+            "url": "https://github.com/VikParuchuri/surya",
+            "description": "基于深度学习的现代化开源 OCR 与文档布局分析工具，支持高精度多语言文本检测。"
+          },
+          {
+            "name": "Triton (OpenAI)",
+            "url": "https://github.com/triton-lang/triton",
+            "description": "OpenAI 开源的类 Python 编程语言，帮助开发者编写高性能 GPU 自定义算子内核。"
+          },
+          {
+            "name": "CUDA Zone (NVIDIA)",
+            "url": "https://developer.nvidia.com/cuda-zone",
+            "description": "英伟达 CUDA 并行计算平台与编程工具包官方开发中心。"
+          },
+          {
+            "name": "AMD ROCm",
+            "url": "https://www.amd.com/en/developer/resources/rocm-hub.html",
+            "description": "AMD 开源的高性能计算与 GPU 深度学习软件开发平台。"
+          },
+          {
+            "name": "Intel AI Tools",
+            "url": "https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit.html",
+            "description": "英特尔 oneAPI 框架，为 CPU/GPU 加速机器学习与深度学习提供全套优化工具。"
+          },
+          {
+            "name": "GroqWare Suite",
+            "url": "https://groq.com",
+            "description": "Groq 芯片配套的编译器与开发套件，专为极致低延迟 LLM 推理量身定制。"
+          },
+          {
+            "name": "SambaNova Systems",
+            "url": "https://sambanova.ai",
+            "description": "提供软硬件一体的企业级 AI 芯片与快速大模型推理云服务平台。"
+          },
+          {
+            "name": "Cerebras Systems",
+            "url": "https://cerebras.ai",
+            "description": "采用晶圆级巨型芯片的 AI 算力平台，提供极速的 LLM 训练与推理 API 服务。"
+          },
+          {
+            "name": "Graphcore Poplar",
+            "url": "https://www.graphcore.ai",
+            "description": "针对 IPU(智能处理器)打造的 AI 软件套件与深度学习开发平台。"
+          },
+          {
+            "name": "Tenstorrent",
+            "url": "https://tenstorrent.com",
+            "description": "由传奇芯片架构师 Jim Keller 领导的开源 RISC-V 架构 AI 硬件与编译软件平台。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Fast.ai",
+            "url": "https://www.fast.ai",
+            "description": "享有盛誉的开源深度学习课程与高层 PyTorch 封装库，主张“让每个人都能用 AI”。"
+          },
+          {
+            "name": "DeepLearning.AI",
+            "url": "https://www.deeplearning.ai",
+            "description": "吴恩达(Andrew Ng)创办的全球顶尖 AI 教育平台，提供最权威的 LLM 开发短课程。"
+          },
+          {
+            "name": "Full Stack LLM Bootcamps",
+            "url": "https://fullstackdeeplearning.com",
+            "description": "面向全栈工程师的大模型应用开发、部署与生产实践专业教程。"
+          },
+          {
+            "name": "Prompt Engineering Guide",
+            "url": "https://www.promptingguide.ai",
+            "description": "全球最全面的开源提示词工程指南，涵盖各种最新的 Prompt 技巧与 LLM 论文解说。"
+          },
+          {
+            "name": "LearnPrompting",
+            "url": "https://learnprompting.org",
+            "description": "从零开始面向初学者与开发者的开源生成式 AI 与提示词工程学习平台。"
+          },
+          {
+            "name": "DeepEval",
+            "url": "https://github.com/confident-ai/deepeval",
+            "description": "开源的 LLM 测试与评估框架，单元测试风格评估 RAG 系统与 Prompt 效果。"
+          },
+          {
+            "name": "Ragas",
+            "url": "https://ragas.io",
+            "description": "专门用于评估检索增强生成(RAG)管道性能与检索准确率的开源框架。"
+          },
+          {
+            "name": "TruLens",
+            "url": "https://www.trulens.org",
+            "description": "专注于评估与监控大语言模型应用质量、真实性与幻觉问题的开发工具。"
+          },
+          {
+            "name": "Giskard",
+            "url": "https://www.giskard.ai",
+            "description": "开源的 LLM 安全测试与漏洞扫描平台，自动检测 AI 应用中的偏见与幻觉。"
+          },
+          {
+            "name": "Garak",
+            "url": "https://garak.ai",
+            "description": "大模型越狱与安全漏洞扫描工具，帮助开发者评估 LLM 的抗攻击能力。"
+          },
+          {
+            "name": "Guardrails AI",
+            "url": "https://www.guardrailsai.com",
+            "description": "为大模型输出添加验证与安全护栏的开源库，确保 LLM 按照指定 Schema 输出。"
+          },
+          {
+            "name": "NeMo Guardrails (NVIDIA)",
+            "url": "https://github.com/NVIDIA/NeMo-Guardrails",
+            "description": "英伟达开源的大模型对话安全护栏工具，防止 LLM 超出业务范围乱答。"
+          },
+          {
+            "name": "Llama Guard (Meta)",
+            "url": "https://www.llama.com/docs/model-cards-and-prompt-formats/llama-guard-3",
+            "description": "Meta 推出的专门用于输入/输出内容安全审核的开源防护模型。"
+          },
+          {
+            "name": "Rebuff AI",
+            "url": "https://github.com/protectai/rebuff",
+            "description": "专注于检测并防御 Prompt 注入(Prompt Injection)攻击的安全防护工具。"
+          },
+          {
+            "name": "Lakera AI",
+            "url": "https://www.lakera.ai",
+            "description": "实时大模型安全保护平台，阻断 Prompt 注入、敏感数据泄露与恶意输出。"
+          },
+          {
+            "name": "Vanna.ai",
+            "url": "https://vanna.ai",
+            "description": "基于 RAG 的开源 Python Text-to-SQL 框架，帮助开发者轻松构建自然语言查询数据库应用。"
+          },
+          {
+            "name": "DB-GPT",
+            "url": "https://github.com/eugeneyan/db-gpt",
+            "description": "开源的原生数据与数据库大模型应用框架，支持私有化部署 Text-to-SQL 与智能分析。"
+          },
+          {
+            "name": "SQLCoder (Defog.ai)",
+            "url": "https://github.com/defog-ai/sqlcoder",
+            "description": "专注于自然语言生成 SQL 查询的高准确率开源领域大模型。"
+          },
+          {
+            "name": "Marvin (Prefect)",
+            "url": "https://github.com/PrefectHQ/marvin",
+            "description": "轻量级 AI 开发框架，将 LLM 能力无缝集成到常规 Python 数据管道中。"
+          },
+          {
+            "name": "Instructor",
+            "url": "https://github.com/jxnl/instructor",
+            "description": "基于 Pydantic 的 Python 库，极其优雅地让 OpenAI/Claude 模型输出结构化 JSON 数据。"
+          },
+          {
+            "name": "Outlines",
+            "url": "https://github.com/dottxt-ai/outlines",
+            "description": "通过正则表达式与 JSON Schema 严格引导和约束 LLM 生成确定性格式文本的库。"
+          },
+          {
+            "name": "SGLang",
+            "url": "https://github.com/sgl-project/sglang",
+            "description": "用于大模型与多模态模型的高效编程语言，大幅提升复杂提示词调用的推理吞吐量。"
+          },
+          {
+            "name": "Guidance (Microsoft)",
+            "url": "https://github.com/guidance-ai/guidance",
+            "description": "微软开源的 Prompt 提示词控制框架，交错交织生成与逻辑控制流。"
+          },
+          {
+            "name": "Semantic Kernel (Microsoft)",
+            "url": "https://github.com/microsoft/semantic-kernel",
+            "description": "微软推出的企业级 AI SDK，支持用 C#、Python、Java 轻松接入 LLM 与插件。"
+          },
+          {
+            "name": "Spring AI",
+            "url": "https://spring.io/projects/spring-ai",
+            "description": "Spring 官方项目，为 Java 开发者提供统一的大语言模型与向量数据库接入抽象 API。"
+          },
+          {
+            "name": "LangChain.js",
+            "url": "https://js.langchain.com",
+            "description": "LangChain 的 JavaScript/TypeScript 版本，方便全栈工程师构建 Node.js/Edge AI 应用。"
+          },
+          {
+            "name": "Genkit (Firebase)",
+            "url": "https://firebase.google.com/docs/genkit",
+            "description": "谷歌推出的开源 AI 应用开发框架，专为 Node.js 与 TypeScript 开发者打造。"
+          },
+          {
+            "name": "Botpress",
+            "url": "https://botpress.com",
+            "description": "强劲的下一代 AI 聊天机器人构建平台，结合大模型能力与可视化流程编辑。"
+          },
+          {
+            "name": "Voiceflow",
+            "url": "https://www.voiceflow.com",
+            "description": "团队协作式的对话式 AI 与 Agent 设计平台，支持可视化构建智能客服与语音助手。"
+          },
+          {
+            "name": "Rasa Official",
+            "url": "https://rasa.com",
+            "description": "企业级开源对话式 AI 框架，支持高定制化的自然语言理解(NLU)与任务型机器人。"
+          },
+          {
+            "name": "SuperGradients (Deci.ai)",
+            "url": "https://github.com/Deci-AI/super-gradients",
+            "description": "基于 PyTorch 的计算机视觉深度学习训练库，内置高度优化的 SOTA 模型。"
+          },
+          {
+            "name": "Segment Anything (SAM 2 - Meta)",
+            "url": "https://sam2.metademolab.com",
+            "description": "Meta 发布的万物分割大模型 2 代，支持对图像与视频进行实时高质量目标分割。"
+          },
+          {
+            "name": "Depth Anything",
+            "url": "https://github.com/LiheYoung/Depth-Anything",
+            "description": "强大的单张图像单目深度估计模型，广泛应用于 3D 重建与视觉 AI 控制。"
+          },
+          {
+            "name": "3D Gaussian Splatting (Inria)",
+            "url": "https://repo-sam.inria.fr/gsplat/3D-gaussian-splatting/",
+            "description": "颠覆性的 3D 实时辐射场渲染技术，极大地加速了从照片生成高保真 3D 场景的过程。"
+          },
+          {
+            "name": "Tripo3D API",
+            "url": "https://www.tripo3d.ai",
+            "description": "快速通过文本提示词或单张图片生成高质量 3D 网格模型的 AI 平台。"
+          },
+          {
+            "name": "Meshy",
+            "url": "https://www.meshy.ai",
+            "description": "专为 3D 艺术家与游戏开发者打造的 AI 3D 文本/图像转模型与纹理生成平台。"
+          },
+          {
+            "name": "Rodin (DeMain)",
+            "url": "https://hyperhuman.deepsouth.ai",
+            "description": "利用 AI 生成高精度 3D 数字化人脸与 3D 资产的生成式引擎。"
+          },
+          {
+            "name": "Comet ML",
+            "url": "https://www.comet.com",
+            "description": "企业级 MLOps 平台，提供机器学习模型管理、实验追踪与生产模型监控。"
+          },
+          {
+            "name": "Neptune.ai",
+            "url": "https://neptune.ai",
+            "description": "专为 MLOps 打造的轻量级实验日志记录与模型注册表，方便团队协同测试。"
+          },
+          {
+            "name": "ClearML",
+            "url": "https://clear.ml",
+            "description": "开源的 MLOps 全套解决方案，涵盖实验追踪、数据管理、编排与 GPU 算力调度。"
+          },
+          {
+            "name": "Dagster",
+            "url": "https://dagster.io",
+            "description": "现代化的数据编排平台，支持面向 AI/ML 流程的数据管道设计与状态监控。"
+          },
+          {
+            "name": "Kubeflow",
+            "url": "https://www.kubeflow.org",
+            "description": "基于 Kubernetes 的云原生机器学习 toolkit，用于部署、管理和扩展复杂的 ML 管道。"
+          },
+          {
+            "name": "Feast",
+            "url": "https://feast.dev",
+            "description": "开源的机器学习特征商店(Feature Store)，连接数据仓库与实时模型推理层。"
+          },
+          {
+            "name": "Hopsworks",
+            "url": "https://www.hopsworks.ai",
+            "description": "专注于大模型与 AI 生产环境的企业级特征商店与 LLM 嵌入层数据库。"
+          },
+          {
+            "name": "Flyte",
+            "url": "https://flyte.org",
+            "description": "由 Linux 基金会托管的开源工作流编排引擎，专门用于扩展大规模机器学习与 AI 管道。"
+          },
+          {
+            "name": "Supervisely",
+            "url": "https://supervisely.com",
+            "description": "一站式计算机视觉与图像/视频标注生态平台，内置海量 AI 辅助标注工具。"
+          },
+          {
+            "name": "V7 Labs (Darwin)",
+            "url": "https://www.v7labs.com",
+            "description": "训练数据标注与自动化计算机视觉平台，支持极速的 AI 自动分割标注。"
+          },
+          {
+            "name": "Kserve",
+            "url": "https://kserve.github.io/kserve/",
+            "description": "基于 Kubernetes 的高度可扩展 Serverless 机器学习模型服务框架。"
+          },
+          {
+            "name": "Seldon Core",
+            "url": "https://www.seldon.io",
+            "description": "企业级 MLOps 框架，将上千个 ML 模型无缝部署并监控于 Kubernetes 生产集群。"
+          },
+          {
+            "name": "Ray Serve",
+            "url": "https://docs.ray.io/en/latest/serve/index.html",
+            "description": "基于 Ray 打造的可扩展多模型推理服务库，完美支持复杂的 LLM pipeline 与多模型组合。"
+          }
         ]
       }
     ]
@@ -5292,6 +5969,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

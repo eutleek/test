@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="漫画阅读、正版平台、漫画工具与图源社区导航">
+<title>漫画网站 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>漫画网站</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1066 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">漫画网站 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "漫画网站",
+    "icon": "📚",
+    "color": "linear-gradient(135deg, #fd79a8, #fdcb6e)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "官方正版数字阅读与出版商平台(中文及全球)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "哔哩哔哩漫画",
+            "url": "https://manga.bilibili.com",
+            "description": "国内大型正版数字漫画平台，正版引进海量日本热门连载漫画及丰富国漫。"
+          },
+          {
+            "name": "腾讯动漫",
+            "url": "https://ac.qq.com",
+            "description": "国内知名国漫与引进漫画平台，拥有大量独家连载国漫IP与流行网络漫画。"
+          },
+          {
+            "name": "快看漫画",
+            "url": "https://www.kuaikanmanhua.com",
+            "description": "国内主打移动端条漫创作者与年轻受众的社交型漫画平台。"
+          },
+          {
+            "name": "爱奇艺漫画",
+            "url": "https://www.iqiyi.com/manhua",
+            "description": "爱奇艺旗下官方漫画频道，提供多类国漫及正版引进漫画作品在线阅读。"
+          },
+          {
+            "name": "MANGA Plus by SHUEISHA",
+            "url": "https://mangaplus.shueisha.co.jp",
+            "description": "集英社官方推出的全球化在线漫画平台，同步提供《周刊少年Jump》最新连载的多语言正版阅读。"
+          },
+          {
+            "name": "BOOK☆WALKER",
+            "url": "https://bookwalker.jp",
+            "description": "角川集团旗下的官方电子书与电子漫画商城，提供海量正版日本漫画与轻小说。"
+          },
+          {
+            "name": "BOOK☆WALKER 台湾",
+            "url": "https://www.bookwalker.com.tw",
+            "description": "BOOK☆WALKER 繁体中文官方平台，提供正版繁体中文电子漫画与轻小说销售。"
+          },
+          {
+            "name": "LINE Manga",
+            "url": "https://manga.line.me",
+            "description": "LINE旗下的日本主流电子漫画平台，采用每日免费解锁等多种阅读模式。"
+          },
+          {
+            "name": "ComicWalker (KADOKAWA)",
+            "url": "https://comic-walker.com",
+            "description": "角川集团官方免费电子漫画网站，整合旗下各大漫画杂志的连载内容。"
+          },
+          {
+            "name": "Shonen Jump+ (少年ジャンプ＋)",
+            "url": "https://shonenjumpplus.com",
+            "description": "集英社旗下热门网络漫画平台，连载《间谍过家家》《怪兽8号》《电锯人 第二部》等名作。"
+          },
+          {
+            "name": "Sunday Webry (サンデーうぇぶり)",
+            "url": "https://www.sunday-webry.com",
+            "description": "小学馆旗下《周刊少年Sunday》的官方网络漫画平台与APP。"
+          },
+          {
+            "name": "マガポケ (Magazine Pocket)",
+            "url": "https://pocket.shonenmagazine.com",
+            "description": "讲谈社旗下《周刊少年Magazine》及《别册少年Magazine》的官方线上漫画平台。"
+          },
+          {
+            "name": "ピッコマ (Piccoma)",
+            "url": "https://piccoma.com",
+            "description": "Kakao Japan运营的日本大型电子漫画平台，涵盖海量日本漫画与韩漫Webtoon。"
+          },
+          {
+            "name": "Comico",
+            "url": "https://www.comico.jp",
+            "description": "知名全彩纵向彩色条漫平台，收录大量原创网络漫画与恋爱题材作品。"
+          },
+          {
+            "name": "Renta!",
+            "url": "https://renta.papy.co.jp",
+            "description": "日本老牌正版电子漫画租赁与购买平台，涵盖一般向、BL、TL等全方位类型。"
+          },
+          {
+            "name": "ebookjapan",
+            "url": "https://ebookjapan.yahoo.co.jp",
+            "description": "雅虎日本与LINE Digital Frontier联合运营的大型正版电子书/漫画购买网站。"
+          },
+          {
+            "name": "Kindle Manga (Amazon Japan)",
+            "url": "https://www.amazon.co.jp",
+            "description": "亚马逊日本Kindle漫画商店，拥有极其庞大的正版电子漫画库与定期折扣。"
+          },
+          {
+            "name": "Rakuten Kobo Manga (乐天Kobo)",
+            "url": "https://manga.kobo.com",
+            "description": "乐天旗下的电子书平台，提供丰富的日文及多语言正版电子漫画与阅读器支持。"
+          },
+          {
+            "name": "Viz Media",
+            "url": "https://www.viz.com",
+            "description": "北美最大的日本动漫发行商之一，提供英文正版少年Jump漫画及各大名作电子阅读。"
+          },
+          {
+            "name": "Comixology (Amazon)",
+            "url": "https://www.amazon.com/comixology",
+            "description": "亚马逊旗下的数字漫画平台，涵盖美漫(漫威/直流)及大量日本漫画英文版。"
+          },
+          {
+            "name": "Webtoon (LINE Webtoon)",
+            "url": "https://www.webtoons.com",
+            "description": "全球最大的纵向彩色条漫平台，拥有海量韩国及全球创作者的优质网络漫画。"
+          },
+          {
+            "name": "Tapas",
+            "url": "https://tapas.io",
+            "description": "欧美热门网络漫画与小说平台，以丰富的小众原创条漫与韩漫英文版见长。"
+          },
+          {
+            "name": "Tappytoon",
+            "url": "https://www.tappytoon.com",
+            "description": "专注于正版韩国网络漫画(Webtoon)与小说英文翻译阅读的流媒体平台。"
+          },
+          {
+            "name": "Lezhin Comics",
+            "url": "https://www.lezhinus.com",
+            "description": "韩国知名网络漫画平台Lezhin的国际版，主打成熟向与优质剧情连载条漫。"
+          },
+          {
+            "name": "Toomics",
+            "url": "https://www.toomics.com",
+            "description": "提供多语言支持的全球化网络条漫阅读平台，涵盖多种题材连载。"
+          },
+          {
+            "name": "Kakao Page",
+            "url": "https://page.kakao.com",
+            "description": "韩国Kakao旗下的数字内容平台，韩国网文与网络漫画发源地的核心枢纽。"
+          },
+          {
+            "name": "Naver Webtoon",
+            "url": "https://comic.naver.com",
+            "description": "韩国Naver官方网络漫画平台，韩国历史最悠久、流行度最高的条漫大本营。"
+          },
+          {
+            "name": "Bilibili Comics (海外版)",
+            "url": "https://www.bilibilicomics.com",
+            "description": "哔哩哔哩面向海外市场推出的官方正版多语言漫画翻译阅读平台。"
+          },
+          {
+            "name": "Marvel Unlimited",
+            "url": "https://www.marvel.com/unlimited",
+            "description": "漫威官方推出的数字漫画订阅服务，可无限量阅读数万册漫威历史与最新漫画。"
+          },
+          {
+            "name": "DC Universe Infinite",
+            "url": "https://www.dcuniverseinfinite.com",
+            "description": "DC漫画官方订阅平台，提供蝙蝠侠、超人等全系DC美漫数字版阅览。"
+          },
+          {
+            "name": "2000 AD Online",
+            "url": "https://2000ad.com",
+            "description": "英国传奇科幻漫画杂志《2000 AD》(特警判官发源地)官方数字与实体商店。"
+          },
+          {
+            "name": "Izneo",
+            "url": "https://www.izneo.com",
+            "description": "欧洲知名的正版数字漫画平台，专注于法语及欧洲漫画(BD)与日本漫画英文版。"
+          },
+          {
+            "name": "DMM ブックス (DMM Books)",
+            "url": "https://book.dmm.com",
+            "description": "DMM旗下的综合电子书平台，包含庞大的正版日本漫画、商业同人与写真集。"
+          },
+          {
+            "name": "Reader Store (Sony)",
+            "url": "https://ebookstore.sony.jp",
+            "description": "索尼旗下的电子书平台，提供丰富的动画化原作漫画、独家优惠与积分活动。"
+          },
+          {
+            "name": "au BookPass",
+            "url": "https://bookpass.auone.jp",
+            "description": "日本电信巨头KDDI运营的综合电子书与电子漫画月费/单购阅读平台。"
+          },
+          {
+            "name": "honto",
+            "url": "https://honto.jp",
+            "description": "日本大日本印刷(DNP)运营的实体书与电子书融合型大型漫画书店。"
+          },
+          {
+            "name": "纪伊国屋书店 Kinoppy",
+            "url": "https://kinokuniya.co.jp",
+            "description": "日本传统书店巨头纪伊国屋的电子书商店，提供高品质漫画电子版购买。"
+          },
+          {
+            "name": "Mangamo",
+            "url": "https://www.mangamo.com",
+            "description": "面向海外漫迷的正版日本漫画包月订阅制APP及在线展示平台。"
+          },
+          {
+            "name": "Azuki",
+            "url": "https://www.azuki.co",
+            "description": "主打正版授权、同步更新的海外日本漫画数字订阅服务平台。"
+          },
+          {
+            "name": "Futabanet Manga (双叶社)",
+            "url": "https://futabanet.jp/list/comic",
+            "description": "双叶社官方网络漫画门户，连载《蜡笔小新》及旗下多部轻改漫画。"
+          },
+          {
+            "name": "Ganma!",
+            "url": "https://ganma.jp",
+            "description": "日本COMICSMART运营的原创网络漫画连载平台，支持免费全话阅读模式。"
+          },
+          {
+            "name": "Comic Days (コミックDAYS)",
+            "url": "https://comicdays.com",
+            "description": "讲谈社旗下的6大漫画杂志联合官方线上平台，支持杂志定期订阅与单话阅读。"
+          },
+          {
+            "name": "Comic Earth Star",
+            "url": "https://comic-earthstar.com",
+            "description": "Earth Star Entertainment旗下的免费网络漫画连载官网，主打异世界与轻改漫画。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "日本顶尖漫画出版商与核心杂志官网",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "集英社 (Shueisha)",
+            "url": "https://www.shueisha.co.jp",
+            "description": "日本最大的漫画出版商之一，旗下拥有《周刊少年Jump》《Ultra Jump》等。"
+          },
+          {
+            "name": "周刊少年Jump (週刊少年ジャンプ)",
+            "url": "https://www.shonenjump.com",
+            "description": "全球知名度最高的少年漫画杂志官网，代表作《航海王》《火影忍者》《龙珠》。"
+          },
+          {
+            "name": "讲谈社 (Kodansha)",
+            "url": "https://www.kodansha.co.jp",
+            "description": "日本老牌出版巨头，旗下有《周刊少年Magazine》《月刊少年天狼星》等。"
+          },
+          {
+            "name": "周刊少年Magazine",
+            "url": "https://shonenmagazine.com",
+            "description": "讲谈社旗下的主力少年漫画杂志官网，代表作《第一神拳》《妖精的尾巴》《进击的巨人》。"
+          },
+          {
+            "name": "小学馆 (Shogakukan)",
+            "url": "https://www.shogakukan.co.jp",
+            "description": "日本三大综合出版社之一，出版《周刊少年Sunday》《Big Comic》等。"
+          },
+          {
+            "name": "周刊少年Sunday",
+            "url": "https://websunday.net",
+            "description": "小学馆旗下的三大少年漫画杂志之一，代表作《名侦探柯南》《犬夜叉》《葬送的芙莉莲》。"
+          },
+          {
+            "name": "角川 KADOKAWA",
+            "url": "https://www.kadokawa.co.jp",
+            "description": "日本跨媒体巨头，旗下拥有数十家漫画出版社与漫画杂志品牌。"
+          },
+          {
+            "name": "月刊コミックアライブ (Comic Alive)",
+            "url": "https://comic-alive.jp",
+            "description": "角川旗下的热门漫画杂志，专注轻小说漫画改及萌系作品连载。"
+          },
+          {
+            "name": "月刊コミック电击大王",
+            "url": "https://dengekidaioh.jp",
+            "description": "角川旗下的知名漫画杂志，代表作《科学超电磁炮》《四叶妹妹！》。"
+          },
+          {
+            "name": "月刊少年Gangan (Square Enix)",
+            "url": "https://magazine.jp.square-enix.com/gangan",
+            "description": "史克威尔艾尼克斯旗下的漫画杂志，代表作《钢之炼金术师》《绝园的暴风雨》。"
+          },
+          {
+            "name": "月刊G Fantasy (Square Enix)",
+            "url": "https://magazine.jp.square-enix.com/gfantasy",
+            "description": "SE旗下的女性与奇幻向漫画杂志，代表作《黑执事》《地缚少年花子君》。"
+          },
+          {
+            "name": "Young Jump (ヤングジャンプ)",
+            "url": "https://youngjump.jp",
+            "description": "集英社旗下的青年漫画杂志官网，代表作《王者天下》《【推之子】》《王者天下》。"
+          },
+          {
+            "name": "Young Magazine (ヤングマガジン)",
+            "url": "https://youngmagazine.jp",
+            "description": "讲谈社旗下的顶级青年漫画杂志，代表作《头文字D》《攻壳机动队》《Gambling Apocalypse Kaiji》。"
+          },
+          {
+            "name": "Big Comic Original",
+            "url": "https://bigcomicbros.net",
+            "description": "小学馆旗下面向成熟读者的知名青年漫画杂志联合官方入口。"
+          },
+          {
+            "name": "白泉社 (Hakusensha)",
+            "url": "https://www.hakusensha.co.jp",
+            "description": "以高质量少女漫画与青年漫画闻名的出版社，代表作《剑风传奇》《水果篮子》。"
+          },
+          {
+            "name": "花与梦 (花とゆめ)",
+            "url": "https://hanatoyume.com",
+            "description": "白泉社旗下的招牌少女漫画杂志官网，代表作《晨曦 Princess》《降世神通》。"
+          },
+          {
+            "name": "Young Animal (ヤングアニマル)",
+            "url": "https://younganimal.com",
+            "description": "白泉社旗下的青年漫画杂志官网，代表作《烙印勇士 (剑风传奇)》《3月的狮子》。"
+          },
+          {
+            "name": "新潮社 (Shinchosha)",
+            "url": "https://www.shinchosha.co.jp",
+            "description": "日本文学与漫画综合出版社，旗下拥有《月刊Comic@Bunch》等杂志。"
+          },
+          {
+            "name": "Comic Cune (コミックキューン)",
+            "url": "https://comic-cune.jp",
+            "description": "角川旗下的4格漫画及日常萌系漫画专业杂志官网。"
+          },
+          {
+            "name": "コミック百合姫 (Comic Yuri Hime)",
+            "url": "https://www.ichijinsha.co.jp/yurihime",
+            "description": "一迅社旗下的官方百合题材漫画专业杂志官方网站。"
+          },
+          {
+            "name": "一迅社 (Ichijinsha)",
+            "url": "https://www.ichijinsha.co.jp",
+            "description": "专注于女性向、百合、同人及游戏衍生漫画的知名出版社。"
+          },
+          {
+            "name": "芳文社 (Houbunsha)",
+            "url": "http://houbunsha.co.jp",
+            "description": "日本著名的萌系与四格漫画出版社，代表品牌《Manga Time Kirara》。"
+          },
+          {
+            "name": "まんがタイムきらら (Manga Time Kirara)",
+            "url": "http://www.mangatimekirara.com",
+            "description": "芳文社旗下萌系漫画圣地，《轻音少女》《摇曳露营△》《孤独摇滚！》发源地。"
+          },
+          {
+            "name": "少年画报社 (Shonenhoshosha)",
+            "url": "https://www.shonenhoshosha.co.jp",
+            "description": "老牌日本漫画出版社，代表作《海贼王》(早年)、《漂流武士》《HELLSING》。"
+          },
+          {
+            "name": "月刊Comic Rex",
+            "url": "https://www.ichijinsha.co.jp/rex",
+            "description": "一迅社旗下的少年/青年综合漫画杂志，连载大量奇幻与恋爱改编作品。"
+          },
+          {
+            "name": "竹书房 (Takeshobo)",
+            "url": "https://www.takeshobo.co.jp",
+            "description": "日本知名出版社，出版大量四格漫画、麻将漫画及《来自深渊》等名作。"
+          },
+          {
+            "name": "Web Comic Gamma",
+            "url": "https://webcomicgamma.takeshobo.co.jp",
+            "description": "竹书房旗下的免费网络漫画平台，《来自深渊》官方连载发布地。"
+          },
+          {
+            "name": "秋田书店 (Akita Shoten)",
+            "url": "https://www.akitashoten.co.jp",
+            "description": "日本著名老牌出版社，旗下有《周刊少年Champion》，代表作《刃牙》《弱虫 Pedal》。"
+          },
+          {
+            "name": "周刊少年Champion",
+            "url": "https://weeklychampion.jp",
+            "description": "秋田书店的主力少年漫画杂志，以硬派热血、幽默及体育题材著称。"
+          },
+          {
+            "name": "月刊Comic Flapper",
+            "url": "https://comic-flapper.com",
+            "description": "角川 Media Factory 旗下的个性化青年漫画杂志官网。"
+          },
+          {
+            "name": "Comic Valkyrie (コミックヴァルキリー)",
+            "url": "https://www.comic-valkyrie.com",
+            "description": "Kill Time Communication旗下的奇幻动作与异世界美少女漫画专区。"
+          },
+          {
+            "name": "Mag Garden (マッグガーデン)",
+            "url": "https://www.maggarden.co.jp",
+            "description": "知名动画与漫画出版社，代表作《水星领航员》《魔法使的新娘》。"
+          },
+          {
+            "name": "MAGCOMI (マグコミ)",
+            "url": "https://magcomi.com",
+            "description": "Mag Garden旗下的官方在线漫画阅读网站，连载旗下全线漫画作品。"
+          },
+          {
+            "name": "月刊Action (月刊アクション)",
+            "url": "https://webaction.jp",
+            "description": "双叶社旗下的综合漫画杂志，《小林家的龙女仆》等作品发源地。"
+          },
+          {
+            "name": "Comic Garden",
+            "url": "https://www.maggarden.co.jp/comic-garden",
+            "description": "Mag Garden旗下的月刊实体漫画杂志官方门户。"
+          },
+          {
+            "name": "Hero's (月刊ヒーローズ)",
+            "url": "https://viewer.heros-web.com",
+            "description": "专注于英雄题材与硬核动作漫画的电子漫画平台，连载《机动奥特曼》。"
+          },
+          {
+            "name": "Comic Zenon (コミックゼノン)",
+            "url": "https://comic-zenon.com",
+            "description": "Coamix旗下的青年漫画杂志平台，代表作《终末的女武神》《北斗神拳》衍生。"
+          },
+          {
+            "name": "Overlap Comic (オーバーラップ)",
+            "url": "https://comic-gardo.com",
+            "description": "Overlap旗下的网络漫画平台“Comic Gardo”，主打轻小说改编异世界漫画。"
+          },
+          {
+            "name": "AlphaPolis Comic (アルファポリス)",
+            "url": "https://www.alphapolis.co.jp/manga",
+            "description": "AlphaPolis旗下的自发文与Web漫画平台，包含海量异世界、转生题材漫画。"
+          },
+          {
+            "name": "Flex Comix (Blood / Flare)",
+            "url": "https://comic-polaris.jp",
+            "description": "包含Comic Polaris及Comic Meteor的联合漫画平台，主打恋爱日常与奇幻。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "美漫、欧美及其他国际出版社官网",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Marvel Comics (漫威漫画)",
+            "url": "https://www.marvel.com/comics",
+            "description": "全球顶尖美漫巨头，蜘蛛侠、钢铁侠、复仇者联盟等超级英雄漫画官方网站。"
+          },
+          {
+            "name": "DC Comics (DC漫画)",
+            "url": "https://www.dccomics.com",
+            "description": "全球顶尖美漫巨头，蝙蝠侠、超人、神奇女侠等超级英雄官方门户。"
+          },
+          {
+            "name": "Image Comics",
+            "url": "https://imagecomics.com",
+            "description": "美国第三大漫画出版商，以创作者拥有版权著称，代表作《行尸走肉》《Spawn》《Saga》。"
+          },
+          {
+            "name": "Dark Horse Comics (黑马漫画)",
+            "url": "https://www.darkhorse.com",
+            "description": "美国著名独立漫画出版商，代表作《地狱男爵》《地狱客栈》及多部日本漫画美版。"
+          },
+          {
+            "name": "IDW Publishing",
+            "url": "https://www.idwpublishing.com",
+            "description": "知名美漫出版商，拥有《变形金刚》《忍者神龟》《彩虹小马》等IP漫画版权。"
+          },
+          {
+            "name": "Boom! Studios",
+            "url": "https://www.boom-studios.com",
+            "description": "欧美知名独立漫画出版商，出版大量优质原创科幻、奇幻及影视改编漫画。"
+          },
+          {
+            "name": "Dynamite Entertainment",
+            "url": "https://www.dynamite.com",
+            "description": "知名美漫出版商，出版《黑袍纠察队 (The Boys)》《红索尼娅》等硬派漫画。"
+          },
+          {
+            "name": "Dargaud",
+            "url": "https://www.dargaud.com",
+            "description": "法国最著名的连环画/漫画(BD)出版社之一，代表作《阿斯泰利克斯历险记》。"
+          },
+          {
+            "name": "Casterman",
+            "url": "https://www.casterman.com",
+            "description": "比利时/法国老牌漫画出版社，传奇漫画《丁丁历险记》的官方出版商。"
+          },
+          {
+            "name": "Delcourt",
+            "url": "https://www.editions-delcourt.fr",
+            "description": "法国大型独立漫画出版社，出版海量欧洲本土BD漫画与日漫法文版。"
+          },
+          {
+            "name": "Glénat",
+            "url": "https://www.glenat.com",
+            "description": "法国先驱级漫画出版社，最早将《龙珠》《AKIRA》等日本漫画引入欧洲的出版商。"
+          },
+          {
+            "name": "Panini Comics",
+            "url": "https://www.panini.com",
+            "description": "总部位于意大利的欧洲最大动漫与流行文化出版商，负责美漫与日漫欧洲多国发行。"
+          },
+          {
+            "name": "TokyoPop",
+            "url": "https://www.tokyopop.com",
+            "description": "欧美早期推广日本漫画与英文原创漫画(OEL Manga)的核心出版品牌。"
+          },
+          {
+            "name": "Seven Seas Entertainment (七海娱乐)",
+            "url": "https://sevenseasentertainment.com",
+            "description": "北美主要的日本漫画、轻小说及韩漫英文实体版出版商。"
+          },
+          {
+            "name": "Yen Press",
+            "url": "https://yenpress.com",
+            "description": "角川与Hachette联合成立的北美出版商，专注于日漫与轻小说的英文版发行。"
+          },
+          {
+            "name": "Kodansha USA",
+            "url": "https://kodansha.us",
+            "description": "讲谈社北美分公司，官方出版讲谈社旗下全线漫画作品的英文版。"
+          },
+          {
+            "name": "Fantagraphics Books",
+            "url": "https://www.fantagraphics.com",
+            "description": "美国顶尖的独立艺术漫画与经典报纸连载漫画(如花生漫画)出版商。"
+          },
+          {
+            "name": "Humanoids (Les Humanoïdes Associés)",
+            "url": "https://www.humanoids.com",
+            "description": "由墨比斯(Mœbius)等大师创办的传奇科幻漫画出版社，代表作《Incal》。"
+          },
+          {
+            "name": "Humanoids Store",
+            "url": "https://www.store.humanoids.com",
+            "description": "Humanoids官方商店，售卖全球顶尖科幻与奇幻欧漫电子版及精品实体版。"
+          },
+          {
+            "name": "Oni Press",
+            "url": "https://onipress.com",
+            "description": "美国知名独立漫画出版商，代表作《歪小子斯科特 (Scott Pilgrim)》。"
+          },
+          {
+            "name": "Vault Comics",
+            "url": "https://vaultcomics.com",
+            "description": "专注于高质量科幻与奇幻题材的北美独立漫画出版商。"
+          },
+          {
+            "name": "Titan Comics",
+            "url": "https://titan-comics.com",
+            "description": "英国知名出版商，出版《神秘博士》《刺客信条》等海量影视游戏改编漫画。"
+          },
+          {
+            "name": "Drawn & Quarterly",
+            "url": "https://drawnandquarterly.com",
+            "description": "加拿大名誉极高的纪实与艺术漫画出版社，出版大量水木茂等日漫大师英文版。"
+          },
+          {
+            "name": "J-Novel Club",
+            "url": "https://j-novel.club",
+            "description": "北美知名电子出版商，专注于日本轻小说与衍生漫画的高速英文数字出版。"
+          },
+          {
+            "name": "Udon Entertainment",
+            "url": "https://www.udonentertainment.com",
+            "description": "知名画师企划出版商，以出版《街头霸王》等游戏漫画及日本画集著称。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "漫画数据库、评分与追看追踪工具",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "MyAnimeList (Manga Section)",
+            "url": "https://myanimelist.net/manga.php",
+            "description": "全球最大的ACG数据库之一，提供极其详尽的漫画评分、排行榜与读者讨论。"
+          },
+          {
+            "name": "Bangumi 番组计划 (漫画区)",
+            "url": "https://bgm.tv/manga",
+            "description": "国内最权威的ACG作品资料库与评分社区，支持看漫进度追踪与版本交流。"
+          },
+          {
+            "name": "AniList Manga",
+            "url": "https://anilist.co",
+            "description": "界面现代化的全球ACG数据库，提供高自由度的追看清单与读漫数据统计。"
+          },
+          {
+            "name": "MangaUpdates (Baka-Updates Manga)",
+            "url": "https://www.mangaupdates.com",
+            "description": "全球最详尽的漫画出版信息、翻译进度、连载状态及改编追踪数据库。"
+          },
+          {
+            "name": "Kitsu Manga",
+            "url": "https://kitsu.io",
+            "description": "简洁优雅的动漫与漫画追踪数据库，提供个性化阅读推荐系统。"
+          },
+          {
+            "name": "Grand Comics Database (GCD)",
+            "url": "https://www.comics.org",
+            "description": "专注于美漫与全球纸质漫画历史档案的国际自由建立数据库。"
+          },
+          {
+            "name": "Comic Vine",
+            "url": "https://comicvine.gamespot.com",
+            "description": "全球最大的美漫与超级英雄角色百科数据库，包含极其详尽的卷册档案。"
+          },
+          {
+            "name": "Anime-Planet Manga",
+            "url": "https://www.anime-planet.com/manga",
+            "description": "收录超过 70,000 部漫画的全球数据库，支持创建个人阅读清单与书评。"
+          },
+          {
+            "name": "Bedetheque",
+            "url": "https://www.bedetheque.com",
+            "description": "法语区最权威的欧洲连环画/BD漫画数据库与集邮式藏家资料库。"
+          },
+          {
+            "name": "ComicBookCollect.in",
+            "url": "https://comicbookcollect.in",
+            "description": "专为美漫实体收藏者打造的卷册版本管理与收藏价值追踪工具。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
+        "name": "新闻资讯、行业观察与专业评论",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Comic Natalie (コミックナタリー)",
+            "url": "https://natalie.mu/comic",
+            "description": "日本最顶尖的漫画与动画新闻网，官方一手漫画出版与改编资讯核心渠道。"
+          },
+          {
+            "name": "Anime News Network (ANN Manga)",
+            "url": "https://www.animenewsnetwork.com/news/manga",
+            "description": "全球权威英文动漫新闻门户，报道最快的日本漫画榜单、销量及行业新闻。"
+          },
+          {
+            "name": "Bleeding Cool Comic News",
+            "url": "https://bleedingcool.com/comics",
+            "description": "欧美知名漫威/DC及独立美漫行业内幕、新闻爆料与收藏市场资讯网。"
+          },
+          {
+            "name": "CBR (Comic Book Resources)",
+            "url": "https://www.cbr.com",
+            "description": "北美大型流行文化媒体，以深度的美漫解析、日漫盘点与行业新闻闻名。"
+          },
+          {
+            "name": "ComicBook.com",
+            "url": "https://comicbook.com",
+            "description": "涵盖美漫、日本漫画及影视改编的综合流行新闻网。"
+          },
+          {
+            "name": "The Beat (The Comics Culture Blog)",
+            "url": "https://www.comicsbeat.com",
+            "description": "获得艾斯纳奖提名的资深漫画文化、出版产业观察与新闻博客。"
+          },
+          {
+            "name": "SOLRAD",
+            "url": "https://solrad.co",
+            "description": "专注于非小众独立漫画、小出版物(Minicomics)与艺术漫画的非营利评论杂志。"
+          },
+          {
+            "name": "Mantan Web Manga",
+            "url": "https://mantan-web.jp/eco/manga.html",
+            "description": "每日新闻旗下的娱乐新闻网漫画专区，报道日本漫画单行本销量与商业趋势。"
+          },
+          {
+            "name": "Oricon News Comic",
+            "url": "https://www.oricon.co.jp/rank/obc",
+            "description": "日本公信榜(Oricon)官方漫画榜单专区，每周发布最权威的漫画实体销量榜。"
+          },
+          {
+            "name": "Web Newtype Manga",
+            "url": "https://webnewtype.com",
+            "description": "角川旗下的综合动漫新闻网，包含海量漫画家访谈与连载情报。"
+          },
+          {
+            "name": "Dengeki Online Manga",
+            "url": "https://dengekionline.com/g/manga",
+            "description": "电击品牌官方新闻网漫画板块，重点报道轻改漫画及游戏改编作品。"
+          },
+          {
+            "name": "TCJ (The Comics Journal)",
+            "url": "https://www.tcj.com",
+            "description": "欧美历史上极具声望的严肃漫画评论杂志，专注于漫画作为艺术形式的批评与历史。"
+          },
+          {
+            "name": "Comic Book Treasury",
+            "url": "https://www.comicbooktreasury.com",
+            "description": "专门整理美漫超级英雄(如蝙蝠侠、X战警)完整阅读顺序与历史年表的指南网站。"
+          },
+          {
+            "name": "Anime-Mania Manga Section",
+            "url": "https://anime-mania.com",
+            "description": "针对欧美日本漫画迷的连载推荐与作品深度解析网站。"
+          },
+          {
+            "name": "Screen Rant Comics",
+            "url": "https://screenrant.com/comics",
+            "description": "知名影视媒体的美漫与日漫分析板块，包含海量理论推测与剧情剖析。"
+          }
         ]
       },
       {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
+        "name": "同人漫画、画师社区与在线创作平台",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "pixiv",
+            "url": "https://www.pixiv.net",
+            "description": "全球最大的二次元插画与同人漫画创作者交流社区。"
+          },
+          {
+            "name": "BOOTH",
+            "url": "https://booth.pm",
+            "description": "pixiv旗下的C2C创作者市集，包含海量独立漫画家、同人社团的纸质与电子漫画。"
+          },
+          {
+            "name": "Niconico Seiga (静画)",
+            "url": "https://seiga.niconico.jp",
+            "description": "日本Niconico旗下的同人插画与网络漫画连载平台，大量商业漫画在此试阅。"
+          },
+          {
+            "name": "pixiv FANBOX",
+            "url": "https://www.fanbox.cc",
+            "description": "创作者赞助平台，漫画家与同人创作者在此发布独家漫画草稿与连载前瞻。"
+          },
+          {
+            "name": "DLsite (同人区)",
+            "url": "https://www.dlsite.com",
+            "description": "全球知名的大型同人数字作品销售平台，包含海量同人漫画与独立商业漫画。"
+          },
+          {
+            "name": "Ci-en",
+            "url": "https://ci-en.net",
+            "description": "DLsite旗下的创作者赞助与同人社团过程展示社区。"
+          },
+          {
+            "name": "Patreon (Comics Category)",
+            "url": "https://www.patreon.com",
+            "description": "全球知名创作者众筹赞助平台，海量欧美独立网络漫画家在此获取读者支持。"
+          },
+          {
+            "name": "Poipiku",
+            "url": "https://poipiku.com",
+            "description": "专注于插画与短篇同人漫画涂鸦随笔展示的画师随手记平台。"
+          },
+          {
+            "name": "Tinami",
+            "url": "https://www.tinami.com",
+            "description": "日本老牌二次元创作者综合社区，支持同人漫画、插画及模型作品展示。"
+          },
+          {
+            "name": "Lofter (乐乎)",
+            "url": "https://www.lofter.com",
+            "description": "国内知名同人创作与同人漫画/插画社区，聚集海量二次元二次创作。"
+          },
+          {
+            "name": "ArtStation",
+            "url": "https://www.artstation.com",
+            "description": "全球顶级CG与概念设计社区，包含海量叙事性漫画概念设计与连环画作品。"
+          },
+          {
+            "name": "DeviantArt (Manga & Comics)",
+            "url": "https://www.deviantart.com",
+            "description": "欧美老牌艺术社区，拥有庞大的西方美漫同人和日系漫画创作者板块。"
+          },
+          {
+            "name": "Medibang ARTstreet",
+            "url": "https://medibang.com",
+            "description": "MediBang旗下的全球插画与漫画投稿交流平台，定期举办国际漫画大赛。"
+          },
+          {
+            "name": "Clip Studio Assets",
+            "url": "https://assets.clip-studio.com",
+            "description": "漫画家与画师必备的素材库，提供海量网点纸、漫画背景与笔刷资源。"
+          },
+          {
+            "name": "Komiflo",
+            "url": "https://komiflo.com",
+            "description": "专注于成人向正版电子漫画月费包月流媒体服务平台。"
+          }
         ]
       },
       {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
+        "name": "漫画展会、同人即卖会与文化奖项",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Comic Market (Comiket / C展)",
+            "url": "https://www.comiket.co.jp",
+            "description": "全球最大型自费出版同人志即卖会官方网站，日本同人漫画文化的最高殿堂。"
+          },
+          {
+            "name": "San Diego Comic-Con (SDCC / 圣迭戈漫展)",
+            "url": "https://www.comic-con.org",
+            "description": "全球影响力最大的流行文化与漫画博览会，美漫与影视爆料的年度盛会。"
+          },
+          {
+            "name": "Angoulême International Comics Festival (昂古莱姆国际漫画节)",
+            "url": "https://www.bdangouleme.com",
+            "description": "欧洲历史最悠久、权威度最高的国际漫画节，被称为“漫画界奥斯卡”。"
+          },
+          {
+            "name": "Eisner Awards (艾斯纳奖)",
+            "url": "https://www.comic-con.org/awards/eisner-awards",
+            "description": "美国漫画界最高荣誉奖项官方发布页面。"
+          },
+          {
+            "name": "Harvey Awards (哈维奖)",
+            "url": "https://www.harveyawards.com",
+            "description": "旨在表彰漫画创作卓越成就的欧美权威漫画奖项官网。"
+          },
+          {
+            "name": "手冢治虫文化奖 (朝日新闻)",
+            "url": "https://www.asahi.com/corporate/award/tezuka",
+            "description": "日本最顶尖的严肃漫画奖项之一，旨在继承手冢治虫精神并表彰优秀作品。"
+          },
+          {
+            "name": "漫画大奖 (Manga Taisho)",
+            "url": "https://mangataisho.com",
+            "description": "由日本书店店员投票选出的权威漫画推荐奖项，极具商业潜质导向。"
+          },
+          {
+            "name": "全国书店店员推荐漫画",
+            "url": "https://www.hon-hikidashi.jp",
+            "description": "每年由日本全国书店店员联合评选的潜在爆款新锐漫画榜单。"
+          },
+          {
+            "name": "New York Comic Con (NYCC / 纽约漫展)",
+            "url": "https://www.newyorkcomiccon.com",
+            "description": "北美东海岸规模最大的综合性漫画与动漫文化博览会。"
+          },
+          {
+            "name": "COMIC CITY (AKABOO)",
+            "url": "https://www.akaboo.jp",
+            "description": "日本大型同人志即卖会组织方AKABOO的官方网站，频繁举办各大同人展。"
+          },
+          {
+            "name": "COMITIA",
+            "url": "https://www.comitia.co.jp",
+            "description": "专注于“原创作品”(非二次创作同人)的日本自费出版漫画即卖会官网。"
+          },
+          {
+            "name": "Overload (新西兰漫展)",
+            "url": "https://www.overload.co.nz",
+            "description": "新西兰专门推广二次元动漫与独立漫画创作的动漫展览会。"
+          },
+          {
+            "name": "TCAF (Toronto Comic Arts Festival / 多伦多漫画艺术节)",
+            "url": "https://www.torontocomics.com",
+            "description": "北美最著名的独立漫画与 graphic novel 艺术展会。"
+          },
+          {
+            "name": "Lucca Comics & Games",
+            "url": "https://www.luccacomicsandgames.com",
+            "description": "欧洲规模最大、历史极其悠久的意大利综合漫画与游戏盛会。"
+          },
+          {
+            "name": "Fumetto Comic Festival Lucerne",
+            "url": "https://www.fumetto.ch",
+            "description": "瑞士卢塞恩国际漫画节，专注于前卫艺术与实验性叙事漫画展。"
+          }
         ]
       },
       {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
+        "name": "实体漫画销售、正版代购与二手淘书平台",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Suruga-ya (骏河屋)",
+            "url": "https://www.suruga-ya.jp",
+            "description": "日本著名二手(中古)商品交易巨头，包含海量绝版漫画、同人志与设定集。"
+          },
+          {
+            "name": "Mandarake (万达灵)",
+            "url": "https://www.mandarake.co.jp",
+            "description": "日本传奇亚文化与中古漫画交易巨头，专门收录珍稀旧漫画与原稿。"
+          },
+          {
+            "name": "Animate Online Shop (漫画专区)",
+            "url": "https://www.animate-onlineshop.jp",
+            "description": "日本最大型ACG连锁店Animate的官方线上商城，买实体漫画赠送独家特典。"
+          },
+          {
+            "name": "Kinokuniya USA (纪伊国屋书店)",
+            "url": "https://usa.kinokuniya.com",
+            "description": "知名日本连锁书店海外分店，提供海量日文原版与英文翻译版实体漫画。"
+          },
+          {
+            "name": "CDJapan (Manga Section)",
+            "url": "https://www.cdjapan.co.jp/manga",
+            "description": "提供日本正版实体漫画、画集、漫画杂志直邮全球服务的知名跨境平台。"
+          },
+          {
+            "name": "AmiAmi (Books)",
+            "url": "https://www.amiami.com",
+            "description": "全球知名手办电商的图书专区，发售各类热门漫画、限定版画集与画册。"
+          },
+          {
+            "name": "Midtown Comics",
+            "url": "https://www.midtowncomics.com",
+            "description": "美国最大的美漫实体连锁零售商，支持预订漫威、DC及独立出版美漫单行本。"
+          },
+          {
+            "name": "Discount Comic Book Service (DCBS)",
+            "url": "https://www.dcbservice.com",
+            "description": "北美著名的美漫单行本与期刊大额折扣预订与邮购网站。"
+          },
+          {
+            "name": "MyComicShop (Lone Star Comics)",
+            "url": "https://www.mycomicshop.com",
+            "description": "全球最大型美漫旧刊与珍稀古董漫画交易及购买网站。"
+          },
+          {
+            "name": "BOOKOFF Online",
+            "url": "https://www.bookoffonline.co.jp",
+            "description": "日本最大型二手书连锁连锁店BOOKOFF的官方线上二手漫画买卖商城。"
+          },
+          {
+            "name": "Rakuten Books (乐天图书)",
+            "url": "https://books.rakuten.co.jp",
+            "description": "日本乐天旗下的正版实体书与漫画商城，支持全日本配送。"
+          },
+          {
+            "name": "Amazon Books (日本亚马逊图书)",
+            "url": "https://www.amazon.co.jp/books",
+            "description": "购买日本原版实体漫画单行本与预订漫画杂志的最便捷平台之一。"
+          },
+          {
+            "name": "TSUTAYA Online Store",
+            "url": "https://shop.tsutaya.co.jp",
+            "description": "日本知名文化集团TSUTAYA的线上实体图书与漫画租售商城。"
+          },
+          {
+            "name": "InStockTrades (IST)",
+            "url": "https://www.instocktrades.com",
+            "description": "北美美漫玩家首选的常年高折扣美漫精装本(Hardcover)与合订本购买网。"
+          },
+          {
+            "name": "Mile High Comics",
+            "url": "https://www.milehighcomics.com",
+            "description": "美国老牌美漫经销商，拥有极大的历史积压期刊库与美漫藏品。"
+          }
         ]
       },
       {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
+        "name": "漫画历史、研究机构与博物馆官网",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Kyoto International Manga Museum (京都国际漫画博物馆)",
+            "url": "https://kyotomm.jp",
+            "description": "兼具图书馆与博物馆功能，收藏数十万册日本与全球历史漫画的官方机构。"
+          },
+          {
+            "name": "横手市增田漫画美术馆",
+            "url": "https://manga-museum.com",
+            "description": "日本首个专门以“保存漫画原稿”为核心主题的专业美术馆官网。"
+          },
+          {
+            "name": "石之森万画馆 (Ishinomori Manga Museum)",
+            "url": "https://www.mangattan.jp",
+            "description": "为纪念日本漫画大师石森章太郎而设立的漫画艺术博物馆。"
+          },
+          {
+            "name": "宝冢市立手冢治虫纪念馆",
+            "url": "https://www.city.takarazuka.hyogo.jp/tezuka",
+            "description": "纪念“漫画之神”手冢治虫的官方纪念馆，展出大量手稿与创作历史。"
+          },
+          {
+            "name": "Media Arts Database (日本文化厅媒体艺术数据库)",
+            "url": "https://mediaarts-db.artmuseums.go.jp",
+            "description": "日本文化厅建立的国家级数据库，权威收录日本明治时代至今的全量漫画发行档案。"
+          },
+          {
+            "name": "The Cartoon Museum (伦敦卡通漫画博物馆)",
+            "url": "https://www.cartoonmuseum.org",
+            "description": "位于英国伦敦，专门展示英国历史政治漫画、卡通及英国本土美漫的博物馆。"
+          },
+          {
+            "name": "Billy Ireland Cartoon Library & Museum",
+            "url": "https://cartoons.osu.edu",
+            "description": "俄亥俄州立大学设立的全球最大的研究型漫画与卡通原稿藏书库。"
+          },
+          {
+            "name": "The Charles M. Schulz Museum (查尔斯·舒尔茨博物馆)",
+            "url": "https://schulzmuseum.org",
+            "description": "专门展示《史努比/花生漫画》作者作品与艺术创作历史的官方博物馆。"
+          },
+          {
+            "name": "Comic Art Museum (布鲁塞尔国际漫画艺术中心)",
+            "url": "https://www.comicscenter.net",
+            "description": "位于比利时布鲁塞尔，展示法比漫画(BD)发展史与蓝精灵/丁丁等名作的中心。"
+          },
+          {
+            "name": "Manga Museum International (国际漫画研究所)",
+            "url": "https://manga-ra.jp",
+            "description": "日本促进漫画文化学术研究与全球交流的文化科研机构。"
+          }
         ]
       },
       {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "漫画创作工具、技术与资源平台",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Clip Studio Paint (CSP)",
+            "url": "https://www.clipstudio.net",
+            "description": "全球广大商业漫画家与插画师使用的行业标准漫画绘制软件官网。"
+          },
+          {
+            "name": "MediBang Paint",
+            "url": "https://medibangpaint.com",
+            "description": "跨平台免费专业漫画与分镜绘制软件，内置海量免费网点纸与背景。"
+          },
+          {
+            "name": "Jump Paint (by MediBang)",
+            "url": "https://medibangpaint.com/jumppaint",
+            "description": "集英社《周刊少年Jump》官方推出的免费漫画教学与创作软件。"
+          },
+          {
+            "name": "Krita",
+            "url": "https://krita.org",
+            "description": "开源免费的数字绘画软件，支持高质感漫漫分镜与彩色漫画绘制。"
+          },
+          {
+            "name": "Blender",
+            "url": "https://www.blender.org",
+            "description": "开源3D创作软件，现代日本漫画家常用于搭建漫画场景与复杂透视参考。"
+          },
+          {
+            "name": "Ibis Paint (爱笔思画)",
+            "url": "https://ibispaint.com",
+            "description": "移动端极其流行的漫画与插画绘制应用，提供丰富的漫画格与网点功能。"
+          },
+          {
+            "name": "ComicStudio (Celsys 历史归档)",
+            "url": "https://www.celsys.com",
+            "description": "CLIP STUDIO前身，日本经典黑白漫画专业绘制软件开发商官网。"
+          },
+          {
+            "name": "Fontworks (漫画字体)",
+            "url": "https://fontworks.co.jp",
+            "description": "日本权威排版字体公司，为绝大部分日本商业漫画提供标准对话框字体。"
+          },
+          {
+            "name": "ComicLab",
+            "url": "https://comiclab.biz",
+            "description": "提供漫画创作教学、分镜脚本编排理论与新手漫画家进阶指南的平台。"
+          },
+          {
+            "name": "Japan Cartoonists Association (JCA / 日本漫画家协会)",
+            "url": "https://www.nihonmangakakyokai.or.jp",
+            "description": "日本官方认可的漫画家职业协会，致力于保障漫画家权益与漫画艺术推广。"
+          }
         ]
       }
     ]
@@ -5292,6 +5995,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

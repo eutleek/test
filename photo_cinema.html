@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="摄影美学、电影视觉与图像纪实资源">
+<title>摄影电影 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>摄影电影</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1041 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">摄影电影 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "摄影电影",
+    "icon": "📷",
+    "color": "linear-gradient(135deg, #636e72, #2d3436)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "权威摄影媒体、画廊与摄影艺术机构 (001-040)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Magnum Photos",
+            "url": "https://www.magnumphotos.com",
+            "description": "玛格南图片社官网，汇聚全球顶尖纪实摄影大师作品与经典时代影像。"
+          },
+          {
+            "name": "LensCulture",
+            "url": "https://www.lensculture.com",
+            "description": "全球当代摄影与艺术摄影评选平台，展示前沿独立摄影师作品集。"
+          },
+          {
+            "name": "International Center of Photography (ICP)",
+            "url": "https://www.icp.org",
+            "description": "纽约国际摄影中心，提供权威摄影展览、历史文献与当代摄影研讨。"
+          },
+          {
+            "name": "British Journal of Photography (BJP)",
+            "url": "https://www.bjp-online.com",
+            "description": "英国老牌权威摄影杂志，关注当代新锐摄影师与前沿视觉风格。"
+          },
+          {
+            "name": "Foam Photography Museum",
+            "url": "https://www.foam.org",
+            "description": "阿姆斯特丹 Foam 摄影博物馆，专注于年轻新锐摄影艺术家的策展与挖掘。"
+          },
+          {
+            "name": "Aperture Foundation",
+            "url": "https://aperture.org",
+            "description": "光圈基金会，出版大量高品质摄影画册与深度摄影评论期刊。"
+          },
+          {
+            "name": "L'Œil de la Photographie",
+            "url": "https://loeildelaphotographie.com",
+            "description": "摄影之眼，每日报道全球摄影界展讯、拍卖、大师专访与历史影像。"
+          },
+          {
+            "name": "World Press Photo",
+            "url": "https://www.worldpressphoto.org",
+            "description": "世界新闻摄影大赛(荷赛)官网，展示全球年度极具冲击力的纪实大片。"
+          },
+          {
+            "name": "The Photographers' Gallery",
+            "url": "https://thephotographersgallery.org.uk",
+            "description": "伦敦著名摄影师画廊，展示从早期古典胶片到数字时代的先锋作品。"
+          },
+          {
+            "name": "Maison Européenne de la Photographie (MEP)",
+            "url": "https://www.mep-fr.org",
+            "description": "欧洲摄影之家，展示法国及国际当代摄影艺术家的重要个展。"
+          },
+          {
+            "name": "Henri Cartier-Bresson Foundation",
+            "url": "https://www.henricartierbresson.org",
+            "description": "亨利·卡蒂埃-布列松基金会，致力于研究“决定性瞬间”与人文纪实摄影。"
+          },
+          {
+            "name": "Hasselblad Foundation",
+            "url": "https://www.hasselbladfoundation.org",
+            "description": "哈苏基金会，颁发摄影界重量级大奖并维护庞大的国际摄影档案馆。"
+          },
+          {
+            "name": "George Eastman Museum",
+            "url": "https://www.eastman.org",
+            "description": "全球极老牌的摄影与电影博物馆，收录大量摄影术早期珍贵历史器材与照片。"
+          },
+          {
+            "name": "Center for Creative Photography (CCP)",
+            "url": "https://ccp.arizona.edu",
+            "description": "收藏亚当斯等无数美国摄影大师原版底片与手稿的顶级研究机构。"
+          },
+          {
+            "name": "Jeu de Paume",
+            "url": "https://jeudepaume.org",
+            "description": "巴黎国立网球场现代艺术馆，专注于摄影、影像与机械复制艺术。"
+          },
+          {
+            "name": "C/O Berlin",
+            "url": "https://co-berlin.org",
+            "description": "柏林知名摄影艺术中心，定期展出建筑、时尚、纪录片与当代摄影。"
+          },
+          {
+            "name": "Tokyo Metropolitan Museum of Photography",
+            "url": "https://topmuseum.jp",
+            "description": "东京都摄影美术馆，展示日本及亚洲现代摄影史与视觉文化。"
+          },
+          {
+            "name": "Polka Magazine",
+            "url": "https://www.polkamagazine.com",
+            "description": "法国著名摄影杂志，以高品质大图印刷和深度摄影记者报道著称。"
+          },
+          {
+            "name": "Fisheye Magazine",
+            "url": "https://www.fisheyemagazine.fr",
+            "description": "关注当代年轻人视角、新锐色彩与实验性视觉的时尚摄影期刊。"
+          },
+          {
+            "name": "Blind Magazine",
+            "url": "https://www.blind-magazine.com",
+            "description": "无偏见摄影网，以故事驱动的方式呈现全球摄影师的镜头语言。"
+          },
+          {
+            "name": "GUP Magazine",
+            "url": "https://gupmagazine.com",
+            "description": "Guide to Unique Photography，专注独立艺术摄影与概念摄影的荷兰媒体。"
+          },
+          {
+            "name": "American Suburb X (ASX)",
+            "url": "https://americansuburbx.com",
+            "description": "硬核摄影评论与画册深度剖析网站，探讨摄影史、美学与哲学。"
+          },
+          {
+            "name": "Photoworks UK",
+            "url": "https://photoworks.org.uk",
+            "description": "英国国家级摄影策展机构，推动摄影在公共艺术与新媒体中的表达。"
+          },
+          {
+            "name": "Photo Museum Ireland",
+            "url": "https://photomuseumireland.ie",
+            "description": "爱尔兰国家摄影博物馆，展出当代社会议题与镜头叙事。"
+          },
+          {
+            "name": "Photomonitor",
+            "url": "https://photomonitor.co.uk",
+            "description": "在线摄影艺术杂志，发表高水准的展评、论文与艺术艺术家访谈。"
+          },
+          {
+            "name": "Yossi Milo Gallery",
+            "url": "https://www.yossimilo.com",
+            "description": "纽约知名画廊，展出极具实验性与材质突破的当代摄影艺术。"
+          },
+          {
+            "name": "Howard Greenberg Gallery",
+            "url": "https://www.howardgreenberg.com",
+            "description": "收藏全球 20 世纪大师经典黑白摄影与经典纪实原作的权威画廊。"
+          },
+          {
+            "name": "Peter Fetterman Gallery",
+            "url": "https://www.peterfetterman.com",
+            "description": "主打人文主义摄影、黑白光影与经典人文纪实作品的顶级画廊。"
+          },
+          {
+            "name": "Fraenkel Gallery",
+            "url": "https://fraenkelgallery.com",
+            "description": "旧金山著名画廊，探索“摄影与一切艺术形式的交界”。"
+          },
+          {
+            "name": "Jackson Fine Art",
+            "url": "https://www.jacksonfineart.com",
+            "description": "专注于收藏级艺术摄影、植物摄影与古典印相工艺的画廊。"
+          },
+          {
+            "name": "Edwynn Houk Gallery",
+            "url": "https://www.houkgallery.com",
+            "description": "展出现代主义摄影、现代派视觉构图与经典现代大师作品。"
+          },
+          {
+            "name": "Hamiltons Gallery",
+            "url": "https://www.hamiltonsgallery.com",
+            "description": "伦敦顶奢摄影画廊，代理 Irving Penn、Helmut Newton 等巨匠原作。"
+          },
+          {
+            "name": "Camera Work Gallery",
+            "url": "https://camerawork.de",
+            "description": "柏林著名画廊，以致敬斯蒂格利茨与展示时尚摄影、人像大师见长。"
+          },
+          {
+            "name": "Gallery 51",
+            "url": "https://www.gallery51.com",
+            "description": "专注于 20 世纪与当代经典摄影版画的专业艺术画廊。"
+          },
+          {
+            "name": "Robert Mann Gallery",
+            "url": "https://www.robertmann.com",
+            "description": "纽约画廊，关注风景摄影、物体肌理与当代概念摄影。"
+          },
+          {
+            "name": "Foam Talent Archive",
+            "url": "https://www.foam.org/talent",
+            "description": "归档历年 Foam 选拔出的全球最具潜力的年轻摄影师作品。"
+          },
+          {
+            "name": "Leica Women Foto Project",
+            "url": "https://leicacamerausa.com",
+            "description": "徕卡设立的女性摄影师专项基金，展示女性视角下的独特光影。"
+          },
+          {
+            "name": "Musée de l'Elysée",
+            "url": "https://platine.photo",
+            "description": "瑞士知名全摄影博物馆，收藏大量极具历史价值的底片与影集。"
+          },
+          {
+            "name": "Magnum Foundation",
+            "url": "https://www.magnumfoundation.org",
+            "description": "玛格南基金会，资助独立摄影师开展具有社会关怀的长期拍摄项目。"
+          },
+          {
+            "name": "Photo-Eye",
+            "url": "https://www.photoeye.com",
+            "description": "全球顶尖的摄影书在线书店、画廊与摄影艺术出版物指南。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "纪实摄影、人文地理与新闻摄影 (041-080)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "National Geographic Photography",
+            "url": "https://www.nationalgeographic.com/photography",
+            "description": "国家地理摄影专栏，展现极致的自然风光、野生动物与人文探险。"
+          },
+          {
+            "name": "VII Photo Agency",
+            "url": "https://viiphoto.com",
+            "description": "第七图片社，由全球知名战地与纪实摄影师建立，直击时代变迁。"
+          },
+          {
+            "name": "NOOR Images",
+            "url": "https://www.noorimages.com",
+            "description": "荷兰知名独立新闻摄影合作社，关注人权、生态与社会正义。"
+          },
+          {
+            "name": "Panos Pictures",
+            "url": "https://www.panos.co.uk",
+            "description": "专注全球社会发展、人文议题与全球化变迁的深度纪实图片社。"
+          },
+          {
+            "name": "Reuters Pictures",
+            "url": "https://www.reuters.com/pictures",
+            "description": "路透社图片新闻，每日更新全球重大政治、社会与突发事件画面。"
+          },
+          {
+            "name": "Getty Images Reportage",
+            "url": "https://www.gettyimages.com",
+            "description": "盖蒂图片社深度纪实专栏，收录高水准的新闻大片与专题摄影。"
+          },
+          {
+            "name": "Associated Press Photos",
+            "url": "https://newsroom.ap.org",
+            "description": "美联社新闻摄影，历史与现实交织的纪实画面输出地。"
+          },
+          {
+            "name": "Agence France-Presse (AFP) Photos",
+            "url": "https://www.afp.com",
+            "description": "法新社摄影图库，以独特的欧洲视角和敏锐的人文镜头闻名。"
+          },
+          {
+            "name": "Magnum Stories",
+            "url": "https://www.magnumphotos.com/topics",
+            "description": "玛格南专题图集，以深度图文呈现一个国家、事件或族群的命运。"
+          },
+          {
+            "name": "Everyday Africa",
+            "url": "https://www.everydayafrica.org",
+            "description": "打破刻板印象，由本地摄影师呈现日常、真实且富有生机的非洲。"
+          },
+          {
+            "name": "Burn Magazine",
+            "url": "https://www.burnmagazine.org",
+            "description": "由玛格南摄影师 Harvey Stein 主编，资助新锐纪实摄影师的在线平台。"
+          },
+          {
+            "name": "Social Documentary Network (SDN)",
+            "url": "https://socialdocumentary.net",
+            "description": "利用摄影探索人类生存状态、全球危机的社会纪实摄影网络。"
+          },
+          {
+            "name": "Pulitzer Prizes Photography",
+            "url": "https://www.pulitzer.org",
+            "description": "普利策新闻摄影奖历年获奖作品档案，载入史册的纪实瞬间。"
+          },
+          {
+            "name": "Sony World Photography Awards",
+            "url": "https://www.worldphoto.org",
+            "description": "索尼世界摄影大赛，涵盖专业组、青年组与专业纪实组作品。"
+          },
+          {
+            "name": "Taylor Wessing Photographic Portrait Prize",
+            "url": "https://www.npg.org.uk",
+            "description": "英国国家肖像馆主办，全球极具影响力的人像肖像摄影大奖。"
+          },
+          {
+            "name": "Picture of the Year International (POYi)",
+            "url": "https://poy.org",
+            "description": "国际年度图片大赛，老牌且严苛的新闻与视觉编辑赛事。"
+          },
+          {
+            "name": "Visa pour l'Image",
+            "url": "https://www.visapourlimage.com",
+            "description": "法国佩皮尼昂国际新闻摄影节，全球新闻摄影师的盛会。"
+          },
+          {
+            "name": "Lucie Awards",
+            "url": "https://lucies.org",
+            "description": "摄影界“奥斯卡”，表彰全球对摄影艺术做出卓越贡献的巨匠。"
+          },
+          {
+            "name": "Alexia Foundation",
+            "url": "https://www.alexiafoundation.org",
+            "description": "资助利用摄影促进文化理解与世界和平的深度视觉报道。"
+          },
+          {
+            "name": "Carmignac Photojournalism Award",
+            "url": "https://www.fondationcarmignac.com",
+            "description": "卡米尼亚克新闻摄影奖，每年资助探访人权与法治受威胁地区的拍摄。"
+          },
+          {
+            "name": "W. Eugene Smith Fund",
+            "url": "https://www.smithfund.org",
+            "description": "尤金·史密斯人道主义摄影基金，纪实摄影领域的极高荣誉之一。"
+          },
+          {
+            "name": "Leica Oskar Barnack Award",
+            "url": "https://www.leica-oskar-barnack-award.com",
+            "description": "徕卡奥斯卡·巴纳克摄影奖，强调人与环境关系的连贯图组。"
+          },
+          {
+            "name": "Ian Parry Photojournalism Grant",
+            "url": "https://www.ianparry.org",
+            "description": "旨在扶持全球年轻新闻摄影师与刚毕业学生的慈善基金项目。"
+          },
+          {
+            "name": "Dorothea Lange-Paul Taylor Prize",
+            "url": "https://documentarystudies.duke.edu",
+            "description": "杜克大学设立，鼓励文字与图像相结合的长期纪实学术创作。"
+          },
+          {
+            "name": "Manuel Rivera-Ortiz Foundation",
+            "url": "https://mrofoundation.org",
+            "description": "关注发展中国家贫困、被边缘化群体与生活样貌的摄影基金。"
+          },
+          {
+            "name": "CatchLight",
+            "url": "https://www.catchlight.io",
+            "description": "探索视觉霸权与社会变革，用摄影推动公众参与和社会正义。"
+          },
+          {
+            "name": "The Marshall Project Photography",
+            "url": "https://www.themarshallproject.org",
+            "description": "专注于美国司法体系、监狱与社会边缘人的人文纪实图集。"
+          },
+          {
+            "name": "Urbanautica",
+            "url": "https://urbanautica.com",
+            "description": "关注人类学、景观变迁、城市化与空间发展的摄影学术日志。"
+          },
+          {
+            "name": "Landscape Stories",
+            "url": "http://www.landscapestories.net",
+            "description": "以“景观”为核心的当代艺术摄影季刊，探讨自然与人工环境。"
+          },
+          {
+            "name": "Places Journal Photography",
+            "url": "https://placesjournal.org",
+            "description": "建筑、景观与城市主义专刊中的高品质空间纪实与建筑摄影。"
+          },
+          {
+            "name": "Document China",
+            "url": "https://documentchina.com",
+            "description": "专注于记录中国当代社会变迁、乡土与城市化进程的视觉档案。"
+          },
+          {
+            "name": "ChinaFile Photo Essay",
+            "url": "https://www.chinafile.com/photo-essays",
+            "description": "亚洲协会旗下，以精美深入的图文摄影报道呈现中国多维面貌。"
+          },
+          {
+            "name": "Invisible Photographer Asia (IPA)",
+            "url": "https://invisiblephotographer.asia",
+            "description": "亚洲隐形摄影师网，挖掘与推广亚洲本土杰出的纪实与街头摄影。"
+          },
+          {
+            "name": "High Journal",
+            "url": "https://highjournal.com",
+            "description": "关注高海拔、荒野地区与边远少数族群生存形态的纪实摄影刊物。"
+          },
+          {
+            "name": "Human Rights Watch Photography",
+            "url": "https://www.hrw.org/news",
+            "description": "人权观察组织的视觉报道，直击全球人权事件前线。"
+          },
+          {
+            "name": "Open Society Foundations Photography",
+            "url": "https://www.opensocietyfoundations.org",
+            "description": "开放社会基金会资助的纪录片风格视觉艺术项目档案馆。"
+          },
+          {
+            "name": "Magnum Photos Lab",
+            "url": "https://www.magnumphotos.com/education",
+            "description": "玛格南摄影教学与大师班专栏，解析如何构思长期纪实项目。"
+          },
+          {
+            "name": "Southeast Museum of Photography",
+            "url": "https://www.smponline.org",
+            "description": "佛罗里达东南摄影博物馆，专注于展示新闻与社会纪实摄影。"
+          },
+          {
+            "name": "Street Photography Magazine",
+            "url": "https://streetphotographymag.com",
+            "description": "专注于街头摄影、黑白人文抓拍与捕捉日常瞬间的在线杂志。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "电影美学、分镜剪辑与光影艺术 (081-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "ShotDeck",
+            "url": "https://shotdeck.com",
+            "description": "全球极巨型的电影截图与电影摄影师光影数据库，支持按色调、构图搜索。"
+          },
+          {
+            "name": "FilmGrab",
+            "url": "https://film-grab.com",
+            "description": "收录数千部经典与独立电影高精截屏的电影美学宝库。"
+          },
+          {
+            "name": "Cinephilia & Beyond",
+            "url": "https://cinephiliabeyond.org",
+            "description": "电影发烧友圣地，提供大师剧本、分镜手稿、幕后纪录片与深度剧析。"
+          },
+          {
+            "name": "American Cinematographer (ASC)",
+            "url": "https://ascmag.com",
+            "description": "美国电影摄影师协会官方杂志，顶级电影光影、摄影机与镜头解析。"
+          },
+          {
+            "name": "British Cinematographer",
+            "url": "https://britishcinematographer.co.uk",
+            "description": "欧洲权威电影摄影杂志，剖析大片与独立电影的摄影指导(DP)访谈。"
+          },
+          {
+            "name": "No Film School",
+            "url": "https://nofilmschool.com",
+            "description": "独立电影人社区，包含大量的视听语言、灯光布置与分镜设计教程。"
+          },
+          {
+            "name": "Indiewire",
+            "url": "https://www.indiewire.com",
+            "description": "独立电影与前沿影视资讯权威媒体，关注电影美学与影展风向。"
+          },
+          {
+            "name": "MUBI Notebook",
+            "url": "https://mubi.com/notebook",
+            "description": "艺术电影平台 MUBI 旗下杂志，发表深刻的电影批评与视觉美学分析。"
+          },
+          {
+            "name": "Criterion Collection Current",
+            "url": "https://www.criterion.com/current",
+            "description": "标准收藏(CC)专栏，探索影史大师经典作品的修复、封面与镜头美学。"
+          },
+          {
+            "name": "Filmmaker Magazine",
+            "url": "https://filmmakermagazine.com",
+            "description": "独立电影制作人杂志，探讨低成本艺术电影的美学突破与摄影技术。"
+          },
+          {
+            "name": "CineD",
+            "url": "https://www.cined.com",
+            "description": "电影摄影设备与前沿拍摄技术的专业测评与光影实测平台。"
+          },
+          {
+            "name": "Frame Set",
+            "url": "https://frameset.app",
+            "description": "专为导演与摄影师打造的商业广告、MV 与电影色彩灵感截图库。"
+          },
+          {
+            "name": "Movie Stills Database",
+            "url": "https://www.moviestillsdb.com",
+            "description": "庞大的电影剧照、幕后花絮照片与宣发海报高清数据库。"
+          },
+          {
+            "name": "Roger Deakins Forum",
+            "url": "https://www.rogerdeakins.com",
+            "description": "传奇电影摄影师罗杰·狄金斯个人论坛，亲笔解答布光与构图难题。"
+          },
+          {
+            "name": "Hurlbut Academy",
+            "url": "https://www.hurlbutacademy.com",
+            "description": "好莱坞摄影师 Shane Hurlbut 的电影灯光与镜头语言实战教学网。"
+          },
+          {
+            "name": "Cinema Scope",
+            "url": "https://cinema-scope.com",
+            "description": "加拿大先锋电影评论季刊，关注全球国际影展上的实验电影与艺术电影。"
+          },
+          {
+            "name": "Senses of Cinema",
+            "url": "https://sensesofcinema.com",
+            "description": "墨尔本在线电影学术期刊，收录影史大师词条与镜头语言深度剖析。"
+          },
+          {
+            "name": "David Bordwell’s Website",
+            "url": "https://www.davidbordwell.net",
+            "description": "电影理论家大卫·鲍德威尔博客，阐述电影形式、剪辑美学与叙事艺术。"
+          },
+          {
+            "name": "Film Comment",
+            "url": "https://www.filmcomment.com",
+            "description": "林肯中心电影协会出版，探讨经典与当代电影视觉艺术的权威刊物。"
+          },
+          {
+            "name": "Screen Daily",
+            "url": "https://www.screendaily.com",
+            "description": "欧洲与国际电影市场、戛纳/威尼斯/柏林三大影展第一手快讯。"
+          },
+          {
+            "name": "Directors Notes",
+            "url": "https://directorsnotes.com",
+            "description": "精选全球杰出独立短片、动画与 MV，专访导演视听构思。"
+          },
+          {
+            "name": "Short of the Week",
+            "url": "https://www.shortoftheweek.com",
+            "description": "全球顶尖剧情短片与实验短片策展网，挖掘未来大导演的摇篮。"
+          },
+          {
+            "name": "Vimeo Staff Picks",
+            "url": "https://vimeo.com/channels/staffpicks",
+            "description": "Vimeo 官方编辑精选，高画质短片、光影视觉与独立创作的终极画廊。"
+          },
+          {
+            "name": "Film Shortage",
+            "url": "https://filmshortage.com",
+            "description": "在线短片策展平台，呈现极具电影感(Cinematic)的微电影与视觉片。"
+          },
+          {
+            "name": "Omeleto",
+            "url": "https://omeleto.com",
+            "description": "知名获奖短片聚合平台，收录各大国际影展入围的精彩短片。"
+          },
+          {
+            "name": "Moving Image Source",
+            "url": "http://www.movingimagesource.us",
+            "description": "纽约动态影像博物馆官方刊物，探讨电影、电视与数字媒体艺术。"
+          },
+          {
+            "name": "Reverse Shot",
+            "url": "https://reverseshot.org",
+            "description": "关注当代影像美学、实验镜头与独立电影评论的先锋影评网。"
+          },
+          {
+            "name": "Bright Lights Film Journal",
+            "url": "https://brightlightsfilm.com",
+            "description": "打破传统学术范式，用流行文化与批判视角探讨电影美的在线杂志。"
+          },
+          {
+            "name": "Offscreen",
+            "url": "https://offscreen.com",
+            "description": "蒙特利尔电影研究期刊，探讨电影哲学、恐怖片美学与声音设计。"
+          },
+          {
+            "name": "Cineaste Magazine",
+            "url": "https://www.cineaste.com",
+            "description": "关注电影艺术性与政治、社会艺术交汇的著名老牌电影季刊。"
+          },
+          {
+            "name": "Sight & Sound (BFI)",
+            "url": "https://www.bfi.org.uk/sight-and-sound",
+            "description": "英国电影协会(BFI)旗舰杂志，每十年评选一次全球伟大的电影榜单。"
+          },
+          {
+            "name": "Cahiers du Cinéma",
+            "url": "https://www.cahiersducinema.com",
+            "description": "法国《电影手册》，法国新浪潮发源地，全球电影批评的圣殿。"
+          },
+          {
+            "name": "Positif Cinema",
+            "url": "https://www.revue-positif.net",
+            "description": "法国老牌电影杂志《正片》，以深厚的艺术人文底蕴与严谨影评著称。"
+          },
+          {
+            "name": "Film Heritage",
+            "url": "https://filmheritage.org",
+            "description": "专注于老电影修复、胶片保存与早期影史视觉遗产研究的网站。"
+          },
+          {
+            "name": "Film Art Gallery",
+            "url": "https://www.filmartgallery.com",
+            "description": "收藏全球原版 Vintage 电影海报与艺术剧照的展示交易平台。"
+          },
+          {
+            "name": "Movie Poster Database",
+            "url": "https://www.cinematerial.com",
+            "description": "收录全球数十万张电影海报、预告海报与艺术改版海报的高清网。"
+          },
+          {
+            "name": "Cinephilia Directing",
+            "url": "https://cinephiliabeyond.org/directing",
+            "description": "汇集影史大导演创作分镜草图、拍摄通告单与光影构想设计。"
+          },
+          {
+            "name": "Soundstage Access",
+            "url": "https://www.soundstageaccess.com",
+            "description": "深入好莱坞与欧洲各大电影制片厂摄影棚，展示棚拍搭景与光影设计。"
+          },
+          {
+            "name": "European Cinematography",
+            "url": "https://imago.org",
+            "description": "欧洲摄影师联合会(IMAGO)，展出欧洲电影极致的影调与色彩表达。"
+          },
+          {
+            "name": "ASC Close Up",
+            "url": "https://ascmag.com/articles/close-up",
+            "description": "顶级电影摄影师的自我剖析专栏，分享各自镜头选择与美学启蒙。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "胶片复古、独立摄影师与小众影集 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Analog Forever Magazine",
+            "url": "https://www.analogforevermagazine.com",
+            "description": "胶片永恒，专注于暗房工艺、湿版摄影、大画幅与复古胶片艺术。"
+          },
+          {
+            "name": "Emulsive",
+            "url": "https://emulsive.org",
+            "description": "庞大的胶片摄影知识库，包含各种停产胶片冲洗、老相机测评与感光度实验。"
+          },
+          {
+            "name": "Kosmo Foto",
+            "url": "https://kosmofoto.com",
+            "description": "英国经典胶片博客，充满复古情怀的 135/120 胶片相机与黑白摄影。"
+          },
+          {
+            "name": "35mmc",
+            "url": "https://www.35mmc.com",
+            "description": "专注于 35mm 旁轴相机、紧凑型胶片机与旁轴镜头美学的博客。"
+          },
+          {
+            "name": "Casual Photophile",
+            "url": "https://casualphotophile.com",
+            "description": "深度老镜头、古典光学结构与复古机械相机人文美学评测网。"
+          },
+          {
+            "name": "Film Photography Project",
+            "url": "https://filmphotographyproject.com",
+            "description": "推广胶片复兴的非营利机构，提供电影胶片分装、8mm 胶片与暗房指导。"
+          },
+          {
+            "name": "Japan Camera Hunter",
+            "url": "https://www.japancamerahunter.com",
+            "description": "东京著名的“相机猎人”Bellamy 博客，展示限量版胶片机与街头客制相机。"
+          },
+          {
+            "name": "Lomography",
+            "url": "https://www.lomography.com",
+            "description": "Lomo 摄影全球社区，主打饱和色彩、漏光、Lomo 塑料镜头与随性表达。"
+          },
+          {
+            "name": "Film Shooters Collective",
+            "url": "https://www.filmshooterscollective.com",
+            "description": "全球纯胶片摄影师联合会，展示纯手工冲洗与银盐印相美学。"
+          },
+          {
+            "name": "SilvergrainClassics",
+            "url": "https://silvergrainclassics.com",
+            "description": "德国高品质印制的胶片季刊，专访全胶片拍摄的当代摄影大师。"
+          },
+          {
+            "name": "She Shoots Film",
+            "url": "https://sheshootsfilm.photography",
+            "description": "专注于鼓励与展示女性胶片摄影师作品的独立出版物与社区。"
+          },
+          {
+            "name": "If You Leave",
+            "url": "https://if-you-leave.tumblr.com",
+            "description": "老牌视觉博客，主打微光、孤独感、空气感与极简情绪胶片画面。"
+          },
+          {
+            "name": "Nowhere Diary",
+            "url": "https://nowherediary.com",
+            "description": "极具温暖与公路电影质感的摄影博客，专访全球独立胶片摄影师。"
+          },
+          {
+            "name": "Paper Journal",
+            "url": "https://paper-journal.com",
+            "description": "伦敦独立视觉杂志，收录独立摄影集、艺术画册与当代时尚大片。"
+          },
+          {
+            "name": "Der Greif",
+            "url": "https://dergreif.org",
+            "description": "德国先锋摄影组织，以众包联合策展与跨界视觉表达著称。"
+          },
+          {
+            "name": "Phases Magazine",
+            "url": "https://www.phasesmag.com",
+            "description": "每周精选发布当代独立摄影作品，风格偏向冷静、空间与肌理叙事。"
+          },
+          {
+            "name": "Ain't-Bad",
+            "url": "https://www.aint-bad.com",
+            "description": "专注于当代摄影出版的独立机构，展现前卫色彩与新纪实叙事。"
+          },
+          {
+            "name": "C41 Magazine",
+            "url": "https://www.c41magazine.com",
+            "description": "意大利生活方式与独立摄影杂志，涵盖生活、时尚、设计与艺术摄影。"
+          },
+          {
+            "name": "Subjectively Objective",
+            "url": "https://subjectivelyobjective.com",
+            "description": "专注客体美学、新地形学(New Topographics)与微缩景观画册的出版平台。"
+          },
+          {
+            "name": "Fraction Magazine",
+            "url": "https://www.fractionmagazine.com",
+            "description": "创办于 2008 年的在线当代摄影杂志，展示极具创意的专题组图。"
+          },
+          {
+            "name": "Featureshoot",
+            "url": "https://www.featureshoot.com",
+            "description": "每日展示全球摄影师的突破性项目，风格横跨宠物、人像与荒诞现实。"
+          },
+          {
+            "name": "The Heavy Collective",
+            "url": "https://theheavycollective.com",
+            "description": "澳大利亚摄影出版平台，深入探讨摄影集(Photobook)作为媒介的艺术性。"
+          },
+          {
+            "name": "Splash and Grab",
+            "url": "https://splashandgrab.co.uk",
+            "description": "英国独立纸质摄影杂志，为新锐摄影师提供展示长篇作品的舞台。"
+          },
+          {
+            "name": "Float Photo Magazine",
+            "url": "https://www.floatphotomagazine.com",
+            "description": "旨在为当代年轻艺术家与摄影师提供无门槛展览与策展机会的网站。"
+          },
+          {
+            "name": "Pellicola Magazine",
+            "url": "https://www.pellicolamagazine.com",
+            "description": "意大利胶片与艺术摄影网，关注胶片质感、情绪人像与空间构图。"
+          },
+          {
+            "name": "Photographic Museum of Humanity (PHmuseum)",
+            "url": "https://phmuseum.com",
+            "description": "现代数字摄影博物馆，定期举办全球摄影奖项并资助独立摄影师。"
+          },
+          {
+            "name": "Photobook Store",
+            "url": "https://www.thephotobookstore.co.uk",
+            "description": "全球顶尖的签名版、限量版艺术摄影集在线专营平台。"
+          },
+          {
+            "name": "Photobook Journal",
+            "url": "https://photobookjournal.com",
+            "description": "专业摄影书书评网，对全球新出版的限量版摄影集进行深度拆解与点评。"
+          },
+          {
+            "name": "Self Publish, Be Happy",
+            "url": "https://selfpublishbehappy.com",
+            "description": "推动独立自出版摄影集(Zine)的先锋机构，收藏大量限量手作影集。"
+          },
+          {
+            "name": "Yet Magazine",
+            "url": "https://yet-magazine.com",
+            "description": "瑞士摄影杂志，每期围绕一个特定的摄影哲学主题进行深度研讨。"
+          },
+          {
+            "name": "Vulpin Magazine",
+            "url": "https://vulpinmagazine.com",
+            "description": "关注北欧独立摄影、冰冷风光与自然色彩语言的视觉小刊。"
+          },
+          {
+            "name": "Nowhere Collective",
+            "url": "https://nowherecollective.org",
+            "description": "集结全球胶片爱好者，展示湿版、大画幅拍立得与复古相纸美学。"
+          },
+          {
+            "name": "Darkroom Magazine",
+            "url": "https://darkroommag.com",
+            "description": "专注于暗房放大放大机技法、放大相纸选择与手工洗印的专刊。"
+          },
+          {
+            "name": "Lomography Magazine",
+            "url": "https://www.lomography.com/magazine",
+            "description": "Lomo 官方杂志，展示跨重曝光、正冲负(X-Pro)等奇特胶片玩法。"
+          },
+          {
+            "name": "Film Shooters Collective",
+            "url": "https://www.filmshooterscollective.com/articles",
+            "description": "胶片摄影师专栏，分享对各年代古典胶片颗粒与色彩倾向的理解。"
+          },
+          {
+            "name": "The New Era Magazine Photography",
+            "url": "https://theneweramagazine.com",
+            "description": "斯堪的纳维亚空间与人像美学，主打自然光、低饱和色调影像。"
+          },
+          {
+            "name": "Pomegranate Magazine",
+            "url": "https://pomegranatemag.com",
+            "description": "关注女性视角、温润光影与情绪植物摄影的艺术小刊。"
+          },
+          {
+            "name": "Subjectively Objective Books",
+            "url": "https://subjectivelyobjective.com/books",
+            "description": "精选出版的小开本极简主义与当代风景摄影集画廊。"
+          },
+          {
+            "name": "Wave Magazine",
+            "url": "https://wavemagazine.com",
+            "description": "关注海洋、冲浪文化、海岸线与自然风光的独立摄影期刊。"
+          },
+          {
+            "name": "Aint-Bad Editions",
+            "url": "https://aintbad.com/store",
+            "description": "限量发行的当代新锐摄影集与艺术单刷版画展示平台。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "商业摄影、时尚大片与视觉构图灵感 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Models.com Editorial",
+            "url": "https://models.com/editorial",
+            "description": "全球模特与时尚风向标，汇总全球顶尖时尚杂志的大片与摄影师名单。"
+          },
+          {
+            "name": "ShowStudio",
+            "url": "https://showstudio.com",
+            "description": "时尚摄影大师 Nick Knight 创办，先锋时尚影片、实时时装拍摄与影像艺术。"
+          },
+          {
+            "name": "Dazed Digital Photography",
+            "url": "https://www.dazeddigital.com/photography",
+            "description": "Dazed 摄影专栏，引领亚文化、前卫青年与叛逆造型时尚大片。"
+          },
+          {
+            "name": "i-D Photography",
+            "url": "https://i-d.co",
+            "description": "i-D 杂志摄影版块，以独特的笑眼(Wink)标志与街头时尚肖像闻名。"
+          },
+          {
+            "name": "V Magazine",
+            "url": "https://vmagazine.com",
+            "description": "美国高端先锋时尚大刊，汇聚全球顶级摄影师与奢华视觉盛宴。"
+          },
+          {
+            "name": "Interview Magazine",
+            "url": "https://www.interviewmagazine.com",
+            "description": "安迪·沃霍尔创办，其肖像摄影与人物大片具备极强的波普与剧场感。"
+          },
+          {
+            "name": "AnOther Magazine",
+            "url": "https://www.anothermag.com",
+            "description": "融合高定时尚、先锋摄影与文学艺术的高端半年刊。"
+          },
+          {
+            "name": "Document Journal",
+            "url": "https://www.documentjournal.com",
+            "description": "纽约先锋文化与时尚杂志，专注于硬核艺术摄影与超现实造型。"
+          },
+          {
+            "name": "10 Magazine",
+            "url": "https://www.10magazine.com",
+            "description": "英美高端时尚季刊，展示精湛的灯光设计、造型构图与时装摄影。"
+          },
+          {
+            "name": "Purple Fashion",
+            "url": "https://purple.fr",
+            "description": "法国 Purple 杂志，Olivier Zahm 创办，主打复古性感、随性与胶片时尚。"
+          },
+          {
+            "name": "CR Fashion Book",
+            "url": "https://crfashionbook.com",
+            "description": "前 Vogue 法国主编 Carine Roitfeld 创办，奢华、大胆与剧场感视觉。"
+          },
+          {
+            "name": "W Magazine",
+            "url": "https://www.wmagazine.com",
+            "description": "知名奢华时尚杂志，以巨幅电影感故事大片(Cinematic Storytelling)著称。"
+          },
+          {
+            "name": "Mastermind Magazine",
+            "url": "https://mastermindmagazine.com",
+            "description": "专注于深度文化、建筑与大画幅人像摄影的巴黎高端半年刊。"
+          },
+          {
+            "name": "Numéro Magazine",
+            "url": "https://www.numero.com",
+            "description": "法国 Numéro 杂志，结合冷艳高定、雕塑感光影与先锋服装摄影。"
+          },
+          {
+            "name": "Self Service Magazine",
+            "url": "https://selfservicemagazine.com",
+            "description": "巴黎知名时尚文化大刊，以其简约、优雅的法式风格与顶级大片著称。"
+          },
+          {
+            "name": "Dust Magazine",
+            "url": "https://dustmagazine.com",
+            "description": "专注于探讨青年文化、原始自然与反叛美学的欧洲小众时尚刊物。"
+          },
+          {
+            "name": "KALTBLUT Magazine",
+            "url": "https://www.kaltblut-magazine.com",
+            "description": "柏林先锋艺术、音乐与无性别时尚摄影杂志，充满挑衅与创意。"
+          },
+          {
+            "name": "Schön! Magazine",
+            "url": "https://schonmagazine.com",
+            "description": "联通全球线上与线下的高清时尚视觉杂志，展现极具张力的色彩。"
+          },
+          {
+            "name": "METAL Magazine",
+            "url": "https://metalmagazine.eu",
+            "description": "巴塞罗那独立时尚杂志，主打实验性人像、雕塑感造型与奇特光影。"
+          },
+          {
+            "name": "Nowness",
+            "url": "https://www.nowness.com",
+            "description": "LVMH 旗下的顶级短片与摄影网，每日推送全球文化、艺术与时尚影像。"
+          },
+          {
+            "name": "1X.com",
+            "url": "https://1x.com",
+            "description": "由专业策展人严格筛选的顶级摄影社区，构图、光影与风光的艺术殿堂。"
+          },
+          {
+            "name": "500px Editor's Choice",
+            "url": "https://500px.com/editors",
+            "description": "500px 编辑精选，汇聚全球高水准风光、人像与商业摄影师画质之作。"
+          },
+          {
+            "name": "Unsplash Editorial",
+            "url": "https://unsplash.com",
+            "description": "全球知名高清晰度摄影社区，其 Editorial 精选展现极佳的视觉构图。"
+          },
+          {
+            "name": "Flickr Explore",
+            "url": "https://www.flickr.com/explore",
+            "description": "老牌摄影社区每日 Explore 算法精选，涵盖全球摄影发烧友的精湛光影。"
+          },
+          {
+            "name": "Behance Photography",
+            "url": "https://www.behance.net/galleries/photography",
+            "description": "Behance 官方策展的摄影画廊，包含大量商业修图、灯光设计与后期灵感。"
+          },
+          {
+            "name": "YouPic",
+            "url": "https://youpic.com",
+            "description": "专注专业摄影师的社交与灵感网，以直观的摄影参数与构图解析为特色。"
+          },
+          {
+            "name": "Production Paradise",
+            "url": "https://www.productionparadise.com",
+            "description": "全球高端商业摄影师、置景师、造型师与时尚制片团队展示目录。"
+          },
+          {
+            "name": "Le Book",
+            "url": "https://www.lebook.com",
+            "description": "时尚与广告行业的“圣经”，收录全球顶尖摄影师、导演与创意机构作品集。"
+          },
+          {
+            "name": "Art + Commerce",
+            "url": "https://www.artandcommerce.com",
+            "description": "代理全球顶级时尚摄影师(如 Steven Meisel)的权威商业经纪公司。"
+          },
+          {
+            "name": "Management Artists",
+            "url": "https://www.managementartists.com",
+            "description": "代理全球顶级时尚摄影师、灯光师与造型师的国际经纪机构。"
+          },
+          {
+            "name": "Agent Peekaboo",
+            "url": "https://agentpeekaboo.com",
+            "description": "专注于先锋时尚、高饱和色彩与前卫商业摄影的代理机构。"
+          },
+          {
+            "name": "Supervision New York",
+            "url": "https://supervisionmgt.com",
+            "description": "纽约与伦敦顶级艺术经纪公司，代理具有强烈个人风格的摄影师。"
+          },
+          {
+            "name": "MAP Ltd",
+            "url": "https://www.mapltd.com",
+            "description": "英国知名创意经纪公司，展示精美绝伦的商业人像与静物摄影。"
+          },
+          {
+            "name": "FirstView",
+            "url": "https://www.firstview.com",
+            "description": "高清晰度时装周 T 台秀场摄影档案馆，记录数十年时装光影演变。"
+          },
+          {
+            "name": "Fucking Young!",
+            "url": "https://fuckingyoung.es",
+            "description": "专注于男装时尚、青春气象与前卫男模肖像的先锋杂志。"
+          },
+          {
+            "name": "LOVE Magazine Archive",
+            "url": "https://www.thelovemagazine.co.uk",
+            "description": "英国著名时尚杂志档案，以跨界、夸张与极具爆发力的商业大片著称。"
+          },
+          {
+            "name": "Jed Root Archive",
+            "url": "https://jedroot.com",
+            "description": "传奇时尚经纪公司档案，展示 90 年代至今顶级美妆与时尚摄影。"
+          },
+          {
+            "name": "Magnum Opus Photography",
+            "url": "https://www.magnumopus.com",
+            "description": "致力于呈现人类极致商业风光、建筑与雕塑构图的视觉画廊。"
+          },
+          {
+            "name": "1000 Words Magazine",
+            "url": "https://www.1000wordsmag.com",
+            "description": "专业当代摄影季刊，探索图像在当代艺术与商业文化中的多重含义。"
+          },
+          {
+            "name": "LensCulture Portrait Awards",
+            "url": "https://www.lensculture.com/portrait-awards",
+            "description": "LensCulture 肖像摄影奖，汇集全球各种人像面孔、眼神与光影语言。"
+          }
         ]
       }
     ]
@@ -5292,6 +5970,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

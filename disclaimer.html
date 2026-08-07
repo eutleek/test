@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f9f9f9">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>免责声明 - Kisstr</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+        a, button {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-appearance: none;
+            appearance: none;
+            touch-action: manipulation;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        a:focus, button:focus { outline: none; }
+        @media (hover: none) {
+            .back-btn:hover { background-color: #0070f3; }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; color: #111; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        h2 { color: #222; margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        p { margin: 10px 0; text-align: justify; }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background-color: #0070f3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .back-btn:hover { background-color: #0051cb; }
+        .version-tag {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eaeaea;
+            color: #999;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 0;
+                padding-top: env(safe-area-inset-top);
+                padding-left: env(safe-area-inset-left);
+                padding-right: env(safe-area-inset-right);
+            }
+            .container {
+                padding: 20px 16px;
+                border-radius: 0;
+                min-height: 100vh;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 16px;
+            }
+            p {
+                font-size: 14px;
+                text-align: left;
+            }
+        }
+        @media (max-width: 375px) {
+            .container {
+                padding: 16px 12px;
+            }
+            h1 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+        @media (min-width: 769px) {
+            body {
+                padding: 40px 20px;
+            }
+            .container {
+                max-width: 800px;
+                padding: 40px;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1a1a;
+            }
+            .container {
+                background: #2a2a2a;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            h1 { color: #f0f0f0; border-bottom-color: #444; }
+            h2 { color: #e0e0e0; border-bottom-color: #444; }
+            p { color: #ccc; }
+            .back-btn {
+                background-color: #2997ff;
+            }
+            .back-btn:hover {
+                background-color: #0077ed;
+            }
+            .version-tag {
+                border-top-color: #444;
+                color: #777;
+            }
+        }
+    
+
+  /* ========== 全平台适配补强 ========== */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: calc(72px + var(--safe-top));
+  }
+
+  body {
+    min-height: 100dvh;
+    overflow-x: clip;
+  }
+
+  @supports not (overflow: clip) {
+    body {
+      overflow-x: hidden;
+    }
+  }
+
+  img,
+  svg,
+  canvas,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  a,
+  button,
+  .tab-btn,
+  .theme-btn,
+  .layout-btn,
+  .hide-toggle,
+  .back-to-top,
+  .link-card,
+  .ai-link-card {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .links-grid,
+  .ai-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  }
+
+  @media (max-width: 480px) {
+    .category-tabs {
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      white-space: nowrap;
+      min-height: 40px;
+    }
+
+    .link-card,
+    .ai-link-card,
+    .subcategory-title-card {
+      padding: 16px;
+      border-radius: 16px;
+    }
+
+    .music-bar-bottom-container {
+      height: 48px;
+    }
+  }
+
+  @media (pointer: coarse) {
+    .link-card:hover,
+    .ai-link-card:hover,
+    .subcategory-title-card:hover {
+      transform: none;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" target="kisstr_home" class="back-btn" onclick="event.preventDefault(); window.open('index.html', 'kisstr_home');">← 返回主页</a>
+    <h1>“Kisstr”网站免责及版权声明</h1>
+    
+    <p><strong>特别提示：</strong>欢迎访问“Kisstr”（以下简称“本站”）。<strong>在使用本站提供的任何服务前，请您务必仔细阅读并透彻理解本声明。</strong>您一旦进入、浏览、使用本站，即视为您已无条件接受并同意本声明的全部内容。如果您不同意本声明的任何条款，请立即停止使用并关闭本站。</p>
+
+    <h2>一、 平台性质与非盈利承诺</h2>
+    <p>1. <strong>纯公益性非盈利：</strong>本站为个人兴趣驱动的纯公益性、非盈利性网址导航平台。</p>
+    <p>2. <strong>三无承诺：</strong>本站承诺全站无任何形式的商业广告、无任何强制弹窗、无任何隐藏的付费变现机制。本站不对用户收取任何注册费、服务费或赞助费。</p>
+    <p>3. <strong>优质收集目的：</strong>本站创立的唯一初衷是进行网络优质资源的收集、筛选、聚合与导航分享，旨在为广大“Kisstr”同好提供一个干净、纯粹、便捷的索引向导，不参与任何商业化运作。</p>
+
+    <h2>二、 关于第三方链接及内容的绝对免责</h2>
+    <p>1. <strong>纯粹索引服务：</strong>本站所展示、指向或提供跳转的外部链接，均属于第三方独立运行的网站、资源或内容。本站与该等第三方网站之间不存在任何利益捆绑、合资、合伙、雇佣或代理关系。</p>
+    <p>2. <strong>内容独立性：</strong>任何第三方网站上的信息、言论、观点、图片、服务或商品，均由该第三方网站的所有者和运营者独立承担全部法律责任。</p>
+    <p>3. <strong>风险自担：</strong>用户通过本站链接跳转至第三方网站后，其后续的所有浏览、下载、注册、交易、付费等任何行为，均属于用户与第三方网站之间的独立民事行为。用户因使用第三方网站而产生的任何财产损失、隐私泄露、设备损坏等风险，本站概不负责，亦不承担任何直接、间接或连带的法律责任。</p>
+
+    <h2>三、 关于“取材自网络，回归于网络”的来源声明</h2>
+    <p>1. <strong>内容来源：</strong>本站内的所有链接、名称、文字描述及相关非原创素材，均本着“取材自网络，回归于网络”的开源共享精神汇编而成。</p>
+    <p>2. <strong>无恶意侵权故意：</strong>本站在收集、整理网络公开资源时，已尽合理注意义务。因网络信息海量，本站无法逐一核实每个外部链接背后所有内容的版权归属。本站绝无任何故意侵犯他人合法权益的意图。</p>
+
+    <h2>四、 严格的版权保护与避风港投诉流程（通知-删除机制）</h2>
+    <p>本站坚决尊重并保护著作权人的合法权益。根据相关法律法规的“避风港原则”，若您认为本站所指向的第三方链接内容涉嫌侵犯了您的合法权益，请按照以下程序通知我们，以便我们及时断开链接。</p>
+    <p>1. <strong>书面通知：</strong>权利人必须通过电子邮件向本站提交正式的“权利通知”。</p>
+    <p>2. <strong>必须包含的证明材料：</strong>包含身份证明（身份证或营业执照）、权属证明（著作权登记证等）、精准定位（本站URL及第三方URL），以及真实性保证说明（须权利人亲笔签名或加盖公章）。</p>
+    <p>3. <strong>指定联系邮箱：</strong>【bluemeenlily@gmail.com】</p>
+    <p>4. <strong>处理时效：</strong>本站在收到符合上述全部完整要求的书面通知后，将在合理审查后的第一时间（通常为48小时内）依法采取断开链接或删除必要措施。</p>
+
+    <h2>五、 网站运营及不可抗力免责</h2>
+    <p>1. <strong>服务持续性：</strong>因互联网服务的特殊性，本站对由于黑客攻击、计算机病毒侵入、电信部门技术调整、网络故障、政府管制、自然灾害等不可抗力或本站无法合理控制的原因造成的网站暂时性关闭、访问缓慢、链接失效、数据丢失等，不承担任何责任。</p>
+    <p>2. <strong>单方变更权：</strong>本站有权在无需提前通知用户的情况下，随时自行决定修改、暂停、终止本站的全部或部分功能，或者对本站内的任何链接进行调整、删除。</p>
+
+    <h2>六、 法律管辖与解释权</h2>
+    <p>1. <strong>声明修改权：</strong>本声明的修改权、更新权及最终解释权均属于“Kisstr”所有。</p>
+    <p>2. <strong>法律适用：</strong>本声明的成立、生效、履行、解释及纠纷解决，均适用中华人民共和国法律法规。</p>
+    <p>3. <strong>争议解决：</strong>若用户与本站因本声明或使用本站发生任何争议，双方应首先通过友好协商解决；协商不成的，任何一方均同意将争议提交至本站所有者/运营者所在地有管辖权的人民法院诉讼解决。</p>
+
+    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：V 1.30 · 共 7809 个链接</div>
+</div>
+
+</body>
+</html>

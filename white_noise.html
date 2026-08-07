@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="白噪音、声音档案馆与小众音乐站">
+<title>白噪音乐 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>白噪音乐</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1041 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">白噪音乐 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "白噪音乐",
+    "icon": "🎧",
+    "color": "linear-gradient(135deg, #74b9ff, #a29bfe)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "疗愈白噪 (1-40)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "myNoise",
+            "url": "https://mynoise.net",
+            "description": "全球顶级的环境音效与白噪音生成器，支持自定义频段调节与个性化混音。"
+          },
+          {
+            "name": "Noisli",
+            "url": "https://www.noisli.com",
+            "description": "极简风格的环境音混合器，可自由搭配雨声、风声、咖啡馆与篝火音效。"
+          },
+          {
+            "name": "A Soft Murmur",
+            "url": "https://asoftmurmur.com",
+            "description": "清爽无广告的自然音效生成网，支持雨声、雷鸣、浪潮与唱碗音频叠加。"
+          },
+          {
+            "name": "Defonic",
+            "url": "https://defonic.com",
+            "description": "拟物化视觉的环境音效拟真站，包含森林、夜晚、白噪音与轻柔噪音。"
+          },
+          {
+            "name": "Rainy Mood",
+            "url": "https://rainymood.com",
+            "description": "经典老牌雨声模拟网站，提供高品质的真实下雨与雷鸣背景音。"
+          },
+          {
+            "name": "Calmsound",
+            "url": "https://www.calmsound.com",
+            "description": "提供高清大自然实景原声(如瀑布、海浪、森林)与放松视频。"
+          },
+          {
+            "name": "Moodil",
+            "url": "https://www.moodil.com",
+            "description": "支持多种环境元素自由组合的放松音效与专注白噪音平台。"
+          },
+          {
+            "name": "Ambient-Mixer",
+            "url": "https://www.ambient-mixer.com",
+            "description": "开放式环境音社区，可播放或创作如霍格沃茨图书馆等特定场景音。"
+          },
+          {
+            "name": "Tabletop Audio",
+            "url": "https://tabletopaudio.com",
+            "description": "专为桌面游戏(TRPG)与奇幻写作设计的专业背景音乐与氛围音效。"
+          },
+          {
+            "name": "Soundrown",
+            "url": "https://soundrown.com",
+            "description": "简易好用的多轨道环境音效播放器，涵盖咖啡馆、公园与火车声。"
+          },
+          {
+            "name": "Coffitivity",
+            "url": "https://coffitivity.com",
+            "description": "还原真实咖啡馆背景人声与环境音，提升日常工作与学习专注力。"
+          },
+          {
+            "name": "Hipster Sound",
+            "url": "https://hipstersound.com",
+            "description": "主打各类精致咖啡馆、酒吧与室内工作区氛围音效的生成器。"
+          },
+          {
+            "name": "Purrli",
+            "url": "https://purrli.com",
+            "description": "专门模拟猫咪噜噜声(猫喘息)的音效生成器，可自由调节情绪状态。"
+          },
+          {
+            "name": "Noisetherapist",
+            "url": "https://noisetherapist.com",
+            "description": "结合声音疗法与频率调节的专业白噪音与粉红噪音生成站。"
+          },
+          {
+            "name": "Free Sound Analyzer & White Noise",
+            "url": "https://www.soundclear.com",
+            "description": "提供纯净粉红噪音、棕色噪音与白噪音的专业高保真播放器。"
+          },
+          {
+            "name": "Snowfall Sound",
+            "url": "https://www.snowfallsound.com",
+            "description": "专注于冬日落雪、寒风与冰雪环境氛围音效的疗愈网。"
+          },
+          {
+            "name": "Lava Lamp Chill",
+            "url": "https://lavalampchill.com",
+            "description": "配合动态熔岩灯视觉的低调环境音与 Lofi 沉浸体验站。"
+          },
+          {
+            "name": "Virtual Cottage",
+            "url": "https://duelingducks.itch.io/virtual-cottage",
+            "description": "小屋氛围音效与计时器，提供舒适的书房背景声与放松音质。"
+          },
+          {
+            "name": "Softly.c",
+            "url": "https://softly.c",
+            "description": "极简设计的静心雨声与微风模拟，适合睡前与冥想使用。"
+          },
+          {
+            "name": "Brain.fm",
+            "url": "https://www.brain.fm",
+            "description": "结合功能性音乐与神经科学打造的专注、放松与入睡音效网。"
+          },
+          {
+            "name": "Endel",
+            "url": "https://endel.io",
+            "description": "AI 驱动的个性化声学环境网，根据天气、心率与时间生成实时声音。"
+          },
+          {
+            "name": "Focus at Will",
+            "url": "https://www.focusatwill.com",
+            "description": "根据神经类型定制后台背景音乐，大幅提升阅读与工作效率。"
+          },
+          {
+            "name": "Portal",
+            "url": "https://portal.app",
+            "description": "将全球顶级的自然原声与高画质实景结合的沉浸式空间声音网。"
+          },
+          {
+            "name": "Calm",
+            "url": "https://www.calm.com",
+            "description": "全球知名冥想与睡眠网站，提供睡前故事、自然音效与静心音乐。"
+          },
+          {
+            "name": "Headspace",
+            "url": "https://www.headspace.com",
+            "description": "专业冥想与正念引导网，包含大量工作专注与情绪安抚音效。"
+          },
+          {
+            "name": "Insight Timer",
+            "url": "https://insighttimer.com",
+            "description": "庞大的免费冥想音乐与颂钵疗愈声音社区。"
+          },
+          {
+            "name": "Tide (潮汐)",
+            "url": "https://tide.fm",
+            "description": "结合自然声响与番茄钟的大自然时空音频网。"
+          },
+          {
+            "name": "Relaxing White Noise",
+            "url": "https://relaxingwhitenoise.com",
+            "description": "收录长达数小时的高清天然雨声、河流声与睡眠白噪音。"
+          },
+          {
+            "name": "Generative.fm",
+            "url": "https://generative.fm",
+            "description": "生成式无限环境音乐库，由代码实时渲染出永不重复的无尽音景。"
+          },
+          {
+            "name": "City Soundscapes",
+            "url": "https://citysoundscapes.com",
+            "description": "收集全球各大都市(东京、巴黎、纽约等)街头背景音的模拟网。"
+          },
+          {
+            "name": "Night Cafe Sound",
+            "url": "https://nightcafesound.com",
+            "description": "专门呈现深夜咖啡馆、雨夜街道与酒吧背景音的放松站。"
+          },
+          {
+            "name": "Bird Song generator",
+            "url": "https://birdsong.org.uk",
+            "description": "英国自然保护协会打造的各种鸟类清脆鸣叫声播放网。"
+          },
+          {
+            "name": "Thunderstorm.fm",
+            "url": "https://thunderstorm.fm",
+            "description": "专注于极致逼真雷雨天气与远方雷鸣的白噪音网。"
+          },
+          {
+            "name": "Ocean Waves Chill",
+            "url": "https://oceanwaveschill.com",
+            "description": "海浪翻涌与海岸微风的高清自然原声流媒体。"
+          },
+          {
+            "name": "Space Engine Ambient",
+            "url": "https://spaceengineambient.com",
+            "description": "深空深邃氛围、宇宙低频与科幻飞船舱内环境音效。"
+          },
+          {
+            "name": "Zen Mix",
+            "url": "https://zenmix.io",
+            "description": "融合禅宗颂钵、木鱼与竹林风声的东方意境白噪音网。"
+          },
+          {
+            "name": "Treehugger Nature Sounds",
+            "url": "https://www.treehugger.com/nature-sounds",
+            "description": "环保视角下的荒野自然原声与森林生态背景声。"
+          },
+          {
+            "name": "Ambient Sleeping Pill",
+            "url": "https://ambientsleepingpill.com",
+            "description": "24小时不间断播放无节奏、极其平缓的深沉入睡环境音乐。"
+          },
+          {
+            "name": "Sleep Jar",
+            "url": "https://sleepjar.com",
+            "description": "专门提供各类定制白噪音(风扇声、洗衣机声、雨声)的音频站。"
+          },
+          {
+            "name": "Blank Wave",
+            "url": "https://blankwave.com",
+            "description": "极简工业感白噪音与黑客帝国风格电子低频背景音。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "声音地图 (41-80)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Radio Garden",
+            "url": "https://radio.garden",
+            "description": "互动式三维地球声景地图，拖动地球即可实时收听全球数万个地方电台。"
+          },
+          {
+            "name": "Cities and Memory",
+            "url": "https://citiesandmemory.com",
+            "description": "全球最大的声音艺术项目之一，收录世界各地的原始声音与再创作音景。"
+          },
+          {
+            "name": "Aporee Soundmaps",
+            "url": "https://aporee.org/maps",
+            "description": "开放式环境音地理地图，收录全球用户录制的自然与人文原声。"
+          },
+          {
+            "name": "British Library Sounds",
+            "url": "https://sounds.bl.uk",
+            "description": "大英图书馆官方声音档案馆，藏有数十万份历史口述、方言与自然原声。"
+          },
+          {
+            "name": "Library of Congress Audio Recordings",
+            "url": "https://www.loc.gov/audio",
+            "description": "美国国会图书馆音频档案，收录早期民谣、历史演讲与古老广播。"
+          },
+          {
+            "name": "Earth.fm",
+            "url": "https://earth.fm",
+            "description": "大自然版 Spotify，收录全球国家公园与极地自然保护区的高清原声。"
+          },
+          {
+            "name": "Sounds of New York City (SONYC)",
+            "url": "https://sonyc.nyu.edu",
+            "description": "纽约大学打造的城市声学环境与声音污染研究数据库。"
+          },
+          {
+            "name": "Locus Sonus Soundmap",
+            "url": "https://locusonus.org/soundmap",
+            "description": "实时流媒体声音地图，传输全球各地安装的流媒体麦克风原声。"
+          },
+          {
+            "name": "Museum of Endangered Sounds",
+            "url": "https://savethesounds.info",
+            "description": "濒危声音博物馆，收集了旧式拨号上网、卡带机、打字机等时代记忆声。"
+          },
+          {
+            "name": "The World Soundscape Project",
+            "url": "https://www.sfu.ca/communication/wsp",
+            "description": "声音生态学先驱 Murray Schafer 创立的声音档案与环境声学网。"
+          },
+          {
+            "name": "BBC Sound Effects",
+            "url": "https://sound-effects.bbcrewind.co.uk",
+            "description": "BBC 开放的巨型音效库，包含数万个历史事件、自然与工业原声。"
+          },
+          {
+            "name": "Europeana Audio",
+            "url": "https://www.europeana.eu/en/collections/topic/18-audio",
+            "description": "欧洲数字图书馆音频专区，藏有欧洲百年来民间音乐与自然原声。"
+          },
+          {
+            "name": "UNESCO Intangible Cultural Heritage Audio",
+            "url": "https://ich.unesco.org",
+            "description": "联合国教科文组织非物质文化遗产音频，收录全球古老民歌与仪式声。"
+          },
+          {
+            "name": "Wild Sanctuary",
+            "url": "https://www.wildsanctuary.com",
+            "description": "声学生态学家 Bernie Krause 创办，收录数千小时未受人类破坏的自然音景。"
+          },
+          {
+            "name": "Nature Soundmap",
+            "url": "https://www.naturesoundmap.com",
+            "description": "由全球数十位顶级声音专业人士联合制作的高清自然生态声音地图。"
+          },
+          {
+            "name": "Ambient Weather Sound Map",
+            "url": "https://ambientweather.net",
+            "description": "结合全球气象站数据展示的气候与环境音效地图。"
+          },
+          {
+            "name": "Sounding Jerusalem",
+            "url": "https://soundingjerusalem.com",
+            "description": "记录古城耶路撒冷宗教唱腔、市集杂音与钟声的特色声音档案。"
+          },
+          {
+            "name": "Listening to the Deep Ocean",
+            "url": "https://www.listentothedeep.com",
+            "description": "收录全球大洋底水下麦克风捕捉到的鲸鱼歌声、冰架裂解与海底火山声。"
+          },
+          {
+            "name": "Underwater Sound Archive (NOAA)",
+            "url": "https://www.pmel.noaa.gov/audio",
+            "description": "美国国家海洋和大气局水下音频档案，探索海洋生物与地质声音。"
+          },
+          {
+            "name": "Macaulay Library (Cornell Lab)",
+            "url": "https://www.macaulaylibrary.org",
+            "description": "康奈尔大学鸟类学实验室，全球最大的动物声音与鸟鸣科学档案馆。"
+          },
+          {
+            "name": "Xeno-canto",
+            "url": "https://xeno-canto.org",
+            "description": "全球野生鸟类声音共享社区，收录数十万种鸟鸣的音频与地理标记。"
+          },
+          {
+            "name": "Frogwatch Sound Library",
+            "url": "https://www.aza.org/frogwatch",
+            "description": "专门收集北美及全球各类蛙类与两栖动物鸣叫声的数据库。"
+          },
+          {
+            "name": "Insect Sounds Database",
+            "url": "https://www.discoverlife.org",
+            "description": "收集昆虫振翅、鸣叫与微观生物运动声音的科学音频网。"
+          },
+          {
+            "name": "Forest Soundmap (Timber Festival)",
+            "url": "https://timberfestival.org.uk/sound-of-the-forest",
+            "description": "全球森林声音地图，采集世界各地森林中的树叶沙沙声与生态环境音。"
+          },
+          {
+            "name": "Chatty Maps",
+            "url": "http://goodcitylife.org/chattymaps",
+            "description": "分析城市街道声音(音乐、机械、自然、人声)并画出的音景地图。"
+          },
+          {
+            "name": "London Sound Survey",
+            "url": "https://www.soundsoflondon.co.uk",
+            "description": "记录伦敦近百年来街道、工业、运河与历史建筑环境音的专业档案站。"
+          },
+          {
+            "name": "Paris Soundscapes Archive",
+            "url": "https://parissoundscapes.com",
+            "description": "记录巴黎市集、塞纳河畔与地铁站特色人声与氛围音的沉浸档案。"
+          },
+          {
+            "name": "Venice Soundmap",
+            "url": "https://www.venicesoundmap.eu",
+            "description": "威尼斯水城声音地图，记录划桨声、潮汐与古老教堂钟声。"
+          },
+          {
+            "name": "Tokyo Sound Project",
+            "url": "https://tokyosoundproject.com",
+            "description": "采集东京电车提示音、繁华街区与神巷静谧环境音的声音档案馆。"
+          },
+          {
+            "name": "Berlin Sound Map",
+            "url": "https://berlinsoundmap.com",
+            "description": "记录柏林墙遗址、地下俱乐部门口与公园环境音的城市声景网。"
+          },
+          {
+            "name": "Hong Kong Audio Archive",
+            "url": "https://hkaudioarchive.org",
+            "description": "记录香港小贩呼喊、双层巴士与老旧街区烟火气的声音地图。"
+          },
+          {
+            "name": "Icelandic Soundscapes",
+            "url": "https://icelandicsoundscapes.com",
+            "description": "收集冰岛瀑布、地热喷泉、冰川融化与极地强风的极端自然音。"
+          },
+          {
+            "name": "Rainforest Sound Archive",
+            "url": "https://rainforestsounds.org",
+            "description": "亚马逊及东南亚热带雨林原生态声音档案。"
+          },
+          {
+            "name": "Volcano Sound Archive",
+            "url": "https://volcanosounds.org",
+            "description": "收集全球活火山喷发、岩浆咕嘟声与地壳变动低频声音的数据库。"
+          },
+          {
+            "name": "Train Sound Archive",
+            "url": "https://trainsoundarchive.com",
+            "description": "收录全球经典蒸汽火车、高铁与老旧铁路行驶交响曲的声音站。"
+          },
+          {
+            "name": "Airport Ambient Archive",
+            "url": "https://airportambience.com",
+            "description": "专门采集全球各大机场候机楼、广播与飞机起降环境音的网站。"
+          },
+          {
+            "name": "Harbor & Maritime Sounds",
+            "url": "https://maritimesounds.net",
+            "description": "海港汽笛、水波拍击船体与码头吊车等海洋工业声音集锦。"
+          },
+          {
+            "name": "Old Radio Programs Archive",
+            "url": "https://www.oldradioworld.com",
+            "description": "20世纪 30-50 年代老无线电广播剧、新闻联播与历史原声档案。"
+          },
+          {
+            "name": "NASA Audio Archive",
+            "url": "https://images.nasa.gov",
+            "description": "NASA 官方公开的太空探索原声、火箭发射、宇宙电波与宇航员通话。"
+          },
+          {
+            "name": "Internet Archive Audio",
+            "url": "https://archive.org/details/audio",
+            "description": "互联网档案馆音频区，拥有数百万个免费历史音乐、现场录音与广播。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "先锋音乐 (81-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Bandcamp",
+            "url": "https://bandcamp.com",
+            "description": "全球最大的独立音乐人直接售卖数字唱片、黑胶与周边的小众音乐圣地。"
+          },
+          {
+            "name": "NTS Radio",
+            "url": "https://www.nts.live",
+            "description": "伦敦先锋地下网络电台，汇聚全球极具探索精神的 DJ 与实验音乐。"
+          },
+          {
+            "name": "Resident Advisor (RA)",
+            "url": "https://ra.co",
+            "description": "全球电子音乐、地下俱乐部文化与先锋 DJ 界的权威资讯与音乐平台。"
+          },
+          {
+            "name": "Discogs",
+            "url": "https://www.discogs.com",
+            "description": "全球最大的实体唱片(黑胶、CD、磁带)数据库、交易市场与音乐百科。"
+          },
+          {
+            "name": "Bleep",
+            "url": "https://bleep.com",
+            "description": "Warp Records 旗下知名独立数字唱片店，专注于高品质先锋电子与实验乐。"
+          },
+          {
+            "name": "Boomkat",
+            "url": "https://boomkat.com",
+            "description": "英国顶级小众与先锋音乐唱片店，精选暗黑电子、环境音与实验派唱片。"
+          },
+          {
+            "name": "Forced Exposure",
+            "url": "https://www.forcedexposure.com",
+            "description": "老牌小众音乐分销商，涵盖海量地下摇滚、爵士、自由即兴与前卫音乐。"
+          },
+          {
+            "name": "Norman Records",
+            "url": "https://www.normanrecords.com",
+            "description": "英国知名独立唱片店，以极其幽默专业的唱片评价与小众选品著称。"
+          },
+          {
+            "name": "Juno Records",
+            "url": "https://www.juno.co.uk",
+            "description": "英国大型电子乐、黑胶唱片与 DJ 设备供应商，试听资源极其庞大。"
+          },
+          {
+            "name": "Hardwax",
+            "url": "https://hardwax.com",
+            "description": "柏林传奇黑胶唱片店，Techno 与 Dubstep 地下电子乐的风向标。"
+          },
+          {
+            "name": "Phonica Records",
+            "url": "https://www.phonicarecords.com",
+            "description": "伦敦 Soho 区核心黑胶唱片店，专营各类先锋舞曲与独立电子。"
+          },
+          {
+            "name": "Dublab",
+            "url": "https://www.dublab.com",
+            "description": "洛杉矶非营利先锋网络电台，自 1999 年起推广前卫音乐与声音艺术。"
+          },
+          {
+            "name": "Worldwide FM",
+            "url": "https://worldwidefm.net",
+            "description": "Gilles Peterson 创办的全球音乐电台，融合爵士、世界音乐与地下电子。"
+          },
+          {
+            "name": "Rinse FM",
+            "url": "https://rinse.fm",
+            "description": "伦敦传奇地下海盗电台演变而来的 Grime, Dubstep 与英国本土电子圣地。"
+          },
+          {
+            "name": "The Lot Radio",
+            "url": "https://www.thelotradio.com",
+            "description": "纽约布鲁克林集装箱场地发起的24小时独立 DJ 与音乐直播电台。"
+          },
+          {
+            "name": "KEXP Radio",
+            "url": "https://www.kexp.org",
+            "description": "西雅图知名公共电台，以顶级的独立摇滚与现场不插电 Live Session 闻名。"
+          },
+          {
+            "name": "NPR Tiny Desk Concerts",
+            "url": "https://www.npr.org/series/tiny-desk-concerts",
+            "description": "美国国家公共电台标志性的办公室办公桌现场音乐表演视频网。"
+          },
+          {
+            "name": "Boiler Room",
+            "url": "https://boilerroom.tv",
+            "description": "全球知名的地下电子音乐与俱乐部现场直播平台。"
+          },
+          {
+            "name": "HÖR BERLIN",
+            "url": "https://hor.berlin",
+            "description": "柏林标志性浴室风格瓷砖直播间，展示全球尖端 Techno 与 DJ 套曲。"
+          },
+          {
+            "name": "CDandLP",
+            "url": "https://www.cdandlp.com",
+            "description": "法国老牌二手黑胶与稀有唱片国际交易平台。"
+          },
+          {
+            "name": "Rush Hour",
+            "url": "https://www.rushhour.nl",
+            "description": "阿姆斯特丹著名唱片店与厂牌，主打 House, Techno 与稀有黑胶。"
+          },
+          {
+            "name": "Clone.nl",
+            "url": "https://clone.nl",
+            "description": "荷兰鹿特丹知名电子乐黑胶网，涵盖大量的地下电子与复古电音。"
+          },
+          {
+            "name": "Honest Jon's",
+            "url": "https://www.honestjons.com",
+            "description": "伦敦独立唱片店，专营稀有雷鬼、爵士、雷克典与世界音乐。"
+          },
+          {
+            "name": "Sounds of the Universe",
+            "url": "https://soundsoftheuniverse.com",
+            "description": "Soul Jazz Records 旗下唱片店，涵盖 Funk, Soul, Reggae 与先锋爵士。"
+          },
+          {
+            "name": "Amoeba Music",
+            "url": "https://www.amoeba.com",
+            "description": "美国大型独立唱片店，其“What's in My Bag”节目深度推荐小众音乐。"
+          },
+          {
+            "name": "Rough Trade",
+            "url": "https://www.roughtrade.com",
+            "description": "英国传奇独立唱片店与厂牌，独立摇滚与后朋克文化的摇篮。"
+          },
+          {
+            "name": "Piccadilly Records",
+            "url": "https://www.piccadillyrecords.com",
+            "description": "曼彻斯特著名独立唱片店，提供优质的独立流行、暖心民谣与电子选品。"
+          },
+          {
+            "name": "Water Tower Music",
+            "url": "https://www.watertower-music.com",
+            "description": "专注原声带(OST)、电影配乐与戏剧氛围音乐的唱片网站。"
+          },
+          {
+            "name": "Milan Records",
+            "url": "https://milanrecords.com",
+            "description": "知名电影配乐与动漫原声带(如《阿基拉》等)发行厂牌官网。"
+          },
+          {
+            "name": "Mondo / Death Waltz",
+            "url": "https://mondoshop.com/collections/music",
+            "description": "以精美绝伦的黑胶封面设计与稀有电影原声带复刻闻名的平台。"
+          },
+          {
+            "name": "Waxwork Records",
+            "url": "https://waxworkrecords.com",
+            "description": "专注于恐怖电影、科幻电影黑胶原声带极致复刻的唱片公司。"
+          },
+          {
+            "name": "Invada Records",
+            "url": "https://invada.bandcamp.com",
+            "description": "由 Portishead 成员创办，主打电影原声(如《怪奇物语》)与实验电子。"
+          },
+          {
+            "name": "Erased Tapes",
+            "url": "https://www.erasedtapes.com",
+            "description": "英国知名新古典与环境音厂牌(Olafur Arnalds, Nils Frahm 等的大本营)。"
+          },
+          {
+            "name": "Warp Records",
+            "url": "https://warp.net",
+            "description": "先锋电子乐传奇厂牌，汇聚 Aphex Twin, Boards of Canada 等大师。"
+          },
+          {
+            "name": "Ninja Tune",
+            "url": "https://ninjatune.net",
+            "description": "英国老牌独立电子厂牌，涵括 Trip-Hop, Downtempo 与先锋舞曲。"
+          },
+          {
+            "name": "Ghostly International",
+            "url": "https://ghostly.com",
+            "description": "跨越音乐与视觉艺术的先锋厂牌，主打环境电子与极简美学。"
+          },
+          {
+            "name": "Kranky",
+            "url": "https://www.kranky.net",
+            "description": "专注 Ambient, Post-Rock(后摇)与无人声实验音乐的传奇厂牌。"
+          },
+          {
+            "name": "Type Records",
+            "url": "https://typerecords.com",
+            "description": "专注暗黑环境音、新古典与电影感实验音乐的小众厂牌。"
+          },
+          {
+            "name": "4AD",
+            "url": "https://4ad.com",
+            "description": "哥特摇滚、仙音派(Dream Pop)与后朋克历史上极具美学色彩的厂牌。"
+          },
+          {
+            "name": "Sub Pop",
+            "url": "https://www.subpop.com",
+            "description": "发掘 Nirvana 的西雅图传奇厂牌，至今仍是独立摇滚风向标。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
+        "name": "音乐资源 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "UbuWeb",
+            "url": "https://www.ubuweb.com",
+            "description": "全球顶级的先锋派艺术、具体音乐(Musique Concrète)与声音艺术数字档案馆。"
+          },
+          {
+            "name": "AllMusic",
+            "url": "https://www.allmusic.com",
+            "description": "庞大的音乐百科与唱片数据库，提供深度乐评、风格演变图谱与艺术家关系链。"
+          },
+          {
+            "name": "Rate Your Music (RYM)",
+            "url": "https://rateyourmusic.com",
+            "description": "全球极具影响力的音乐评分与乐迷自建排行榜数据库。"
+          },
+          {
+            "name": "WhoSampled",
+            "url": "https://www.whosampled.com",
+            "description": "探索音乐采样、翻唱与混音来源的庞大对比数据库。"
+          },
+          {
+            "name": "Musicmap",
+            "url": "https://musicmap.info",
+            "description": "交互式近现代大众音乐流派演变图谱，直观呈现各音乐流派的发展脉络。"
+          },
+          {
+            "name": "Every Single Song (Every Noise at Once)",
+            "url": "https://everynoise.com",
+            "description": "由算法生成的巨型音乐流派声学地图，点击任意流派即可试听代表音频。"
+          },
+          {
+            "name": "IMSLP (Petrucci Music Library)",
+            "url": "https://imslp.org",
+            "description": "国际乐谱库，收录数十万份公有领域古典乐谱与公有领域录音。"
+          },
+          {
+            "name": "Classical Archives",
+            "url": "https://www.classicalarchives.com",
+            "description": "全球庞大的古典音乐数字档案与 MIDI 文件数据库。"
+          },
+          {
+            "name": "Choral Public Domain Library (CPDL)",
+            "url": "https://www.cpdl.org",
+            "description": "合唱乐与声乐公有领域乐谱与音频档案馆。"
+          },
+          {
+            "name": "Free Music Archive (FMA)",
+            "url": "https://freemusicarchive.org",
+            "description": "高品质公有领域与 CC 协议免费音乐库，适合播客与视频背景音。"
+          },
+          {
+            "name": "CCMixter",
+            "url": "https://ccmixter.org",
+            "description": "基于知识共享协议的音乐采样、人声干音与混音合作社区。"
+          },
+          {
+            "name": "Freesound",
+            "url": "https://freesound.org",
+            "description": "全球最大的音频采样、环境音效与音效素材开源合作数据库。"
+          },
+          {
+            "name": "SoundBible",
+            "url": "https://soundbible.com",
+            "description": "提供免费版权的 sound effects 音效与白噪音下载平台。"
+          },
+          {
+            "name": "Sample Focus",
+            "url": "https://samplefocus.com",
+            "description": "分类极其精准的免费音乐采样、乐器单音与音色库。"
+          },
+          {
+            "name": "Looperman",
+            "url": "https://www.looperman.com",
+            "description": "免费 Loop 循环音效、音乐采样与干音共享社区。"
+          },
+          {
+            "name": "Cymatics Free Media",
+            "url": "https://cymatics.fm/pages/free-download-vault",
+            "description": "专业音乐制作人喜爱的免费音频采样包与 Synth 预设库。"
+          },
+          {
+            "name": "SoundCollector",
+            "url": "https://soundcollector.org",
+            "description": "专注于搜集和保存古老乐器、民俗打击乐器音色的项目。"
+          },
+          {
+            "name": "Electroacoustic Music Archive",
+            "url": "https://www.ems-stockholm.se",
+            "description": "斯德哥尔摩电子声学音乐中心，瑞典先锋电子乐历史档案馆。"
+          },
+          {
+            "name": "IRCAM Centre Pompidou",
+            "url": "https://www.ircam.fr",
+            "description": "法国蓬皮杜中心声学/音乐研究协调研究所，音乐科技与声学前沿。"
+          },
+          {
+            "name": "GRM (Groupe de Recherches Musicales)",
+            "url": "https://inagrm.com",
+            "description": "法国 INA 旗下具体音乐与电子声学音乐发源地与研究机构。"
+          },
+          {
+            "name": "Computer Music Journal",
+            "url": "https://direct.mit.edu/comj",
+            "description": "MIT 出版的计算机音乐、数字音频合成与声学研究学术期刊。"
+          },
+          {
+            "name": "Society for Electro-Acoustic Music (SEAMUS)",
+            "url": "https://seamusonline.org",
+            "description": "美国电子声学音乐协会，展示前卫声音工程与实验音乐。"
+          },
+          {
+            "name": "Audium",
+            "url": "https://www.audium.org",
+            "description": "旧金山空间音效剧场，探索声学空间感与三维声音雕塑。"
+          },
+          {
+            "name": "Sounding the Body Archive",
+            "url": "https://soundingthebody.com",
+            "description": "将生物电信号、心率与人体运动转化为声音艺术的实验库。"
+          },
+          {
+            "name": "Acoustic Ecology Institute",
+            "url": "https://www.acousticecology.org",
+            "description": "声学生态学研究所，探讨噪音污染、自然声景与声音保护。"
+          },
+          {
+            "name": "World Forum for Acoustic Ecology (WFAE)",
+            "url": "https://www.wfae.net",
+            "description": "世界声学生态论坛，联合全球研究者探讨人与声音环境的关系。"
+          },
+          {
+            "name": "Sonemic",
+            "url": "https://sonemic.com",
+            "description": "RYM 团队打造的下一代音乐、影视与声音艺术综合数据库。"
+          },
+          {
+            "name": "Last.fm",
+            "url": "https://www.last.fm",
+            "description": "老牌音乐记录与听歌习惯分析平台，拥有强大的相似音乐推荐系统。"
+          },
+          {
+            "name": "Hype Machine",
+            "url": "https://hypem.com",
+            "description": "聚合全球音乐博客最新推荐小众单曲的音乐追踪平台。"
+          },
+          {
+            "name": "Hypnagogic Pop Archive",
+            "url": "https://hypnagogicarchive.com",
+            "description": "专注 80 年代复古卡带记忆、迷幻电子与梦幻 Pop 的先锋档案。"
+          },
+          {
+            "name": "Vaporwave Archive",
+            "url": "https://vaporwavearchive.org",
+            "description": "蒸汽波(Vaporwave)音乐、低保真采样与 90 年代互联网美学档案。"
+          },
+          {
+            "name": "Minimal Wave",
+            "url": "https://minimalwave.com",
+            "description": "专门复刻 80 年代小众合成器流行乐(Minimal Synth)与冷爵士的厂牌。"
+          },
+          {
+            "name": "Continuum Encyclopedia of Popular Music",
+            "url": "https://www.bloomsbury.com",
+            "description": "巨型流行音乐百科，涵盖全球各地区民族流行音乐历史。"
+          },
+          {
+            "name": "Vocaloid Archive",
+            "url": "https://vocadb.net",
+            "description": "全球 Vocaloid (初音未来等) 虚拟歌手音乐与同人专辑百科数据库。"
+          },
+          {
+            "name": "Video Game Music Archive (VGMRips)",
+            "url": "https://vgmrips.net",
+            "description": "收录 8 位、16 位复古电子游戏芯片音乐(Chiptune)的晶片音频库。"
+          },
+          {
+            "name": "Zophar's Domain",
+            "url": "https://www.zophar.net/music",
+            "description": "老牌复古游戏原声(NSF, SPC, GYM 等格式)原生芯片音乐站。"
+          },
+          {
+            "name": "OverClocked ReMix (OCR)",
+            "url": "https://ocremix.org",
+            "description": "致力于将电子游戏音乐进行艺术再创作与同人改编的非营利社区。"
+          },
+          {
+            "name": "Classical Net",
+            "url": "https://www.classical.net",
+            "description": "老牌古典音乐导读网，包含大量唱片版本比较与作曲家生平。"
+          },
+          {
+            "name": "Gramophone",
+            "url": "https://www.gramophone.co.uk",
+            "description": "英国《留声机》杂志官网，全球古典音乐评论与唱片大奖权威指南。"
+          }
         ]
       },
       {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "互动声音 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Incredibox",
+            "url": "https://www.incredibox.com",
+            "description": "拖拽不同服饰口技小人即可轻松编排嘻哈、爵士或电音 B-Box 的互动网。"
+          },
+          {
+            "name": "Chrome Music Lab",
+            "url": "https://musiclab.chromeexperiments.com",
+            "description": "谷歌音乐实验室，通过趣味互动体验声学、波形、节奏与和声原理。"
+          },
+          {
+            "name": "Blob Opera",
+            "url": "https://artsandculture.google.com/experiment/blob-opera",
+            "description": "Google 打造的机器学习歌剧实验，拖拉彩色黏液人即可唱出高难歌剧。"
+          },
+          {
+            "name": "Patatap",
+            "url": "https://patatap.com",
+            "description": "按下键盘字母即可发出不同音效并触发绚丽视觉动画的声光实验站。"
+          },
+          {
+            "name": "Typatone",
+            "url": "https://typatone.com",
+            "description": "将输入的文本与字母实时转化为悦耳音乐旋律的文本音效生成器。"
+          },
+          {
+            "name": "ToneMatrix",
+            "url": "https://tonematrix.audiotool.com",
+            "description": "极简 16x16 格子五声音阶点阵正弦波正方形音乐生成器。"
+          },
+          {
+            "name": "Audiotool",
+            "url": "https://www.audiotool.com",
+            "description": "基于浏览器的巨型线上音乐制作软件，内置合成器、鼓机与效果器。"
+          },
+          {
+            "name": "BandLab",
+            "url": "https://www.bandlab.com",
+            "description": "免费的跨平台云端音乐创作与云端协作云端工作站(DAW)。"
+          },
+          {
+            "name": "Soundtrap (by Spotify)",
+            "url": "https://www.soundtrap.com",
+            "description": "基于浏览器的在线音乐制作与播客录制平台。"
+          },
+          {
+            "name": "BeepBox",
+            "url": "https://beepbox.co",
+            "description": "专门用于创作 8-bit 芯片音乐(Chiptune)的网路在线矩阵作曲器。"
+          },
+          {
+            "name": "Online Sequencer",
+            "url": "https://onlinesequencer.net",
+            "description": "简单直观的网页版 MIDI 音乐编排器，可直接导入导出 MIDI 文件。"
+          },
+          {
+            "name": "Acid Machine",
+            "url": "https://acidmachine.net",
+            "description": "模拟 303 酸性电子乐(Acid House)音色与鼓机的网页模拟器。"
+          },
+          {
+            "name": "Virtual Piano",
+            "url": "https://virtualpiano.net",
+            "description": "用电脑键盘弹奏高保真钢琴的网页版虚拟钢琴平台。"
+          },
+          {
+            "name": "Soundscape Generator (Broomstick)",
+            "url": "https://soundscape.glitch.me",
+            "description": "基于 Web Audio API 的互动生成式算法氛围音乐网。"
+          },
+          {
+            "name": "Pulselt",
+            "url": "https://pulse.loopcraft.io",
+            "description": "通过几何图形碰撞生成律动节奏与声音的互动音效网。"
+          },
+          {
+            "name": "Mikutap",
+            "url": "https://aidn.jp/mikutap",
+            "description": "点击或滑动屏幕即可触发初音未来声音片段与炫彩动画的休闲网。"
+          },
+          {
+            "name": "Daniel Fisher's Sound Toys",
+            "url": "https://danielfisher.com/soundtoys",
+            "description": "各种有趣的音频物理模拟与声音合成器互动小实验。"
+          },
+          {
+            "name": "WebFM Synthesizer",
+            "url": "https://webfm.glitch.me",
+            "description": "在网页端直观进行调频(FM)声音合成与波形绘制的工具。"
+          },
+          {
+            "name": "Soundation",
+            "url": "https://soundation.com",
+            "description": "功能强大的网页版 DAW，内置大量 Loops 采样与虚拟乐器。"
+          },
+          {
+            "name": "Melozing",
+            "url": "https://melozing.com",
+            "description": "利用人工智能将简谱或旋律转化为多声部和声的生成网。"
+          },
+          {
+            "name": "Sampulator",
+            "url": "https://sampulator.com",
+            "description": "利用电脑键盘快速切片并打出采样 Drum Beat 的网页采样器。"
+          },
+          {
+            "name": "DJ3D / WebDJ",
+            "url": "https://webdj.dev",
+            "description": "基于 WebGL 的 3D 模拟双盘位 DJ 混音台网页工具。"
+          },
+          {
+            "name": "Plink",
+            "url": "https://dinahmoelabs.com/plink",
+            "description": "多人在线实时合作弹奏音乐的互动网页游戏与音效实验。"
+          },
+          {
+            "name": "SuperLooper",
+            "url": "https://superlooper.co",
+            "description": "循环乐段构建器，可叠加各种乐器构建自己的小段音乐。"
+          },
+          {
+            "name": "Endlesss",
+            "url": "https://endlesss.fm",
+            "description": "专注于实时多人多人音乐 Jam 碰头与音乐循环构建的先锋平台。"
+          },
+          {
+            "name": "Rhythmlab",
+            "url": "https://rhythmlab.com",
+            "description": "探索复杂节奏、复合节奏(Polyrhythm)与打击乐律动的在线实验室。"
+          },
+          {
+            "name": "GridSound",
+            "url": "https://gridsound.github.io",
+            "description": "开源的 HTML5 网页版 DAW 音乐制作项目。"
+          },
+          {
+            "name": "Cardboard Synth",
+            "url": "https://cardboardsynth.com",
+            "description": "复古纸板风格的在线合成器与低特质音效发生器。"
+          },
+          {
+            "name": "Brainturk Audio Focus",
+            "url": "https://brainturk.com/audio",
+            "description": "结合声音频率与听觉训练的智力与注意力提升音效网。"
+          },
+          {
+            "name": "Seaquence",
+            "url": "http://seaquence.org",
+            "description": "将声音节点化身海中微生物，通过微观生物碰撞生成音乐的网站。"
+          },
+          {
+            "name": "Musical Mind",
+            "url": "https://musicalmind.org",
+            "description": "探索听觉错觉(如 Shepard Tone 瑟巴音阶)与声音心理学的试验站。"
+          },
+          {
+            "name": "Node Audio Generator",
+            "url": "https://nodeaudio.com",
+            "description": "通过连接点与线构建信号流来生成声音的节点式音频生成网。"
+          },
+          {
+            "name": "Playtronica",
+            "url": "https://playtronica.com",
+            "description": "探索触觉与声音结合，将日常生活物品转化为触控乐器的艺术站。"
+          },
+          {
+            "name": "Solfeggio Frequencies Generator",
+            "url": "https://solfeggio.frequencygenerator.com",
+            "description": "专门生成 432Hz, 528Hz 等所谓“索尔费吉奥”疗愈频率的单音发生器。"
+          },
+          {
+            "name": "Binaural Beats Generator",
+            "url": "https://mynoise.net/NoiseMachines/binauralBeatGenerator.php",
+            "description": "生成双耳差频(Binaural Beats)以诱导脑波进入 alpha 或 theta 状态的网站。"
+          },
+          {
+            "name": "White Noise Lite Web",
+            "url": "https://whitenoise.com",
+            "description": "专业白噪音品牌的 Web 端，包含海量日常设备与自然环境音。"
+          },
+          {
+            "name": "Noise Generator (Online Tone Generator)",
+            "url": "https://szynalski.com/tone-generator",
+            "description": "精度极高的在线正弦波、方波、纯音与噪音频率发生器。"
+          },
+          {
+            "name": "Crossfade.io",
+            "url": "https://crossfade.io",
+            "description": "轻松将音频与动态背景视频混合并分享的音画创作工具。"
+          },
+          {
+            "name": "Lofi Cafe",
+            "url": "https://loficafe.app",
+            "description": "极简怀旧像素风 Lofi 电台，收听 Chillhop 与复古动画背景音。"
+          },
+          {
+            "name": "Lofi Girl Official",
+            "url": "https://lofigirl.com",
+            "description": "全球知名 Lofi 音乐品牌，提供 24/7 不间断专注与放松音乐流媒体。"
+          }
         ]
       }
     ]
@@ -5292,6 +5970,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

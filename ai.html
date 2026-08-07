@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="全球AI - 精选AI工具与平台导航">
+<title>全球AI - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4453,7 +4453,6 @@
 </section>
 
 <div class="category-tabs" id="categoryTabs"></div>
-
 <div class="music-bar-bottom-container">
   <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
   <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
@@ -4484,363 +4483,180 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">全球AI · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
+    name: "全球AI",
+    icon: "🌐",
+    color: "linear-gradient(135deg, #00d4ff, #7b2ff7)",
     subcategories: [
       {
-        name: "动漫",
-        enName: "Anime",
+        name: "AI应用",
+        enName: "AI Apps",
         links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+          { name: "ChatGPT", url: "https://chat.openai.com", description: "全球最火AI对话应用，月活数亿，GPT-5驱动，功能最全生态最强", _aiCompany: "OpenAI (美国)", _aiScore: 99, _aiTags: ["对话助手", "C端", "全球第一"] },
+          { name: "Perplexity", url: "https://www.perplexity.ai", description: "AI搜索标杆，带引用来源回答，Deep Research深度研究功能强", _aiCompany: "Perplexity AI (美国)", _aiScore: 92, _aiTags: ["AI搜索", "引用来源", "研究工具"] },
+          { name: "Gemini Advanced", url: "https://gemini.google.com", description: "Google官方AI助手，深度集成Gmail/Docs/Drive，Workspace用户首选", _aiCompany: "Google (美国)", _aiScore: 89, _aiTags: ["对话助手", "Google生态", "多模态"] },
+          { name: "豆包 Doubao", url: "https://www.doubao.com", description: "国内C端体验最佳，月活破亿，多模态生成，办公模式强", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 90, _aiTags: ["对话助手", "C端", "字节系"] },
+          { name: "文心一言 / 文心App", url: "https://yiyan.baidu.com", description: "国内月活最高AI应用，2亿+用户，统一入口整合百度全系AI能力", _aiCompany: "百度 Baidu (中国)", _aiScore: 89, _aiTags: ["对话助手", "百度系", "国民级"] },
+          { name: "腾讯元宝", url: "https://yuanbao.tencent.com", description: "微信内置AI助手，四引擎切换，文件交付能力强，阅后即焚隐私保护", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 90, _aiTags: ["对话助手", "微信生态", "国产"] },
+          { name: "Microsoft Copilot", url: "https://copilot.microsoft.com", description: "微软官方AI助手，深度集成Windows/Office，企业用户量大", _aiCompany: "Microsoft (美国)", _aiScore: 88, _aiTags: ["对话助手", "微软生态", "企业级"] },
+          { name: "Poe", url: "https://poe.com", description: "多模型聚合平台，一个App用GPT/Claude/Gemini等所有模型", _aiCompany: "Quora (美国)", _aiScore: 86, _aiTags: ["多模型聚合", "平台型", "海外"] },
+          { name: "通义千问 App", url: "https://tongyi.aliyun.com", description: "阿里C端旗舰AI助手，统一千问品牌，开源模型也可体验", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 85, _aiTags: ["对话助手", "阿里系", "开源"] },
+          { name: "Character.AI", url: "https://character.ai", description: "AI角色聊天鼻祖，2000万月活，Google软收购后仍独立运营", _aiCompany: "Character.AI (美国)", _aiScore: 84, _aiTags: ["角色聊天", "娱乐陪伴", "海外"] },
+          { name: "即梦 AI", url: "https://jimeng.jianying.com", description: "AI绘画+视频生成工具，Seedance/Seedream驱动，国内最火AI创作工具", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 84, _aiTags: ["AI绘画", "视频生成", "创作工具"] },
+          { name: "通义听悟", url: "https://tingwu.aliyun.com", description: "语音转写会议纪要神器，多语种字幕，职场学习必备", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 82, _aiTags: ["会议纪要", "语音转写", "效率工具"] },
+          { name: "ima 知识库", url: "https://ima.qq.com", description: "腾讯AI知识库工作台，上传本地文件/公众号构建专属知识库问答", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 80, _aiTags: ["知识库", "RAG", "腾讯系"] },
+          { name: "飞书 AI", url: "https://www.feishu.cn", description: "飞书内置AI，文档/会议/多维表格全场景智能辅助，办公首选", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 83, _aiTags: ["办公AI", "飞书生态", "企业级"] },
+          { name: "剪映 AI", url: "https://www.capcut.cn", description: "视频剪辑AI工具，AI脚本/AI数字人/智能剪辑，创作者必备", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 82, _aiTags: ["视频剪辑", "创作工具", "字节系"] },
+          { name: "腾讯文档 AI", url: "https://docs.qq.com", description: "在线文档内置AI，智能写作/表格分析/PPT生成，办公效率工具", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 79, _aiTags: ["办公AI", "文档工具", "腾讯系"] },
+          { name: "腾讯会议 AI", url: "https://meeting.tencent.com", description: "会议实时转写/智能纪要/实时翻译，混元大模型驱动", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 78, _aiTags: ["会议AI", "效率工具", "腾讯系"] },
+          { name: "猫箱", url: "https://maoxiang.doubao.com", description: "虚拟情感陪伴AI，角色对话丰富，字节系情感陪伴产品", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 76, _aiTags: ["情感陪伴", "角色聊天", "字节系"] },
+          { name: "星野", url: "https://www.xingye.com", description: "AI虚拟陪伴社交，Glow品牌重启版，年轻用户群体大", _aiCompany: "MiniMax (中国)", _aiScore: 77, _aiTags: ["情感陪伴", "社交", "MiniMax"] },
+          { name: "通义星尘", url: "https://tongyi.aliyun.com/xingchen", description: "角色定制平台，创建虚拟人设知识库，游戏教育陪伴场景", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 75, _aiTags: ["角色定制", "NPC", "阿里系"] },
+          { name: "通义点金", url: "https://tongyi.aliyun.com", description: "金融AI助手，市场分析风险预警财报解读，投研场景专用", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 74, _aiTags: ["金融AI", "投研工具", "阿里系"] },
+          { name: "DuMate", url: "https://dumate.baidu.com", description: "百度AI编程助手，文心大模型驱动，代码补全与调试", _aiCompany: "百度 Baidu (中国)", _aiScore: 73, _aiTags: ["编程助手", "百度系", "IDE插件"] },
+          { name: "HuggingChat", url: "https://huggingface.co/chat", description: "开源模型聊天平台，115+开源模型可体验，开发者社区活跃", _aiCompany: "Hugging Face (美国)", _aiScore: 78, _aiTags: ["开源模型", "社区", "开发者"] },
+          { name: "Meta AI", url: "https://ai.meta.com", description: "Meta社交内置AI，Instagram/WhatsApp/Facebook全系集成", _aiCompany: "Meta (美国)", _aiScore: 77, _aiTags: ["社交内置", "Meta生态", "海外"] },
+          { name: "Notion AI", url: "https://www.notion.so/product/ai", description: "笔记与知识库内置AI，写作总结翻译全能，全球数千万用户", _aiCompany: "Notion Labs (美国)", _aiScore: 85, _aiTags: ["笔记AI", "效率工具", "海外"] },
+          { name: "Canva Magic Studio", url: "https://www.canva.com/magic-studio", description: "全球最大设计平台AI工具，图像视频PPT全场景，亿级用户", _aiCompany: "Canva (澳大利亚)", _aiScore: 84, _aiTags: ["设计AI", "全场景", "全球用户"] },
+          { name: "Kimi App", url: "https://kimi.moonshot.cn", description: "Kimi官方客户端，长文档阅读与分析最强，科研办公首选", _aiCompany: "月之暗面 Moonshot AI (中国)", _aiScore: 91, _aiTags: ["对话助手", "长文档", "国产"] },
+          { name: "天工 AI App", url: "https://www.tiangong.cn", description: "天工大模型官方应用，搜索+创作+编程全功能，A股上市公司背景", _aiCompany: "昆仑万维 Kunlun (中国)", _aiScore: 78, _aiTags: ["对话助手", "全模态", "A股上市"] },
+          { name: "PicPic", url: "", description: "海外AI写真产品，字节出海AI创作工具，海外市场表现好", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 72, _aiTags: ["AI写真", "出海", "字节系"] }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
+        name: "大模型",
+        enName: "LLM",
         links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+          { name: "GPT-5 系列", url: "https://openai.com", description: "全球行业标杆，全能型大模型，代码/创意/推理全面领先，生态最完善", _aiCompany: "OpenAI (美国)", _aiScore: 99, _aiTags: ["闭源", "多模态", "API"] },
+          { name: "Claude Opus 4.7", url: "https://www.anthropic.com", description: "长文本推理王者，安全对齐标杆，法律金融代码场景可靠性极高", _aiCompany: "Anthropic (美国)", _aiScore: 97, _aiTags: ["闭源", "长文本", "安全对齐"] },
+          { name: "Gemini 3.5 Pro", url: "https://deepmind.google", description: "多模态与超长上下文绝对王者，200万Token窗口，原生集成Google搜索", _aiCompany: "Google DeepMind (美国)", _aiScore: 96, _aiTags: ["闭源", "多模态", "超长上下文"] },
+          { name: "Kimi K3", url: "https://kimi.moonshot.cn", description: "国产最强，全球前三，代码前端能力局部超越国际头部，长文本鼻祖", _aiCompany: "月之暗面 Moonshot AI (中国)", _aiScore: 94, _aiTags: ["闭源", "长文本", "国产"] },
+          { name: "Grok 4", url: "https://x.ai", description: "马斯克旗下，实时信息与社交趋势理解强，幽默风格独特，推理新锐", _aiCompany: "xAI (美国)", _aiScore: 91, _aiTags: ["闭源", "实时搜索", "X生态"] },
+          { name: "GLM-5.2", url: "https://www.zhipuai.cn", description: "清华系学术根基，中文推理领先，AutoGLM手机端GUI Agent国内最强", _aiCompany: "智谱AI Zhipu (中国)", _aiScore: 90, _aiTags: ["部分开源", "中文推理", "Agent能力"] },
+          { name: "文心大模型 5.1", url: "https://yiyan.baidu.com", description: "中文语义理解最深，知识图谱最全，与百度搜索百科深度整合，月活2亿+", _aiCompany: "百度 Baidu (中国)", _aiScore: 89, _aiTags: ["闭源", "中文最强", "企业服务"] },
+          { name: "通义千问 Qwen3-Max", url: "https://tongyi.aliyun.com", description: "开源标杆Apache 2.0，代码数学突出，全球开源生态影响力最大", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 89, _aiTags: ["开源", "Apache 2.0", "云原生"] },
+          { name: "Llama 4 / 5 系列", url: "https://ai.meta.com", description: "全球最大开源模型生态，社区微调版最多，国际化项目首选", _aiCompany: "Meta AI (美国)", _aiScore: 88, _aiTags: ["开源", "MoE架构", "社区生态"] },
+          { name: "Mistral 系列", url: "https://mistral.ai", description: "欧洲AI代表，高效推理，代码模型Devstral突出，Apache 2.0开源", _aiCompany: "Mistral AI (法国)", _aiScore: 87, _aiTags: ["开源", "高效推理", "欧洲"] },
+          { name: "豆包 Seed 2.1 Pro", url: "https://www.doubao.com", description: "极致性价比，推理成本行业最低，C端体验最佳，电商短视频场景强", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 86, _aiTags: ["闭源", "高性价比", "C端体验"] },
+          { name: "混元 Hy3", url: "https://hunyuan.tencent.com", description: "MoE架构2950亿参数，登顶OpenRouter全球调用量榜，微信生态深度打通", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 85, _aiTags: ["闭源", "MoE架构", "社交生态"] },
+          { name: "DeepSeek V3 / R1", url: "https://www.deepseek.com", description: "代码能力突出，推理能力强，开源模型社区活跃，开发者友好度高", _aiCompany: "深度求索 DeepSeek (中国)", _aiScore: 85, _aiTags: ["开源", "代码强", "高性价比"] },
+          { name: "星火 X2", url: "https://xinghuo.xfyun.cn", description: "语音技术积淀深厚，教育医疗行业落地多，多模态交互成熟", _aiCompany: "科大讯飞 iFlytek (中国)", _aiScore: 84, _aiTags: ["闭源", "语音AI", "教育医疗"] },
+          { name: "Command R+", url: "https://cohere.com", description: "企业级RAG专长，检索增强生成领先，适合企业知识库场景", _aiCompany: "Cohere (加拿大)", _aiScore: 83, _aiTags: ["闭源", "RAG专长", "企业级"] },
+          { name: "Yi-Lightning", url: "https://www.01.ai", description: "中英双语最均衡，开源模型国际社区影响力大，出海应用首选", _aiCompany: "零一万物 01.AI (中国)", _aiScore: 83, _aiTags: ["开源", "双语均衡", "出海"] },
+          { name: "Gemma 4.5", url: "https://ai.google.dev/gemma", description: "Google开源轻量化模型，1M上下文，Mac端部署体验佳", _aiCompany: "Google (美国)", _aiScore: 82, _aiTags: ["开源", "轻量高效", "Google技术"] },
+          { name: "Phi-4", url: "https://azure.microsoft.com", description: "微软小模型天花板，参数小能力强，边缘设备部署首选", _aiCompany: "Microsoft (美国)", _aiScore: 81, _aiTags: ["开源", "小模型", "边缘部署"] },
+          { name: "MiniMax 海螺", url: "https://www.minimaxi.com", description: "多模态综合能力强，音视频生成突出，C端产品矩阵丰富", _aiCompany: "MiniMax (中国)", _aiScore: 81, _aiTags: ["闭源", "多模态", "音视频"] },
+          { name: "阶跃星辰 Step-2", url: "https://www.stepfun.com", description: "多模态生成质量高，角色扮演类产品经验丰富，技术迭代快", _aiCompany: "阶跃星辰 StepFun (中国)", _aiScore: 80, _aiTags: ["闭源", "多模态", "角色扮演"] },
+          { name: "百川 Baichuan 4", url: "https://www.baichuan-ai.com", description: "王小川创立，中文理解扎实，开源闭源双线布局，行业落地广", _aiCompany: "百川智能 Baichuan (中国)", _aiScore: 79, _aiTags: ["部分开源", "中文理解", "行业落地"] },
+          { name: "日日新 SenseNova", url: "https://platform.sensenova.cn", description: "计算机视觉出身，多模态理解强，企业级服务完善", _aiCompany: "商汤科技 SenseTime (中国)", _aiScore: 78, _aiTags: ["闭源", "视觉AI", "企业级"] },
+          { name: "Midjourney V8", url: "https://www.midjourney.com", description: "AI绘画艺术标杆，光影构图质感顶级，艺术表现力全网第一，支持8K输出", _aiCompany: "Midjourney Inc. (美国)", _aiScore: 88, _aiTags: ["图像生成", "艺术级", "云端订阅"] },
+          { name: "FLUX 2 Pro", url: "https://blackforestlabs.ai", description: "Stable Diffusion原班人马打造，开源图像生成新王，4MP分辨率，写实人像突出", _aiCompany: "Black Forest Labs (德国)", _aiScore: 85, _aiTags: ["图像生成", "开源", "开发者友好"] },
+          { name: "DALL·E 4", url: "https://openai.com/dall-e-4", description: "OpenAI官方图像生成模型，与ChatGPT深度集成，中文Prompt理解准确", _aiCompany: "OpenAI (美国)", _aiScore: 84, _aiTags: ["图像生成", "OpenAI", "多模态集成"] },
+          { name: "Runway Gen-4.5", url: "https://runwayml.com", description: "电影级AI视频生成，摄像机运动控制专业，角色一致性强，影视级工具链", _aiCompany: "Runway ML (美国)", _aiScore: 83, _aiTags: ["视频生成", "电影级", "专业工具"] },
+          { name: "Suno V5.5", url: "https://suno.com", description: "AI音乐生成市场第一，200万付费用户，完整歌曲含歌词人声，风格覆盖最广", _aiCompany: "Suno Inc. (美国)", _aiScore: 82, _aiTags: ["音乐生成", "人声演唱", "市场第一"] },
+          { name: "Stable Diffusion 3", url: "https://stability.ai", description: "开源图像生成鼻祖，完全本地部署可控性强，自定义模型LoRA生态最丰富", _aiCompany: "Stability AI (英国)", _aiScore: 80, _aiTags: ["图像生成", "开源", "本地部署"] },
+          { name: "Pika 2.2", url: "https://pika.art", description: "短视频AI生成神器，社交内容创作首选，特效丰富上手快，性价比高", _aiCompany: "Pika Labs (美国)", _aiScore: 79, _aiTags: ["视频生成", "短视频", "创作者工具"] },
+          { name: "Udio", url: "https://www.udio.com", description: "高保真AI音乐生成，器乐音质突出，48kHz立体声输出，专业音乐制作人首选", _aiCompany: "Udio (美国)", _aiScore: 78, _aiTags: ["音乐生成", "高保真", "专业级"] },
+          { name: "天工大模型", url: "https://www.tiangong.cn", description: "双千亿级大模型，A股上市公司，ARR突破8亿美元，短剧/音乐/世界模型全布局", _aiCompany: "昆仑万维 Kunlun (中国)", _aiScore: 77, _aiTags: ["开源", "全模态", "A股上市"] },
+          { name: "Falcon 系列", url: "https://falconllm.tii.ae", description: "中东开源代表，Apache 2.0协议，阿拉伯语支持好", _aiCompany: "TII (阿联酋)", _aiScore: 75, _aiTags: ["开源", "Apache 2.0", "多语言"] },
+          { name: "Seedance 2.5", url: "https://jimeng.jianying.com", description: "视频生成模型，支持30秒连续视频直出，多模态参考素材输入", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 82, _aiTags: ["视频生成", "多模态", "国产"] },
+          { name: "Seedream 5.0 Pro", url: "https://jimeng.jianying.com", description: "图像生成模型，原生4K画质，即梦APP内置，中文Prompt理解精准", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 80, _aiTags: ["图像生成", "4K画质", "国产"] },
+          { name: "通义万相", url: "https://tongyi.aliyun.com/wanxiang", description: "AI艺术创作模型，文生图/涂鸦生成/风格迁移，累计生成3.9亿张图", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 78, _aiTags: ["图像生成", "多模态", "阿里系"] },
+          { name: "HappyHorse", url: "https://tongyi.aliyun.com", description: "视频生成模型，运动真实感与画面一致性强，短视频领域广泛应用", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 77, _aiTags: ["视频生成", "多模态", "阿里系"] },
+          { name: "文心一格", url: "https://yige.baidu.com", description: "百度AI绘画平台，已整合入文心App，中文Prompt理解准确", _aiCompany: "百度 Baidu (中国)", _aiScore: 75, _aiTags: ["图像生成", "百度系", "已整合"] },
+          { name: "豆包音频大模型", url: "https://www.doubao.com", description: "语音生成模型，音色自然，支持多语种，已接入豆包全系产品", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 74, _aiTags: ["语音生成", "多语种", "字节系"] }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
+        name: "AI Agent",
+        enName: "AI Agent",
         links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+          { name: "扣子 Coze", url: "https://www.coze.cn", description: "零代码搭建Agent，插件生态最丰富，国内用户量最大，新手友好", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 95, _aiTags: ["低代码", "插件生态", "C端"] },
+          { name: "Operator", url: "https://openai.com", description: "可自主操作网页填写表单下单的GUI Agent，电商行政场景成功率超90%", _aiCompany: "OpenAI (美国)", _aiScore: 94, _aiTags: ["GUI Agent", "网页操作", "OpenAI"] },
+          { name: "Claude Computer Use", url: "https://www.anthropic.com", description: "可操控桌面GUI的Agent，支持Win/macOS/Linux，自动化办公稳健", _aiCompany: "Anthropic (美国)", _aiScore: 93, _aiTags: ["桌面控制", "办公自动化", "跨平台"] },
+          { name: "Cursor Agent", url: "https://cursor.sh", description: "AI代码编辑器Agent，全项目理解与重构，开发者首选编程智能体", _aiCompany: "Anysphere (美国)", _aiScore: 92, _aiTags: ["编程Agent", "代码重构", "IDE"] },
+          { name: "Claude Code", url: "https://www.anthropic.com", description: "命令行编程Agent，SWE-bench 80%+，软件工程领域统治级表现", _aiCompany: "Anthropic (美国)", _aiScore: 91, _aiTags: ["编程Agent", "CLI", "代码工程"] },
+          { name: "Microsoft Copilot Studio", url: "https://www.microsoft.com/copilot", description: "企业级Agent构建平台，深度集成Office 365生态，企业首选", _aiCompany: "Microsoft (美国)", _aiScore: 90, _aiTags: ["企业级", "Office集成", "低代码"] },
+          { name: "腾讯元器", url: "https://yuanqi.tencent.com", description: "混元大模型驱动，支持发布到QQ/微信，社交生态Agent平台", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 88, _aiTags: ["低代码", "微信生态", "社交"] },
+          { name: "通义灵码 / Qoder", url: "https://tongyi.aliyun.com/lingma", description: "专注编程Agent，代码生成解释优化，IDE插件日活超200万", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 87, _aiTags: ["编程Agent", "代码补全", "IDE插件"] },
+          { name: "AutoGLM", url: "https://www.zhipuai.cn", description: "手机端GUI Agent，订餐购票等任务成功率88%，国内最强移动端智能体", _aiCompany: "智谱AI Zhipu (中国)", _aiScore: 86, _aiTags: ["手机Agent", "GUI操作", "国产"] },
+          { name: "Zapier Central", url: "https://zapier.com/central", description: "工作流自动化Agent，连接5000+应用，企业级自动化首选", _aiCompany: "Zapier (美国)", _aiScore: 85, _aiTags: ["工作流", "SaaS集成", "企业级"] },
+          { name: "AgentGPT", url: "https://agentgpt.reworkd.ai", description: "开源自主Agent，纯前端可视化，支持多LLM接入，GitHub 15k+星", _aiCompany: "Reworkd (美国)", _aiScore: 85, _aiTags: ["开源", "自主Agent", "无代码"] },
+          { name: "TRAE", url: "https://trae.ai", description: "AI研发工具IDE，对标Claude Code完整矩阵，字节内部全量使用", _aiCompany: "字节跳动 ByteDance (中国)", _aiScore: 84, _aiTags: ["编程IDE", "研发工具", "字节系"] },
+          { name: "WorkBuddy / CodeBuddy", url: "https://workbuddy.qq.com", description: "腾讯AI工作台，办公+编程双Agent，混元Hy3驱动，文件交付能力强", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 84, _aiTags: ["办公Agent", "编程Agent", "腾讯系"] },
+          { name: "QClaw / ClawPro", url: "https://qclaw.qq.com", description: "本地AI助手，首创微信直连模式，个人效率工具，企业版ClawPro", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 82, _aiTags: ["本地助手", "微信直连", "效率工具"] },
+          { name: "Relevance AI Agents", url: "https://relevanceai.com/agents", description: "无代码开发环境，轻松实现智能体团队任务自动化", _aiCompany: "Relevance AI (澳大利亚)", _aiScore: 82, _aiTags: ["无代码", "团队协作", "自动化"] },
+          { name: "Salesforce Agent Builder", url: "https://www.salesforce.com", description: "CRM场景Agent，低代码构建，销售客服场景深度优化", _aiCompany: "Salesforce (美国)", _aiScore: 81, _aiTags: ["CRM", "低代码", "企业级"] },
+          { name: "Voiceflow", url: "https://www.voiceflow.com", description: "对话式Agent设计平台，客服机器人首选，团队协作功能强", _aiCompany: "Voiceflow (加拿大)", _aiScore: 80, _aiTags: ["对话设计", "客服机器人", "协作"] },
+          { name: "蚂蚁数科 Agentar", url: "https://www.antgroup.com", description: "全栈式智能体开发平台，贯通算力调度数据治理模型训推全链路", _aiCompany: "蚂蚁集团 Ant Group (中国)", _aiScore: 79, _aiTags: ["全栈平台", "企业级", "金融"] },
+          { name: "文心千帆智能体平台", url: "https://qianfan.cloud.baidu.com", description: "百度企业级Agent开发平台，30万+企业客户，行业模型丰富", _aiCompany: "百度 Baidu (中国)", _aiScore: 79, _aiTags: ["企业级", "百度系", "行业模型"] },
+          { name: "Betteryeah", url: "https://www.betteryeah.com", description: "零门槛Agent平台，Agent Store应用商店模式，上手极快", _aiCompany: "前阿里团队 (中国)", _aiScore: 78, _aiTags: ["零门槛", "应用商店", "C端"] },
+          { name: "Wegic", url: "https://js.design", description: "对话式网页设计开发Agent，自然语言描述需求直接生成网页", _aiCompany: "即时设计 (中国)", _aiScore: 77, _aiTags: ["网页设计", "低代码", "设计工具"] },
+          { name: "MindStudio", url: "https://mindstudio.com", description: "AI Agent开发平台，支持多模态，角色Agent创建便捷", _aiCompany: "Mindverse (中国)", _aiScore: 76, _aiTags: ["角色Agent", "多模态", "开发平台"] },
+          { name: "百炼平台", url: "https://bailian.aliyun.com", description: "阿里云企业级Agent开发平台，一键部署Serverless推理，开发者友好", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 80, _aiTags: ["企业级", "云原生", "阿里系"] },
+          { name: "Devin Desktop", url: "https://www.cognition.ai", description: "原Windsurf品牌升级，全球首个自主AI软件工程师，独立完成PR，云沙箱运行", _aiCompany: "Cognition AI (美国)", _aiScore: 90, _aiTags: ["自主编程", "AI工程师", "云端运行"] },
+          { name: "GitHub Copilot", url: "https://github.com/copilot", description: "代码补全市场第一，VS Code原生集成，企业用户量最大，生态最完善", _aiCompany: "GitHub / Microsoft (美国)", _aiScore: 89, _aiTags: ["代码补全", "IDE集成", "微软生态"] },
+          { name: "Gemini Code Assist", url: "https://cloud.google.com/products/gemini/code-assist", description: "Google官方编程助手，GCP深度集成，支持VS Code/JetBrains双平台", _aiCompany: "Google (美国)", _aiScore: 83, _aiTags: ["编程助手", "Google云", "IDE插件"] },
+          { name: "Cline", url: "https://github.com/cline/cline", description: "VS Code最强开源Agent插件，支持多模型，文件编辑终端操作全自动化", _aiCompany: "开源社区 (美国)", _aiScore: 79, _aiTags: ["开源", "VS Code", "自主编程"] },
+          { name: "Aider", url: "https://aider.chat", description: "命令行编程Agent，Apache 2.0开源，Git集成好，支持本地大模型", _aiCompany: "Aider (美国)", _aiScore: 77, _aiTags: ["开源", "CLI", "本地部署"] },
+          { name: "Continue", url: "https://www.continue.dev", description: "开源VS Code插件，BYO模型完全免费，支持所有主流大模型", _aiCompany: "Continue Dev (美国)", _aiScore: 76, _aiTags: ["开源", "VS Code", "免费"] },
+          { name: "QoderWork", url: "https://tongyi.aliyun.com", description: "桌面端办公Agent，日常工作自动化，数字员工形态", _aiCompany: "阿里巴巴 Alibaba (中国)", _aiScore: 75, _aiTags: ["办公Agent", "桌面应用", "阿里系"] }
         ]
       },
+
       {
-        name: "轻小说",
-        enName: "Light Novels",
+        name: "已停运",
+        enName: "Closed",
         links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+          { name: "Sora", url: "https://openai.com", description: "曾经的AI视频生成标杆，2026年3月宣布关停消费者端，API 9月停止", _aiCompany: "OpenAI (美国)", _aiScore: 95, _aiCloseDate: "2026.04", _aiCloseReason: "战略调整，资源整合至其他产品线" },
+          { name: "Humane Ai Pin", url: "", description: "烧钱2.41亿美元的AI穿戴设备，最终以1.16亿贱卖给惠普，服务器全关", _aiCompany: "Humane (美国)", _aiScore: 90, _aiCloseDate: "2025.02", _aiCloseReason: "硬件销量惨淡，商业模式彻底失败" },
+          { name: "Inflection AI", url: "", description: "融资15亿美元明星AI公司，被微软吸收后变空壳，核心团队并入微软", _aiCompany: "Inflection (美国)", _aiScore: 88, _aiCloseDate: "2024.05", _aiCloseReason: "被微软收购整合，产品停止独立运营" },
+          { name: "Builder.ai", url: "", description: "融资4.45亿估值15亿的AI编程明星，2025年5月运营崩溃后破产", _aiCompany: "Builder.ai (美国)", _aiScore: 85, _aiCloseDate: "2025.05", _aiCloseReason: "财务造假+债务违约，实质是人工而非AI" },
+          { name: "Character.AI (核心团队)", url: "", description: "AI角色聊天鼻祖，Google 27亿美金软收购，创始团队回归DeepMind", _aiCompany: "Character.AI (美国)", _aiScore: 84, _aiCloseDate: "2024.08", _aiCloseReason: "Google人才收编式收购，产品仍运营但名存实亡" },
+          { name: "Yupp", url: "", description: "硅谷明星AI评测平台，2026年春关停，曾获顶级资本加持", _aiCompany: "Yupp AI (美国)", _aiScore: 82, _aiCloseDate: "2026.03", _aiCloseReason: "商业模式不可持续，资金耗尽" },
+          { name: "秒鸭相机", url: "", description: "阿里旗下AI相机应用，2025年9月团队解散，2026年5月消息曝光", _aiCompany: "阿里巴巴 (中国)", _aiScore: 80, _aiCloseDate: "2025.09", _aiCloseReason: "阿里内部优化，C端产品收缩" },
+          { name: "Rewind AI", url: "", description: "Mac屏幕录音AI搜索工具，2025年12月Meta收购Limitless后核心功能禁用", _aiCompany: "Rewind (美国)", _aiScore: 78, _aiCloseDate: "2025.12", _aiCloseReason: "被Meta收购，核心功能下线" },
+          { name: "鹿班智能设计", url: "", description: "阿里老牌AI广告设计平台，2025年6月30日全部服务终止", _aiCompany: "阿里巴巴 (中国)", _aiScore: 78, _aiCloseDate: "2025.06", _aiCloseReason: "业务整合，停止独立服务" },
+          { name: "腾讯智影", url: "", description: "腾讯AI视频与数字人平台，2025年6月30日停登，用户数据清空", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 78, _aiCloseDate: "2025.06", _aiCloseReason: "名义升级改造，实际无限期关停" },
+          { name: "Glow", url: "", description: "AI陪伴App先驱，2023年3月因敏感内容与隐私投诉下架，后更名星野重启", _aiCompany: "MiniMax (中国)", _aiScore: 75, _aiCloseDate: "2023.03", _aiCloseReason: "内容监管问题，品牌更名重启" },
+          { name: "讯飞写作", url: "", description: "讯飞旗下AI写作工具，2025年11月30日正式终止服务", _aiCompany: "科大讯飞 (中国)", _aiScore: 75, _aiCloseDate: "2025.11", _aiCloseReason: "产品线调整，资源聚焦核心业务" },
+          { name: "奇域AI", url: "", description: "小红书国风AI绘图工具，2025年6月30日独立服务关闭，并入镜构小程序", _aiCompany: "小红书 Xiaohongshu (中国)", _aiScore: 74, _aiCloseDate: "2025.06", _aiCloseReason: "独立APP关停，功能整合至主产品" },
+          { name: "冒泡鸭", url: "", description: "AI角色扮演陪伴App，累计下载超600万，2025年11月5日停止运营", _aiCompany: "阶跃星辰 StepFun (中国)", _aiScore: 73, _aiCloseDate: "2025.11", _aiCloseReason: "陪伴类产品监管+商业化困难" },
+          { name: "XEVA / X Eva", url: "", description: "小冰旗下AI克隆与陪伴产品，2025年11月30日终止全部运营服务", _aiCompany: "小冰 Xiaoice (中国)", _aiScore: 72, _aiCloseDate: "2025.11", _aiCloseReason: "战略调整，产品线收缩" },
+          { name: "狸谱", url: "", description: "AIGC动漫与同人社区，巅峰月活约百万，2025年10月31日正式停运", _aiCompany: "独立创业团队 (中国)", _aiScore: 71, _aiCloseDate: "2025.10", _aiCloseReason: "版权争议+商业化失败" },
+          { name: "Trik AI", url: "", description: "小红书第一代AI绘图，因艺术家版权诉讼关停，后推出奇域AI", _aiCompany: "小红书 Xiaohongshu (中国)", _aiScore: 70, _aiCloseDate: "2023年末", _aiCloseReason: "版权诉讼争议，产品换代" },
+          { name: "Coqui AI", url: "", description: "AI语音生成与克隆创业公司，2024年1月商业关停，开源代码社区维护", _aiCompany: "Coqui (美国)", _aiScore: 70, _aiCloseDate: "2024.01", _aiCloseReason: "融资困难，商业化失败" },
+          { name: "未伴", url: "", description: "QQ音乐旗下AI陪伴社交App，2024年6月因AI陪伴内容监管审查下架", _aiCompany: "腾讯音乐 (中国)", _aiScore: 68, _aiCloseDate: "2024.06", _aiCloseReason: "监管审查，大陆服务终止" },
+          { name: "Artifact", url: "", description: "AI个性化新闻阅读器，市场机会不足停运，技术被雅虎收购", _aiCompany: "Instagram创始人 (美国)", _aiScore: 68, _aiCloseDate: "2024年", _aiCloseReason: "市场规模不足，技术出售" },
+          { name: "腾讯翻译君", url: "", description: "老牌翻译工具，网页/APP/小程序全线下线，功能整合入元宝等大模型产品", _aiCompany: "腾讯 Tencent (中国)", _aiScore: 67, _aiCloseDate: "2025.03", _aiCloseReason: "功能被大模型产品替代" },
+          { name: "Neeva 搜索", url: "", description: "无广告订阅制AI搜索引擎，2023年6月关闭，团队技术并入Snowflake", _aiCompany: "Neeva (美国)", _aiScore: 66, _aiCloseDate: "2023.06", _aiCloseReason: "用户量不足，C端搜索难盈利" },
+          { name: "万物追踪", url: "", description: "AI信息监控工具，2025年1月公测，不到3个月全面下架", _aiCompany: "MiniMax (中国)", _aiScore: 65, _aiCloseDate: "2025.04", _aiCloseReason: "上线不足三月即下架，原因未公开" },
+          { name: "波形智能 Weaver", url: "", description: "中文内容创作垂域大模型，2024年10月解散，核心团队集体入职OPPO", _aiCompany: "波形智能 (中国)", _aiScore: 65, _aiCloseDate: "2024.10", _aiCloseReason: "公司解散，团队被OPPO收购" },
+          { name: "Wow AI", url: "", description: "美团AI角色聊天产品，2025年12月18日服务器关闭，用户无法登录", _aiCompany: "美团 Meituan (中国)", _aiScore: 64, _aiCloseDate: "2025.12", _aiCloseReason: "美团非核心业务收缩" },
+          { name: "Afiniti", url: "", description: "创立18年的老牌AI独角兽，2024年11月宣布破产，主打客服AI优化", _aiCompany: "Afiniti (美国)", _aiScore: 64, _aiCloseDate: "2024.11", _aiCloseReason: "经营不善，申请破产" },
+          { name: "梯子AI", url: "", description: "百度AI搜索产品，运营约半年后关停，功能并入文心App", _aiCompany: "百度 Baidu (中国)", _aiScore: 63, _aiCloseDate: "2026.03", _aiCloseReason: "业务整合，并入主产品" },
+          { name: "Dot by New Computer", url: "", description: "个性化AI朋友陪伴产品，2025年10月停运，创始人团队方向调整", _aiCompany: "New Computer (美国)", _aiScore: 62, _aiCloseDate: "2025.10", _aiCloseReason: "创始人愿景分歧，资金耗尽" },
+          { name: "Soulmate App", url: "", description: "AI情感陪伴App，无通知直接终止服务，用户数据无法导出", _aiCompany: "独立团队 (美国)", _aiScore: 61, _aiCloseDate: "2025年", _aiCloseReason: "资金耗尽，无预警关停" },
+          { name: "OpenAI AI Text Classifier", url: "", description: "OpenAI官方AI文本检测工具，因准确率太低2023年7月主动撤回", _aiCompany: "OpenAI (美国)", _aiScore: 60, _aiCloseDate: "2023.07", _aiCloseReason: "准确率不足，产品失败" },
+          { name: "Woebot 消费者版", url: "", description: "CBT认知行为疗法AI心理聊天机器人，2025年6月消费者版退役", _aiCompany: "Woebot Health (美国)", _aiScore: 59, _aiCloseDate: "2025.06", _aiCloseReason: "转向B端医疗机构市场" },
+          { name: "异世界回响", url: "", description: "Soul旗下AI角色陪伴应用，2025年9月左右撤出，独立实验终止", _aiCompany: "Soul (中国)", _aiScore: 58, _aiCloseDate: "2025.09", _aiCloseReason: "Soul缩减独立AI陪伴实验" },
+          { name: "纸飞机AI", url: "", description: "AI陪伴应用，2025年退出市场，面壁智能聚焦B端业务", _aiCompany: "面壁智能 ModelBest (中国)", _aiScore: 57, _aiCloseDate: "2025年", _aiCloseReason: "公司战略转向B端" },
+          { name: "Yara AI", url: "", description: "AI心理健康治疗聊天机器人，创始人主动关停因担心安全性", _aiCompany: "Yara AI (美国)", _aiScore: 56, _aiCloseDate: "2025.11", _aiCloseReason: "创始人担忧AI心理治疗安全性" },
+          { name: "Huxe", url: "", description: "AI音频简报播客工具，将邮件日历网页转为个性化播客，2026年5月关停", _aiCompany: "Huxe (美国)", _aiScore: 55, _aiCloseDate: "2026.05", _aiCloseReason: "团队转型，产品停止运营" },
+          { name: "Tome (初代AI演示)", url: "", description: "AI自动生成PPT演示工具先驱，后转型远离AI幻灯片核心功能", _aiCompany: "Tome (美国)", _aiScore: 58, _aiCloseDate: "2025年", _aiCloseReason: "业务转型，偏离原有AI定位" },
+          { name: "Mem.ai", url: "", description: "AI笔记与知识管理工具，2025年后活跃度大幅下降，接近停更", _aiCompany: "Mem Labs (美国)", _aiScore: 55, _aiCloseDate: "2025年", _aiCloseReason: "用户流失，接近自然废弃" },
+          { name: "Luka / Replika (监管重挫)", url: "", description: "AI陪伴鼻祖Replika母公司，意大利被罚500万欧元，业务受监管重创", _aiCompany: "Luka Inc (美国)", _aiScore: 60, _aiCloseDate: "2025.04", _aiCloseReason: "欧盟监管重罚，业务大幅收缩" },
+          { name: "AiU 爱哟", url: "", description: "智谱旗下独立AI陪伴实验产品，2025年下半年撤出，资源集中其他业务", _aiCompany: "智谱AI Zhipu (中国)", _aiScore: 54, _aiCloseDate: "2025下半年", _aiCloseReason: "战略收缩，停止独立陪伴产品" },
+          { name: "Lumi 噜米", url: "", description: "AI情感陪伴应用，2025年下半年陪伴App退潮中停运", _aiCompany: "禹幻科技 (中国)", _aiScore: 53, _aiCloseDate: "2025下半年", _aiCloseReason: "陪伴赛道集体退潮" },
+          { name: "momoAI", url: "", description: "AI陪伴产品，2025年国内陪伴应用关停潮中下架", _aiCompany: "清杉信息 (中国)", _aiScore: 52, _aiCloseDate: "2025年", _aiCloseReason: "国内AI陪伴产品集体退出" },
+          { name: "我在AI", url: "", description: "AI陪伴应用，2025年停止维护，无明确官方停运公告", _aiCompany: "有零科技 (中国)", _aiScore: 51, _aiCloseDate: "2025年", _aiCloseReason: "停止维护，自然消亡" }
         ]
       }
     ]
@@ -5292,6 +5108,28 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  // 点击返回主页：复用已打开的主页面标签页，若已关闭则新建
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');

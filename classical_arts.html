@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#0071e3">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="书影音 - 您通往知识和文化的门户">
-<title>Kisstr - Books, Movies & Music</title>
+<meta name="description" content="古典艺术、文学、博物馆、典籍与人文资源导航">
+<title>古典艺文 - Kisstr</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -4448,7 +4448,7 @@
 </header>
 
 <section class="hero">
-  <h1>书影音</h1>
+  <h1>古典艺文</h1>
   <p class="quote-text" id="quoteText"></p>
 </section>
 
@@ -4484,363 +4484,1040 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
+  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <p class="footer-copy">古典艺文 · 优质网站收藏</p>
   <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
 </footer>
 
 <script>
-// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
-window.name = 'kisstr_home';
-
 const linksData = [
   {
-    name: "ACGN",
-    icon: "🌟",
-    color: "linear-gradient(135deg, #ff6b6b, #ee5a6f)",
-    subcategories: [
+    "name": "古典艺文",
+    "icon": "🏺",
+    "color": "linear-gradient(135deg, #6c5ce7, #b2bec3)",
+    "subcategories": [
       {
-        name: "动漫",
-        enName: "Anime",
-        links: [
-          { name: "动漫GHG", url: "https://oneghg.com/", description: "电脑端没广告 手机有广告" },
-          { name: "Anich", url: "https://anich.emmmm.eu.org", description: "Anich - 免费动漫网站" },
-          { name: "咕咕番", url: "https://gugu3.com/", description: "咕咕番 - 在线动漫网站" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "anich 下载页", url: "https://anich.emmmm.eu.org/", description: "anich - 下载页" },
-          { name: "lanerc", url: "https://lanerc.app/", description: "lanerc - 动漫在线观看" },
-          { name: "animeko", url: "https://animeko.org/", description: "animeko - 在线动漫网站" },
-          { name: "AniBaka", url: "https://app.anibaka.com/", description: "AniBaka - 动漫播放应用" },
-          { name: "kazumi", url: "https://kazumi.app/", description: "kazumi - 动漫在线观看" },
-          { name: "Cat Maven", url: "https://jason-wam.github.io/Cat-Maven-2023/web/", description: "Cat Maven - 动漫在线播放器" },
-          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
-          { name: "番剧评分", url: "https://anilist.co/", description: "AniList - 番剧评分与追踪" },
-          { name: "识别番剧", url: "https://trace.moe/", description: "以图搜番" },
-          { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
-          { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
-          { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "中国哲学书电子化计划",
+            "url": "https://ctext.org/zh",
+            "description": "收录大量中国古代先秦至汉代及以后经典文献的电子文本库。"
+          },
+          {
+            "name": "汉典",
+            "url": "https://www.zdic.net/",
+            "description": "权威的大型在线汉语字典、词典、成语及古典文化字词查考工具。"
+          },
+          {
+            "name": "国学网",
+            "url": "http://www.guoxue.com/",
+            "description": "涵盖历代经史子集、传统文化研究与文献检索的国学综合门户。"
+          },
+          {
+            "name": "古诗文网",
+            "url": "https://www.gushiwen.cn/",
+            "description": "提供历代古诗词、文言文全文、翻译、赏析及注音的经典平台。"
+          },
+          {
+            "name": "诗词吾爱",
+            "url": "https://www.gushiwen.org/",
+            "description": "专注于古典诗词创作、平仄格律检测及诗友交流的专业网站。"
+          },
+          {
+            "name": "全唐诗数据库",
+            "url": "http://www.tangpoetry.com/",
+            "description": "专注于唐代诗歌检索、作者考证及作品分类的专题数据库。"
+          },
+          {
+            "name": "中华诗词网",
+            "url": "http://www.zhsc.net/",
+            "description": "推动古典诗词创作、研究、学术交流与典籍整理的全国性平台。"
+          },
+          {
+            "name": "故宫博物院",
+            "url": "https://www.dpm.org.cn/",
+            "description": "展出故宫藏品、文物高清图录及皇家历史艺术研究的官方网站。"
+          },
+          {
+            "name": "数字故宫",
+            "url": "https://www.dpm.org.cn/digital.html",
+            "description": "汇集高精度文物3D建模、全景数字展览与历代名画高质赏析。"
+          },
+          {
+            "name": "中国国家博物馆",
+            "url": "http://www.chnmuseum.cn/",
+            "description": "展出中华文明历史文物、艺术珍品及重大历史文化展览。"
+          },
+          {
+            "name": "台北故宫博物院 Open Data",
+            "url": "https://theme.npm.edu.tw/opendata/",
+            "description": "提供大量馆藏书画、器物的高清大图免费下载与公共授权。"
+          },
+          {
+            "name": "典藏台湾",
+            "url": "https://catalog.digitalarchives.tw/",
+            "description": "整合台湾各大机构典藏之历史文献、文物及艺术档案的数字化平台。"
+          },
+          {
+            "name": "国家图书馆中国古籍保护网",
+            "url": "http://www.nlc.cn/pcbo/",
+            "description": "全国古籍普查成果、国家珍贵古籍名录及古籍保护资讯平台。"
+          },
+          {
+            "name": "中华古籍资源库",
+            "url": "http://read.nlc.cn/gajib/",
+            "description": "国家图书馆数字化的历代善本古籍、地方志及拓片影像库。"
+          },
+          {
+            "name": "台湾大学文史哲学报",
+            "url": "https://www.ora.ntu.edu.tw/",
+            "description": "刊载文史哲学术研究论文，涵盖中国古典文学与思想史研究。"
+          },
+          {
+            "name": "中研院史语所傅斯年图书馆",
+            "url": "https://fsn.ihp.sinica.edu.tw/",
+            "description": "藏有丰富汉籍善本、明清档案、石刻拓片等稀见文献数据库。"
+          },
+          {
+            "name": "搜韵",
+            "url": "https://sou-yun.cn/",
+            "description": "强大的古典诗词辅助工具，集格律校验、诗词检索、典故查考于一体。"
+          },
+          {
+            "name": "韵网",
+            "url": "https://www.yunwang.net/",
+            "description": "专注于汉语韵书、声韵学及古典诗词押韵查考的专业工具。"
+          },
+          {
+            "name": "识典古籍",
+            "url": "https://www.shidian.cn/",
+            "description": "字节跳动与北大联合打造的免费AI古籍数字化阅读与检索平台。"
+          },
+          {
+            "name": "书格",
+            "url": "https://shuge.org/",
+            "description": "自由开放的在线古籍图书馆，分享高画质彩色古籍善本与艺术画卷。"
+          },
+          {
+            "name": "艺术中国",
+            "url": "http://art.china.cn/",
+            "description": "涵盖中国传统书画、非遗文化、古玩鉴赏与当代艺文动态资讯。"
+          },
+          {
+            "name": "中国书法家网",
+            "url": "http://www.shufajia.com/",
+            "description": "展示历代名家书法作品、书法理论、名碑名帖及艺术资讯。"
+          },
+          {
+            "name": "中国书法网",
+            "url": "http://www.freehead.com/",
+            "description": "专注于书法艺术交流、碑帖赏析、篆刻艺术与书法史研究。"
+          },
+          {
+            "name": "书法空间",
+            "url": "http://www.shufa.org/",
+            "description": "汇集历代名家碑帖高清图像、字典查字及书法理论文献。"
+          },
+          {
+            "name": "中国篆刻网",
+            "url": "http://www.zhzk.org/",
+            "description": "提供历代印谱、印人考证、篆刻艺术赏析及古玺印研究。"
+          },
+          {
+            "name": "西泠印社",
+            "url": "http://www.xilingin.com/",
+            "description": "金石篆刻学术团体官网，展示印学研究、书画篆刻珍品。"
+          },
+          {
+            "name": "中国戏曲网",
+            "url": "http://www.xiqu.org/",
+            "description": "涵盖京剧、昆曲等各类中国传统戏曲剧目、剧种与历史名家介绍。"
+          },
+          {
+            "name": "中国昆曲网",
+            "url": "http://www.kunqu.net/",
+            "description": "专注于联合国“人类口头和非物质遗产代表作”昆曲艺术的普及与研究。"
+          },
+          {
+            "name": "中华传统文化网",
+            "url": "http://www.ctwh.org/",
+            "description": "宣传中国传统节日、民俗文化、礼仪及古典文学的综合网站。"
+          },
+          {
+            "name": "中国名画网",
+            "url": "http://www.minghuagong.com/",
+            "description": "汇集中国历代山水、花鸟、人物名画赏析与画家生平介绍。"
+          },
+          {
+            "name": "中华民俗网",
+            "url": "http://www.chinesefolklore.org.cn/",
+            "description": "专注于民俗学研究、民间文艺、神话传说及非物质文化遗产。"
+          },
+          {
+            "name": "经典之门",
+            "url": "http://www.jdzm.org/",
+            "description": "专注于中国古代经典文学、史书、哲学论著阅读与导读。"
+          },
+          {
+            "name": "读书网古籍频道",
+            "url": "https://www.dushu.com/guji/",
+            "description": "提供在线古籍翻阅、经史子集分类检索及注解阅读。"
+          },
+          {
+            "name": "中国历史网",
+            "url": "http://www.lishi.net/",
+            "description": "梳理中国历朝历代历史事件、历史人物、典章制度与文化演变。"
+          },
+          {
+            "name": "史记在线",
+            "url": "http://www.shiji.org/",
+            "description": "司马迁《史记》全文阅读、注解、译文及相关历史事件研究。"
+          },
+          {
+            "name": "资治通鉴网",
+            "url": "http://www.zizhitongjian.com/",
+            "description": "《资治通鉴》原文、胡三省注、译文对照及历史年表查询。"
+          },
+          {
+            "name": "红楼梦网络资源库",
+            "url": "http://www.hongloumeng.org/",
+            "description": "汇集《红楼梦》版本研究、脂评本对照、红学论文及人物分析。"
+          },
+          {
+            "name": "中国红楼梦学会",
+            "url": "http://www.hongloumeng.cn/",
+            "description": "国家级红学研究机构官网，发布红学学术前沿与研讨成果。"
+          },
+          {
+            "name": "儒家网",
+            "url": "http://www.rujiazg.com/",
+            "description": "致力于儒家思想、儒家经典、当代儒学发展及思想史研究。"
+          },
+          {
+            "name": "道教文化网",
+            "url": "http://www.daochina.org/",
+            "description": "弘扬中国传统道教文化、道家哲学、《道德经》及道藏研究。"
+          },
+          {
+            "name": "中华佛典宝库",
+            "url": "http://www.fodian.net/",
+            "description": "搜集并整理大藏经、历代高僧大德著作及佛教文学文献。"
+          },
+          {
+            "name": "电子大藏经(CBETA)",
+            "url": "https://www.cbeta.org/",
+            "description": "全球最权威的汉文大藏经电子化全文检索与研究数据库。"
+          },
+          {
+            "name": "中国音乐家协会古琴学会",
+            "url": "http://www.guqin.org.cn/",
+            "description": "古琴艺术传承、古琴名曲赏析、减字谱查阅与琴人资讯。"
+          },
+          {
+            "name": "琴之界",
+            "url": "https://www.qinzhijie.org/",
+            "description": "专注于古琴文化、古琴琴谱、历代琴史与琴歌研究的数据库。"
+          },
+          {
+            "name": "中国陶瓷网",
+            "url": "http://www.taoci.com/",
+            "description": "展示中国历代官窑、民窑陶瓷艺术、烧造工艺与考古成果。"
+          },
+          {
+            "name": "中国茶文化网",
+            "url": "http://www.chawenhua.com/",
+            "description": "弘扬中国茶道、历代茶书(如《茶经》)、茶艺与茶文化史。"
+          },
+          {
+            "name": "中国园林网",
+            "url": "http://www.yuanlin.com/",
+            "description": "探索中国古典园林艺术、苏州园林造园思想与景观美学。"
+          },
+          {
+            "name": "中国传统建筑网",
+            "url": "http://www.ctjz.org/",
+            "description": "研究中国古代木结构建筑、营造法式、古建保护与审美。"
+          },
+          {
+            "name": "营造学社纪念馆",
+            "url": "http://www.yingzaoxueshe.com/",
+            "description": "纪念梁思成、林徽因等老一辈建筑学者，展示中国古建筑研究。"
+          },
+          {
+            "name": "中国非物质文化遗产网",
+            "url": "http://www.ihchina.cn/",
+            "description": "国家级非遗名录、传承人展示及传统手工艺、戏曲保护。"
+          }
         ]
       },
       {
-        name: "漫画",
-        enName: "Manga",
-        links: [
-          { name: "栗子漫画", url: "https://lizimh.com/", description: "仅支持APP使用" },
-          { name: "拷贝漫画", url: "https://www.copymanga.fun/", description: "拷贝漫画 - 海量漫画免费看" },
-          { name: "拷贝漫画 镜像", url: "https://copy3000.com/", description: "拷贝漫画镜像站，备用访问" },
-          { name: "拷贝漫画下载器", url: "https://github.com/lanyeeee/copymanga-downloader", description: "⚠️ 需把设置里的API改成\napi.copy3000.com，不改连不了网" },
-          { name: "Kotatsu", url: "https://kotatsuapp.com/", description: "Kotatsu - 开源漫画阅读器" },
-          { name: "包子漫画", url: "https://bzmgcn.com/", description: "包子漫画 - 在线漫画阅读平台" },
-          { name: "Mihon", url: "https://mihon.app/", description: "Mihon - 开源漫画阅读APP" },
-          { name: "Venera", url: "https://github.com/venera-app/venera", description: "GitHub - Venera 漫画阅读APP" },
-          { name: "koz漫画", url: "https://koz.moe/", description: "" }
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "故宫名画记",
+            "url": "https://minghuaji.dpm.org.cn/",
+            "description": "故宫博物院出品，极高像素超高清赏析历代传世名画。"
+          },
+          {
+            "name": "数字敦煌",
+            "url": "https://www.e-dunhuang.org.cn/",
+            "description": "莫高窟壁画与石窟的高清3D数字化展示、虚拟漫游平台。"
+          },
+          {
+            "name": "敦煌研究院",
+            "url": "https://www.dha.ac.cn/",
+            "description": "敦煌石窟考古、藏经洞文献研究及敦煌艺术保护官方网站。"
+          },
+          {
+            "name": "陕西历史博物馆",
+            "url": "https://www.sxhm.com/",
+            "description": "展现周秦汉唐历史文物、金银器、壁画及关中文明。"
+          },
+          {
+            "name": "上海博物馆",
+            "url": "https://www.shanghaimuseum.net/",
+            "description": "以江南青铜器、历代书法、绘画及陶瓷典藏见长的顶级博物馆。"
+          },
+          {
+            "name": "南京博物院",
+            "url": "https://www.njmuseum.com/",
+            "description": "展现六朝古都文化、江苏历史文物及江南民间传统艺术。"
+          },
+          {
+            "name": "浙江省博物馆",
+            "url": "https://www.zjmuseum.com.cn/",
+            "description": "藏有良渚文化文物、越窑青瓷及富春山居图(剩山图)等珍品。"
+          },
+          {
+            "name": "湖南博物院",
+            "url": "https://www.hnmuseum.com/",
+            "description": "以马王堆汉墓出土文物、商周青铜器及楚文化为核心特色。"
+          },
+          {
+            "name": "河南博物院",
+            "url": "https://www.chnmus.net/",
+            "description": "呈现中原文明起源、贾湖骨笛、妇好鸮尊等重磅历史文物。"
+          },
+          {
+            "name": "三星堆博物馆",
+            "url": "https://www.sxd.cn/",
+            "description": "展示古蜀文明古城遗址、青铜神树、金面具等独特考古奇迹。"
+          },
+          {
+            "name": "中国考古网",
+            "url": "http://www.kaogu.cn/",
+            "description": "中国社会科学院考古研究所官网，发布重大考古发现与成果。"
+          },
+          {
+            "name": "文物出版社",
+            "url": "http://www.wenwu.com/",
+            "description": "专业出版考古报告、博物馆藏品图录及文史典籍的官方机构。"
+          },
+          {
+            "name": "中华书局",
+            "url": "http://www.zhbook.com.cn/",
+            "description": "中国最权威的古籍整理、整理本二十四史及文史专业出版机构。"
+          },
+          {
+            "name": "上海古籍出版社",
+            "url": "http://www.shanghaiguji.com/",
+            "description": "致力于古典文学、文史典籍、学术著作与古籍整理出版。"
+          },
+          {
+            "name": "文津阁",
+            "url": "http://www.wenjinge.com/",
+            "description": "关注四库全书文化、清代藏书楼历史与典籍影印出版。"
+          },
+          {
+            "name": "国家古籍保护中心",
+            "url": "http://www.guji.org.cn/",
+            "description": "推进全国古籍修复、古籍数字化及古籍人才培养的权威平台。"
+          },
+          {
+            "name": "中国古籍网",
+            "url": "http://www.chinaguji.org/",
+            "description": "提供各类电子版古籍下载、版本鉴赏与古籍买卖资讯。"
+          },
+          {
+            "name": "汉学研究中心",
+            "url": "https://ccs.ncl.edu.tw/",
+            "description": "促进国际汉学交流、提供国际汉学研究资源与学者数据库。"
+          },
+          {
+            "name": "欧洲汉学学会(EACS)",
+            "url": "https://chinesestudies.eu/",
+            "description": "促进欧洲各国中国古典文化、文史哲研究的学术组织。"
+          },
+          {
+            "name": "美国亚洲研究学会(AAS)",
+            "url": "https://www.asianstudies.org/",
+            "description": "全球最大的亚洲研究(含中国古典艺文研究)学术机构。"
+          },
+          {
+            "name": "普林斯顿大学东亚图书馆",
+            "url": "https://eastasianlib.princeton.edu/",
+            "description": "拥有丰富的中文古籍善本、明清小说及艺术史藏书。"
+          },
+          {
+            "name": "哈佛燕京图书馆",
+            "url": "https://library.harvard.edu/libraries/harvard-yenching",
+            "description": "海外藏有最多中国古籍善本与珍贵文献的顶级学术图书馆。"
+          },
+          {
+            "name": "哈佛燕京学社",
+            "url": "https://harvard-yenching.org/",
+            "description": "资助东亚人文社会科学研究，特别是古典人文领域的学术机构。"
+          },
+          {
+            "name": "大英图书馆中文馆藏",
+            "url": "https://www.bl.uk/",
+            "description": "藏有大量敦煌遗书、永乐大典残本及中国早期印本古籍。"
+          },
+          {
+            "name": "法国国家图书馆数字古籍(Gallica)",
+            "url": "https://gallica.bnf.fr/",
+            "description": "含有大量法国收藏的敦煌写本、中国古代绘画与外传典籍。"
+          },
+          {
+            "name": "日本东京大学东洋文化研究所",
+            "url": "http://www.ioc.u-tokyo.ac.jp/",
+            "description": "海外汉学研究重镇，藏有大量中国稀见古籍与汉学资料。"
+          },
+          {
+            "name": "京都大学人文科学研究所",
+            "url": "https://www.zinbun.kyoto-u.ac.jp/",
+            "description": "日本汉学研究发源地之一，专注于中国古代史与古典文献。"
+          },
+          {
+            "name": "汉籍经典综合数据库(JAIRO)",
+            "url": "https://jairo.nii.ac.jp/",
+            "description": "整合日本各大大学图书馆收藏的中文古典汉籍检索系统。"
+          },
+          {
+            "name": "国际 Dunhuang Project (IDP)",
+            "url": "http://idp.bl.uk/",
+            "description": "国际敦煌项目，将全球散落的敦煌遗书数字化高清呈现。"
+          },
+          {
+            "name": "维基文库(中文)",
+            "url": "https://zh.wikisource.org/",
+            "description": "开放的自由文献库，包含海量无版权的中国古典文史著作。"
+          },
+          {
+            "name": "开放文学网",
+            "url": "http://open-lit.com/",
+            "description": "提供中国古代历代名著、古典小说、戏剧与诗词全文阅读。"
+          },
+          {
+            "name": "诗词大全",
+            "url": "https://www.shicidaquan.com/",
+            "description": "分门别类整理自先秦至明清的数万首诗、词、曲作品。"
+          },
+          {
+            "name": "古今图书集成数据库",
+            "url": "http://www.gurong.com/",
+            "description": "中国古代规模最大、用处最广的官方类书在线查阅系统。"
+          },
+          {
+            "name": "四库全书网络版",
+            "url": "http://www.sikuquanshu.com/",
+            "description": "提供清代《四库全书》全文检索、文津阁/文渊阁对照。"
+          },
+          {
+            "name": "先秦城邦与学术网",
+            "url": "http://www.xianqin.org/",
+            "description": "关注先秦历史、甲骨文、金文、出土简帛与早期文明。"
+          },
+          {
+            "name": "中国简帛网",
+            "url": "http://www.jianbo.org/",
+            "description": "武汉大学简帛研究中心主办，出土简帛文字考释与研究前沿。"
+          },
+          {
+            "name": "复旦大学出土文献与古文字研究中心",
+            "url": "http://www.gwz.fudan.edu.cn/",
+            "description": "国内顶尖的甲骨文、金文、战国竹简考释学术平台。"
+          },
+          {
+            "name": "汉语大字典电子版",
+            "url": "https://www.hydzd.org/",
+            "description": "专业集字、古字形、字源演变与字义考证的权威工具。"
+          },
+          {
+            "name": "小学堂",
+            "url": "https://xiaoxue.iis.sinica.edu.tw/",
+            "description": "台湾中研院开发，集甲骨文、金文、简帛、汉隶声韵演变大成。"
+          },
+          {
+            "name": "常用国字标准字体笔顺网",
+            "url": "https://strokedb.e-nanmai.com/",
+            "description": "查询汉字标准笔顺、字形演变与楷书结构的教学网站。"
+          },
+          {
+            "name": "中国音韵学网",
+            "url": "http://www.yinyun.cn/",
+            "description": "探讨广韵、切韵、古音学及汉语历代声韵演变规律。"
+          },
+          {
+            "name": "训诂学研究网",
+            "url": "http://www.xungu.org/",
+            "description": "专注于古典文献字词释义、古汉语词汇学与训诂方法。"
+          },
+          {
+            "name": "墨子沙龙/墨学网",
+            "url": "http://www.mozi.org/",
+            "description": "研究先秦墨家思想、科技史、逻辑学及墨子著作。"
+          },
+          {
+            "name": "庄子研究网",
+            "url": "http://www.zhuangzi.org/",
+            "description": "研究《庄子》哲学、道家美学、逍遥游思想及历代注疏。"
+          },
+          {
+            "name": "荀子研究网",
+            "url": "http://www.xunzi.org/",
+            "description": "关注荀子礼法思想、儒学演变及先秦诸子百家争鸣。"
+          },
+          {
+            "name": "孙子兵法网",
+            "url": "http://www.sunzi.org/",
+            "description": "《孙子兵法》十三篇全文、古代兵法策略与历代军事思想。"
+          },
+          {
+            "name": "易经网",
+            "url": "http://www.yijing.org.cn/",
+            "description": "《周易》卦象、爻辞、易传分析及历代易学哲学研究。"
+          },
+          {
+            "name": "王阳明心学网",
+            "url": "http://www.wangyangming.org/",
+            "description": "研究明代阳明心学、“知行合一”及致良知哲学。"
+          },
+          {
+            "name": "朱子学研究网",
+            "url": "http://www.zhuzi.org/",
+            "description": "专注于宋代理学集大成者朱熹的思想、四书章句集注。"
+          },
+          {
+            "name": "戴震与乾嘉学派网",
+            "url": "http://www.daizhen.org/",
+            "description": "探讨清代乾嘉考据学、朴学方法及清代学术思想史。"
+          }
         ]
       },
       {
-        name: "游戏",
-        enName: "Games",
-        links: [
-          { name: "Steam 官网", url: "https://store.steampowered.com/", description: "全球最大数字游戏平台" },
-          { name: "Epic Games", url: "https://www.epicgames.com/", description: "Epic游戏商城，每周免费领游戏" },
-          { name: "GOG 游戏", url: "https://www.gog.com/", description: "DRM-free 正版游戏平台" },
-          { name: "itch.io", url: "https://itch.io/", description: "独立游戏创作者平台" },
-          { name: "Switch520", url: "https://gamer520.com/", description: "Switch520 - Switch游戏资源" },
-          { name: "游民星空", url: "https://www.gamersky.com/", description: "综合游戏资讯门户" },
-          { name: "3DM Game", url: "https://www.3dmgame.com/", description: "游戏资讯与下载站" },
-          { name: "A9VG 电玩部落", url: "https://www.a9vg.com/", description: "主机游戏玩家社区" },
-          { name: "奶牛关", url: "https://cowlevel.net/", description: "核心玩家的游戏社区" },
-          { name: "Switch618", url: "https://switch618.com/", description: "Switch618 - Switch游戏下载" },
-          { name: "NxBrew", url: "https://nxbrew.me/", description: "NxBrew - Switch游戏资源站" },
-          { name: "精英模拟网", url: "https://emu.jy6d.com/", description: "精英模拟网 - 模拟器游戏" },
-          { name: "3K游戏", url: "https://3kmin.com/", description: "3K游戏 - 游戏资源站" },
-          { name: "资源避难所", url: "https://flysheep6.com/", description: "资源避难所 - 游戏资源" },
-          { name: "Byrut", url: "https://s1.byrutorg.com/", description: "Byrut - 游戏资源站" },
-          { name: "免费游戏", url: "https://gdgame.org/", description: "gdgame - 免费游戏下载" },
-          { name: "红警在线版", url: "https://www.ra2web.com/", description: "红警2网页版 - 在线玩" },
-          { name: "80joy在线玩游戏", url: "https://www.80joy.com/", description: "80joy - 在线小游戏" },
-          { name: "ps3模拟器", url: "https://www.3h3.com/patch/133379.html", description: "PS3模拟器下载" }
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "古典音乐与戏剧网",
+            "url": "http://www.classicart.cn/",
+            "description": "展示中国传统戏曲、古典乐曲历史、工尺谱与传统乐器。"
+          },
+          {
+            "name": "中国古琴网",
+            "url": "http://www.guqin.com/",
+            "description": "古琴爱好者社区，提供琴曲试听、减字谱对照与名家访谈。"
+          },
+          {
+            "name": "琵琶艺术网",
+            "url": "http://www.pipa.org/",
+            "description": "展示中国传统弦乐琵琶的曲谱、演奏技巧与历史演变。"
+          },
+          {
+            "name": "埙乐文化网",
+            "url": "http://www.xunyue.com/",
+            "description": "介绍中国最古老的吹奏乐器“埙”的历史、制作与吹奏。"
+          },
+          {
+            "name": "民族乐器网",
+            "url": "http://www.minzuyueqi.com/",
+            "description": "汇总笙箫管笛、琴瑟琵琶等各类中华传统乐器的图文资料。"
+          },
+          {
+            "name": "中国剪纸网",
+            "url": "http://www.jianzhi.com/",
+            "description": "展示中国传统民间剪纸艺术、民俗图案及其文化内涵。"
+          },
+          {
+            "name": "中国皮影戏网",
+            "url": "http://www.piying.org/",
+            "description": "介绍中国传统阴影艺术皮影戏的雕刻、剧本与表演技术。"
+          },
+          {
+            "name": "中国泥人张彩塑网",
+            "url": "http://www.nirinzhang.com/",
+            "description": "展示民间传统手工艺泥人张的彩塑艺术与历代作品。"
+          },
+          {
+            "name": "中国景泰蓝网",
+            "url": "http://www.jingtailan.com/",
+            "description": "介绍掐丝珐琅(景泰蓝)传统宫廷手工艺历史与精美艺术品。"
+          },
+          {
+            "name": "中国紫砂艺术网",
+            "url": "http://www.zisha.com/",
+            "description": "探索宜兴紫砂壶造艺、茶具文化、历代名家与鉴赏知识。"
+          },
+          {
+            "name": "中国刺绣网",
+            "url": "http://www.cixiu.com/",
+            "description": "涵盖苏绣、蜀绣、粤绣、湘绣四大名绣及传统针法艺术。"
+          },
+          {
+            "name": "中国缂丝艺术网",
+            "url": "http://www.kesi.org/",
+            "description": "介绍“一寸缂丝一寸金”的传统皇家丝织工艺与历代精品。"
+          },
+          {
+            "name": "中国古典家具网",
+            "url": "http://www.jiaju.com/gudian/",
+            "description": "展示明清家具结构、榫卯工艺、黄花梨紫檀艺术赏析。"
+          },
+          {
+            "name": "榫卯结构网",
+            "url": "http://www.sunmao.org/",
+            "description": "专研中国古代木建筑与家具中无钉无胶的榫卯智慧。"
+          },
+          {
+            "name": "中国瓦当艺术网",
+            "url": "http://www.wadang.org/",
+            "description": "搜集汉代“长乐未央”等历代秦砖汉瓦、图像及拓片。"
+          },
+          {
+            "name": "中国金石学网",
+            "url": "http://www.jinshi.org/",
+            "description": "研究青铜器铭文、石刻碑葛、砖瓦印玺等金石文字与考据。"
+          },
+          {
+            "name": "碑帖爱好者网",
+            "url": "http://www.beitie.org/",
+            "description": "汇集汉碑、魏碑、唐碑高清晰拓本，提供给书法爱好者拓印对照。"
+          },
+          {
+            "name": "甲骨文研究网",
+            "url": "http://www.jiaguwen.org/",
+            "description": "殷墟甲骨卜辞考释、文字演变及商代历史文化专题。"
+          },
+          {
+            "name": "上海书画网",
+            "url": "http://www.shanghaishuhua.com/",
+            "description": "展示海派书画艺术、传统中国画鉴赏与当代国画名家。"
+          },
+          {
+            "name": "岭南画派网",
+            "url": "http://www.lingnanart.com/",
+            "description": "介绍折衷中西、融汇古今的岭南画派发展史及代表艺术家。"
+          },
+          {
+            "name": "金陵八家研究网",
+            "url": "http://www.jinlingbajia.com/",
+            "description": "研究明末清初金陵画派(龚贤等)的艺术风格与历史背景。"
+          },
+          {
+            "name": "扬州八怪网",
+            "url": "http://www.yangzhoubaguai.com/",
+            "description": "展示清代扬州画派(郑板桥等)革新画风与诗书画印艺术。"
+          },
+          {
+            "name": "浙派篆刻网",
+            "url": "http://www.zhepai.org/",
+            "description": "介绍清代丁敬等西泠八家创立的浙派篆刻艺术风格。"
+          },
+          {
+            "name": "徽派文化网",
+            "url": "http://www.huipai.org/",
+            "description": "包含徽派建筑、徽墨歙砚、徽剧及徽州版画等古典文化。"
+          },
+          {
+            "name": "湖湘文化网",
+            "url": "http://www.huxiang.org/",
+            "description": "探讨岳麓书院、湖湘学派及宋明理学在湖南的继承演变。"
+          },
+          {
+            "name": "蜀道文化网",
+            "url": "http://www.shudao.org/",
+            "description": "关注四川古代蜀道遗址、三国文化、三苏文学及巴蜀艺文。"
+          },
+          {
+            "name": "齐鲁文化网",
+            "url": "http://www.qilu.org/",
+            "description": "研究孔孟之乡的儒家文化、山东汉画像石及齐鲁历史。"
+          },
+          {
+            "name": "吴文化网",
+            "url": "http://www.wuculture.com/",
+            "description": "展示苏州江南水乡文化、昆曲、香山帮建筑及泰伯吴文化。"
+          },
+          {
+            "name": "闽南文化网",
+            "url": "http://www.minnan.org/",
+            "description": "介绍闽南红砖建筑、南音古乐、木偶戏及海上丝绸之路文化。"
+          },
+          {
+            "name": "客家文化网",
+            "url": "http://www.hakka.org/",
+            "description": "探索客家土楼建筑、客家古方言、中原文化南迁历史。"
+          },
+          {
+            "name": "藏学研究网",
+            "url": "http://www.tibetology.ac.jp/",
+            "description": "介绍西藏传统唐卡艺术、藏传佛教藏经及高原古典艺文。"
+          },
+          {
+            "name": "中国敦煌吐鲁番学会",
+            "url": "http://www.dh-tlf.org/",
+            "description": "关注丝绸之路沿线敦煌学、吐鲁番文书及西域文明交流。"
+          },
+          {
+            "name": "丝绸之路历史文化网",
+            "url": "http://www.silkroad.org/",
+            "description": "展示古代丝绸之路贸易、艺术融合、考古发现与文化遗存。"
+          },
+          {
+            "name": "大运河文化网",
+            "url": "http://www.dayunhe.org/",
+            "description": "介绍中国大运河沿线历史名城、南北文化交融与水利遗产。"
+          },
+          {
+            "name": "长城文化网",
+            "url": "http://www.greatwall.org/",
+            "description": "关注万里长城军事建筑、古代边塞诗词与边疆文化史。"
+          },
+          {
+            "name": "古代文人墨客网",
+            "url": "http://www.wenren.org/",
+            "description": "介绍屈原、李白、苏轼、辛弃疾等历代文人墨客生平与作品。"
+          },
+          {
+            "name": "苏轼研究网",
+            "url": "http://www.sushi.org.cn/",
+            "description": "专研苏东坡诗词、书法、文章、哲学及生活美学。"
+          },
+          {
+            "name": "杜甫研究网",
+            "url": "http://www.dufu.org.cn/",
+            "description": "研究“诗圣”杜甫诗歌创作、沉郁顿挫风格与唐代历史变迁。"
+          },
+          {
+            "name": "曹雪芹研究网",
+            "url": "http://www.caoxueqin.org/",
+            "description": "研究曹雪芹生平、家族背景、《红楼梦》艺术造诣。"
+          },
+          {
+            "name": "陶渊明研究网",
+            "url": "http://www.taoyuanming.org/",
+            "description": "探讨田园诗派鼻祖陶渊明诗文、隐逸文化及《桃花源记》。"
+          },
+          {
+            "name": "李白研究网",
+            "url": "http://www.libai.org.cn/",
+            "description": "研究“诗仙”李白浪漫主义诗歌、道家思想及盛唐气象。"
+          },
+          {
+            "name": "白居易研究网",
+            "url": "http://www.baijuyi.org/",
+            "description": "关注新乐府运动、白居易通俗诗风及中唐社会艺术。"
+          },
+          {
+            "name": "陆游研究网",
+            "url": "http://www.luyou.org/",
+            "description": "专研南宋爱国诗人陆游诗词、生活札记及《老学庵笔记》。"
+          },
+          {
+            "name": "辛弃疾研究网",
+            "url": "http://www.xinqiji.org/",
+            "description": "研究豪放派词人辛弃疾英雄词作、南宋军事史与词学。"
+          },
+          {
+            "name": "李清照研究网",
+            "url": "http://www.liqingzhao.org/",
+            "description": "研究易安体婉约词、宋代金石学及李清照词论。"
+          },
+          {
+            "name": "屈原与楚辞网",
+            "url": "http://www.quyuan.org/",
+            "description": "《离骚》《九歌》楚辞研究、战国楚文化与端午民俗源流。"
+          },
+          {
+            "name": "汉赋研究网",
+            "url": "http://www.hanfu.org/",
+            "description": "专研司马相如、班固等汉代大赋艺术风格与宫廷文学。"
+          },
+          {
+            "name": "建安文学网",
+            "url": "http://www.jianan.org/",
+            "description": "研究三曹(曹操、曹丕、曹植)七子建安风骨与魏晋文学。"
+          },
+          {
+            "name": "魏晋风度与玄学网",
+            "url": "http://www.weijin.org/",
+            "description": "探讨竹林七贤、世说新语、魏晋清谈与玄学哲学。"
+          },
+          {
+            "name": "唐宋八大家网",
+            "url": "http://www.tangsongbadajia.com/",
+            "description": "研究韩愈、柳宗元、欧阳修等唐宋古文运动领袖著作。"
+          }
         ]
       },
       {
-        name: "轻小说",
-        enName: "Light Novels",
-        links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
-          { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
-          { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
-          { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
-          { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
-          { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
-          { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
-          { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
-          { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
-        ]
-      },
-      {
-        name: "壁纸",
-        enName: "Wallpapers",
-        links: [
-          { name: "Alpha Coders", url: "https://alphacoders.com/", description: "Alpha Coders - 壁纸与艺术" },
-          { name: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - 免费高清图片" },
-          { name: "Pixabay", url: "https://pixabay.com/", description: "Pixabay - 免费图片视频" },
-          { name: "Pexels", url: "https://www.pexels.com/", description: "Pexels - 免费素材图库" },
-          { name: "4K Wallpapers", url: "https://4kwallpapers.com/", description: "4K Wallpapers - 4K壁纸" },
-          { name: "彼岸图网", url: "https://www.netbian.com/", description: "彼岸图网 - 高清壁纸" },
-          { name: "国家地理壁纸", url: "https://www.nationalgeographic.com/", description: "国家地理 - 摄影壁纸" },
-          { name: "Wallpaper Engine", url: "https://www.wallpaperengine.io/", description: "电脑版 在 Steam 购买" }
-        ]
-      },
-      {
-        name: "巡礼",
-        enName: "Anime Pilgrimage",
-        links: [
-          { name: "日本动漫旅游协会官方网", url: "https://animetourism88.com", description: "日本官方与角川等合作设立，每年投票选出想造访的日本动漫圣地88选" },
-          { name: "GO TOKYO 动漫圣地巡礼专页", url: "https://www.gotokyo.org", description: "东京观光官方网站的二次元巡礼专区" },
-          { name: "Anime Pilgrimage Maps", url: "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html", description: "互动地图索引，整合动漫作品的真实取景坐标" },
-          { name: "Holy Land Spot", url: "https://holyland.spot.com", description: "基于地图标记的日本动漫圣地坐标索引" },
-          { name: "舞台探訪アーカイブ", url: "http://butaitambou.com", description: "舞台探访资料索引，收录考据者个人网站与作品目录" },
-          { name: "聖地巡礼info", url: "https://seichi-junrei.info", description: "巡礼资讯与实地记录网站，提供场景对照图与交通路线" },
-          { name: "Anitabi", url: "https://anitabi.net", description: "高精度定位与图文对照的舞台探访网站" }
-        ]
-      },
-      {
-        name: "本地播放器",
-        enName: "Media Players",
-        links: [
-          { name: "PotPlayer", url: "https://potplayer.daum.net/", description: "Windows 全能播放器，支持多种格式与字幕" },
-          { name: "VLC Media Player", url: "https://www.videolan.org/", description: "开源跨平台全能播放器，支持几乎所有格式" },
-          { name: "MPV", url: "https://mpv.io/", description: "极简硬核轻量播放器，很多高级播放器的底层内核" },
-          { name: "IINA", url: "https://iina.io/", description: "macOS 专用，基于 MPV 内核的高颜值开源播放器" },
-          { name: "MPC-HC", url: "https://github.com/clsid2/mpc-hc/", description: "经典 Windows 开源播放器，轻量干净无广告" },
-          { name: "KMPlayer", url: "https://www.kmplayer.com/", description: "老牌韩国全能播放器，支持超高清播放" },
-          { name: "foobar2000", url: "https://www.foobar2000.org/", description: "音频播放神器，高度自定义的本地音频专播工具" }
-        ]
-      },
-      {
-        name: "电子书阅读器",
-        enName: "E-book Readers",
-        links: [
-          { name: "Koodo Reader", url: "https://www.koodoreader.com/", description: "跨平台高颜值开源阅读器，支持书签、笔记、翻译与云端同步" },
-          { name: "Thorium Reader", url: "https://www.edrlab.org/software/thorium-reader/", description: "EDRLab 开发的开源无广告阅读器" },
-          { name: "Calibre", url: "https://calibre-ebook.com/", description: "电子书管理与格式转换神器，支持书库管理" },
-          { name: "SumatraPDF", url: "https://www.sumatrapdfreader.org/", description: "Windows 极致轻量阅读器，支持 PDF、EPUB、MOBI" },
-          { name: "Foliate", url: "https://johnfactotum.github.io/foliate/", description: "高颜值开源 EPUB 阅读器，支持标注与 TTS 朗读" }
-        ]
-      }
-    ]
-  },
-  {
-    name: "书影音",
-    icon: "📚",
-    color: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    subcategories: [
-      {
-        name: "书籍",
-        enName: "Books",
-        links: [
-          { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
-          { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
-          { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
-          { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
-          { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
-          { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "安娜的档案", url: "https://zh.annas-archive.gd/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 官网", url: "https://archiveofourown.org/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
-          { name: "AO3 镜像网站", url: "https://ao3-mirror.cc/", description: "AO3镜像站，可直连访问" },
-          { name: "Z站图书馆导航", url: "https://zz.ggonav.com/", description: "Z站图书馆导航 - 镜像站汇总" },
-          { name: "古登堡计划", url: "https://www.gutenberg.org/", description: "Project Gutenberg - 免费电子书" },
-          { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
-          { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
-          { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
-          { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
-          { name: "LibriVox", url: "https://librivox.org/", description: "LibriVox - 免费有声书" },
-          { name: "Loyal Books", url: "https://loyalbooks.com/", description: "Loyal Books - 免费电子书" },
-          { name: "苦瓜书盘", url: "https://kgbook.com/", description: "" },
-          { name: "维基文库", url: "https://wikisource.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "PDF Books World", url: "https://pdfbooksworld.com/", description: "" },
-          { name: "Free-Ebooks.net", url: "https://free-ebooks.net/", description: "" },
-          { name: "BookBoon", url: "https://bookboon.com/", description: "BookBoon - 教科书" },
-          { name: "CORE 学术开放库", url: "https://core.ac.uk/", description: "CORE - 学术论文" },
-          { name: "DigiLibraries", url: "https://digilibraries.com/", description: "DigiLibraries - 免费电子书" },
-          { name: "Obooko", url: "https://obooko.com/", description: "Obooko - 免费电子书" },
-          { name: "GetFreeEBooks", url: "https://getfreeebooks.com/", description: "GetFreeEBooks - 免费电子书" },
-          { name: "IntechOpen", url: "https://intechopen.com/", description: "IntechOpen - 开放获取学术" },
-          { name: "Book-Share", url: "https://book-share.com/", description: "Book-Share - 电子书分享" },
-          { name: "TTS离线听书 安卓", url: "https://pan.quark.cn/s/1b1e8e6f90ef", description: "【夸克网盘】TTS离线听书安卓APP带教程，总430MB" },
-          { name: "静读天下 安卓", url: "https://www.downkuai.com/android/15474.html", description: "静读天下 - 安卓读书APP下载" },
-          { name: "阅读指南", url: "https://readzn.com/", description: "说明Z站共享账号使用方法" },
-          { name: "开源阅读", url: "https://dy.miaogongzi.cc/", description: "⚠️ 只做本地阅读器，不建议添加书源" },
-          { name: "孔夫子旧书网", url: "https://www.kongfz.com/", description: "二手书交易平台 - 买卖旧书" },
-          { name: "多抓鱼", url: "https://www.duozhuayu.com/", description: "二手书买卖平台 - 循环利用" }
-        ]
-      },
-      {
-        name: "影视",
-        enName: "Film & TV",
-        links: [
-          { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
-          { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
-          { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
-          { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
-          { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
-          { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
-          { name: "烂番茄", url: "https://www.rottentomatoes.com/", description: "影评聚合评分平台" },
-          { name: "电影天堂", url: "https://www.dy2018.com/", description: "电影资源下载站" },
-          { name: "河马影院", url: "https://hemayy.com/", description: "" },
-          { name: "飞流影视", url: "https://www.flixflop.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "电影天堂全平台", url: "https://jianpian24.com/#/Mhome", description: "电影天堂全平台 - 影视资源大全" },
-          { name: "IPTV直播源导航", url: "https://iptvindex.com/", description: "" },
-          { name: "CCTV官网", url: "https://tv.cctv.com/", description: "CCTV - 央视直播" },
-          { name: "纪录片之家", url: "https://jlpzj.net/", description: "纪录片之家 - 人文历史" },
-          { name: "美剧鸟", url: "https://meijuniao.cc/", description: "美剧鸟 - 高清美剧" },
-          { name: "动漫岛", url: "https://dmdh.top/", description: "" }
-        ]
-      },
-      {
-        name: "种子网站",
-        enName: "Torrents",
-        links: [
-          { name: "SkrBT", url: "https://skrbtdo.cc/", description: "SkrBT - 磁力搜索" },
-          { name: "BT1207", url: "https://bt1207bo.cc/", description: "BT1207 - 磁力搜索" },
-          { name: "老王磁力", url: "https://laowangho.cc/", description: "老王磁力 - 磁力搜索" },
-          { name: "Aiosearch", url: "https://www.aiosearch.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "BT天堂", url: "https://www.bttiantang.com/", description: "BT电影资源索引" },
-          { name: "BT搜索", url: "https://skrbtdizhi.com/", description: "BT搜索 - 影视资源搜索" },
-          { name: "磁力宝", url: "https://cilibao.co/", description: "磁力宝 - 磁力搜索" },
-          { name: "磁力多", url: "https://ciliduo.org/", description: "磁力多 - 国内磁力搜索" },
-          { name: "磁力猫", url: "https://cilimao.co/", description: "磁力猫 - 中文磁力" },
-          { name: "BT4G", url: "https://bt4gprx.com/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "MagnetDL", url: "https://magnetdl.com/", description: "MagnetDL - 国外磁力搜索" },
-          { name: "EZTV", url: "https://eztvx.to/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "老司机磁力链", url: "https://laosiji.run/", description: "" },
-          { name: "Nyaa", url: "https://nyaa.si/", description: "Nyaa - 全球二次元磁力" },
-          { name: "蜜柑计划", url: "https://mikanani.me/", description: "蜜柑计划 - 番剧订阅" },
-          { name: "萌番组", url: "https://bangumi.moe/", description: "萌番组 - 开源动漫磁力" },
-          { name: "FitGirl Repacks", url: "https://fitgirl-repacks.site/", description: "FitGirl - 游戏压制" },
-          { name: "RuTracker", url: "https://rutracker.org/", description: "RuTracker - 俄罗斯资源库" },
-          { name: "YTS", url: "https://yts.mx/", description: "YTS - 高清电影压制" },
-          { name: "LimeTorrents", url: "https://limetorrents.to/", description: "LimeTorrents - 老牌种子站" },
-          { name: "BitSearch", url: "https://bitsearch.to/", description: "BitSearch - 极简磁力搜索" },
-          { name: "Torlock", url: "https://torlock.com/", description: "Torlock - 真种子" },
-          { name: "Torrentz2", url: "https://torrentz2.eu/", description: "Torrentz2 - 元搜索引擎" },
-          { name: "BTMET", url: "https://btmet.com/", description: "BTMET - 纯净磁力索引" },
-          { name: "GloDLS", url: "https://glodls.to/", description: "GloDLS - 综合社区" },
-          { name: "EBookBay", url: "https://ebookbay.is/", description: "EBookBay - 有声书磁力" },
-          { name: "AudioBook Bay", url: "https://audiobookbay.is/", description: "AudioBook Bay - 有声读物" },
-          { name: "BT.etree", url: "https://bt.etree.org/", description: "BT.etree - 无损Live录音" },
-          { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
-          { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
-          { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
-          { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
-          { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
-        ]
-      },
-      {
-        name: "音乐",
-        enName: "Music",
-        links: [
-          { name: "落雪 GitHub 移动端", url: "https://github.com/lyswhut/lx-music-mobile", description: "洛雪音乐移动端开源项目" },
-          { name: "落雪 GitHub 电脑端", url: "https://github.com/lyswhut/lx-music-desktop", description: "洛雪音乐桌面端开源项目" },
-          { name: "落雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
-          { name: "落雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
-          { name: "洛雪音乐", url: "https://lxmusic.toside.cn/", description: "洛雪音乐 - 聚合音乐播放器" },
-          { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
-          { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
-          { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
-          { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
-          { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
-          { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
-          { name: "AccuRadio", url: "https://www.accuradio.com/", description: "美式细分风格电台" },
-          { name: "Incompetech", url: "https://incompetech.com/", description: "Kevin MacLeod 免版权音乐库" },
-          { name: "Free Music Archive", url: "https://freemusicarchive.org/", description: "FMA 免费音乐档案" },
-          { name: "Purrple Cat", url: "https://purrplecat.com/", description: "Lofi / Chillhop 免版权音乐" },
-          { name: "Chillhop Music", url: "https://chillhop.com/", description: "Chillhop 厂牌与电台" },
-          { name: "网易云音乐", url: "https://music.163.com/", description: "网易云音乐 - 音乐的力量" },
-          { name: "QQ音乐", url: "https://y.qq.com/", description: "腾讯音乐娱乐集团" },
-          { name: "Apple Music", url: "https://music.apple.com/", description: "苹果官方音乐服务" },
-          { name: "Bilibili", url: "https://www.bilibili.com/", description: "B站 - 弹幕视频网站" },
-          { name: "SoundCloud", url: "https://soundcloud.com/", description: "独立音乐人分享平台" },
-          { name: "Musopen", url: "https://musopen.org/", description: "Musopen - 公共版权古典音乐" },
-          { name: "CCMixter", url: "https://ccmixter.org/", description: "CCMixter - CC音乐混音" },
-          { name: "Chosic", url: "https://chosic.com/", description: "Chosic - 音乐发现" },
-          { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
-          { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
-          { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
-          { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
-          { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
-          { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
-          { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
-          { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
-          { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
-          { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
-          { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
-          { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
-          { name: "Jazz And Rain", url: "https://jazzandrain.com/", description: "" },
-          { name: "Mixkit Audio", url: "https://mixkit.co/free-audio", description: "Mixkit - 免版权音频" },
-          { name: "Soundstripe", url: "https://soundstripe.com/", description: "Soundstripe - 免版权音乐" },
-          { name: "Looperman", url: "https://looperman.com/", description: "Looperman - 采样分享" },
-          { name: "SampleFocus", url: "https://samplefocus.com/", description: "SampleFocus - 采样库" },
-          { name: "ccTrax", url: "https://cctrax.com/", description: "ccTrax - CC音乐" },
-          { name: "Tabletop Audio", url: "https://tabletopaudio.com/", description: "Tabletop Audio - 跑团氛围音" },
-          { name: "Rainy Cafe", url: "https://rainycafe.com/", description: "" },
-          { name: "Noices", url: "https://noices.co/", description: "Noices - 白噪音" },
-          { name: "Purrli", url: "https://purrli.com/", description: "Purrli - 猫咪呼噜声" },
-          { name: "Soundrown", url: "https://soundrown.com/", description: "Soundrown - 白噪音" },
-          { name: "Europeana Music", url: "https://europeana.eu/en/collections/topic/18-music", description: "Europeana - 欧洲音乐档案" },
-          { name: "ChoralWiki", url: "https://cpdl.org/", description: "ChoralWiki - 合唱乐谱" },
-          { name: "Purple Planet", url: "https://purple-planet.com/", description: "Purple Planet - 免版权音乐" },
-          { name: "Free Music Public Domain", url: "https://freemusicpublicdomain.com/", description: "公共版权音乐" },
-          { name: "Josh Woodward", url: "https://joshwoodward.com/", description: "Josh Woodward - 独立音乐人" },
-          { name: "Scott Buckley", url: "https://scottbuckley.com.au/", description: "Scott Buckley - 免版权音乐" },
-          { name: "ChilledCow", url: "https://chilledcow.com/", description: "ChilledCow - Lofi音乐" },
-          { name: "Unminus", url: "https://unminus.com/", description: "Unminus - 免版权音乐" },
-          { name: "Nature Sounds", url: "https://naturesoundsfor.me/", description: "Nature Sounds - 自然音" },
-          { name: "HearNow", url: "https://hearnow.com/", description: "HearNow - 独立音乐人" },
-          { name: "Icons8 Fugue", url: "https://icons8.com/music", description: "Icons8 - 免版权音乐" },
-          { name: "ccMixter Digi", url: "https://dig.ccmixter.org/", description: "ccMixter Digi - CC音乐" },
-          { name: "Freepd", url: "https://freepd.com/", description: "Freepd - 公共版权音乐" },
-          { name: "Audionautix", url: "https://audionautix.com/", description: "Audionautix - CC音乐" },
-          { name: "Silverman Sound", url: "https://silvermansound.com/", description: "Silverman Sound - 免版权" },
-          { name: "TeknoAXE", url: "https://teknoaxe.com/", description: "TeknoAXE - 免版权音乐" },
-          { name: "Fesliyan Studios", url: "https://fesliyanstudios.com/", description: "Fesliyan - 免版权音乐" },
-          { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
-          { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
-          { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
-          { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
-          { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
-          { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
-          { name: "Cylinder Archive", url: "https://cylinder.library.ucsb.edu/", description: "Cylinder - 早期录音档案" },
-          { name: "Classic Cat", url: "https://classiccat.net/", description: "Classic Cat - 古典音乐" },
-          { name: "Global Music Archive", url: "https://globalmusicarchive.org/", description: "" },
-          { name: "Congress Audio", url: "https://loc.gov/audio", description: "美国国会图书馆音频库" },
-          { name: "National Jukebox", url: "https://loc.gov/jukebox", description: "" },
-          { name: "Free Sound Effects", url: "https://freesoundeffects.com/", description: "" },
-          { name: "Sound Archive", url: "https://soundarchive.org/", description: "" },
-          { name: "Internet Archive Audio", url: "https://archive.org/details/audio", description: "" },
-          { name: "SoundClick", url: "https://soundclick.com/", description: "SoundClick - 独立音乐" },
-          { name: "Live Music Archive", url: "https://archive.org/details/etree", description: "" },
-          { name: "HearThis", url: "https://hearthis.at/", description: "HearThis - 音乐分享" }
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "宋词研究网",
+            "url": "https://www.songci.org/",
+            "description": "汇总宋代婉约与豪放派词作、词牌名演变及词律格律。"
+          },
+          {
+            "name": "元曲与杂剧网",
+            "url": "http://www.yuanqu.org/",
+            "description": "展示关汉卿、王实甫等元代杂剧、散曲作品及戏曲史。"
+          },
+          {
+            "name": "明清小说网",
+            "url": "http://www.mingqingxiaoshuo.com/",
+            "description": "提供四大名著、“三言二拍”等古典长篇与短篇白话小说。"
+          },
+          {
+            "name": "中国古典美学网",
+            "url": "http://www.gudianmeixue.org/",
+            "description": "探讨中国古代“意境”、“气韵”、“虚实”等美学范畴。"
+          },
+          {
+            "name": "中国神话传说网",
+            "url": "http://www.shenhua.org/",
+            "description": "整理《山海经》《淮南子》等古代神话故事与上古宇宙观。"
+          },
+          {
+            "name": "山海经图鉴网",
+            "url": "http://www.shanhaijing.org/",
+            "description": "搜集历代《山海经》异兽图谱、地理志与图考文献。"
+          },
+          {
+            "name": "中国古代天文与历法网",
+            "url": "http://www.gudaitianwen.org/",
+            "description": "研究古代二十四节气、浑天仪、星宿分类与历法推算。"
+          },
+          {
+            "name": "中医药古籍文献网",
+            "url": "http://www.tcmdoc.org/",
+            "description": "提供《黄帝内经》《本草纲目》《伤寒论》等中医经典全文。"
+          },
+          {
+            "name": "中国算学史网",
+            "url": "http://www.suanxue.org/",
+            "description": "研究《九章算术》《周髀算经》等中国古代数学成就。"
+          },
+          {
+            "name": "中国古代农学网",
+            "url": "http://www.nongxue.org/",
+            "description": "研究《齐民要术》《农政全书》等传统农业科技与农耕文化。"
+          },
+          {
+            "name": "中国香道网",
+            "url": "http://www.xiangdao.org/",
+            "description": "弘扬中国古代香文化、历代香谱、合香配方与熏香器具。"
+          },
+          {
+            "name": "中国花道/插花艺术网",
+            "url": "http://www.chahua.org/",
+            "description": "探讨中国古典插花艺术(瓶花、盘花)、瓶史与花木美学。"
+          },
+          {
+            "name": "中国传统服饰/汉服网",
+            "url": "http://www.hanfu.cn/",
+            "description": "考证汉唐明等历代汉族传统服饰形制、纹样与织造工艺。"
+          },
+          {
+            "name": "中国古典武术与气功网",
+            "url": "http://www.wushu.org/",
+            "description": "研究太极拳、少林武术、古代兵器及气功养生理论。"
+          },
+          {
+            "name": "中国饮食文化史网",
+            "url": "http://www.yinshi.org/",
+            "description": "探索《随园食单》《饮膳正要》等古代食谱与餐饮美学。"
+          },
+          {
+            "name": "中国古代文房四宝网",
+            "url": "http://www.wenfangsibao.org/",
+            "description": "介绍湖笔、徽墨、宣纸、端砚的历史、制作与鉴赏。"
+          },
+          {
+            "name": "中国善本碑帖拓片网",
+            "url": "http://www.tuopian.org/",
+            "description": "展示国家图书馆及各博物馆藏珍贵石刻拓片影像。"
+          },
+          {
+            "name": "汉代画像砖石网",
+            "url": "http://www.huaxiangzhuan.org/",
+            "description": "研究汉代墓葬艺术、画像砖石上的社会生活与神话图景。"
+          },
+          {
+            "name": "中国民间吉祥图案网",
+            "url": "http://www.jixiang.org/",
+            "description": "解读“福禄寿喜”、“连年有余”等传统民俗吉祥纹样。"
+          },
+          {
+            "name": "中国历代帝王陵寝网",
+            "url": "http://www.lingqin.org/",
+            "description": "介绍秦始皇陵、明十三陵、清东陵等陵寝建筑与考古。"
+          },
+          {
+            "name": "中国百家姓与姓氏文化网",
+            "url": "http://www.xingshi.org/",
+            "description": "查考中华姓氏起源、家谱族谱整理及堂号迁徙历史。"
+          },
+          {
+            "name": "寻根网/中国家谱库",
+            "url": "http://www.jiapu.org/",
+            "description": "提供历代姓氏家谱电子化检索、族谱查询与宗族文化。"
+          },
+          {
+            "name": "中国古代名胜志网",
+            "url": "http://www.mingsheng.org/",
+            "description": "收集古代山水游记、地方志中的名胜古迹与文人题咏。"
+          },
+          {
+            "name": "泰山文化网",
+            "url": "http://www.taishan.org/",
+            "description": "研究封禅文化、泰山石刻、道教圣地与历代文人登临诗篇。"
+          },
+          {
+            "name": "黄山画派网",
+            "url": "http://www.huangshanart.com/",
+            "description": "研究渐江、梅清、石涛等清初黄山画派的山水画艺术。"
+          },
+          {
+            "name": "西湖文学与美学网",
+            "url": "http://www.xihu.org/",
+            "description": "汇集关于杭州西湖的历代诗词、传说(白蛇传)与造景艺术。"
+          },
+          {
+            "name": "庐山文化网",
+            "url": "http://www.lushan.org/",
+            "description": "介绍庐山慧远白莲社、陶渊明隐居、白鹿洞书院与诗词。"
+          },
+          {
+            "name": "中国古代书院网",
+            "url": "http://www.shuyuan.org/",
+            "description": "研究岳麓、白鹿洞、嵩阳、应天等古代四大书院与教育史。"
+          },
+          {
+            "name": "中国科举制度网",
+            "url": "http://www.keju.org/",
+            "description": "研究隋唐至清末的科举考试制度、状元文化与进士题名碑。"
+          },
+          {
+            "name": "中国古代官制网",
+            "url": "http://www.guanzhi.org/",
+            "description": "查询三省六部、九品中正、御史台等古代政治制度与官衔。"
+          },
+          {
+            "name": "中国古代邮驿与交通网",
+            "url": "http://www.youyi.org/",
+            "description": "探讨古代邮驿系统、驿站文化、丝路交通与水路漕运。"
+          },
+          {
+            "name": "中国古代货币/古钱币网",
+            "url": "http://www.qianbi.org/",
+            "description": "汇集贝币、刀布币、通宝方孔钱及历代金银锭鉴赏。"
+          },
+          {
+            "name": "中国度量衡历史网",
+            "url": "http://www.duliangheng.org/",
+            "description": "考证中国古代尺、升、斤等度量衡单位演变与考古实物。"
+          },
+          {
+            "name": "诸子百家学术网",
+            "url": "http://www.zhuzibaijia.com/",
+            "description": "整合儒、道、法、墨、名、阴阳、纵横家等思想全文与分析。"
+          },
+          {
+            "name": "法家哲学网",
+            "url": "http://www.fajia.org/",
+            "description": "研究管仲、商鞅、韩非子法家思想与古代政治治理策略。"
+          },
+          {
+            "name": "纵横家与鬼谷子网",
+            "url": "http://www.guiguzi.org/",
+            "description": "专研《鬼谷子》外交谋略、战国游说之士与纵横捭阖艺术。"
+          },
+          {
+            "name": "名家与逻辑学网",
+            "url": "http://www.mingjia.org/",
+            "description": "探讨公孙龙“白马非马”等先秦逻辑学、名实之辩。"
+          },
+          {
+            "name": "阴阳五行学网",
+            "url": "http://www.wuxing.org/",
+            "description": "研究邹衍阴阳五行说、干支历法与古代宇宙论哲学。"
+          },
+          {
+            "name": "古典禅宗文化网",
+            "url": "http://www.chanzong.org/",
+            "description": "汇集《六祖坛经》、公案禅语、菩提达摩与禅宗祖庭。"
+          },
+          {
+            "name": "宋明理学网",
+            "url": "http://www.lixue.org/",
+            "description": "研究程朱理学、陆王心学、“格物致知”与天理人欲之辨。"
+          },
+          {
+            "name": "清代考据学网",
+            "url": "http://www.kaoju.org/",
+            "description": "研究朴学、训诂、音韵、目录学等清代学者严谨治学方法。"
+          },
+          {
+            "name": "近代国学复兴网",
+            "url": "http://www.guoxuefuxing.org/",
+            "description": "探索章太炎、王国维、梁启超等近代大师对古典艺文的重构。"
+          },
+          {
+            "name": "经典诵读网",
+            "url": "https://www.songdu.org/",
+            "description": "推广《三字经》《千字文》《声律启蒙》等传统启蒙读物。"
+          },
+          {
+            "name": "对联与楹联网",
+            "url": "http://www.yinglian.org/",
+            "description": "收集历代名胜楹联、春联、对仗格律与名家撰联赏析。"
+          },
+          {
+            "name": "灯谜与字谜网",
+            "url": "http://www.dengmi.org/",
+            "description": "弘扬中国传统灯谜文化、射覆、字谜隐语与民俗游艺。"
+          },
+          {
+            "name": "古代文言文学习网",
+            "url": "https://www.wenyanwen.com/",
+            "description": "提供高中/初中文言文虚词、实词、特殊句式与翻译练习。"
+          },
+          {
+            "name": "中华诗词学会",
+            "url": "http://www.zhscxh.com/",
+            "description": "全国性诗词社团官网，发布诗词创作、评论与学术活动。"
+          },
+          {
+            "name": "中国楹联学会",
+            "url": "http://www.yinglian.org.cn/",
+            "description": "国家级楹联文化机构，传承楹联艺术与楹联考评。"
+          },
+          {
+            "name": "国家语言文字工作委员会",
+            "url": "http://www.ywgc.edu.cn/",
+            "description": "规范汉字使用、推广普通话及汉字文化传承官方平台。"
+          },
+          {
+            "name": "数字汉字博物馆",
+            "url": "http://www.hanzi.org/",
+            "description": "运用数字技术展示汉字从甲骨文到现代简化字的演变全貌。"
+          }
         ]
       }
     ]
@@ -5292,6 +5969,27 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
+
+  // 返回主页按钮（作为第一个标签）
+  const backBtn = document.createElement('a');
+  backBtn.href = 'index.html';
+  backBtn.target = 'kisstr_home';
+  backBtn.className = 'tab-btn back-home-tab';
+  backBtn.innerHTML = '← 返回主页';
+  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
+  backBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.open('index.html', 'kisstr_home');
+  });
+  backBtn.addEventListener('mouseenter', function() {
+    this.style.borderColor = 'var(--accent)';
+    this.style.color = 'var(--accent)';
+  });
+  backBtn.addEventListener('mouseleave', function() {
+    this.style.borderColor = 'var(--card-border)';
+    this.style.color = 'var(--text-secondary)';
+  });
+  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');
