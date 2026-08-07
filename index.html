@@ -3769,7 +3769,8 @@
   /* 最终按钮尺寸覆盖：主题 / 布局 / 隐藏 */
   .theme-toggle,
   .hide-toggle,
-  .layout-toggle {
+  .layout-toggle,
+  .search-inline {
     width: 36px !important;
     height: 36px !important;
     min-width: 36px !important;
@@ -3777,6 +3778,27 @@
     flex: 0 0 36px !important;
     margin-left: 0 !important;
     padding: 0 !important;
+  }
+
+  body:not(.layout-minimal) .search-inline {
+    border-radius: 9px !important;
+  }
+
+  body:not(.layout-minimal) .search-inline .search-icon {
+    left: 9px !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  body:not(.layout-minimal) .search-inline input {
+    left: 34px !important;
+  }
+
+  .theme-toggle,
+  .hide-toggle,
+  .layout-toggle,
+  .layout-btn {
+    background: transparent !important;
   }
 
   .layout-btn {
@@ -3787,10 +3809,29 @@
     padding: 0 !important;
   }
 
+  .theme-toggle:hover,
+  .layout-btn:hover,
+  .layout-btn.active,
+  .hide-toggle:hover,
+  .hide-toggle.active,
+  body.background-image-mode .theme-toggle,
+  body.background-image-mode .layout-toggle,
+  body.background-image-mode .layout-btn,
+  body.background-image-mode .hide-toggle,
+  body.background-image-mode .theme-toggle:hover,
+  body.background-image-mode .layout-btn:hover,
+  body.background-image-mode .layout-btn.active,
+  body.background-image-mode .hide-toggle:hover,
+  body.background-image-mode .hide-toggle.active {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
   @media (max-width: 768px) {
     .theme-toggle,
     .hide-toggle,
-    .layout-toggle {
+    .layout-toggle,
+    .search-inline {
       width: 32px !important;
       height: 32px !important;
       min-width: 32px !important;
@@ -3802,17 +3843,46 @@
       min-width: 0 !important;
       min-height: 0 !important;
     }
+
+    body:not(.layout-minimal) .search-inline {
+      border-radius: 8px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline .search-icon {
+      left: 8px !important;
+      width: 16px !important;
+      height: 16px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline input {
+      left: 30px !important;
+    }
   }
 
   @media (max-width: 375px) {
     .theme-toggle,
     .hide-toggle,
-    .layout-toggle {
+    .layout-toggle,
+    .search-inline {
       width: 30px !important;
       height: 30px !important;
       min-width: 30px !important;
       min-height: 30px !important;
       flex-basis: 30px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline {
+      border-radius: 7px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline .search-icon {
+      left: 7px !important;
+      width: 15px !important;
+      height: 15px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline input {
+      left: 28px !important;
     }
   }
 
@@ -3822,7 +3892,8 @@
   body.layout-minimal .theme-toggle,
   body.layout-minimal .hide-toggle,
   body.layout-minimal .layout-toggle,
-  body.layout-minimal .layout-btn {
+  body.layout-minimal .layout-btn,
+  body.layout-minimal .search-inline {
     border-radius: 0 !important;
   }
 
@@ -4474,19 +4545,22 @@
     }
 
     .search-inline {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
+      width: 32px !important;
+      height: 32px !important;
+      min-width: 32px !important;
+      min-height: 32px !important;
+      flex-basis: 32px !important;
+      border-radius: 8px !important;
     }
 
     .search-inline .search-icon {
-      left: 8px;
-      width: 14px;
-      height: 14px;
+      left: 8px !important;
+      width: 16px !important;
+      height: 16px !important;
     }
 
     .search-inline input {
-      left: 28px;
+      left: 30px !important;
     }
 
     .layout-minimal .tab-btn {
@@ -4498,9 +4572,38 @@
     }
 
     .layout-minimal .search-inline {
-      width: 28px;
-      height: 28px;
-      border-radius: 9px;
+      width: 28px !important;
+      height: 28px !important;
+      min-width: 28px !important;
+      min-height: 28px !important;
+      flex-basis: 28px !important;
+      border-radius: 9px !important;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .search-inline {
+      width: 30px !important;
+      height: 30px !important;
+      min-width: 30px !important;
+      min-height: 30px !important;
+      flex-basis: 30px !important;
+      border-radius: 7px !important;
+    }
+
+    .search-inline .search-icon {
+      left: 7px !important;
+      width: 15px !important;
+      height: 15px !important;
+    }
+
+    .layout-minimal .search-inline {
+      width: 28px !important;
+      height: 28px !important;
+      min-width: 28px !important;
+      min-height: 28px !important;
+      flex-basis: 28px !important;
+      border-radius: 9px !important;
     }
   }
 
@@ -4681,6 +4784,28 @@
   body.background-image-mode.layout-minimal .search-inline .search-icon {
     fill: rgba(255, 255, 255, 0.94) !important;
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.75)) !important;
+  }
+
+  .theme-toggle,
+  .layout-toggle,
+  .layout-btn,
+  .hide-toggle,
+  .theme-toggle:hover,
+  .layout-btn:hover,
+  .layout-btn.active,
+  .hide-toggle:hover,
+  .hide-toggle.active,
+  body.background-image-mode .theme-toggle,
+  body.background-image-mode .layout-toggle,
+  body.background-image-mode .layout-btn,
+  body.background-image-mode .hide-toggle,
+  body.background-image-mode .theme-toggle:hover,
+  body.background-image-mode .layout-btn:hover,
+  body.background-image-mode .layout-btn.active,
+  body.background-image-mode .hide-toggle:hover,
+  body.background-image-mode .hide-toggle.active {
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   body.background-image-mode .music-volume {
@@ -6497,17 +6622,18 @@ const musicVolume = document.getElementById('musicVolume');
 
 // 音乐源列表
 const lofiStations = [
-  { name: 'Chillhop慵懒', url: 'https://ice5.somafm.com/groovesalad-128-mp3' },
-  { name: 'Lush氛围女声', url: 'https://ice5.somafm.com/lush-128-mp3' },
-  { name: 'Chillhop经典', url: 'https://ice5.somafm.com/gsclassic-128-mp3' },
-  { name: 'Ambient氛围', url: 'https://ice5.somafm.com/dronezone-128-mp3' },
-  { name: 'DeepSpace深空', url: 'https://ice5.somafm.com/deepspaceone-128-mp3' },
-  { name: 'SpaceStation空间站', url: 'https://ice5.somafm.com/spacestation-128-mp3' },
-  { name: 'Beat深屋节拍', url: 'https://ice5.somafm.com/beatblender-128-mp3' },
-  { name: 'Secret间谍风', url: 'https://ice5.somafm.com/secretagent-128-mp3' }
+  { name: 'Chillhop慵懒', path: 'groovesalad-128-mp3' },
+  { name: 'Lush氛围女声', path: 'lush-128-mp3' },
+  { name: 'Chillhop经典', path: 'gsclassic-128-mp3' },
+  { name: 'Ambient氛围', path: 'dronezone-128-mp3' },
+  { name: 'DeepSpace深空', path: 'deepspaceone-128-mp3' },
+  { name: 'SpaceStation空间站', path: 'spacestation-128-mp3' },
+  { name: 'Beat深屋节拍', path: 'beatblender-128-mp3' },
+  { name: 'Secret间谍风', path: 'secretagent-128-mp3' }
 ];
 
 let currentStation = 0;
+let currentStationSource = 0;
 let isPlaying = false;
 
 lofiAudio.volume = 0.5;
@@ -6523,7 +6649,15 @@ musicVolume.addEventListener('input', () => {
 let isChangingStation = false;
 let stationRetryCount = 0;
 let stationUnlockTimer = null;
-const MAX_RETRIES = lofiStations.length;
+let playbackWatchTimer = null;
+const stationHosts = ['ice5', 'ice1', 'ice2', 'ice4', 'ice6'];
+const MAX_RETRIES = lofiStations.length * stationHosts.length;
+
+function getStationUrl(station, sourceIndex = 0) {
+  if (station.url) return station.url;
+  const host = stationHosts[sourceIndex % stationHosts.length];
+  return `https://${host}.somafm.com/${station.path}`;
+}
 
 // ===== 播放按钮图标更新 =====
 function updatePlayButton(playing) {
@@ -6537,18 +6671,27 @@ function updatePlayButton(playing) {
 }
 
 // ===== 加载电台 =====
-function loadStation(index) {
+function loadStation(index, sourceIndex = 0) {
   const station = lofiStations[index];
+  currentStationSource = sourceIndex % stationHosts.length;
   musicName.textContent = station.name;
   musicName.title = station.name;
-  lofiAudio.src = station.url;
+  lofiAudio.preload = 'none';
+  lofiAudio.crossOrigin = 'anonymous';
+  lofiAudio.src = getStationUrl(station, currentStationSource);
   lofiAudio.load();
 }
 
 // ===== 播放音频（处理 AbortError）=====
 function playAudio() {
+  clearTimeout(playbackWatchTimer);
   return lofiAudio.play().then(() => {
-    stationRetryCount = 0;
+    playbackWatchTimer = setTimeout(() => {
+      if (isPlaying && !lofiAudio.paused && lofiAudio.currentTime < 0.5) {
+        console.warn('电台连接超时，尝试备用音源');
+        tryNextStationSource();
+      }
+    }, 4500);
   }).catch(e => {
     // AbortError 是正常的（快速切台时旧播放被中止），不需要重试
     if (e.name === 'AbortError') {
@@ -6559,25 +6702,56 @@ function playAudio() {
   });
 }
 
+function stopRadioPlayback() {
+  clearTimeout(playbackWatchTimer);
+  isPlaying = false;
+  updatePlayButton(false);
+  mbStop();
+  stationRetryCount = 0;
+}
+
+function tryNextStationSource() {
+  if (!isPlaying) return;
+  stationRetryCount++;
+  if (stationRetryCount >= MAX_RETRIES) {
+    stopRadioPlayback();
+    musicName.textContent = '电台暂不可用';
+    musicName.title = '电台暂不可用，请稍后再试';
+    return;
+  }
+
+  currentStationSource += 1;
+  if (currentStationSource >= stationHosts.length) {
+    currentStationSource = 0;
+    currentStation = (currentStation + 1) % lofiStations.length;
+  }
+  loadStation(currentStation, currentStationSource);
+  playAudio().catch(e => {
+    console.warn('备用音源播放失败:', e.message);
+    setTimeout(tryNextStationSource, 250);
+  });
+}
+
 // ===== 音频错误监听 =====
 lofiAudio.addEventListener('error', (e) => {
   console.warn('音频加载失败:', e);
-  // 仅在非切台过程中自动重试
-  if (isPlaying && !isChangingStation) {
-    stationRetryCount++;
-    if (stationRetryCount < MAX_RETRIES) {
-      changeStation(1);
-    } else {
-      isPlaying = false;
-      updatePlayButton(false);
-      mbStop();
-      stationRetryCount = 0;
-    }
-  }
+  if (isPlaying && !isChangingStation) tryNextStationSource();
 });
 
 lofiAudio.addEventListener('loadedmetadata', () => {
   console.log('音频元数据加载成功');
+});
+
+lofiAudio.addEventListener('playing', () => {
+  stationRetryCount = 0;
+  clearTimeout(playbackWatchTimer);
+});
+
+lofiAudio.addEventListener('stalled', () => {
+  if (isPlaying) {
+    clearTimeout(playbackWatchTimer);
+    playbackWatchTimer = setTimeout(tryNextStationSource, 2500);
+  }
 });
 
 // ===== 播放/暂停 =====
@@ -6585,21 +6759,18 @@ function togglePlay() {
   if (isPlaying) {
     // 暂停
     lofiAudio.pause();
-    isPlaying = false;
-    updatePlayButton(false);
-    mbStop();
+    stopRadioPlayback();
   } else {
     // 播放：重新加载当前电台确保正确
     isPlaying = true;
     updatePlayButton(true);
     mbClosed = false;
     mbStart();
-    loadStation(currentStation);
+    stationRetryCount = 0;
+    loadStation(currentStation, currentStationSource);
     playAudio().catch(e => {
       console.warn('播放失败:', e.message);
-      isPlaying = false;
-      updatePlayButton(false);
-      mbStop();
+      tryNextStationSource();
     });
   }
 }
@@ -6615,7 +6786,9 @@ function changeStation(direction) {
   isChangingStation = true;
 
   currentStation = (currentStation + direction + lofiStations.length) % lofiStations.length;
-  loadStation(currentStation);
+  currentStationSource = 0;
+  stationRetryCount = 0;
+  loadStation(currentStation, currentStationSource);
 
   if (isPlaying) {
     // 播放中：继续播放新电台
@@ -6623,17 +6796,7 @@ function changeStation(direction) {
       console.warn('切换电台播放失败:', e.message);
       clearTimeout(stationUnlockTimer);
       isChangingStation = false;
-      stationRetryCount++;
-      if (stationRetryCount < MAX_RETRIES) {
-        // 300ms 后自动切下一个电台
-        setTimeout(() => changeStation(1), 300);
-      } else {
-        // 全部失败，停止播放
-        isPlaying = false;
-        updatePlayButton(false);
-        mbStop();
-        stationRetryCount = 0;
-      }
+      setTimeout(tryNextStationSource, 250);
     });
   }
 
