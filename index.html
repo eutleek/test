@@ -1613,12 +1613,18 @@
 
   .search-inline .search-icon {
     position: absolute;
-    left: 11px;
+    left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
     fill: var(--text-secondary);
+    pointer-events: none;
+  }
+
+  .search-inline.expanded .search-icon {
+    left: 11px;
+    transform: translateY(-50%);
   }
 
   .search-inline input {
@@ -2283,9 +2289,15 @@
 
   .layout-minimal .search-inline .search-icon {
     fill: #1d1d1f;
-    left: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 14px;
     height: 14px;
+  }
+
+  .layout-minimal .search-inline.expanded .search-icon {
+    left: 8px;
+    transform: translateY(-50%);
   }
 
   .layout-minimal .search-inline input {
@@ -2377,9 +2389,15 @@
     }
 
     .layout-minimal .search-inline .search-icon {
-      left: 6px;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 14px;
       height: 14px;
+    }
+
+    .layout-minimal .search-inline.expanded .search-icon {
+      left: 6px;
+      transform: translateY(-50%);
     }
 
     .layout-minimal .search-inline input {
@@ -3785,9 +3803,15 @@
   }
 
   body:not(.layout-minimal) .search-inline .search-icon {
-    left: 9px !important;
-    width: 18px !important;
-    height: 18px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 17px !important;
+    height: 17px !important;
+  }
+
+  body:not(.layout-minimal) .search-inline.expanded .search-icon {
+    left: 10px !important;
+    transform: translateY(-50%) !important;
   }
 
   body:not(.layout-minimal) .search-inline input {
@@ -3849,9 +3873,15 @@
     }
 
     body:not(.layout-minimal) .search-inline .search-icon {
-      left: 8px !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
       width: 16px !important;
       height: 16px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline.expanded .search-icon {
+      left: 8px !important;
+      transform: translateY(-50%) !important;
     }
 
     body:not(.layout-minimal) .search-inline input {
@@ -3876,9 +3906,15 @@
     }
 
     body:not(.layout-minimal) .search-inline .search-icon {
-      left: 7px !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
       width: 15px !important;
       height: 15px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline.expanded .search-icon {
+      left: 7px !important;
+      transform: translateY(-50%) !important;
     }
 
     body:not(.layout-minimal) .search-inline input {
@@ -3900,7 +3936,7 @@
   /* ========== 背景、主题与全平台适配 ========== */
   /* ===== 背景选择器 ===== */
   body.bg-transitioning {
-    transition: background-image 0.35s ease, background-color 0.35s ease;
+    transition: none;
   }
 
   .theme-fade-overlay {
@@ -3909,12 +3945,12 @@
     z-index: 10050;
     pointer-events: none;
     opacity: 0;
-    background: rgba(255, 255, 255, 0.54);
-    transition: opacity 0.18s ease;
+    background: transparent;
+    transition: none;
   }
 
   .theme-fade-overlay.active {
-    opacity: 1;
+    opacity: 0;
   }
 
   [data-theme="midnight"] .theme-fade-overlay,
@@ -3927,7 +3963,7 @@
   [data-theme="clay"] .theme-fade-overlay,
   [data-theme="anime"] .theme-fade-overlay,
   body.background-image-mode .theme-fade-overlay {
-    background: rgba(8, 9, 18, 0.46);
+    background: transparent;
   }
 
   .background-picker-trigger {
@@ -4141,19 +4177,25 @@
     display: none !important;
   }
 
-  /* CSS 级兜底：图片模式下 html 底色为深色，防止 JS 执行前的浅色闪烁 */
+  /* CSS 级兜底：图片模式下 html 同步壁纸，防止浏览器功能栏动态区域露底闪边 */
   html:has(body.background-image-mode) {
     background-color: #121224;
+    background-image: var(--bg-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   /* 图片背景层：独立 .bg-layer div，替代伪元素，消除移动端层级反转与工具栏收起缝隙 */
   .bg-layer {
     position: fixed;
-    top: -2px;
-    left: -2px;
-    width: calc(100vw + 4px);
-    height: calc(100vh + 4px);
-    height: calc(100lvh + 4px);
+    top: -12px;
+    right: -12px;
+    bottom: calc(-1 * (var(--safe-bottom) + 160px));
+    left: -12px;
+    width: auto;
+    height: auto;
+    min-height: calc(100lvh + var(--safe-bottom) + 184px);
     background-image: var(--bg-image, none);
     background-size: cover;
     background-position: center;
@@ -4554,9 +4596,15 @@
     }
 
     .search-inline .search-icon {
-      left: 8px !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
       width: 16px !important;
       height: 16px !important;
+    }
+
+    .search-inline.expanded .search-icon {
+      left: 8px !important;
+      transform: translateY(-50%) !important;
     }
 
     .search-inline input {
@@ -4592,9 +4640,15 @@
     }
 
     .search-inline .search-icon {
-      left: 7px !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
       width: 15px !important;
       height: 15px !important;
+    }
+
+    .search-inline.expanded .search-icon {
+      left: 7px !important;
+      transform: translateY(-50%) !important;
     }
 
     .layout-minimal .search-inline {
@@ -4613,6 +4667,61 @@
   .layout-minimal .search-inline,
   body.background-image-mode.layout-minimal .search-inline {
     border-radius: 0 !important;
+  }
+
+  /* 搜索框展开动画恢复：按钮态保持统一尺寸，展开态恢复宽度过渡 */
+  .search-inline {
+    transition:
+      width 0.3s ease,
+      min-width 0.3s ease,
+      flex-basis 0.3s ease,
+      border-color 0.3s ease,
+      background 0.3s ease !important;
+  }
+
+  .search-inline.expanded {
+    width: 180px !important;
+    min-width: 180px !important;
+    flex: 0 0 180px !important;
+    cursor: text;
+  }
+
+  body:not(.layout-minimal) .search-inline.expanded {
+    border-radius: 18px !important;
+  }
+
+  .layout-minimal .search-inline.expanded {
+    width: 148px !important;
+    min-width: 148px !important;
+    flex: 0 0 148px !important;
+  }
+
+  @media (max-width: 768px) {
+    .search-inline.expanded {
+      width: 140px !important;
+      min-width: 140px !important;
+      flex: 0 0 140px !important;
+    }
+
+    .layout-minimal .search-inline.expanded {
+      width: 116px !important;
+      min-width: 116px !important;
+      flex: 0 0 116px !important;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .search-inline.expanded {
+      width: 100px !important;
+      min-width: 100px !important;
+      flex: 0 0 100px !important;
+    }
+
+    .layout-minimal .search-inline.expanded {
+      width: 108px !important;
+      min-width: 108px !important;
+      flex: 0 0 108px !important;
+    }
   }
 
   .hide-toggle.active,
@@ -4786,6 +4895,43 @@
     filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.75)) !important;
   }
 
+  .search-inline:not(.expanded) .search-icon {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .search-inline.expanded .search-icon {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  body:not(.layout-minimal) .search-inline.expanded .search-icon {
+    left: 10px !important;
+  }
+
+  .layout-minimal .search-inline.expanded .search-icon,
+  body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+    left: 8px !important;
+  }
+
+  @media (max-width: 768px) {
+    body:not(.layout-minimal) .search-inline.expanded .search-icon {
+      left: 8px !important;
+    }
+
+    .layout-minimal .search-inline.expanded .search-icon,
+    body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+      left: 6px !important;
+    }
+  }
+
+  @media (max-width: 375px) {
+    body:not(.layout-minimal) .search-inline.expanded .search-icon {
+      left: 7px !important;
+    }
+  }
+
   .theme-toggle,
   .layout-toggle,
   .layout-btn,
@@ -4826,23 +4972,17 @@
   }
 
   body.background-image-mode::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -2px;
-    height: calc(var(--safe-bottom) + 12px);
-    min-height: 12px;
-    background: transparent;
-    pointer-events: none;
-    z-index: -1;
+    content: none;
   }
 
   body.background-image-mode .bg-layer {
-    top: -2px !important;
-    left: -2px !important;
-    width: calc(100vw + 4px) !important;
-    height: calc(100lvh + var(--safe-bottom) + 20px) !important;
+    top: -12px !important;
+    right: -12px !important;
+    bottom: calc(-1 * (var(--safe-bottom) + 160px)) !important;
+    left: -12px !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: calc(100lvh + var(--safe-bottom) + 184px) !important;
     transform: translateZ(0);
   }
 
@@ -5949,7 +6089,7 @@ function renderCategories() {
   searchWrapper.innerHTML = `
     <div class="search-inline" id="searchInline">
       <svg class="search-icon" viewBox="0 0 24 24">
-        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        <path d="M10.8 4.5a6.3 6.3 0 1 0 3.96 11.2l3.42 3.42a1 1 0 0 0 1.42-1.42l-3.42-3.42A6.3 6.3 0 0 0 10.8 4.5zm0 2a4.3 4.3 0 1 1 0 8.6 4.3 4.3 0 0 1 0-8.6z"/>
       </svg>
       <input type="text" id="searchInput" placeholder="搜索...">
     </div>
@@ -7617,25 +7757,13 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
   }
 
   function runThemeFade(changeFn, enabled = true) {
-    if (!enabled) {
-      changeFn();
-      return;
-    }
-    const overlay = ensureThemeFadeOverlay();
     if (fadeTimer) {
       clearTimeout(fadeTimer);
       fadeTimer = null;
     }
-    overlay.classList.add('active');
-    fadeTimer = setTimeout(() => {
-      changeFn();
-      requestAnimationFrame(() => {
-        overlay.classList.remove('active');
-      });
-      fadeTimer = setTimeout(() => {
-        fadeTimer = null;
-      }, 240);
-    }, 170);
+    const overlay = ensureThemeFadeOverlay();
+    overlay.classList.remove('active');
+    changeFn();
   }
 
   function getImageOverlay() {
@@ -7659,7 +7787,9 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     const overlay = getImageOverlay();
     syncImageBackgroundChrome();
     document.body.classList.add('background-image-mode');
-    document.body.style.setProperty('--bg-image', `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${url}')`);
+    const bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${url}')`;
+    document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    document.body.style.setProperty('--bg-image', bgImageValue);
   }
 
   function markActive(id) {
@@ -7703,7 +7833,6 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
 
   function setThemeBackground(option, shouldSave = true) {
     runThemeFade(() => {
-      document.body.classList.add('bg-transitioning');
       document.body.classList.remove('background-image-mode');
       document.body.style.backgroundImage = '';
       document.body.style.backgroundAttachment = '';
@@ -7711,6 +7840,7 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       document.body.style.backgroundPosition = '';
       document.body.style.backgroundRepeat = '';
       document.body.style.removeProperty('--bg-image');
+      document.documentElement.style.removeProperty('--bg-image');
       if (typeof setTheme === 'function') {
         setTheme(option.theme);
       } else {
@@ -7718,7 +7848,6 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       }
       if (shouldSave) saveSelection(option);
       markActive(option.id);
-      setTimeout(() => document.body.classList.remove('bg-transitioning'), 380);
     }, shouldSave);
   }
 
@@ -7728,13 +7857,11 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     const apply = (url) => {
       if (url) option.url = url;
       runThemeFade(() => {
-        document.body.classList.add('bg-transitioning');
         document.body.classList.add('background-image-mode');
         paintImageBackground(option.url);
         if (shouldSave) saveSelection(option);
         markActive(option.id);
         if (loading) loading.classList.remove('show');
-        setTimeout(() => document.body.classList.remove('bg-transitioning'), 380);
       }, shouldSave);
     };
 
