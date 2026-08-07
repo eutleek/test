@@ -4271,6 +4271,179 @@
     fill: currentColor;
   }
 
+  /* 手机端补丁：分类标签收窄、主题选择条可触摸滑动、深色蓝/橙/青主题文字可读 */
+  [data-theme="starry"] body:not(.background-image-mode),
+  [data-theme="sunset"] body:not(.background-image-mode),
+  [data-theme="aurora"] body:not(.background-image-mode) {
+    color: #ffffff;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .logo,
+  [data-theme="starry"] body:not(.background-image-mode) .tab-btn,
+  [data-theme="starry"] body:not(.background-image-mode) .theme-toggle,
+  [data-theme="starry"] body:not(.background-image-mode) .layout-btn,
+  [data-theme="starry"] body:not(.background-image-mode) .hide-toggle,
+  [data-theme="starry"] body:not(.background-image-mode) .category-title,
+  [data-theme="starry"] body:not(.background-image-mode) .subcategory-title,
+  [data-theme="starry"] body:not(.background-image-mode) .link-name,
+  [data-theme="starry"] body:not(.background-image-mode) .ai-card-name,
+  [data-theme="starry"] body:not(.background-image-mode) .search-inline input,
+  [data-theme="sunset"] body:not(.background-image-mode) .logo,
+  [data-theme="sunset"] body:not(.background-image-mode) .tab-btn,
+  [data-theme="sunset"] body:not(.background-image-mode) .theme-toggle,
+  [data-theme="sunset"] body:not(.background-image-mode) .layout-btn,
+  [data-theme="sunset"] body:not(.background-image-mode) .hide-toggle,
+  [data-theme="sunset"] body:not(.background-image-mode) .category-title,
+  [data-theme="sunset"] body:not(.background-image-mode) .subcategory-title,
+  [data-theme="sunset"] body:not(.background-image-mode) .link-name,
+  [data-theme="sunset"] body:not(.background-image-mode) .ai-card-name,
+  [data-theme="sunset"] body:not(.background-image-mode) .search-inline input,
+  [data-theme="aurora"] body:not(.background-image-mode) .logo,
+  [data-theme="aurora"] body:not(.background-image-mode) .tab-btn,
+  [data-theme="aurora"] body:not(.background-image-mode) .theme-toggle,
+  [data-theme="aurora"] body:not(.background-image-mode) .layout-btn,
+  [data-theme="aurora"] body:not(.background-image-mode) .hide-toggle,
+  [data-theme="aurora"] body:not(.background-image-mode) .category-title,
+  [data-theme="aurora"] body:not(.background-image-mode) .subcategory-title,
+  [data-theme="aurora"] body:not(.background-image-mode) .link-name,
+  [data-theme="aurora"] body:not(.background-image-mode) .ai-card-name,
+  [data-theme="aurora"] body:not(.background-image-mode) .search-inline input {
+    color: rgba(255, 255, 255, 0.96) !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.68) !important;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .link-url,
+  [data-theme="starry"] body:not(.background-image-mode) .link-desc,
+  [data-theme="starry"] body:not(.background-image-mode) .ai-card-desc,
+  [data-theme="sunset"] body:not(.background-image-mode) .link-url,
+  [data-theme="sunset"] body:not(.background-image-mode) .link-desc,
+  [data-theme="sunset"] body:not(.background-image-mode) .ai-card-desc,
+  [data-theme="aurora"] body:not(.background-image-mode) .link-url,
+  [data-theme="aurora"] body:not(.background-image-mode) .link-desc,
+  [data-theme="aurora"] body:not(.background-image-mode) .ai-card-desc {
+    color: rgba(255, 255, 255, 0.78) !important;
+    text-shadow: 0 1px 7px rgba(0, 0, 0, 0.62) !important;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .tab-btn.active,
+  [data-theme="sunset"] body:not(.background-image-mode) .tab-btn.active,
+  [data-theme="aurora"] body:not(.background-image-mode) .tab-btn.active {
+    background: rgba(255, 255, 255, 0.92) !important;
+    color: #101827 !important;
+    text-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0.92) !important;
+  }
+
+  @media (max-width: 768px) {
+    .layout-minimal .category-tabs {
+      gap: 6px;
+      margin-bottom: 22px;
+      padding: 0 16px;
+    }
+
+    .layout-minimal .tab-btn {
+      height: 28px;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 9px;
+      font-size: 10px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .background-modal-panel {
+      width: calc(100vw - 16px) !important;
+      margin-top: var(--bg-picker-top, 62px);
+      border-radius: 16px;
+    }
+
+    .background-modal-content {
+      padding: 12px 8px 10px;
+      overflow: visible;
+    }
+
+    .background-strip {
+      gap: 8px;
+      padding: 4px 4px 14px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      touch-action: pan-x;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      scrollbar-width: auto;
+      scrollbar-color: rgba(255, 255, 255, 0.58) rgba(255, 255, 255, 0.14);
+    }
+
+    .background-strip::-webkit-scrollbar {
+      height: 12px;
+      display: block;
+    }
+
+    .background-strip::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+    }
+
+    .background-strip::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.62);
+      border-radius: 999px;
+      border: 3px solid rgba(20, 22, 36, 0.18);
+    }
+
+    .background-strip.gray-scrollbar {
+      scrollbar-color: rgba(92, 92, 92, 0.72) rgba(255, 255, 255, 0.28);
+    }
+
+    .background-strip.gray-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(92, 92, 92, 0.72);
+    }
+
+    .background-card {
+      flex-basis: 118px;
+      min-height: 78px;
+      border-radius: 12px;
+    }
+
+    .background-card-preview,
+    .background-card img {
+      height: 78px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .category-tabs {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 6px;
+      padding: 0 12px 4px;
+    }
+
+    .tab-btn {
+      height: 32px;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .layout-minimal .tab-btn {
+      height: 28px;
+      min-height: 28px;
+      padding: 0 9px;
+      border-radius: 9px;
+      font-size: 10px;
+    }
+  }
+
   /* 全平台适配兜底 */
   html,
   body {
@@ -7185,6 +7358,34 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       if (Math.abs(walk) > 4) dragMoved = true;
       strip.scrollLeft = scrollLeft - walk;
     });
+
+    /* 手机触摸拖动：让主题/背景选择条在移动端可直接左右滑动 */
+    strip.addEventListener('touchstart', (e) => {
+      if (!e.touches || e.touches.length !== 1) return;
+      isDown = true;
+      dragMoved = false;
+      strip.classList.add('dragging');
+      startX = e.touches[0].pageX - strip.offsetLeft;
+      scrollLeft = strip.scrollLeft;
+    }, { passive: true });
+
+    strip.addEventListener('touchmove', (e) => {
+      if (!isDown || !e.touches || e.touches.length !== 1) return;
+      const x = e.touches[0].pageX - strip.offsetLeft;
+      const walk = x - startX;
+      if (Math.abs(walk) > 4) dragMoved = true;
+      strip.scrollLeft = scrollLeft - walk;
+    }, { passive: true });
+
+    strip.addEventListener('touchend', () => {
+      isDown = false;
+      strip.classList.remove('dragging');
+    }, { passive: true });
+
+    strip.addEventListener('touchcancel', () => {
+      isDown = false;
+      strip.classList.remove('dragging');
+    }, { passive: true });
 
     /* prevent click after drag */
     strip.addEventListener('click', (e) => {
