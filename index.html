@@ -4444,6 +4444,53 @@
     }
   }
 
+  /* 标签页方块化 + 隐藏按钮选中态改为只显示边框 */
+  .tab-btn,
+  .layout-minimal .tab-btn,
+  body.background-image-mode .tab-btn,
+  body.background-image-mode.layout-minimal .tab-btn {
+    border-radius: 0 !important;
+  }
+
+  .hide-toggle.active,
+  .layout-minimal .hide-toggle.active,
+  [data-theme="midnight"] body.layout-minimal .hide-toggle.active,
+  [data-theme="dream"] body.layout-minimal .hide-toggle.active,
+  [data-theme="forest"] body.layout-minimal .hide-toggle.active,
+  [data-theme="deepsea"] body.layout-minimal .hide-toggle.active,
+  [data-theme="clay"] body.layout-minimal .hide-toggle.active,
+  body.background-image-mode .hide-toggle.active,
+  body.background-image-mode.layout-minimal .hide-toggle.active {
+    background: transparent !important;
+    border-color: currentColor !important;
+    color: var(--text-primary) !important;
+    box-shadow: inset 0 0 0 1px currentColor !important;
+    text-shadow: none !important;
+  }
+
+  .hide-toggle.active svg,
+  .layout-minimal .hide-toggle.active svg,
+  [data-theme="midnight"] body.layout-minimal .hide-toggle.active svg,
+  [data-theme="dream"] body.layout-minimal .hide-toggle.active svg,
+  [data-theme="forest"] body.layout-minimal .hide-toggle.active svg,
+  [data-theme="deepsea"] body.layout-minimal .hide-toggle.active svg,
+  [data-theme="clay"] body.layout-minimal .hide-toggle.active svg,
+  body.background-image-mode .hide-toggle.active svg,
+  body.background-image-mode.layout-minimal .hide-toggle.active svg {
+    fill: currentColor !important;
+    color: currentColor !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .hide-toggle.active,
+  [data-theme="dream"] body.layout-minimal .hide-toggle.active,
+  [data-theme="forest"] body.layout-minimal .hide-toggle.active,
+  [data-theme="deepsea"] body.layout-minimal .hide-toggle.active,
+  [data-theme="clay"] body.layout-minimal .hide-toggle.active,
+  body.background-image-mode .hide-toggle.active,
+  body.background-image-mode.layout-minimal .hide-toggle.active {
+    color: rgba(255, 255, 255, 0.96) !important;
+  }
+
   /* 全平台适配兜底 */
   html,
   body {
@@ -4665,7 +4712,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">书影音 · 优质网站收藏</p>
-  <p class="footer-version">版本号：k1.51 · 共 7809 个链接</p>
+  <p class="footer-version">版本号：1.52 · 共 7809 个链接</p>
 </footer>
 
 <script>
