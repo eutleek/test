@@ -1475,8 +1475,8 @@
   .music-volume::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
@@ -1488,8 +1488,8 @@
   }
 
   .music-volume::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--accent);
     cursor: pointer;
@@ -1681,11 +1681,24 @@
       padding: 0;
     }
 
+    .search-inline {
+      width: 38px;
+      height: 38px;
+      border-radius: 19px;
+    }
+
+    .search-inline .search-icon {
+      left: 10px;
+      width: 16px;
+      height: 16px;
+    }
+
     .search-inline.expanded {
       width: 140px;
     }
 
     .search-inline input {
+      left: 34px;
       width: 90px;
     }
 
@@ -1757,7 +1770,18 @@
     .search-inline.expanded {
       width: 100px;
     }
+    .search-inline {
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+    }
+    .search-inline .search-icon {
+      left: 8px;
+      width: 14px;
+      height: 14px;
+    }
     .search-inline input {
+      left: 28px;
       width: 64px;
       font-size: 12px;
     }
@@ -2201,11 +2225,16 @@
     background: transparent;
     border: 1px solid transparent;
     padding: 8px 16px;
+    min-height: 32px;
+    box-sizing: border-box;
     font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #1d1d1f;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
     position: relative;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -2232,14 +2261,15 @@
   }
 
   .layout-minimal .search-inline {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 0;
     background: transparent;
     border: 1px solid transparent;
+    box-sizing: border-box;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .layout-minimal .search-inline:hover {
@@ -2247,22 +2277,22 @@
   }
 
   .layout-minimal .search-inline.expanded {
-    width: 132px;
+    width: 148px;
     border: 1px solid #1d1d1f;
   }
 
   .layout-minimal .search-inline .search-icon {
     fill: #1d1d1f;
-    left: 7px;
+    left: 8px;
     width: 14px;
     height: 14px;
   }
 
   .layout-minimal .search-inline input {
-    left: 27px;
-    width: 94px;
+    left: 30px;
+    width: 108px;
     color: #1d1d1f;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .layout-minimal .search-inline input::placeholder {
@@ -2343,7 +2373,7 @@
     }
 
     .layout-minimal .search-inline.expanded {
-      width: 108px;
+      width: 116px;
     }
 
     .layout-minimal .search-inline .search-icon {
@@ -2353,8 +2383,8 @@
     }
 
     .layout-minimal .search-inline input {
-      left: 24px;
-      width: 76px;
+      left: 25px;
+      width: 82px;
       font-size: 10px;
     }
 
@@ -2393,6 +2423,7 @@
 
     .layout-minimal .tab-btn {
       padding: 6px 12px;
+      min-height: 28px;
       font-size: 10px;
       letter-spacing: 0.15em;
     }
@@ -4047,11 +4078,11 @@
   /* 图片背景层：独立 .bg-layer div，替代伪元素，消除移动端层级反转与工具栏收起缝隙 */
   .bg-layer {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100lvh;
+    top: -2px;
+    left: -2px;
+    width: calc(100vw + 4px);
+    height: calc(100vh + 4px);
+    height: calc(100lvh + 4px);
     background-image: var(--bg-image, none);
     background-size: cover;
     background-position: center;
@@ -4059,6 +4090,7 @@
     z-index: -1;
     pointer-events: none;
     will-change: transform;
+    transform: translateZ(0);
   }
 
   /* 图片背景模式：恢复之前调过的可读性增强，独立于主题切换 */
@@ -4354,6 +4386,12 @@
       flex: 0 0 auto;
     }
 
+    .layout-minimal .search-inline {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+    }
+
     .background-modal-panel {
       width: calc(100vw - 16px) !important;
       margin-top: var(--bg-picker-top, 62px);
@@ -4435,6 +4473,22 @@
       white-space: nowrap;
     }
 
+    .search-inline {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+    }
+
+    .search-inline .search-icon {
+      left: 8px;
+      width: 14px;
+      height: 14px;
+    }
+
+    .search-inline input {
+      left: 28px;
+    }
+
     .layout-minimal .tab-btn {
       height: 28px;
       min-height: 28px;
@@ -4442,11 +4496,19 @@
       border-radius: 9px;
       font-size: 10px;
     }
+
+    .layout-minimal .search-inline {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+    }
   }
 
   /* 杂志布局标签页方块化 + 隐藏按钮选中态改为统一细边框 */
   .layout-minimal .tab-btn,
-  body.background-image-mode.layout-minimal .tab-btn {
+  body.background-image-mode.layout-minimal .tab-btn,
+  .layout-minimal .search-inline,
+  body.background-image-mode.layout-minimal .search-inline {
     border-radius: 0 !important;
   }
 
@@ -4584,13 +4646,22 @@
   }
 
   body.background-image-mode .search-inline,
-  body.background-image-mode.layout-minimal .search-inline,
+  body.background-image-mode.layout-minimal .search-inline {
+    background: transparent !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
   body.background-image-mode .search-inline:hover,
   body.background-image-mode .search-inline.expanded,
   body.background-image-mode.layout-minimal .search-inline:hover,
   body.background-image-mode.layout-minimal .search-inline.expanded {
-    background: transparent !important;
-    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(0, 0, 0, 0.16) !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
     box-shadow: none !important;
   }
 
@@ -4637,14 +4708,16 @@
     bottom: -2px;
     height: calc(var(--safe-bottom) + 12px);
     min-height: 12px;
-    background: #121224;
+    background: transparent;
     pointer-events: none;
     z-index: -1;
   }
 
   body.background-image-mode .bg-layer {
-    top: -1px !important;
-    height: calc(100lvh + var(--safe-bottom) + 14px) !important;
+    top: -2px !important;
+    left: -2px !important;
+    width: calc(100vw + 4px) !important;
+    height: calc(100lvh + var(--safe-bottom) + 20px) !important;
     transform: translateZ(0);
   }
 
