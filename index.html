@@ -3811,6 +3811,9 @@
     min-width: 36px !important;
     flex: 0 0 36px !important;
     z-index: 30;
+    transition: width 0.3s ease,
+                min-width 0.3s ease,
+                flex-basis 0.3s ease;
   }
 
   .search-inline {
@@ -3818,6 +3821,11 @@
     left: 0 !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
+    will-change: width;
+    transition: width 0.3s ease,
+                border-color 0.3s ease,
+                background-color 0.3s ease,
+                box-shadow 0.3s ease !important;
   }
 
   body:not(.layout-minimal) .search-inline {
@@ -3825,19 +3833,23 @@
   }
 
   body:not(.layout-minimal) .search-inline .search-icon {
-    left: 50% !important;
+    left: 18px !important;
     transform: translate(-50%, -50%) !important;
     width: 17px !important;
     height: 17px !important;
+    transition: fill 0.2s ease,
+                filter 0.2s ease,
+                opacity 0.2s ease !important;
   }
 
   body:not(.layout-minimal) .search-inline.expanded .search-icon {
-    left: 14px !important;
-    transform: translateY(-50%) !important;
+    left: 18px !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   body:not(.layout-minimal) .search-inline input {
-    left: 42px !important;
+    left: 34px !important;
+    transition: opacity 0.2s ease !important;
   }
 
   .theme-toggle,
@@ -3889,7 +3901,21 @@
       width: 32px !important;
       height: 32px !important;
       min-width: 32px !important;
-      flex-basis: 32px !important;
+      flex: 0 0 32px !important;
+    }
+
+    .search-wrapper.search-expanded {
+      width: 140px !important;
+      min-width: 140px !important;
+      flex: 0 0 140px !important;
+    }
+
+    .category-tabs.search-expanded {
+      flex-wrap: nowrap !important;
+      justify-content: center !important;
+      overflow-x: hidden !important;
+      transform: translateX(-10px);
+      transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .layout-btn {
@@ -3909,12 +3935,13 @@
     }
 
     body:not(.layout-minimal) .search-inline.expanded .search-icon {
-      left: 12px !important;
+      left: 16px !important;
       transform: translateY(-50%) !important;
     }
 
     body:not(.layout-minimal) .search-inline input {
-      left: 38px !important;
+      left: 40px !important;
+      width: 92px !important;
     }
   }
 
@@ -3934,7 +3961,17 @@
       width: 30px !important;
       height: 30px !important;
       min-width: 30px !important;
-      flex-basis: 30px !important;
+      flex: 0 0 30px !important;
+    }
+
+    .search-wrapper.search-expanded {
+      width: 112px !important;
+      min-width: 112px !important;
+      flex: 0 0 112px !important;
+    }
+
+    .category-tabs.search-expanded {
+      transform: translateX(-8px);
     }
 
     body:not(.layout-minimal) .search-inline {
@@ -3949,12 +3986,13 @@
     }
 
     body:not(.layout-minimal) .search-inline.expanded .search-icon {
-      left: 10px !important;
+      left: 15px !important;
       transform: translateY(-50%) !important;
     }
 
     body:not(.layout-minimal) .search-inline input {
-      left: 34px !important;
+      left: 36px !important;
+      width: 70px !important;
     }
   }
 
@@ -3981,12 +4019,12 @@
     z-index: 10050;
     pointer-events: none;
     opacity: 0;
-    background: transparent;
-    transition: none;
+    background: rgba(255, 255, 255, 0.18);
+    transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .theme-fade-overlay.active {
-    opacity: 0;
+    opacity: 1;
   }
 
   [data-theme="midnight"] .theme-fade-overlay,
@@ -3999,7 +4037,7 @@
   [data-theme="clay"] .theme-fade-overlay,
   [data-theme="anime"] .theme-fade-overlay,
   body.background-image-mode .theme-fade-overlay {
-    background: transparent;
+    background: rgba(18, 18, 36, 0.16);
   }
 
   .background-picker-trigger {
@@ -4240,6 +4278,32 @@
     pointer-events: none;
     will-change: transform;
     transform: translateZ(0);
+    opacity: 1;
+    transition: opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .bg-layer-fade {
+    position: fixed;
+    top: -12px;
+    right: -12px;
+    bottom: calc(-1 * (var(--safe-bottom) + 160px));
+    left: -12px;
+    width: auto;
+    height: auto;
+    min-height: calc(100lvh + var(--safe-bottom) + 184px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    will-change: opacity, transform;
+    transform: translateZ(0);
+    transition: opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .bg-layer-fade.visible {
+    opacity: 1;
   }
 
   /* 图片背景模式：恢复之前调过的可读性增强，独立于主题切换 */
@@ -4715,6 +4779,23 @@
       background 0.3s ease !important;
   }
 
+  .search-inline .search-icon {
+    transition:
+      opacity 0.2s ease,
+      fill 0.2s ease,
+      filter 0.2s ease !important;
+  }
+
+  .search-inline input {
+    transform: translateY(-50%) !important;
+    transition:
+      opacity 0.2s ease !important;
+  }
+
+  .search-inline.expanded input {
+    transform: translateY(-50%) !important;
+  }
+
   .search-inline.expanded {
     width: 180px !important;
     min-width: 180px !important;
@@ -4733,6 +4814,23 @@
   }
 
   @media (max-width: 768px) {
+    .category-tabs {
+      transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .category-tabs.search-expanded {
+      flex-wrap: nowrap !important;
+      justify-content: center !important;
+      overflow-x: hidden !important;
+      transform: translateX(-10px);
+    }
+
+    .search-wrapper.search-expanded {
+      width: 140px !important;
+      min-width: 140px !important;
+      flex: 0 0 140px !important;
+    }
+
     .search-inline.expanded {
       width: 140px !important;
       min-width: 140px !important;
@@ -4747,10 +4845,20 @@
   }
 
   @media (max-width: 375px) {
+    .category-tabs.search-expanded {
+      transform: translateX(-8px);
+    }
+
+    .search-wrapper.search-expanded {
+      width: 112px !important;
+      min-width: 112px !important;
+      flex: 0 0 112px !important;
+    }
+
     .search-inline.expanded {
-      width: 100px !important;
-      min-width: 100px !important;
-      flex: 0 0 100px !important;
+      width: 112px !important;
+      min-width: 112px !important;
+      flex: 0 0 112px !important;
     }
 
     .layout-minimal .search-inline.expanded {
@@ -4932,40 +5040,93 @@
   }
 
   .search-inline:not(.expanded) .search-icon {
-    left: 50% !important;
+    left: 18px !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
   }
 
   .search-inline.expanded .search-icon {
     top: 50% !important;
-    transform: translateY(-50%) !important;
+    transform: translate(-50%, -50%) !important;
   }
 
   body:not(.layout-minimal) .search-inline.expanded .search-icon {
-    left: 10px !important;
+    left: 18px !important;
+  }
+
+  body:not(.layout-minimal) .search-inline input {
+    left: 34px !important;
+    width: 138px !important;
   }
 
   .layout-minimal .search-inline.expanded .search-icon,
   body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
-    left: 8px !important;
+    left: 17px !important;
+  }
+
+  .layout-minimal .search-inline input,
+  body.background-image-mode.layout-minimal .search-inline input {
+    left: 31px !important;
   }
 
   @media (max-width: 768px) {
     body:not(.layout-minimal) .search-inline.expanded .search-icon {
-      left: 8px !important;
+      left: 16px !important;
+    }
+
+    body:not(.layout-minimal) .search-inline input {
+      left: 36px !important;
+      width: 96px !important;
     }
 
     .layout-minimal .search-inline.expanded .search-icon,
     body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
-      left: 6px !important;
+      left: 15px !important;
+    }
+
+    .layout-minimal .search-inline input,
+    body.background-image-mode.layout-minimal .search-inline input {
+      left: 30px !important;
+      width: 78px !important;
     }
   }
 
   @media (max-width: 375px) {
     body:not(.layout-minimal) .search-inline.expanded .search-icon {
-      left: 7px !important;
+      left: 15px !important;
     }
+
+    body:not(.layout-minimal) .search-inline input {
+      left: 32px !important;
+      width: 72px !important;
+    }
+
+    .layout-minimal .search-inline.expanded .search-icon,
+    body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+      left: 14px !important;
+    }
+
+    .layout-minimal .search-inline input,
+    body.background-image-mode.layout-minimal .search-inline input {
+      left: 28px !important;
+      width: 72px !important;
+    }
+  }
+
+  body:not(.layout-minimal) .search-inline input,
+  .layout-minimal .search-inline input,
+  body.background-image-mode .search-inline input,
+  body.background-image-mode.layout-minimal .search-inline input {
+    transform: translateY(-50%) !important;
+    transition:
+      opacity 0.2s ease !important;
+  }
+
+  body:not(.layout-minimal) .search-inline.expanded input,
+  .layout-minimal .search-inline.expanded input,
+  body.background-image-mode .search-inline.expanded input,
+  body.background-image-mode.layout-minimal .search-inline.expanded input {
+    transform: translateY(-50%) !important;
   }
 
   .theme-toggle,
@@ -7005,9 +7166,18 @@ const searchInline = document.getElementById('searchInline');
 const searchInputEl = document.getElementById('searchInput');
 
 if (searchInline && searchInputEl) {
+  const searchWrapperEl = searchInline.closest('.search-wrapper');
+  const categoryTabsEl = document.getElementById('categoryTabs');
+  const setSearchExpanded = (expanded) => {
+    searchInline.classList.toggle('expanded', expanded);
+    if (searchWrapperEl) searchWrapperEl.classList.toggle('search-expanded', expanded);
+    if (categoryTabsEl) categoryTabsEl.classList.toggle('search-expanded', expanded);
+    document.body.classList.toggle('search-expanded', expanded);
+  };
+
   searchInline.addEventListener('click', (e) => {
     if (!searchInline.classList.contains('expanded')) {
-      searchInline.classList.add('expanded');
+      setSearchExpanded(true);
       setTimeout(() => searchInputEl.focus(), 200);
     }
   });
@@ -7015,7 +7185,7 @@ if (searchInline && searchInputEl) {
   document.addEventListener('click', (e) => {
     if (!searchInline.contains(e.target)) {
       if (!searchInputEl.value) {
-        searchInline.classList.remove('expanded');
+        setSearchExpanded(false);
       }
     }
   });
@@ -7038,7 +7208,7 @@ if (searchInline && searchInputEl) {
   searchInputEl.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       searchInputEl.value = '';
-      searchInline.classList.remove('expanded');
+      setSearchExpanded(false);
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.category === lastSelectedCategory);
       });
@@ -7047,7 +7217,7 @@ if (searchInline && searchInputEl) {
   });
 
   searchInputEl.addEventListener('focus', () => {
-    searchInline.classList.add('expanded');
+    setSearchExpanded(true);
   });
 }
 
@@ -7780,6 +7950,7 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
   let modalBuilt = false;
   let selectedId = null;
   let fadeTimer = null;
+  let backgroundFadeTimer = null;
 
   function ensureThemeFadeOverlay() {
     let overlay = document.getElementById('themeFadeOverlay');
@@ -7797,9 +7968,78 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       clearTimeout(fadeTimer);
       fadeTimer = null;
     }
+    if (!enabled) {
+      changeFn();
+      return;
+    }
     const overlay = ensureThemeFadeOverlay();
     overlay.classList.remove('active');
+    requestAnimationFrame(() => {
+      overlay.classList.add('active');
+      setTimeout(() => {
+        changeFn();
+        requestAnimationFrame(() => {
+          overlay.classList.remove('active');
+        });
+      }, 90);
+      fadeTimer = setTimeout(() => {
+        overlay.classList.remove('active');
+        fadeTimer = null;
+      }, 620);
+    });
+  }
+
+  function ensureBackgroundFadeLayer() {
+    let layer = document.getElementById('backgroundFadeLayer');
+    if (!layer) {
+      layer = document.createElement('div');
+      layer.id = 'backgroundFadeLayer';
+      layer.className = 'bg-layer-fade';
+      const bgLayer = document.querySelector('.bg-layer');
+      if (bgLayer && bgLayer.parentNode) {
+        bgLayer.parentNode.insertBefore(layer, bgLayer.nextSibling);
+      } else {
+        document.body.appendChild(layer);
+      }
+    }
+    return layer;
+  }
+
+  function fadeFromCurrentImageBackground(changeFn, enabled = true) {
+    if (backgroundFadeTimer) {
+      clearTimeout(backgroundFadeTimer);
+      backgroundFadeTimer = null;
+    }
+    if (!enabled) {
+      changeFn();
+      return;
+    }
+
+    const currentLayer = document.querySelector('.bg-layer');
+    const fadeLayer = ensureBackgroundFadeLayer();
+    const currentStyle = currentLayer ? getComputedStyle(currentLayer) : null;
+    const currentImage = currentStyle ? currentStyle.backgroundImage : '';
+    const hasCurrentImage = currentImage && currentImage !== 'none';
+
+    if (hasCurrentImage) {
+      fadeLayer.style.backgroundImage = currentImage;
+      fadeLayer.style.backgroundSize = currentStyle.backgroundSize;
+      fadeLayer.style.backgroundPosition = currentStyle.backgroundPosition;
+      fadeLayer.style.backgroundRepeat = currentStyle.backgroundRepeat;
+      fadeLayer.classList.add('visible');
+    }
+
     changeFn();
+
+    if (hasCurrentImage) {
+      requestAnimationFrame(() => {
+        fadeLayer.classList.remove('visible');
+      });
+      backgroundFadeTimer = setTimeout(() => {
+        fadeLayer.style.backgroundImage = '';
+        backgroundFadeTimer = null;
+      }, 680);
+    }
   }
 
   function getImageOverlay() {
@@ -7869,21 +8109,23 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
 
   function setThemeBackground(option, shouldSave = true) {
     runThemeFade(() => {
-      document.body.classList.remove('background-image-mode');
-      document.body.style.backgroundImage = '';
-      document.body.style.backgroundAttachment = '';
-      document.body.style.backgroundSize = '';
-      document.body.style.backgroundPosition = '';
-      document.body.style.backgroundRepeat = '';
-      document.body.style.removeProperty('--bg-image');
-      document.documentElement.style.removeProperty('--bg-image');
-      if (typeof setTheme === 'function') {
-        setTheme(option.theme);
-      } else {
-        document.documentElement.setAttribute('data-theme', option.theme);
-      }
-      if (shouldSave) saveSelection(option);
-      markActive(option.id);
+      fadeFromCurrentImageBackground(() => {
+        document.body.classList.remove('background-image-mode');
+        document.body.style.backgroundImage = '';
+        document.body.style.backgroundAttachment = '';
+        document.body.style.backgroundSize = '';
+        document.body.style.backgroundPosition = '';
+        document.body.style.backgroundRepeat = '';
+        document.body.style.removeProperty('--bg-image');
+        document.documentElement.style.removeProperty('--bg-image');
+        if (typeof setTheme === 'function') {
+          setTheme(option.theme);
+        } else {
+          document.documentElement.setAttribute('data-theme', option.theme);
+        }
+        if (shouldSave) saveSelection(option);
+        markActive(option.id);
+      }, shouldSave);
     }, shouldSave);
   }
 
@@ -7893,11 +8135,13 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     const apply = (url) => {
       if (url) option.url = url;
       runThemeFade(() => {
-        document.body.classList.add('background-image-mode');
-        paintImageBackground(option.url);
-        if (shouldSave) saveSelection(option);
-        markActive(option.id);
-        if (loading) loading.classList.remove('show');
+        fadeFromCurrentImageBackground(() => {
+          document.body.classList.add('background-image-mode');
+          paintImageBackground(option.url);
+          if (shouldSave) saveSelection(option);
+          markActive(option.id);
+          if (loading) loading.classList.remove('show');
+        }, shouldSave);
       }, shouldSave);
     };
 
