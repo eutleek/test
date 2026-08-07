@@ -439,7 +439,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    height: 100dvh;
+    height: 100lvh;
     z-index: -1;
     overflow: hidden;
   }
@@ -4025,35 +4025,40 @@
     display: block;
   }
 
-  /* 图片背景独立层：替代伪元素，避免移动端 z-index 反转 */
+  /* 图片背景模式：body 透明，由独立 .bg-layer div 承载背景图 */
   body.background-image-mode {
     background-image: none !important;
     background-color: transparent !important;
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
   }
 
+  /* 图片背景模式：隐藏 .bg-gradient（layout-minimal 下它有白色背景，会盖住 .bg-layer 壁纸） */
+  body.background-image-mode .bg-gradient {
+    display: none !important;
+  }
+
+  /* CSS 级兜底：图片模式下 html 底色为深色，防止 JS 执行前的浅色闪烁 */
+  html:has(body.background-image-mode) {
+    background-color: #121224;
+  }
+
+  /* 图片背景层：独立 .bg-layer div，替代伪元素，消除移动端层级反转与工具栏收起缝隙 */
   .bg-layer {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100dvh;
+    height: 100vh;
+    height: 100lvh;
+    background-image: var(--bg-image, none);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
     pointer-events: none;
-    display: none;
     will-change: transform;
-  }
-
-  body.background-image-mode .bg-layer {
-    display: block;
-    background-image: var(--bg-image, none);
-  }
-
-  /* 图片背景模式下隐藏 .bg-gradient，避免其白色/渐变背景覆盖 .bg-layer */
-  body.background-image-mode .bg-gradient {
-    display: none;
   }
 
   /* 图片背景模式：恢复之前调过的可读性增强，独立于主题切换 */
@@ -4390,6 +4395,7 @@
 </style>
 </head>
 <body>
+<div class="bg-layer"></div>
 <div class="bg-gradient"></div>
 
 <header>
@@ -4484,12 +4490,15 @@
     <span class="badge">✨ 无弹窗</span>
     <span class="badge">✨ 无盈利</span>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn">免责声明</a>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">ACGN · 优质网站收藏</p>
-  <p class="footer-version">版本号：V 1.30 · 共 7809 个链接</p>
+  <p class="footer-version">版本号：k1.51 · 共 7809 个链接</p>
 </footer>
 
 <script>
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
 const linksData = [
   {
     name: "软件工具",
@@ -4972,27 +4981,6 @@ function initHideMode() {
 function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
-
-  // 返回主页按钮（作为第一个标签）
-  const backBtn = document.createElement('a');
-  backBtn.href = 'index.html';
-  backBtn.target = 'kisstr_home';
-  backBtn.className = 'tab-btn back-home-tab';
-  backBtn.innerHTML = '← 返回主页';
-  backBtn.style.cssText = 'background:var(--card-bg);border:1px solid var(--card-border);color:var(--text-secondary);text-decoration:none;flex-shrink:0;';
-  backBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.open('index.html', 'kisstr_home');
-  });
-  backBtn.addEventListener('mouseenter', function() {
-    this.style.borderColor = 'var(--accent)';
-    this.style.color = 'var(--accent)';
-  });
-  backBtn.addEventListener('mouseleave', function() {
-    this.style.borderColor = 'var(--card-border)';
-    this.style.color = 'var(--text-secondary)';
-  });
-  tabsContainer.appendChild(backBtn);
 
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');
@@ -6667,14 +6655,6 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     url = url.replace('.jpg', '.webp');
     const overlay = getImageOverlay();
     syncImageBackgroundChrome();
-    // 创建或复用独立背景层 div（替代伪元素，避免移动端 z-index 反转）
-    var bgLayer = document.getElementById('bgLayer');
-    if (!bgLayer) {
-      bgLayer = document.createElement('div');
-      bgLayer.id = 'bgLayer';
-      bgLayer.className = 'bg-layer';
-      document.body.insertBefore(bgLayer, document.body.firstChild);
-    }
     document.body.classList.add('background-image-mode');
     document.body.style.setProperty('--bg-image', `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${url}')`);
   }
