@@ -4489,6 +4489,130 @@
     color: rgba(255, 255, 255, 0.96) !important;
   }
 
+  /* 本轮仅改 index：经典布局标签按附件恢复，搜索框与手机主题滚动条补强 */
+  body.layout-grid .category-tabs {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  body.layout-grid .tab-btn {
+    height: auto;
+    min-height: 0;
+    padding: 10px 20px;
+    border-radius: 20px !important;
+    font-size: 14px;
+    line-height: normal;
+    flex: 0 1 auto;
+    white-space: normal;
+  }
+
+  body.layout-grid .tab-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  body.layout-grid .tab-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+  }
+
+  .search-inline,
+  .search-inline input,
+  .search-inline input::placeholder {
+    text-shadow: none !important;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .search-inline,
+  [data-theme="sunset"] body:not(.background-image-mode) .search-inline,
+  [data-theme="aurora"] body:not(.background-image-mode) .search-inline {
+    background: rgba(255, 255, 255, 0.94) !important;
+    border-color: rgba(255, 255, 255, 0.88) !important;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .search-inline input,
+  [data-theme="sunset"] body:not(.background-image-mode) .search-inline input,
+  [data-theme="aurora"] body:not(.background-image-mode) .search-inline input {
+    color: #111827 !important;
+    text-shadow: none !important;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .search-inline input::placeholder,
+  [data-theme="sunset"] body:not(.background-image-mode) .search-inline input::placeholder,
+  [data-theme="aurora"] body:not(.background-image-mode) .search-inline input::placeholder {
+    color: rgba(17, 24, 39, 0.62) !important;
+    text-shadow: none !important;
+  }
+
+  [data-theme="starry"] body:not(.background-image-mode) .search-inline .search-icon,
+  [data-theme="sunset"] body:not(.background-image-mode) .search-inline .search-icon,
+  [data-theme="aurora"] body:not(.background-image-mode) .search-inline .search-icon {
+    fill: #111827 !important;
+    filter: none !important;
+  }
+
+  @media (max-width: 768px) {
+    body.layout-grid .category-tabs {
+      padding: 0 16px;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    body.layout-grid .tab-btn {
+      padding: 8px 14px;
+      border-radius: 20px !important;
+      font-size: 13px;
+      height: auto;
+      min-height: 0;
+      line-height: normal;
+    }
+
+    .background-strip {
+      touch-action: pan-x;
+      overscroll-behavior-x: contain;
+      scroll-behavior: smooth;
+      padding-bottom: 18px;
+      scrollbar-width: auto;
+    }
+
+    .background-strip::-webkit-scrollbar {
+      height: 14px;
+      display: block !important;
+    }
+
+    .background-strip::-webkit-scrollbar-thumb {
+      min-width: 44px;
+      border: 3px solid rgba(20, 22, 36, 0.18);
+    }
+  }
+
+  @media (max-width: 375px) {
+    body.layout-grid .category-tabs {
+      padding: 0 12px;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    body.layout-grid .tab-btn {
+      padding: 6px 10px;
+      border-radius: 20px !important;
+      font-size: 12px;
+    }
+  }
+
   /* 全平台适配兜底 */
   html,
   body {
