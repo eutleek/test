@@ -4029,6 +4029,9 @@
   body.background-image-mode {
     background-image: none !important;
     background-color: transparent !important;
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
   }
 
   /* CSS 级兜底：图片模式下 html 底色为深色，防止 JS 执行前的浅色闪烁 */
