@@ -4034,6 +4034,11 @@
     isolation: isolate;
   }
 
+  /* 图片背景模式：隐藏 .bg-gradient（layout-minimal 下它有白色背景，会盖住 .bg-layer 壁纸） */
+  body.background-image-mode .bg-gradient {
+    display: none !important;
+  }
+
   /* CSS 级兜底：图片模式下 html 底色为深色，防止 JS 执行前的浅色闪烁 */
   html:has(body.background-image-mode) {
     background-color: #121224;
@@ -4487,7 +4492,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">书影音 · 优质网站收藏</p>
-  <p class="footer-version">版本号：测试0.01 · 共 7809 个链接</p>
+  <p class="footer-version">版本号：测试0.02 · 共 7809 个链接</p>
 </footer>
 
 <script>
