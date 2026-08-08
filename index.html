@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-<meta name="theme-color" content="#0071e3">
+<meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="description" content="书影音 - 您通往知识和文化的门户">
@@ -7156,33 +7156,32 @@ function setTheme(theme) {
   const themeNames = getThemeNames();
   const themeIndex = themes.indexOf(theme);
 
-  // 动态更新浏览器主题色 (Brave/Chrome/Safari 地址栏颜色)
   const themeColors = {
-    'white': '#f5f5f7',
-    'dawn': '#fff5f5',
-    'mint': '#f0fff5',
-    'ocean': '#f0f8ff',
-    'twilight': '#f5f0ff',
-    'midnight': '#000212',
-    'starry': '#0c0c1d',
-    'sunset': '#2d1b0e',
-    'aurora': '#1a2a3a',
-    'dream': '#667eea'
+    "white": "#f5f5f7",
+    "dawn": "#fff5f5",
+    "mint": "#f0fff5",
+    "ocean": "#f0f8ff",
+    "twilight": "#f5f0ff",
+    "midnight": "#000212",
+    "starry": "#0c0c1d",
+    "sunset": "#2d1b0e",
+    "aurora": "#1a2a3a",
+    "dream": "#667eea",
+    "forest": "#2d5f4e",
+    "deepsea": "#1a4a6e",
+    "clay": "#6b4a35"
   };
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-  if (metaThemeColor && themeColors[theme]) {
-    metaThemeColor.setAttribute('content', themeColors[theme]);
-  }
 
-  // 同步更新 html 背景色，防止快速滚动时出现白边
   const currentLayout = getCurrentLayout();
-  if (currentLayout === 'minimal') {
-    document.documentElement.style.backgroundColor = '#ffffff';
+  if (currentLayout === "minimal") {
+    document.documentElement.style.backgroundColor = "#ffffff";
+    if (metaThemeColor) metaThemeColor.setAttribute("content", "#ffffff");
   } else if (themeColors[theme]) {
     document.documentElement.style.backgroundColor = themeColors[theme];
+    if (metaThemeColor) metaThemeColor.setAttribute("content", themeColors[theme]);
   }
 
-  // 暗色主题显示太阳图标，亮色主题显示月亮图标
   if (darkThemes.includes(theme)) {
     sunIcon.style.display = 'block';
     moonIcon.style.display = 'none';
