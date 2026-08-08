@@ -219,6 +219,160 @@
     }
   }
 
+
+  /* ========== No-fill controls and classic icons: requested final override ========== */
+  .theme-toggle,
+  .layout-toggle,
+  .layout-btn,
+  .hide-toggle,
+  .search-inline,
+  .theme-toggle:hover,
+  .layout-btn:hover,
+  .layout-btn.active,
+  .hide-toggle:hover,
+  .hide-toggle.active,
+  .search-inline:hover,
+  .search-inline.expanded,
+  body.layout-minimal .theme-toggle,
+  body.layout-minimal .layout-toggle,
+  body.layout-minimal .layout-btn,
+  body.layout-minimal .hide-toggle,
+  body.layout-minimal .search-inline,
+  body.layout-minimal .theme-toggle:hover,
+  body.layout-minimal .layout-btn:hover,
+  body.layout-minimal .layout-btn.active,
+  body.layout-minimal .hide-toggle:hover,
+  body.layout-minimal .hide-toggle.active,
+  body.layout-minimal .search-inline:hover,
+  body.layout-minimal .search-inline.expanded,
+  body.background-image-mode .theme-toggle,
+  body.background-image-mode .layout-toggle,
+  body.background-image-mode .layout-btn,
+  body.background-image-mode .hide-toggle,
+  body.background-image-mode .search-inline,
+  body.background-image-mode .theme-toggle:hover,
+  body.background-image-mode .layout-btn:hover,
+  body.background-image-mode .layout-btn.active,
+  body.background-image-mode .hide-toggle:hover,
+  body.background-image-mode .hide-toggle.active,
+  body.background-image-mode .search-inline:hover,
+  body.background-image-mode .search-inline.expanded,
+  body.background-image-mode.layout-minimal .theme-toggle,
+  body.background-image-mode.layout-minimal .layout-toggle,
+  body.background-image-mode.layout-minimal .layout-btn,
+  body.background-image-mode.layout-minimal .hide-toggle,
+  body.background-image-mode.layout-minimal .search-inline,
+  body.background-image-mode.layout-minimal .theme-toggle:hover,
+  body.background-image-mode.layout-minimal .layout-btn:hover,
+  body.background-image-mode.layout-minimal .layout-btn.active,
+  body.background-image-mode.layout-minimal .hide-toggle:hover,
+  body.background-image-mode.layout-minimal .hide-toggle.active,
+  body.background-image-mode.layout-minimal .search-inline:hover,
+  body.background-image-mode.layout-minimal .search-inline.expanded {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+
+  body.layout-grid .link-icon,
+  body:not(.layout-minimal) .link-icon,
+  body.layout-grid.background-image-mode .link-icon,
+  body.background-image-mode:not(.layout-minimal) .link-icon {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* ========== Capture unlock and mobile bottom seam fix ========== */
+  html,
+  body,
+  body * {
+    -webkit-user-select: auto !important;
+    user-select: auto !important;
+  }
+
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  .tab-btn,
+  .theme-toggle,
+  .layout-btn,
+  .hide-toggle,
+  .search-inline,
+  .link-card,
+  .ai-link-card {
+    -webkit-touch-callout: default !important;
+    touch-action: auto !important;
+  }
+
+  @media (max-width: 768px) {
+    .bg-gradient {
+      height: calc(100lvh + var(--safe-bottom) + 32px) !important;
+    }
+
+    .bg-layer,
+    .bg-layer-fade {
+      bottom: calc(-1 * (var(--safe-bottom) + 220px)) !important;
+      min-height: calc(100lvh + var(--safe-bottom) + 244px) !important;
+    }
+
+    footer {
+      margin-bottom: -2px !important;
+      padding-bottom: calc(46px + var(--safe-bottom)) !important;
+      background-clip: border-box !important;
+    }
+
+    body::after {
+      content: '' !important;
+      position: fixed !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: -2px !important;
+      height: calc(var(--safe-bottom) + 10px) !important;
+      z-index: 98 !important;
+      pointer-events: none !important;
+      background: #f5f5f7 !important;
+      transform: translateZ(0);
+    }
+
+    body.layout-minimal::after {
+      background: #ffffff !important;
+    }
+
+    body.background-image-mode::after {
+      background: transparent !important;
+    }
+  }
+
+  /* ========== Search expanded icon spacing tweak ========== */
+  body:not(.layout-minimal) .search-inline.expanded .search-icon,
+  body.background-image-mode:not(.layout-minimal) .search-inline.expanded .search-icon {
+    left: 10px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  body.layout-minimal .search-inline.expanded .search-icon,
+  body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+    left: 8px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  @media (max-width: 768px) {
+    body:not(.layout-minimal) .search-inline.expanded .search-icon,
+    body.background-image-mode:not(.layout-minimal) .search-inline.expanded .search-icon {
+      left: 10px !important;
+    }
+
+    body.layout-minimal .search-inline.expanded .search-icon,
+    body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+      left: 6px !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -259,7 +413,7 @@
     <p>2. <strong>法律适用：</strong>本声明的成立、生效、履行、解释及纠纷解决，均适用中华人民共和国法律法规。</p>
     <p>3. <strong>争议解决：</strong>若用户与本站因本声明或使用本站发生任何争议，双方应首先通过友好协商解决；协商不成的，任何一方均同意将争议提交至本站所有者/运营者所在地有管辖权的人民法院诉讼解决。</p>
 
-    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：k1.51 · 共 7809 个链接</div>
+    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：1.54 · 共 7809 个链接</div>
 </div>
 
 </body>
