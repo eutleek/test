@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="全球AI - 精选AI工具与平台导航">
-<title>全球AI - Kisstr</title>
+<meta name="description" content="书影音 - 您通往知识和文化的门户">
+<title>Kisstr - Books, Movies & Music</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
@@ -1134,11 +1134,28 @@
     fill: var(--accent);
   }
 
-  /* ===== 全球AI卡片（与网站卡片共享视觉样式，仅布局不同） ===== */
+  /* ===== 全球 AI 卡片（与网站卡片共享视觉样式，仅布局不同） ===== */
   .ai-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 16px;
+  }
+
+  .ai-grid .subcategory-title-card {
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 16px 48px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-grid .subcategory-title-card::before {
+    opacity: 0.05;
+  }
+
+  .ai-grid .subcategory-title-card::after {
+    opacity: 1;
+  }
+
+  [data-theme="midnight"] .ai-grid .subcategory-title-card::before {
+    opacity: 0.1;
   }
 
   /* AI卡片布局覆盖（视觉样式继承 .link-card） */
@@ -1206,7 +1223,7 @@
   }
 
   .ai-tag {
-    font-size: 12px;
+    font-size: 11px;
     padding: 2px 8px;
     border-radius: 6px;
     background: rgba(128, 128, 128, 0.1);
@@ -1262,7 +1279,7 @@
   .layout-minimal .ai-grid .subcategory-title-card {
     grid-column: 1 / -1 !important;
     padding: 8px 16px !important;
-    background: var(--card-bg) !important;
+    background: linear-gradient(90deg, rgba(184, 150, 83, 0.06), transparent) !important;
     border: none !important;
     border-radius: 6px !important;
     box-shadow: none !important;
@@ -1284,7 +1301,7 @@
   .layout-minimal .ai-grid .subcategory-title-card .link-name {
     font-size: 13px !important;
     font-weight: 600 !important;
-    color: #999999 !important;
+    color: #b89653 !important;
     letter-spacing: 0.15em !important;
     text-transform: uppercase !important;
     margin-bottom: 0 !important;
@@ -1293,7 +1310,7 @@
 
   .layout-minimal .ai-grid .subcategory-title-card .link-url {
     font-size: 11px !important;
-    color: #cccccc !important;
+    color: rgba(184, 150, 83, 0.72) !important;
     letter-spacing: 0.1em !important;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
@@ -1310,7 +1327,7 @@
   [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card .link-name,
   [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card .link-name,
   [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card .link-name {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: rgba(255, 255, 255, 0.82) !important;
   }
 
   [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
@@ -1318,7 +1335,7 @@
   [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
   [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
   [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card .link-url {
-    color: rgba(255, 255, 255, 0.3) !important;
+    color: rgba(255, 255, 255, 0.52) !important;
   }
 
   .no-results {
@@ -4227,8 +4244,8 @@
   body.background-image-mode .bg-gradient {
     display: none !important;
   }
-
-  /* CSS 级兜底：图片模式下 html 同步壁纸，防止浏览器功能栏动态区域露底闪边 */
+  /* CSS and JS fallback: keep html background synced with image mode to avoid mobile browser toolbar edges */
+  html.background-image-mode,
   html:has(body.background-image-mode) {
     background-color: #121224;
     background-image: var(--bg-image, none);
@@ -4340,6 +4357,11 @@
   body.background-image-mode.layout-minimal .link-card:hover,
   body.background-image-mode.layout-minimal .ai-link-card:hover,
   body.background-image-mode.layout-minimal .subcategory-title-card:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+  }
+
+  body.background-image-mode.layout-minimal .ai-grid .subcategory-title-card {
     background: rgba(255, 255, 255, 0.08) !important;
     box-shadow: none !important;
   }
@@ -6113,6 +6135,7 @@
 </section>
 
 <div class="category-tabs" id="categoryTabs"></div>
+
 <div class="music-bar-bottom-container">
   <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
   <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
@@ -6144,7 +6167,7 @@
     <span class="badge">✨ 无盈利</span>
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
-  <p class="footer-copy">全球AI · 优质网站收藏</p>
+  <p class="footer-copy">书影音 · 优质网站收藏</p>
   <p class="footer-version">版本号：1.55 · 共 7963 个链接</p>
 </footer>
 
@@ -6154,7 +6177,7 @@ window.name = 'kisstr_home';
 
 const linksData = [
   {
-    name: "全球AI",
+    name: "全球 AI",
     icon: "🌐",
     color: "linear-gradient(135deg, #00d4ff, #7b2ff7)",
     subcategories: [
@@ -6848,7 +6871,7 @@ function prepareStealthLinkCard(card, url) {
 function createLinkCard(link, catIndex, linkIndex) {
   const cat = linksData[catIndex];
 
-  // ===== 全球AI分类：渲染附件风格卡片 =====
+  // ===== 全球 AI 分类：渲染附件风格卡片 =====
   if (cat && cat.name === '全球 AI' && link._aiCompany) {
     return createAiCard(link, linkIndex);
   }
@@ -6946,7 +6969,7 @@ function createLinkCard(link, catIndex, linkIndex) {
   return card;
 }
 
-// ===== 全球AI卡片渲染（与网站卡片统一特效） =====
+// ===== 全球 AI 卡片渲染（与网站卡片统一特效） =====
 function createAiCard(link, linkIndex) {
   const isClosed = !!link._aiCloseDate;
   const card = document.createElement('a');
@@ -8602,11 +8625,15 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
   }
 
-  function syncImageBackgroundChrome() {
+  function syncImageBackgroundChrome(bgImageValue) {
+    document.documentElement.classList.add('background-image-mode');
     document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) {
+      document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    }
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
-    if (themeToggle) themeToggle.title = '图片背景';
+    if (themeToggle) themeToggle.title = '\u56FE\u7247\u80CC\u666F';
   }
 
   function paintImageBackground(url) {
@@ -8614,11 +8641,11 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     url = url.replace('anime_wallpapers/', 'wallpapers_webp/');
     url = url.replace('.jpg', '.webp');
     const overlay = getImageOverlay();
-    syncImageBackgroundChrome();
     document.body.classList.add('background-image-mode');
     const bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${url}')`;
     document.documentElement.style.setProperty('--bg-image', bgImageValue);
     document.body.style.setProperty('--bg-image', bgImageValue);
+    syncImageBackgroundChrome(bgImageValue);
   }
 
   function markActive(id) {
@@ -8664,6 +8691,7 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     runThemeFade(() => {
       fadeFromCurrentImageBackground(() => {
         document.body.classList.remove('background-image-mode');
+        document.documentElement.classList.remove('background-image-mode');
         document.body.style.backgroundImage = '';
         document.body.style.backgroundAttachment = '';
         document.body.style.backgroundSize = '';

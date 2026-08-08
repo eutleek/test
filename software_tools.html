@@ -1206,7 +1206,7 @@
   }
 
   .ai-tag {
-    font-size: 12px;
+    font-size: 11px;
     padding: 2px 8px;
     border-radius: 6px;
     background: rgba(128, 128, 128, 0.1);
@@ -4227,8 +4227,8 @@
   body.background-image-mode .bg-gradient {
     display: none !important;
   }
-
-  /* CSS 级兜底：图片模式下 html 同步壁纸，防止浏览器功能栏动态区域露底闪边 */
+  /* CSS and JS fallback: keep html background synced with image mode to avoid mobile browser toolbar edges */
+  html.background-image-mode,
   html:has(body.background-image-mode) {
     background-color: #121224;
     background-image: var(--bg-image, none);
@@ -8466,11 +8466,15 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
   }
 
-  function syncImageBackgroundChrome() {
+  function syncImageBackgroundChrome(bgImageValue) {
+    document.documentElement.classList.add('background-image-mode');
     document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) {
+      document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    }
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
-    if (themeToggle) themeToggle.title = '图片背景';
+    if (themeToggle) themeToggle.title = '\u56FE\u7247\u80CC\u666F';
   }
 
   function paintImageBackground(url) {
@@ -8478,11 +8482,11 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     url = url.replace('anime_wallpapers/', 'wallpapers_webp/');
     url = url.replace('.jpg', '.webp');
     const overlay = getImageOverlay();
-    syncImageBackgroundChrome();
     document.body.classList.add('background-image-mode');
     const bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${url}')`;
     document.documentElement.style.setProperty('--bg-image', bgImageValue);
     document.body.style.setProperty('--bg-image', bgImageValue);
+    syncImageBackgroundChrome(bgImageValue);
   }
 
   function markActive(id) {
@@ -8528,6 +8532,7 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     runThemeFade(() => {
       fadeFromCurrentImageBackground(() => {
         document.body.classList.remove('background-image-mode');
+        document.documentElement.classList.remove('background-image-mode');
         document.body.style.backgroundImage = '';
         document.body.style.backgroundAttachment = '';
         document.body.style.backgroundSize = '';
