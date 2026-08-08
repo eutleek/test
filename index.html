@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
@@ -4698,7 +4698,7 @@
     }
 
     .search-inline.expanded .search-icon {
-      left: 7px !important;
+      left: 8px !important;
       transform: translateY(-50%) !important;
     }
 
@@ -5466,20 +5466,24 @@
   [data-theme="starry"] body:not(.background-image-mode):not(.layout-minimal) .search-inline,
   [data-theme="sunset"] body:not(.background-image-mode):not(.layout-minimal) .search-inline,
   [data-theme="aurora"] body:not(.background-image-mode):not(.layout-minimal) .search-inline {
-    background: rgba(255, 255, 255, 0.94) !important;
-    border-color: rgba(255, 255, 255, 0.88) !important;
-    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18) !important;
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    box-shadow: none !important;
   }
-  /* Classic layout search border fix in image background mode */
+  /* Classic layout search border matches classic tabs */
   body.background-image-mode:not(.layout-minimal) .search-inline {
-    border: 1px solid rgba(255, 255, 255, 0.72) !important;
+    border: 1px solid var(--card-border) !important;
     background: var(--card-bg) !important;
     box-shadow: none !important;
   }
 
-  body.background-image-mode:not(.layout-minimal) .search-inline:hover,
+  body.background-image-mode:not(.layout-minimal) .search-inline:hover {
+    border-color: var(--accent) !important;
+    background: var(--card-bg) !important;
+  }
+
   body.background-image-mode:not(.layout-minimal) .search-inline.expanded {
-    border-color: rgba(255, 255, 255, 0.86) !important;
+    border-color: var(--card-border) !important;
     background: var(--card-bg) !important;
   }
   /* ========== Minimal layout search box reference (magazine only, classic unchanged) ========== */
@@ -5535,7 +5539,7 @@
   body.layout-minimal .search-inline.expanded .search-icon {
     position: absolute !important;
     fill: #1d1d1f;
-    left: 9px !important;
+    left: 10px !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     width: 16px !important;
@@ -5579,7 +5583,7 @@
     body.layout-minimal .search-inline .search-icon,
     body.layout-minimal .search-inline:not(.expanded) .search-icon,
     body.layout-minimal .search-inline.expanded .search-icon {
-      left: 7px !important;
+      left: 8px !important;
       width: 16px !important;
       height: 16px !important;
       transform: translateY(-50%) !important;
@@ -5719,6 +5723,31 @@
 
     body.background-image-mode::after {
       background: transparent !important;
+    }
+  }
+
+  /* ========== Search expanded icon spacing tweak ========== */
+  body:not(.layout-minimal) .search-inline.expanded .search-icon,
+  body.background-image-mode:not(.layout-minimal) .search-inline.expanded .search-icon {
+    left: 10px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  body.layout-minimal .search-inline.expanded .search-icon,
+  body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+    left: 8px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  @media (max-width: 768px) {
+    body:not(.layout-minimal) .search-inline.expanded .search-icon,
+    body.background-image-mode:not(.layout-minimal) .search-inline.expanded .search-icon {
+      left: 10px !important;
+    }
+
+    body.layout-minimal .search-inline.expanded .search-icon,
+    body.background-image-mode.layout-minimal .search-inline.expanded .search-icon {
+      left: 6px !important;
     }
   }
 </style>
