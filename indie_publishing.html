@@ -550,8 +550,8 @@
   }
 
   .logo-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
   }
 
   .header-actions {
@@ -1052,8 +1052,8 @@
   }
 
   .link-icon {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 14px;
     flex-shrink: 0;
     display: flex;
@@ -1110,8 +1110,8 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: var(--bg-secondary);
     border: 1px solid var(--card-border);
@@ -1206,7 +1206,7 @@
   }
 
   .ai-tag {
-    font-size: 11px;
+    font-size: 12px;
     padding: 2px 8px;
     border-radius: 6px;
     background: rgba(128, 128, 128, 0.1);
@@ -1343,8 +1343,8 @@
     position: fixed;
     bottom: -100px;
     right: calc(30px + var(--safe-right));
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: var(--accent);
     color: white;
@@ -1383,11 +1383,15 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    --music-btn-size: clamp(28px, 2.4vw, 34px);
+    --music-btn-icon-size: clamp(12px, 1.2vw, 16px);
     padding: 4px 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 222px;
+    width: auto;
+    min-width: 270px;
+    max-width: min(42vw, 360px);
     flex-shrink: 0;
   }
 
@@ -1397,8 +1401,8 @@
   }
 
   .music-btn {
-    width: 26px;
-    height: 26px;
+    width: var(--music-btn-size);
+    height: var(--music-btn-size);
     border: none;
     border-radius: 50%;
     background: transparent;
@@ -1407,21 +1411,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, color 0.2s ease;
     flex-shrink: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
   }
+  .music-player:hover .music-btn,
+  .music-player.controls-visible .music-btn,
+  .music-btn:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
 
   .music-btn:hover {
     background: rgba(0, 0, 0, 0.1);
   }
 
-  [data-theme="midnight"] .music-btn:hover {
+  [data-theme="midnight"]
+  .music-player:hover .music-btn,
+  .music-player.controls-visible .music-btn,
+  .music-btn:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
+   .music-btn:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 
   .music-btn svg {
-    width: 12px;
-    height: 12px;
+    width: var(--music-btn-icon-size);
+    height: var(--music-btn-icon-size);
     fill: currentColor;
   }
 
@@ -1445,14 +1469,16 @@
   }
 
   .music-name {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
     color: var(--text-primary);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex: 1;
+    flex: 0 1 7.5em;
+    width: 7.5em;
+    max-width: 7.5em;
     min-width: 0;
     padding-left: 2px;
     letter-spacing: 0.03em;
@@ -1572,7 +1598,7 @@
   .footer-version {
     margin-top: 12px;
     color: var(--text-secondary);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
     opacity: 0.7;
   }
@@ -1676,8 +1702,8 @@
 
     .hide-toggle {
       margin-left: 8px;
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       padding: 0;
     }
 
@@ -1796,7 +1822,7 @@
       padding: 2px 4px;
     }
     .music-volume {
-      width: 40px;
+      width: 32px;
     }
     .hide-toggle {
       width: 36px;
@@ -1811,11 +1837,11 @@
     }
     .footer-badges .badge {
       padding: 3px 8px;
-      font-size: 11px;
+      font-size: 12px;
     }
     .disclaimer-btn {
       padding: 6px 14px;
-      font-size: 11px;
+      font-size: 12px;
     }
   }
 
@@ -1943,7 +1969,7 @@
       padding: 0 60px calc(60px + var(--safe-bottom));
     }
     .layout-minimal .music-bar-bottom-container {
-      height: 40px;
+      height: 32px;
       margin-bottom: 8px;
     }
     .layout-minimal .music-bar-bottom {
@@ -1999,7 +2025,7 @@
     top: 14px;
     left: 0;
     width: 100%;
-    height: 28px;
+    height: 22px;
     opacity: 0;
     transition: opacity 0.8s ease;
     pointer-events: none;
@@ -2011,7 +2037,7 @@
 
   .music-bar-bottom.idle {
     opacity: 0.25;
-    height: 28px;
+    height: 22px;
   }
 
   /* ========== 杂志多列奢华风格布局 ========== */
@@ -2037,7 +2063,7 @@
     align-items: center;
     justify-content: center;
     color: #1d1d1f;
-    pointer-events: auto;
+    pointer-events: none;
   }
 
   .music-bar-bottom-container:hover .music-fx-btn,
@@ -2056,7 +2082,7 @@
   }
 
   .music-bar-bottom-container .music-fx-close {
-    right: 20px;
+    right: clamp(12px, 2vw, 20px);
   }
 
   .music-bar-bottom-container .music-fx-btn:not(.music-fx-close) {
@@ -2065,7 +2091,7 @@
 
   /* 5秒无操作自动隐藏切换按钮 */
   .music-bar-bottom-container .music-fx-btn.auto-hidden {
-    opacity: 0;
+    opacity: 0 !important;
   }
 
   /* 第一布局隐藏律动栏 */
@@ -2238,7 +2264,7 @@
 
   .layout-minimal .search-inline {
     width: 36px;
-    height: 36px;
+    height: clamp(32px, 3vw, 40px);
     border-radius: 0;
     background: transparent;
     border: 1px solid transparent;
@@ -2333,8 +2359,8 @@
     .layout-minimal .theme-toggle,
     .layout-minimal .layout-btn,
     .layout-minimal .hide-toggle {
-      height: 28px;
-      width: 28px;
+      height: 22px;
+      width: 22px;
     }
 
     .layout-minimal .hide-toggle svg {
@@ -2360,7 +2386,7 @@
     .layout-minimal .search-inline input {
       left: 28px;
       width: 84px;
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .layout-minimal .category-tabs {
@@ -2369,13 +2395,13 @@
     }
 
     .layout-minimal .music-bar-bottom-container {
-      height: 40px;
+      height: 32px;
       margin-bottom: 8px;
     }
 
     .layout-minimal .music-bar-bottom {
       top: 6px;
-      height: 28px;
+      height: 22px;
     }
 
     .layout-minimal .music-bar-bottom-container .music-fx-btn {
@@ -2426,7 +2452,7 @@
     }
 
     .layout-minimal .category-title {
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.2em;
     }
 
@@ -2445,7 +2471,7 @@
     }
 
     .layout-minimal.hide-mode .link-desc {
-      font-size: 11px;
+      font-size: 12px;
     }
 
     .layout-minimal.hide-mode .link-card-inner {
@@ -2565,7 +2591,7 @@
   }
 
   .layout-minimal .link-url {
-    font-size: 11px;
+    font-size: 12px;
     color: #999999;
     font-weight: 500;
     margin-bottom: 0;
@@ -2579,7 +2605,7 @@
     opacity: 0;
     overflow: hidden;
     transition: all 0.3s ease;
-    font-size: 11px;
+    font-size: 12px;
     color: #999999;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -2673,7 +2699,7 @@
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #999999;
@@ -4538,7 +4564,7 @@
     }
 
     .layout-minimal .tab-btn {
-      height: 28px;
+      height: 22px;
       min-height: 28px;
       padding: 0 10px;
       border-radius: 9px;
@@ -4551,8 +4577,8 @@
     }
 
     .layout-minimal .search-inline {
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
       border-radius: 9px;
     }
 
@@ -4663,7 +4689,7 @@
     }
 
     .layout-minimal .tab-btn {
-      height: 28px;
+      height: 22px;
       min-height: 28px;
       padding: 0 9px;
       border-radius: 9px;
@@ -5213,6 +5239,21 @@
   }
 
   @media (pointer: coarse) {
+    .music-player {
+      --music-btn-size: 34px;
+      --music-btn-icon-size: 15px;
+    }
+
+    .music-bar-bottom-container .music-fx-btn {
+      width: 40px;
+      height: 40px;
+    }
+
+    .music-bar-bottom-container .music-fx-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
     .link-card,
     .ai-link-card,
     .tab-btn,
@@ -5304,12 +5345,26 @@
     }
 
     .music-bar-bottom-container {
-      height: 48px;
+      height: 36px;
     }
   }
 
   @media (pointer: coarse) {
-    .link-card:hover,
+    .music-player {
+      --music-btn-size: 34px;
+      --music-btn-icon-size: 15px;
+    }
+
+    .music-bar-bottom-container .music-fx-btn {
+      width: 40px;
+      height: 40px;
+    }
+
+    .music-bar-bottom-container .music-fx-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+.link-card:hover,
     .ai-link-card:hover,
     .subcategory-title-card:hover {
       transform: none;
@@ -5750,6 +5805,247 @@
       left: 6px !important;
     }
   }
+
+  /* 律动栏按钮修正覆盖 */
+  .music-bar-bottom-container .music-fx-btn {
+    width: clamp(24px, 2.4vw, 30px) !important;
+    height: clamp(24px, 2.4vw, 30px) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease !important;
+    pointer-events: none;
+  }
+
+  .music-bar-bottom-container:hover .music-fx-btn,
+  .music-bar-bottom-container .music-fx-btn.visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .music-bar-bottom-container:hover .music-fx-btn:hover,
+  .music-bar-bottom-container .music-fx-btn.visible:hover {
+    opacity: 1 !important;
+    transform: translateY(-50%) scale(1.06) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+  }
+
+  .music-bar-bottom-container .music-fx-btn svg {
+    width: clamp(16px, 1.5vw, 20px) !important;
+    height: clamp(16px, 1.5vw, 20px) !important;
+    color: inherit !important;
+    stroke: currentColor !important;
+  }
+
+  .music-bar-bottom-container .music-fx-close {
+    right: clamp(12px, 2vw, 20px) !important;
+  }
+
+  .music-bar-bottom-container .music-fx-btn:not(.music-fx-close) {
+    right: calc(clamp(12px, 2vw, 20px) + clamp(24px, 2.4vw, 30px) + 8px) !important;
+  }
+
+  .music-bar-bottom-container .music-fx-btn.auto-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* 主页测试：深夜黑到土色 8 个主题搜索框与图标白色 */
+  [data-theme="midnight"] body.layout-minimal .search-inline,
+  [data-theme="starry"] body.layout-minimal .search-inline,
+  [data-theme="sunset"] body.layout-minimal .search-inline,
+  [data-theme="aurora"] body.layout-minimal .search-inline,
+  [data-theme="dream"] body.layout-minimal .search-inline,
+  [data-theme="forest"] body.layout-minimal .search-inline,
+  [data-theme="deepsea"] body.layout-minimal .search-inline,
+  [data-theme="clay"] body.layout-minimal .search-inline {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .search-inline:hover,
+  [data-theme="starry"] body.layout-minimal .search-inline:hover,
+  [data-theme="sunset"] body.layout-minimal .search-inline:hover,
+  [data-theme="aurora"] body.layout-minimal .search-inline:hover,
+  [data-theme="dream"] body.layout-minimal .search-inline:hover,
+  [data-theme="forest"] body.layout-minimal .search-inline:hover,
+  [data-theme="deepsea"] body.layout-minimal .search-inline:hover,
+  [data-theme="clay"] body.layout-minimal .search-inline:hover,
+  [data-theme="midnight"] body.layout-minimal .search-inline.expanded,
+  [data-theme="starry"] body.layout-minimal .search-inline.expanded,
+  [data-theme="sunset"] body.layout-minimal .search-inline.expanded,
+  [data-theme="aurora"] body.layout-minimal .search-inline.expanded,
+  [data-theme="dream"] body.layout-minimal .search-inline.expanded,
+  [data-theme="forest"] body.layout-minimal .search-inline.expanded,
+  [data-theme="deepsea"] body.layout-minimal .search-inline.expanded,
+  [data-theme="clay"] body.layout-minimal .search-inline.expanded {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: #ffffff !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="starry"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="sunset"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="aurora"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="dream"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="forest"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="deepsea"] body.layout-minimal .search-inline .search-icon,
+  [data-theme="clay"] body.layout-minimal .search-inline .search-icon {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .search-inline input,
+  [data-theme="starry"] body.layout-minimal .search-inline input,
+  [data-theme="sunset"] body.layout-minimal .search-inline input,
+  [data-theme="aurora"] body.layout-minimal .search-inline input,
+  [data-theme="dream"] body.layout-minimal .search-inline input,
+  [data-theme="forest"] body.layout-minimal .search-inline input,
+  [data-theme="deepsea"] body.layout-minimal .search-inline input,
+  [data-theme="clay"] body.layout-minimal .search-inline input {
+    color: #ffffff !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="starry"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="sunset"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="aurora"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="dream"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="forest"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="deepsea"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="clay"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover,
+  [data-theme="midnight"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="starry"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="sunset"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="aurora"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="dream"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="forest"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="deepsea"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover,
+  [data-theme="clay"] body.layout-minimal .music-bar-bottom-container .music-fx-btn.visible:hover {
+    color: #ffffff !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="starry"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="sunset"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="aurora"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="dream"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="forest"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="deepsea"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg,
+  [data-theme="clay"] body.layout-minimal .music-bar-bottom-container .music-fx-btn:hover svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+  }
+
+  /* 主页测试：8 个暗色主题顶部按钮统一规则 */
+  [data-theme="midnight"] body.layout-minimal .theme-toggle,
+  [data-theme="starry"] body.layout-minimal .theme-toggle,
+  [data-theme="sunset"] body.layout-minimal .theme-toggle,
+  [data-theme="aurora"] body.layout-minimal .theme-toggle,
+  [data-theme="dream"] body.layout-minimal .theme-toggle,
+  [data-theme="forest"] body.layout-minimal .theme-toggle,
+  [data-theme="deepsea"] body.layout-minimal .theme-toggle,
+  [data-theme="clay"] body.layout-minimal .theme-toggle,
+  [data-theme="midnight"] body.layout-minimal .layout-btn,
+  [data-theme="starry"] body.layout-minimal .layout-btn,
+  [data-theme="sunset"] body.layout-minimal .layout-btn,
+  [data-theme="aurora"] body.layout-minimal .layout-btn,
+  [data-theme="dream"] body.layout-minimal .layout-btn,
+  [data-theme="forest"] body.layout-minimal .layout-btn,
+  [data-theme="deepsea"] body.layout-minimal .layout-btn,
+  [data-theme="clay"] body.layout-minimal .layout-btn,
+  [data-theme="midnight"] body.layout-minimal .hide-toggle,
+  [data-theme="starry"] body.layout-minimal .hide-toggle,
+  [data-theme="sunset"] body.layout-minimal .hide-toggle,
+  [data-theme="aurora"] body.layout-minimal .hide-toggle,
+  [data-theme="dream"] body.layout-minimal .hide-toggle,
+  [data-theme="forest"] body.layout-minimal .hide-toggle,
+  [data-theme="deepsea"] body.layout-minimal .hide-toggle,
+  [data-theme="clay"] body.layout-minimal .hide-toggle {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="starry"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="sunset"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="aurora"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="dream"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="forest"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="deepsea"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="clay"] body.layout-minimal .theme-toggle:hover,
+  [data-theme="midnight"] body.layout-minimal .layout-btn:hover,
+  [data-theme="starry"] body.layout-minimal .layout-btn:hover,
+  [data-theme="sunset"] body.layout-minimal .layout-btn:hover,
+  [data-theme="aurora"] body.layout-minimal .layout-btn:hover,
+  [data-theme="dream"] body.layout-minimal .layout-btn:hover,
+  [data-theme="forest"] body.layout-minimal .layout-btn:hover,
+  [data-theme="deepsea"] body.layout-minimal .layout-btn:hover,
+  [data-theme="clay"] body.layout-minimal .layout-btn:hover,
+  [data-theme="midnight"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="starry"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="sunset"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="aurora"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="dream"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="forest"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="deepsea"] body.layout-minimal .hide-toggle:hover,
+  [data-theme="clay"] body.layout-minimal .hide-toggle:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: #ffffff !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+  }
+
+  [data-theme="midnight"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="starry"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="sunset"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="aurora"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="dream"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="forest"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="deepsea"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="clay"] body.layout-minimal .theme-toggle:hover svg,
+  [data-theme="midnight"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="starry"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="sunset"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="aurora"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="dream"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="forest"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="deepsea"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="clay"] body.layout-minimal .layout-btn:hover svg,
+  [data-theme="midnight"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="starry"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="sunset"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="aurora"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="dream"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="forest"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="deepsea"] body.layout-minimal .hide-toggle:hover svg,
+  [data-theme="clay"] body.layout-minimal .hide-toggle:hover svg {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+  }
+
+
 </style>
 </head>
 <body>
@@ -5850,7 +6146,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">独立出版 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.54 · 共 7809 个链接</p>
+  <p class="footer-version">版本号：1.55 · 共 7963 个链接</p>
 </footer>
 
 <script>
@@ -6127,7 +6423,7 @@ const linksData = [
   "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
   "subcategories": [
     {
-      "name": "分类导航♡",
+      "name": "索引♡",
       "enName": "Categories",
       "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
       "links": [
@@ -6142,19 +6438,14 @@ const linksData = [
           "description": "书籍、影视、音乐与文化资源导航"
         },
         {
-          "name": "龙轩导航",
+          "name": "龙轩",
           "url": "http://ilxdh.com/cat/171",
-          "description": "龙轩导航 - 发现精彩网络世界"
+          "description": "龙轩 - 发现精彩网络世界"
         },
         {
-          "name": "聚合",
+          "name": "聚合索引",
           "url": "aggregate.html",
           "description": "精选推荐、AI导航、影视导航等聚合站点"
-        },
-        {
-          "name": "全球AI",
-          "url": "ai.html",
-          "description": "精选AI工具与平台导航"
         },
         {
           "name": "网站排行",
@@ -6162,7 +6453,17 @@ const linksData = [
           "description": "全球网站排行 TOP 200"
         },
         {
-          "name": "AI域名排行",
+          "name": "世界五百强",
+          "url": "fortune_500.html",
+          "description": "全球五百强企业官网与行业巨头入口"
+        },
+        {
+          "name": "全球 AI",
+          "url": "ai.html",
+          "description": "精选AI工具与平台导航"
+        },
+        {
+          "name": "AI 域名排行",
           "url": "ai_domain_ranking.html",
           "description": "全球 AI 域名 TOP 300 排行导航"
         },
@@ -6182,18 +6483,18 @@ const linksData = [
           "description": "全球权威新闻媒体与国际时事阅读入口"
         },
         {
-          "name": "鲜花",
+          "name": "植物美学",
           "url": "flowers.html",
           "description": "花艺设计、植物美学、婚礼花艺与花卉农场灵感"
         },
         {
-          "name": "期刊",
+          "name": "时尚期刊",
           "url": "journal.html",
           "description": "时尚期刊、创意媒体、商业趋势与设计杂志"
         },
         {
           "name": "家居设计",
-          "url": "home.html",
+          "url": "home_design.html",
           "description": "家居设计、民宿短租、特色住宿与旅居平台"
         },
         {
@@ -6285,11 +6586,6 @@ const linksData = [
           "name": "动漫网站",
           "url": "anime_sites.html",
           "description": "正版动画、番剧资讯、动漫社区与资源站导航"
-        },
-        {
-          "name": "世界五百强",
-          "url": "fortune_500.html",
-          "description": "全球五百强企业官网与行业巨头入口"
         },
         {
           "name": "地图地理",
@@ -6569,6 +6865,16 @@ function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
 
+  const homeBtn = document.createElement('button');
+  homeBtn.className = 'tab-btn return-home-tab';
+  homeBtn.textContent = '\u8FD4\u56DE\u9996\u9875';
+  homeBtn.title = '\u8FD4\u56DE\u9996\u9875';
+  homeBtn.addEventListener('click', (e) => {
+    window.location.href = 'index.html';
+    e.currentTarget.blur();
+  });
+  tabsContainer.appendChild(homeBtn);
+
   linksData.forEach((cat, index) => {
     const btn = document.createElement('button');
     btn.className = 'tab-btn' + (index === 0 ? ' active' : '');
@@ -6636,7 +6942,7 @@ function createLinkCard(link, catIndex, linkIndex) {
   const cat = linksData[catIndex];
 
   // ===== 全球AI分类：渲染附件风格卡片 =====
-  if (cat && cat.name === '全球AI' && link._aiCompany) {
+  if (cat && cat.name === '全球 AI' && link._aiCompany) {
     return createAiCard(link, linkIndex);
   }
 
@@ -6947,7 +7253,7 @@ function doRenderLinks(filterText, category) {
         }
 
         const grid = document.createElement('div');
-        grid.className = (cat.name === '全球AI') ? 'ai-grid' : 'links-grid';
+        grid.className = (cat.name === '全球 AI') ? 'ai-grid' : 'links-grid';
 
         if (isMinimalLayout && subcat.name) {
           const titleCard = document.createElement('div');
@@ -7246,6 +7552,7 @@ backToTop.addEventListener('click', (e) => {
 
 // 音乐播放器
 const lofiAudio = document.getElementById('lofiAudio');
+const musicPlayer = document.getElementById('musicPlayer');
 const musicPlay = document.getElementById('musicPlay');
 const musicPlayIcon = document.getElementById('musicPlayIcon');
 const musicPrev = document.getElementById('musicPrev');
@@ -7423,17 +7730,20 @@ function changeStation(direction) {
   stationRetryCount = 0;
   loadStation(currentStation, currentStationSource);
 
-  if (isPlaying) {
-    // 播放中：继续播放新电台
-    playAudio().catch(e => {
-      console.warn('切换电台播放失败:', e.message);
-      clearTimeout(stationUnlockTimer);
-      isChangingStation = false;
-      setTimeout(tryNextStationSource, 250);
-    });
-  }
+  // Click station switch to start playback; if already playing, keep playing the new station
+  isPlaying = true;
+  updatePlayButton(true);
+  mbClosed = false;
+  mbStart();
 
-  // 600ms 后解锁，允许下次切换
+  playAudio().catch(e => {
+    console.warn('鍒囨崲鐢靛彴鎾斁澶辫触:', e.message);
+    clearTimeout(stationUnlockTimer);
+    isChangingStation = false;
+    setTimeout(tryNextStationSource, 250);
+  });
+
+  // Unlock after 600ms
   clearTimeout(stationUnlockTimer);
   stationUnlockTimer = setTimeout(() => {
     isChangingStation = false;
@@ -8101,6 +8411,12 @@ musicFxBtn.addEventListener('click', (e) => {
   mbParticles = [];
   mbUpdateTitles();
   mbResetAutoHide();
+  if (!isPlaying) {
+    togglePlay();
+  } else {
+    mbClosed = false;
+    mbStart();
+  }
   e.currentTarget.blur();
 });
 
@@ -8124,34 +8440,68 @@ musicFxClose.addEventListener('click', (e) => {
 
 // 5秒无操作自动隐藏切换按钮
 let mbHideTimer = null;
-function mbResetAutoHide() {
+let mbPointerInside = false;
+
+function mbShowControls() {
   musicFxBtn.classList.remove('auto-hidden');
   musicFxClose.classList.remove('auto-hidden');
-  if (mbHideTimer) clearTimeout(mbHideTimer);
-  mbHideTimer = setTimeout(() => {
-    musicFxBtn.classList.add('auto-hidden');
-    musicFxClose.classList.add('auto-hidden');
-  }, 5000);
+  musicFxBtn.classList.add('visible');
+  musicFxClose.classList.add('visible');
+}
+
+function mbHideControls() {
+  musicFxBtn.classList.remove('visible');
+  musicFxClose.classList.remove('visible');
+  musicFxBtn.classList.add('auto-hidden');
+  musicFxClose.classList.add('auto-hidden');
+}
+
+function mbResetAutoHide() {
+  if (mbPointerInside) {
+    mbShowControls();
+    if (mbHideTimer) clearTimeout(mbHideTimer);
+  } else {
+    mbHideControls();
+  }
 }
 
 const musicBarContainer = document.querySelector('.music-bar-bottom-container');
 if (musicBarContainer) {
+  function mbRevealControls() {
+    mbPointerInside = true;
+    mbShowControls();
+    if (mbHideTimer) clearTimeout(mbHideTimer);
+  }
+
+  function mbScheduleControlsHide(delay = 2000) {
+    mbPointerInside = false;
+    if (mbHideTimer) clearTimeout(mbHideTimer);
+    mbHideTimer = setTimeout(() => {
+      if (!mbPointerInside) {
+        mbHideControls();
+      }
+    }, delay);
+  }
+
   musicBarContainer.addEventListener('mouseenter', () => {
-    if ((mbActive || mbIdle) && !mbClosed) {
-      mbResetAutoHide();
+    if (mbClosed || mbActive || mbIdle) {
+      mbRevealControls();
     }
   });
   musicBarContainer.addEventListener('mouseleave', () => {
-    if ((mbActive || mbIdle) && !mbClosed) {
-      mbHideTimer = setTimeout(() => {
-        musicFxBtn.classList.add('auto-hidden');
-        musicFxClose.classList.add('auto-hidden');
-      }, 5000);
+    if (mbClosed || mbActive || mbIdle) {
+      mbScheduleControlsHide(2000);
     }
   });
+  musicBarContainer.addEventListener('touchstart', () => {
+    if (mbClosed || mbActive || mbIdle) {
+      mbRevealControls();
+      mbScheduleControlsHide(2000);
+    }
+  }, { passive: true });
 }
 
-// 监听播放状态：观察 musicPlay 按钮的 playing class
+// observe musicPlay playing class
 const mbObserver = new MutationObserver(() => {
   if (musicPlay.classList.contains('playing')) {
     mbStart();
