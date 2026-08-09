@@ -6067,6 +6067,13 @@
 </style>
 </head>
 <body>
+<script>
+  // 鎻愬墠璁剧疆甯冨眬绫伙紝闃叉鍒锋柊闂儊缁忓吀甯冨眬
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    document.body.classList.add('layout-' + saved);
+  })();
+</script>
 <div class="bg-layer"></div>
 <div class="bg-gradient"></div>
 
@@ -8668,10 +8675,10 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
     { id: '画室', name: '画室', url: 'wallpapers_webp/画室.webp', thumb: 'wallpapers_webp/thumbs/画室.webp' },
     { id: '犬伴', name: '犬伴', url: 'wallpapers_webp/犬伴.webp', thumb: 'wallpapers_webp/thumbs/犬伴.webp' },
     { id: '野餐', name: '野餐', url: 'wallpapers_webp/野餐.webp', thumb: 'wallpapers_webp/thumbs/野餐.webp' },
-    { id: '狐社', name: '狐社', url: 'wallpapers_webp/狐社.webp', thumb: 'wallpapers_webp/thumbs/狐社.webp' },
+    { id: '狐社', name: '狐社', url: 'wallpapers_webp/狐社.webp', thumb: 'wallpapers_webp/thumbs/狐社.webp', excludeFromRandom: true },
     { id: '阅台', name: '阅台', url: 'wallpapers_webp/阅台.webp', thumb: 'wallpapers_webp/thumbs/阅台.webp' },
-    { id: '虹池', name: '虹池', url: 'wallpapers_webp/虹池.webp', thumb: 'wallpapers_webp/thumbs/虹池.webp' },
-    { id: '绿意', name: '绿意', url: 'wallpapers_webp/绿意.webp', thumb: 'wallpapers_webp/thumbs/绿意.webp' },
+    { id: '虹池', name: '虹池', url: 'wallpapers_webp/虹池.webp', thumb: 'wallpapers_webp/thumbs/虹池.webp', excludeFromRandom: true },
+    { id: '绿意', name: '绿意', url: 'wallpapers_webp/绿意.webp', thumb: 'wallpapers_webp/thumbs/绿意.webp', excludeFromRandom: true },
     { id: '茶花', name: '茶花', url: 'wallpapers_webp/茶花.webp', thumb: 'wallpapers_webp/thumbs/茶花.webp' },
     { id: '海骑', name: '海骑', url: 'wallpapers_webp/海骑.webp', thumb: 'wallpapers_webp/thumbs/海骑.webp' },
     { id: '萤光', name: '萤光', url: 'wallpapers_webp/萤光.webp', thumb: 'wallpapers_webp/thumbs/萤光.webp' }
@@ -9136,9 +9143,12 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       }
     }
     /* 没有用户选择时，默认从全部壁纸图片中随机；用户手动选择后仍按保存值恢复 */
-    if (imageBackgrounds.length > 0) {
-      var randomIdx = Math.floor(Math.random() * imageBackgrounds.length);
-      applySelection(imageBackgrounds[randomIdx], false, false);
+    var randomPool = imageBackgrounds.filter(function(o) { return !o.excludeFromRandom; });
+    if (randomPool.length > 0) {
+      var randomIdx = Math.floor(Math.random() * randomPool.length);
+      applySelection(randomPool[randomIdx], false, false);
+    } else if (imageBackgrounds.length > 0) {
+      applySelection(imageBackgrounds[0], false, false);
     } else {
       applySelection(pureBackgrounds[0], false, false);
     }
