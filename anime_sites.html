@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
@@ -2600,6 +2600,7 @@
 
   .layout-minimal .link-card-inner {
     flex-direction: column;
+    align-items: flex-start;
     gap: 4px;
   }
 
@@ -2609,7 +2610,10 @@
 
   .layout-minimal .link-info {
     flex: none;
-    min-width: auto;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
   }
 
   .layout-minimal .link-name {
@@ -2620,9 +2624,13 @@
     letter-spacing: 0.2em;
     transition: all 0.3s ease;
     position: relative;
-    display: inline-block;
+    display: block;
     text-transform: uppercase;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .layout-minimal .link-card:hover .link-name {
@@ -2648,6 +2656,10 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .layout-minimal .link-desc {
@@ -7227,14 +7239,14 @@ const linksData = [
       "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
       "links": [
         {
-          "name": "ACGN",
-          "url": "acgn.html",
-          "description": "动漫、漫画、游戏、轻小说与壁纸资源导航"
-        },
-        {
           "name": "书影音",
           "url": "books_media.html",
           "description": "书籍、影视、音乐与文化资源导航"
+        },
+        {
+          "name": "ACGN",
+          "url": "acgn.html",
+          "description": "动漫、漫画、游戏、轻小说与壁纸资源导航"
         },
         {
           "name": "龙轩",

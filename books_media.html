@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
@@ -2600,6 +2600,7 @@
 
   .layout-minimal .link-card-inner {
     flex-direction: column;
+    align-items: flex-start;
     gap: 4px;
   }
 
@@ -2609,7 +2610,10 @@
 
   .layout-minimal .link-info {
     flex: none;
-    min-width: auto;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
   }
 
   .layout-minimal .link-name {
@@ -2620,9 +2624,13 @@
     letter-spacing: 0.2em;
     transition: all 0.3s ease;
     position: relative;
-    display: inline-block;
+    display: block;
     text-transform: uppercase;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .layout-minimal .link-card:hover .link-name {
@@ -2648,6 +2656,10 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .layout-minimal .link-desc {
@@ -6173,9 +6185,9 @@ const linksData = [
         links: [
           { name: "Z-Library 官网", url: "https://zlib.li/", description: "⚠️ 官网直连受限，需通过镜像站访问" },
           { name: "Z-Library 注册站", url: "https://zh.vbh101.ru/", description: "✅ 镜像站可直连，中文注册入口" },
+          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
           { name: "olib 安卓APP", url: "https://www.bookbook.space/", description: "📱 第三方直连安卓APP，支持Z站下载" },
           { name: "Olib GitHub 开源项目", url: "https://github.com/shiyi-0x7f/olib-mobile", description: "GitHub - Olib 安卓APP开源项目" },
-          { name: "Z-Library 注册站2", url: "https://en.zlib.tw/", description: "✅ 镜像站可直连，英文注册入口" },
           { name: "Z站导航", url: "https://github.com/z-libraryopp/z-libraryopp.github.io", description: "GitHub - Z站镜像导航汇总" },
           { name: "安娜的档案", url: "https://annas-archive.gl/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
           { name: "安娜的档案", url: "https://annas-archive.pk/", description: "⚠️ 官网直连受限，需使用其他方式访问" },
@@ -6221,6 +6233,7 @@ const linksData = [
           { name: "白嫖者联盟", url: "https://baipiao.ai", description: "" },
           { name: "白嫖者联盟二", url: "https://www.hctd1.com/", description: "" },
           { name: "网飞猫", url: "https://ncat.app/", description: "全平台美剧、韩剧、动漫" },
+          { name: "漫猫动漫", url: "https://www.comicat.org/", description: "🎬 高清资源，迅雷链接下载" },
           { name: "麦田影视", url: "https://mtyy4.com/", description: "麦田影视 - 在线影视观看" },
           { name: "豆瓣电影", url: "https://movie.douban.com/", description: "电影评分与影评社区" },
           { name: "IMDb", url: "https://www.imdb.com/", description: "全球权威电影数据库" },
@@ -6388,14 +6401,14 @@ const linksData = [
       "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
       "links": [
         {
-          "name": "ACGN",
-          "url": "acgn.html",
-          "description": "动漫、漫画、游戏、轻小说与壁纸资源导航"
-        },
-        {
           "name": "书影音",
           "url": "books_media.html",
           "description": "书籍、影视、音乐与文化资源导航"
+        },
+        {
+          "name": "ACGN",
+          "url": "acgn.html",
+          "description": "动漫、漫画、游戏、轻小说与壁纸资源导航"
         },
         {
           "name": "龙轩",
