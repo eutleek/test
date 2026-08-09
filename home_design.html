@@ -7265,6 +7265,38 @@ function prepareStealthLinkCard(card, url) {
     openUrlInNewTab(card.dataset.url);
   });
 
+  // 自定义拖拽预览：仅显示名字和网址，不显示完整卡片
+  card.addEventListener('dragstart', function(e) {
+    var dragUrl = card.getAttribute('href') || card.dataset.url || '';
+    if (dragUrl) {
+      try {
+        e.dataTransfer.setData('text/uri-list', dragUrl);
+        e.dataTransfer.setData('text/plain', dragUrl);
+      } catch(ex) {}
+    }
+    e.dataTransfer.effectAllowed = 'copyLink';
+
+    var nameEl = card.querySelector('.link-name') || card.querySelector('.ai-card-name');
+    var nameText = nameEl ? nameEl.textContent : '';
+    var urlText = dragUrl.replace(/^https?:\/\//, '');
+
+    var dragEl = document.createElement('div');
+    dragEl.style.cssText = 'position:fixed;top:-9999px;left:-9999px;padding:8px 14px;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.15);font-size:14px;font-family:system-ui,-apple-system,sans-serif;z-index:-1;pointer-events:none;';
+    var nameDiv = document.createElement('div');
+    nameDiv.style.cssText = 'font-weight:600;color:#1a1a1a;margin-bottom:2px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+    nameDiv.textContent = nameText;
+    var urlDiv = document.createElement('div');
+    urlDiv.style.cssText = 'color:#86868b;font-size:12px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+    urlDiv.textContent = urlText;
+    dragEl.appendChild(nameDiv);
+    dragEl.appendChild(urlDiv);
+    document.body.appendChild(dragEl);
+
+    e.dataTransfer.setDragImage(dragEl, 10, 10);
+
+    setTimeout(function() { if (dragEl.parentNode) dragEl.parentNode.removeChild(dragEl); }, 0);
+  });
+
   return card;
 }
 
