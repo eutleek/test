@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisstr 修复档案（最终完整版） - 2026年8月9日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.65;
+  }
+  .container { max-width: 920px; margin: 0 auto; padding: 60px 24px 80px; }
+  .header { text-align: center; margin-bottom: 48px; }
+  .header h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .header .subtitle { font-size: 15px; color: #6e6e73; }
+  .header .date-badge {
+    display: inline-block; margin-top: 12px; padding: 6px 16px;
+    background: #1d1d1f; color: #fff; border-radius: 20px; font-size: 13px; font-weight: 500;
+  }
+  .section {
+    background: #fff; border-radius: 16px; padding: 36px; margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .section > h2 {
+    font-size: 22px; font-weight: 700; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section > h2 .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 8px; background: #0071e3; color: #fff;
+    font-size: 15px; font-weight: 700;
+  }
+  .section > .tag-row { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .tag {
+    padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .tag-css { background: #e8f0fe; color: #1a73e8; }
+  .tag-js { background: #fef7e0; color: #f9ab00; }
+  .tag-meta { background: #e6f4ea; color: #137333; }
+  .tag-batch { background: #fce8e6; color: #c5221f; }
+  .tag-loc { background: #f3e8fd; color: #8430ce; }
+  h3 {
+    font-size: 16px; font-weight: 700; margin-top: 24px; margin-bottom: 10px;
+    padding-bottom: 6px; border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  h3:first-of-type { margin-top: 0; }
+  h4 { font-size: 14px; font-weight: 600; margin-top: 16px; margin-bottom: 6px; color: #424245; }
+  p { font-size: 14px; color: #424245; margin-bottom: 10px; }
+  ul { list-style: none; padding: 0; }
+  ul li {
+    padding: 5px 0 5px 20px; font-size: 14px; color: #424245; position: relative;
+  }
+  ul li::before { content: '\2022'; position: absolute; left: 0; color: #0071e3; font-weight: 700; }
+  ul li.warn::before { color: #ff9500; }
+  ul li.danger::before { color: #ff3b30; }
+  code {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 12px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; color: #d4380d;
+  }
+  .code-block {
+    background: #1d1d1f; color: #e8e8ed; border-radius: 12px; padding: 20px;
+    margin: 12px 0; overflow-x: auto;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; font-size: 13px; line-height: 1.55;
+  }
+  .code-block .c { color: #6a9955; }
+  .code-block .k { color: #569cd6; }
+  .code-block .s { color: #ce9178; }
+  .code-block .p { color: #9cdcfe; }
+  .code-block .n { color: #b5cea8; }
+  .diff {
+    margin: 12px 0; border-radius: 8px; overflow: hidden;
+    font-family: 'SF Mono', monospace; font-size: 13px;
+  }
+  .diff .row { padding: 4px 16px; display: flex; gap: 8px; align-items: flex-start; }
+  .diff .row.del { background: #fff0f0; color: #c53030; }
+  .diff .row.add { background: #f0fff4; color: #276749; }
+  .diff .row .marker { flex-shrink: 0; width: 16px; font-weight: 700; }
+  .diff .row .content { white-space: pre-wrap; word-break: break-all; }
+  .loc-box {
+    background: #f5f5f7; border-radius: 10px; padding: 12px 16px; margin: 10px 0;
+    font-family: 'SF Mono', monospace; font-size: 13px;
+  }
+  .loc-box .label { color: #86868b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .loc-box .path { color: #0071e3; }
+  .note-box {
+    border-left: 4px solid #ff9500; background: #fffbeb; border-radius: 0 12px 12px 0;
+    padding: 16px 20px; margin: 16px 0;
+  }
+  .note-box h4 { margin-top: 0; color: #92400e; }
+  .note-box ul li { color: #78350f; }
+  .danger-box {
+    border-left: 4px solid #ff3b30; background: #fef2f2; border-radius: 0 12px 12px 0;
+    padding: 16px 20px; margin: 16px 0;
+  }
+  .danger-box h4 { margin-top: 0; color: #991b1b; }
+  .danger-box ul li { color: #7f1d1d; }
+  .ok-box {
+    border-left: 4px solid #34c759; background: #f0fdf4; border-radius: 0 12px 12px 0;
+    padding: 16px 20px; margin: 16px 0;
+  }
+  .ok-box h4 { margin-top: 0; color: #166534; }
+  .file-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .file-chip {
+    background: #f5f5f7; border: 1px solid rgba(0,0,0,0.06); border-radius: 6px;
+    padding: 3px 10px; font-size: 12px; color: #424245; font-family: 'SF Mono', monospace;
+  }
+  footer {
+    text-align: center; padding: 40px 0; color: #86868b; font-size: 13px;
+    border-top: 1px solid rgba(0,0,0,0.06); margin-top: 40px;
+  }
+  @media (max-width: 768px) {
+    .container { padding: 32px 16px 60px; }
+    .header h1 { font-size: 24px; }
+    .section { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Kisstr 修复档案（最终完整版）</h1>
+    <div class="subtitle">四份 repair 档案合并版 / 问题定位 / 修复方法 / 可复刻说明 / 特殊页面注意事项</div>
+    <div class="date-badge">2026-08-09 更新</div>
+  </div>
+
+  <!-- ==================== 修复 1 ==================== -->
+  <div class="section">
+    <h2><span class="num">1</span> 经典布局搜索按钮外框与标签页统一</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-batch">批量 46 页</span>
+      <span class="tag tag-loc">行 ~5450</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p>经典布局（<code>body:not(.layout-minimal)</code>）下，搜索按钮（<code>.search-inline</code>）的边框颜色没有和标签页按钮（<code>.tab-btn</code>）对齐。</p>
+    <div class="loc-box">
+      <div class="label">问题文件 / 位置</div>
+      <span class="path">index.html</span>（及全部 46 个导航页面）<br>
+      <span class="label">涉及 CSS 选择器</span><br>
+      <code>body:not(.layout-minimal) .search-inline</code> 区域（约第 5450 行）<br>
+      <span class="label">对照基准</span><br>
+      <code>.tab-btn</code>（约第 745 行）
+    </div>
+
+    <h3>根因分析</h3>
+    <p>标签页按钮的边框使用 <code>var(--card-border)</code>，悬停时变为 <code>var(--accent)</code>。但搜索按钮在后续的覆盖样式块中只改了圆角和图标位置，没有显式同步边框颜色，导致某些主题下两者视觉不一致。</p>
+
+    <h3>标签页按钮的边框基准（对照标准）</h3>
+    <div class="code-block"><span class="c">/* .tab-btn 基准 - 第 745 行 */</span>
+<span class="p">.tab-btn</span> {
+  <span class="p">border</span>: <span class="n">1px</span> solid <span class="k">var</span>(<span class="p">--card-border</span>);       <span class="c">/* 普通 */</span>
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>);
+}
+<span class="p">.tab-btn</span>:hover {
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--accent</span>);              <span class="c">/* 悬停 */</span>
+}
+<span class="p">.tab-btn</span>.active {
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--accent</span>);              <span class="c">/* 选中 */</span>
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--accent</span>);
+}</div>
+
+    <h3>怎么修的</h3>
+    <p>在 CSS 尾部（约第 5449 行）新增了一个覆盖块，强制经典布局搜索按钮的三个状态（普通/悬停/展开）都和标签页使用同一个 CSS 变量。</p>
+    <div class="diff">
+      <div class="row add"><span class="marker">+</span><span class="content">/* Classic layout search fill follows tab color */</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">body:not(.layout-minimal) .search-inline {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background: var(--card-bg) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  border-color: var(--card-border) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  backdrop-filter: blur(10px) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">}</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">body:not(.layout-minimal) .search-inline:hover {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  border-color: var(--accent) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">}</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">body:not(.layout-minimal) .search-inline.expanded {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background: var(--card-bg) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  border-color: var(--card-border) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">}</span></div>
+    </div>
+
+    <h3>修复后当前代码（第 5449-5464 行）</h3>
+    <div class="code-block"><span class="c">/* Classic layout search fill follows tab color */</span>
+<span class="k">body</span>:not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span> {
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>) <span class="k">!important</span>;
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--card-border</span>) <span class="k">!important</span>;
+  <span class="p">backdrop-filter</span>: <span class="k">blur</span>(10px) <span class="k">!important</span>;
+  -webkit-<span class="p">backdrop-filter</span>: <span class="k">blur</span>(10px) <span class="k">!important</span>;
+}
+
+<span class="k">body</span>:not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span>:hover {
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--accent</span>) <span class="k">!important</span>;
+}
+
+<span class="k">body</span>:not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span>.expanded {
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>) <span class="k">!important</span>;
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--card-border</span>) <span class="k">!important</span>;
+}</div>
+
+    <div class="note-box">
+      <h4>注意事项</h4>
+      <ul>
+        <li class="warn">这段覆盖使用了 <code>!important</code>，位于 CSS 末尾，优先级高于前面的基础定义（第 1595 行 <code>.search-inline</code>）</li>
+        <li class="warn">杂志布局（<code>.layout-minimal</code>）不受此规则影响，杂志布局搜索框保持自己的透明/方角样式</li>
+        <li class="warn">如果后续调整 <code>--card-border</code> 或 <code>--accent</code> 变量值，搜索框和标签页会自动同步，无需额外修改</li>
+        <li class="warn">不要在这段规则之后再加不带 <code>:not(.layout-minimal)</code> 限定的搜索框边框覆盖，否则会影响杂志布局</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 修复 2 ==================== -->
+  <div class="section">
+    <h2><span class="num">2</span> 经典布局搜索框偏白外框修正</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-batch">批量 46 页</span>
+      <span class="tag tag-loc">行 ~4902 / ~5466</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p>经典布局下搜索框边框颜色不一致，搜索框看起来比标签页更白。有两个独立的问题来源：</p>
+
+    <h4>问题 A — 深色主题覆盖（第 4902-4908 行）</h4>
+    <div class="loc-box">
+      <div class="label">位置</div>
+      <span class="path">index.html</span> 第 4902-4908 行<br>
+      <span class="label">选择器</span><br>
+      <code>[data-theme="starry"] body:not(.background-image-mode) .search-inline</code> 等
+    </div>
+    <p>星空蓝/暮光橙/极光青主题下，有一段旧规则把搜索框强制设为白色背景和白色边框：</p>
+    <div class="code-block"><span class="c">/* 旧代码 - 第 4902 行 - 会影响所有布局 */</span>
+[<span class="p">data-theme</span>=<span class="s">"starry"</span>] <span class="k">body</span>:not(<span class="k">.background-image-mode</span>) <span class="p">.search-inline</span>,
+[<span class="p">data-theme</span>=<span class="s">"sunset"</span>] <span class="k">body</span>:not(<span class="k">.background-image-mode</span>) <span class="p">.search-inline</span>,
+[<span class="p">data-theme</span>=<span class="s">"aurora"</span>] <span class="k">body</span>:not(<span class="k">.background-image-mode</span>) <span class="p">.search-inline</span> {
+  <span class="p">background</span>: <span class="n">rgba(255, 255, 255, 0.94)</span> <span class="k">!important</span>;       <span class="c">/* 偏白 */</span>
+  <span class="p">border-color</span>: <span class="n">rgba(255, 255, 255, 0.88)</span> <span class="k">!important</span>;      <span class="c">/* 偏白 */</span>
+  <span class="p">box-shadow</span>: <span class="n">0 8px 26px rgba(0, 0, 0, 0.18)</span> <span class="k">!important</span>;
+}</div>
+
+    <h4>问题 B — 图片背景模式覆盖（原第 5474 行附近）</h4>
+    <div class="loc-box">
+      <div class="label">位置</div>
+      <span class="path">index.html</span> 第 5474 行附近<br>
+      <span class="label">选择器</span><br>
+      <code>body.background-image-mode:not(.layout-minimal) .search-inline</code>
+    </div>
+    <p>图片背景模式下，经典布局搜索框边框被设为 <code>rgba(255,255,255,0.72)</code>，比标签页更白。</p>
+
+    <h3>怎么修的</h3>
+    <p><strong>问题 A 修复：</strong>没有删除旧规则（因为它对杂志布局仍有用），而是在后面（第 5466 行）新增了一个更具体的覆盖，用 <code>:not(.layout-minimal)</code> 限定只作用于经典布局：</p>
+    <div class="diff">
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="starry"] body:not(.background-image-mode):not(.layout-minimal) .search-inline,</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="sunset"] body:not(.background-image-mode):not(.layout-minimal) .search-inline,</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="aurora"] body:not(.background-image-mode):not(.layout-minimal) .search-inline {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background: var(--card-bg) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  border-color: var(--card-border) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  box-shadow: none !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">}</span></div>
+    </div>
+
+    <p><strong>问题 B 修复：</strong>将图片背景模式下的搜索框边框从白色改为跟随 CSS 变量：</p>
+    <div class="diff">
+      <div class="row del"><span class="marker">-</span><span class="content">border: 1px solid rgba(255, 255, 255, 0.72) !important;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">border-color: rgba(255, 255, 255, 0.86) !important;  /* hover */</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">border: 1px solid var(--card-border) !important;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">border-color: var(--accent) !important;  /* hover */</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">border-color: var(--card-border) !important;  /* expanded */</span></div>
+    </div>
+
+    <h3>修复后当前代码（第 5466-5488 行）</h3>
+    <div class="code-block"><span class="c">/* 深色主题经典布局搜索框 - 跟随标签页颜色 */</span>
+[<span class="p">data-theme</span>=<span class="s">"starry"</span>] <span class="k">body</span>:not(<span class="k">.background-image-mode</span>):not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span>,
+[<span class="p">data-theme</span>=<span class="s">"sunset"</span>] <span class="k">body</span>:not(<span class="k">.background-image-mode</span>):not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span>,
+[<span class="p">data-theme</span>=<span class="s">"aurora"</span>] <span class="k">body</span>:not(<span class="k">.background-image-mode</span>):not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span> {
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>) <span class="k">!important</span>;
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--card-border</span>) <span class="k">!important</span>;
+  <span class="p">box-shadow</span>: <span class="k">none</span> <span class="k">!important</span>;
+}
+
+<span class="c">/* 图片背景模式经典布局搜索框 - 跟随标签页颜色 */</span>
+<span class="k">body</span>.<span class="p">background-image-mode</span>:not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span> {
+  <span class="p">border</span>: <span class="n">1px</span> solid <span class="k">var</span>(<span class="p">--card-border</span>) <span class="k">!important</span>;
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>) <span class="k">!important</span>;
+  <span class="p">box-shadow</span>: <span class="k">none</span> <span class="k">!important</span>;
+}
+
+<span class="k">body</span>.<span class="p">background-image-mode</span>:not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span>:hover {
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--accent</span>) <span class="k">!important</span>;
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>) <span class="k">!important</span>;
+}
+
+<span class="k">body</span>.<span class="p">background-image-mode</span>:not(<span class="k">.layout-minimal</span>) <span class="p">.search-inline</span>.expanded {
+  <span class="p">border-color</span>: <span class="k">var</span>(<span class="p">--card-border</span>) <span class="k">!important</span>;
+  <span class="p">background</span>: <span class="k">var</span>(<span class="p">--card-bg</span>) <span class="k">!important</span>;
+}</div>
+
+    <div class="note-box">
+      <h4>注意事项</h4>
+      <ul>
+        <li class="warn">第 4902 行的旧规则没有删除，它仍然作用于杂志布局（<code>.layout-minimal</code>），让杂志布局在深色主题下保持白色搜索框。如果删除它，杂志布局深色主题搜索框会变暗</li>
+        <li class="warn">新增的覆盖在第 5466 行，因为 CSS 级联规则，后出现的同优先级规则会覆盖前面的，所以 5466 行的 <code>:not(.layout-minimal)</code> 版本会胜出</li>
+        <li class="warn">图片背景模式下 <code>--card-bg</code> 在不同主题中值不同：浅色主题是 <code>rgba(255,255,255,0.8)</code>，深色主题是 <code>rgba(255,255,255,0.08)</code>，所以搜索框会自然跟随主题明暗</li>
+        <li class="warn">不要把 <code>rgba(255,255,255,0.72~0.94)</code> 写回来，这会让搜索框在某些主题下比标签页更白</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>容易踩的坑</h4>
+      <ul>
+        <li class="danger">如果后续批量替换脚本误删了第 4902 行的旧规则（没有 <code>:not(.layout-minimal)</code> 的那段），杂志布局深色主题搜索框会失去白色背景</li>
+        <li class="danger">如果 CSS 顺序被打乱（比如构建工具重排序），5466 行的覆盖可能不再排在 4902 行之后，导致覆盖失效</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 修复 3 ==================== -->
+  <div class="section">
+    <h2><span class="num">3</span> 浏览器功能栏蓝色线修复</h2>
+    <div class="tag-row">
+      <span class="tag tag-meta">META</span>
+      <span class="tag tag-js">JS</span>
+      <span class="tag tag-batch">批量 46 页</span>
+      <span class="tag tag-loc">行 7 / 7159</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p>移动端浏览器（Chrome/Safari/Brave）顶部地址栏/功能栏区域出现一条蓝色细线。有三个独立的根因：</p>
+
+    <h4>根因 A — 初始 theme-color 为蓝色（第 7 行）</h4>
+    <div class="loc-box">
+      <div class="label">位置</div>
+      <span class="path">index.html</span> 第 7 行<br>
+      <span class="label">修复前</span>
+    </div>
+    <div class="diff">
+      <div class="row del"><span class="marker">-</span><span class="content">&lt;meta name="theme-color" content="#0071e3"&gt;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">&lt;meta name="theme-color" content="#ffffff"&gt;</span></div>
+    </div>
+    <p>页面加载瞬间，浏览器读取 <code>theme-color</code> 来设置地址栏颜色。如果初始值是蓝色 <code>#0071e3</code>，在 JS 执行之前的短暂时间内地址栏会显示蓝色。</p>
+
+    <h4>根因 B — setTheme() 运行时主题色映射不完整（第 7159 行）</h4>
+    <div class="loc-box">
+      <div class="label">位置</div>
+      <span class="path">index.html</span> <code>setTheme()</code> 函数内，第 7159 行<br>
+      <span class="label">问题</span>
+    </div>
+    <div class="diff">
+      <div class="row del"><span class="marker">-</span><span class="content">const themeColors = {</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  ...</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  'dream': '#667eea'</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  // 缺少 forest, deepsea, clay 三个主题</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">};</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">if (metaThemeColor &amp;&amp; themeColors[theme]) {</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  metaThemeColor.setAttribute('content', themeColors[theme]);</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">}</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">// html 背景色单独设置，未区分布局</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">const themeColors = {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  ...</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  "dream": "#667eea",</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  "forest": "#2d5f4e",</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  "deepsea": "#1a4a6e",</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  "clay": "#6b4a35"</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">};</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">const currentLayout = getCurrentLayout();</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">if (currentLayout === "minimal") {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  document.documentElement.style.backgroundColor = "#ffffff";</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  if (metaThemeColor) metaThemeColor.setAttribute("content", "#ffffff");</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">} else if (themeColors[theme]) {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  document.documentElement.style.backgroundColor = themeColors[theme];</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  if (metaThemeColor) metaThemeColor.setAttribute("content", themeColors[theme]);</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">}</span></div>
+    </div>
+    <p>缺少 <code>forest / deepsea / clay</code> 映射时，切到这三个主题 <code>themeColors[theme]</code> 为 <code>undefined</code>，<code>metaThemeColor</code> 不会被更新，浏览器栏停留在上一次的颜色（可能是蓝色）。</p>
+    <p>同时，旧代码不区分布局就直接设置主题色，杂志/极简布局下切主题也会让浏览器栏变色而非保持白色。</p>
+
+    <h4>根因 C — querySelector 引号错误</h4>
+    <p>批量脚本运行时，<code>document.querySelector</code> 中的引号被错误转义为 <code>"meta[name=""theme-color""]"</code>，导致选择器匹配失败，运行时颜色更新完全失效。</p>
+    <div class="diff">
+      <div class="row del"><span class="marker">-</span><span class="content">document.querySelector("meta[name=""theme-color""]")</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">document.querySelector('meta[name="theme-color"]')</span></div>
+    </div>
+
+    <h3>修复后当前代码</h3>
+
+    <h4>HTML meta 标签（第 7 行）</h4>
+    <div class="code-block"><span class="k">&lt;meta</span> <span class="p">name</span>=<span class="s">"theme-color"</span> <span class="p">content</span>=<span class="s">"#ffffff"</span><span class="k">&gt;</span></div>
+
+    <h4>页面内联初始化脚本（第 15-55 行）</h4>
+    <div class="code-block"><span class="c">// 页面加载时立即执行，用白色避免蓝色闪现</span>
+(<span class="k">function</span> <span class="p">initColors</span>() {
+  <span class="k">const</span> savedLayout = localStorage.getItem(<span class="s">'layout'</span>) || <span class="s">'minimal'</span>;
+  <span class="k">const</span> savedTheme = localStorage.getItem(<span class="s">'theme_'</span> + savedLayout) || <span class="s">'white'</span>;
+  
+  <span class="k">const</span> themeColors = {
+    <span class="s">'white'</span>: <span class="s">'#f5f5f7'</span>,
+    <span class="s">'dawn'</span>: <span class="s">'#fff5f5'</span>,
+    <span class="s">'mint'</span>: <span class="s">'#f0fff5'</span>,
+    <span class="s">'ocean'</span>: <span class="s">'#f0f8ff'</span>,
+    <span class="s">'twilight'</span>: <span class="s">'#f5f0ff'</span>,
+    <span class="s">'midnight'</span>: <span class="s">'#000212'</span>,
+    <span class="s">'starry'</span>: <span class="s">'#0c0c1d'</span>,
+    <span class="s">'sunset'</span>: <span class="s">'#2d1b0e'</span>,
+    <span class="s">'aurora'</span>: <span class="s">'#1a2a3a'</span>,
+    <span class="s">'dream'</span>: <span class="s">'#667eea'</span>,
+    <span class="s">'forest'</span>: <span class="s">'#2d5f4e'</span>,
+    <span class="s">'deepsea'</span>: <span class="s">'#1a4a6e'</span>,
+    <span class="s">'clay'</span>: <span class="s">'#6b4a35'</span>
+  };
+  
+  <span class="k">if</span> (savedLayout === <span class="s">'minimal'</span>) {
+    document.documentElement.style.backgroundColor = <span class="s">'#ffffff'</span>;
+  } <span class="k">else if</span> (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+  
+  <span class="k">const</span> metaThemeColor = document.querySelector(<span class="s">'meta[name="theme-color"]'</span>);
+  <span class="k">if</span> (metaThemeColor) {
+    <span class="k">if</span> (savedLayout === <span class="s">'minimal'</span>) {
+      metaThemeColor.setAttribute(<span class="s">'content'</span>, <span class="s">'#ffffff'</span>);
+    } <span class="k">else if</span> (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute(<span class="s">'content'</span>, themeColors[savedTheme]);
+    }
+  }
+})();</div>
+
+    <h4>setTheme() 运行时函数（第 7159-7183 行）</h4>
+    <div class="code-block"><span class="c">// 修复后的完整运行时逻辑</span>
+<span class="k">const</span> themeColors = {
+  <span class="s">"white"</span>: <span class="s">"#f5f5f7"</span>,
+  <span class="s">"dawn"</span>: <span class="s">"#fff5f5"</span>,
+  <span class="s">"mint"</span>: <span class="s">"#f0fff5"</span>,
+  <span class="s">"ocean"</span>: <span class="s">"#f0f8ff"</span>,
+  <span class="s">"twilight"</span>: <span class="s">"#f5f0ff"</span>,
+  <span class="s">"midnight"</span>: <span class="s">"#000212"</span>,
+  <span class="s">"starry"</span>: <span class="s">"#0c0c1d"</span>,
+  <span class="s">"sunset"</span>: <span class="s">"#2d1b0e"</span>,
+  <span class="s">"aurora"</span>: <span class="s">"#1a2a3a"</span>,
+  <span class="s">"dream"</span>: <span class="s">"#667eea"</span>,
+  <span class="s">"forest"</span>: <span class="s">"#2d5f4e"</span>,
+  <span class="s">"deepsea"</span>: <span class="s">"#1a4a6e"</span>,
+  <span class="s">"clay"</span>: <span class="s">"#6b4a35"</span>
+};
+<span class="k">const</span> metaThemeColor = document.querySelector(<span class="s">'meta[name="theme-color"]'</span>);
+
+<span class="c">// 关键：极简布局永远白色，经典布局才跟随主题色</span>
+<span class="k">const</span> currentLayout = getCurrentLayout();
+<span class="k">if</span> (currentLayout === <span class="s">"minimal"</span>) {
+  document.documentElement.style.backgroundColor = <span class="s">"#ffffff"</span>;
+  <span class="k">if</span> (metaThemeColor) metaThemeColor.setAttribute(<span class="s">"content"</span>, <span class="s">"#ffffff"</span>);
+} <span class="k">else if</span> (themeColors[theme]) {
+  document.documentElement.style.backgroundColor = themeColors[theme];
+  <span class="k">if</span> (metaThemeColor) metaThemeColor.setAttribute(<span class="s">"content"</span>, themeColors[theme]);
+}</div>
+
+    <div class="note-box">
+      <h4>注意事项</h4>
+      <ul>
+        <li class="warn">初始 <code>theme-color</code> 必须是 <code>#ffffff</code>，不能改回 <code>#0071e3</code>，否则页面加载瞬间会出现蓝色地址栏</li>
+        <li class="warn">极简/杂志布局（<code>minimal</code>）下浏览器栏必须始终白色，不要在 <code>setTheme()</code> 中把主题色赋给它</li>
+        <li class="warn"><code>themeColors</code> 映射必须包含全部 13 个主题，缺少任何一个都会导致切换到该主题时浏览器栏停留在旧颜色</li>
+        <li class="warn"><code>document.querySelector('meta[name="theme-color"]')</code> 必须用单引号包裹整个选择器，内部用双引号包裹属性值，不能混用引号风格</li>
+        <li class="warn">页面顶部内联脚本（第 15-55 行）和 <code>setTheme()</code> 函数（第 7151 行）中都有 <code>themeColors</code> 映射，两处必须保持一致</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>修复过程中踩过的坑（已解决）</h4>
+      <ul>
+        <li class="danger">PowerShell 批量脚本中用双引号包裹含双引号的 JS 字符串，导致 <code>"meta[name=""theme-color""]"</code> 写入文件，querySelector 匹配失败</li>
+        <li class="danger">中途有一次正则替换范围过大，误删了页面 JS 内容，通过备份 <code>backup_before_browser_toolbar_blue_line_20260808_090428.zip</code> 恢复</li>
+        <li class="danger">PowerShell here-string 遇到中文注释编码异常，改用纯 ASCII 匹配正则解决</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 修复 4 ==================== -->
+  <div class="section">
+    <h2><span class="num">4</span> 版本号、链接数与旧入口冗余优化</h2>
+    <div class="tag-row">
+      <span class="tag tag-meta">META</span>
+      <span class="tag tag-batch">批量 47 页</span>
+      <span class="tag tag-css">适配</span>
+    </div>
+
+    <h3>更新内容</h3>
+    <p>全站显示版本号统一从 <code>1.54</code> 更新为 <code>1.55</code>，页脚与免责声明中的链接总数统一校对为 <code>7963</code>。</p>
+    <ul>
+      <li>统计范围：正式导航页面的 <code>linksData</code> 数据。</li>
+      <li>统计方式：按实际 URL 去重，排除修复档案页与免责声明页自身内容。</li>
+      <li>同步位置：各导航页 <code>.footer-version</code> 与 <code>disclaimer.html</code> 的版本标签。</li>
+    </ul>
+
+    <h3>冗余优化</h3>
+    <p><code>home.html</code> 已不再作为完整重复页面保留，改为轻量兼容跳转页，指向新的 <code>home_design.html</code>。这样保留旧链接可访问性，同时避免维护两份相同的家居设计页面。</p>
+
+    <h3>全平台适配</h3>
+    <p>新的兼容跳转页保留移动端视口、刘海屏安全区、暗色模式和触控按钮高度，确保桌面、移动端和平板访问旧入口时都能稳定跳转。</p>
+    <div class="code-block"><span class="c">/* home.html lightweight redirect */</span>
+<span class="p">meta viewport</span>: width=device-width, initial-scale=1.0, viewport-fit=cover
+<span class="p">meta refresh</span>: home_design.html
+<span class="p">script redirect</span>: window.location.replace('home_design.html')
+<span class="p">fallback link</span>: home_design.html</div>
+
+    <h3>校验结果</h3>
+    <ul>
+      <li>未发现 <code>版本号：1.54</code> 残留。</li>
+      <li>正式页面版本信息均为 <code>版本号：1.55 · 共 7963 个链接</code>。</li>
+      <li><code>home_design.html</code> 为家居设计正式入口，<code>home.html</code> 为兼容跳转入口。</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 修复 5 ==================== -->
+  <div class="section">
+    <h2><span class="num">5</span> 浏览器功能栏白边修复</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-js">JS</span>
+      <span class="tag tag-batch">批量 46 页</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p>图片背景模式下，页面原本主要依赖 <code>html:has(body.background-image-mode)</code> 让 <code>html</code> 背景同步壁纸。部分移动浏览器对 <code>:has()</code>、动态地址栏区域或工具栏收起时的重绘支持不稳定，可能在顶部或底部露出白边。</p>
+
+    <h3>怎么修的</h3>
+    <p>保留原有 <code>:has()</code> 兜底，同时在进入图片背景模式时由 JS 给 <code>html</code> 添加 <code>background-image-mode</code> 类，并把 <code>--bg-image</code> 同步写到 <code>document.documentElement</code>。退出图片背景模式时同步移除该类，避免影响普通主题。</p>
+    <div class="code-block"><span class="c">/* CSS fallback */</span>
+html.background-image-mode,
+html:has(body.background-image-mode) {
+  background-color: #121224;
+  background-image: var(--bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+<span class="c">// JS fallback</span>
+function syncImageBackgroundChrome(bgImageValue) {
+  document.documentElement.classList.add('background-image-mode');
+  document.documentElement.style.backgroundColor = '#121224';
+  if (bgImageValue) {
+    document.documentElement.style.setProperty('--bg-image', bgImageValue);
+  }
+}</div>
+
+    <h3>校验结果</h3>
+    <ul>
+      <li>46 个正式导航页面均已写入 <code>html.background-image-mode</code> CSS 兜底。</li>
+      <li>旧的无参 <code>syncImageBackgroundChrome()</code> 和旧调用 <code>syncImageBackgroundChrome();</code> 已清空。</li>
+      <li>切回普通主题时会移除 <code>document.documentElement.classList</code> 上的 <code>background-image-mode</code>。</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 修复 6 ==================== -->
+  <div class="section">
+    <h2><span class="num">6</span> ai.html 与 index 同步但保留 AI 卡片体系</h2>
+    <div class="tag-row">
+      <span class="tag tag-js">JS</span>
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-meta">特殊页面</span>
+    </div>
+
+    <h3>为什么 ai.html 特殊</h3>
+    <p><code>ai.html</code> 不是普通支页。它虽然要同步 <code>index.html</code> 的页面框架、主题系统、音乐控件、搜索与标签栏逻辑，但它的主内容是“全球 AI”排行榜式卡片，不能直接被 <code>index.html</code> 的普通网站卡片数据覆盖。</p>
+    <ul>
+      <li>必须保留 <code>linksData</code> 中的 <code>全球 AI</code> 分类，以及 <code>AI应用 / 大模型 / AI Agent / 已停运</code> 四个小分类。</li>
+      <li>必须保留 AI 数据字段：<code>_aiCompany</code>、<code>_aiScore</code>、<code>_aiTags</code>、<code>_aiCloseDate</code>、<code>_aiCloseReason</code>。</li>
+      <li>必须保留 AI 卡片渲染函数 <code>createAiCard(link, linkIndex)</code>，否则公司名、评分、标签、停运原因都会丢失。</li>
+      <li>必须保留 AI 专属布局 <code>.ai-grid</code>、<code>.ai-link-card</code>、<code>.ai-tag</code>、<code>.ai-score</code> 等样式。</li>
+    </ul>
+
+    <h3>本次同步方式</h3>
+    <p>以 <code>index.html</code> 作为非 AI 内容底稿，再从旧 <code>ai.html</code> 回填 AI 分类、AI 卡片 CSS 和 <code>createAiCard</code> 函数。这样可以让 <code>ai.html</code> 继承最新全站结构，同时不破坏 AI 页面自己的数据表现。</p>
+    <div class="code-block"><span class="c">// 合并思路摘要</span>
+new ai.html = index.html skeleton
+  + old ai.html linksData[0]      <span class="c">/* 全球 AI 数据 */</span>
+  + old ai.html .ai-grid styles  <span class="c">/* AI 卡片尺寸、排版、标签样式 */</span>
+  + old ai.html createAiCard()   <span class="c">/* AI 卡片渲染逻辑 */</span></div>
+
+    <h3>最终保留的 AI 卡片入口逻辑</h3>
+    <div class="code-block"><span class="k">function</span> <span class="p">createLinkCard</span>(link, catIndex, linkIndex) {
+  <span class="k">const</span> cat = linksData[catIndex];
+
+  <span class="c">// 全球 AI 分类使用专属卡片</span>
+  <span class="k">if</span> (cat &amp;&amp; cat.name === <span class="s">'全球 AI'</span> &amp;&amp; link._aiCompany) {
+    <span class="k">return</span> createAiCard(link, linkIndex);
+  }
+
+  <span class="c">// 其它分类仍走普通网站卡片</span>
+}</div>
+
+    <div class="note-box">
+      <h4>维护注意</h4>
+      <ul>
+        <li class="warn">以后同步 <code>index.html</code> 到 <code>ai.html</code> 时，不要整文件直接覆盖。</li>
+        <li class="warn">如果必须重建 <code>ai.html</code>，先提取旧文件里的 <code>全球 AI</code> 数据对象、AI CSS 区块、<code>createAiCard</code> 函数，再合并。</li>
+        <li class="warn"><code>linksData[0]</code> 应保持为 <code>全球 AI</code>，这样页面打开时默认展示 AI 内容。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 修复 7 ==================== -->
+  <div class="section">
+    <h2><span class="num">7</span> ai.html 标签页精简与返回首页按钮</h2>
+    <div class="tag-row">
+      <span class="tag tag-js">JS</span>
+      <span class="tag tag-meta">导航</span>
+      <span class="tag tag-loc">ai.html</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p>同步完成后，<code>ai.html</code> 顶层标签页继承了 <code>index.html</code> 的 <code>ACGN</code> 和 <code>书影音</code> 分类，导致 AI 支页出现不应有的主站分类标签。同时，作为支页，它需要和 <code>acgn.html</code>、<code>books_media.html</code> 等页面一样提供“返回首页”按钮。</p>
+
+    <h3>怎么修的</h3>
+    <ul>
+      <li>删除 <code>linksData</code> 顶层的 <code>ACGN</code> 和 <code>书影音</code> 分类对象。</li>
+      <li>保留 <code>全球 AI</code> 顶层分类，保留 <code>更多</code> 索引分类。</li>
+      <li>在 <code>renderCategories()</code> 里按其它支页同款方式追加 <code>return-home-tab</code> 按钮。</li>
+      <li>按钮点击后跳转 <code>index.html</code>，并在点击后调用 <code>blur()</code> 清除按钮焦点残留。</li>
+    </ul>
+
+    <h3>返回首页按钮代码</h3>
+    <div class="code-block"><span class="k">const</span> homeBtn = document.createElement(<span class="s">'button'</span>);
+homeBtn.className = <span class="s">'tab-btn return-home-tab'</span>;
+homeBtn.textContent = <span class="s">'\\u8FD4\\u56DE\\u9996\\u9875'</span>;
+homeBtn.title = <span class="s">'\\u8FD4\\u56DE\\u9996\\u9875'</span>;
+homeBtn.addEventListener(<span class="s">'click'</span>, (e) =&gt; {
+  window.location.href = <span class="s">'index.html'</span>;
+  e.currentTarget.blur();
+});
+tabsContainer.appendChild(homeBtn);</div>
+
+    <h3>最终标签页结构</h3>
+    <ul>
+      <li><code>返回首页</code>：支页导航按钮，不来自 <code>linksData</code>。</li>
+      <li><code>全球 AI</code>：默认激活，展示 AI 小分类与 AI 卡片。</li>
+      <li><code>更多</code>：保留索引入口，方便跳转到其它支页。</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 修复 8 ==================== -->
+  <div class="section">
+    <h2><span class="num">8</span> ai.html 小分类标题常亮</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-loc">AI 小分类</span>
+      <span class="tag tag-meta">视觉状态</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p><code>ai.html</code> 中 <code>AI应用 / 大模型 / AI Agent / 已停运</code> 这些小分类标题原本需要鼠标悬停才明显变亮。用户要求标题默认就常亮，避免页面初始状态下小分类分隔不够明确。</p>
+
+    <h3>普通布局修复</h3>
+    <p>让 <code>.ai-grid .subcategory-title-card</code> 默认启用原本悬停时才出现的高亮边框、阴影与伪元素光效。</p>
+    <div class="code-block"><span class="p">.ai-grid .subcategory-title-card</span> {
+  <span class="p">border-color</span>: transparent;
+  <span class="p">box-shadow</span>: 0 4px 12px rgba(0, 0, 0, 0.05), 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+<span class="p">.ai-grid .subcategory-title-card::before</span> {
+  <span class="p">opacity</span>: 0.05;
+}
+
+<span class="p">.ai-grid .subcategory-title-card::after</span> {
+  <span class="p">opacity</span>: 1;
+}</div>
+
+    <h3>极简布局修复</h3>
+    <p>极简布局下，小分类标题默认使用金色渐变背景、金色标题和浅金色副标题，不再等 <code>:hover</code> 才亮。</p>
+    <div class="code-block"><span class="p">.layout-minimal .ai-grid .subcategory-title-card</span> {
+  <span class="p">background</span>: linear-gradient(90deg, rgba(184, 150, 83, 0.06), transparent) <span class="k">!important</span>;
+}
+
+<span class="p">.layout-minimal .ai-grid .subcategory-title-card .link-name</span> {
+  <span class="p">color</span>: #b89653 <span class="k">!important</span>;
+}
+
+<span class="p">.layout-minimal .ai-grid .subcategory-title-card .link-url</span> {
+  <span class="p">color</span>: rgba(184, 150, 83, 0.72) <span class="k">!important</span>;
+}</div>
+
+    <h3>背景图模式修复</h3>
+    <p>背景图模式有后置规则会把标题背景压暗，因此追加更具体的 AI 覆盖，让 AI 小分类标题默认使用悬停亮度。</p>
+    <div class="code-block"><span class="p">body.background-image-mode.layout-minimal .ai-grid .subcategory-title-card</span> {
+  <span class="p">background</span>: rgba(255, 255, 255, 0.08) <span class="k">!important</span>;
+  <span class="p">box-shadow</span>: none <span class="k">!important</span>;
+}</div>
+  </div>
+
+  <!-- ==================== 修复 9 ==================== -->
+  <div class="section">
+    <h2><span class="num">9</span> 非壁纸主题浏览器功能栏底部白边修复</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-batch">批量 46 页</span>
+      <span class="tag tag-loc">.bg-gradient 层</span>
+    </div>
+
+    <h3>问题在哪</h3>
+    <p>使用非壁纸主题（纯色/渐变，共 13 个）时，手机浏览器底部功能栏和网页之间出现一条细白边。壁纸模式（图片背景）下没有这个问题。</p>
+    <div class="loc-box">
+      <div class="label">问题文件 / 位置</div>
+      <span class="path">index.html</span>（及全部 46 个导航页面）<br>
+      <span class="label">涉及 CSS 选择器</span><br>
+      <code>.bg-gradient</code> — 非壁纸主题背景层<br>
+      <code>[data-theme="xxx"]</code> — 主题级 html 背景色<br>
+      <span class="label">对照基准（正常的）</span><br>
+      <code>.bg-layer</code> — 壁纸模式背景层（已扩展定位，无白边）
+    </div>
+
+    <h3>根因分析</h3>
+    <p>白边的本质是：<strong>背景层高度 = 视口高度，但视口高度在移动端是动态的</strong>。浏览器工具栏收起/展开时，<code>100lvh</code> 的元素不会自动跟随填补底部缝隙，导致 html 的浅色背景（<code>#f5f5f7</code> 白色）从缝隙里露出来。</p>
+    <h4>为什么壁纸模式没事</h4>
+    <p>壁纸模式的 <code>.bg-layer</code> 早已采用"扩展定位"方案——上下左右都向外延伸 12px，底部额外延伸 <code>var(--safe-bottom) + 160px</code>，所以即使工具栏变动，背景层也足够覆盖。</p>
+    <h4>为什么非壁纸模式有事</h4>
+    <p><code>.bg-gradient</code> 原本只设置了 <code>height: 100lvh</code>，没有扩展到视口外。同时：</p>
+    <ul>
+      <li>浅色主题（dawn / mint / ocean / twilight）没有设置 html 级别的兜底色，html 默认是白色 <code>#f5f5f7</code></li>
+      <li><code>.bg-gradient</code> 没有 <code>background-image</code>，伪元素的渐变浮在上方，扩展区域没有背景填充</li>
+      <li>旧方案用 <code>body::after</code> 伪元素做兜底层（z-index: 98），但只覆盖了暗色主题，浅色主题完全没兜住</li>
+    </ul>
+
+    <h3>怎么修的</h3>
+    <p>核心思路：<strong>让 .bg-gradient 采用与 .bg-layer 完全相同的扩展定位模式</strong>，并补上全主题的兜底色。</p>
+
+    <h4>修复 1：.bg-gradient 扩展定位（最核心）</h4>
+    <div class="diff">
+      <div class="row del"><span class="marker">-</span><span class="content">.bg-gradient {</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  position: fixed;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  top: 0;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  left: 0;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  width: 100%;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  height: 100vh;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  height: 100lvh;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  z-index: -1;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">  overflow: hidden;</span></div>
+      <div class="row del"><span class="marker">-</span><span class="content">}</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">.bg-gradient {</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  position: fixed;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  top: -12px;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  left: -12px;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  right: -12px;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  bottom: calc(-1 * (var(--safe-bottom) + 160px));</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  width: auto;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  height: auto;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  min-height: calc(100lvh + var(--safe-bottom) + 184px);</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  z-index: -1;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  overflow: hidden;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background-image: var(--bg-primary);</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background-size: cover;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background-position: center;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">  background-repeat: no-repeat;</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">}</span></div>
+    </div>
+
+    <h4>修复 2：全主题 html 兜底色（浅色主题之前漏掉了）</h4>
+    <p>从"只有 8 个暗色主题有 html background-color"补全为"全部 13 个主题都有"：</p>
+    <div class="diff">
+      <div class="row del"><span class="marker">-</span><span class="content">/* 暗色主题 html 背景同步 */</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">/* 全主题 html 背景同步，防止移动端 overscroll / 浏览器功能栏区域白边 */</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="dawn"] { background-color: #fff5f5; }</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="mint"] { background-color: #f0fff5; }</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="ocean"] { background-color: #f0f8ff; }</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="twilight"] { background-color: #f5f0ff; }</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">[data-theme="midnight"] { background-color: #000212; }  /* 原有 */</span></div>
+      <div class="row add"><span class="marker">+</span><span class="content">... 共 13 个主题全部补上</span></div>
+    </div>
+
+    <h4>修复 3：.bg-gradient 主题兜底色</h4>
+    <p>为所有 13 个主题的 <code>.bg-gradient</code> 设置匹配的 <code>background-color</code>，确保即使渐变图没加载或区域边缘，也有正确的纯色兜底：</p>
+    <div class="code-block"><span class="c">/* .bg-gradient 主题兜底色，确保渐变主题在移动端底部无缝隙 */</span>
+[<span class="p">data-theme</span>=<span class="s">"white"</span>] <span class="p">.bg-gradient</span> { <span class="p">background-color</span>: <span class="n">#f5f5f7</span>; }
+[<span class="p">data-theme</span>=<span class="s">"dawn"</span>] <span class="p">.bg-gradient</span> { <span class="p">background-color</span>: <span class="n">#fff5f5</span>; }
+<span class="c">/* ... 共 13 个主题，颜色与 html / body 保持一致 */</span></div>
+
+    <h4>修复 4：系统暗色模式 white 主题兜底</h4>
+    <p>在 <code>@media (prefers-color-scheme: dark)</code> 块中，white 主题的 <code>html</code> 和 <code>.bg-gradient</code> 也设置 <code>#0B1719</code>，与 body 一致。</p>
+    <div class="code-block"><span class="k">@media</span> (<span class="p">prefers-color-scheme</span>: dark) {
+  [<span class="p">data-theme</span>=<span class="s">"white"</span>] <span class="p">body</span> { <span class="p">background-color</span>: <span class="n">#0B1719</span>; }
+  [<span class="p">data-theme</span>=<span class="s">"white"</span>] { <span class="p">background-color</span>: <span class="n">#0B1719</span>; }
+  [<span class="p">data-theme</span>=<span class="s">"white"</span>] <span class="p">.bg-gradient</span> { <span class="p">background-color</span>: <span class="n">#0B1719</span>; }
+}</div>
+
+    <h4>修复 5：移除 body::after hack</h4>
+    <p>删除了移动端 <code>body::after</code> 伪元素兜底层（z-index: 98，底部 10px 高），因为现在 <code>.bg-gradient</code> 扩展定位已经覆盖了整个区域，不需要额外的兜底层了。同时删除了 8 个暗色主题的 <code>body::after</code> 颜色覆盖。</p>
+
+    <h4>修复 6：手机端 .bg-gradient 扩展覆盖</h4>
+    <p>把 <code>.bg-gradient</code> 加入到手机端 <code>.bg-layer / .bg-layer-fade</code> 的扩展覆盖规则中，使用更大的延伸量（底部延伸 220px）：</p>
+    <div class="code-block"><span class="k">@media</span> (<span class="p">max-width</span>: 768px) {
+  <span class="p">.bg-gradient</span>,
+  <span class="p">.bg-layer</span>,
+  <span class="p">.bg-layer-fade</span> {
+    <span class="p">bottom</span>: <span class="k">calc</span>(-1 * (<span class="k">var</span>(<span class="p">--safe-bottom</span>) + <span class="n">220px</span>)) <span class="k">!important</span>;
+    <span class="p">min-height</span>: <span class="k">calc</span>(100lvh + <span class="k">var</span>(<span class="p">--safe-bottom</span>) + <span class="n">244px</span>) <span class="k">!important</span>;
+  }
+}</div>
+
+    <div class="ok-box">
+      <h4>修复原理总结（三层兜底）</h4>
+      <ul>
+        <li><strong>第一层：</strong><code>.bg-gradient</code> 扩展定位 + <code>background-image</code>，实际渐变/纯色覆盖到视口外 160px+</li>
+        <li><strong>第二层：</strong><code>.bg-gradient</code> 的 <code>background-color</code> 兜底，即使渐变没铺满也有正确颜色</li>
+        <li><strong>第三层：</strong><code>html</code> 级别的 <code>background-color</code>，极端情况下（如 overscroll）也不会露白</li>
+      </ul>
+    </div>
+
+    <h3>校验结果</h3>
+    <ul>
+      <li>46 个正式导航页面均已应用修复。</li>
+      <li>CSS 大括号匹配全部通过（index.html: 1863/1863，acgn.html: 1677/1677 等）。</li>
+      <li><code>body::after</code> hack 已从所有正式页面移除，仅备份文件中残留。</li>
+      <li>13 个主题的 html 和 .bg-gradient 均设置了匹配的 background-color。</li>
+    </ul>
+
+    <div class="note-box">
+      <h4>注意事项 / 维护须知</h4>
+      <ul>
+        <li class="warn"><code>.bg-gradient</code> 和 <code>.bg-layer</code> 应该保持相同的定位扩展模式，不要一个用 100lvh 一个用负偏移</li>
+        <li class="warn">新增主题时，必须同时在三个地方加背景色：<code>body</code>、<code>html</code>（<code>[data-theme="xxx"]</code>）、<code>.bg-gradient</code>（<code>[data-theme="xxx"] .bg-gradient</code>）</li>
+        <li class="warn">系统暗色模式（<code>prefers-color-scheme: dark</code>）下 white 主题的三处兜底色（body / html / .bg-gradient）必须都设为 <code>#0B1719</code></li>
+        <li class="warn">不要把 <code>body::after</code> 兜底层加回来，它会引入 z-index 层级问题，而且现在已经不需要了</li>
+        <li class="warn">手机端媒体查询里 <code>.bg-gradient, .bg-layer, .bg-layer-fade</code> 三个选择器要放在一起，共享同一套扩展值</li>
+      </ul>
+    </div>
+
+    <div class="danger-box">
+      <h4>修复过程中踩过的坑（已解决）</h4>
+      <ul>
+        <li class="danger">PowerShell 批量替换脚本中 here-string 中文编码问题，导致注释乱码。改用 ASCII 锚点匹配解决</li>
+        <li class="danger">有一次 PowerShell 脚本的正则匹配范围过大，意外替换掉了部分 CSS/JS 内容（5 个文件被截断）。通过从 index.html 回填完整 CSS 区块恢复</li>
+        <li class="danger">混合换行符（CRLF / LF）导致精确字符串匹配失败。处理前先统一换行符格式</li>
+        <li class="danger">只修复了暗色主题的兜底色，浅色主题（dawn/mint/ocean/twilight）漏掉了，导致浅色主题下白边更明显</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 修复 10 ==================== -->
+  <div class="section">
+    <h2><span class="num">10</span> 索引标签页改名与彩蛋功能</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">数据修改</span>
+      <span class="tag tag-js">JS 渲染</span>
+      <span class="tag tag-batch">46 页同步</span>
+    </div>
+
+    <h3>问题描述</h3>
+    <ul>
+      <li>"更多"标签页名称不够直观，需改为"索引"</li>
+      <li>"索引♡"小分类标题卡片需隐藏，直接从 ACGN 开始显示</li>
+      <li>彩蛋需从子分类标题卡片移到标签页按钮上</li>
+    </ul>
+
+    <h3>修复方案</h3>
+    <h4>数据修改</h4>
+    <div class="code-block"><span class="c">// 分类级：添加 easterEggUrl</span>
+{
+  "name": "索引",           <span class="c">// 原 "更多"</span>
+  "icon": "✨",
+  "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
+  "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
+  "subcategories": [
+    {
+      "name": "索引♡",
+      "enName": "Categories",
+      "hideTitle": true,    <span class="c">// 新增：隐藏标题卡片</span>
+      "easterEggUrl": "...",
+      "links": [...]
+    }
+  ]
+}</div>
+
+    <h4>JS：标签页按钮彩蛋（连续点击 3 次触发）</h4>
+    <div class="code-block">if (cat.easterEggUrl) {
+  btn.dataset.eggClicks = '0';
+  btn.addEventListener('click', () => {
+    const clicks = Number(btn.dataset.eggClicks || '0') + 1;
+    btn.dataset.eggClicks = String(clicks);
+    clearTimeout(btn._eggTimer);
+    if (clicks >= 3) {
+      btn.dataset.eggClicks = '0';
+      window.open(cat.easterEggUrl, '_blank', 'noopener');
+    } else {
+      btn._eggTimer = setTimeout(() => {
+        btn.dataset.eggClicks = '0';
+      }, 900);
+    }
+  });
+}</div>
+
+    <h4>JS：跳过 hideTitle 标题卡片渲染</h4>
+    <div class="code-block"><span class="c">// 非极简布局</span>
+if (subcat.name && !subcat.hideTitle) { ... }
+<span class="c">// 极简布局</span>
+if (isMinimalLayout && subcat.name && !subcat.hideTitle) { ... }</div>
+
+    <h3>受影响文件</h3>
+    <p>46 个 HTML 文件（index.html + 45 个子页面）。disclaimer.html 无分类导航，仅同步版本号。</p>
+  </div>
+
+  <!-- ==================== 修复 11 ==================== -->
+  <div class="section">
+    <h2><span class="num">11</span> 链接卡片拖拽新窗口打开修复</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-js">JS</span>
+      <span class="tag tag-batch">46 页同步</span>
+    </div>
+
+    <h3>问题描述</h3>
+    <ul>
+      <li>所有链接卡片（<code>.link-card</code>、<code>.ai-link-card</code>）无法用鼠标拖拽到新窗口打开，只能点击</li>
+      <li>用户期望支持拖拽到地址栏、新标签页位置、右键菜单等原生链接行为</li>
+    </ul>
+
+    <h3>根因分析（两层问题）</h3>
+    <h4>根因 1：JS 移除了 href 属性</h4>
+    <p><code>prepareStealthLinkCard()</code> 函数中 <code>card.removeAttribute('href')</code> 将 <code>&lt;a&gt;</code> 标签变成了普通元素，不再是真正的链接，浏览器不提供拖拽行为。</p>
+
+    <h4>根因 2：CSS 禁用了拖拽</h4>
+    <p>即使恢复了 href，CSS 中 <code>-webkit-user-drag: none</code> 仍然阻止拖拽：</p>
+    <div class="code-block"><span class="c">// 旧代码（已删除）</span>
+.link-card,
+.ai-link-card {
+  -webkit-user-drag: none;    <span class="c">/* ← 禁用了拖拽 */</span>
+  overflow-wrap: anywhere;
+}</div>
+
+    <h3>修复方案</h3>
+    <h4>修复 1：prepareStealthLinkCard 保留 href</h4>
+    <div class="code-block"><span class="c">// 新代码：有 URL 时保留原生链接属性</span>
+if (url && url !== '#') {
+  card.setAttribute('href', url);
+  card.setAttribute('target', '_blank');
+  card.setAttribute('rel', 'noopener,noreferrer');
+  card.setAttribute('role', 'link');
+  card.setAttribute('tabindex', '0');
+} else {
+  card.removeAttribute('href');  <span class="c">// 无 URL 才移除</span>
+  ...
+}
+
+<span class="c">// 点击事件：仅拦截左键，修饰键和中键走原生</span>
+card.addEventListener('click', function(e) {
+  if (e.button !== 0) return;
+  if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  openUrlInNewTab(card.dataset.url);
+});</div>
+
+    <h4>修复 2：移除 -webkit-user-drag: none</h4>
+    <div class="code-block"><span class="c">// 修复后</span>
+.link-card,
+.ai-link-card {
+  overflow-wrap: anywhere;
+  <span class="c">/* -webkit-user-drag: none 已删除 */</span>
+}</div>
+
+    <h3>修复后支持的原生行为</h3>
+    <ul>
+      <li>鼠标拖拽链接卡片到新标签页 / 地址栏</li>
+      <li>右键菜单："在新标签页打开"、"复制链接地址"等</li>
+      <li>Ctrl+点击 / Cmd+点击 / Shift+点击 走浏览器原生行为</li>
+      <li>中键点击仍走自定义 openUrlInNewTab</li>
+      <li>左键普通点击仍走自定义 openUrlInNewTab（体验一致）</li>
+    </ul>
+
+    <h3>受影响文件</h3>
+    <p>46 个 HTML 文件（index.html + 45 个子页面）。</p>
+
+    <h4>修复过程中踩过的坑（已解决）</h4>
+    <ul>
+      <li class="warn">第一次修复只保留了 href 属性，但 CSS 的 <code>-webkit-user-drag: none</code> 仍在阻止拖拽。需要同时修复 JS 和 CSS 两层</li>
+      <li class="warn">点击事件需区分按钮和修饰键，否则 Ctrl+点击等会被拦截导致无法原生打开</li>
+    </ul>
+  </div>
+
+  <!-- ==================== 修复 12 ==================== -->
+  <div class="section">
+    <h2><span class="num">12</span> ai.html 已停运标题卡片不常亮 + 全平台 vh 降级 + 版本号 1.56</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-batch">47 页同步</span>
+      <span class="tag tag-meta">版本号</span>
+    </div>
+
+    <h3>问题描述</h3>
+    <ul>
+      <li>ai.html 中"已停运"小分类标题卡片常亮不合理，停运分类应恢复默认悬停效果</li>
+      <li>旧浏览器不支持 <code>lvh</code> / <code>dvh</code> 视口单位，需添加 <code>vh</code> 降级</li>
+      <li>版本号需更新为 1.56</li>
+    </ul>
+
+    <h3>修复 1：已停运标题卡片不常亮</h3>
+    <h4>JS：添加 subcat-closed 标记</h4>
+    <div class="code-block"><span class="c">// 经典布局 & 极简布局均添加</span>
+if (subcat.name === '已停运' || subcat._closed) {
+  titleCard.classList.add('subcat-closed');
+}</div>
+
+    <h4>CSS：subcat-closed 覆盖常亮效果</h4>
+    <div class="code-block"><span class="c">/* 默认不常亮：恢复普通边框，无阴影 */</span>
+.ai-grid .subcategory-title-card.subcat-closed {
+  border-color: var(--card-border);
+  box-shadow: none;
+}
+.ai-grid .subcategory-title-card.subcat-closed::before { opacity: 0; }
+.ai-grid .subcategory-title-card.subcat-closed::after { opacity: 0; }
+
+<span class="c">/* 悬停时才高亮 */</span>
+.ai-grid .subcategory-title-card.subcat-closed:hover {
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05), 0 16px 48px rgba(0,0,0,0.08);
+}
+<span class="c">/* 极简布局 & 暗色主题 & 图片背景模式均有对应覆盖 */</span></div>
+
+    <h3>修复 2：全平台 vh 视口单位降级</h3>
+    <p>为所有 <code>lvh</code> 单位添加 <code>vh</code> 降级，确保旧浏览器正常显示背景层：</p>
+    <div class="code-block"><span class="c">/* 修复前 */</span>
+min-height: calc(100lvh + var(--safe-bottom) + 184px);
+
+<span class="c">/* 修复后 */</span>
+min-height: calc(100vh + var(--safe-bottom) + 184px);     <span class="c">/* 降级 */</span>
+min-height: calc(100lvh + var(--safe-bottom) + 184px);    <span class="c">/* 优先 */</span></div>
+    <p>涉及 <code>.bg-gradient</code>、<code>.bg-layer</code>、<code>.bg-layer-fade</code>、<code>body.background-image-mode .bg-layer</code>、移动端媒体查询等 5 处。同时为 <code>body { min-height: 100dvh }</code> 添加 <code>100vh</code> 降级。</p>
+
+    <h3>修复 3：版本号更新为 1.56</h3>
+    <p>全部 47 个 HTML 文件页脚 <code>版本号：1.55 → 1.56</code>。</p>
+
+    <h3>受影响文件</h3>
+    <p>47 个 HTML 文件（含 disclaimer.html 仅更新版本号）。</p>
+  </div>
+
+  <!-- ==================== 修复 13 ==================== -->
+  <div class="section">
+    <h2><span class="num">13</span> 书影音标签页重排 + 经典布局图标居中 + 杂志布局文字截断 + 内容微调</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-js">JS 数据</span>
+      <span class="tag tag-batch">46 页同步</span>
+      <span class="tag tag-loc">内容调整</span>
+    </div>
+
+    <h3>调整 1：书影音标签页移至 ACGN 之前</h3>
+    <p>顶层导航与索引内链接顺序均调整，书影音排在 ACGN 前面，符合用户浏览习惯。</p>
+    <h4>顶层标签顺序</h4>
+    <div class="code-block"><span class="c">// 修复前：ACGN → 书影音 → ... → 索引</span>
+<span class="c">// 修复后：书影音 → ACGN → ... → 索引</span>
+const linksData = [
+  { name: "书影音", icon: "📚", ... },    <span class="c">// 移到第一</span>
+  { name: "ACGN", icon: "🌟", ... },       <span class="c">// 第二</span>
+  ...
+  { "name": "索引", ... }
+];</div>
+    <h4>索引内链接顺序</h4>
+    <div class="code-block"><span class="c">// 索引♡ 子分类 links 数组中，书影音移到 ACGN 前</span>
+"links": [
+  { "name": "书影音", "url": "https://kisstr.com/books_media.html", ... },   <span class="c">// 第一</span>
+  { "name": "ACGN", "url": "https://kisstr.com/acgn.html", ... },            <span class="c">// 第二</span>
+  ...
+]</div>
+    <p class="warn">⚠️ 批量调整时容易出错：交换分类块时注意 JS 对象的闭合括号，不要把整个分类嵌套进另一个分类的 subcategories 里。本次调整中曾出现 ACGN 被插入书影音的书籍与影视子分类之间的事故，需特别注意。</p>
+
+    <h3>调整 2：经典布局图标垂直居中</h3>
+    <p>经典布局（非极简）下链接卡片图标从顶部对齐改为垂直居中，视觉更平衡。</p>
+    <div class="code-block"><span class="c">/* 修复前 */</span>
+body:not(.layout-minimal) .link-card-inner {
+  align-items: flex-start;
+}
+
+<span class="c">/* 修复后 */</span>
+body:not(.layout-minimal) .link-card-inner {
+  align-items: center;          <span class="c">/* 垂直居中 */</span>
+}</div>
+
+    <h3>调整 3：杂志布局文字左对齐 + 超长截断</h3>
+    <p>杂志布局（minimal）卡片文字统一首部对齐，放不下的文字用省略号截断，避免参差不齐。</p>
+    <div class="code-block">.layout-minimal .link-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}
+
+.layout-minimal .link-url {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+<span class="c">/* 配合左对齐 */</span>
+.layout-minimal .link-card-inner {
+  align-items: flex-start;
+}</div>
+
+    <h3>调整 4：内容微调整</h3>
+    <ul>
+      <li><strong>Z-Library 注册站2</strong>：从书籍分类末尾移到第一个注册站之后，两个注册站相邻排列</li>
+      <li><strong>漫猫动漫</strong>：复制一份卡片到书影音→影视分类中，放在网飞猫后面、麦田影视前面</li>
+    </ul>
+
+    <h3>受影响文件</h3>
+    <p>46 个 HTML 文件（index.html + 45 个子页面）。disclaimer.html 无分类导航，不涉及。</p>
+  </div>
+
+  <!-- ==================== 修复 14 ==================== -->
+  <div class="section">
+    <h2><span class="num">14</span> 杂志布局刷新/跳转时经典布局闪烁修复</h2>
+    <div class="tag-row">
+      <span class="tag tag-css">CSS</span>
+      <span class="tag tag-js">JS</span>
+      <span class="tag tag-batch">46 页同步</span>
+      <span class="tag tag-meta">FOUC 修复</span>
+    </div>
+
+    <h3>问题描述</h3>
+    <p>使用杂志布局（minimal）时，每次刷新页面或跳转到子页面，都会先闪出一次经典布局（grid），然后才切换到杂志布局。用户体验不佳，尤其是在快速导航时闪烁明显。</p>
+
+    <h3>根因分析</h3>
+    <ul>
+      <li>布局类 <code>layout-minimal</code> / <code>layout-grid</code> 是通过页面底部的 <code>setLayout()</code> 函数添加到 <code>&lt;body&gt;</code> 上的</li>
+      <li><code>setLayout()</code> 在 DOMContentLoaded 后才执行，此时浏览器已经开始渲染页面</li>
+      <li>body 默认没有布局类，CSS 规则中的 <code>body.layout-minimal</code> 选择器不匹配，页面先以默认（经典布局）样式渲染</li>
+      <li>等 JS 执行完加上类名后，页面才跳转到杂志布局 — 产生 FOUC（Flash of Unstyled Content）</li>
+    </ul>
+
+    <h3>解决方案</h3>
+    <p>在 <code>&lt;body&gt;</code> 标签之后立即插入一段内联脚本，在页面内容渲染之前就读取 localStorage 并给 body 加上布局类：</p>
+    <div class="code-block">&lt;body&gt;
+&lt;script&gt;
+  // Pre-set layout class to prevent flash of classic layout on page load
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    document.body.classList.add('layout-' + saved);
+  })();
+&lt;/script&gt;
+&lt;div class="bg-layer"&gt;&lt;/div&gt;</div>
+    <p>这样浏览器在解析 body 内容的第一时间就有了正确的布局类，所有 CSS 规则（<code>body.layout-minimal</code>）从一开始就生效，不会再有经典布局的闪烁。</p>
+
+    <h3>与 setLayout 的兼容性</h3>
+    <ul>
+      <li><code>setLayout()</code> 函数执行时会先 <code>remove('layout-grid', 'layout-minimal')</code> 再添加正确的类，不会与预设类冲突</li>
+      <li>内联脚本使用 <code>var</code> 和 IIFE，不会污染全局作用域</li>
+      <li>默认值 <code>'minimal'</code> 与 <code>initColors()</code> 中的默认布局一致</li>
+    </ul>
+
+    <h3>受影响文件</h3>
+    <p>46 个 HTML 文件（index.html + 45 个子页面）。disclaimer.html 无布局切换，不涉及。</p>
+  </div>
+
+  <!-- ==================== 合并与复刻 ==================== -->
+  <div class="section">
+    <h2><span class="num">R</span> 三份 repair 档案合并与复刻说明</h2>
+    <div class="tag-row">
+      <span class="tag tag-meta">档案合并</span>
+      <span class="tag tag-batch">只保留完整版</span>
+      <span class="tag tag-js">可复刻</span>
+    </div>
+
+    <h3>合并来源</h3>
+    <ul>
+      <li><code>repair_archive_20260808.html</code>：第一版总览档案，包含修复概览、时间线、备份记录和受影响文件清单。</li>
+      <li><code>repair_archive_full_20260808.html</code>：完整版档案，包含问题位置、根因、代码片段和维护注意。</li>
+      <li><code>repair_archive_merged_reproducible_20260808.html</code>：可复刻合并版，包含复刻顺序、验证清单、回滚原则。</li>
+      <li><strong>2026-08-09 新增</strong>：非壁纸主题白边修复（修复 9），包含 .bg-gradient 扩展定位、全主题兜底色、移除 body::after hack。</li>
+      <li><strong>2026-08-09 新增</strong>：索引标签页改名与彩蛋功能（修复 10），包含 hideTitle 标记、标签页按钮三连击彩蛋。</li>
+      <li><strong>2026-08-09 新增</strong>：链接卡片拖拽新窗口打开修复（修复 11），包含恢复 href 属性、移除 -webkit-user-drag: none。</li>
+      <li><strong>2026-08-09 新增</strong>：ai.html 已停运标题卡片不常亮 + 全平台 vh 降级 + 版本号 1.56（修复 12）。</li>
+      <li><strong>2026-08-09 新增</strong>：书影音标签页重排 + 经典布局图标居中 + 杂志布局文字截断 + 内容微调（修复 13）。</li>
+      <li><strong>2026-08-09 新增</strong>：杂志布局刷新/跳转时经典布局闪烁修复（修复 14）。</li>
+    </ul>
+    <p>最终只保留当前文件：<code>repair_archive_full_20260808.html</code>。另外两份旧档案在合并后删除，避免后续维护时出现多个版本互相冲突。</p>
+
+    <h3>可复刻顺序</h3>
+    <ol style="font-size:14px;color:#424245;margin-left:20px;">
+      <li>先备份当前正式 HTML 页面。</li>
+      <li>确认 <code>.tab-btn</code>、<code>.search-inline</code>、<code>theme-color</code>、<code>themeColors</code> 的基准状态。</li>
+      <li>按修复 1-5 复刻全站通用样式、主题色和背景图模式修复。</li>
+      <li>单独处理 <code>ai.html</code>：先保留 AI 分类数据、AI 卡片样式与 <code>createAiCard</code>，再同步主站结构。</li>
+      <li>确认 <code>ai.html</code> 顶层标签只生成 <code>全球 AI</code> 与 <code>更多</code>，并额外显示 <code>返回首页</code> 按钮。</li>
+      <li>确认 AI 小分类标题在普通布局、极简布局和背景图模式下均为默认常亮。</li>
+      <li>最后检查无旧 <code>repair_archive_20260808.html</code> 与 <code>repair_archive_merged_reproducible_20260808.html</code> 残留。</li>
+    </ol>
+
+    <h3>验证清单</h3>
+    <ul>
+      <li><code>ai.html</code>：必须存在 <code>function createAiCard</code>、<code>.ai-grid</code>、<code>.ai-tag</code>、<code>全球 AI</code> 数据。</li>
+      <li><code>ai.html</code>：顶层分类不应存在 <code>name: "ACGN"</code> 或 <code>name: "书影音"</code>。</li>
+      <li><code>ai.html</code>：必须存在 <code>return-home-tab</code>，点击跳转 <code>index.html</code>。</li>
+      <li><code>ai.html</code>：小分类标题不依赖悬停才亮，默认应有高亮背景或高亮文字。</li>
+      <li>全站：<code>meta[name="theme-color"]</code> 初始值不应恢复成 <code>#0071e3</code>。</li>
+      <li>全站：<code>document.querySelector('meta[name="theme-color"]')</code> 引号不能被脚本转坏。</li>
+      <li>全站：<code>.bg-gradient</code> 必须使用扩展定位（top: -12px; bottom 负偏移），不能是 height: 100lvh。</li>
+      <li>全站：13 个主题的 html 和 .bg-gradient 均须有匹配的 background-color。</li>
+      <li>全站：不得出现 <code>body::after</code> 兜底层 hack（z-index: 98 那条）。</li>
+      <li>全站：手机端 <code>.bg-gradient, .bg-layer, .bg-layer-fade</code> 应共享同一扩展覆盖规则。</li>
+      <li>全站：所有 <code>lvh</code> 单位须有对应的 <code>vh</code> 降级行（修复 12 新增）。</li>
+      <li>全站：<code>prepareStealthLinkCard</code> 有 URL 时必须保留 <code>href</code> 属性（修复 11 新增）。</li>
+      <li>全站：不得出现 <code>-webkit-user-drag: none</code> 规则（修复 11 新增）。</li>
+      <li>全站："更多"标签页须为"索引"，<code>"索引♡"</code> 子分类须有 <code>"hideTitle": true</code>（修复 10 新增）。</li>
+      <li>全站：标签页按钮须支持分类级 <code>easterEggUrl</code> 三连击彩蛋（修复 10 新增）。</li>
+      <li>ai.html："已停运"子分类标题卡片须有 <code>subcat-closed</code> 类，不常亮（修复 12 新增）。</li>
+      <li>全站：版本号须为 <code>1.56</code>（修复 12 新增）。</li>
+      <li>全站：顶层标签顺序为「书影音 → ACGN → ... → 索引」，索引内链接顺序一致（修复 13 新增）。</li>
+      <li>全站：经典布局 <code>.link-card-inner</code> 须为 <code>align-items: center</code>（修复 13 新增）。</li>
+      <li>全站：杂志布局 <code>.link-name</code> 和 <code>.link-url</code> 须有 <code>text-overflow: ellipsis</code> 截断（修复 13 新增）。</li>
+      <li>全站：<code>&lt;body&gt;</code> 后须有内联脚本预设 layout 类，防止刷新闪烁（修复 14 新增）。</li>
+      <li>档案：只保留 <code>repair_archive_full_20260808.html</code> 作为唯一修复档案。</li>
+    </ul>
+
+    <h3>回滚原则</h3>
+    <div class="danger-box">
+      <h4>不要直接回滚 ai.html 到 index.html 的普通副本</h4>
+      <ul>
+        <li class="danger">如果回滚 <code>ai.html</code>，必须先确认 AI 数据字段和 <code>createAiCard</code> 仍在。</li>
+        <li class="danger">不要只恢复 <code>index.html</code> 再复制成 <code>ai.html</code>，这会破坏 AI 页面特殊卡片。</li>
+        <li class="danger">回滚后必须重新检查 <code>全球 AI</code> 是否仍为第一个顶层分类。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 通用注意事项 ==================== -->
+  <div class="section">
+    <h2><span class="num">!</span> 通用注意事项 / 维护须知</h2>
+    <div class="tag-row">
+      <span class="tag tag-batch">全局</span>
+    </div>
+
+    <h3>CSS 变量依赖关系</h3>
+    <p>本次修复高度依赖以下 CSS 变量，修改它们会影响搜索框和标签页的视觉一致性：</p>
+    <div class="code-block"><span class="p">--card-border</span>   <span class="c">/* 标签页和搜索框的普通边框色 */</span>
+<span class="p">--card-bg</span>       <span class="c">/* 标签页和搜索框的背景色 */</span>
+<span class="p">--accent</span>        <span class="c">/* 标签页和搜索框的悬停边框色 */</span></div>
+
+    <h3>CSS 覆盖顺序（关键）</h3>
+    <p>index.html 中的 CSS 覆盖链如下，后面的会覆盖前面的。不要打乱顺序：</p>
+    <div class="code-block"><span class="c">第  745 行  .tab-btn                          ← 基础定义</span>
+<span class="c">第 1595 行  .search-inline                     ← 搜索框基础定义</span>
+<span class="c">第 4902 行  [data-theme="starry"] ... .search-inline  ← 深色主题覆盖（无 layout 限定）</span>
+<span class="c">第 5449 行  body:not(.layout-minimal) .search-inline   ← 经典布局统一（本次新增）</span>
+<span class="c">第 5466 行  [data-theme] ... :not(.layout-minimal) ... ← 深色主题经典布局覆盖（本次新增）</span>
+<span class="c">第 5474 行  body.background-image-mode:not(.layout-minimal) ← 图片背景经典布局覆盖（本次修改）</span></div>
+
+    <h3>两处 themeColors 必须同步</h3>
+    <p>页面中有两个 <code>themeColors</code> 对象，必须保持一致：</p>
+    <ul>
+      <li>第 25 行 — 内联初始化脚本 <code>initColors()</code> 中的映射</li>
+      <li>第 7159 行 — <code>setTheme()</code> 函数中的映射</li>
+    </ul>
+    <p>如果新增主题，必须同时更新这两处，以及 <code>getThemes()</code> / <code>getThemeNames()</code> 函数。</p>
+
+    <h3>批量脚本编码注意</h3>
+    <ul>
+      <li class="warn">PowerShell 脚本中尽量不要在正则匹配模式里使用中文字符，可能因编码问题导致解析失败</li>
+      <li class="warn">PowerShell here-string <code>@' ... '@</code> 中如果包含中文，在某些 Windows 环境下会乱码，建议改用数组拼接</li>
+      <li class="warn">批量替换 JS 代码时，注意 <code>'</code> 和 <code>"</code> 引号在 PowerShell 中的转义，建议用单引号包裹双引号的选择器</li>
+    </ul>
+
+    <h3>备份与脚本记录</h3>
+    <div class="loc-box">
+      <div class="label">关键备份</div>
+      backup_before_browser_toolbar_blue_line_20260808_090428.zip<br>
+      backup_before_browser_toolbar_blue_line_safe_20260808_090700.zip<br>
+      backup_before_ai_index_sync_20260808_213240.html<br>
+      backup_before_ai_remove_acgn_books_20260808_213949.html<br>
+      <div class="label">修复脚本</div>
+      sync_classic_search_border_exact.ps1 — 搜索框边框同步<br>
+      fix_browser_toolbar_blue_line_safe.ps1 — 蓝线修复（安全版）<br>
+      fix_theme_color_selector_quote.ps1 — 选择器引号修正<br>
+      sync_ai_with_index.ps1 — ai.html 与 index 同步但回填 AI 特殊区块<br>
+      remove_ai_extra_tabs.ps1 — 移除 ai.html 顶层 ACGN / 书影音分类
+    </div>
+
+    <h3>受影响文件清单（46 个正式导航页）</h3>
+    <div class="file-grid">
+      <span class="file-chip">acgn.html</span><span class="file-chip">aggregate.html</span>
+      <span class="file-chip">ai.html</span><span class="file-chip">ai_development.html</span>
+      <span class="file-chip">ai_domain_ranking.html</span><span class="file-chip">ai_drawing.html</span>
+      <span class="file-chip">anime_sites.html</span><span class="file-chip">architecture_tech.html</span>
+      <span class="file-chip">books_media.html</span><span class="file-chip">classical_arts.html</span>
+      <span class="file-chip">couture_archive.html</span><span class="file-chip">design_architecture.html</span>
+      <span class="file-chip">digital_art.html</span><span class="file-chip">ebook_sites.html</span>
+      <span class="file-chip">fashion.html</span><span class="file-chip">film_resources.html</span>
+      <span class="file-chip">flowers.html</span><span class="file-chip">font_assets.html</span>
+      <span class="file-chip">food_aesthetics.html</span><span class="file-chip">fortune_500.html</span>
+      <span class="file-chip">future_tech.html</span><span class="file-chip">game_sites.html</span>
+      <span class="file-chip">handmade_craft.html</span>
+      <span class="file-chip">home_design.html</span><span class="file-chip">index.html</span>
+      <span class="file-chip">indie_publishing.html</span>
+      <span class="file-chip">instagram_creators.html</span><span class="file-chip">journal.html</span>
+      <span class="file-chip">living_space.html</span><span class="file-chip">manga_sites.html</span>
+      <span class="file-chip">maps_geography.html</span><span class="file-chip">news.html</span>
+      <span class="file-chip">open_source.html</span><span class="file-chip">outdoor_nature.html</span>
+      <span class="file-chip">photo_cinema.html</span><span class="file-chip">podcast_sites.html</span>
+      <span class="file-chip">ranking.html</span><span class="file-chip">software_tools.html</span>
+      <span class="file-chip">soundscape.html</span><span class="file-chip">think_tank.html</span>
+      <span class="file-chip">tiktok_creators.html</span><span class="file-chip">useless_websites.html</span>
+      <span class="file-chip">visual_commons.html</span><span class="file-chip">white_noise.html</span>
+      <span class="file-chip">x_creators.html</span><span class="file-chip">youtube_creators.html</span>
+    </div>
+    <p style="margin-top:12px;font-size:13px;color:#86868b;"><code>disclaimer.html</code> 因无完整导航样式块，仅同步版本号与链接总数，未纳入常规导航页 CSS/JS 批量修改。<code>ai.html</code> 属于特殊导航页，必须按本档案第 6-8 项单独处理。</p>
+  </div>
+
+  <footer>
+    Kisstr 修复档案（最终完整版）更新于 2026-08-09 | 已合并四份 repair 档案 | 共 12 项修复 / 46 个正式导航页 / ai.html 特殊处理已记录
+  </footer>
+
+</div>
+</body>
+</html>
