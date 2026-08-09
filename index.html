@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
@@ -472,6 +472,7 @@
     bottom: calc(-1 * (var(--safe-bottom) + 160px));
     width: auto;
     height: auto;
+    min-height: calc(100vh + var(--safe-bottom) + 184px);
     min-height: calc(100lvh + var(--safe-bottom) + 184px);
     z-index: -1;
     overflow: hidden;
@@ -4296,6 +4297,7 @@
     left: -12px;
     width: auto;
     height: auto;
+    min-height: calc(100vh + var(--safe-bottom) + 184px);
     min-height: calc(100lvh + var(--safe-bottom) + 184px);
     background-image: var(--bg-image, none);
     background-size: cover;
@@ -4317,6 +4319,7 @@
     left: -12px;
     width: auto;
     height: auto;
+    min-height: calc(100vh + var(--safe-bottom) + 184px);
     min-height: calc(100lvh + var(--safe-bottom) + 184px);
     background-size: cover;
     background-position: center;
@@ -5182,6 +5185,7 @@
     left: -12px !important;
     width: auto !important;
     height: auto !important;
+    min-height: calc(100vh + var(--safe-bottom) + 184px) !important;
     min-height: calc(100lvh + var(--safe-bottom) + 184px) !important;
     transform: translateZ(0);
   }
@@ -5260,7 +5264,6 @@
 
   .link-card,
   .ai-link-card {
-    -webkit-user-drag: none;
     overflow-wrap: anywhere;
   }
 
@@ -5303,6 +5306,7 @@
   }
 
   body {
+    min-height: 100vh;
     min-height: 100dvh;
     overflow-x: clip;
   }
@@ -5773,6 +5777,7 @@
     .bg-layer,
     .bg-layer-fade {
       bottom: calc(-1 * (var(--safe-bottom) + 220px)) !important;
+      min-height: calc(100vh + var(--safe-bottom) + 244px) !important;
       min-height: calc(100lvh + var(--safe-bottom) + 244px) !important;
     }
 
@@ -6148,7 +6153,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">书影音 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.55 · 共 7963 个链接</p>
+  <p class="footer-version">版本号：1.56 · 共 7963 个链接</p>
 </footer>
 
 <script>
@@ -6527,13 +6532,15 @@ const linksData = [
     ]
   },
   {
-  "name": "更多",
+  "name": "索引",
   "icon": "✨",
   "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
+  "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
   "subcategories": [
     {
       "name": "索引♡",
       "enName": "Categories",
+      "hideTitle": true,
       "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
       "links": [
         {
@@ -6979,6 +6986,25 @@ function renderCategories() {
     btn.className = 'tab-btn' + (index === 0 ? ' active' : '');
     btn.textContent = cat.name;
     btn.dataset.category = cat.name;
+
+    // 分类级彩蛋：连续点击标签页按钮 3 次触发
+    if (cat.easterEggUrl) {
+      btn.dataset.eggClicks = '0';
+      btn.addEventListener('click', () => {
+        const clicks = Number(btn.dataset.eggClicks || '0') + 1;
+        btn.dataset.eggClicks = String(clicks);
+        clearTimeout(btn._eggTimer);
+        if (clicks >= 3) {
+          btn.dataset.eggClicks = '0';
+          window.open(cat.easterEggUrl, '_blank', 'noopener');
+        } else {
+          btn._eggTimer = setTimeout(() => {
+            btn.dataset.eggClicks = '0';
+          }, 900);
+        }
+      });
+    }
+
     btn.addEventListener('click', (e) => { filterByCategory(cat.name); e.currentTarget.blur(); });
     tabsContainer.appendChild(btn);
   });
@@ -7004,19 +7030,30 @@ function openUrlInNewTab(url) {
 
 function prepareStealthLinkCard(card, url) {
   if (!card) return card;
-  card.removeAttribute('href');
-  card.removeAttribute('target');
-  card.removeAttribute('rel');
   card.dataset.url = url || '';
-  card.setAttribute('role', url ? 'link' : 'button');
-  card.setAttribute('tabindex', '0');
-
-  if (!url || url === '#') {
+  
+  if (url && url !== '#') {
+    // 保留 href 以支持拖拽、右键菜单等原生链接行为
+    card.setAttribute('href', url);
+    card.setAttribute('target', '_blank');
+    card.setAttribute('rel', 'noopener,noreferrer');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+  } else {
+    card.removeAttribute('href');
+    card.removeAttribute('target');
+    card.removeAttribute('rel');
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
     card.setAttribute('aria-disabled', 'true');
     return card;
   }
 
   card.addEventListener('click', function(e) {
+    // 仅拦截左键点击，让中键、右键、拖拽等原生行为正常工作
+    if (e.button !== 0) return;
+    // 如果按下了修饰键（Ctrl/Cmd/Shift/Alt），让浏览器原生处理
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     openUrlInNewTab(card.dataset.url);
     if (e.currentTarget && e.currentTarget.blur) e.currentTarget.blur();
@@ -7313,7 +7350,7 @@ function doRenderLinks(filterText, category) {
         const isMinimalLayout = document.body.classList.contains('layout-minimal');
 
         if (!isMinimalLayout) {
-          if (subcat.name) {
+          if (subcat.name && !subcat.hideTitle) {
             const titleCard = document.createElement('div');
             titleCard.className = 'subcategory-title-card';
 
@@ -7354,7 +7391,7 @@ function doRenderLinks(filterText, category) {
         const grid = document.createElement('div');
         grid.className = (cat.name === '全球 AI') ? 'ai-grid' : 'links-grid';
 
-        if (isMinimalLayout && subcat.name) {
+        if (isMinimalLayout && subcat.name && !subcat.hideTitle) {
           const titleCard = document.createElement('div');
           titleCard.className = 'link-card subcategory-title-card';
           titleCard.innerHTML = `

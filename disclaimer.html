@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -139,6 +139,7 @@
   }
 
   body {
+    min-height: 100vh;
     min-height: 100dvh;
     overflow-x: clip;
   }
@@ -311,13 +312,10 @@
   }
 
   @media (max-width: 768px) {
-    .bg-gradient {
-      height: calc(100lvh + var(--safe-bottom) + 32px) !important;
-    }
-
     .bg-layer,
     .bg-layer-fade {
       bottom: calc(-1 * (var(--safe-bottom) + 220px)) !important;
+      min-height: calc(100vh + var(--safe-bottom) + 244px) !important;
       min-height: calc(100lvh + var(--safe-bottom) + 244px) !important;
     }
 
@@ -325,27 +323,6 @@
       margin-bottom: -2px !important;
       padding-bottom: calc(46px + var(--safe-bottom)) !important;
       background-clip: border-box !important;
-    }
-
-    body::after {
-      content: '' !important;
-      position: fixed !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: -2px !important;
-      height: calc(var(--safe-bottom) + 10px) !important;
-      z-index: 98 !important;
-      pointer-events: none !important;
-      background: #f5f5f7 !important;
-      transform: translateZ(0);
-    }
-
-    body.layout-minimal::after {
-      background: #ffffff !important;
-    }
-
-    body.background-image-mode::after {
-      background: transparent !important;
     }
   }
 
@@ -413,7 +390,7 @@
     <p>2. <strong>法律适用：</strong>本声明的成立、生效、履行、解释及纠纷解决，均适用中华人民共和国法律法规。</p>
     <p>3. <strong>争议解决：</strong>若用户与本站因本声明或使用本站发生任何争议，双方应首先通过友好协商解决；协商不成的，任何一方均同意将争议提交至本站所有者/运营者所在地有管辖权的人民法院诉讼解决。</p>
 
-    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：1.55 · 共 7963 个链接</div>
+    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：1.56 · 共 7963 个链接</div>
 </div>
 
 </body>

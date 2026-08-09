@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
@@ -472,6 +472,7 @@
     bottom: calc(-1 * (var(--safe-bottom) + 160px));
     width: auto;
     height: auto;
+    min-height: calc(100vh + var(--safe-bottom) + 184px);
     min-height: calc(100lvh + var(--safe-bottom) + 184px);
     z-index: -1;
     overflow: hidden;
@@ -1356,6 +1357,133 @@
   [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
   [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card .link-url {
     color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  /* ========== AI 小分类标题卡片常亮（默认高亮，不依赖悬停） ========== */
+
+  /* 经典布局常亮：默认启用悬停时的边框、阴影与渐变光效 */
+  .ai-grid .subcategory-title-card {
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 16px 48px rgba(0, 0, 0, 0.08);
+  }
+  .ai-grid .subcategory-title-card::before {
+    opacity: 0.05;
+  }
+  .ai-grid .subcategory-title-card::after {
+    opacity: 1;
+  }
+
+  /* 极简布局常亮：默认金色渐变背景 + 金色标题文字 */
+  .layout-minimal .ai-grid .subcategory-title-card {
+    background: linear-gradient(90deg, rgba(184, 150, 83, 0.06), transparent) !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card .link-name {
+    color: #b89653 !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card .link-url {
+    color: rgba(184, 150, 83, 0.72) !important;
+  }
+
+  /* 极简布局暗色主题常亮：文字颜色适配暗色背景 */
+  [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card .link-name,
+  [data-theme="dream"] .layout-minimal .ai-grid .subcategory-title-card .link-name,
+  [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card .link-name,
+  [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card .link-name,
+  [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card .link-name {
+    color: #d4b87a !important;
+  }
+  [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
+  [data-theme="dream"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
+  [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
+  [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card .link-url,
+  [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card .link-url {
+    color: rgba(212, 184, 122, 0.7) !important;
+  }
+
+  /* 图片背景模式常亮：确保后置规则不会压暗标题背景 */
+  body.background-image-mode.layout-minimal .ai-grid .subcategory-title-card {
+    background: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+  }
+
+  /* 已停运小分类标题卡片：不常亮，恢复默认悬停效果 */
+  .ai-grid .subcategory-title-card.subcat-closed {
+    border-color: var(--card-border);
+    box-shadow: none;
+  }
+  .ai-grid .subcategory-title-card.subcat-closed::before {
+    opacity: 0;
+  }
+  .ai-grid .subcategory-title-card.subcat-closed::after {
+    opacity: 0;
+  }
+  .ai-grid .subcategory-title-card.subcat-closed:hover {
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 16px 48px rgba(0, 0, 0, 0.08);
+  }
+  .ai-grid .subcategory-title-card.subcat-closed:hover::before {
+    opacity: 0.05;
+  }
+  .ai-grid .subcategory-title-card.subcat-closed:hover::after {
+    opacity: 1;
+  }
+
+  /* 极简布局：已停运不常亮 */
+  .layout-minimal .ai-grid .subcategory-title-card.subcat-closed {
+    background: var(--card-bg) !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-name {
+    color: var(--text-primary) !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-url {
+    color: var(--text-secondary) !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover {
+    background: linear-gradient(90deg, rgba(184, 150, 83, 0.06), transparent) !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-name {
+    color: #b89653 !important;
+  }
+  .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-url {
+    color: rgba(184, 150, 83, 0.72) !important;
+  }
+
+  /* 极简布局暗色：已停运不常亮 */
+  [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-name,
+  [data-theme="dream"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-name,
+  [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-name,
+  [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-name,
+  [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-name {
+    color: var(--text-primary) !important;
+  }
+  [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-url,
+  [data-theme="dream"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-url,
+  [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-url,
+  [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-url,
+  [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed .link-url {
+    color: var(--text-secondary) !important;
+  }
+  [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-name,
+  [data-theme="dream"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-name,
+  [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-name,
+  [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-name,
+  [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-name {
+    color: #d4b87a !important;
+  }
+  [data-theme="midnight"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-url,
+  [data-theme="dream"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-url,
+  [data-theme="forest"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-url,
+  [data-theme="deepsea"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-url,
+  [data-theme="clay"] .layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover .link-url {
+    color: rgba(212, 184, 122, 0.7) !important;
+  }
+
+  /* 图片背景模式：已停运不常亮 */
+  body.background-image-mode.layout-minimal .ai-grid .subcategory-title-card.subcat-closed {
+    background: var(--card-bg) !important;
+  }
+  body.background-image-mode.layout-minimal .ai-grid .subcategory-title-card.subcat-closed:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
   }
 
   .no-results {
@@ -4296,6 +4424,7 @@
     left: -12px;
     width: auto;
     height: auto;
+    min-height: calc(100vh + var(--safe-bottom) + 184px);
     min-height: calc(100lvh + var(--safe-bottom) + 184px);
     background-image: var(--bg-image, none);
     background-size: cover;
@@ -4317,6 +4446,7 @@
     left: -12px;
     width: auto;
     height: auto;
+    min-height: calc(100vh + var(--safe-bottom) + 184px);
     min-height: calc(100lvh + var(--safe-bottom) + 184px);
     background-size: cover;
     background-position: center;
@@ -5182,6 +5312,7 @@
     left: -12px !important;
     width: auto !important;
     height: auto !important;
+    min-height: calc(100vh + var(--safe-bottom) + 184px) !important;
     min-height: calc(100lvh + var(--safe-bottom) + 184px) !important;
     transform: translateZ(0);
   }
@@ -5260,7 +5391,6 @@
 
   .link-card,
   .ai-link-card {
-    -webkit-user-drag: none;
     overflow-wrap: anywhere;
   }
 
@@ -5773,6 +5903,7 @@
     .bg-layer,
     .bg-layer-fade {
       bottom: calc(-1 * (var(--safe-bottom) + 220px)) !important;
+      min-height: calc(100vh + var(--safe-bottom) + 244px) !important;
       min-height: calc(100lvh + var(--safe-bottom) + 244px) !important;
     }
 
@@ -6148,7 +6279,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">书影音 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.55 · 共 7963 个链接</p>
+  <p class="footer-version">版本号：1.56 · 共 7963 个链接</p>
 </footer>
 
 <script>
@@ -6328,13 +6459,15 @@ const linksData = [
     ]
   },
   {
-  "name": "更多",
+  "name": "索引",
   "icon": "✨",
   "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
+  "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
   "subcategories": [
     {
       "name": "索引♡",
       "enName": "Categories",
+      "hideTitle": true,
       "easterEggUrl": "https://www.omniglot.com/language/phrases/iloveyou.htm",
       "links": [
         {
@@ -6790,6 +6923,25 @@ function renderCategories() {
     btn.className = 'tab-btn' + (index === 0 ? ' active' : '');
     btn.textContent = cat.name;
     btn.dataset.category = cat.name;
+
+    // 分类级彩蛋：连续点击标签页按钮 3 次触发
+    if (cat.easterEggUrl) {
+      btn.dataset.eggClicks = '0';
+      btn.addEventListener('click', () => {
+        const clicks = Number(btn.dataset.eggClicks || '0') + 1;
+        btn.dataset.eggClicks = String(clicks);
+        clearTimeout(btn._eggTimer);
+        if (clicks >= 3) {
+          btn.dataset.eggClicks = '0';
+          window.open(cat.easterEggUrl, '_blank', 'noopener');
+        } else {
+          btn._eggTimer = setTimeout(() => {
+            btn.dataset.eggClicks = '0';
+          }, 900);
+        }
+      });
+    }
+
     btn.addEventListener('click', (e) => { filterByCategory(cat.name); e.currentTarget.blur(); });
     tabsContainer.appendChild(btn);
   });
@@ -6815,19 +6967,30 @@ function openUrlInNewTab(url) {
 
 function prepareStealthLinkCard(card, url) {
   if (!card) return card;
-  card.removeAttribute('href');
-  card.removeAttribute('target');
-  card.removeAttribute('rel');
   card.dataset.url = url || '';
-  card.setAttribute('role', url ? 'link' : 'button');
-  card.setAttribute('tabindex', '0');
-
-  if (!url || url === '#') {
+  
+  if (url && url !== '#') {
+    // 保留 href 以支持拖拽、右键菜单等原生链接行为
+    card.setAttribute('href', url);
+    card.setAttribute('target', '_blank');
+    card.setAttribute('rel', 'noopener,noreferrer');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+  } else {
+    card.removeAttribute('href');
+    card.removeAttribute('target');
+    card.removeAttribute('rel');
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
     card.setAttribute('aria-disabled', 'true');
     return card;
   }
 
   card.addEventListener('click', function(e) {
+    // 仅拦截左键点击，让中键、右键、拖拽等原生行为正常工作
+    if (e.button !== 0) return;
+    // 如果按下了修饰键（Ctrl/Cmd/Shift/Alt），让浏览器原生处理
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
     openUrlInNewTab(card.dataset.url);
     if (e.currentTarget && e.currentTarget.blur) e.currentTarget.blur();
@@ -7124,9 +7287,13 @@ function doRenderLinks(filterText, category) {
         const isMinimalLayout = document.body.classList.contains('layout-minimal');
 
         if (!isMinimalLayout) {
-          if (subcat.name) {
+          if (subcat.name && !subcat.hideTitle) {
             const titleCard = document.createElement('div');
             titleCard.className = 'subcategory-title-card';
+            // 已停运小分类标题卡片不常亮
+            if (subcat.name === '已停运' || subcat._closed) {
+              titleCard.classList.add('subcat-closed');
+            }
 
             const subTitle = document.createElement('h3');
             subTitle.className = 'subcategory-title';
@@ -7165,9 +7332,13 @@ function doRenderLinks(filterText, category) {
         const grid = document.createElement('div');
         grid.className = (cat.name === '全球 AI') ? 'ai-grid' : 'links-grid';
 
-        if (isMinimalLayout && subcat.name) {
+        if (isMinimalLayout && subcat.name && !subcat.hideTitle) {
           const titleCard = document.createElement('div');
           titleCard.className = 'link-card subcategory-title-card';
+          // 已停运小分类标题卡片不常亮
+          if (subcat.name === '已停运' || subcat._closed) {
+            titleCard.classList.add('subcat-closed');
+          }
           titleCard.innerHTML = `
             <div class="link-card-inner">
               <div class="link-info">
