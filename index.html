@@ -331,7 +331,11 @@
   [data-theme="deepsea"] body { background-color: #1a4a6e; }
   [data-theme="clay"] body { background-color: #6b4a35; }
 
-  /* 暗色主题 html 背景同步，防止移动端 overscroll / 浏览器功能栏区域白边 */
+  /* 全主题 html 背景同步，防止移动端 overscroll / 浏览器功能栏区域白边 */
+  [data-theme="dawn"] { background-color: #fff5f5; }
+  [data-theme="mint"] { background-color: #f0fff5; }
+  [data-theme="ocean"] { background-color: #f0f8ff; }
+  [data-theme="twilight"] { background-color: #f5f0ff; }
   [data-theme="midnight"] { background-color: #000212; }
   [data-theme="starry"] { background-color: #0c0c1d; }
   [data-theme="sunset"] { background-color: #2d1b0e; }
@@ -340,6 +344,21 @@
   [data-theme="forest"] { background-color: #2d5f4e; }
   [data-theme="deepsea"] { background-color: #1a4a6e; }
   [data-theme="clay"] { background-color: #6b4a35; }
+
+  /* .bg-gradient 主题兜底色，确保渐变主题在移动端底部无缝隙 */
+  [data-theme="white"] .bg-gradient { background-color: #f5f5f7; }
+  [data-theme="dawn"] .bg-gradient { background-color: #fff5f5; }
+  [data-theme="mint"] .bg-gradient { background-color: #f0fff5; }
+  [data-theme="ocean"] .bg-gradient { background-color: #f0f8ff; }
+  [data-theme="twilight"] .bg-gradient { background-color: #f5f0ff; }
+  [data-theme="midnight"] .bg-gradient { background-color: #000212; }
+  [data-theme="starry"] .bg-gradient { background-color: #0c0c1d; }
+  [data-theme="sunset"] .bg-gradient { background-color: #2d1b0e; }
+  [data-theme="aurora"] .bg-gradient { background-color: #1a2a3a; }
+  [data-theme="dream"] .bg-gradient { background-color: #667eea; }
+  [data-theme="forest"] .bg-gradient { background-color: #2d5f4e; }
+  [data-theme="deepsea"] .bg-gradient { background-color: #1a4a6e; }
+  [data-theme="clay"] .bg-gradient { background-color: #6b4a35; }
 
   /* 系统暗色模式自动适配（仅影响 :root 默认值和"经典白"主题） */
   @media (prefers-color-scheme: dark) {
@@ -359,6 +378,8 @@
       --gradient-2: linear-gradient(135deg, #0B1719, #1a2a2a);
     }
     [data-theme="white"] body { background-color: #0B1719; }
+    [data-theme="white"] { background-color: #0B1719; }
+    [data-theme="white"] .bg-gradient { background-color: #0B1719; }
   }
 
   button, a {
@@ -445,13 +466,19 @@
 
   .bg-gradient {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100lvh;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: calc(-1 * (var(--safe-bottom) + 160px));
+    width: auto;
+    height: auto;
+    min-height: calc(100lvh + var(--safe-bottom) + 184px);
     z-index: -1;
     overflow: hidden;
+    background-image: var(--bg-primary);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .bg-gradient::before,
@@ -5742,10 +5769,7 @@
   }
 
   @media (max-width: 768px) {
-    .bg-gradient {
-      height: calc(100lvh + var(--safe-bottom) + 32px) !important;
-    }
-
+    .bg-gradient,
     .bg-layer,
     .bg-layer-fade {
       bottom: calc(-1 * (var(--safe-bottom) + 220px)) !important;
@@ -5757,37 +5781,6 @@
       padding-bottom: calc(46px + var(--safe-bottom)) !important;
       background-clip: border-box !important;
     }
-
-    body::after {
-      content: '' !important;
-      position: fixed !important;
-      left: 0 !important;
-      right: 0 !important;
-      bottom: -2px !important;
-      height: calc(var(--safe-bottom) + 10px) !important;
-      z-index: 98 !important;
-      pointer-events: none !important;
-      background: #f5f5f7 !important;
-      transform: translateZ(0);
-    }
-
-    body.layout-minimal::after {
-      background: #ffffff !important;
-    }
-
-    body.background-image-mode::after {
-      background: transparent !important;
-    }
-
-    /* 暗色主题底部兜底层颜色匹配，消除非壁纸模式下浏览器功能栏下方白边 */
-    [data-theme="midnight"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #000212 !important; }
-    [data-theme="starry"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #0c0c1d !important; }
-    [data-theme="sunset"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #2d1b0e !important; }
-    [data-theme="aurora"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #1a2a3a !important; }
-    [data-theme="dream"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #667eea !important; }
-    [data-theme="forest"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #2d5f4e !important; }
-    [data-theme="deepsea"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #1a4a6e !important; }
-    [data-theme="clay"] body:not(.background-image-mode):not(.layout-minimal)::after { background: #6b4a35 !important; }
   }
 
   /* ========== Search expanded icon spacing tweak ========== */
