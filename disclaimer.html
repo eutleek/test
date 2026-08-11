@@ -296,6 +296,78 @@
     color: #ffffff !important;
     fill: #ffffff !important;
   }
+
+  /* classic wallpaper card border first-paint stabilization */
+  body.layout-grid.background-image-mode .link-card,
+  body.layout-grid.background-image-mode .ai-link-card,
+  body.layout-grid.background-image-mode .skeleton-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-clip: padding-box !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    transition-property: transform, background-color, color, opacity !important;
+  }
+
+  body.layout-grid.background-image-mode .link-card::before,
+  body.layout-grid.background-image-mode .ai-link-card::before,
+  body.layout-grid.background-image-mode .link-card::after,
+  body.layout-grid.background-image-mode .ai-link-card::after,
+  body.layout-grid.background-image-mode .skeleton-card::after {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* early html wallpaper mode card border stabilization */
+  html.background-image-mode body.layout-grid .link-card,
+  html.background-image-mode body.layout-grid .ai-link-card,
+  html.background-image-mode body.layout-grid .skeleton-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-clip: padding-box !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    transition-property: transform, background-color, color, opacity !important;
+  }
+
+  html.background-image-mode body.layout-grid .link-card::before,
+  html.background-image-mode body.layout-grid .ai-link-card::before,
+  html.background-image-mode body.layout-grid .link-card::after,
+  html.background-image-mode body.layout-grid .ai-link-card::after,
+  html.background-image-mode body.layout-grid .skeleton-card::after {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* first-second card border rasterization guard */
+  html.cards-stabilizing body.layout-grid .link-card,
+  html.cards-stabilizing body.layout-grid .ai-link-card,
+  html.cards-stabilizing body.layout-grid .skeleton-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  html.cards-stabilizing body.layout-grid .link-card::before,
+  html.cards-stabilizing body.layout-grid .ai-link-card::before,
+  html.cards-stabilizing body.layout-grid .link-card::after,
+  html.cards-stabilizing body.layout-grid .ai-link-card::after,
+  html.cards-stabilizing body.layout-grid .skeleton-card::after {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -359,6 +431,38 @@
       left: 6px !important;
     }
   }
+
+  /* final override: wallpaper classic cards use transparent borders */
+  html.background-image-mode body.layout-grid .link-card,
+  html.background-image-mode body.layout-grid .ai-link-card,
+  html.background-image-mode body.layout-grid .skeleton-card,
+  body.layout-grid.background-image-mode .link-card,
+  body.layout-grid.background-image-mode .ai-link-card,
+  body.layout-grid.background-image-mode .skeleton-card,
+  html.cards-stabilizing body.layout-grid .link-card,
+  html.cards-stabilizing body.layout-grid .ai-link-card,
+  html.cards-stabilizing body.layout-grid .skeleton-card {
+    border: 1px solid transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  html.background-image-mode body.layout-grid .link-card::before,
+  html.background-image-mode body.layout-grid .ai-link-card::before,
+  html.background-image-mode body.layout-grid .link-card::after,
+  html.background-image-mode body.layout-grid .ai-link-card::after,
+  body.layout-grid.background-image-mode .link-card::before,
+  body.layout-grid.background-image-mode .ai-link-card::before,
+  body.layout-grid.background-image-mode .link-card::after,
+  body.layout-grid.background-image-mode .ai-link-card::after,
+  html.cards-stabilizing body.layout-grid .link-card::before,
+  html.cards-stabilizing body.layout-grid .ai-link-card::before,
+  html.cards-stabilizing body.layout-grid .link-card::after,
+  html.cards-stabilizing body.layout-grid .ai-link-card::after {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
 </style>
 </head>
 <body>
@@ -399,7 +503,7 @@
     <p>2. <strong>法律适用：</strong>本声明的成立、生效、履行、解释及纠纷解决，均适用中华人民共和国法律法规。</p>
     <p>3. <strong>争议解决：</strong>若用户与本站因本声明或使用本站发生任何争议，双方应首先通过友好协商解决；协商不成的，任何一方均同意将争议提交至本站所有者/运营者所在地有管辖权的人民法院诉讼解决。</p>
 
-    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：1.58 · 共 1829 个链接</div>
+    <div class="version-tag">最终修改日期：2026年4月28日 · 版本号：1.58 · 共 1828 个链接</div>
 </div>
 
 </body>

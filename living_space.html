@@ -19,9 +19,45 @@
     localStorage.setItem('layout', 'minimal');
     localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
   }
+
   const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${bgUrl}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
   const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
-  
   const themeColors = {
     'white': '#f5f5f7',
     'dawn': '#fff5f5',
@@ -37,14 +73,13 @@
     'deepsea': '#1a4a6e',
     'clay': '#6b4a35'
   };
-  
+
   if (savedLayout === 'minimal') {
     document.documentElement.style.backgroundColor = '#ffffff';
   } else if (themeColors[savedTheme]) {
     document.documentElement.style.backgroundColor = themeColors[savedTheme];
   }
-  
-  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
   if (metaThemeColor) {
     if (savedLayout === 'minimal') {
       metaThemeColor.setAttribute('content', '#ffffff');
@@ -1040,7 +1075,7 @@
     padding: 20px;
     border-radius: 18px;
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1px solid transparent;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1049,6 +1084,12 @@
     color: inherit;
     display: block;
     overflow: hidden;
+  }
+  /* restore card border in non-wallpaper mode */
+  html:not(.background-image-mode) .link-card,
+  html:not(.background-image-mode) .ai-link-card,
+  html:not(.background-image-mode) .skeleton-card {
+    border-color: var(--card-border);
   }
 
   .link-card::before,
@@ -3578,7 +3619,7 @@
     padding: 20px;
     border-radius: 18px;
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    border: 1px solid transparent;
     overflow: hidden;
     min-height: 100px;
   }
@@ -5770,6 +5811,78 @@
     color: #ffffff !important;
     fill: #ffffff !important;
   }
+
+  /* classic wallpaper card border first-paint stabilization */
+  body.layout-grid.background-image-mode .link-card,
+  body.layout-grid.background-image-mode .ai-link-card,
+  body.layout-grid.background-image-mode .skeleton-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-clip: padding-box !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    transition-property: transform, background-color, color, opacity !important;
+  }
+
+  body.layout-grid.background-image-mode .link-card::before,
+  body.layout-grid.background-image-mode .ai-link-card::before,
+  body.layout-grid.background-image-mode .link-card::after,
+  body.layout-grid.background-image-mode .ai-link-card::after,
+  body.layout-grid.background-image-mode .skeleton-card::after {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* early html wallpaper mode card border stabilization */
+  html.background-image-mode body.layout-grid .link-card,
+  html.background-image-mode body.layout-grid .ai-link-card,
+  html.background-image-mode body.layout-grid .skeleton-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-clip: padding-box !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+    transition-property: transform, background-color, color, opacity !important;
+  }
+
+  html.background-image-mode body.layout-grid .link-card::before,
+  html.background-image-mode body.layout-grid .ai-link-card::before,
+  html.background-image-mode body.layout-grid .link-card::after,
+  html.background-image-mode body.layout-grid .ai-link-card::after,
+  html.background-image-mode body.layout-grid .skeleton-card::after {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* first-second card border rasterization guard */
+  html.cards-stabilizing body.layout-grid .link-card,
+  html.cards-stabilizing body.layout-grid .ai-link-card,
+  html.cards-stabilizing body.layout-grid .skeleton-card {
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  html.cards-stabilizing body.layout-grid .link-card::before,
+  html.cards-stabilizing body.layout-grid .ai-link-card::before,
+  html.cards-stabilizing body.layout-grid .link-card::after,
+  html.cards-stabilizing body.layout-grid .ai-link-card::after,
+  html.cards-stabilizing body.layout-grid .skeleton-card::after {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -6075,14 +6188,65 @@
   }
 
 
+
+  /* final override: wallpaper classic cards use transparent borders */
+  html.background-image-mode body.layout-grid .link-card,
+  html.background-image-mode body.layout-grid .ai-link-card,
+  html.background-image-mode body.layout-grid .skeleton-card,
+  body.layout-grid.background-image-mode .link-card,
+  body.layout-grid.background-image-mode .ai-link-card,
+  body.layout-grid.background-image-mode .skeleton-card,
+  html.cards-stabilizing body.layout-grid .link-card,
+  html.cards-stabilizing body.layout-grid .ai-link-card,
+  html.cards-stabilizing body.layout-grid .skeleton-card {
+    border: 1px solid transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  html.background-image-mode body.layout-grid .link-card::before,
+  html.background-image-mode body.layout-grid .ai-link-card::before,
+  html.background-image-mode body.layout-grid .link-card::after,
+  html.background-image-mode body.layout-grid .ai-link-card::after,
+  body.layout-grid.background-image-mode .link-card::before,
+  body.layout-grid.background-image-mode .ai-link-card::before,
+  body.layout-grid.background-image-mode .link-card::after,
+  body.layout-grid.background-image-mode .ai-link-card::after,
+  html.cards-stabilizing body.layout-grid .link-card::before,
+  html.cards-stabilizing body.layout-grid .ai-link-card::before,
+  html.cards-stabilizing body.layout-grid .link-card::after,
+  html.cards-stabilizing body.layout-grid .ai-link-card::after {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
 </style>
 </head>
 <body>
 <script>
-  // 鎻愬墠璁剧疆甯冨眬绫伙紝闃叉鍒锋柊闂儊缁忓吀甯冨眬
   (function() {
     var saved = localStorage.getItem('layout') || 'minimal';
     document.body.classList.add('layout-' + saved);
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + bgUrl + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
   })();
 </script>
 <div class="bg-layer"></div>
@@ -6182,7 +6346,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">空间美学 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.58 · 共 1829 个链接</p>
+  <p class="footer-version">版本号：1.58 · 共 1828 个链接</p>
 </footer>
 
 <script>
@@ -7729,13 +7893,44 @@ function openUrlInNewTab(url) {
   if (newWindow) newWindow.opener = null;
 }
 
+
+function getIndexCardClickUrl(url) {
+  if (!url || url === '#') return url || '';
+  try {
+    var parsed = new URL(url, window.location.href);
+    if (parsed.hostname === 'kisstr.com' || parsed.hostname === 'www.kisstr.com') {
+      return parsed.pathname.replace(/^\//, '') + parsed.search + parsed.hash;
+    }
+  } catch (err) {}
+  return url;
+}
+
+function getIndexCardDragUrl(url) {
+  if (!url || url === '#') return url || '';
+  try {
+    var parsed = new URL(url, window.location.href);
+    if (parsed.hostname === 'kisstr.com' || parsed.hostname === 'www.kisstr.com') {
+      return 'https://kisstr.com' + parsed.pathname + parsed.search + parsed.hash;
+    }
+  } catch (err) {
+    if (/^[^:/?#]+\.html(?:[?#].*)?$/.test(url)) {
+      return 'https://kisstr.com/' + url;
+    }
+  }
+  if (/^[^:/?#]+\.html(?:[?#].*)?$/.test(url)) {
+    return 'https://kisstr.com/' + url;
+  }
+  return url;
+}
 function prepareStealthLinkCard(card, url) {
   if (!card) return card;
-  card.dataset.url = url || '';
+  var clickUrl = getIndexCardClickUrl(url);
+  var dragUrl = getIndexCardDragUrl(url);
+  card.dataset.url = clickUrl || '';
+  card.dataset.dragUrl = dragUrl || clickUrl || '';
   
-  if (url && url !== '#') {
-    // 保留 href 以支持拖拽、右键菜单等原生链接行为
-    card.setAttribute('href', url);
+  if (clickUrl && clickUrl !== '#') {
+    card.setAttribute('href', clickUrl);
     card.setAttribute('target', '_blank');
     card.setAttribute('rel', 'noopener,noreferrer');
     card.setAttribute('role', 'link');
@@ -7774,7 +7969,7 @@ function prepareStealthLinkCard(card, url) {
 
   // 自定义拖拽预览：仅显示名字和网址，不显示完整卡片
   card.addEventListener('dragstart', function(e) {
-    var dragUrl = card.getAttribute('href') || card.dataset.url || '';
+    var dragUrl = card.dataset.dragUrl || card.dataset.url || card.getAttribute('href') || '';
     if (dragUrl) {
       try {
         e.dataTransfer.setData('text/uri-list', dragUrl);
@@ -8330,7 +8525,32 @@ function setLayout(layout) {
   document.body.classList.remove('layout-grid', 'layout-minimal');
   document.body.classList.add('layout-' + layout);
 
-  if (layout === 'minimal') {
+  
+  let isImageBackground = false;
+  let savedBackgroundOption = null;
+  try {
+    const savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isImageBackground = !savedBackgroundOption || !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+  } catch (err) {
+    savedBackgroundOption = null;
+    isImageBackground = false;
+  }
+  if (isImageBackground) {
+    let bgImageValue = '';
+    if (savedBackgroundOption && savedBackgroundOption.url) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+      const overlay = layout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${bgUrl}')`;
+    }
+    document.body.classList.add('background-image-mode');
+    if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+    document.documentElement.classList.add('background-image-mode');
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    document.documentElement.style.backgroundColor = '#121224';
+  } else if (layout === 'minimal') {
     document.documentElement.style.backgroundColor = '#ffffff';
   } else {
     document.documentElement.style.backgroundColor = '#f5f5f7';
@@ -8347,7 +8567,11 @@ function setLayout(layout) {
     layoutBtn.title = layout === 'minimal' ? '杂志布局' : '经典布局';
   }
 
-  loadThemeForLayout(layout);
+  if (!isImageBackground) {
+    loadThemeForLayout(layout);
+  } else if (themeToggle) {
+    themeToggle.title = '\u56FE\u7247\u80CC\u666F';
+  }
 
   // 切换布局时重新调整音乐律动 canvas 尺寸
   if (typeof mbResize === 'function') {
@@ -9566,7 +9790,8 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
 
   function syncImageBackgroundChrome(bgImageValue) {
     document.documentElement.classList.add('background-image-mode');
-    document.documentElement.style.backgroundColor = '#121224';
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);    document.documentElement.style.backgroundColor = '#121224';
     if (bgImageValue) {
       document.documentElement.style.setProperty('--bg-image', bgImageValue);
     }
