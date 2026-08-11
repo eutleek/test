@@ -5760,6 +5760,15 @@
     color: var(--text-primary) !important;
   }
 
+
+  /* classic layout + wallpaper theme: force icons white */
+  body.layout-grid.background-image-mode .link-icon,
+  body.background-image-mode:not(.layout-minimal) .link-icon,
+  body.layout-grid.background-image-mode .link-arrow,
+  body.background-image-mode:not(.layout-minimal) .link-arrow {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -6172,7 +6181,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">书影音 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.57 · 共 7962 个链接</p>
+  <p class="footer-version">版本号：1.58 · 共 1829 个链接</p>
 </footer>
 
 <script>
@@ -6205,8 +6214,6 @@ const linksData = [
           { name: "互联网档案馆", url: "https://archive.org/", description: "⚠️ 访问受限，需特殊网络" },
           { name: "Mobilism", url: "https://mobilism.org/", description: "⚠️ 访问受限，需特殊网络" },
           { name: "PDF Drive", url: "https://www.pdfdrive.com/", description: "PDF Drive - PDF电子书搜索" },
-          { name: "Open Library", url: "https://openlibrary.org/", description: "⚠️ 访问受限，需特殊网络" },
-          { name: "EPDF", url: "https://epdf.pub/", description: "EPDF - 免费PDF下载" },
           { name: "书格", url: "https://shuge.org/", description: "书格 - 古籍善本" },
           { name: "书伴", url: "https://bookfere.com/", description: "书伴 - 电子书资讯" },
           { name: "Standard Ebooks", url: "https://standardebooks.org/", description: "Standard Ebooks - 精校电子书" },
@@ -6290,12 +6297,8 @@ const linksData = [
           { name: "ShareConnector", url: "https://shareconnector.net/", description: "ShareConnector - 磁力引导" },
           { name: "LibreSphere", url: "https://libresphere.org/", description: "LibreSphere - 公益磁力库" },
           { name: "The Pirate Bay", url: "https://thepiratebay.org/", description: "The Pirate Bay - 全球最大BT站" },
-          { name: "1337X", url: "https://1337x.to/", description: "1337X - 综合资源社区" },
           { name: "TorrentGalaxy", url: "https://torrentgalaxy.to/", description: "TorrentGalaxy - 综合资源社区" },
-          { name: "Zooqle", url: "https://zooqle.com/", description: "Zooqle - 游戏影视种子" },
-          { name: "iDope", url: "https://idope.se/", description: "iDope - 极简磁力引擎" },
           { name: "SolidTorrents", url: "https://solidtorrents.to/", description: "SolidTorrents - 干净磁力搜索" },
-          { name: "BTDigg", url: "https://btdig.com/", description: "BTDigg - 纯净磁力搜索" }
         ]
       },
       {
@@ -6308,10 +6311,8 @@ const linksData = [
           { name: "洛雪音源 GitHub 1", url: "https://github.com/pdone/lx-music-source", description: "洛雪音乐音源仓库" },
           { name: "洛雪音源 GitHub 2", url: "https://github.com/Macrohard0001/lx-ikun-music-sources", description: "洛雪音乐音源仓库" },
           { name: "loficafe", url: "https://loficafe.net/", description: "Lofi 氛围电台" },
-          { name: "Lofi.cafe", url: "https://lofi.cafe/", description: "像素风 Lofi 电台" },
           { name: "Lofi.co", url: "https://lofi.co/", description: "虚拟 Lofi 空间" },
           { name: "Poolsuite FM", url: "https://poolsuite.net/", description: "复古夏日电台" },
-          { name: "Drive & Listen", url: "https://driveandlisten.herokuapp.com/", description: "城市街景与实时电台" },
           { name: "Radio Garden", url: "https://radio.garden/", description: "地球仪全球电台" },
           { name: "Nightride FM", url: "https://nightride.fm/", description: "80年代复古霓虹电台" },
           { name: "SomaFM", url: "https://somafm.com/", description: "旧金山无广告独立电台" },
@@ -6331,16 +6332,12 @@ const linksData = [
           { name: "Bensound", url: "https://bensound.com/", description: "Bensound - 免版权音乐" },
           { name: "Listen 1", url: "https://listen1.github.io/listen1/", description: "Listen 1 - 聚合音乐播放器" },
           { name: "MyFreeMP3", url: "https://tools.liumingye.cn/music", description: "MyFreeMP3 - 免费音乐搜索" },
-          { name: "Jamendo", url: "https://jamendo.com/", description: "Jamendo - 独立音乐人" },
           { name: "Bandcamp", url: "https://bandcamp.com/", description: "Bandcamp - 独立音乐" },
           { name: "Free Sound", url: "https://freesound.org/", description: "Free Sound - 音效库" },
           { name: "Rainymood", url: "https://rainymood.com/", description: "Rainymood - 雨声白噪音" },
           { name: "Lofi Girl", url: "https://lofigirl.com/", description: "Lofi Girl - 学习氛围音乐" },
           { name: "Audiomack", url: "https://audiomack.com/", description: "Audiomack - 免费音乐" },
           { name: "IMSLP", url: "https://imslp.org/", description: "IMSLP - 国际乐谱库" },
-          { name: "Musicenc", url: "https://musicenc.com/", description: "Musicenc - 网盘音乐" },
-          { name: "MK音乐网", url: "https://music.mokeedev.com/", description: "" },
-          { name: "百音阁", url: "https://baiyinge.com/", description: "" },
           { name: "Ambient Mixer", url: "https://ambient-mixer.com/", description: "Ambient Mixer - 环境音" },
           { name: "A Soft Murmur", url: "https://asoftmurmur.com/", description: "A Soft Murmur - 白噪音" },
           { name: "Defonic", url: "https://defonic.com/", description: "Defonic - 氛围音" },
@@ -6375,7 +6372,6 @@ const linksData = [
           { name: "TimBee Music", url: "https://timbee.de/", description: "TimBee Music - 免版权" },
           { name: "小文音乐", url: "https://music.xwteam.cn/", description: "" },
           { name: "TingSub", url: "https://tingsub.com/", description: "" },
-          { name: "听歌十二时辰", url: "https://tingge12.cn/", description: "" },
           { name: "Hipstersound", url: "https://hipstersound.com/", description: "Hipstersound - 氛围音" },
           { name: "Moodil", url: "https://moodil.com/", description: "Moodil - 白噪音" },
           { name: "Open Music Archive", url: "https://openmusicarchive.org/", description: "" },
@@ -6419,7 +6415,9 @@ const linksData = [
           { name: "樱之空", url: "https://skr.cc/", description: "樱之空 - 萌系动漫平台" },
           { name: "9Anime", url: "https://9-anime.me/", description: "9Anime - 英文动漫网站" },
           { name: "mifun", url: "https://mifun.app/", description: "mifun - 动漫在线观看" },
-          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" }
+          { name: "次元城", url: "https://cycity.pro/", description: "次元城 - ACG社区" },
+          { name: "次元城网页端", url: "https://www.cycani.org/", description: "次元城网页端入口" },
+          { name: "次元城手机端", url: "https://mdl.cycity.pro/", description: "次元城手机端入口" }
         ]
       },
       {
@@ -6468,17 +6466,13 @@ const linksData = [
         name: "轻小说",
         enName: "Light Novels",
         links: [
-          { name: "哔哩轻小说", url: "https://www.bilinovel.com/", description: "在线轻小说阅读平台" },
           { name: "轻小说文库（Wenku8）", url: "https://www.wenku8.net/", description: "国内规模大、历史久的中文轻小说在线阅读与下载平台，资源丰富，排版规范，支持TXT/EPUB导出" },
           { name: "ESJ Zone", url: "https://www.esjzone.cc/", description: "活跃的民间Web轻小说翻译与原创社区，包含大量日系WEB版轻小说翻译，更新速度快" },
           { name: "真白萌（Mashiro）", url: "https://masiro.me/", description: "高质量民间轻小说翻译与交流论坛，聚集个人译者与机翻修订者，常见独家Web轻小说翻译" },
           { name: "SF轻小说", url: "https://book.sfacg.com/", description: "国内老牌原创轻小说平台，包含大量国产原创轻小说与同人作品，部分热门作品需付费" },
-          { name: "菠萝包轻小说", url: "https://linovel.com/", description: "轻小说创作与阅读社区，提供丰富原创轻小说内容，支持网页端与移动端阅读" },
           { name: "轻之国度（LK）", url: "https://www.lightnovel.cn/", description: "老牌轻小说论坛与录入组社区，提供轻小说录入、论坛讨论及EPUB/TXT下载" },
-          { name: "小説家になろう（Syosetu）", url: "https://syosetu.com/", description: "日本大型免费WEB轻小说创作平台，许多异世界、转生类热门轻小说的原作源头" },
           { name: "カクヨム（Kakuyomu）", url: "https://kakuyomu.jp/", description: "KADOKAWA与Hatena联合运营的免费轻小说投稿网站，作品质量高，许多作品会商业化出版" },
           { name: "Alphapolis（アルファポリス）", url: "https://www.alphapolis.co.jp/", description: "日本出版社旗下漫画与轻小说在线阅读平台，提供免费官方轻小说连载与WEB原作" },
-          { name: "ハーメルン（Hameln）", url: "https://syosetu.org/", description: "日本SS、同人轻小说与二次创作Web小说平台，收录大量动漫同人轻小说资源" },
           { name: "在漫画（原动漫之家）", url: "http://www.zaimanhua.com/", description: "综合ACG门户" }
         ]
       },
@@ -6546,7 +6540,6 @@ const linksData = [
           { name: "123test", url: "https://www.123test.com", description: "主打DISC与职场能力评估。" },
           { name: "High5 Test", url: "https://high5test.com", description: "找出个人最突出的5个核心天赋。" },
           { name: "Charactour", url: "https://www.charactour.com", description: "匹配与你性格最像的虚构影视角色。" },
-          { name: "才储网", url: "https://www.psyco.cn", description: "提供MBTI与PDP等中文版经典测试。" }
         ]
       }
     ]
@@ -6694,22 +6687,22 @@ const linksData = [
           "description": "开源软件、开源项目与开源文化资源"
         },
         {
-          "name": "YouTube",
+          "name": "YouTube热门账号",
           "url": "https://kisstr.com/youtube_creators.html",
           "description": "YouTube 热门创作者与频道导航"
         },
         {
-          "name": "X平台",
+          "name": "X 平台热门账号",
           "url": "https://kisstr.com/x_creators.html",
           "description": "X 平台热门账号与全球意见领袖导航"
         },
         {
-          "name": "TikTok",
+          "name": "TikTok热门账号",
           "url": "https://kisstr.com/tiktok_creators.html",
           "description": "TikTok 热门创作者与平台账号导航"
         },
         {
-          "name": "Instagram",
+          "name": "Instagram热门账号",
           "url": "https://kisstr.com/instagram_creators.html",
           "description": "Instagram 热门账号与视觉创作者导航"
         },

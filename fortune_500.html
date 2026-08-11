@@ -5761,6 +5761,15 @@
     color: var(--text-primary) !important;
   }
 
+
+  /* classic layout + wallpaper theme: force icons white */
+  body.layout-grid.background-image-mode .link-icon,
+  body.background-image-mode:not(.layout-minimal) .link-icon,
+  body.layout-grid.background-image-mode .link-arrow,
+  body.background-image-mode:not(.layout-minimal) .link-arrow {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -6173,7 +6182,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">世界五百强 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.57 · 共 7962 个链接</p>
+  <p class="footer-version">版本号：1.58 · 共 1829 个链接</p>
 </footer>
 
 <script>
@@ -6187,8 +6196,9 @@ const linksData = [
     "color": "linear-gradient(135deg, #2d3436, #0984e3)",
     "subcategories": [
       {
-        "name": "精选资源 1-50",
+        "name": "1-50",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Amazon",
@@ -6443,8 +6453,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 51-100",
+        "name": "51-100",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "SAIC Motor (上汽集团)",
@@ -6699,8 +6710,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 101-150",
+        "name": "101-150",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Mitsubishi Heavy Industries (三菱重工)",
@@ -6955,8 +6967,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 151-200",
+        "name": "151-200",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "American Airlines (美国航空)",
@@ -7211,8 +7224,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 201-250",
+        "name": "201-250",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Tokyo Electron (东京电子)",
@@ -7467,8 +7481,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 251-300",
+        "name": "251-300",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "MercadoLibre",
@@ -7723,8 +7738,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 301-350",
+        "name": "301-350",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Medtronic (美敦力)",
@@ -7979,8 +7995,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 351-400",
+        "name": "351-400",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Subaru",
@@ -8235,8 +8252,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 401-450",
+        "name": "401-450",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Ecolab (艺康)",
@@ -8491,8 +8509,9 @@ const linksData = [
         ]
       },
       {
-        "name": "精选资源 451-484",
+        "name": "451-484",
         "enName": "Featured",
+        "hideTitle": true,
         "links": [
           {
             "name": "Pandora",
@@ -8811,22 +8830,22 @@ const linksData = [
           "description": "开源软件、开源项目与开源文化资源"
         },
         {
-          "name": "YouTube",
+          "name": "YouTube热门账号",
           "url": "https://kisstr.com/youtube_creators.html",
           "description": "YouTube 热门创作者与频道导航"
         },
         {
-          "name": "X平台",
+          "name": "X 平台热门账号",
           "url": "https://kisstr.com/x_creators.html",
           "description": "X 平台热门账号与全球意见领袖导航"
         },
         {
-          "name": "TikTok",
+          "name": "TikTok热门账号",
           "url": "https://kisstr.com/tiktok_creators.html",
           "description": "TikTok 热门创作者与平台账号导航"
         },
         {
-          "name": "Instagram",
+          "name": "Instagram热门账号",
           "url": "https://kisstr.com/instagram_creators.html",
           "description": "Instagram 热门账号与视觉创作者导航"
         },
@@ -9248,7 +9267,7 @@ function prepareStealthLinkCard(card, url) {
   return card;
 }
 
-function createLinkCard(link, catIndex, linkIndex) {
+function createLinkCard(link, catIndex, linkIndex, rank) {
   const cat = linksData[catIndex];
 
   // ===== 全球AI分类：渲染附件风格卡片 =====
@@ -9303,7 +9322,7 @@ function createLinkCard(link, catIndex, linkIndex) {
     linkName.style.position = 'relative';
     linkName.style.minHeight = '24px';
   } else {
-    linkName.textContent = link.name;
+    linkName.textContent = rank ? rank + '. ' + link.name : link.name;
   }
 
   const linkUrl = document.createElement('div');
@@ -9513,6 +9532,7 @@ function doRenderLinks(filterText, category) {
     section.appendChild(header);
 
     if (cat.subcategories) {
+      let globalRank = 0;
       cat.subcategories.forEach((subcat, subIndex) => {
         const filteredLinks = filterLinks(subcat.links, filterText);
         if (filteredLinks.length === 0) return;
@@ -9597,7 +9617,8 @@ function doRenderLinks(filterText, category) {
         }
 
         filteredLinks.forEach((link, linkIndex) => {
-          const card = createLinkCard(link, catIndex, subIndex * 10 + linkIndex);
+          globalRank++;
+          const card = createLinkCard(link, catIndex, linkIndex, globalRank);
           grid.appendChild(card);
         });
 
@@ -9613,7 +9634,7 @@ function doRenderLinks(filterText, category) {
       grid.className = 'links-grid';
 
       filteredLinks.forEach((link, linkIndex) => {
-        const card = createLinkCard(link, catIndex, linkIndex);
+        const card = createLinkCard(link, catIndex, linkIndex, linkIndex + 1);
         grid.appendChild(card);
       });
 

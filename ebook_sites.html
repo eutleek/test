@@ -5761,6 +5761,15 @@
     color: var(--text-primary) !important;
   }
 
+
+  /* classic layout + wallpaper theme: force icons white */
+  body.layout-grid.background-image-mode .link-icon,
+  body.background-image-mode:not(.layout-minimal) .link-icon,
+  body.layout-grid.background-image-mode .link-arrow,
+  body.background-image-mode:not(.layout-minimal) .link-arrow {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -6173,7 +6182,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">电子书网站 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.57 · 共 7962 个链接</p>
+  <p class="footer-version">版本号：1.58 · 共 1829 个链接</p>
 </footer>
 
 <script>
@@ -6199,11 +6208,6 @@ const linksData = [
             "name": "Internet Archive (互联网档案馆)",
             "url": "https://archive.org",
             "description": "巨大的非营利数字图书馆，提供数百万本免费电子书、历史文献、扫描图书及网页历史快照的在线借阅与下载。"
-          },
-          {
-            "name": "Open Library (开放图书馆)",
-            "url": "https://openlibrary.org",
-            "description": "Internet Archive 旗下的开放图书目录项目，旨在为每一本书创建一个网页，提供数百万册电子书的借阅与阅读。"
           },
           {
             "name": "Z-Library",
@@ -7350,22 +7354,22 @@ const linksData = [
           "description": "开源软件、开源项目与开源文化资源"
         },
         {
-          "name": "YouTube",
+          "name": "YouTube热门账号",
           "url": "https://kisstr.com/youtube_creators.html",
           "description": "YouTube 热门创作者与频道导航"
         },
         {
-          "name": "X平台",
+          "name": "X 平台热门账号",
           "url": "https://kisstr.com/x_creators.html",
           "description": "X 平台热门账号与全球意见领袖导航"
         },
         {
-          "name": "TikTok",
+          "name": "TikTok热门账号",
           "url": "https://kisstr.com/tiktok_creators.html",
           "description": "TikTok 热门创作者与平台账号导航"
         },
         {
-          "name": "Instagram",
+          "name": "Instagram热门账号",
           "url": "https://kisstr.com/instagram_creators.html",
           "description": "Instagram 热门账号与视觉创作者导航"
         },

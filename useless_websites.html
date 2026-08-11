@@ -5761,6 +5761,15 @@
     color: var(--text-primary) !important;
   }
 
+
+  /* classic layout + wallpaper theme: force icons white */
+  body.layout-grid.background-image-mode .link-icon,
+  body.background-image-mode:not(.layout-minimal) .link-icon,
+  body.layout-grid.background-image-mode .link-arrow,
+  body.background-image-mode:not(.layout-minimal) .link-arrow {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -6173,7 +6182,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">没有用的网站 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.57 · 共 7962 个链接</p>
+  <p class="footer-version">版本号：1.58 · 共 1829 个链接</p>
 </footer>
 
 <script>
@@ -6244,7 +6253,6 @@ const linksData = [
         { name: "baconfizz.com", url: "https://baconfizz.com", description: "全屏播放培根在煎锅里滋滋作响的高清画面与声音。" },
         { name: "radiooooo.com", url: "https://radiooooo.com", description: "选定世界上任意国家和 1900 年以来的任意年代，播放那个时空当地电台流行什么音乐。" },
         { name: "window-swap.com", url: "https://window-swap.com", description: "随机切换到全球各地网友家窗外拍摄的一段实时风景视频。" },
-        { name: "driveandlisten.herokuapp.com", url: "https://driveandlisten.herokuapp.com", description: "选择全球各大城市（巴黎/东京/纽约），一边体验视角第一人称开车，一边听当地电台。" },
         { name: "my70stv.com", url: "https://my70stv.com", description: "模拟上世纪 70/80/90 年代的旧彩色电视机，随机切换当年的老电视节目。" },
         { name: "ambient-mixer.com", url: "https://ambient-mixer.com", description: "混合各种奇怪的环境音，比如格兰芬多公共休息室、雨夜书房等。" },
         { name: "wowenwilsonquiz.com", url: "https://wowenwilsonquiz.com", description: "让你听一段声音，猜这是好莱坞男星欧文·威尔逊在横跨哪部电影里发出的“WOW”。" },
@@ -6297,7 +6305,6 @@ const linksData = [
         { name: "staggeringbeauty.com", url: "https://staggeringbeauty.com", description: "鼠标晃动时黑色抖动虫随之摆动，急速晃动会引发炫彩视觉与爆炸音效。" },
         { name: "comb.cool", url: "https://comb.cool", description: "随意拖动鼠标即可生成复古 8-bit 电子乐和合成器音效。" },
         { name: "play.soundtrap.com", url: "https://play.soundtrap.com", description: "浏览器端简易音轨拼接器，随手拖拽音效做出一段无厘头电音。" },
-        { name: "lofi.cafe", url: "https://lofi.cafe", description: "打开即播 Lofi 慢板音乐，配以像素复古动图，纯粹发呆背景音。" },
         { name: "plaza.one", url: "https://plaza.one", description: "24 小时无间断播放蒸汽波（Vaporwave）风格音乐与 90 年代 3D 视觉动画。" },
         { name: "incredibox.com", url: "https://incredibox.com", description: "给无口小人穿上不同衣服，他们就会开始合唱极具节奏感的 Bbox 口技。" },
         { name: "beesbeesbees.com", url: "https://beesbeesbees.com", description: "奥普拉在节目里高呼并向观众疯狂抛撒蜜蜂的 GIF 动图循环。" },
@@ -6375,7 +6382,6 @@ const linksData = [
         { name: "howmanypeopleareinspacerightnow.com", url: "https://howmanypeopleareinspacerightnow.com", description: "实时告诉你现在此时此刻有多少个人类正呆在太空轨道上。" },
         { name: "mapcrunch.com", url: "https://mapcrunch.com", description: "“随机街景游”，随机把你丢到地球上某个荒郊野外的谷歌街景路口。" },
         { name: "worldometers.info", url: "https://worldometers.info", description: "全球各种奇奇怪怪的数据实时递增统计（如今天消耗了多少咖啡、诞生了多少人）。" },
-        { name: "driveandlisten.herokuapp.com", url: "https://driveandlisten.herokuapp.com", description: "选择全球各大城市（巴黎/东京/纽约），一边第一人称开车一边听当地电台。" },
         { name: "window-swap.com", url: "https://window-swap.com", description: "随机切换到全球各地网友家窗外拍摄的一段实时风景视频。" },
         { name: "radiooooo.com", url: "https://radiooooo.com", description: "选定世界上任意国家和 1900 年以来的任意年代，播放那个时空当地电台流行什么音乐。" },
         { name: "canitrundoom.com", url: "https://canitrundoom.com", description: "汇总了全球各种奇葩设备（验孕棒、冰箱、计算器）运行《毁灭战士》的记录。" },
@@ -6436,7 +6442,6 @@ const linksData = [
         { name: "pigeon.ly", url: "https://pigeon.ly", description: "看起来极其正规，但本质上是教你如何用信鸽传信的复古模拟页面。" },
         { name: "stolen.art", url: "https://stolen.art", description: "展示历史上各种失窃且至今未找回的名画展厅，纯粹供你“远观”。" },
         { name: "virtualvacation.us", url: "https://virtualvacation.us", description: "第一人称视角体验在世界各大名城步行、乘车或乘坐飞机的虚拟旅游。" },
-        { name: "driveandlisten.herokuapp.com", url: "https://driveandlisten.herokuapp.com", description: "选择全球各大城市（巴黎/东京/纽约），一边体验第一人称开车，一边听当地实时电台。" },
         { name: "my70stv.com", url: "https://my70stv.com", description: "模拟上世纪 70 年代的旧彩色电视机，按开关或换台能看当年的老电视节目。" },
         { name: "retroart.ai", url: "https://retroart.ai", description: "自动将现在的现代照片转化为 80 年代 DOS 游戏风格的低十六色像素艺术。" },
         { name: "cameronsworld.net", url: "https://cameronsworld.net", description: "收集了 90 年代 Geocities 时代所有闪烁 GIF、乱七八糟背景图的网络考古大堆砌。" },
@@ -6637,22 +6642,22 @@ const linksData = [
           "description": "开源软件、开源项目与开源文化资源"
         },
         {
-          "name": "YouTube",
+          "name": "YouTube热门账号",
           "url": "https://kisstr.com/youtube_creators.html",
           "description": "YouTube 热门创作者与频道导航"
         },
         {
-          "name": "X平台",
+          "name": "X 平台热门账号",
           "url": "https://kisstr.com/x_creators.html",
           "description": "X 平台热门账号与全球意见领袖导航"
         },
         {
-          "name": "TikTok",
+          "name": "TikTok热门账号",
           "url": "https://kisstr.com/tiktok_creators.html",
           "description": "TikTok 热门创作者与平台账号导航"
         },
         {
-          "name": "Instagram",
+          "name": "Instagram热门账号",
           "url": "https://kisstr.com/instagram_creators.html",
           "description": "Instagram 热门账号与视觉创作者导航"
         },

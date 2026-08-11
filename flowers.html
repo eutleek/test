@@ -5761,6 +5761,15 @@
     color: var(--text-primary) !important;
   }
 
+
+  /* classic layout + wallpaper theme: force icons white */
+  body.layout-grid.background-image-mode .link-icon,
+  body.background-image-mode:not(.layout-minimal) .link-icon,
+  body.layout-grid.background-image-mode .link-arrow,
+  body.background-image-mode:not(.layout-minimal) .link-arrow {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+  }
   /* ========== Capture unlock and mobile bottom seam fix ========== */
   html,
   body,
@@ -6173,7 +6182,7 @@
   </div>
   <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
   <p class="footer-copy">植物美学 · 优质网站收藏</p>
-  <p class="footer-version">版本号：1.57 · 共 7962 个链接</p>
+  <p class="footer-version">版本号：1.58 · 共 1829 个链接</p>
 </footer>
 
 <script>
@@ -6187,7 +6196,7 @@ const linksData = [
     "color": "linear-gradient(135deg, #fd79a8, #e84393)",
     "subcategories": [
       {
-        "name": "第一梯队:国际先锋花艺设计与艺术期刊",
+        "name": "花艺期刊",
         "enName": "Collection",
         "links": [
           {
@@ -6268,7 +6277,7 @@ const linksData = [
         ]
       },
       {
-        "name": "第二梯队:全球奢华花艺工作室与高级花艺师作品集",
+        "name": "花艺工作室",
         "enName": "Collection",
         "links": [
           {
@@ -6399,7 +6408,7 @@ const linksData = [
         ]
       },
       {
-        "name": "第三梯队:日韩与东亚流派",
+        "name": "东亚花艺",
         "enName": "Collection",
         "links": [
           {
@@ -6505,7 +6514,7 @@ const linksData = [
         ]
       },
       {
-        "name": "第四梯队:花卉农场、罕见品种与自然野趣",
+        "name": "花卉农场",
         "enName": "Collection",
         "links": [
           {
@@ -6611,7 +6620,7 @@ const linksData = [
         ]
       },
       {
-        "name": "第五梯队:婚礼花艺、生活方式与花卉艺术画报",
+        "name": "婚礼花艺",
         "enName": "Collection",
         "links": [
           {
@@ -6861,22 +6870,22 @@ const linksData = [
           "description": "开源软件、开源项目与开源文化资源"
         },
         {
-          "name": "YouTube",
+          "name": "YouTube热门账号",
           "url": "https://kisstr.com/youtube_creators.html",
           "description": "YouTube 热门创作者与频道导航"
         },
         {
-          "name": "X平台",
+          "name": "X 平台热门账号",
           "url": "https://kisstr.com/x_creators.html",
           "description": "X 平台热门账号与全球意见领袖导航"
         },
         {
-          "name": "TikTok",
+          "name": "TikTok热门账号",
           "url": "https://kisstr.com/tiktok_creators.html",
           "description": "TikTok 热门创作者与平台账号导航"
         },
         {
-          "name": "Instagram",
+          "name": "Instagram热门账号",
           "url": "https://kisstr.com/instagram_creators.html",
           "description": "Instagram 热门账号与视觉创作者导航"
         },
