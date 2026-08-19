@@ -1,0 +1,3539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="动漫、漫画、游戏、轻小说与壁纸资源导航">
+<title>女生服饰 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v130-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${bgUrl}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    document.body.classList.add('layout-' + saved);
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + bgUrl + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝗞𝗶𝘀𝘀𝘁𝗿</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="minimal" title="切换布局">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>女生服饰</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
+  <p class="footer-copy">ACGN · 优质网站收藏</p>
+</footer>
+
+<script>
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+const linksData = [
+  {
+    name: "女生服饰",
+    icon: "👗",
+    color: "linear-gradient(135deg,#ee9ca7,#ffdde1)",
+    subcategories: [
+      {
+        name: "时尚女装",
+        enName: "时尚女装",
+        links: [
+          { name: "优衣库女装", url: "https://s.taobao.com/search?q=%E4%BC%98%E8%A1%A3%E5%BA%93%E5%A5%B3%E8%A3%85", description: "优衣库女装天猫官方旗舰店" },
+          { name: "ZARA女装", url: "https://s.taobao.com/search?q=ZARA%E5%A5%B3%E8%A3%85", description: "ZARA女装天猫官方旗舰店" },
+          { name: "H&M女装", url: "https://s.taobao.com/search?q=H%26M%E5%A5%B3%E8%A3%85", description: "H&M女装天猫官方旗舰店" },
+          { name: "GAP女装", url: "https://s.taobao.com/search?q=GAP%E5%A5%B3%E8%A3%85", description: "GAP女装天猫官方旗舰店" },
+          { name: "UR女装", url: "https://s.taobao.com/search?q=UR%E5%A5%B3%E8%A3%85", description: "UR女装天猫官方旗舰店" },
+          { name: "ONLY女装", url: "https://s.taobao.com/search?q=ONLY%E5%A5%B3%E8%A3%85", description: "ONLY女装天猫官方旗舰店" },
+          { name: "VERO MODA女装", url: "https://s.taobao.com/search?q=VERO%20MODA%E5%A5%B3%E8%A3%85", description: "VERO MODA女装天猫官方旗舰店" },
+          { name: "欧时力女装", url: "https://s.taobao.com/search?q=%E6%AC%A7%E6%97%B6%E5%8A%9B%E5%A5%B3%E8%A3%85", description: "欧时力女装天猫官方旗舰店" },
+          { name: "太平鸟女装", url: "https://s.taobao.com/search?q=%E5%A4%AA%E5%B9%B3%E9%B8%9F%E5%A5%B3%E8%A3%85", description: "太平鸟女装天猫官方旗舰店" },
+          { name: "乐町女装", url: "https://s.taobao.com/search?q=%E4%B9%90%E7%94%BA%E5%A5%B3%E8%A3%85", description: "乐町女装天猫官方旗舰店" },
+          { name: "伊芙丽女装", url: "https://s.taobao.com/search?q=%E4%BC%8A%E8%8A%99%E4%B8%BD%E5%A5%B3%E8%A3%85", description: "伊芙丽女装天猫官方旗舰店" },
+          { name: "诗凡黎女装", url: "https://s.taobao.com/search?q=%E8%AF%97%E5%87%A1%E9%BB%8E%E5%A5%B3%E8%A3%85", description: "诗凡黎女装天猫官方旗舰店" },
+          { name: "麦檬女装", url: "https://s.taobao.com/search?q=%E9%BA%A6%E6%AA%AC%E5%A5%B3%E8%A3%85", description: "麦檬女装天猫官方旗舰店" },
+          { name: "播女装", url: "https://s.taobao.com/search?q=%E6%92%AD%E5%A5%B3%E8%A3%85", description: "播女装天猫官方旗舰店" },
+          { name: "江南布衣女装", url: "https://s.taobao.com/search?q=%E6%B1%9F%E5%8D%97%E5%B8%83%E8%A1%A3%E5%A5%B3%E8%A3%85", description: "江南布衣女装天猫官方旗舰店" },
+          { name: "Ochirly女装", url: "https://s.taobao.com/search?q=Ochirly%E5%A5%B3%E8%A3%85", description: "Ochirly女装天猫官方旗舰店" },
+          { name: "Five Plus女装", url: "https://s.taobao.com/search?q=Five%20Plus%E5%A5%B3%E8%A3%85", description: "Five Plus女装天猫官方旗舰店" },
+          { name: "地素女装", url: "https://s.taobao.com/search?q=%E5%9C%B0%E7%B4%A0%E5%A5%B3%E8%A3%85", description: "地素女装天猫官方旗舰店" },
+          { name: "MO&Co女装", url: "https://s.taobao.com/search?q=MO%26Co%E5%A5%B3%E8%A3%85", description: "MO&Co女装天猫官方旗舰店" },
+          { name: "哥弟女装", url: "https://s.taobao.com/search?q=%E5%93%A5%E5%BC%9F%E5%A5%B3%E8%A3%85", description: "哥弟女装天猫官方旗舰店" },
+          { name: "阿玛施女装", url: "https://s.taobao.com/search?q=%E9%98%BF%E7%8E%9B%E6%96%BD%E5%A5%B3%E8%A3%85", description: "阿玛施女装天猫官方旗舰店" },
+          { name: "茵曼女装", url: "https://s.taobao.com/search?q=%E8%8C%B5%E6%9B%BC%E5%A5%B3%E8%A3%85", description: "茵曼女装天猫官方旗舰店" },
+          { name: "初语女装", url: "https://s.taobao.com/search?q=%E5%88%9D%E8%AF%AD%E5%A5%B3%E8%A3%85", description: "初语女装天猫官方旗舰店" },
+          { name: "裂帛女装", url: "https://s.taobao.com/search?q=%E8%A3%82%E5%B8%9B%E5%A5%B3%E8%A3%85", description: "裂帛女装天猫官方旗舰店" },
+          { name: "韩都衣舍女装", url: "https://s.taobao.com/search?q=%E9%9F%A9%E9%83%BD%E8%A1%A3%E8%88%8D%E5%A5%B3%E8%A3%85", description: "韩都衣舍女装天猫官方旗舰店" },
+          { name: "妖精的口袋女装", url: "https://s.taobao.com/search?q=%E5%A6%96%E7%B2%BE%E7%9A%84%E5%8F%A3%E8%A2%8B%E5%A5%B3%E8%A3%85", description: "妖精的口袋女装天猫官方旗舰店" },
+          { name: "森马女装", url: "https://s.taobao.com/search?q=%E6%A3%AE%E9%A9%AC%E5%A5%B3%E8%A3%85", description: "森马女装天猫官方旗舰店" },
+          { name: "美特斯邦威女装", url: "https://s.taobao.com/search?q=%E7%BE%8E%E7%89%B9%E6%96%AF%E9%82%A6%E5%A8%81%E5%A5%B3%E8%A3%85", description: "美特斯邦威女装天猫官方旗舰店" },
+          { name: "以纯女装", url: "https://s.taobao.com/search?q=%E4%BB%A5%E7%BA%AF%E5%A5%B3%E8%A3%85", description: "以纯女装天猫官方旗舰店" },
+          { name: "唐狮女装", url: "https://s.taobao.com/search?q=%E5%94%90%E7%8B%AE%E5%A5%B3%E8%A3%85", description: "唐狮女装天猫官方旗舰店" },
+          { name: "真维斯女装", url: "https://s.taobao.com/search?q=%E7%9C%9F%E7%BB%B4%E6%96%AF%E5%A5%B3%E8%A3%85", description: "真维斯女装天猫官方旗舰店" },
+          { name: "班尼路女装", url: "https://s.taobao.com/search?q=%E7%8F%AD%E5%B0%BC%E8%B7%AF%E5%A5%B3%E8%A3%85", description: "班尼路女装天猫官方旗舰店" },
+          { name: "佐丹奴女装", url: "https://s.taobao.com/search?q=%E4%BD%90%E4%B8%B9%E5%A5%B4%E5%A5%B3%E8%A3%85", description: "佐丹奴女装天猫官方旗舰店" },
+          { name: "堡狮龙女装", url: "https://s.taobao.com/search?q=%E5%A0%A1%E7%8B%AE%E9%BE%99%E5%A5%B3%E8%A3%85", description: "堡狮龙女装天猫官方旗舰店" },
+          { name: "Esprit女装", url: "https://s.taobao.com/search?q=Esprit%E5%A5%B3%E8%A3%85", description: "Esprit女装天猫官方旗舰店" },
+          { name: "Etam女装", url: "https://s.taobao.com/search?q=Etam%E5%A5%B3%E8%A3%85", description: "Etam女装天猫官方旗舰店" },
+          { name: "La Chapelle女装", url: "https://s.taobao.com/search?q=La%20Chapelle%E5%A5%B3%E8%A3%85", description: "La Chapelle女装天猫官方旗舰店" },
+          { name: "Candie's女装", url: "https://s.taobao.com/search?q=Candie's%E5%A5%B3%E8%A3%85", description: "Candie's女装天猫官方旗舰店" },
+          { name: "7.Modifier女装", url: "https://s.taobao.com/search?q=7.Modifier%E5%A5%B3%E8%A3%85", description: "7.Modifier女装天猫官方旗舰店" },
+          { name: "Puella女装", url: "https://s.taobao.com/search?q=Puella%E5%A5%B3%E8%A3%85", description: "Puella女装天猫官方旗舰店" },
+          { name: "马克华菲女装", url: "https://s.taobao.com/search?q=%E9%A9%AC%E5%85%8B%E5%8D%8E%E8%8F%B2%E5%A5%B3%E8%A3%85", description: "马克华菲女装天猫官方旗舰店" },
+          { name: "GXG女装", url: "https://s.taobao.com/search?q=GXG%E5%A5%B3%E8%A3%85", description: "GXG女装天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "iFashion原创",
+        enName: "iFashion原创",
+        links: [
+          { name: "张大奕女装", url: "https://s.taobao.com/search?q=%E5%BC%A0%E5%A4%A7%E5%A5%95%E5%A5%B3%E8%A3%85", description: "张大奕女装天猫官方旗舰店" },
+          { name: "雪梨女装", url: "https://s.taobao.com/search?q=%E9%9B%AA%E6%A2%A8%E5%A5%B3%E8%A3%85", description: "雪梨女装天猫官方旗舰店" },
+          { name: "钱夫人女装", url: "https://s.taobao.com/search?q=%E9%92%B1%E5%A4%AB%E4%BA%BA%E5%A5%B3%E8%A3%85", description: "钱夫人女装天猫官方旗舰店" },
+          { name: "于momo女装", url: "https://s.taobao.com/search?q=%E4%BA%8Emomo%E5%A5%B3%E8%A3%85", description: "于momo女装天猫官方旗舰店" },
+          { name: "小宜女装", url: "https://s.taobao.com/search?q=%E5%B0%8F%E5%AE%9C%E5%A5%B3%E8%A3%85", description: "小宜女装天猫官方旗舰店" },
+          { name: "美美de夏夏女装", url: "https://s.taobao.com/search?q=%E7%BE%8E%E7%BE%8Ede%E5%A4%8F%E5%A4%8F%E5%A5%B3%E8%A3%85", description: "美美de夏夏女装天猫官方旗舰店" },
+          { name: "ASM ANNA女装", url: "https://s.taobao.com/search?q=ASM%20ANNA%E5%A5%B3%E8%A3%85", description: "ASM ANNA女装天猫官方旗舰店" },
+          { name: "戎美女装", url: "https://s.taobao.com/search?q=%E6%88%8E%E7%BE%8E%E5%A5%B3%E8%A3%85", description: "戎美女装天猫官方旗舰店" },
+          { name: "茉莉雅集女装", url: "https://s.taobao.com/search?q=%E8%8C%89%E8%8E%89%E9%9B%85%E9%9B%86%E5%A5%B3%E8%A3%85", description: "茉莉雅集女装天猫官方旗舰店" },
+          { name: "小虫女装", url: "https://s.taobao.com/search?q=%E5%B0%8F%E8%99%AB%E5%A5%B3%E8%A3%85", description: "小虫女装天猫官方旗舰店" },
+          { name: "大喜自制女装", url: "https://s.taobao.com/search?q=%E5%A4%A7%E5%96%9C%E8%87%AA%E5%88%B6%E5%A5%B3%E8%A3%85", description: "大喜自制女装天猫官方旗舰店" },
+          { name: "杨小卷女装", url: "https://s.taobao.com/search?q=%E6%9D%A8%E5%B0%8F%E5%8D%B7%E5%A5%B3%E8%A3%85", description: "杨小卷女装天猫官方旗舰店" },
+          { name: "三木妈妈女装", url: "https://s.taobao.com/search?q=%E4%B8%89%E6%9C%A8%E5%A6%88%E5%A6%88%E5%A5%B3%E8%A3%85", description: "三木妈妈女装天猫官方旗舰店" },
+          { name: "小侨女装", url: "https://s.taobao.com/search?q=%E5%B0%8F%E4%BE%A8%E5%A5%B3%E8%A3%85", description: "小侨女装天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "古风汉服",
+        enName: "古风汉服",
+        links: [
+          { name: "重回汉唐汉服", url: "https://s.taobao.com/search?q=%E9%87%8D%E5%9B%9E%E6%B1%89%E5%94%90%E6%B1%89%E6%9C%8D", description: "重回汉唐汉服天猫官方旗舰店" },
+          { name: "汉尚华莲汉服", url: "https://s.taobao.com/search?q=%E6%B1%89%E5%B0%9A%E5%8D%8E%E8%8E%B2%E6%B1%89%E6%9C%8D", description: "汉尚华莲汉服天猫官方旗舰店" },
+          { name: "十三余汉服", url: "https://s.taobao.com/search?q=%E5%8D%81%E4%B8%89%E4%BD%99%E6%B1%89%E6%9C%8D", description: "十三余汉服天猫官方旗舰店" },
+          { name: "织羽集汉服", url: "https://s.taobao.com/search?q=%E7%BB%87%E7%BE%BD%E9%9B%86%E6%B1%89%E6%9C%8D", description: "织羽集汉服天猫官方旗舰店" },
+          { name: "钟灵记汉服", url: "https://s.taobao.com/search?q=%E9%92%9F%E7%81%B5%E8%AE%B0%E6%B1%89%E6%9C%8D", description: "钟灵记汉服天猫官方旗舰店" },
+          { name: "都城南庄汉服", url: "https://s.taobao.com/search?q=%E9%83%BD%E5%9F%8E%E5%8D%97%E5%BA%84%E6%B1%89%E6%9C%8D", description: "都城南庄汉服天猫官方旗舰店" },
+          { name: "华姿仪赏汉服", url: "https://s.taobao.com/search?q=%E5%8D%8E%E5%A7%BF%E4%BB%AA%E8%B5%8F%E6%B1%89%E6%9C%8D", description: "华姿仪赏汉服天猫官方旗舰店" },
+          { name: "清辉阁汉服", url: "https://s.taobao.com/search?q=%E6%B8%85%E8%BE%89%E9%98%81%E6%B1%89%E6%9C%8D", description: "清辉阁汉服天猫官方旗舰店" },
+          { name: "菩提雪汉服", url: "https://s.taobao.com/search?q=%E8%8F%A9%E6%8F%90%E9%9B%AA%E6%B1%89%E6%9C%8D", description: "菩提雪汉服天猫官方旗舰店" },
+          { name: "游园惊梦汉服", url: "https://s.taobao.com/search?q=%E6%B8%B8%E5%9B%AD%E6%83%8A%E6%A2%A6%E6%B1%89%E6%9C%8D", description: "游园惊梦汉服天猫官方旗舰店" },
+          { name: "月到风来阁汉服", url: "https://s.taobao.com/search?q=%E6%9C%88%E5%88%B0%E9%A3%8E%E6%9D%A5%E9%98%81%E6%B1%89%E6%9C%8D", description: "月到风来阁汉服天猫官方旗舰店" },
+          { name: "明华堂汉服", url: "https://s.taobao.com/search?q=%E6%98%8E%E5%8D%8E%E5%A0%82%E6%B1%89%E6%9C%8D", description: "明华堂汉服天猫官方旗舰店" },
+          { name: "子衣明堂汉服", url: "https://s.taobao.com/search?q=%E5%AD%90%E8%A1%A3%E6%98%8E%E5%A0%82%E6%B1%89%E6%9C%8D", description: "子衣明堂汉服天猫官方旗舰店" },
+          { name: "汉客丝路汉服", url: "https://s.taobao.com/search?q=%E6%B1%89%E5%AE%A2%E4%B8%9D%E8%B7%AF%E6%B1%89%E6%9C%8D", description: "汉客丝路汉服天猫官方旗舰店" },
+          { name: "锦瑟衣庄汉服", url: "https://s.taobao.com/search?q=%E9%94%A6%E7%91%9F%E8%A1%A3%E5%BA%84%E6%B1%89%E6%9C%8D", description: "锦瑟衣庄汉服天猫官方旗舰店" },
+          { name: "衔泥小筑汉服", url: "https://s.taobao.com/search?q=%E8%A1%94%E6%B3%A5%E5%B0%8F%E7%AD%91%E6%B1%89%E6%9C%8D", description: "衔泥小筑汉服天猫官方旗舰店" },
+          { name: "如梦霓裳汉服", url: "https://s.taobao.com/search?q=%E5%A6%82%E6%A2%A6%E9%9C%93%E8%A3%B3%E6%B1%89%E6%9C%8D", description: "如梦霓裳汉服天猫官方旗舰店" },
+          { name: "华兴唐汉服", url: "https://s.taobao.com/search?q=%E5%8D%8E%E5%85%B4%E5%94%90%E6%B1%89%E6%9C%8D", description: "华兴唐汉服天猫官方旗舰店" },
+          { name: "朝露之城汉服", url: "https://s.taobao.com/search?q=%E6%9C%9D%E9%9C%B2%E4%B9%8B%E5%9F%8E%E6%B1%89%E6%9C%8D", description: "朝露之城汉服天猫官方旗舰店" },
+          { name: "清荷衣坊汉服", url: "https://s.taobao.com/search?q=%E6%B8%85%E8%8D%B7%E8%A1%A3%E5%9D%8A%E6%B1%89%E6%9C%8D", description: "清荷衣坊汉服天猫官方旗舰店" },
+          { name: "莞语轩汉服", url: "https://s.taobao.com/search?q=%E8%8E%9E%E8%AF%AD%E8%BD%A9%E6%B1%89%E6%9C%8D", description: "莞语轩汉服天猫官方旗舰店" },
+          { name: "三十六雨汉服", url: "https://s.taobao.com/search?q=%E4%B8%89%E5%8D%81%E5%85%AD%E9%9B%A8%E6%B1%89%E6%9C%8D", description: "三十六雨汉服天猫官方旗舰店" },
+          { name: "流烟昔泠汉服", url: "https://s.taobao.com/search?q=%E6%B5%81%E7%83%9F%E6%98%94%E6%B3%A0%E6%B1%89%E6%9C%8D", description: "流烟昔泠汉服天猫官方旗舰店" },
+          { name: "衣锦江南汉服", url: "https://s.taobao.com/search?q=%E8%A1%A3%E9%94%A6%E6%B1%9F%E5%8D%97%E6%B1%89%E6%9C%8D", description: "衣锦江南汉服天猫官方旗舰店" },
+          { name: "南雅集汉服", url: "https://s.taobao.com/search?q=%E5%8D%97%E9%9B%85%E9%9B%86%E6%B1%89%E6%9C%8D", description: "南雅集汉服天猫官方旗舰店" },
+          { name: "她说汉服", url: "https://s.taobao.com/search?q=%E5%A5%B9%E8%AF%B4%E6%B1%89%E6%9C%8D", description: "她说汉服天猫官方旗舰店" },
+          { name: "兰若庭汉服", url: "https://s.taobao.com/search?q=%E5%85%B0%E8%8B%A5%E5%BA%AD%E6%B1%89%E6%9C%8D", description: "兰若庭汉服天猫官方旗舰店" },
+          { name: "倾杯序汉服", url: "https://s.taobao.com/search?q=%E5%80%BE%E6%9D%AF%E5%BA%8F%E6%B1%89%E6%9C%8D", description: "倾杯序汉服天猫官方旗舰店" },
+          { name: "一溪月汉服", url: "https://s.taobao.com/search?q=%E4%B8%80%E6%BA%AA%E6%9C%88%E6%B1%89%E6%9C%8D", description: "一溪月汉服天猫官方旗舰店" },
+          { name: "花朝记汉服", url: "https://s.taobao.com/search?q=%E8%8A%B1%E6%9C%9D%E8%AE%B0%E6%B1%89%E6%9C%8D", description: "花朝记汉服天猫官方旗舰店" },
+          { name: "初立汉服", url: "https://s.taobao.com/search?q=%E5%88%9D%E7%AB%8B%E6%B1%89%E6%9C%8D", description: "初立汉服天猫官方旗舰店" },
+          { name: "千裙雅集汉服", url: "https://s.taobao.com/search?q=%E5%8D%83%E8%A3%99%E9%9B%85%E9%9B%86%E6%B1%89%E6%9C%8D", description: "千裙雅集汉服天猫官方旗舰店" },
+          { name: "如梦见汉服", url: "https://s.taobao.com/search?q=%E5%A6%82%E6%A2%A6%E8%A7%81%E6%B1%89%E6%9C%8D", description: "如梦见汉服天猫官方旗舰店" },
+          { name: "凤翥斋汉服", url: "https://s.taobao.com/search?q=%E5%87%A4%E7%BF%A5%E6%96%8B%E6%B1%89%E6%9C%8D", description: "凤翥斋汉服天猫官方旗舰店" },
+          { name: "彧卿汉服", url: "https://s.taobao.com/search?q=%E5%BD%A7%E5%8D%BF%E6%B1%89%E6%9C%8D", description: "彧卿汉服天猫官方旗舰店" },
+          { name: "花妖汉衣堂汉服", url: "https://s.taobao.com/search?q=%E8%8A%B1%E5%A6%96%E6%B1%89%E8%A1%A3%E5%A0%82%E6%B1%89%E6%9C%8D", description: "花妖汉衣堂汉服天猫官方旗舰店" },
+          { name: "无衣饮羽汉服", url: "https://s.taobao.com/search?q=%E6%97%A0%E8%A1%A3%E9%A5%AE%E7%BE%BD%E6%B1%89%E6%9C%8D", description: "无衣饮羽汉服天猫官方旗舰店" },
+          { name: "云想衣裳汉服", url: "https://s.taobao.com/search?q=%E4%BA%91%E6%83%B3%E8%A1%A3%E8%A3%B3%E6%B1%89%E6%9C%8D", description: "云想衣裳汉服天猫官方旗舰店" },
+          { name: "山有扶苏汉服", url: "https://s.taobao.com/search?q=%E5%B1%B1%E6%9C%89%E6%89%B6%E8%8B%8F%E6%B1%89%E6%9C%8D", description: "山有扶苏汉服天猫官方旗舰店" },
+          { name: "月芝猫汉服", url: "https://s.taobao.com/search?q=%E6%9C%88%E8%8A%9D%E7%8C%AB%E6%B1%89%E6%9C%8D", description: "月芝猫汉服天猫官方旗舰店" },
+          { name: "醉书长安汉服", url: "https://s.taobao.com/search?q=%E9%86%89%E4%B9%A6%E9%95%BF%E5%AE%89%E6%B1%89%E6%9C%8D", description: "醉书长安汉服天猫官方旗舰店" },
+          { name: "九宴汉服", url: "https://s.taobao.com/search?q=%E4%B9%9D%E5%AE%B4%E6%B1%89%E6%9C%8D", description: "九宴汉服天猫官方旗舰店" },
+          { name: "凤栖梧汉服", url: "https://s.taobao.com/search?q=%E5%87%A4%E6%A0%96%E6%A2%A7%E6%B1%89%E6%9C%8D", description: "凤栖梧汉服天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "洛丽塔",
+        enName: "洛丽塔",
+        links: [
+          { name: "Baby the Stars Shine Bright洛丽塔", url: "https://s.taobao.com/search?q=Baby%20the%20Stars%20Shine%20Bright%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Baby the Stars Shine Bright洛丽塔天猫官方旗舰店" },
+          { name: "Angelic Pretty洛丽塔", url: "https://s.taobao.com/search?q=Angelic%20Pretty%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Angelic Pretty洛丽塔天猫官方旗舰店" },
+          { name: "Metamorphose洛丽塔", url: "https://s.taobao.com/search?q=Metamorphose%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Metamorphose洛丽塔天猫官方旗舰店" },
+          { name: "Innocent World洛丽塔", url: "https://s.taobao.com/search?q=Innocent%20World%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Innocent World洛丽塔天猫官方旗舰店" },
+          { name: "Victorian Maiden洛丽塔", url: "https://s.taobao.com/search?q=Victorian%20Maiden%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Victorian Maiden洛丽塔天猫官方旗舰店" },
+          { name: "Mary Magdalene洛丽塔", url: "https://s.taobao.com/search?q=Mary%20Magdalene%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Mary Magdalene洛丽塔天猫官方旗舰店" },
+          { name: "Excentrique洛丽塔", url: "https://s.taobao.com/search?q=Excentrique%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Excentrique洛丽塔天猫官方旗舰店" },
+          { name: "Moi Meme Moitie洛丽塔", url: "https://s.taobao.com/search?q=Moi%20Meme%20Moitie%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Moi Meme Moitie洛丽塔天猫官方旗舰店" },
+          { name: "Atelier Pierrot洛丽塔", url: "https://s.taobao.com/search?q=Atelier%20Pierrot%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Atelier Pierrot洛丽塔天猫官方旗舰店" },
+          { name: "Jane Marple洛丽塔", url: "https://s.taobao.com/search?q=Jane%20Marple%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Jane Marple洛丽塔天猫官方旗舰店" },
+          { name: "Emily Temple Cute洛丽塔", url: "https://s.taobao.com/search?q=Emily%20Temple%20Cute%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Emily Temple Cute洛丽塔天猫官方旗舰店" },
+          { name: "古典玩偶洛丽塔", url: "https://s.taobao.com/search?q=%E5%8F%A4%E5%85%B8%E7%8E%A9%E5%81%B6%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "古典玩偶洛丽塔天猫官方旗舰店" },
+          { name: "路德维希洛丽塔", url: "https://s.taobao.com/search?q=%E8%B7%AF%E5%BE%B7%E7%BB%B4%E5%B8%8C%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "路德维希洛丽塔天猫官方旗舰店" },
+          { name: "表面咒语洛丽塔", url: "https://s.taobao.com/search?q=%E8%A1%A8%E9%9D%A2%E5%92%92%E8%AF%AD%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "表面咒语洛丽塔天猫官方旗舰店" },
+          { name: "婴梵塔洛丽塔", url: "https://s.taobao.com/search?q=%E5%A9%B4%E6%A2%B5%E5%A1%94%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "婴梵塔洛丽塔天猫官方旗舰店" },
+          { name: "钻石甜心洛丽塔", url: "https://s.taobao.com/search?q=%E9%92%BB%E7%9F%B3%E7%94%9C%E5%BF%83%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "钻石甜心洛丽塔天猫官方旗舰店" },
+          { name: "草莓巫女洛丽塔", url: "https://s.taobao.com/search?q=%E8%8D%89%E8%8E%93%E5%B7%AB%E5%A5%B3%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "草莓巫女洛丽塔天猫官方旗舰店" },
+          { name: "魔法茶会洛丽塔", url: "https://s.taobao.com/search?q=%E9%AD%94%E6%B3%95%E8%8C%B6%E4%BC%9A%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "魔法茶会洛丽塔天猫官方旗舰店" },
+          { name: "小熊星座洛丽塔", url: "https://s.taobao.com/search?q=%E5%B0%8F%E7%86%8A%E6%98%9F%E5%BA%A7%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "小熊星座洛丽塔天猫官方旗舰店" },
+          { name: "猫咪城堡洛丽塔", url: "https://s.taobao.com/search?q=%E7%8C%AB%E5%92%AA%E5%9F%8E%E5%A0%A1%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "猫咪城堡洛丽塔天猫官方旗舰店" },
+          { name: "兔子小姐洛丽塔", url: "https://s.taobao.com/search?q=%E5%85%94%E5%AD%90%E5%B0%8F%E5%A7%90%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "兔子小姐洛丽塔天猫官方旗舰店" },
+          { name: "星彩虹洛丽塔", url: "https://s.taobao.com/search?q=%E6%98%9F%E5%BD%A9%E8%99%B9%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "星彩虹洛丽塔天猫官方旗舰店" },
+          { name: "Neverland洛丽塔", url: "https://s.taobao.com/search?q=Neverland%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Neverland洛丽塔天猫官方旗舰店" },
+          { name: "Soufflesong洛丽塔", url: "https://s.taobao.com/search?q=Soufflesong%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Soufflesong洛丽塔天猫官方旗舰店" },
+          { name: "Dear Celine洛丽塔", url: "https://s.taobao.com/search?q=Dear%20Celine%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Dear Celine洛丽塔天猫官方旗舰店" },
+          { name: "Pennyhouse洛丽塔", url: "https://s.taobao.com/search?q=Pennyhouse%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Pennyhouse洛丽塔天猫官方旗舰店" },
+          { name: "Lda天使之城洛丽塔", url: "https://s.taobao.com/search?q=Lda%E5%A4%A9%E4%BD%BF%E4%B9%8B%E5%9F%8E%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "Lda天使之城洛丽塔天猫官方旗舰店" },
+          { name: "仲夏物语洛丽塔", url: "https://s.taobao.com/search?q=%E4%BB%B2%E5%A4%8F%E7%89%A9%E8%AF%AD%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "仲夏物语洛丽塔天猫官方旗舰店" },
+          { name: "奶油橘猫洛丽塔", url: "https://s.taobao.com/search?q=%E5%A5%B6%E6%B2%B9%E6%A9%98%E7%8C%AB%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "奶油橘猫洛丽塔天猫官方旗舰店" },
+          { name: "甜熊设计洛丽塔", url: "https://s.taobao.com/search?q=%E7%94%9C%E7%86%8A%E8%AE%BE%E8%AE%A1%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "甜熊设计洛丽塔天猫官方旗舰店" },
+          { name: "草莓菠萝莉洛丽塔", url: "https://s.taobao.com/search?q=%E8%8D%89%E8%8E%93%E8%8F%A0%E8%90%9D%E8%8E%89%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "草莓菠萝莉洛丽塔天猫官方旗舰店" },
+          { name: "甜心贩卖机洛丽塔", url: "https://s.taobao.com/search?q=%E7%94%9C%E5%BF%83%E8%B4%A9%E5%8D%96%E6%9C%BA%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "甜心贩卖机洛丽塔天猫官方旗舰店" },
+          { name: "梦境人偶洛丽塔", url: "https://s.taobao.com/search?q=%E6%A2%A6%E5%A2%83%E4%BA%BA%E5%81%B6%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "梦境人偶洛丽塔天猫官方旗舰店" },
+          { name: "莉莉丝之眼洛丽塔", url: "https://s.taobao.com/search?q=%E8%8E%89%E8%8E%89%E4%B8%9D%E4%B9%8B%E7%9C%BC%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "莉莉丝之眼洛丽塔天猫官方旗舰店" },
+          { name: "风瞳洛丽塔", url: "https://s.taobao.com/search?q=%E9%A3%8E%E7%9E%B3%E6%B4%9B%E4%B8%BD%E5%A1%94", description: "风瞳洛丽塔天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "设计师原创",
+        enName: "设计师原创",
+        links: [
+          { name: "马可女装", url: "https://s.taobao.com/search?q=%E9%A9%AC%E5%8F%AF%E5%A5%B3%E8%A3%85", description: "马可女装天猫官方旗舰店" },
+          { name: "王汁女装", url: "https://s.taobao.com/search?q=%E7%8E%8B%E6%B1%81%E5%A5%B3%E8%A3%85", description: "王汁女装天猫官方旗舰店" },
+          { name: "Uma Wang女装", url: "https://s.taobao.com/search?q=Uma%20Wang%E5%A5%B3%E8%A3%85", description: "Uma Wang女装天猫官方旗舰店" },
+          { name: "马艳丽女装", url: "https://s.taobao.com/search?q=%E9%A9%AC%E8%89%B3%E4%B8%BD%E5%A5%B3%E8%A3%85", description: "马艳丽女装天猫官方旗舰店" },
+          { name: "吕燕女装", url: "https://s.taobao.com/search?q=%E5%90%95%E7%87%95%E5%A5%B3%E8%A3%85", description: "吕燕女装天猫官方旗舰店" },
+          { name: "殷亦晴女装", url: "https://s.taobao.com/search?q=%E6%AE%B7%E4%BA%A6%E6%99%B4%E5%A5%B3%E8%A3%85", description: "殷亦晴女装天猫官方旗舰店" },
+          { name: "兰玉女装", url: "https://s.taobao.com/search?q=%E5%85%B0%E7%8E%89%E5%A5%B3%E8%A3%85", description: "兰玉女装天猫官方旗舰店" },
+          { name: "郭培女装", url: "https://s.taobao.com/search?q=%E9%83%AD%E5%9F%B9%E5%A5%B3%E8%A3%85", description: "郭培女装天猫官方旗舰店" },
+          { name: "祁刚女装", url: "https://s.taobao.com/search?q=%E7%A5%81%E5%88%9A%E5%A5%B3%E8%A3%85", description: "祁刚女装天猫官方旗舰店" },
+          { name: "谢锋女装", url: "https://s.taobao.com/search?q=%E8%B0%A2%E9%94%8B%E5%A5%B3%E8%A3%85", description: "谢锋女装天猫官方旗舰店" },
+          { name: "计文波女装", url: "https://s.taobao.com/search?q=%E8%AE%A1%E6%96%87%E6%B3%A2%E5%A5%B3%E8%A3%85", description: "计文波女装天猫官方旗舰店" },
+          { name: "卡宾女装", url: "https://s.taobao.com/search?q=%E5%8D%A1%E5%AE%BE%E5%A5%B3%E8%A3%85", description: "卡宾女装天猫官方旗舰店" },
+          { name: "张志峰女装", url: "https://s.taobao.com/search?q=%E5%BC%A0%E5%BF%97%E5%B3%B0%E5%A5%B3%E8%A3%85", description: "张志峰女装天猫官方旗舰店" },
+          { name: "邓皓女装", url: "https://s.taobao.com/search?q=%E9%82%93%E7%9A%93%E5%A5%B3%E8%A3%85", description: "邓皓女装天猫官方旗舰店" },
+          { name: "罗峥女装", url: "https://s.taobao.com/search?q=%E7%BD%97%E5%B3%A5%E5%A5%B3%E8%A3%85", description: "罗峥女装天猫官方旗舰店" },
+          { name: "梁子女装", url: "https://s.taobao.com/search?q=%E6%A2%81%E5%AD%90%E5%A5%B3%E8%A3%85", description: "梁子女装天猫官方旗舰店" },
+          { name: "房莹女装", url: "https://s.taobao.com/search?q=%E6%88%BF%E8%8E%B9%E5%A5%B3%E8%A3%85", description: "房莹女装天猫官方旗舰店" },
+          { name: "武学伟女装", url: "https://s.taobao.com/search?q=%E6%AD%A6%E5%AD%A6%E4%BC%9F%E5%A5%B3%E8%A3%85", description: "武学伟女装天猫官方旗舰店" },
+          { name: "武学凯女装", url: "https://s.taobao.com/search?q=%E6%AD%A6%E5%AD%A6%E5%87%AF%E5%A5%B3%E8%A3%85", description: "武学凯女装天猫官方旗舰店" },
+          { name: "刘洋女装", url: "https://s.taobao.com/search?q=%E5%88%98%E6%B4%8B%E5%A5%B3%E8%A3%85", description: "刘洋女装天猫官方旗舰店" },
+          { name: "吴海燕女装", url: "https://s.taobao.com/search?q=%E5%90%B4%E6%B5%B7%E7%87%95%E5%A5%B3%E8%A3%85", description: "吴海燕女装天猫官方旗舰店" },
+          { name: "张肇达女装", url: "https://s.taobao.com/search?q=%E5%BC%A0%E8%82%87%E8%BE%BE%E5%A5%B3%E8%A3%85", description: "张肇达女装天猫官方旗舰店" },
+          { name: "邓达智女装", url: "https://s.taobao.com/search?q=%E9%82%93%E8%BE%BE%E6%99%BA%E5%A5%B3%E8%A3%85", description: "邓达智女装天猫官方旗舰店" },
+          { name: "张天爱女装", url: "https://s.taobao.com/search?q=%E5%BC%A0%E5%A4%A9%E7%88%B1%E5%A5%B3%E8%A3%85", description: "张天爱女装天猫官方旗舰店" },
+          { name: "谭燕玉女装", url: "https://s.taobao.com/search?q=%E8%B0%AD%E7%87%95%E7%8E%89%E5%A5%B3%E8%A3%85", description: "谭燕玉女装天猫官方旗舰店" },
+          { name: "Vivienne Tam女装", url: "https://s.taobao.com/search?q=Vivienne%20Tam%E5%A5%B3%E8%A3%85", description: "Vivienne Tam女装天猫官方旗舰店" },
+          { name: "Anna Sui女装", url: "https://s.taobao.com/search?q=Anna%20Sui%E5%A5%B3%E8%A3%85", description: "Anna Sui女装天猫官方旗舰店" },
+          { name: "Alexander Wang女装", url: "https://s.taobao.com/search?q=Alexander%20Wang%E5%A5%B3%E8%A3%85", description: "Alexander Wang女装天猫官方旗舰店" },
+          { name: "Jason Wu女装", url: "https://s.taobao.com/search?q=Jason%20Wu%E5%A5%B3%E8%A3%85", description: "Jason Wu女装天猫官方旗舰店" },
+          { name: "Phillip Lim女装", url: "https://s.taobao.com/search?q=Phillip%20Lim%E5%A5%B3%E8%A3%85", description: "Phillip Lim女装天猫官方旗舰店" },
+          { name: "Derek Lam女装", url: "https://s.taobao.com/search?q=Derek%20Lam%E5%A5%B3%E8%A3%85", description: "Derek Lam女装天猫官方旗舰店" },
+          { name: "Thakoon女装", url: "https://s.taobao.com/search?q=Thakoon%E5%A5%B3%E8%A3%85", description: "Thakoon女装天猫官方旗舰店" },
+          { name: "Peter Som女装", url: "https://s.taobao.com/search?q=Peter%20Som%E5%A5%B3%E8%A3%85", description: "Peter Som女装天猫官方旗舰店" },
+          { name: "Richard Chai女装", url: "https://s.taobao.com/search?q=Richard%20Chai%E5%A5%B3%E8%A3%85", description: "Richard Chai女装天猫官方旗舰店" },
+          { name: "Tory Burch女装", url: "https://s.taobao.com/search?q=Tory%20Burch%E5%A5%B3%E8%A3%85", description: "Tory Burch女装天猫官方旗舰店" },
+          { name: "Kate Spade女装", url: "https://s.taobao.com/search?q=Kate%20Spade%E5%A5%B3%E8%A3%85", description: "Kate Spade女装天猫官方旗舰店" },
+          { name: "Marc Jacobs女装", url: "https://s.taobao.com/search?q=Marc%20Jacobs%E5%A5%B3%E8%A3%85", description: "Marc Jacobs女装天猫官方旗舰店" },
+          { name: "Michael Kors女装", url: "https://s.taobao.com/search?q=Michael%20Kors%E5%A5%B3%E8%A3%85", description: "Michael Kors女装天猫官方旗舰店" },
+          { name: "Tommy Hilfiger女装", url: "https://s.taobao.com/search?q=Tommy%20Hilfiger%E5%A5%B3%E8%A3%85", description: "Tommy Hilfiger女装天猫官方旗舰店" },
+          { name: "Ralph Lauren女装", url: "https://s.taobao.com/search?q=Ralph%20Lauren%E5%A5%B3%E8%A3%85", description: "Ralph Lauren女装天猫官方旗舰店" },
+          { name: "Calvin Klein女装", url: "https://s.taobao.com/search?q=Calvin%20Klein%E5%A5%B3%E8%A3%85", description: "Calvin Klein女装天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "通勤OL",
+        enName: "通勤OL",
+        links: [
+          { name: "Theory女装", url: "https://s.taobao.com/search?q=Theory%E5%A5%B3%E8%A3%85", description: "Theory女装天猫官方旗舰店" },
+          { name: "Club Monaco女装", url: "https://s.taobao.com/search?q=Club%20Monaco%E5%A5%B3%E8%A3%85", description: "Club Monaco女装天猫官方旗舰店" },
+          { name: "Max Mara女装", url: "https://s.taobao.com/search?q=Max%20Mara%E5%A5%B3%E8%A3%85", description: "Max Mara女装天猫官方旗舰店" },
+          { name: "Ports女装", url: "https://s.taobao.com/search?q=Ports%E5%A5%B3%E8%A3%85", description: "Ports女装天猫官方旗舰店" },
+          { name: "宝姿女装", url: "https://s.taobao.com/search?q=%E5%AE%9D%E5%A7%BF%E5%A5%B3%E8%A3%85", description: "宝姿女装天猫官方旗舰店" },
+          { name: "ICICLE女装", url: "https://s.taobao.com/search?q=ICICLE%E5%A5%B3%E8%A3%85", description: "ICICLE女装天猫官方旗舰店" },
+          { name: "之禾女装", url: "https://s.taobao.com/search?q=%E4%B9%8B%E7%A6%BE%E5%A5%B3%E8%A3%85", description: "之禾女装天猫官方旗舰店" },
+          { name: "EIN女装", url: "https://s.taobao.com/search?q=EIN%E5%A5%B3%E8%A3%85", description: "EIN女装天猫官方旗舰店" },
+          { name: "言女装", url: "https://s.taobao.com/search?q=%E8%A8%80%E5%A5%B3%E8%A3%85", description: "言女装天猫官方旗舰店" },
+          { name: "OTT女装", url: "https://s.taobao.com/search?q=OTT%E5%A5%B3%E8%A3%85", description: "OTT女装天猫官方旗舰店" },
+          { name: "例外女装", url: "https://s.taobao.com/search?q=%E4%BE%8B%E5%A4%96%E5%A5%B3%E8%A3%85", description: "例外女装天猫官方旗舰店" },
+          { name: "德诗女装", url: "https://s.taobao.com/search?q=%E5%BE%B7%E8%AF%97%E5%A5%B3%E8%A3%85", description: "德诗女装天猫官方旗舰店" },
+          { name: "谜底女装", url: "https://s.taobao.com/search?q=%E8%B0%9C%E5%BA%95%E5%A5%B3%E8%A3%85", description: "谜底女装天猫官方旗舰店" },
+          { name: "达衣岩女装", url: "https://s.taobao.com/search?q=%E8%BE%BE%E8%A1%A3%E5%B2%A9%E5%A5%B3%E8%A3%85", description: "达衣岩女装天猫官方旗舰店" },
+          { name: "珂莱蒂尔女装", url: "https://s.taobao.com/search?q=%E7%8F%82%E8%8E%B1%E8%92%82%E5%B0%94%E5%A5%B3%E8%A3%85", description: "珂莱蒂尔女装天猫官方旗舰店" },
+          { name: "娜尔思女装", url: "https://s.taobao.com/search?q=%E5%A8%9C%E5%B0%94%E6%80%9D%E5%A5%B3%E8%A3%85", description: "娜尔思女装天猫官方旗舰店" },
+          { name: "奈蔻女装", url: "https://s.taobao.com/search?q=%E5%A5%88%E8%94%BB%E5%A5%B3%E8%A3%85", description: "奈蔻女装天猫官方旗舰店" },
+          { name: "恩裳女装", url: "https://s.taobao.com/search?q=%E6%81%A9%E8%A3%B3%E5%A5%B3%E8%A3%85", description: "恩裳女装天猫官方旗舰店" },
+          { name: "诗篇女装", url: "https://s.taobao.com/search?q=%E8%AF%97%E7%AF%87%E5%A5%B3%E8%A3%85", description: "诗篇女装天猫官方旗舰店" },
+          { name: "音儿女装", url: "https://s.taobao.com/search?q=%E9%9F%B3%E5%84%BF%E5%A5%B3%E8%A3%85", description: "音儿女装天猫官方旗舰店" },
+          { name: "十二篮女装", url: "https://s.taobao.com/search?q=%E5%8D%81%E4%BA%8C%E7%AF%AE%E5%A5%B3%E8%A3%85", description: "十二篮女装天猫官方旗舰店" },
+          { name: "玛丝菲尔女装", url: "https://s.taobao.com/search?q=%E7%8E%9B%E4%B8%9D%E8%8F%B2%E5%B0%94%E5%A5%B3%E8%A3%85", description: "玛丝菲尔女装天猫官方旗舰店" },
+          { name: "AUM女装", url: "https://s.taobao.com/search?q=AUM%E5%A5%B3%E8%A3%85", description: "AUM女装天猫官方旗舰店" },
+          { name: "噢姆女装", url: "https://s.taobao.com/search?q=%E5%99%A2%E5%A7%86%E5%A5%B3%E8%A3%85", description: "噢姆女装天猫官方旗舰店" },
+          { name: "朗黛女装", url: "https://s.taobao.com/search?q=%E6%9C%97%E9%BB%9B%E5%A5%B3%E8%A3%85", description: "朗黛女装天猫官方旗舰店" },
+          { name: "米岫女装", url: "https://s.taobao.com/search?q=%E7%B1%B3%E5%B2%AB%E5%A5%B3%E8%A3%85", description: "米岫女装天猫官方旗舰店" },
+          { name: "歌中歌女装", url: "https://s.taobao.com/search?q=%E6%AD%8C%E4%B8%AD%E6%AD%8C%E5%A5%B3%E8%A3%85", description: "歌中歌女装天猫官方旗舰店" },
+          { name: "奥丽嘉朵女装", url: "https://s.taobao.com/search?q=%E5%A5%A5%E4%B8%BD%E5%98%89%E6%9C%B5%E5%A5%B3%E8%A3%85", description: "奥丽嘉朵女装天猫官方旗舰店" },
+          { name: "VGRASS女装", url: "https://s.taobao.com/search?q=VGRASS%E5%A5%B3%E8%A3%85", description: "VGRASS女装天猫官方旗舰店" },
+          { name: "维格娜丝女装", url: "https://s.taobao.com/search?q=%E7%BB%B4%E6%A0%BC%E5%A8%9C%E4%B8%9D%E5%A5%B3%E8%A3%85", description: "维格娜丝女装天猫官方旗舰店" },
+          { name: "雅莹女装", url: "https://s.taobao.com/search?q=%E9%9B%85%E8%8E%B9%E5%A5%B3%E8%A3%85", description: "雅莹女装天猫官方旗舰店" },
+          { name: "EP女装", url: "https://s.taobao.com/search?q=EP%E5%A5%B3%E8%A3%85", description: "EP女装天猫官方旗舰店" },
+          { name: "贝爱女装", url: "https://s.taobao.com/search?q=%E8%B4%9D%E7%88%B1%E5%A5%B3%E8%A3%85", description: "贝爱女装天猫官方旗舰店" },
+          { name: "DOUBLOVE女装", url: "https://s.taobao.com/search?q=DOUBLOVE%E5%A5%B3%E8%A3%85", description: "DOUBLOVE女装天猫官方旗舰店" },
+          { name: "婉睿女装", url: "https://s.taobao.com/search?q=%E5%A9%89%E7%9D%BF%E5%A5%B3%E8%A3%85", description: "婉睿女装天猫官方旗舰店" },
+          { name: "蓝地女装", url: "https://s.taobao.com/search?q=%E8%93%9D%E5%9C%B0%E5%A5%B3%E8%A3%85", description: "蓝地女装天猫官方旗舰店" },
+          { name: "朗姿女装", url: "https://s.taobao.com/search?q=%E6%9C%97%E5%A7%BF%E5%A5%B3%E8%A3%85", description: "朗姿女装天猫官方旗舰店" },
+          { name: "莱茵福莱尔女装", url: "https://s.taobao.com/search?q=%E8%8E%B1%E8%8C%B5%E7%A6%8F%E8%8E%B1%E5%B0%94%E5%A5%B3%E8%A3%85", description: "莱茵福莱尔女装天猫官方旗舰店" },
+          { name: "莫佐女装", url: "https://s.taobao.com/search?q=%E8%8E%AB%E4%BD%90%E5%A5%B3%E8%A3%85", description: "莫佐女装天猫官方旗舰店" },
+          { name: "JIGOTT女装", url: "https://s.taobao.com/search?q=JIGOTT%E5%A5%B3%E8%A3%85", description: "JIGOTT女装天猫官方旗舰店" },
+          { name: "TIME女装", url: "https://s.taobao.com/search?q=TIME%E5%A5%B3%E8%A3%85", description: "TIME女装天猫官方旗舰店" },
+          { name: "安乃安女装", url: "https://s.taobao.com/search?q=%E5%AE%89%E4%B9%83%E5%AE%89%E5%A5%B3%E8%A3%85", description: "安乃安女装天猫官方旗舰店" },
+          { name: "ON&ON女装", url: "https://s.taobao.com/search?q=ON%26ON%E5%A5%B3%E8%A3%85", description: "ON&ON女装天猫官方旗舰店" },
+          { name: "W.女装", url: "https://s.taobao.com/search?q=W.%E5%A5%B3%E8%A3%85", description: "W.女装天猫官方旗舰店" },
+          { name: "THYREN女装", url: "https://s.taobao.com/search?q=THYREN%E5%A5%B3%E8%A3%85", description: "THYREN女装天猫官方旗舰店" },
+          { name: "ENC女装", url: "https://s.taobao.com/search?q=ENC%E5%A5%B3%E8%A3%85", description: "ENC女装天猫官方旗舰店" },
+          { name: "PRICH女装", url: "https://s.taobao.com/search?q=PRICH%E5%A5%B3%E8%A3%85", description: "PRICH女装天猫官方旗舰店" },
+          { name: "SCOFIELD女装", url: "https://s.taobao.com/search?q=SCOFIELD%E5%A5%B3%E8%A3%85", description: "SCOFIELD女装天猫官方旗舰店" },
+          { name: "ROEM女装", url: "https://s.taobao.com/search?q=ROEM%E5%A5%B3%E8%A3%85", description: "ROEM女装天猫官方旗舰店" },
+          { name: "ELAND女装", url: "https://s.taobao.com/search?q=ELAND%E5%A5%B3%E8%A3%85", description: "ELAND女装天猫官方旗舰店" },
+          { name: "TEENIE WEENIE女装", url: "https://s.taobao.com/search?q=TEENIE%20WEENIE%E5%A5%B3%E8%A3%85", description: "TEENIE WEENIE女装天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "少女甜美",
+        enName: "少女甜美",
+        links: [
+          { name: "One More女装", url: "https://s.taobao.com/search?q=One%20More%E5%A5%B3%E8%A3%85", description: "One More女装天猫官方旗舰店" },
+          { name: "Nice Claup女装", url: "https://s.taobao.com/search?q=Nice%20Claup%E5%A5%B3%E8%A3%85", description: "Nice Claup女装天猫官方旗舰店" },
+          { name: "Honeys女装", url: "https://s.taobao.com/search?q=Honeys%E5%A5%B3%E8%A3%85", description: "Honeys女装天猫官方旗舰店" },
+          { name: "OLIVE des OLIVE女装", url: "https://s.taobao.com/search?q=OLIVE%20des%20OLIVE%E5%A5%B3%E8%A3%85", description: "OLIVE des OLIVE女装天猫官方旗舰店" },
+          { name: "LIZ LISA女装", url: "https://s.taobao.com/search?q=LIZ%20LISA%E5%A5%B3%E8%A3%85", description: "LIZ LISA女装天猫官方旗舰店" },
+          { name: "MAJESTIC LEGON女装", url: "https://s.taobao.com/search?q=MAJESTIC%20LEGON%E5%A5%B3%E8%A3%85", description: "MAJESTIC LEGON女装天猫官方旗舰店" },
+          { name: "INGNI女装", url: "https://s.taobao.com/search?q=INGNI%E5%A5%B3%E8%A3%85", description: "INGNI女装天猫官方旗舰店" },
+          { name: "RESEXXY女装", url: "https://s.taobao.com/search?q=RESEXXY%E5%A5%B3%E8%A3%85", description: "RESEXXY女装天猫官方旗舰店" },
+          { name: "LAGUNAMOON女装", url: "https://s.taobao.com/search?q=LAGUNAMOON%E5%A5%B3%E8%A3%85", description: "LAGUNAMOON女装天猫官方旗舰店" },
+          { name: "SNIDEL女装", url: "https://s.taobao.com/search?q=SNIDEL%E5%A5%B3%E8%A3%85", description: "SNIDEL女装天猫官方旗舰店" },
+          { name: "Lily Brown女装", url: "https://s.taobao.com/search?q=Lily%20Brown%E5%A5%B3%E8%A3%85", description: "Lily Brown女装天猫官方旗舰店" },
+          { name: "FRAY I.D女装", url: "https://s.taobao.com/search?q=FRAY%20I.D%E5%A5%B3%E8%A3%85", description: "FRAY I.D女装天猫官方旗舰店" },
+          { name: "MIIA女装", url: "https://s.taobao.com/search?q=MIIA%E5%A5%B3%E8%A3%85", description: "MIIA女装天猫官方旗舰店" },
+          { name: "COCO DEAL女装", url: "https://s.taobao.com/search?q=COCO%20DEAL%E5%A5%B3%E8%A3%85", description: "COCO DEAL女装天猫官方旗舰店" },
+          { name: "JILL by JILLSTUART女装", url: "https://s.taobao.com/search?q=JILL%20by%20JILLSTUART%E5%A5%B3%E8%A3%85", description: "JILL by JILLSTUART女装天猫官方旗舰店" },
+          { name: "JILLSTUART女装", url: "https://s.taobao.com/search?q=JILLSTUART%E5%A5%B3%E8%A3%85", description: "JILLSTUART女装天猫官方旗舰店" },
+          { name: "DEICY女装", url: "https://s.taobao.com/search?q=DEICY%E5%A5%B3%E8%A3%85", description: "DEICY女装天猫官方旗舰店" },
+          { name: "RBS女装", url: "https://s.taobao.com/search?q=RBS%E5%A5%B3%E8%A3%85", description: "RBS女装天猫官方旗舰店" },
+          { name: "rienda女装", url: "https://s.taobao.com/search?q=rienda%E5%A5%B3%E8%A3%85", description: "rienda女装天猫官方旗舰店" },
+          { name: "GALLARDAGALANTE女装", url: "https://s.taobao.com/search?q=GALLARDAGALANTE%E5%A5%B3%E8%A3%85", description: "GALLARDAGALANTE女装天猫官方旗舰店" },
+          { name: "MERCURYDUO女装", url: "https://s.taobao.com/search?q=MERCURYDUO%E5%A5%B3%E8%A3%85", description: "MERCURYDUO女装天猫官方旗舰店" },
+          { name: "MURUA女装", url: "https://s.taobao.com/search?q=MURUA%E5%A5%B3%E8%A3%85", description: "MURUA女装天猫官方旗舰店" },
+          { name: "EMODA女装", url: "https://s.taobao.com/search?q=EMODA%E5%A5%B3%E8%A3%85", description: "EMODA女装天猫官方旗舰店" },
+          { name: "UNRELISH女装", url: "https://s.taobao.com/search?q=UNRELISH%E5%A5%B3%E8%A3%85", description: "UNRELISH女装天猫官方旗舰店" },
+          { name: "LIP SERVICE女装", url: "https://s.taobao.com/search?q=LIP%20SERVICE%E5%A5%B3%E8%A3%85", description: "LIP SERVICE女装天猫官方旗舰店" },
+          { name: "DURAS女装", url: "https://s.taobao.com/search?q=DURAS%E5%A5%B3%E8%A3%85", description: "DURAS女装天猫官方旗舰店" },
+          { name: "CECIL McBEE女装", url: "https://s.taobao.com/search?q=CECIL%20McBEE%E5%A5%B3%E8%A3%85", description: "CECIL McBEE女装天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "大码女装",
+        enName: "大码女装",
+        links: [
+          { name: "纤莉秀大码女装", url: "https://s.taobao.com/search?q=%E7%BA%A4%E8%8E%89%E7%A7%80%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85", description: "纤莉秀大码女装天猫官方旗舰店" },
+          { name: "蓝若水大码女装", url: "https://s.taobao.com/search?q=%E8%93%9D%E8%8B%A5%E6%B0%B4%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85", description: "蓝若水大码女装天猫官方旗舰店" },
+          { name: "慕姗诗怡大码女装", url: "https://s.taobao.com/search?q=%E6%85%95%E5%A7%97%E8%AF%97%E6%80%A1%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85", description: "慕姗诗怡大码女装天猫官方旗舰店" },
+          { name: "伊自尚大码女装", url: "https://s.taobao.com/search?q=%E4%BC%8A%E8%87%AA%E5%B0%9A%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85", description: "伊自尚大码女装天猫官方旗舰店" },
+          { name: "百分之一大码女装", url: "https://s.taobao.com/search?q=%E7%99%BE%E5%88%86%E4%B9%8B%E4%B8%80%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85", description: "百分之一大码女装天猫官方旗舰店" },
+          { name: "大码百分百大码女装", url: "https://s.taobao.com/search?q=%E5%A4%A7%E7%A0%81%E7%99%BE%E5%88%86%E7%99%BE%E5%A4%A7%E7%A0%81%E5%A5%B3%E8%A3%85", description: "大码百分百大码女装天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "运动户外",
+        enName: "运动户外",
+        links: [
+          { name: "Nike运动", url: "https://s.taobao.com/search?q=Nike%E8%BF%90%E5%8A%A8", description: "Nike运动天猫官方旗舰店" },
+          { name: "Adidas运动", url: "https://s.taobao.com/search?q=Adidas%E8%BF%90%E5%8A%A8", description: "Adidas运动天猫官方旗舰店" },
+          { name: "Puma运动", url: "https://s.taobao.com/search?q=Puma%E8%BF%90%E5%8A%A8", description: "Puma运动天猫官方旗舰店" },
+          { name: "Reebok运动", url: "https://s.taobao.com/search?q=Reebok%E8%BF%90%E5%8A%A8", description: "Reebok运动天猫官方旗舰店" },
+          { name: "New Balance运动", url: "https://s.taobao.com/search?q=New%20Balance%E8%BF%90%E5%8A%A8", description: "New Balance运动天猫官方旗舰店" },
+          { name: "Converse运动", url: "https://s.taobao.com/search?q=Converse%E8%BF%90%E5%8A%A8", description: "Converse运动天猫官方旗舰店" },
+          { name: "Vans运动", url: "https://s.taobao.com/search?q=Vans%E8%BF%90%E5%8A%A8", description: "Vans运动天猫官方旗舰店" },
+          { name: "Under Armour运动", url: "https://s.taobao.com/search?q=Under%20Armour%E8%BF%90%E5%8A%A8", description: "Under Armour运动天猫官方旗舰店" },
+          { name: "李宁运动", url: "https://s.taobao.com/search?q=%E6%9D%8E%E5%AE%81%E8%BF%90%E5%8A%A8", description: "李宁运动天猫官方旗舰店" },
+          { name: "安踏运动", url: "https://s.taobao.com/search?q=%E5%AE%89%E8%B8%8F%E8%BF%90%E5%8A%A8", description: "安踏运动天猫官方旗舰店" },
+          { name: "特步运动", url: "https://s.taobao.com/search?q=%E7%89%B9%E6%AD%A5%E8%BF%90%E5%8A%A8", description: "特步运动天猫官方旗舰店" },
+          { name: "361度运动", url: "https://s.taobao.com/search?q=361%E5%BA%A6%E8%BF%90%E5%8A%A8", description: "361度运动天猫官方旗舰店" },
+          { name: "鸿星尔克运动", url: "https://s.taobao.com/search?q=%E9%B8%BF%E6%98%9F%E5%B0%94%E5%85%8B%E8%BF%90%E5%8A%A8", description: "鸿星尔克运动天猫官方旗舰店" },
+          { name: "匹克运动", url: "https://s.taobao.com/search?q=%E5%8C%B9%E5%85%8B%E8%BF%90%E5%8A%A8", description: "匹克运动天猫官方旗舰店" },
+          { name: "贵人鸟运动", url: "https://s.taobao.com/search?q=%E8%B4%B5%E4%BA%BA%E9%B8%9F%E8%BF%90%E5%8A%A8", description: "贵人鸟运动天猫官方旗舰店" },
+          { name: "乔丹运动", url: "https://s.taobao.com/search?q=%E4%B9%94%E4%B8%B9%E8%BF%90%E5%8A%A8", description: "乔丹运动天猫官方旗舰店" },
+          { name: "回力运动", url: "https://s.taobao.com/search?q=%E5%9B%9E%E5%8A%9B%E8%BF%90%E5%8A%A8", description: "回力运动天猫官方旗舰店" },
+          { name: "飞跃运动", url: "https://s.taobao.com/search?q=%E9%A3%9E%E8%B7%83%E8%BF%90%E5%8A%A8", description: "飞跃运动天猫官方旗舰店" },
+          { name: "Skechers运动", url: "https://s.taobao.com/search?q=Skechers%E8%BF%90%E5%8A%A8", description: "Skechers运动天猫官方旗舰店" },
+          { name: "Asics运动", url: "https://s.taobao.com/search?q=Asics%E8%BF%90%E5%8A%A8", description: "Asics运动天猫官方旗舰店" },
+          { name: "Mizuno运动", url: "https://s.taobao.com/search?q=Mizuno%E8%BF%90%E5%8A%A8", description: "Mizuno运动天猫官方旗舰店" },
+          { name: "Saucony运动", url: "https://s.taobao.com/search?q=Saucony%E8%BF%90%E5%8A%A8", description: "Saucony运动天猫官方旗舰店" },
+          { name: "Brooks运动", url: "https://s.taobao.com/search?q=Brooks%E8%BF%90%E5%8A%A8", description: "Brooks运动天猫官方旗舰店" },
+          { name: "Hoka运动", url: "https://s.taobao.com/search?q=Hoka%E8%BF%90%E5%8A%A8", description: "Hoka运动天猫官方旗舰店" },
+          { name: "On运动", url: "https://s.taobao.com/search?q=On%E8%BF%90%E5%8A%A8", description: "On运动天猫官方旗舰店" },
+          { name: "Salomon运动", url: "https://s.taobao.com/search?q=Salomon%E8%BF%90%E5%8A%A8", description: "Salomon运动天猫官方旗舰店" },
+          { name: "Columbia运动", url: "https://s.taobao.com/search?q=Columbia%E8%BF%90%E5%8A%A8", description: "Columbia运动天猫官方旗舰店" },
+          { name: "The North Face运动", url: "https://s.taobao.com/search?q=The%20North%20Face%E8%BF%90%E5%8A%A8", description: "The North Face运动天猫官方旗舰店" },
+          { name: "Jack Wolfskin运动", url: "https://s.taobao.com/search?q=Jack%20Wolfskin%E8%BF%90%E5%8A%A8", description: "Jack Wolfskin运动天猫官方旗舰店" },
+          { name: "探路者运动", url: "https://s.taobao.com/search?q=%E6%8E%A2%E8%B7%AF%E8%80%85%E8%BF%90%E5%8A%A8", description: "探路者运动天猫官方旗舰店" },
+          { name: "骆驼运动", url: "https://s.taobao.com/search?q=%E9%AA%86%E9%A9%BC%E8%BF%90%E5%8A%A8", description: "骆驼运动天猫官方旗舰店" },
+          { name: "牧高笛运动", url: "https://s.taobao.com/search?q=%E7%89%A7%E9%AB%98%E7%AC%9B%E8%BF%90%E5%8A%A8", description: "牧高笛运动天猫官方旗舰店" },
+          { name: "凯乐石运动", url: "https://s.taobao.com/search?q=%E5%87%AF%E4%B9%90%E7%9F%B3%E8%BF%90%E5%8A%A8", description: "凯乐石运动天猫官方旗舰店" },
+          { name: "诺诗兰运动", url: "https://s.taobao.com/search?q=%E8%AF%BA%E8%AF%97%E5%85%B0%E8%BF%90%E5%8A%A8", description: "诺诗兰运动天猫官方旗舰店" },
+          { name: "奥索卡运动", url: "https://s.taobao.com/search?q=%E5%A5%A5%E7%B4%A2%E5%8D%A1%E8%BF%90%E5%8A%A8", description: "奥索卡运动天猫官方旗舰店" },
+          { name: "狼爪运动", url: "https://s.taobao.com/search?q=%E7%8B%BC%E7%88%AA%E8%BF%90%E5%8A%A8", description: "狼爪运动天猫官方旗舰店" },
+          { name: "北面运动", url: "https://s.taobao.com/search?q=%E5%8C%97%E9%9D%A2%E8%BF%90%E5%8A%A8", description: "北面运动天猫官方旗舰店" },
+          { name: "哥伦比亚运动", url: "https://s.taobao.com/search?q=%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E8%BF%90%E5%8A%A8", description: "哥伦比亚运动天猫官方旗舰店" },
+          { name: "迪卡侬运动", url: "https://s.taobao.com/search?q=%E8%BF%AA%E5%8D%A1%E4%BE%AC%E8%BF%90%E5%8A%A8", description: "迪卡侬运动天猫官方旗舰店" },
+          { name: "迪桑特运动", url: "https://s.taobao.com/search?q=%E8%BF%AA%E6%A1%91%E7%89%B9%E8%BF%90%E5%8A%A8", description: "迪桑特运动天猫官方旗舰店" },
+          { name: "可隆运动", url: "https://s.taobao.com/search?q=%E5%8F%AF%E9%9A%86%E8%BF%90%E5%8A%A8", description: "可隆运动天猫官方旗舰店" },
+          { name: "乐飞叶运动", url: "https://s.taobao.com/search?q=%E4%B9%90%E9%A3%9E%E5%8F%B6%E8%BF%90%E5%8A%A8", description: "乐飞叶运动天猫官方旗舰店" },
+          { name: "Lululemon运动", url: "https://s.taobao.com/search?q=Lululemon%E8%BF%90%E5%8A%A8", description: "Lululemon运动天猫官方旗舰店" },
+          { name: "Alo Yoga运动", url: "https://s.taobao.com/search?q=Alo%20Yoga%E8%BF%90%E5%8A%A8", description: "Alo Yoga运动天猫官方旗舰店" },
+          { name: "Victoria's Secret运动", url: "https://s.taobao.com/search?q=Victoria's%20Secret%E8%BF%90%E5%8A%A8", description: "Victoria's Secret运动天猫官方旗舰店" },
+          { name: "PINK运动", url: "https://s.taobao.com/search?q=PINK%E8%BF%90%E5%8A%A8", description: "PINK运动天猫官方旗舰店" },
+          { name: "Gymshark运动", url: "https://s.taobao.com/search?q=Gymshark%E8%BF%90%E5%8A%A8", description: "Gymshark运动天猫官方旗舰店" },
+          { name: "Athleta运动", url: "https://s.taobao.com/search?q=Athleta%E8%BF%90%E5%8A%A8", description: "Athleta运动天猫官方旗舰店" },
+          { name: "Fabletics运动", url: "https://s.taobao.com/search?q=Fabletics%E8%BF%90%E5%8A%A8", description: "Fabletics运动天猫官方旗舰店" },
+          { name: "Old Navy运动", url: "https://s.taobao.com/search?q=Old%20Navy%E8%BF%90%E5%8A%A8", description: "Old Navy运动天猫官方旗舰店" },
+          { name: "Gap Fit运动", url: "https://s.taobao.com/search?q=Gap%20Fit%E8%BF%90%E5%8A%A8", description: "Gap Fit运动天猫官方旗舰店" },
+          { name: "Nike Pro运动", url: "https://s.taobao.com/search?q=Nike%20Pro%E8%BF%90%E5%8A%A8", description: "Nike Pro运动天猫官方旗舰店" },
+          { name: "Adidas Stella McCartney运动", url: "https://s.taobao.com/search?q=Adidas%20Stella%20McCartney%E8%BF%90%E5%8A%A8", description: "Adidas Stella McCartney运动天猫官方旗舰店" },
+          { name: "Puma Select运动", url: "https://s.taobao.com/search?q=Puma%20Select%E8%BF%90%E5%8A%A8", description: "Puma Select运动天猫官方旗舰店" },
+          { name: "Reebok Classic运动", url: "https://s.taobao.com/search?q=Reebok%20Classic%E8%BF%90%E5%8A%A8", description: "Reebok Classic运动天猫官方旗舰店" },
+          { name: "New Balance Lifestyle运动", url: "https://s.taobao.com/search?q=New%20Balance%20Lifestyle%E8%BF%90%E5%8A%A8", description: "New Balance Lifestyle运动天猫官方旗舰店" },
+          { name: "Converse Chuck Taylor运动", url: "https://s.taobao.com/search?q=Converse%20Chuck%20Taylor%E8%BF%90%E5%8A%A8", description: "Converse Chuck Taylor运动天猫官方旗舰店" },
+          { name: "Vans Old Skool运动", url: "https://s.taobao.com/search?q=Vans%20Old%20Skool%E8%BF%90%E5%8A%A8", description: "Vans Old Skool运动天猫官方旗舰店" },
+          { name: "Under Armour HeatGear运动", url: "https://s.taobao.com/search?q=Under%20Armour%20HeatGear%E8%BF%90%E5%8A%A8", description: "Under Armour HeatGear运动天猫官方旗舰店" },
+          { name: "李宁韦德运动", url: "https://s.taobao.com/search?q=%E6%9D%8E%E5%AE%81%E9%9F%A6%E5%BE%B7%E8%BF%90%E5%8A%A8", description: "李宁韦德运动天猫官方旗舰店" },
+          { name: "安踏KT运动", url: "https://s.taobao.com/search?q=%E5%AE%89%E8%B8%8FKT%E8%BF%90%E5%8A%A8", description: "安踏KT运动天猫官方旗舰店" },
+          { name: "特步林书豪运动", url: "https://s.taobao.com/search?q=%E7%89%B9%E6%AD%A5%E6%9E%97%E4%B9%A6%E8%B1%AA%E8%BF%90%E5%8A%A8", description: "特步林书豪运动天猫官方旗舰店" },
+          { name: "361度AG运动", url: "https://s.taobao.com/search?q=361%E5%BA%A6AG%E8%BF%90%E5%8A%A8", description: "361度AG运动天猫官方旗舰店" },
+          { name: "鸿星尔克奇弹运动", url: "https://s.taobao.com/search?q=%E9%B8%BF%E6%98%9F%E5%B0%94%E5%85%8B%E5%A5%87%E5%BC%B9%E8%BF%90%E5%8A%A8", description: "鸿星尔克奇弹运动天猫官方旗舰店" },
+          { name: "匹克态极运动", url: "https://s.taobao.com/search?q=%E5%8C%B9%E5%85%8B%E6%80%81%E6%9E%81%E8%BF%90%E5%8A%A8", description: "匹克态极运动天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "内衣家居服",
+        enName: "内衣家居服",
+        links: [
+          { name: "爱慕内衣", url: "https://s.taobao.com/search?q=%E7%88%B1%E6%85%95%E5%86%85%E8%A1%A3", description: "爱慕内衣天猫官方旗舰店" },
+          { name: "曼妮芬内衣", url: "https://s.taobao.com/search?q=%E6%9B%BC%E5%A6%AE%E8%8A%AC%E5%86%85%E8%A1%A3", description: "曼妮芬内衣天猫官方旗舰店" },
+          { name: "黛安芬内衣", url: "https://s.taobao.com/search?q=%E9%BB%9B%E5%AE%89%E8%8A%AC%E5%86%85%E8%A1%A3", description: "黛安芬内衣天猫官方旗舰店" },
+          { name: "安莉芳内衣", url: "https://s.taobao.com/search?q=%E5%AE%89%E8%8E%89%E8%8A%B3%E5%86%85%E8%A1%A3", description: "安莉芳内衣天猫官方旗舰店" },
+          { name: "华歌尔内衣", url: "https://s.taobao.com/search?q=%E5%8D%8E%E6%AD%8C%E5%B0%94%E5%86%85%E8%A1%A3", description: "华歌尔内衣天猫官方旗舰店" },
+          { name: "古今内衣", url: "https://s.taobao.com/search?q=%E5%8F%A4%E4%BB%8A%E5%86%85%E8%A1%A3", description: "古今内衣天猫官方旗舰店" },
+          { name: "婷美内衣", url: "https://s.taobao.com/search?q=%E5%A9%B7%E7%BE%8E%E5%86%85%E8%A1%A3", description: "婷美内衣天猫官方旗舰店" },
+          { name: "猫人内衣", url: "https://s.taobao.com/search?q=%E7%8C%AB%E4%BA%BA%E5%86%85%E8%A1%A3", description: "猫人内衣天猫官方旗舰店" },
+          { name: "三枪内衣", url: "https://s.taobao.com/search?q=%E4%B8%89%E6%9E%AA%E5%86%85%E8%A1%A3", description: "三枪内衣天猫官方旗舰店" },
+          { name: "宜而爽内衣", url: "https://s.taobao.com/search?q=%E5%AE%9C%E8%80%8C%E7%88%BD%E5%86%85%E8%A1%A3", description: "宜而爽内衣天猫官方旗舰店" },
+          { name: "AB内衣", url: "https://s.taobao.com/search?q=AB%E5%86%85%E8%A1%A3", description: "AB内衣天猫官方旗舰店" },
+          { name: "南极人内衣", url: "https://s.taobao.com/search?q=%E5%8D%97%E6%9E%81%E4%BA%BA%E5%86%85%E8%A1%A3", description: "南极人内衣天猫官方旗舰店" },
+          { name: "北极绒内衣", url: "https://s.taobao.com/search?q=%E5%8C%97%E6%9E%81%E7%BB%92%E5%86%85%E8%A1%A3", description: "北极绒内衣天猫官方旗舰店" },
+          { name: "恒源祥内衣", url: "https://s.taobao.com/search?q=%E6%81%92%E6%BA%90%E7%A5%A5%E5%86%85%E8%A1%A3", description: "恒源祥内衣天猫官方旗舰店" },
+          { name: "纤丝鸟内衣", url: "https://s.taobao.com/search?q=%E7%BA%A4%E4%B8%9D%E9%B8%9F%E5%86%85%E8%A1%A3", description: "纤丝鸟内衣天猫官方旗舰店" },
+          { name: "暖倍儿内衣", url: "https://s.taobao.com/search?q=%E6%9A%96%E5%80%8D%E5%84%BF%E5%86%85%E8%A1%A3", description: "暖倍儿内衣天猫官方旗舰店" },
+          { name: "蕉内内衣", url: "https://s.taobao.com/search?q=%E8%95%89%E5%86%85%E5%86%85%E8%A1%A3", description: "蕉内内衣天猫官方旗舰店" },
+          { name: "Ubras内衣", url: "https://s.taobao.com/search?q=Ubras%E5%86%85%E8%A1%A3", description: "Ubras内衣天猫官方旗舰店" },
+          { name: "内外内衣", url: "https://s.taobao.com/search?q=%E5%86%85%E5%A4%96%E5%86%85%E8%A1%A3", description: "内外内衣天猫官方旗舰店" },
+          { name: "NEIWAI内衣", url: "https://s.taobao.com/search?q=NEIWAI%E5%86%85%E8%A1%A3", description: "NEIWAI内衣天猫官方旗舰店" },
+          { name: "素肌良品内衣", url: "https://s.taobao.com/search?q=%E7%B4%A0%E8%82%8C%E8%89%AF%E5%93%81%E5%86%85%E8%A1%A3", description: "素肌良品内衣天猫官方旗舰店" },
+          { name: "好奇蜜斯内衣", url: "https://s.taobao.com/search?q=%E5%A5%BD%E5%A5%87%E8%9C%9C%E6%96%AF%E5%86%85%E8%A1%A3", description: "好奇蜜斯内衣天猫官方旗舰店" },
+          { name: "六只兔子内衣", url: "https://s.taobao.com/search?q=%E5%85%AD%E5%8F%AA%E5%85%94%E5%AD%90%E5%86%85%E8%A1%A3", description: "六只兔子内衣天猫官方旗舰店" },
+          { name: "歌瑞尔内衣", url: "https://s.taobao.com/search?q=%E6%AD%8C%E7%91%9E%E5%B0%94%E5%86%85%E8%A1%A3", description: "歌瑞尔内衣天猫官方旗舰店" },
+          { name: "润微内衣", url: "https://s.taobao.com/search?q=%E6%B6%A6%E5%BE%AE%E5%86%85%E8%A1%A3", description: "润微内衣天猫官方旗舰店" },
+          { name: "缪诗内衣", url: "https://s.taobao.com/search?q=%E7%BC%AA%E8%AF%97%E5%86%85%E8%A1%A3", description: "缪诗内衣天猫官方旗舰店" },
+          { name: "曼黛玛琏内衣", url: "https://s.taobao.com/search?q=%E6%9B%BC%E9%BB%9B%E7%8E%9B%E7%90%8F%E5%86%85%E8%A1%A3", description: "曼黛玛琏内衣天猫官方旗舰店" },
+          { name: "奥丝蓝黛内衣", url: "https://s.taobao.com/search?q=%E5%A5%A5%E4%B8%9D%E8%93%9D%E9%BB%9B%E5%86%85%E8%A1%A3", description: "奥丝蓝黛内衣天猫官方旗舰店" },
+          { name: "雪妮芳内衣", url: "https://s.taobao.com/search?q=%E9%9B%AA%E5%A6%AE%E8%8A%B3%E5%86%85%E8%A1%A3", description: "雪妮芳内衣天猫官方旗舰店" },
+          { name: "霞黛芳内衣", url: "https://s.taobao.com/search?q=%E9%9C%9E%E9%BB%9B%E8%8A%B3%E5%86%85%E8%A1%A3", description: "霞黛芳内衣天猫官方旗舰店" },
+          { name: "美思内衣", url: "https://s.taobao.com/search?q=%E7%BE%8E%E6%80%9D%E5%86%85%E8%A1%A3", description: "美思内衣天猫官方旗舰店" },
+          { name: "依曼丽内衣", url: "https://s.taobao.com/search?q=%E4%BE%9D%E6%9B%BC%E4%B8%BD%E5%86%85%E8%A1%A3", description: "依曼丽内衣天猫官方旗舰店" },
+          { name: "雅歌莉内衣", url: "https://s.taobao.com/search?q=%E9%9B%85%E6%AD%8C%E8%8E%89%E5%86%85%E8%A1%A3", description: "雅歌莉内衣天猫官方旗舰店" },
+          { name: "狄梵思内衣", url: "https://s.taobao.com/search?q=%E7%8B%84%E6%A2%B5%E6%80%9D%E5%86%85%E8%A1%A3", description: "狄梵思内衣天猫官方旗舰店" },
+          { name: "菲黛尔内衣", url: "https://s.taobao.com/search?q=%E8%8F%B2%E9%BB%9B%E5%B0%94%E5%86%85%E8%A1%A3", description: "菲黛尔内衣天猫官方旗舰店" },
+          { name: "茜施尔内衣", url: "https://s.taobao.com/search?q=%E8%8C%9C%E6%96%BD%E5%B0%94%E5%86%85%E8%A1%A3", description: "茜施尔内衣天猫官方旗舰店" },
+          { name: "贝佳人内衣", url: "https://s.taobao.com/search?q=%E8%B4%9D%E4%BD%B3%E4%BA%BA%E5%86%85%E8%A1%A3", description: "贝佳人内衣天猫官方旗舰店" },
+          { name: "莱特妮丝内衣", url: "https://s.taobao.com/search?q=%E8%8E%B1%E7%89%B9%E5%A6%AE%E4%B8%9D%E5%86%85%E8%A1%A3", description: "莱特妮丝内衣天猫官方旗舰店" },
+          { name: "马克宝迪内衣", url: "https://s.taobao.com/search?q=%E9%A9%AC%E5%85%8B%E5%AE%9D%E8%BF%AA%E5%86%85%E8%A1%A3", description: "马克宝迪内衣天猫官方旗舰店" },
+          { name: "泰丽戈妮内衣", url: "https://s.taobao.com/search?q=%E6%B3%B0%E4%B8%BD%E6%88%88%E5%A6%AE%E5%86%85%E8%A1%A3", description: "泰丽戈妮内衣天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "鞋靴箱包",
+        enName: "鞋靴箱包",
+        links: [
+          { name: "百丽女鞋", url: "https://s.taobao.com/search?q=%E7%99%BE%E4%B8%BD%E5%A5%B3%E9%9E%8B", description: "百丽女鞋天猫官方旗舰店" },
+          { name: "Tata女鞋", url: "https://s.taobao.com/search?q=Tata%E5%A5%B3%E9%9E%8B", description: "Tata女鞋天猫官方旗舰店" },
+          { name: "天美意女鞋", url: "https://s.taobao.com/search?q=%E5%A4%A9%E7%BE%8E%E6%84%8F%E5%A5%B3%E9%9E%8B", description: "天美意女鞋天猫官方旗舰店" },
+          { name: "百思图女鞋", url: "https://s.taobao.com/search?q=%E7%99%BE%E6%80%9D%E5%9B%BE%E5%A5%B3%E9%9E%8B", description: "百思图女鞋天猫官方旗舰店" },
+          { name: "森达女鞋", url: "https://s.taobao.com/search?q=%E6%A3%AE%E8%BE%BE%E5%A5%B3%E9%9E%8B", description: "森达女鞋天猫官方旗舰店" },
+          { name: "思加图女鞋", url: "https://s.taobao.com/search?q=%E6%80%9D%E5%8A%A0%E5%9B%BE%E5%A5%B3%E9%9E%8B", description: "思加图女鞋天猫官方旗舰店" },
+          { name: "妙丽女鞋", url: "https://s.taobao.com/search?q=%E5%A6%99%E4%B8%BD%E5%A5%B3%E9%9E%8B", description: "妙丽女鞋天猫官方旗舰店" },
+          { name: "真美诗女鞋", url: "https://s.taobao.com/search?q=%E7%9C%9F%E7%BE%8E%E8%AF%97%E5%A5%B3%E9%9E%8B", description: "真美诗女鞋天猫官方旗舰店" },
+          { name: "Joy&Peace女鞋", url: "https://s.taobao.com/search?q=Joy%26Peace%E5%A5%B3%E9%9E%8B", description: "Joy&Peace女鞋天猫官方旗舰店" },
+          { name: "Bata女鞋", url: "https://s.taobao.com/search?q=Bata%E5%A5%B3%E9%9E%8B", description: "Bata女鞋天猫官方旗舰店" },
+          { name: "Clarks女鞋", url: "https://s.taobao.com/search?q=Clarks%E5%A5%B3%E9%9E%8B", description: "Clarks女鞋天猫官方旗舰店" },
+          { name: "Ecco女鞋", url: "https://s.taobao.com/search?q=Ecco%E5%A5%B3%E9%9E%8B", description: "Ecco女鞋天猫官方旗舰店" },
+          { name: "Geox女鞋", url: "https://s.taobao.com/search?q=Geox%E5%A5%B3%E9%9E%8B", description: "Geox女鞋天猫官方旗舰店" },
+          { name: "Rockport女鞋", url: "https://s.taobao.com/search?q=Rockport%E5%A5%B3%E9%9E%8B", description: "Rockport女鞋天猫官方旗舰店" },
+          { name: "红蜻蜓女鞋", url: "https://s.taobao.com/search?q=%E7%BA%A2%E8%9C%BB%E8%9C%93%E5%A5%B3%E9%9E%8B", description: "红蜻蜓女鞋天猫官方旗舰店" },
+          { name: "奥康女鞋", url: "https://s.taobao.com/search?q=%E5%A5%A5%E5%BA%B7%E5%A5%B3%E9%9E%8B", description: "奥康女鞋天猫官方旗舰店" },
+          { name: "康奈女鞋", url: "https://s.taobao.com/search?q=%E5%BA%B7%E5%A5%88%E5%A5%B3%E9%9E%8B", description: "康奈女鞋天猫官方旗舰店" },
+          { name: "蜘蛛王女鞋", url: "https://s.taobao.com/search?q=%E8%9C%98%E8%9B%9B%E7%8E%8B%E5%A5%B3%E9%9E%8B", description: "蜘蛛王女鞋天猫官方旗舰店" },
+          { name: "富贵鸟女鞋", url: "https://s.taobao.com/search?q=%E5%AF%8C%E8%B4%B5%E9%B8%9F%E5%A5%B3%E9%9E%8B", description: "富贵鸟女鞋天猫官方旗舰店" },
+          { name: "意尔康女鞋", url: "https://s.taobao.com/search?q=%E6%84%8F%E5%B0%94%E5%BA%B7%E5%A5%B3%E9%9E%8B", description: "意尔康女鞋天猫官方旗舰店" },
+          { name: "木林森女鞋", url: "https://s.taobao.com/search?q=%E6%9C%A8%E6%9E%97%E6%A3%AE%E5%A5%B3%E9%9E%8B", description: "木林森女鞋天猫官方旗舰店" },
+          { name: "达芙妮女鞋", url: "https://s.taobao.com/search?q=%E8%BE%BE%E8%8A%99%E5%A6%AE%E5%A5%B3%E9%9E%8B", description: "达芙妮女鞋天猫官方旗舰店" },
+          { name: "千百度女鞋", url: "https://s.taobao.com/search?q=%E5%8D%83%E7%99%BE%E5%BA%A6%E5%A5%B3%E9%9E%8B", description: "千百度女鞋天猫官方旗舰店" },
+          { name: "星期六女鞋", url: "https://s.taobao.com/search?q=%E6%98%9F%E6%9C%9F%E5%85%AD%E5%A5%B3%E9%9E%8B", description: "星期六女鞋天猫官方旗舰店" },
+          { name: "索菲娅女鞋", url: "https://s.taobao.com/search?q=%E7%B4%A2%E8%8F%B2%E5%A8%85%E5%A5%B3%E9%9E%8B", description: "索菲娅女鞋天猫官方旗舰店" },
+          { name: "菲伯丽尔女鞋", url: "https://s.taobao.com/search?q=%E8%8F%B2%E4%BC%AF%E4%B8%BD%E5%B0%94%E5%A5%B3%E9%9E%8B", description: "菲伯丽尔女鞋天猫官方旗舰店" },
+          { name: "蹀愫女鞋", url: "https://s.taobao.com/search?q=%E8%B9%80%E6%84%AB%E5%A5%B3%E9%9E%8B", description: "蹀愫女鞋天猫官方旗舰店" },
+          { name: "汤普葛罗女鞋", url: "https://s.taobao.com/search?q=%E6%B1%A4%E6%99%AE%E8%91%9B%E7%BD%97%E5%A5%B3%E9%9E%8B", description: "汤普葛罗女鞋天猫官方旗舰店" },
+          { name: "娜然女鞋", url: "https://s.taobao.com/search?q=%E5%A8%9C%E7%84%B6%E5%A5%B3%E9%9E%8B", description: "娜然女鞋天猫官方旗舰店" },
+          { name: "迈思女鞋", url: "https://s.taobao.com/search?q=%E8%BF%88%E6%80%9D%E5%A5%B3%E9%9E%8B", description: "迈思女鞋天猫官方旗舰店" },
+          { name: "爱旅儿女鞋", url: "https://s.taobao.com/search?q=%E7%88%B1%E6%97%85%E5%84%BF%E5%A5%B3%E9%9E%8B", description: "爱旅儿女鞋天猫官方旗舰店" },
+          { name: "哈森女鞋", url: "https://s.taobao.com/search?q=%E5%93%88%E6%A3%AE%E5%A5%B3%E9%9E%8B", description: "哈森女鞋天猫官方旗舰店" },
+          { name: "卡迪娜女鞋", url: "https://s.taobao.com/search?q=%E5%8D%A1%E8%BF%AA%E5%A8%9C%E5%A5%B3%E9%9E%8B", description: "卡迪娜女鞋天猫官方旗舰店" },
+          { name: "歌力女鞋", url: "https://s.taobao.com/search?q=%E6%AD%8C%E5%8A%9B%E5%A5%B3%E9%9E%8B", description: "歌力女鞋天猫官方旗舰店" },
+          { name: "依思Q女鞋", url: "https://s.taobao.com/search?q=%E4%BE%9D%E6%80%9DQ%E5%A5%B3%E9%9E%8B", description: "依思Q女鞋天猫官方旗舰店" },
+          { name: "卓诗尼女鞋", url: "https://s.taobao.com/search?q=%E5%8D%93%E8%AF%97%E5%B0%BC%E5%A5%B3%E9%9E%8B", description: "卓诗尼女鞋天猫官方旗舰店" },
+          { name: "珂卡芙女鞋", url: "https://s.taobao.com/search?q=%E7%8F%82%E5%8D%A1%E8%8A%99%E5%A5%B3%E9%9E%8B", description: "珂卡芙女鞋天猫官方旗舰店" },
+          { name: "大东女鞋", url: "https://s.taobao.com/search?q=%E5%A4%A7%E4%B8%9C%E5%A5%B3%E9%9E%8B", description: "大东女鞋天猫官方旗舰店" },
+          { name: "戈美其女鞋", url: "https://s.taobao.com/search?q=%E6%88%88%E7%BE%8E%E5%85%B6%E5%A5%B3%E9%9E%8B", description: "戈美其女鞋天猫官方旗舰店" },
+          { name: "名典女鞋", url: "https://s.taobao.com/search?q=%E5%90%8D%E5%85%B8%E5%A5%B3%E9%9E%8B", description: "名典女鞋天猫官方旗舰店" },
+          { name: "皇妹女鞋", url: "https://s.taobao.com/search?q=%E7%9A%87%E5%A6%B9%E5%A5%B3%E9%9E%8B", description: "皇妹女鞋天猫官方旗舰店" },
+          { name: "巨日女鞋", url: "https://s.taobao.com/search?q=%E5%B7%A8%E6%97%A5%E5%A5%B3%E9%9E%8B", description: "巨日女鞋天猫官方旗舰店" },
+          { name: "三雄麒女鞋", url: "https://s.taobao.com/search?q=%E4%B8%89%E9%9B%84%E9%BA%92%E5%A5%B3%E9%9E%8B", description: "三雄麒女鞋天猫官方旗舰店" },
+          { name: "秀典女鞋", url: "https://s.taobao.com/search?q=%E7%A7%80%E5%85%B8%E5%A5%B3%E9%9E%8B", description: "秀典女鞋天猫官方旗舰店" },
+          { name: "安嘉莉女鞋", url: "https://s.taobao.com/search?q=%E5%AE%89%E5%98%89%E8%8E%89%E5%A5%B3%E9%9E%8B", description: "安嘉莉女鞋天猫官方旗舰店" },
+          { name: "雅美迪女鞋", url: "https://s.taobao.com/search?q=%E9%9B%85%E7%BE%8E%E8%BF%AA%E5%A5%B3%E9%9E%8B", description: "雅美迪女鞋天猫官方旗舰店" },
+          { name: "Coach女鞋", url: "https://s.taobao.com/search?q=Coach%E5%A5%B3%E9%9E%8B", description: "Coach女鞋天猫官方旗舰店" },
+          { name: "MK女鞋", url: "https://s.taobao.com/search?q=MK%E5%A5%B3%E9%9E%8B", description: "MK女鞋天猫官方旗舰店" },
+          { name: "Kate Spade女鞋", url: "https://s.taobao.com/search?q=Kate%20Spade%E5%A5%B3%E9%9E%8B", description: "Kate Spade女鞋天猫官方旗舰店" },
+          { name: "Tory Burch女鞋", url: "https://s.taobao.com/search?q=Tory%20Burch%E5%A5%B3%E9%9E%8B", description: "Tory Burch女鞋天猫官方旗舰店" },
+          { name: "Longchamp女鞋", url: "https://s.taobao.com/search?q=Longchamp%E5%A5%B3%E9%9E%8B", description: "Longchamp女鞋天猫官方旗舰店" },
+          { name: "Furla女鞋", url: "https://s.taobao.com/search?q=Furla%E5%A5%B3%E9%9E%8B", description: "Furla女鞋天猫官方旗舰店" },
+          { name: "Michael Kors女鞋", url: "https://s.taobao.com/search?q=Michael%20Kors%E5%A5%B3%E9%9E%8B", description: "Michael Kors女鞋天猫官方旗舰店" },
+          { name: "Gucci女鞋", url: "https://s.taobao.com/search?q=Gucci%E5%A5%B3%E9%9E%8B", description: "Gucci女鞋天猫官方旗舰店" },
+          { name: "LV女鞋", url: "https://s.taobao.com/search?q=LV%E5%A5%B3%E9%9E%8B", description: "LV女鞋天猫官方旗舰店" },
+          { name: "Prada女鞋", url: "https://s.taobao.com/search?q=Prada%E5%A5%B3%E9%9E%8B", description: "Prada女鞋天猫官方旗舰店" },
+          { name: "Hermes女鞋", url: "https://s.taobao.com/search?q=Hermes%E5%A5%B3%E9%9E%8B", description: "Hermes女鞋天猫官方旗舰店" },
+          { name: "Dior女鞋", url: "https://s.taobao.com/search?q=Dior%E5%A5%B3%E9%9E%8B", description: "Dior女鞋天猫官方旗舰店" },
+          { name: "Chanel女鞋", url: "https://s.taobao.com/search?q=Chanel%E5%A5%B3%E9%9E%8B", description: "Chanel女鞋天猫官方旗舰店" },
+          { name: "Burberry女鞋", url: "https://s.taobao.com/search?q=Burberry%E5%A5%B3%E9%9E%8B", description: "Burberry女鞋天猫官方旗舰店" },
+          { name: "Celine女鞋", url: "https://s.taobao.com/search?q=Celine%E5%A5%B3%E9%9E%8B", description: "Celine女鞋天猫官方旗舰店" },
+          { name: "Bottega Veneta女鞋", url: "https://s.taobao.com/search?q=Bottega%20Veneta%E5%A5%B3%E9%9E%8B", description: "Bottega Veneta女鞋天猫官方旗舰店" },
+          { name: "Loewe女鞋", url: "https://s.taobao.com/search?q=Loewe%E5%A5%B3%E9%9E%8B", description: "Loewe女鞋天猫官方旗舰店" },
+          { name: "Givenchy女鞋", url: "https://s.taobao.com/search?q=Givenchy%E5%A5%B3%E9%9E%8B", description: "Givenchy女鞋天猫官方旗舰店" },
+          { name: "Fendi女鞋", url: "https://s.taobao.com/search?q=Fendi%E5%A5%B3%E9%9E%8B", description: "Fendi女鞋天猫官方旗舰店" },
+          { name: "Miu Miu女鞋", url: "https://s.taobao.com/search?q=Miu%20Miu%E5%A5%B3%E9%9E%8B", description: "Miu Miu女鞋天猫官方旗舰店" },
+          { name: "Valentino女鞋", url: "https://s.taobao.com/search?q=Valentino%E5%A5%B3%E9%9E%8B", description: "Valentino女鞋天猫官方旗舰店" },
+          { name: "YSL女鞋", url: "https://s.taobao.com/search?q=YSL%E5%A5%B3%E9%9E%8B", description: "YSL女鞋天猫官方旗舰店" },
+          { name: "Balenciaga女鞋", url: "https://s.taobao.com/search?q=Balenciaga%E5%A5%B3%E9%9E%8B", description: "Balenciaga女鞋天猫官方旗舰店" },
+          { name: "Alexander McQueen女鞋", url: "https://s.taobao.com/search?q=Alexander%20McQueen%E5%A5%B3%E9%9E%8B", description: "Alexander McQueen女鞋天猫官方旗舰店" },
+          { name: "Stella McCartney女鞋", url: "https://s.taobao.com/search?q=Stella%20McCartney%E5%A5%B3%E9%9E%8B", description: "Stella McCartney女鞋天猫官方旗舰店" },
+          { name: "Jimmy Choo女鞋", url: "https://s.taobao.com/search?q=Jimmy%20Choo%E5%A5%B3%E9%9E%8B", description: "Jimmy Choo女鞋天猫官方旗舰店" },
+          { name: "Manolo Blahnik女鞋", url: "https://s.taobao.com/search?q=Manolo%20Blahnik%E5%A5%B3%E9%9E%8B", description: "Manolo Blahnik女鞋天猫官方旗舰店" },
+          { name: "Christian Louboutin女鞋", url: "https://s.taobao.com/search?q=Christian%20Louboutin%E5%A5%B3%E9%9E%8B", description: "Christian Louboutin女鞋天猫官方旗舰店" },
+          { name: "Roger Vivier女鞋", url: "https://s.taobao.com/search?q=Roger%20Vivier%E5%A5%B3%E9%9E%8B", description: "Roger Vivier女鞋天猫官方旗舰店" },
+          { name: "Salvatore Ferragamo女鞋", url: "https://s.taobao.com/search?q=Salvatore%20Ferragamo%E5%A5%B3%E9%9E%8B", description: "Salvatore Ferragamo女鞋天猫官方旗舰店" },
+          { name: "Tod's女鞋", url: "https://s.taobao.com/search?q=Tod's%E5%A5%B3%E9%9E%8B", description: "Tod's女鞋天猫官方旗舰店" },
+          { name: "Bally女鞋", url: "https://s.taobao.com/search?q=Bally%E5%A5%B3%E9%9E%8B", description: "Bally女鞋天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "美妆护肤",
+        enName: "美妆护肤",
+        links: [
+          { name: "兰蔻美妆", url: "https://s.taobao.com/search?q=%E5%85%B0%E8%94%BB%E7%BE%8E%E5%A6%86", description: "兰蔻美妆天猫官方旗舰店" },
+          { name: "雅诗兰黛美妆", url: "https://s.taobao.com/search?q=%E9%9B%85%E8%AF%97%E5%85%B0%E9%BB%9B%E7%BE%8E%E5%A6%86", description: "雅诗兰黛美妆天猫官方旗舰店" },
+          { name: "资生堂美妆", url: "https://s.taobao.com/search?q=%E8%B5%84%E7%94%9F%E5%A0%82%E7%BE%8E%E5%A6%86", description: "资生堂美妆天猫官方旗舰店" },
+          { name: "SK-II美妆", url: "https://s.taobao.com/search?q=SK-II%E7%BE%8E%E5%A6%86", description: "SK-II美妆天猫官方旗舰店" },
+          { name: "欧莱雅美妆", url: "https://s.taobao.com/search?q=%E6%AC%A7%E8%8E%B1%E9%9B%85%E7%BE%8E%E5%A6%86", description: "欧莱雅美妆天猫官方旗舰店" },
+          { name: "玉兰油美妆", url: "https://s.taobao.com/search?q=%E7%8E%89%E5%85%B0%E6%B2%B9%E7%BE%8E%E5%A6%86", description: "玉兰油美妆天猫官方旗舰店" },
+          { name: "佰草集美妆", url: "https://s.taobao.com/search?q=%E4%BD%B0%E8%8D%89%E9%9B%86%E7%BE%8E%E5%A6%86", description: "佰草集美妆天猫官方旗舰店" },
+          { name: "自然堂美妆", url: "https://s.taobao.com/search?q=%E8%87%AA%E7%84%B6%E5%A0%82%E7%BE%8E%E5%A6%86", description: "自然堂美妆天猫官方旗舰店" },
+          { name: "珀莱雅美妆", url: "https://s.taobao.com/search?q=%E7%8F%80%E8%8E%B1%E9%9B%85%E7%BE%8E%E5%A6%86", description: "珀莱雅美妆天猫官方旗舰店" },
+          { name: "丸美美妆", url: "https://s.taobao.com/search?q=%E4%B8%B8%E7%BE%8E%E7%BE%8E%E5%A6%86", description: "丸美美妆天猫官方旗舰店" },
+          { name: "韩束美妆", url: "https://s.taobao.com/search?q=%E9%9F%A9%E6%9D%9F%E7%BE%8E%E5%A6%86", description: "韩束美妆天猫官方旗舰店" },
+          { name: "一叶子美妆", url: "https://s.taobao.com/search?q=%E4%B8%80%E5%8F%B6%E5%AD%90%E7%BE%8E%E5%A6%86", description: "一叶子美妆天猫官方旗舰店" },
+          { name: "膜法世家美妆", url: "https://s.taobao.com/search?q=%E8%86%9C%E6%B3%95%E4%B8%96%E5%AE%B6%E7%BE%8E%E5%A6%86", description: "膜法世家美妆天猫官方旗舰店" },
+          { name: "御泥坊美妆", url: "https://s.taobao.com/search?q=%E5%BE%A1%E6%B3%A5%E5%9D%8A%E7%BE%8E%E5%A6%86", description: "御泥坊美妆天猫官方旗舰店" },
+          { name: "百雀羚美妆", url: "https://s.taobao.com/search?q=%E7%99%BE%E9%9B%80%E7%BE%9A%E7%BE%8E%E5%A6%86", description: "百雀羚美妆天猫官方旗舰店" },
+          { name: "大宝美妆", url: "https://s.taobao.com/search?q=%E5%A4%A7%E5%AE%9D%E7%BE%8E%E5%A6%86", description: "大宝美妆天猫官方旗舰店" },
+          { name: "美加净美妆", url: "https://s.taobao.com/search?q=%E7%BE%8E%E5%8A%A0%E5%87%80%E7%BE%8E%E5%A6%86", description: "美加净美妆天猫官方旗舰店" },
+          { name: "相宜本草美妆", url: "https://s.taobao.com/search?q=%E7%9B%B8%E5%AE%9C%E6%9C%AC%E8%8D%89%E7%BE%8E%E5%A6%86", description: "相宜本草美妆天猫官方旗舰店" },
+          { name: "卡姿兰美妆", url: "https://s.taobao.com/search?q=%E5%8D%A1%E5%A7%BF%E5%85%B0%E7%BE%8E%E5%A6%86", description: "卡姿兰美妆天猫官方旗舰店" },
+          { name: "玛丽黛佳美妆", url: "https://s.taobao.com/search?q=%E7%8E%9B%E4%B8%BD%E9%BB%9B%E4%BD%B3%E7%BE%8E%E5%A6%86", description: "玛丽黛佳美妆天猫官方旗舰店" },
+          { name: "完美日记美妆", url: "https://s.taobao.com/search?q=%E5%AE%8C%E7%BE%8E%E6%97%A5%E8%AE%B0%E7%BE%8E%E5%A6%86", description: "完美日记美妆天猫官方旗舰店" },
+          { name: "花西子美妆", url: "https://s.taobao.com/search?q=%E8%8A%B1%E8%A5%BF%E5%AD%90%E7%BE%8E%E5%A6%86", description: "花西子美妆天猫官方旗舰店" },
+          { name: "橘朵美妆", url: "https://s.taobao.com/search?q=%E6%A9%98%E6%9C%B5%E7%BE%8E%E5%A6%86", description: "橘朵美妆天猫官方旗舰店" },
+          { name: "colorkey美妆", url: "https://s.taobao.com/search?q=colorkey%E7%BE%8E%E5%A6%86", description: "colorkey美妆天猫官方旗舰店" },
+          { name: "酵色美妆", url: "https://s.taobao.com/search?q=%E9%85%B5%E8%89%B2%E7%BE%8E%E5%A6%86", description: "酵色美妆天猫官方旗舰店" },
+          { name: "3CE美妆", url: "https://s.taobao.com/search?q=3CE%E7%BE%8E%E5%A6%86", description: "3CE美妆天猫官方旗舰店" },
+          { name: "MAC美妆", url: "https://s.taobao.com/search?q=MAC%E7%BE%8E%E5%A6%86", description: "MAC美妆天猫官方旗舰店" },
+          { name: "YSL美妆", url: "https://s.taobao.com/search?q=YSL%E7%BE%8E%E5%A6%86", description: "YSL美妆天猫官方旗舰店" },
+          { name: "Dior美妆", url: "https://s.taobao.com/search?q=Dior%E7%BE%8E%E5%A6%86", description: "Dior美妆天猫官方旗舰店" },
+          { name: "Chanel美妆", url: "https://s.taobao.com/search?q=Chanel%E7%BE%8E%E5%A6%86", description: "Chanel美妆天猫官方旗舰店" },
+          { name: "Armani美妆", url: "https://s.taobao.com/search?q=Armani%E7%BE%8E%E5%A6%86", description: "Armani美妆天猫官方旗舰店" },
+          { name: "Givenchy美妆", url: "https://s.taobao.com/search?q=Givenchy%E7%BE%8E%E5%A6%86", description: "Givenchy美妆天猫官方旗舰店" },
+          { name: "Gucci美妆", url: "https://s.taobao.com/search?q=Gucci%E7%BE%8E%E5%A6%86", description: "Gucci美妆天猫官方旗舰店" },
+          { name: "Burberry美妆", url: "https://s.taobao.com/search?q=Burberry%E7%BE%8E%E5%A6%86", description: "Burberry美妆天猫官方旗舰店" },
+          { name: "Hermes美妆", url: "https://s.taobao.com/search?q=Hermes%E7%BE%8E%E5%A6%86", description: "Hermes美妆天猫官方旗舰店" },
+          { name: "Tom Ford美妆", url: "https://s.taobao.com/search?q=Tom%20Ford%E7%BE%8E%E5%A6%86", description: "Tom Ford美妆天猫官方旗舰店" },
+          { name: "NARS美妆", url: "https://s.taobao.com/search?q=NARS%E7%BE%8E%E5%A6%86", description: "NARS美妆天猫官方旗舰店" },
+          { name: "Bobbi Brown美妆", url: "https://s.taobao.com/search?q=Bobbi%20Brown%E7%BE%8E%E5%A6%86", description: "Bobbi Brown美妆天猫官方旗舰店" },
+          { name: "Clinique美妆", url: "https://s.taobao.com/search?q=Clinique%E7%BE%8E%E5%A6%86", description: "Clinique美妆天猫官方旗舰店" },
+          { name: "La Mer美妆", url: "https://s.taobao.com/search?q=La%20Mer%E7%BE%8E%E5%A6%86", description: "La Mer美妆天猫官方旗舰店" },
+          { name: "La Prairie美妆", url: "https://s.taobao.com/search?q=La%20Prairie%E7%BE%8E%E5%A6%86", description: "La Prairie美妆天猫官方旗舰店" },
+          { name: "Sisley美妆", url: "https://s.taobao.com/search?q=Sisley%E7%BE%8E%E5%A6%86", description: "Sisley美妆天猫官方旗舰店" },
+          { name: "Guerlain美妆", url: "https://s.taobao.com/search?q=Guerlain%E7%BE%8E%E5%A6%86", description: "Guerlain美妆天猫官方旗舰店" },
+          { name: "后美妆", url: "https://s.taobao.com/search?q=%E5%90%8E%E7%BE%8E%E5%A6%86", description: "后美妆天猫官方旗舰店" },
+          { name: "雪花秀美妆", url: "https://s.taobao.com/search?q=%E9%9B%AA%E8%8A%B1%E7%A7%80%E7%BE%8E%E5%A6%86", description: "雪花秀美妆天猫官方旗舰店" },
+          { name: "兰芝美妆", url: "https://s.taobao.com/search?q=%E5%85%B0%E8%8A%9D%E7%BE%8E%E5%A6%86", description: "兰芝美妆天猫官方旗舰店" },
+          { name: "悦诗风吟美妆", url: "https://s.taobao.com/search?q=%E6%82%A6%E8%AF%97%E9%A3%8E%E5%90%9F%E7%BE%8E%E5%A6%86", description: "悦诗风吟美妆天猫官方旗舰店" },
+          { name: "伊蒂之屋美妆", url: "https://s.taobao.com/search?q=%E4%BC%8A%E8%92%82%E4%B9%8B%E5%B1%8B%E7%BE%8E%E5%A6%86", description: "伊蒂之屋美妆天猫官方旗舰店" },
+          { name: "爱丽小屋美妆", url: "https://s.taobao.com/search?q=%E7%88%B1%E4%B8%BD%E5%B0%8F%E5%B1%8B%E7%BE%8E%E5%A6%86", description: "爱丽小屋美妆天猫官方旗舰店" },
+          { name: "梦妆美妆", url: "https://s.taobao.com/search?q=%E6%A2%A6%E5%A6%86%E7%BE%8E%E5%A6%86", description: "梦妆美妆天猫官方旗舰店" },
+          { name: "菲诗小铺美妆", url: "https://s.taobao.com/search?q=%E8%8F%B2%E8%AF%97%E5%B0%8F%E9%93%BA%E7%BE%8E%E5%A6%86", description: "菲诗小铺美妆天猫官方旗舰店" },
+          { name: "谜尚美妆", url: "https://s.taobao.com/search?q=%E8%B0%9C%E5%B0%9A%E7%BE%8E%E5%A6%86", description: "谜尚美妆天猫官方旗舰店" },
+          { name: "Skin79美妆", url: "https://s.taobao.com/search?q=Skin79%E7%BE%8E%E5%A6%86", description: "Skin79美妆天猫官方旗舰店" },
+          { name: "芭妮兰美妆", url: "https://s.taobao.com/search?q=%E8%8A%AD%E5%A6%AE%E5%85%B0%E7%BE%8E%E5%A6%86", description: "芭妮兰美妆天猫官方旗舰店" },
+          { name: "得鲜美妆", url: "https://s.taobao.com/search?q=%E5%BE%97%E9%B2%9C%E7%BE%8E%E5%A6%86", description: "得鲜美妆天猫官方旗舰店" },
+          { name: "珂莱欧美妆", url: "https://s.taobao.com/search?q=%E7%8F%82%E8%8E%B1%E6%AC%A7%E7%BE%8E%E5%A6%86", description: "珂莱欧美妆天猫官方旗舰店" },
+          { name: "雅漾美妆", url: "https://s.taobao.com/search?q=%E9%9B%85%E6%BC%BE%E7%BE%8E%E5%A6%86", description: "雅漾美妆天猫官方旗舰店" },
+          { name: "理肤泉美妆", url: "https://s.taobao.com/search?q=%E7%90%86%E8%82%A4%E6%B3%89%E7%BE%8E%E5%A6%86", description: "理肤泉美妆天猫官方旗舰店" },
+          { name: "薇姿美妆", url: "https://s.taobao.com/search?q=%E8%96%87%E5%A7%BF%E7%BE%8E%E5%A6%86", description: "薇姿美妆天猫官方旗舰店" },
+          { name: "修丽可美妆", url: "https://s.taobao.com/search?q=%E4%BF%AE%E4%B8%BD%E5%8F%AF%E7%BE%8E%E5%A6%86", description: "修丽可美妆天猫官方旗舰店" },
+          { name: "杜克美妆", url: "https://s.taobao.com/search?q=%E6%9D%9C%E5%85%8B%E7%BE%8E%E5%A6%86", description: "杜克美妆天猫官方旗舰店" },
+          { name: "欧缇丽美妆", url: "https://s.taobao.com/search?q=%E6%AC%A7%E7%BC%87%E4%B8%BD%E7%BE%8E%E5%A6%86", description: "欧缇丽美妆天猫官方旗舰店" },
+          { name: "欧树美妆", url: "https://s.taobao.com/search?q=%E6%AC%A7%E6%A0%91%E7%BE%8E%E5%A6%86", description: "欧树美妆天猫官方旗舰店" },
+          { name: "贝德玛美妆", url: "https://s.taobao.com/search?q=%E8%B4%9D%E5%BE%B7%E7%8E%9B%E7%BE%8E%E5%A6%86", description: "贝德玛美妆天猫官方旗舰店" },
+          { name: "依泉美妆", url: "https://s.taobao.com/search?q=%E4%BE%9D%E6%B3%89%E7%BE%8E%E5%A6%86", description: "依泉美妆天猫官方旗舰店" },
+          { name: "娇韵诗美妆", url: "https://s.taobao.com/search?q=%E5%A8%87%E9%9F%B5%E8%AF%97%E7%BE%8E%E5%A6%86", description: "娇韵诗美妆天猫官方旗舰店" },
+          { name: "娇兰美妆", url: "https://s.taobao.com/search?q=%E5%A8%87%E5%85%B0%E7%BE%8E%E5%A6%86", description: "娇兰美妆天猫官方旗舰店" },
+          { name: "希思黎美妆", url: "https://s.taobao.com/search?q=%E5%B8%8C%E6%80%9D%E9%BB%8E%E7%BE%8E%E5%A6%86", description: "希思黎美妆天猫官方旗舰店" },
+          { name: "赫莲娜美妆", url: "https://s.taobao.com/search?q=%E8%B5%AB%E8%8E%B2%E5%A8%9C%E7%BE%8E%E5%A6%86", description: "赫莲娜美妆天猫官方旗舰店" },
+          { name: "莱珀妮美妆", url: "https://s.taobao.com/search?q=%E8%8E%B1%E7%8F%80%E5%A6%AE%E7%BE%8E%E5%A6%86", description: "莱珀妮美妆天猫官方旗舰店" },
+          { name: "法尔曼美妆", url: "https://s.taobao.com/search?q=%E6%B3%95%E5%B0%94%E6%9B%BC%E7%BE%8E%E5%A6%86", description: "法尔曼美妆天猫官方旗舰店" },
+          { name: "瑞妍美妆", url: "https://s.taobao.com/search?q=%E7%91%9E%E5%A6%8D%E7%BE%8E%E5%A6%86", description: "瑞妍美妆天猫官方旗舰店" },
+          { name: "黛珂美妆", url: "https://s.taobao.com/search?q=%E9%BB%9B%E7%8F%82%E7%BE%8E%E5%A6%86", description: "黛珂美妆天猫官方旗舰店" },
+          { name: "CPB美妆", url: "https://s.taobao.com/search?q=CPB%E7%BE%8E%E5%A6%86", description: "CPB美妆天猫官方旗舰店" },
+          { name: "茵芙莎美妆", url: "https://s.taobao.com/search?q=%E8%8C%B5%E8%8A%99%E8%8E%8E%E7%BE%8E%E5%A6%86", description: "茵芙莎美妆天猫官方旗舰店" },
+          { name: "奥尔滨美妆", url: "https://s.taobao.com/search?q=%E5%A5%A5%E5%B0%94%E6%BB%A8%E7%BE%8E%E5%A6%86", description: "奥尔滨美妆天猫官方旗舰店" },
+          { name: "Three美妆", url: "https://s.taobao.com/search?q=Three%E7%BE%8E%E5%A6%86", description: "Three美妆天猫官方旗舰店" },
+          { name: "HABA美妆", url: "https://s.taobao.com/search?q=HABA%E7%BE%8E%E5%A6%86", description: "HABA美妆天猫官方旗舰店" },
+          { name: "FANCL美妆", url: "https://s.taobao.com/search?q=FANCL%E7%BE%8E%E5%A6%86", description: "FANCL美妆天猫官方旗舰店" },
+          { name: "DHC美妆", url: "https://s.taobao.com/search?q=DHC%E7%BE%8E%E5%A6%86", description: "DHC美妆天猫官方旗舰店" },
+          { name: "高丝美妆", url: "https://s.taobao.com/search?q=%E9%AB%98%E4%B8%9D%E7%BE%8E%E5%A6%86", description: "高丝美妆天猫官方旗舰店" },
+          { name: "佳丽宝美妆", url: "https://s.taobao.com/search?q=%E4%BD%B3%E4%B8%BD%E5%AE%9D%E7%BE%8E%E5%A6%86", description: "佳丽宝美妆天猫官方旗舰店" },
+          { name: "苏菲娜美妆", url: "https://s.taobao.com/search?q=%E8%8B%8F%E8%8F%B2%E5%A8%9C%E7%BE%8E%E5%A6%86", description: "苏菲娜美妆天猫官方旗舰店" },
+          { name: "花王美妆", url: "https://s.taobao.com/search?q=%E8%8A%B1%E7%8E%8B%E7%BE%8E%E5%A6%86", description: "花王美妆天猫官方旗舰店" },
+          { name: "乐敦美妆", url: "https://s.taobao.com/search?q=%E4%B9%90%E6%95%A6%E7%BE%8E%E5%A6%86", description: "乐敦美妆天猫官方旗舰店" },
+          { name: "曼秀雷敦美妆", url: "https://s.taobao.com/search?q=%E6%9B%BC%E7%A7%80%E9%9B%B7%E6%95%A6%E7%BE%8E%E5%A6%86", description: "曼秀雷敦美妆天猫官方旗舰店" },
+          { name: "妮维雅美妆", url: "https://s.taobao.com/search?q=%E5%A6%AE%E7%BB%B4%E9%9B%85%E7%BE%8E%E5%A6%86", description: "妮维雅美妆天猫官方旗舰店" },
+          { name: "多芬美妆", url: "https://s.taobao.com/search?q=%E5%A4%9A%E8%8A%AC%E7%BE%8E%E5%A6%86", description: "多芬美妆天猫官方旗舰店" },
+          { name: "清扬美妆", url: "https://s.taobao.com/search?q=%E6%B8%85%E6%89%AC%E7%BE%8E%E5%A6%86", description: "清扬美妆天猫官方旗舰店" },
+          { name: "力士美妆", url: "https://s.taobao.com/search?q=%E5%8A%9B%E5%A3%AB%E7%BE%8E%E5%A6%86", description: "力士美妆天猫官方旗舰店" },
+          { name: "夏士莲美妆", url: "https://s.taobao.com/search?q=%E5%A4%8F%E5%A3%AB%E8%8E%B2%E7%BE%8E%E5%A6%86", description: "夏士莲美妆天猫官方旗舰店" },
+          { name: "旁氏美妆", url: "https://s.taobao.com/search?q=%E6%97%81%E6%B0%8F%E7%BE%8E%E5%A6%86", description: "旁氏美妆天猫官方旗舰店" },
+          { name: "凡士林美妆", url: "https://s.taobao.com/search?q=%E5%87%A1%E5%A3%AB%E6%9E%97%E7%BE%8E%E5%A6%86", description: "凡士林美妆天猫官方旗舰店" },
+          { name: "强生美妆", url: "https://s.taobao.com/search?q=%E5%BC%BA%E7%94%9F%E7%BE%8E%E5%A6%86", description: "强生美妆天猫官方旗舰店" },
+          { name: "露得清美妆", url: "https://s.taobao.com/search?q=%E9%9C%B2%E5%BE%97%E6%B8%85%E7%BE%8E%E5%A6%86", description: "露得清美妆天猫官方旗舰店" },
+          { name: "可伶可俐美妆", url: "https://s.taobao.com/search?q=%E5%8F%AF%E4%BC%B6%E5%8F%AF%E4%BF%90%E7%BE%8E%E5%A6%86", description: "可伶可俐美妆天猫官方旗舰店" },
+          { name: "碧柔美妆", url: "https://s.taobao.com/search?q=%E7%A2%A7%E6%9F%94%E7%BE%8E%E5%A6%86", description: "碧柔美妆天猫官方旗舰店" },
+          { name: "蜜妮美妆", url: "https://s.taobao.com/search?q=%E8%9C%9C%E5%A6%AE%E7%BE%8E%E5%A6%86", description: "蜜妮美妆天猫官方旗舰店" },
+          { name: "娜丽丝美妆", url: "https://s.taobao.com/search?q=%E5%A8%9C%E4%B8%BD%E4%B8%9D%E7%BE%8E%E5%A6%86", description: "娜丽丝美妆天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "珠宝配饰",
+        enName: "珠宝配饰",
+        links: [
+          { name: "周大福珠宝", url: "https://s.taobao.com/search?q=%E5%91%A8%E5%A4%A7%E7%A6%8F%E7%8F%A0%E5%AE%9D", description: "周大福珠宝天猫官方旗舰店" },
+          { name: "周生生珠宝", url: "https://s.taobao.com/search?q=%E5%91%A8%E7%94%9F%E7%94%9F%E7%8F%A0%E5%AE%9D", description: "周生生珠宝天猫官方旗舰店" },
+          { name: "六福珠宝", url: "https://s.taobao.com/search?q=%E5%85%AD%E7%A6%8F%E7%8F%A0%E5%AE%9D", description: "六福珠宝天猫官方旗舰店" },
+          { name: "老凤祥珠宝", url: "https://s.taobao.com/search?q=%E8%80%81%E5%87%A4%E7%A5%A5%E7%8F%A0%E5%AE%9D", description: "老凤祥珠宝天猫官方旗舰店" },
+          { name: "老庙珠宝", url: "https://s.taobao.com/search?q=%E8%80%81%E5%BA%99%E7%8F%A0%E5%AE%9D", description: "老庙珠宝天猫官方旗舰店" },
+          { name: "菜百珠宝", url: "https://s.taobao.com/search?q=%E8%8F%9C%E7%99%BE%E7%8F%A0%E5%AE%9D", description: "菜百珠宝天猫官方旗舰店" },
+          { name: "中国黄金珠宝", url: "https://s.taobao.com/search?q=%E4%B8%AD%E5%9B%BD%E9%BB%84%E9%87%91%E7%8F%A0%E5%AE%9D", description: "中国黄金珠宝天猫官方旗舰店" },
+          { name: "周大生珠宝", url: "https://s.taobao.com/search?q=%E5%91%A8%E5%A4%A7%E7%94%9F%E7%8F%A0%E5%AE%9D", description: "周大生珠宝天猫官方旗舰店" },
+          { name: "明牌珠宝", url: "https://s.taobao.com/search?q=%E6%98%8E%E7%89%8C%E7%8F%A0%E5%AE%9D", description: "明牌珠宝天猫官方旗舰店" },
+          { name: "萃华珠宝", url: "https://s.taobao.com/search?q=%E8%90%83%E5%8D%8E%E7%8F%A0%E5%AE%9D", description: "萃华珠宝天猫官方旗舰店" },
+          { name: "百泰珠宝", url: "https://s.taobao.com/search?q=%E7%99%BE%E6%B3%B0%E7%8F%A0%E5%AE%9D", description: "百泰珠宝天猫官方旗舰店" },
+          { name: "隆进珠宝", url: "https://s.taobao.com/search?q=%E9%9A%86%E8%BF%9B%E7%8F%A0%E5%AE%9D", description: "隆进珠宝天猫官方旗舰店" },
+          { name: "爱得康珠宝", url: "https://s.taobao.com/search?q=%E7%88%B1%E5%BE%97%E5%BA%B7%E7%8F%A0%E5%AE%9D", description: "爱得康珠宝天猫官方旗舰店" },
+          { name: "吉盟珠宝", url: "https://s.taobao.com/search?q=%E5%90%89%E7%9B%9F%E7%8F%A0%E5%AE%9D", description: "吉盟珠宝天猫官方旗舰店" },
+          { name: "星光达珠宝", url: "https://s.taobao.com/search?q=%E6%98%9F%E5%85%89%E8%BE%BE%E7%8F%A0%E5%AE%9D", description: "星光达珠宝天猫官方旗舰店" },
+          { name: "宝怡珠宝", url: "https://s.taobao.com/search?q=%E5%AE%9D%E6%80%A1%E7%8F%A0%E5%AE%9D", description: "宝怡珠宝天猫官方旗舰店" },
+          { name: "缘与美珠宝", url: "https://s.taobao.com/search?q=%E7%BC%98%E4%B8%8E%E7%BE%8E%E7%8F%A0%E5%AE%9D", description: "缘与美珠宝天猫官方旗舰店" },
+          { name: "钻之韵珠宝", url: "https://s.taobao.com/search?q=%E9%92%BB%E4%B9%8B%E9%9F%B5%E7%8F%A0%E5%AE%9D", description: "钻之韵珠宝天猫官方旗舰店" },
+          { name: "凯恩特珠宝", url: "https://s.taobao.com/search?q=%E5%87%AF%E6%81%A9%E7%89%B9%E7%8F%A0%E5%AE%9D", description: "凯恩特珠宝天猫官方旗舰店" },
+          { name: "恒达福珠宝", url: "https://s.taobao.com/search?q=%E6%81%92%E8%BE%BE%E7%A6%8F%E7%8F%A0%E5%AE%9D", description: "恒达福珠宝天猫官方旗舰店" },
+          { name: "千禧之星珠宝", url: "https://s.taobao.com/search?q=%E5%8D%83%E7%A6%A7%E4%B9%8B%E6%98%9F%E7%8F%A0%E5%AE%9D", description: "千禧之星珠宝天猫官方旗舰店" },
+          { name: "潮宏基珠宝", url: "https://s.taobao.com/search?q=%E6%BD%AE%E5%AE%8F%E5%9F%BA%E7%8F%A0%E5%AE%9D", description: "潮宏基珠宝天猫官方旗舰店" },
+          { name: "谢瑞麟珠宝", url: "https://s.taobao.com/search?q=%E8%B0%A2%E7%91%9E%E9%BA%9F%E7%8F%A0%E5%AE%9D", description: "谢瑞麟珠宝天猫官方旗舰店" },
+          { name: "通灵珠宝", url: "https://s.taobao.com/search?q=%E9%80%9A%E7%81%B5%E7%8F%A0%E5%AE%9D", description: "通灵珠宝天猫官方旗舰店" },
+          { name: "I Do珠宝", url: "https://s.taobao.com/search?q=I%20Do%E7%8F%A0%E5%AE%9D", description: "I Do珠宝天猫官方旗舰店" },
+          { name: "DR珠宝", url: "https://s.taobao.com/search?q=DR%E7%8F%A0%E5%AE%9D", description: "DR珠宝天猫官方旗舰店" },
+          { name: "钻石小鸟珠宝", url: "https://s.taobao.com/search?q=%E9%92%BB%E7%9F%B3%E5%B0%8F%E9%B8%9F%E7%8F%A0%E5%AE%9D", description: "钻石小鸟珠宝天猫官方旗舰店" },
+          { name: "珂兰珠宝", url: "https://s.taobao.com/search?q=%E7%8F%82%E5%85%B0%E7%8F%A0%E5%AE%9D", description: "珂兰珠宝天猫官方旗舰店" },
+          { name: "佐卡伊珠宝", url: "https://s.taobao.com/search?q=%E4%BD%90%E5%8D%A1%E4%BC%8A%E7%8F%A0%E5%AE%9D", description: "佐卡伊珠宝天猫官方旗舰店" },
+          { name: "喜钻珠宝", url: "https://s.taobao.com/search?q=%E5%96%9C%E9%92%BB%E7%8F%A0%E5%AE%9D", description: "喜钻珠宝天猫官方旗舰店" },
+          { name: "戴瑞珠宝", url: "https://s.taobao.com/search?q=%E6%88%B4%E7%91%9E%E7%8F%A0%E5%AE%9D", description: "戴瑞珠宝天猫官方旗舰店" },
+          { name: "宝格丽珠宝", url: "https://s.taobao.com/search?q=%E5%AE%9D%E6%A0%BC%E4%B8%BD%E7%8F%A0%E5%AE%9D", description: "宝格丽珠宝天猫官方旗舰店" },
+          { name: "卡地亚珠宝", url: "https://s.taobao.com/search?q=%E5%8D%A1%E5%9C%B0%E4%BA%9A%E7%8F%A0%E5%AE%9D", description: "卡地亚珠宝天猫官方旗舰店" },
+          { name: "蒂芙尼珠宝", url: "https://s.taobao.com/search?q=%E8%92%82%E8%8A%99%E5%B0%BC%E7%8F%A0%E5%AE%9D", description: "蒂芙尼珠宝天猫官方旗舰店" },
+          { name: "梵克雅宝珠宝", url: "https://s.taobao.com/search?q=%E6%A2%B5%E5%85%8B%E9%9B%85%E5%AE%9D%E7%8F%A0%E5%AE%9D", description: "梵克雅宝珠宝天猫官方旗舰店" },
+          { name: "海瑞温斯顿珠宝", url: "https://s.taobao.com/search?q=%E6%B5%B7%E7%91%9E%E6%B8%A9%E6%96%AF%E9%A1%BF%E7%8F%A0%E5%AE%9D", description: "海瑞温斯顿珠宝天猫官方旗舰店" },
+          { name: "宝诗龙珠宝", url: "https://s.taobao.com/search?q=%E5%AE%9D%E8%AF%97%E9%BE%99%E7%8F%A0%E5%AE%9D", description: "宝诗龙珠宝天猫官方旗舰店" },
+          { name: "尚美巴黎珠宝", url: "https://s.taobao.com/search?q=%E5%B0%9A%E7%BE%8E%E5%B7%B4%E9%BB%8E%E7%8F%A0%E5%AE%9D", description: "尚美巴黎珠宝天猫官方旗舰店" },
+          { name: "伯爵珠宝", url: "https://s.taobao.com/search?q=%E4%BC%AF%E7%88%B5%E7%8F%A0%E5%AE%9D", description: "伯爵珠宝天猫官方旗舰店" },
+          { name: "萧邦珠宝", url: "https://s.taobao.com/search?q=%E8%90%A7%E9%82%A6%E7%8F%A0%E5%AE%9D", description: "萧邦珠宝天猫官方旗舰店" },
+          { name: "积家珠宝", url: "https://s.taobao.com/search?q=%E7%A7%AF%E5%AE%B6%E7%8F%A0%E5%AE%9D", description: "积家珠宝天猫官方旗舰店" },
+          { name: "万国珠宝", url: "https://s.taobao.com/search?q=%E4%B8%87%E5%9B%BD%E7%8F%A0%E5%AE%9D", description: "万国珠宝天猫官方旗舰店" },
+          { name: "劳力士珠宝", url: "https://s.taobao.com/search?q=%E5%8A%B3%E5%8A%9B%E5%A3%AB%E7%8F%A0%E5%AE%9D", description: "劳力士珠宝天猫官方旗舰店" },
+          { name: "欧米茄珠宝", url: "https://s.taobao.com/search?q=%E6%AC%A7%E7%B1%B3%E8%8C%84%E7%8F%A0%E5%AE%9D", description: "欧米茄珠宝天猫官方旗舰店" },
+          { name: "浪琴珠宝", url: "https://s.taobao.com/search?q=%E6%B5%AA%E7%90%B4%E7%8F%A0%E5%AE%9D", description: "浪琴珠宝天猫官方旗舰店" },
+          { name: "天梭珠宝", url: "https://s.taobao.com/search?q=%E5%A4%A9%E6%A2%AD%E7%8F%A0%E5%AE%9D", description: "天梭珠宝天猫官方旗舰店" },
+          { name: "美度珠宝", url: "https://s.taobao.com/search?q=%E7%BE%8E%E5%BA%A6%E7%8F%A0%E5%AE%9D", description: "美度珠宝天猫官方旗舰店" },
+          { name: "汉米尔顿珠宝", url: "https://s.taobao.com/search?q=%E6%B1%89%E7%B1%B3%E5%B0%94%E9%A1%BF%E7%8F%A0%E5%AE%9D", description: "汉米尔顿珠宝天猫官方旗舰店" },
+          { name: "精工珠宝", url: "https://s.taobao.com/search?q=%E7%B2%BE%E5%B7%A5%E7%8F%A0%E5%AE%9D", description: "精工珠宝天猫官方旗舰店" },
+          { name: "西铁城珠宝", url: "https://s.taobao.com/search?q=%E8%A5%BF%E9%93%81%E5%9F%8E%E7%8F%A0%E5%AE%9D", description: "西铁城珠宝天猫官方旗舰店" },
+          { name: "卡西欧珠宝", url: "https://s.taobao.com/search?q=%E5%8D%A1%E8%A5%BF%E6%AC%A7%E7%8F%A0%E5%AE%9D", description: "卡西欧珠宝天猫官方旗舰店" },
+          { name: "斯沃琪珠宝", url: "https://s.taobao.com/search?q=%E6%96%AF%E6%B2%83%E7%90%AA%E7%8F%A0%E5%AE%9D", description: "斯沃琪珠宝天猫官方旗舰店" },
+          { name: "APM Monaco珠宝", url: "https://s.taobao.com/search?q=APM%20Monaco%E7%8F%A0%E5%AE%9D", description: "APM Monaco珠宝天猫官方旗舰店" },
+          { name: "Pandora珠宝", url: "https://s.taobao.com/search?q=Pandora%E7%8F%A0%E5%AE%9D", description: "Pandora珠宝天猫官方旗舰店" },
+          { name: "Swarovski珠宝", url: "https://s.taobao.com/search?q=Swarovski%E7%8F%A0%E5%AE%9D", description: "Swarovski珠宝天猫官方旗舰店" },
+          { name: "Thomas Sabo珠宝", url: "https://s.taobao.com/search?q=Thomas%20Sabo%E7%8F%A0%E5%AE%9D", description: "Thomas Sabo珠宝天猫官方旗舰店" },
+          { name: "Folli Follie珠宝", url: "https://s.taobao.com/search?q=Folli%20Follie%E7%8F%A0%E5%AE%9D", description: "Folli Follie珠宝天猫官方旗舰店" },
+          { name: "Links of London珠宝", url: "https://s.taobao.com/search?q=Links%20of%20London%E7%8F%A0%E5%AE%9D", description: "Links of London珠宝天猫官方旗舰店" },
+          { name: "Alex and Ani珠宝", url: "https://s.taobao.com/search?q=Alex%20and%20Ani%E7%8F%A0%E5%AE%9D", description: "Alex and Ani珠宝天猫官方旗舰店" },
+          { name: "Kendra Scott珠宝", url: "https://s.taobao.com/search?q=Kendra%20Scott%E7%8F%A0%E5%AE%9D", description: "Kendra Scott珠宝天猫官方旗舰店" },
+          { name: "Stella & Dot珠宝", url: "https://s.taobao.com/search?q=Stella%20%26%20Dot%E7%8F%A0%E5%AE%9D", description: "Stella & Dot珠宝天猫官方旗舰店" },
+          { name: "Silpada珠宝", url: "https://s.taobao.com/search?q=Silpada%E7%8F%A0%E5%AE%9D", description: "Silpada珠宝天猫官方旗舰店" },
+          { name: "Brighton珠宝", url: "https://s.taobao.com/search?q=Brighton%E7%8F%A0%E5%AE%9D", description: "Brighton珠宝天猫官方旗舰店" },
+          { name: "Lia Sophia珠宝", url: "https://s.taobao.com/search?q=Lia%20Sophia%E7%8F%A0%E5%AE%9D", description: "Lia Sophia珠宝天猫官方旗舰店" },
+          { name: "Premier Designs珠宝", url: "https://s.taobao.com/search?q=Premier%20Designs%E7%8F%A0%E5%AE%9D", description: "Premier Designs珠宝天猫官方旗舰店" },
+          { name: "Cookie Lee珠宝", url: "https://s.taobao.com/search?q=Cookie%20Lee%E7%8F%A0%E5%AE%9D", description: "Cookie Lee珠宝天猫官方旗舰店" },
+          { name: "Park Lane珠宝", url: "https://s.taobao.com/search?q=Park%20Lane%E7%8F%A0%E5%AE%9D", description: "Park Lane珠宝天猫官方旗舰店" },
+          { name: "Touchstone Crystal珠宝", url: "https://s.taobao.com/search?q=Touchstone%20Crystal%E7%8F%A0%E5%AE%9D", description: "Touchstone Crystal珠宝天猫官方旗舰店" },
+          { name: "Origami Owl珠宝", url: "https://s.taobao.com/search?q=Origami%20Owl%E7%8F%A0%E5%AE%9D", description: "Origami Owl珠宝天猫官方旗舰店" },
+          { name: "Chloe + Isabel珠宝", url: "https://s.taobao.com/search?q=Chloe%20%2B%20Isabel%E7%8F%A0%E5%AE%9D", description: "Chloe + Isabel珠宝天猫官方旗舰店" },
+        ]
+      },
+      {
+        name: "内衣泳装",
+        enName: "内衣泳装",
+        links: [
+          { name: "维多利亚的秘密泳装", url: "https://s.taobao.com/search?q=%E7%BB%B4%E5%A4%9A%E5%88%A9%E4%BA%9A%E7%9A%84%E7%A7%98%E5%AF%86%E6%B3%B3%E8%A3%85", description: "维多利亚的秘密泳装天猫官方旗舰店" },
+          { name: "PINK泳装", url: "https://s.taobao.com/search?q=PINK%E6%B3%B3%E8%A3%85", description: "PINK泳装天猫官方旗舰店" },
+          { name: "Agent Provocateur泳装", url: "https://s.taobao.com/search?q=Agent%20Provocateur%E6%B3%B3%E8%A3%85", description: "Agent Provocateur泳装天猫官方旗舰店" },
+          { name: "La Perla泳装", url: "https://s.taobao.com/search?q=La%20Perla%E6%B3%B3%E8%A3%85", description: "La Perla泳装天猫官方旗舰店" },
+          { name: "Wolford泳装", url: "https://s.taobao.com/search?q=Wolford%E6%B3%B3%E8%A3%85", description: "Wolford泳装天猫官方旗舰店" },
+          { name: "Falke泳装", url: "https://s.taobao.com/search?q=Falke%E6%B3%B3%E8%A3%85", description: "Falke泳装天猫官方旗舰店" },
+          { name: "Spanx泳装", url: "https://s.taobao.com/search?q=Spanx%E6%B3%B3%E8%A3%85", description: "Spanx泳装天猫官方旗舰店" },
+          { name: "Yummie泳装", url: "https://s.taobao.com/search?q=Yummie%E6%B3%B3%E8%A3%85", description: "Yummie泳装天猫官方旗舰店" },
+          { name: "Skims泳装", url: "https://s.taobao.com/search?q=Skims%E6%B3%B3%E8%A3%85", description: "Skims泳装天猫官方旗舰店" },
+          { name: "Knix泳装", url: "https://s.taobao.com/search?q=Knix%E6%B3%B3%E8%A3%85", description: "Knix泳装天猫官方旗舰店" },
+          { name: "Thinx泳装", url: "https://s.taobao.com/search?q=Thinx%E6%B3%B3%E8%A3%85", description: "Thinx泳装天猫官方旗舰店" },
+          { name: "Modibodi泳装", url: "https://s.taobao.com/search?q=Modibodi%E6%B3%B3%E8%A3%85", description: "Modibodi泳装天猫官方旗舰店" },
+          { name: "Saalt泳装", url: "https://s.taobao.com/search?q=Saalt%E6%B3%B3%E8%A3%85", description: "Saalt泳装天猫官方旗舰店" },
+          { name: "DivaCup泳装", url: "https://s.taobao.com/search?q=DivaCup%E6%B3%B3%E8%A3%85", description: "DivaCup泳装天猫官方旗舰店" },
+          { name: "Mooncup泳装", url: "https://s.taobao.com/search?q=Mooncup%E6%B3%B3%E8%A3%85", description: "Mooncup泳装天猫官方旗舰店" },
+          { name: "Sckoon泳装", url: "https://s.taobao.com/search?q=Sckoon%E6%B3%B3%E8%A3%85", description: "Sckoon泳装天猫官方旗舰店" },
+          { name: "Lunapads泳装", url: "https://s.taobao.com/search?q=Lunapads%E6%B3%B3%E8%A3%85", description: "Lunapads泳装天猫官方旗舰店" },
+          { name: "Gladrags泳装", url: "https://s.taobao.com/search?q=Gladrags%E6%B3%B3%E8%A3%85", description: "Gladrags泳装天猫官方旗舰店" },
+          { name: "Party Pants泳装", url: "https://s.taobao.com/search?q=Party%20Pants%E6%B3%B3%E8%A3%85", description: "Party Pants泳装天猫官方旗舰店" },
+          { name: "Pantys泳装", url: "https://s.taobao.com/search?q=Pantys%E6%B3%B3%E8%A3%85", description: "Pantys泳装天猫官方旗舰店" },
+          { name: "The Period Company泳装", url: "https://s.taobao.com/search?q=The%20Period%20Company%E6%B3%B3%E8%A3%85", description: "The Period Company泳装天猫官方旗舰店" },
+          { name: "Aisle泳装", url: "https://s.taobao.com/search?q=Aisle%E6%B3%B3%E8%A3%85", description: "Aisle泳装天猫官方旗舰店" },
+          { name: "August泳装", url: "https://s.taobao.com/search?q=August%E6%B3%B3%E8%A3%85", description: "August泳装天猫官方旗舰店" },
+          { name: "Cora泳装", url: "https://s.taobao.com/search?q=Cora%E6%B3%B3%E8%A3%85", description: "Cora泳装天猫官方旗舰店" },
+          { name: "The Honey Pot泳装", url: "https://s.taobao.com/search?q=The%20Honey%20Pot%E6%B3%B3%E8%A3%85", description: "The Honey Pot泳装天猫官方旗舰店" },
+          { name: "Rael泳装", url: "https://s.taobao.com/search?q=Rael%E6%B3%B3%E8%A3%85", description: "Rael泳装天猫官方旗舰店" },
+          { name: "Organyc泳装", url: "https://s.taobao.com/search?q=Organyc%E6%B3%B3%E8%A3%85", description: "Organyc泳装天猫官方旗舰店" },
+          { name: "Natracare泳装", url: "https://s.taobao.com/search?q=Natracare%E6%B3%B3%E8%A3%85", description: "Natracare泳装天猫官方旗舰店" },
+          { name: "This is L泳装", url: "https://s.taobao.com/search?q=This%20is%20L%E6%B3%B3%E8%A3%85", description: "This is L泳装天猫官方旗舰店" },
+          { name: "Callaly泳装", url: "https://s.taobao.com/search?q=Callaly%E6%B3%B3%E8%A3%85", description: "Callaly泳装天猫官方旗舰店" },
+          { name: "Dame泳装", url: "https://s.taobao.com/search?q=Dame%E6%B3%B3%E8%A3%85", description: "Dame泳装天猫官方旗舰店" },
+          { name: "速比涛泳装", url: "https://s.taobao.com/search?q=%E9%80%9F%E6%AF%94%E6%B6%9B%E6%B3%B3%E8%A3%85", description: "速比涛泳装天猫官方旗舰店" },
+          { name: "阿瑞娜泳装", url: "https://s.taobao.com/search?q=%E9%98%BF%E7%91%9E%E5%A8%9C%E6%B3%B3%E8%A3%85", description: "阿瑞娜泳装天猫官方旗舰店" },
+          { name: "范德安泳装", url: "https://s.taobao.com/search?q=%E8%8C%83%E5%BE%B7%E5%AE%89%E6%B3%B3%E8%A3%85", description: "范德安泳装天猫官方旗舰店" },
+          { name: "弈姿泳装", url: "https://s.taobao.com/search?q=%E5%BC%88%E5%A7%BF%E6%B3%B3%E8%A3%85", description: "弈姿泳装天猫官方旗舰店" },
+          { name: "洲克泳装", url: "https://s.taobao.com/search?q=%E6%B4%B2%E5%85%8B%E6%B3%B3%E8%A3%85", description: "洲克泳装天猫官方旗舰店" },
+          { name: "浩沙泳装", url: "https://s.taobao.com/search?q=%E6%B5%A9%E6%B2%99%E6%B3%B3%E8%A3%85", description: "浩沙泳装天猫官方旗舰店" },
+          { name: "英发泳装", url: "https://s.taobao.com/search?q=%E8%8B%B1%E5%8F%91%E6%B3%B3%E8%A3%85", description: "英发泳装天猫官方旗舰店" },
+          { name: "飘泳装", url: "https://s.taobao.com/search?q=%E9%A3%98%E6%B3%B3%E8%A3%85", description: "飘泳装天猫官方旗舰店" },
+          { name: "Few泳装", url: "https://s.taobao.com/search?q=Few%E6%B3%B3%E8%A3%85", description: "Few泳装天猫官方旗舰店" },
+          { name: "浪都泳装", url: "https://s.taobao.com/search?q=%E6%B5%AA%E9%83%BD%E6%B3%B3%E8%A3%85", description: "浪都泳装天猫官方旗舰店" },
+          { name: "夏艳泳装", url: "https://s.taobao.com/search?q=%E5%A4%8F%E8%89%B3%E6%B3%B3%E8%A3%85", description: "夏艳泳装天猫官方旗舰店" },
+          { name: "凯迪龙泳装", url: "https://s.taobao.com/search?q=%E5%87%AF%E8%BF%AA%E9%BE%99%E6%B3%B3%E8%A3%85", description: "凯迪龙泳装天猫官方旗舰店" },
+          { name: "保日达泳装", url: "https://s.taobao.com/search?q=%E4%BF%9D%E6%97%A5%E8%BE%BE%E6%B3%B3%E8%A3%85", description: "保日达泳装天猫官方旗舰店" },
+          { name: "漫丽珊泳装", url: "https://s.taobao.com/search?q=%E6%BC%AB%E4%B8%BD%E7%8F%8A%E6%B3%B3%E8%A3%85", description: "漫丽珊泳装天猫官方旗舰店" },
+          { name: "贝迪斯泳装", url: "https://s.taobao.com/search?q=%E8%B4%9D%E8%BF%AA%E6%96%AF%E6%B3%B3%E8%A3%85", description: "贝迪斯泳装天猫官方旗舰店" },
+          { name: "天姿泳装", url: "https://s.taobao.com/search?q=%E5%A4%A9%E5%A7%BF%E6%B3%B3%E8%A3%85", description: "天姿泳装天猫官方旗舰店" },
+          { name: "热浪泳装", url: "https://s.taobao.com/search?q=%E7%83%AD%E6%B5%AA%E6%B3%B3%E8%A3%85", description: "热浪泳装天猫官方旗舰店" },
+          { name: "三奇泳装", url: "https://s.taobao.com/search?q=%E4%B8%89%E5%A5%87%E6%B3%B3%E8%A3%85", description: "三奇泳装天猫官方旗舰店" },
+          { name: "奥凯莱泳装", url: "https://s.taobao.com/search?q=%E5%A5%A5%E5%87%AF%E8%8E%B1%E6%B3%B3%E8%A3%85", description: "奥凯莱泳装天猫官方旗舰店" },
+          { name: "亦美珊泳装", url: "https://s.taobao.com/search?q=%E4%BA%A6%E7%BE%8E%E7%8F%8A%E6%B3%B3%E8%A3%85", description: "亦美珊泳装天猫官方旗舰店" },
+          { name: "普拉施泳装", url: "https://s.taobao.com/search?q=%E6%99%AE%E6%8B%89%E6%96%BD%E6%B3%B3%E8%A3%85", description: "普拉施泳装天猫官方旗舰店" },
+          { name: "汐歌儿泳装", url: "https://s.taobao.com/search?q=%E6%B1%90%E6%AD%8C%E5%84%BF%E6%B3%B3%E8%A3%85", description: "汐歌儿泳装天猫官方旗舰店" },
+          { name: "海韵莱泳装", url: "https://s.taobao.com/search?q=%E6%B5%B7%E9%9F%B5%E8%8E%B1%E6%B3%B3%E8%A3%85", description: "海韵莱泳装天猫官方旗舰店" },
+          { name: "金雪儿泳装", url: "https://s.taobao.com/search?q=%E9%87%91%E9%9B%AA%E5%84%BF%E6%B3%B3%E8%A3%85", description: "金雪儿泳装天猫官方旗舰店" },
+          { name: "蓝盈泳装", url: "https://s.taobao.com/search?q=%E8%93%9D%E7%9B%88%E6%B3%B3%E8%A3%85", description: "蓝盈泳装天猫官方旗舰店" },
+          { name: "雪飞狼泳装", url: "https://s.taobao.com/search?q=%E9%9B%AA%E9%A3%9E%E7%8B%BC%E6%B3%B3%E8%A3%85", description: "雪飞狼泳装天猫官方旗舰店" },
+          { name: "俊飞泳装", url: "https://s.taobao.com/search?q=%E4%BF%8A%E9%A3%9E%E6%B3%B3%E8%A3%85", description: "俊飞泳装天猫官方旗舰店" },
+        ]
+      }
+    ]
+  },
+  {
+    name: "索引",
+    icon: "✨",
+    color: "linear-gradient(135deg,#f1c40f,#e67e22)",
+    subcategories: [
+      {
+        name: "索引♡",
+        enName: "Categories",
+        links: [
+          { name: "时尚女装", url: "#", description: "42 个品牌" },
+          { name: "iFashion原创", url: "#", description: "14 个品牌" },
+          { name: "古风汉服", url: "#", description: "43 个品牌" },
+          { name: "洛丽塔", url: "#", description: "35 个品牌" },
+          { name: "设计师原创", url: "#", description: "41 个品牌" },
+          { name: "通勤OL", url: "#", description: "51 个品牌" },
+          { name: "少女甜美", url: "#", description: "27 个品牌" },
+          { name: "大码女装", url: "#", description: "6 个品牌" },
+          { name: "运动户外", url: "#", description: "65 个品牌" },
+          { name: "内衣家居服", url: "#", description: "40 个品牌" },
+          { name: "鞋靴箱包", url: "#", description: "78 个品牌" },
+          { name: "美妆护肤", url: "#", description: "99 个品牌" },
+          { name: "珠宝配饰", url: "#", description: "70 个品牌" },
+          { name: "内衣泳装", url: "#", description: "58 个品牌" },
+        ]
+      }
+    ]
+  },
+];
+
+function getInitial(name) {
+  return name.charAt(0).toUpperCase();
+}
+
+function hashCode(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
+}
+
+function getColorFromName(name) {
+  const colors = [
+    'linear-gradient(135deg, #7c6df1, #9b8af5)',
+    'linear-gradient(135deg, #e87a8d, #f09aa8)',
+    'linear-gradient(135deg, #f0a050, #f5b878)',
+    'linear-gradient(135deg, #4cb88a, #6fc8a5)',
+    'linear-gradient(135deg, #a06ee8, #b890f0)',
+    'linear-gradient(135deg, #e870a8, #f090c0)',
+    'linear-gradient(135deg, #5099d4, #70b0e0)',
+    'linear-gradient(135deg, #3db8a8, #5fc8ba)',
+    'linear-gradient(135deg, #c4a050, #d4b870)',
+    'linear-gradient(135deg, #8070e0, #9888f0)',
+    'linear-gradient(135deg, #50c878, #70d898)',
+    'linear-gradient(135deg, #e87070, #f09090)'
+  ];
+  const index = hashCode(name) % colors.length;
+  return colors[index];
+}
+
+// 古诗词数据库（诗人 + 诗句）
+const poemData = [
+  { poet: "李白", poem: "床前明月光，疑是地上霜" },
+  { poet: "杜甫", poem: "国破山河在，城春草木深" },
+  { poet: "白居易", poem: "离离原上草，一岁一枯荣" },
+  { poet: "王维", poem: "独在异乡为异客，每逢佳节倍思亲" },
+  { poet: "苏轼", poem: "但愿人长久，千里共婵娟" },
+  { poet: "李清照", poem: "昨夜雨疏风骤，浓睡不消残酒" },
+  { poet: "辛弃疾", poem: "众里寻他千百度，蓦然回首" },
+  { poet: "陆游", poem: "山重水复疑无路，柳暗花明又一村" },
+  { poet: "王安石", poem: "春风又绿江南岸，明月何时照我还" },
+  { poet: "孟浩然", poem: "春眠不觉晓，处处闻啼鸟" },
+  { poet: "陶渊明", poem: "采菊东篱下，悠然见南山" },
+  { poet: "李商隐", poem: "春蚕到死丝方尽，蜡炬成灰泪始干" },
+  { poet: "杜牧", poem: "停车坐爱枫林晚，霜叶红于二月花" },
+  { poet: "岑参", poem: "忽如一夜春风来，千树万树梨花开" },
+  { poet: "高适", poem: "莫愁前路无知己，天下谁人不识君" },
+  { poet: "王勃", poem: "海内存知己，天涯若比邻" },
+  { poet: "杨炯", poem: "宁为百夫长，胜作一书生" },
+  { poet: "陈子昂", poem: "前不见古人，后不见来者" },
+  { poet: "张九龄", poem: "海上生明月，天涯共此时" },
+  { poet: "柳宗元", poem: "千山鸟飞绝，万径人踪灭" },
+  { poet: "韩愈", poem: "天街小雨润如酥，草色遥看近却无" },
+  { poet: "刘禹锡", poem: "沉舟侧畔千帆过，病树前头万木春" },
+  { poet: "贾岛", poem: "鸟宿池边树，僧敲月下门" },
+  { poet: "孟郊", poem: "谁言寸草心，报得三春晖" },
+  { poet: "贾岛", poem: "松下问童子，言师采药去" },
+  { poet: "元稹", poem: "曾经沧海难为水，除却巫山不是云" },
+  { poet: "韦应物", poem: "春潮带雨晚来急，野渡无人舟自横" },
+  { poet: "刘长卿", poem: "日暮苍山远，天寒白屋贫" },
+  { poet: "温庭筠", poem: "鸡声茅店月，人迹板桥霜" },
+  { poet: "贺知章", poem: "不知细叶谁裁出，二月春风似剪刀" },
+  { poet: "贺铸", poem: "一川烟草，满城风絮，梅子黄时雨" },
+  { poet: "周邦彦", poem: "叶上初阳干宿雨，水面清圆" },
+  { poet: "晏殊", poem: "无可奈何花落去，似曾相识燕归来" },
+  { poet: "欧阳修", poem: "月上柳梢头，人约黄昏后" },
+  { poet: "秦观", poem: "两情若是久长时，又岂在朝朝暮暮" },
+  { poet: "柳永", poem: "衣带渐宽终不悔，为伊消得人憔悴" },
+  { poet: "范仲淹", poem: "先天下之忧而忧，后天下之乐而乐" },
+  { poet: "岳飞", poem: "莫等闲，白了少年头，空悲切" },
+  { poet: "文天祥", poem: "人生自古谁无死，留取丹心照汗青" },
+  { poet: "于谦", poem: "粉骨碎身浑不怕，要留清白在人间" },
+  { poet: "郑板桥", poem: "千磨万击还坚劲，任尔东西南北风" },
+  { poet: "袁枚", poem: "白日不到处，青春恰自来" },
+  { poet: "龚自珍", poem: "落红不是无情物，化作春泥更护花" },
+  { poet: "纳兰性德", poem: "人生若只如初见，何事秋风悲画扇" },
+  { poet: "仓央嘉措", poem: "世间安得双全法，不负如来不负卿" },
+  { poet: "林徽因", poem: "你是爱，是暖，是希望" },
+  { poet: "徐志摩", poem: "轻轻的我走了，正如我轻轻的来" },
+  { poet: "戴望舒", poem: "撑着油纸伞，独自彷徨在悠长" },
+  { poet: "艾青", poem: "为什么我的眼里常含泪水" },
+  { poet: "海子", poem: "面朝大海，春暖花开" }
+];
+
+// 高奢品牌数据库（品牌名 + slogan）
+const luxuryBrandData = [
+  { brand: "HERMÈS", slogan: "Luxury is a way of life", url: "https://www.hermes.com" },
+  { brand: "CHANEL", slogan: "Fashion passes, style remains", url: "https://www.chanel.com" },
+  { brand: "LOUIS VUITTON", slogan: "The art of travel", url: "https://www.louisvuitton.com" },
+  { brand: "DIOR", slogan: "The elegance is a state of mind", url: "https://www.dior.com" },
+  { brand: "CARTIER", slogan: "Jeweler of kings", url: "https://www.cartier.com" },
+  { brand: "TIFFANY & CO.", slogan: "True love, true luxury", url: "https://www.tiffany.com" },
+  { brand: "GUCCI", slogan: "Quality is remembered long after price is forgotten", url: "https://www.gucci.com" },
+  { brand: "PRADA", slogan: "Fashion is instant language", url: "https://www.prada.com" },
+  { brand: "BURBERRY", slogan: "Pioneering British luxury", url: "https://www.burberry.com" },
+  { brand: "BALENCIAGA", slogan: "Elegance in motion", url: "https://www.balenciaga.com" },
+  { brand: "FENDI", slogan: "Fun fur and luxury", url: "https://www.fendi.com" },
+  { brand: "BOTTEGA VENETA", slogan: "When your own initials are enough", url: "https://www.bottegaveneta.com" },
+  { brand: "SAINT LAURENT", slogan: "For the modern woman", url: "https://www.ysl.com" },
+  { brand: "GIVENCHY", slogan: "Elegance is refusal", url: "https://www.givenchy.com" },
+  { brand: "VALENTINO", slogan: "Luxury with a soul", url: "https://www.valentino.com" },
+  { brand: "VERSACE", slogan: "Medusa of fashion", url: "https://www.versace.com" },
+  { brand: "DOLCE & GABBANA", slogan: "Sicilian luxury tradition", url: "https://www.dolcegabbana.com" },
+  { brand: "ARMANI", slogan: "Timeless sophistication", url: "https://www.armani.com" },
+  { brand: "HUGO BOSS", slogan: "Define your success", url: "https://www.hugoboss.com" },
+  { brand: "COACH", slogan: "Modern luxury for all", url: "https://www.coach.com" },
+  { brand: "MICHAEL KORS", slogan: "Jet set luxury", url: "https://www.michaelkors.com" },
+  { brand: "TORY BURCH", slogan: "Effortless style", url: "https://www.toryburch.com" },
+  { brand: "KATE SPADE", slogan: "Live colorfully", url: "https://www.katespade.com" },
+  { brand: "RIMOWA", slogan: "Journey well", url: "https://www.rimowa.com" },
+  { brand: "MONTBLANC", slogan: "The art of writing", url: "https://www.montblanc.com" },
+  { brand: "PATEK PHILIPPE", slogan: "You never actually own one", url: "https://www.patek.com" },
+  { brand: "ROLEX", slogan: "A crown for every achievement", url: "https://www.rolex.com" },
+  { brand: "OMEGA", slogan: "Reflects your world", url: "https://www.omegawatches.com" },
+  { brand: "IWC", slogan: "Engineering for perfection", url: "https://www.iwc.com" },
+  { brand: "JAEGER-LECOULTRE", slogan: "Watchmaking mastery", url: "https://www.jaeger-lecoultre.com" },
+  { brand: "BREITLING", slogan: "Instruments for professionals", url: "https://www.breitling.com" },
+  { brand: "TAG HEUER", slogan: "Don't crack under pressure", url: "https://www.tagheuer.com" },
+  { brand: "LONGINES", slogan: "Elegance is an attitude", url: "https://www.longines.com" },
+  { brand: "RAYMOND WEIL", slogan: "Independent watchmaking", url: "https://www.raymond-weil.com" },
+  { brand: "A. LANGE & SÖHNE", slogan: "Glashütte precision", url: "https://www.alange-soehne.com" },
+  { brand: "BLANCPAIN", slogan: "The oldest watch brand", url: "https://www.blancpain.com" },
+  { brand: "CHAUMET", slogan: "The jeweler of feelings", url: "https://www.chaumet.com" },
+  { brand: "BOUCHERON", slogan: "Parisian high jewelry", url: "https://www.boucheron.com" },
+  { brand: "VAN CLEEF & ARPELS", slogan: "Poetry of time", url: "https://www.vancleefarpels.com" },
+  { brand: "PIAGET", slogan: "Always do better than necessary", url: "https://www.piaget.com" },
+  { brand: "CHOPARD", slogan: "The art of luxury", url: "https://www.chopard.com" },
+  { brand: "MISSONI", slogan: "Colored luxury knitwear", url: "https://www.missoni.com" },
+  { brand: "ALAÏA", slogan: "Sculptor of the female form", url: "https://www.alaia.com" },
+  { brand: "ISSEY MIYAKE", slogan: "A piece of cloth", url: "https://www.isseymiyake.com" },
+  { brand: "COMME des GARÇONS", slogan: "Fashion is an attitude", url: "https://www.comme-des-garcons.com" },
+  { brand: "MAISON MARGIELA", slogan: "The anonymous designer", url: "https://www.maisonmargiela.com" },
+  { brand: "RICK OWENS", slogan: "Dark glamour", url: "https://www.rickowens.eu" },
+  { brand: "UNDERCOVER", slogan: "Wear your rebellion", url: "https://www.undercoverism.com" },
+  { brand: "JIL SANDER", slogan: "Less is more", url: "https://www.jilsander.com" },
+  { brand: "THE ROW", slogan: "Quiet luxury redefined", url: "https://www.therow.com" }
+];
+
+// 存储每个网站的隐藏状态
+let linkSecretData = new Map();
+let isHiddenMode = false;
+
+function generateSecretData() {
+  linksData.forEach(cat => {
+    const linkList = cat.subcategories ? cat.subcategories.flatMap(s => s.links) : cat.links;
+    linkList.forEach(link => {
+      const key = link.url;
+      if (!linkSecretData.has(key)) {
+        const poemIndex = hashCode(link.name + 'poem') % poemData.length;
+        const brandIndex = hashCode(link.name + 'brand') % luxuryBrandData.length;
+        linkSecretData.set(key, {
+          poem: poemData[poemIndex],
+          brand: luxuryBrandData[brandIndex]
+        });
+      }
+    });
+  });
+}
+
+// 切换隐藏模式
+function toggleHideMode() {
+  isHiddenMode = !isHiddenMode;
+  const hideToggle = document.getElementById('hideToggle');
+
+  if (isHiddenMode) {
+    document.body.classList.add('hide-mode');
+    hideToggle.classList.add('active');
+    hideToggle.title = '已隐藏';
+    localStorage.setItem('hideMode', 'true');
+  } else {
+    document.body.classList.remove('hide-mode');
+    hideToggle.classList.remove('active');
+    hideToggle.title = '已显示';
+    localStorage.setItem('hideMode', 'false');
+  }
+
+  // 重新渲染以更新数据
+  renderLinks(document.getElementById('searchInput').value, currentCategory);
+}
+
+// 初始化隐藏模式
+function initHideMode() {
+  const savedMode = localStorage.getItem('hideMode');
+  if (savedMode === 'true') {
+    isHiddenMode = true;
+    document.body.classList.add('hide-mode');
+    const hideToggle = document.getElementById('hideToggle');
+    hideToggle.classList.add('active');
+    hideToggle.title = '已隐藏';
+  } else {
+    const hideToggle = document.getElementById('hideToggle');
+    if (hideToggle) hideToggle.title = '已显示';
+  }
+}
+
+function renderCategories() {
+  const tabsContainer = document.getElementById('categoryTabs');
+  tabsContainer.innerHTML = '';
+
+  const homeBtn = document.createElement('button');
+  homeBtn.className = 'tab-btn return-home-tab';
+  homeBtn.textContent = '\u8FD4\u56DE\u9996\u9875';
+  homeBtn.title = '\u8FD4\u56DE\u9996\u9875';
+  homeBtn.addEventListener('click', (e) => {
+    window.location.href = 'index.html';
+    e.currentTarget.blur();
+  });
+  tabsContainer.appendChild(homeBtn);
+
+  linksData.forEach((cat, index) => {
+    if (cat.name === '索引') return;
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (index === 0 ? ' active' : '');
+    btn.textContent = cat.name;
+    btn.dataset.category = cat.name;
+
+    // 分类级彩蛋：连续点击标签页按钮 3 次触发
+    if (cat.easterEggUrl) {
+      btn.dataset.eggClicks = '0';
+      btn.addEventListener('click', () => {
+        const clicks = Number(btn.dataset.eggClicks || '0') + 1;
+        btn.dataset.eggClicks = String(clicks);
+        clearTimeout(btn._eggTimer);
+        if (clicks >= 3) {
+          btn.dataset.eggClicks = '0';
+          window.open(cat.easterEggUrl, '_blank', 'noopener');
+        } else {
+          btn._eggTimer = setTimeout(() => {
+            btn.dataset.eggClicks = '0';
+          }, 900);
+        }
+      });
+    }
+
+    btn.addEventListener('click', (e) => { filterByCategory(cat.name); e.currentTarget.blur(); });
+    tabsContainer.appendChild(btn);
+  });
+
+  const searchWrapper = document.createElement('div');
+  searchWrapper.className = 'search-wrapper';
+  searchWrapper.innerHTML = `
+    <div class="search-inline" id="searchInline">
+      <svg class="search-icon" viewBox="0 0 24 24">
+        <path d="M10.8 4.5a6.3 6.3 0 1 0 3.96 11.2l3.42 3.42a1 1 0 0 0 1.42-1.42l-3.42-3.42A6.3 6.3 0 0 0 10.8 4.5zm0 2a4.3 4.3 0 1 1 0 8.6 4.3 4.3 0 0 1 0-8.6z"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="搜索...">
+    </div>
+  `;
+  tabsContainer.appendChild(searchWrapper);
+}
+
+function openUrlInNewTab(url) {
+  if (!url || url === '#') return;
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+  if (newWindow) newWindow.opener = null;
+}
+
+
+function getIndexCardClickUrl(url) {
+  if (!url || url === '#') return url || '';
+  try {
+    var parsed = new URL(url, window.location.href);
+    if (parsed.hostname === 'kisstr.com' || parsed.hostname === 'www.kisstr.com') {
+      return parsed.pathname.replace(/^\//, '') + parsed.search + parsed.hash;
+    }
+  } catch (err) {}
+  return url;
+}
+
+function getIndexCardDragUrl(url) {
+  if (!url || url === '#') return url || '';
+  try {
+    var parsed = new URL(url, window.location.href);
+    if (parsed.hostname === 'kisstr.com' || parsed.hostname === 'www.kisstr.com') {
+      return 'https://kisstr.com' + parsed.pathname + parsed.search + parsed.hash;
+    }
+  } catch (err) {
+    if (/^[^:/?#]+\.html(?:[?#].*)?$/.test(url)) {
+      return 'https://kisstr.com/' + url;
+    }
+  }
+  if (/^[^:/?#]+\.html(?:[?#].*)?$/.test(url)) {
+    return 'https://kisstr.com/' + url;
+  }
+  return url;
+}
+function prepareStealthLinkCard(card, url) {
+  if (!card) return card;
+  var clickUrl = getIndexCardClickUrl(url);
+  var dragUrl = getIndexCardDragUrl(url);
+  card.dataset.url = clickUrl || '';
+  card.dataset.dragUrl = dragUrl || clickUrl || '';
+  
+  if (clickUrl && clickUrl !== '#') {
+    card.setAttribute('href', clickUrl);
+    card.setAttribute('target', '_blank');
+    card.setAttribute('rel', 'noopener,noreferrer');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+  } else {
+    card.removeAttribute('href');
+    card.removeAttribute('target');
+    card.removeAttribute('rel');
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-disabled', 'true');
+    return card;
+  }
+
+  card.addEventListener('click', function(e) {
+    // 仅拦截左键点击，让中键、右键、拖拽等原生行为正常工作
+    if (e.button !== 0) return;
+    // 如果按下了修饰键（Ctrl/Cmd/Shift/Alt），让浏览器原生处理
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    openUrlInNewTab(card.dataset.url);
+    if (e.currentTarget && e.currentTarget.blur) e.currentTarget.blur();
+  });
+
+  card.addEventListener('auxclick', function(e) {
+    if (e.button !== 1) return;
+    e.preventDefault();
+    openUrlInNewTab(card.dataset.url);
+  });
+
+  card.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    e.preventDefault();
+    openUrlInNewTab(card.dataset.url);
+  });
+
+  // 自定义拖拽预览：仅显示名字和网址，不显示完整卡片
+  card.addEventListener('dragstart', function(e) {
+    var dragUrl = card.dataset.dragUrl || card.dataset.url || card.getAttribute('href') || '';
+    if (dragUrl) {
+      try {
+        e.dataTransfer.setData('text/uri-list', dragUrl);
+        e.dataTransfer.setData('text/plain', dragUrl);
+      } catch(ex) {}
+    }
+    e.dataTransfer.effectAllowed = 'copyLink';
+
+    var nameEl = card.querySelector('.link-name') || card.querySelector('.ai-card-name');
+    var nameText = nameEl ? nameEl.textContent : '';
+    var urlText = dragUrl.replace(/^https?:\/\//, '');
+
+    var dragEl = document.createElement('div');
+    dragEl.style.cssText = 'position:fixed;top:-9999px;left:-9999px;padding:8px 14px;background:#fff;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.15);font-size:14px;font-family:system-ui,-apple-system,sans-serif;z-index:-1;pointer-events:none;';
+    var nameDiv = document.createElement('div');
+    nameDiv.style.cssText = 'font-weight:600;color:#1a1a1a;margin-bottom:2px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+    nameDiv.textContent = nameText;
+    var urlDiv = document.createElement('div');
+    urlDiv.style.cssText = 'color:#86868b;font-size:12px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+    urlDiv.textContent = urlText;
+    dragEl.appendChild(nameDiv);
+    dragEl.appendChild(urlDiv);
+    document.body.appendChild(dragEl);
+
+    e.dataTransfer.setDragImage(dragEl, 10, 10);
+
+    setTimeout(function() { if (dragEl.parentNode) dragEl.parentNode.removeChild(dragEl); }, 0);
+  });
+
+  return card;
+}
+
+function createLinkCard(link, catIndex, linkIndex) {
+  const cat = linksData[catIndex];
+
+  // ===== 全球AI分类：渲染附件风格卡片 =====
+  if (cat && cat.name === '全球 AI' && link._aiCompany) {
+    return createAiCard(link, linkIndex);
+  }
+
+  const card = document.createElement('a');
+  card.className = 'link-card';
+
+  // 为音乐分类卡片添加标记，用于黑胶旋转
+  if (cat && cat.subcategories) {
+    const subcat = cat.subcategories.find(s => s.links && s.links.includes(link));
+    if (subcat && subcat.name === '音乐') {
+      card.classList.add('cat-music');
+    }
+  }
+
+  const secretData = linkSecretData.get(link.url) || {
+    poem: { poet: "佚名", poem: "诗不在多，有情则灵" },
+    brand: { brand: "LUXURY", slogan: "Timeless elegance", url: "https://www.example.com" }
+  };
+  
+  const isMinimalLayout = document.body.classList.contains('layout-minimal');
+  const hiddenName = isMinimalLayout ? secretData.brand.brand : secretData.poem.poet;
+  const hiddenDesc = isMinimalLayout ? secretData.brand.slogan : secretData.poem.poem;
+  const hiddenUrl = isMinimalLayout && secretData.brand.url ? secretData.brand.url : link.url;
+
+  if (isHiddenMode) {
+    card.classList.add('hidden-mode-card');
+  }
+
+  prepareStealthLinkCard(card, isHiddenMode ? hiddenUrl : link.url);
+
+  const linkIcon = document.createElement('div');
+  linkIcon.className = 'link-icon';
+  if (isHiddenMode) {
+    linkIcon.textContent = hiddenName.charAt(0);
+    linkIcon.style.background = getColorFromName(hiddenName);
+  } else {
+    linkIcon.textContent = getInitial(link.name);
+    linkIcon.style.background = getColorFromName(link.name);
+  }
+
+  const linkInfo = document.createElement('div');
+  linkInfo.className = 'link-info';
+
+  const linkName = document.createElement('div');
+  linkName.className = 'link-name';
+  if (isHiddenMode) {
+    linkName.textContent = hiddenName;
+    linkName.style.position = 'relative';
+    linkName.style.minHeight = '24px';
+  } else {
+    linkName.textContent = link.name;
+  }
+
+  const linkUrl = document.createElement('div');
+  linkUrl.className = 'link-url';
+  if (isHiddenMode) {
+    linkUrl.textContent = hiddenUrl.replace(/^https?:\/\//, '');
+    linkUrl.classList.add('hidden-link-url');
+  } else {
+    linkUrl.textContent = link.url.replace(/^https?:\/\//, '');
+  }
+
+  const linkDesc = document.createElement('div');
+  linkDesc.className = 'link-desc';
+  if (isHiddenMode) {
+    linkDesc.textContent = hiddenDesc;
+  } else {
+    linkDesc.textContent = link.description;
+  }
+
+  linkInfo.appendChild(linkName);
+  if (isHiddenMode) {
+    linkInfo.appendChild(linkDesc);
+    linkInfo.appendChild(linkUrl);
+  } else {
+    linkInfo.appendChild(linkUrl);
+    if (link.description) {
+      linkInfo.appendChild(linkDesc);
+    }
+  }
+
+  const arrow = document.createElement('div');
+  arrow.className = 'link-arrow';
+  arrow.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>';
+
+  const inner = document.createElement('div');
+  inner.className = 'link-card-inner';
+  inner.appendChild(linkIcon);
+  inner.appendChild(linkInfo);
+
+  card.appendChild(inner);
+  card.appendChild(arrow);
+
+  return card;
+}
+
+// ===== 全球AI卡片渲染（与网站卡片统一特效） =====
+function createAiCard(link, linkIndex) {
+  const isClosed = !!link._aiCloseDate;
+  const card = document.createElement('a');
+  card.className = 'ai-link-card';
+
+  if (isClosed || !link.url) {
+    prepareStealthLinkCard(card, '');
+  } else {
+    prepareStealthLinkCard(card, link.url);
+  }
+
+  // 内容包裹层（用于3D translateZ）
+  const inner = document.createElement('div');
+  inner.className = 'ai-card-inner';
+
+  // 顶部：名称 + 排名徽章
+  const top = document.createElement('div');
+  top.className = 'ai-card-top';
+
+  const nameEl = document.createElement('div');
+  nameEl.className = 'ai-card-name';
+  nameEl.textContent = link.name;
+  top.appendChild(nameEl);
+
+  const rank = document.createElement('div');
+  rank.className = 'ai-rank-badge';
+  rank.textContent = (linkIndex + 1);
+  top.appendChild(rank);
+
+  inner.appendChild(top);
+
+  // 公司
+  const companyEl = document.createElement('div');
+  companyEl.className = 'ai-card-company';
+  companyEl.textContent = '🏢 ' + link._aiCompany;
+  inner.appendChild(companyEl);
+
+  // 描述（完整显示，不截断）
+  const descEl = document.createElement('div');
+  descEl.className = 'ai-card-desc';
+  descEl.textContent = link.description;
+  inner.appendChild(descEl);
+
+  // 已停运原因
+  if (isClosed && link._aiCloseReason) {
+    const reasonEl = document.createElement('div');
+    reasonEl.className = 'ai-card-close-reason';
+    reasonEl.textContent = '停运原因：' + link._aiCloseReason;
+    inner.appendChild(reasonEl);
+  }
+
+  // 标签
+  if (link._aiTags && link._aiTags.length) {
+    const tagsWrap = document.createElement('div');
+    tagsWrap.className = 'ai-card-tags';
+    link._aiTags.forEach(t => {
+      const tag = document.createElement('span');
+      let tagClass = 'ai-tag';
+      if (t === '停运' || t.indexOf('停运') > -1) tagClass += ' closed';
+      else if (t.indexOf('开源') > -1) tagClass += ' open-source';
+      else if (t.indexOf('闭源') > -1) tagClass += ' closed-source';
+      tag.className = tagClass;
+      tag.textContent = t;
+      tagsWrap.appendChild(tag);
+    });
+    // 已停运额外标签
+    if (isClosed) {
+      const closedTag = document.createElement('span');
+      closedTag.className = 'ai-tag closed';
+      closedTag.textContent = '停运 ' + link._aiCloseDate;
+      tagsWrap.appendChild(closedTag);
+    }
+    inner.appendChild(tagsWrap);
+  } else if (isClosed) {
+    const tagsWrap = document.createElement('div');
+    tagsWrap.className = 'ai-card-tags';
+    const closedTag = document.createElement('span');
+    closedTag.className = 'ai-tag closed';
+    closedTag.textContent = '停运 ' + link._aiCloseDate;
+    tagsWrap.appendChild(closedTag);
+    inner.appendChild(tagsWrap);
+  }
+
+  // 底部：评分
+  const bottom = document.createElement('div');
+  bottom.className = 'ai-card-bottom';
+
+  const scoreEl = document.createElement('span');
+  scoreEl.className = 'ai-score';
+  scoreEl.textContent = link._aiScore;
+  bottom.appendChild(scoreEl);
+
+  inner.appendChild(bottom);
+
+  card.appendChild(inner);
+
+  return card;
+}
+
+function filterLinks(links, filterText) {
+  if (!filterText) return links;
+  const lower = filterText.toLowerCase();
+  return links.filter(link =>
+    link.name.toLowerCase().includes(lower) ||
+    link.url.toLowerCase().includes(lower) ||
+    link.description.toLowerCase().includes(lower)
+  );
+}
+
+let isFirstRender = true;
+
+function renderLinks(filterText = '', category = 'all') {
+  const main = document.getElementById('mainContent');
+  if (!main) {
+    console.error('mainContent 容器未找到');
+    return;
+  }
+  main.innerHTML = '';
+
+  if (!linksData || !linksData.length) {
+    console.error('linksData 为空或未定义');
+    main.innerHTML = '<div class="empty-message">暂无数据，请刷新页面</div>';
+    return;
+  }
+
+  if (isFirstRender) {
+    isFirstRender = false;
+  }
+
+  doRenderLinks(filterText, category);
+}
+
+function doRenderLinks(filterText, category) {
+  const main = document.getElementById('mainContent');
+  if (!main) return;
+  main.innerHTML = '';
+
+  let hasResults = false;
+
+  linksData.forEach((cat, catIndex) => {
+    if (category !== 'all' && cat.name !== category) return;
+
+    const section = document.createElement('section');
+    section.className = 'category-section';
+    section.id = 'category-' + catIndex;
+
+    const header = document.createElement('div');
+    header.className = 'category-header';
+
+    const icon = document.createElement('div');
+    icon.className = 'category-icon';
+    icon.style.background = cat.color;
+    icon.textContent = cat.icon;
+
+    const title = document.createElement('h2');
+    title.className = 'category-title';
+    title.textContent = cat.name;
+
+    header.appendChild(icon);
+    header.appendChild(title);
+    section.appendChild(header);
+
+    if (cat.subcategories) {
+      cat.subcategories.forEach((subcat, subIndex) => {
+        const filteredLinks = filterLinks(subcat.links, filterText);
+        if (filteredLinks.length === 0) return;
+        hasResults = true;
+
+        const subcategory = document.createElement('div');
+        subcategory.className = 'subcategory';
+
+        const isMinimalLayout = document.body.classList.contains('layout-minimal');
+
+        if (!isMinimalLayout) {
+          if (subcat.name && !subcat.hideTitle) {
+            const titleCard = document.createElement('div');
+            titleCard.className = 'subcategory-title-card';
+
+            const subTitle = document.createElement('h3');
+            subTitle.className = 'subcategory-title';
+            subTitle.textContent = subcat.name;
+            titleCard.appendChild(subTitle);
+
+            if (subcat.enName) {
+              const subEnTitle = document.createElement('p');
+              subEnTitle.className = 'subcategory-en-title';
+              subEnTitle.textContent = subcat.enName;
+              titleCard.appendChild(subEnTitle);
+            }
+
+            if (subcat.easterEggUrl) {
+              titleCard.style.cursor = 'pointer';
+              titleCard.dataset.eggClicks = '0';
+              titleCard.addEventListener('click', () => {
+                const clicks = Number(titleCard.dataset.eggClicks || '0') + 1;
+                titleCard.dataset.eggClicks = String(clicks);
+                clearTimeout(titleCard._eggTimer);
+                if (clicks >= 3) {
+                  titleCard.dataset.eggClicks = '0';
+                  window.open(subcat.easterEggUrl, '_blank', 'noopener');
+                } else {
+                  titleCard._eggTimer = setTimeout(() => {
+                    titleCard.dataset.eggClicks = '0';
+                  }, 900);
+                }
+              });
+            }
+
+            subcategory.appendChild(titleCard);
+          }
+        }
+
+        const grid = document.createElement('div');
+        grid.className = (cat.name === '全球 AI') ? 'ai-grid' : 'links-grid';
+
+        if (isMinimalLayout && subcat.name && !subcat.hideTitle) {
+          const titleCard = document.createElement('div');
+          titleCard.className = 'link-card subcategory-title-card';
+          titleCard.innerHTML = `
+            <div class="link-card-inner">
+              <div class="link-info">
+                <div class="link-name">${subcat.name}</div>
+                ${subcat.enName ? `<div class="link-url">${subcat.enName}</div>` : ''}
+              </div>
+            </div>
+          `;
+          if (subcat.easterEggUrl) {
+            titleCard.style.cursor = 'pointer';
+            titleCard.dataset.eggClicks = '0';
+            titleCard.addEventListener('click', () => {
+              const clicks = Number(titleCard.dataset.eggClicks || '0') + 1;
+              titleCard.dataset.eggClicks = String(clicks);
+              clearTimeout(titleCard._eggTimer);
+              if (clicks >= 3) {
+                titleCard.dataset.eggClicks = '0';
+                window.open(subcat.easterEggUrl, '_blank', 'noopener');
+              } else {
+                titleCard._eggTimer = setTimeout(() => {
+                  titleCard.dataset.eggClicks = '0';
+                }, 900);
+              }
+            });
+          }
+          grid.appendChild(titleCard);
+        }
+
+        filteredLinks.forEach((link, linkIndex) => {
+          const card = createLinkCard(link, catIndex, subIndex * 10 + linkIndex);
+          grid.appendChild(card);
+        });
+
+        subcategory.appendChild(grid);
+        section.appendChild(subcategory);
+      });
+    } else {
+      const filteredLinks = filterLinks(cat.links, filterText);
+      if (filteredLinks.length === 0) return;
+      hasResults = true;
+
+      const grid = document.createElement('div');
+      grid.className = 'links-grid';
+
+      filteredLinks.forEach((link, linkIndex) => {
+        const card = createLinkCard(link, catIndex, linkIndex);
+        grid.appendChild(card);
+      });
+
+      section.appendChild(grid);
+    }
+
+    if (hasResults || (cat.subcategories && cat.subcategories.some(s => filterLinks(s.links, filterText).length > 0)) || (!cat.subcategories && filterLinks(cat.links, filterText).length > 0)) {
+      main.appendChild(section);
+    }
+  });
+
+  if (!hasResults) {
+    const noResults = document.createElement('div');
+    noResults.className = 'no-results';
+    noResults.innerHTML = `
+      <div class="no-results-icon">🔍</div>
+      <h3>没有找到相关结果</h3>
+      <p>试试其他关键词吧</p>
+    `;
+    main.appendChild(noResults);
+  }
+}
+
+let currentCategory = linksData[0].name;
+let lastSelectedCategory = linksData[0].name;
+
+function filterByCategory(category) {
+  currentCategory = category;
+  lastSelectedCategory = category;
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.category === category);
+  });
+  const searchInput = document.getElementById('searchInput');
+  const searchValue = searchInput ? searchInput.value : '';
+  renderLinks(searchValue, category);
+}
+
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = document.getElementById('sunIcon');
+const moonIcon = document.getElementById('moonIcon');
+
+// 第一布局（经典）使用7个主题，第二布局（杂志）不使用极光青、暮光橙、星空蓝
+const themesGrid = ['dream', 'forest', 'deepsea', 'clay', 'aurora', 'sunset', 'starry', 'midnight', 'twilight', 'ocean', 'mint', 'dawn', 'white'];
+const themesMinimal = ['dream', 'forest', 'deepsea', 'clay', 'midnight', 'twilight', 'ocean', 'mint', 'dawn', 'white'];
+const themeNamesGrid = ['梦幻粉', '森林绿', '深海蓝', '暖陶土', '极光青', '暮光橙', '星空蓝', '深夜黑', '晨曦紫', '海洋蓝', '薄荷青', '晨曦粉', '经典白'];
+const themeNamesMinimal = ['梦幻粉', '森林绿', '深海蓝', '暖陶土', '深夜黑', '晨曦紫', '海洋蓝', '薄荷青', '晨曦粉', '经典白'];
+
+// 暗色主题列表（显示太阳图标）
+const darkThemes = ['midnight', 'starry', 'sunset', 'aurora', 'dream', 'forest', 'deepsea', 'clay'];
+
+function getCurrentLayout() {
+  return document.body.classList.contains('layout-minimal') ? 'minimal' : 'grid';
+}
+
+function getThemes() {
+  return getCurrentLayout() === 'minimal' ? themesMinimal : themesGrid;
+}
+
+function getThemeNames() {
+  return getCurrentLayout() === 'minimal' ? themeNamesMinimal : themeNamesGrid;
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme_' + getCurrentLayout(), theme);
+
+  const themes = getThemes();
+  const themeNames = getThemeNames();
+  const themeIndex = themes.indexOf(theme);
+
+  const themeColors = {
+    "white": "#f5f5f7",
+    "dawn": "#fff5f5",
+    "mint": "#f0fff5",
+    "ocean": "#f0f8ff",
+    "twilight": "#f5f0ff",
+    "midnight": "#000212",
+    "starry": "#0c0c1d",
+    "sunset": "#2d1b0e",
+    "aurora": "#1a2a3a",
+    "dream": "#667eea",
+    "forest": "#2d5f4e",
+    "deepsea": "#1a4a6e",
+    "clay": "#6b4a35"
+  };
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  const currentLayout = getCurrentLayout();
+  if (currentLayout === "minimal") {
+    document.documentElement.style.backgroundColor = "#ffffff";
+    if (metaThemeColor) metaThemeColor.setAttribute("content", "#ffffff");
+  } else if (themeColors[theme]) {
+    document.documentElement.style.backgroundColor = themeColors[theme];
+    if (metaThemeColor) metaThemeColor.setAttribute("content", themeColors[theme]);
+  }
+
+  if (darkThemes.includes(theme)) {
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+  } else {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+  }
+
+  // 动态更新主题按钮提示
+  if (themeIndex >= 0) {
+    themeToggle.title = themeNames[themeIndex];
+  }
+}
+
+function loadThemeForLayout(layout) {
+  const themes = layout === 'minimal' ? themesMinimal : themesGrid;
+  const savedTheme = localStorage.getItem('theme_' + layout);
+  let theme = savedTheme;
+
+  if (!theme) {
+    theme = 'dream';
+  }
+
+  if (!themes.includes(theme)) {
+    theme = 'dream';
+  }
+
+  setTheme(theme);
+}
+
+themeToggle.addEventListener('click', (e) => {
+  const current = document.documentElement.getAttribute('data-theme') || 'dream';
+  const themes = getThemes();
+  const currentIndex = themes.indexOf(current);
+  const nextTheme = themes[(currentIndex + 1) % themes.length];
+  setTheme(nextTheme);
+  const themeNames = getThemeNames();
+  const themeIndex = themes.indexOf(nextTheme);
+  e.currentTarget.blur();
+});
+
+// 渲染分类和搜索框
+renderCategories();
+// Logo 点击刷新页面
+document.querySelector('.logo').addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  window.location.reload();
+  return false;
+});
+
+// 布局切换
+const layoutToggle = document.getElementById('layoutToggle');
+const layoutBtn = layoutToggle.querySelector('.layout-btn');
+
+function setLayout(layout) {
+  localStorage.setItem('layout', layout);
+  document.body.classList.remove('layout-grid', 'layout-minimal');
+  document.body.classList.add('layout-' + layout);
+
+  
+  let isImageBackground = false;
+  let savedBackgroundOption = null;
+  try {
+    const savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isImageBackground = !savedBackgroundOption || !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+  } catch (err) {
+    savedBackgroundOption = null;
+    isImageBackground = false;
+  }
+  if (isImageBackground) {
+    let bgImageValue = '';
+    if (savedBackgroundOption && savedBackgroundOption.url) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+      const overlay = layout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${bgUrl}')`;
+    }
+    document.body.classList.add('background-image-mode');
+    if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+    document.documentElement.classList.add('background-image-mode');
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    document.documentElement.style.backgroundColor = '#121224';
+  } else if (layout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else {
+    document.documentElement.style.backgroundColor = '#f5f5f7';
+  }
+
+  // 布局二 logo 显示英文艺术字体
+  const logoText = document.getElementById('logoText');
+  if (logoText) {
+    logoText.textContent = layout === 'minimal' ? '𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐' : '𝗞𝗶𝘀𝘀𝘁𝗿';
+  }
+
+  // 动态更新布局按钮提示
+  if (layoutBtn) {
+    layoutBtn.title = layout === 'minimal' ? '杂志布局' : '经典布局';
+  }
+
+  if (!isImageBackground) {
+    loadThemeForLayout(layout);
+  } else if (themeToggle) {
+    themeToggle.title = '\u56FE\u7247\u80CC\u666F';
+  }
+
+  // 切换布局时重新调整音乐律动 canvas 尺寸
+  if (typeof mbResize === 'function') {
+    setTimeout(mbResize, 50);
+  }
+  // 律动栏布局逻辑
+  if (typeof mbStop === 'function') {
+    setTimeout(() => {
+      if (layout === 'grid') {
+        musicBarBottom.classList.remove('active', 'idle');
+        mbActive = false;
+        mbIdle = false;
+        if (mbRAF) { cancelAnimationFrame(mbRAF); mbRAF = null; }
+        mbCtx2.setTransform(1, 0, 0, 1, 0, 0);
+        mbCtx2.clearRect(0, 0, musicBarBottom.width, musicBarBottom.height);
+        const dpr5 = window.devicePixelRatio || 1;
+        mbCtx2.setTransform(dpr5, 0, 0, dpr5, 0, 0);
+      } else {
+        if (isPlaying && !mbClosed) {
+          mbIdle = false;
+          mbActive = true;
+          musicBarBottom.classList.remove('idle');
+          musicBarBottom.classList.add('active');
+          mbResize();
+          if (!mbRAF) mbDraw();
+          mbResetAutoHide();
+        } else if (!mbActive) {
+          mbIdle = true;
+          musicBarBottom.classList.add('idle');
+          if (!mbRAF) mbDraw();
+          mbResetAutoHide();
+        }
+      }
+    }, 60);
+  }
+
+  const searchInput = document.getElementById('searchInput');
+  const searchValue = searchInput ? searchInput.value : '';
+  renderLinks(searchValue, currentCategory);
+}
+
+const layoutDefaultVersion = 'v130-magazine-default';
+if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+  localStorage.setItem('layout', 'minimal');
+  localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+}
+const savedLayout = localStorage.getItem('layout') || 'minimal';
+setLayout(savedLayout);
+
+layoutBtn.addEventListener('click', (e) => {
+  const currentLayout = document.body.classList.contains('layout-grid') ? 'grid' : 'minimal';
+  const newLayout = currentLayout === 'grid' ? 'minimal' : 'grid';
+  setLayout(newLayout);
+  e.currentTarget.blur();
+});
+
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.add('visible');
+  } else {
+    backToTop.classList.remove('visible');
+  }
+});
+
+backToTop.addEventListener('click', (e) => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  e.currentTarget.blur();
+});
+
+// 音乐播放器
+const lofiAudio = document.getElementById('lofiAudio');
+const musicPlayer = document.getElementById('musicPlayer');
+const musicPlay = document.getElementById('musicPlay');
+const musicPlayIcon = document.getElementById('musicPlayIcon');
+const musicPrev = document.getElementById('musicPrev');
+const musicNext = document.getElementById('musicNext');
+const musicName = document.getElementById('musicName');
+const musicVolume = document.getElementById('musicVolume');
+
+// 音乐源列表
+const lofiStations = [
+  { name: 'Chillhop慵懒', path: 'groovesalad-128-mp3' },
+  { name: 'Lush氛围女声', path: 'lush-128-mp3' },
+  { name: 'Chillhop经典', path: 'gsclassic-128-mp3' },
+  { name: 'Ambient氛围', path: 'dronezone-128-mp3' },
+  { name: 'DeepSpace深空', path: 'deepspaceone-128-mp3' },
+  { name: 'SpaceStation空间站', path: 'spacestation-128-mp3' },
+  { name: 'Beat深屋节拍', path: 'beatblender-128-mp3' },
+  { name: 'Secret间谍风', path: 'secretagent-128-mp3' }
+];
+
+let currentStation = 0;
+let currentStationSource = 0;
+let isPlaying = false;
+
+lofiAudio.volume = 0.5;
+musicName.textContent = lofiStations[0].name;
+musicName.title = lofiStations[0].name;
+
+// 音量控制
+musicVolume.addEventListener('input', () => {
+  lofiAudio.volume = musicVolume.value / 100;
+});
+
+// ===== 电台控制变量 =====
+let isChangingStation = false;
+let stationRetryCount = 0;
+let stationUnlockTimer = null;
+let playbackWatchTimer = null;
+const stationHosts = ['ice5', 'ice1', 'ice2', 'ice4', 'ice6'];
+const MAX_RETRIES = lofiStations.length * stationHosts.length;
+
+function getStationUrl(station, sourceIndex = 0) {
+  if (station.url) return station.url;
+  const host = stationHosts[sourceIndex % stationHosts.length];
+  return `https://${host}.somafm.com/${station.path}`;
+}
+
+// ===== 播放按钮图标更新 =====
+function updatePlayButton(playing) {
+  if (playing) {
+    musicPlayIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    musicPlay.classList.add('playing');
+  } else {
+    musicPlayIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+    musicPlay.classList.remove('playing');
+  }
+}
+
+// ===== 加载电台 =====
+function loadStation(index, sourceIndex = 0) {
+  const station = lofiStations[index];
+  currentStationSource = sourceIndex % stationHosts.length;
+  musicName.textContent = station.name;
+  musicName.title = station.name;
+  lofiAudio.preload = 'none';
+  lofiAudio.crossOrigin = 'anonymous';
+  lofiAudio.src = getStationUrl(station, currentStationSource);
+  lofiAudio.load();
+}
+
+// ===== 播放音频（处理 AbortError）=====
+function playAudio() {
+  clearTimeout(playbackWatchTimer);
+  return lofiAudio.play().then(() => {
+    playbackWatchTimer = setTimeout(() => {
+      if (isPlaying && !lofiAudio.paused && lofiAudio.currentTime < 0.5) {
+        console.warn('电台连接超时，尝试备用音源');
+        tryNextStationSource();
+      }
+    }, 4500);
+  }).catch(e => {
+    // AbortError 是正常的（快速切台时旧播放被中止），不需要重试
+    if (e.name === 'AbortError') {
+      stationRetryCount = 0;
+      return;
+    }
+    throw e;
+  });
+}
+
+function stopRadioPlayback() {
+  clearTimeout(playbackWatchTimer);
+  isPlaying = false;
+  updatePlayButton(false);
+  mbStop();
+  stationRetryCount = 0;
+}
+
+function tryNextStationSource() {
+  if (!isPlaying) return;
+  stationRetryCount++;
+  if (stationRetryCount >= MAX_RETRIES) {
+    stopRadioPlayback();
+    musicName.textContent = '电台暂不可用';
+    musicName.title = '电台暂不可用，请稍后再试';
+    return;
+  }
+
+  currentStationSource += 1;
+  if (currentStationSource >= stationHosts.length) {
+    currentStationSource = 0;
+    currentStation = (currentStation + 1) % lofiStations.length;
+  }
+  loadStation(currentStation, currentStationSource);
+  playAudio().catch(e => {
+    console.warn('备用音源播放失败:', e.message);
+    setTimeout(tryNextStationSource, 250);
+  });
+}
+
+// ===== 音频错误监听 =====
+lofiAudio.addEventListener('error', (e) => {
+  console.warn('音频加载失败:', e);
+  if (isPlaying && !isChangingStation) tryNextStationSource();
+});
+
+lofiAudio.addEventListener('loadedmetadata', () => {
+  console.log('音频元数据加载成功');
+});
+
+lofiAudio.addEventListener('playing', () => {
+  stationRetryCount = 0;
+  clearTimeout(playbackWatchTimer);
+});
+
+lofiAudio.addEventListener('stalled', () => {
+  if (isPlaying) {
+    clearTimeout(playbackWatchTimer);
+    playbackWatchTimer = setTimeout(tryNextStationSource, 2500);
+  }
+});
+
+// ===== 播放/暂停 =====
+function togglePlay() {
+  if (isPlaying) {
+    // 暂停
+    lofiAudio.pause();
+    stopRadioPlayback();
+  } else {
+    // 播放：重新加载当前电台确保正确
+    isPlaying = true;
+    updatePlayButton(true);
+    mbClosed = false;
+    mbStart();
+    stationRetryCount = 0;
+    loadStation(currentStation, currentStationSource);
+    playAudio().catch(e => {
+      console.warn('播放失败:', e.message);
+      tryNextStationSource();
+    });
+  }
+}
+
+musicPlay.addEventListener('click', function(e) {
+  togglePlay();
+  e.currentTarget.blur();
+});
+
+// ===== 切换电台 =====
+function changeStation(direction) {
+  if (isChangingStation) return;
+  isChangingStation = true;
+
+  currentStation = (currentStation + direction + lofiStations.length) % lofiStations.length;
+  currentStationSource = 0;
+  stationRetryCount = 0;
+  loadStation(currentStation, currentStationSource);
+
+  // Click station switch to start playback; if already playing, keep playing the new station
+  isPlaying = true;
+  updatePlayButton(true);
+  mbClosed = false;
+  mbStart();
+
+  playAudio().catch(e => {
+    console.warn('鍒囨崲鐢靛彴鎾斁澶辫触:', e.message);
+    clearTimeout(stationUnlockTimer);
+    isChangingStation = false;
+    setTimeout(tryNextStationSource, 250);
+  });
+
+  // Unlock after 600ms
+  clearTimeout(stationUnlockTimer);
+  stationUnlockTimer = setTimeout(() => {
+    isChangingStation = false;
+  }, 600);
+}
+
+musicPrev.addEventListener('click', (e) => { changeStation(-1); e.currentTarget.blur(); });
+musicNext.addEventListener('click', (e) => { changeStation(1); e.currentTarget.blur(); });
+
+// 生成隐藏数据
+generateSecretData();
+
+// 初始化隐藏模式
+initHideMode();
+
+// 绑定隐藏按钮点击事件
+document.getElementById('hideToggle').addEventListener('click', function(e) {
+  toggleHideMode();
+  e.currentTarget.blur();
+});
+
+renderLinks('', currentCategory);
+
+// 搜索框展开/收起交互
+const searchInline = document.getElementById('searchInline');
+const searchInputEl = document.getElementById('searchInput');
+
+if (searchInline && searchInputEl) {
+  const searchWrapperEl = searchInline.closest('.search-wrapper');
+  const categoryTabsEl = document.getElementById('categoryTabs');
+  const setSearchExpanded = (expanded) => {
+    searchInline.classList.toggle('expanded', expanded);
+    if (searchWrapperEl) searchWrapperEl.classList.toggle('search-expanded', expanded);
+    if (categoryTabsEl) categoryTabsEl.classList.toggle('search-expanded', expanded);
+    document.body.classList.toggle('search-expanded', expanded);
+  };
+
+  searchInline.addEventListener('click', (e) => {
+    if (!searchInline.classList.contains('expanded')) {
+      setSearchExpanded(true);
+      setTimeout(() => searchInputEl.focus(), 200);
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchInline.contains(e.target)) {
+      if (!searchInputEl.value) {
+        setSearchExpanded(false);
+      }
+    }
+  });
+
+  searchInputEl.addEventListener('input', (e) => {
+    const searchValue = e.target.value;
+    if (searchValue) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      renderLinks(searchValue, 'all');
+    } else {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === lastSelectedCategory);
+      });
+      renderLinks('', lastSelectedCategory);
+    }
+  });
+
+  searchInputEl.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchInputEl.value = '';
+      setSearchExpanded(false);
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.category === lastSelectedCategory);
+      });
+      renderLinks('', lastSelectedCategory);
+    }
+  });
+
+  searchInputEl.addEventListener('focus', () => {
+    setSearchExpanded(true);
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.focus();
+    }
+  }
+
+  if (e.key === 'm' || e.key === 'M') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      if (musicPlay) {
+        togglePlay();
+      }
+    }
+  }
+
+  if (e.key === 'n' || e.key === 'N') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      if (musicNext) {
+        changeStation(1);
+      }
+    }
+  }
+
+  if (e.key === 'p' || e.key === 'P') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      if (musicPrev) {
+        changeStation(-1);
+      }
+    }
+  }
+
+  if (e.key === 't' || e.key === 'T') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      if (themeToggle) {
+        themeToggle.click();
+      }
+    }
+  }
+
+  if (e.key === 'g' || e.key === 'G') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      layoutBtn.click();
+    }
+  }
+
+  if (e.key === 'h' || e.key === 'H') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      document.getElementById('hideToggle').click();
+    }
+  }
+
+  if (e.key === 'b' || e.key === 'B') {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+});
+
+// ========== 卡片聚光灯 + 3D视差倾斜（事件委托，零额外内存） ==========
+const mainContentEl = document.getElementById('mainContent');
+
+// ========== 随机文学金句（墨痕浸润过渡） ==========
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const quoteTextEl = document.getElementById('quoteText');
+if (quoteTextEl) {
+  const randomQuote = literaryQuotes[Math.floor(Math.random() * literaryQuotes.length)];
+  setTimeout(() => {
+    quoteTextEl.textContent = randomQuote;
+    quoteTextEl.classList.add('shown');
+  }, 600);
+}
+
+// ========== 黄昏渐变时间滤镜 ==========
+function checkSunset() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const timeValue = hours + minutes / 60;
+  const sunsetStart = 17.5;  // 17:30
+  const sunsetEnd = 19.0;    // 19:00
+
+  if (timeValue >= sunsetStart && timeValue < sunsetEnd) {
+    document.body.classList.add('sunset-mode');
+  } else {
+    document.body.classList.remove('sunset-mode');
+  }
+}
+
+checkSunset();
+setInterval(checkSunset, 60000); // 每分钟检查一次
+
+// ========== 3D 视差倾斜 ==========
+if (mainContentEl) {
+  mainContentEl.addEventListener('mousemove', (e) => {
+    const card = e.target.closest('.link-card, .ai-link-card, .subcategory-title-card');
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // 聚光灯坐标
+    card.style.setProperty('--x', x + 'px');
+    card.style.setProperty('--y', y + 'px');
+
+    // 3D 倾斜（最大 ±6 度，非常轻微）
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateY = ((x - centerX) / centerX) * 6;
+    const rotateX = -((y - centerY) / centerY) * 6;
+
+    card.classList.add('tilt-active');
+    card.style.setProperty('--rx', rotateX.toFixed(1) + 'deg');
+    card.style.setProperty('--ry', rotateY.toFixed(1) + 'deg');
+  });
+
+  // 鼠标离开卡片时移除倾斜
+  mainContentEl.addEventListener('mouseleave', () => {
+    mainContentEl.querySelectorAll('.tilt-active').forEach(card => {
+      card.classList.remove('tilt-active');
+    });
+  });
+
+  // 也监听 mouseout 逐个卡片清理
+  mainContentEl.addEventListener('mouseout', (e) => {
+    const card = e.target.closest('.link-card, .ai-link-card, .subcategory-title-card');
+    if (card && !card.contains(e.relatedTarget)) {
+      card.classList.remove('tilt-active');
+    }
+  });
+}
+
+// ========== 骨架屏 + Bento Grid 渲染 ==========
+function renderSkeleton(main, count) {
+  const grid = document.createElement('div');
+  grid.className = 'links-grid';
+  grid.id = 'skeletonGrid';
+  for (let i = 0; i < count; i++) {
+    const skel = document.createElement('div');
+    skel.className = 'skeleton-card';
+    skel.innerHTML = `
+      <div class="skeleton-line icon"></div>
+      <div class="skeleton-line title"></div>
+      <div class="skeleton-line url"></div>
+    `;
+    grid.appendChild(skel);
+  }
+  main.appendChild(grid);
+}
+
+// ========== 音乐律动栏 ==========
+const musicFxBtn = document.getElementById('musicFxBtn');
+const musicFxClose = document.getElementById('musicFxClose');
+const musicBarBottom = document.getElementById('musicBarBottom');
+const mbCtx2 = musicBarBottom.getContext('2d');
+const mbCtx = mbCtx2; // 兼容旧代码，指向底部canvas
+let mbW = 0, mbH = 28;
+let mbEffect = 0;
+let mbRAF = null;
+let mbTime = 0;
+let mbActive = false;
+let mbIdle = false;
+
+// 所有效果（合并）
+const mbEffectNames = [
+  '8','1','2','3','4','5','6','7','9',
+  'N1','N3','N6','N13','N22','N4'
+];
+
+// 效果显示名称
+const mbEffectDisplay = {
+  '1':'三层正弦波','2':'丝带飘动','3':'蝴蝶振翅','4':'花瓣展开','5':'气泡上升','6':'雨滴','7':'海浪涌动','8':'羽毛轻拮','9':'等高线',
+  'N1':'瀑布流','N3':'潮汐涨落','N4':'星座连线','N6':'弹力绳','N13':'极光丝带','N22':'光纤束'
+};
+
+const mbEffectStorageKey = 'kisstr_music_bar_effect_v1';
+(function initSavedMusicEffect() {
+  const savedEffect = localStorage.getItem(mbEffectStorageKey);
+  const savedIndex = Number.parseInt(savedEffect, 10);
+  if (Number.isInteger(savedIndex) && savedIndex >= 0 && savedIndex < mbEffectNames.length) {
+    mbEffect = savedIndex;
+    return;
+  }
+  mbEffect = Math.floor(Math.random() * mbEffectNames.length);
+})();
+
+function mbResize() {
+  const dpr = window.devicePixelRatio || 1;
+  mbW = window.innerWidth;
+  musicBarBottom.width = mbW * dpr;
+  musicBarBottom.height = mbH * dpr;
+  mbCtx2.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+mbResize();
+window.addEventListener('resize', mbResize);
+
+// 模拟律动数据
+function mbRhythm(t) {
+  return 0.4 + 0.25 * Math.sin(t * 0.0028) + 0.15 * Math.sin(t * 0.006) + 0.1 * Math.sin(t * 0.011);
+}
+
+// 粒子池（复用，避免 GC）
+let mbParticles = [];
+let mbConstellation = null;
+function mbSpawnParticle(x, y, vx, vy, life, size) {
+  mbParticles.push({ x, y, vx, vy, life, maxLife: life, size });
+}
+function mbUpdateParticles(w, h) {
+  for (let i = mbParticles.length - 1; i >= 0; i--) {
+    const p = mbParticles[i];
+    p.x += p.vx; p.y += p.vy; p.life -= 1;
+    if (p.life <= 0 || p.x < -10 || p.x > w + 10 || p.y < -10 || p.y > h + 10) {
+      mbParticles.splice(i, 1);
+    }
+  }
+}
+function mbDrawParticles(color, boost) {
+  boost = boost || 1;
+  for (const p of mbParticles) {
+    const a = Math.min(1, (p.life / p.maxLife) * boost);
+    mbCtx.fillStyle = `rgba(${color},${a})`;
+    mbCtx.beginPath();
+    mbCtx.arc(p.x, p.y, p.size * a, 0, Math.PI * 2);
+    mbCtx.fill();
+  }
+}
+
+function mbDraw() {
+  if (!mbActive && !mbIdle) return;
+  mbTime += 16;
+  const w = mbW, h = mbH, t = mbTime;
+  let r = mbActive ? mbRhythm(t) : (0.12 + 0.04 * Math.sin(t * 0.001));
+  mbCtx.clearRect(0, 0, w, h);
+
+  const idx = mbEffectNames[mbEffect];
+  const cx = w / 2, cy = h / 2;
+
+  // 颜色随主题
+  const curTheme = document.documentElement.getAttribute('data-theme') || '';
+  const isImageBackground = document.body.classList.contains('background-image-mode');
+  const isDark = isImageBackground || curTheme === 'midnight' || curTheme === 'dream' || curTheme === 'starry' || curTheme === 'sunset' || curTheme === 'aurora' || curTheme === 'forest' || curTheme === 'deepsea' || curTheme === 'clay';
+  const baseColor = isDark ? '255,255,255' : '29,29,31';
+  // 暗色主题和图片背景亮度增益，让白色律动更明显
+  if (isDark) r = Math.min(1, r * 1.8);
+
+  // 辅助：画一条曲线
+  function drawCurve(fn, alpha, lw) {
+    mbCtx.strokeStyle = `rgba(${baseColor},${alpha * r})`;
+    mbCtx.lineWidth = lw || 1.5;
+    mbCtx.beginPath();
+    for (let x = 0; x <= w; x += 2) {
+      const y = fn(x);
+      if (x === 0) mbCtx.moveTo(x, y);
+      else mbCtx.lineTo(x, y);
+    }
+    mbCtx.stroke();
+  }
+
+  try {
+  switch (idx) {
+    // ========== 保留的 6 种 ==========
+    case '1': {
+      // 三层正弦波
+      drawCurve(x => cy + Math.sin((x + t*0.06)*0.018) * (h*0.38) * r, 0.55, 1.5);
+      drawCurve(x => cy + Math.sin((x + t*0.04)*0.012 + Math.PI/3) * (h*0.28) * r, 0.35, 1.5);
+      drawCurve(x => cy + Math.sin((x + t*0.08)*0.025 + Math.PI/2) * (h*0.18) * r, 0.25, 1.5);
+      break;
+    }
+    case '2': {
+      // 丝带飘动
+      for (let i = 0; i < 5; i++) {
+        const phase = i * 0.4;
+        drawCurve(x => cy + Math.sin((x + t*0.05)*0.015 + phase) * (h*0.35) * r * (1 - i*0.12), 0.45 - i*0.07, 1.2);
+      }
+      break;
+    }
+    case '3': {
+      // 蝴蝶振翅
+      drawCurve(x => {
+        const u = (x / w) * Math.PI * 4;
+        const flap = Math.sin(t * 0.006);
+        return cy + Math.sin(u) * Math.exp(-Math.abs(Math.sin(u))*0.5) * (h*0.4) * r * flap;
+      }, 0.55, 1.5);
+      drawCurve(x => {
+        const u = (x / w) * Math.PI * 4;
+        const flap = Math.sin(t * 0.006);
+        return cy - Math.sin(u) * Math.exp(-Math.abs(Math.sin(u))*0.5) * (h*0.4) * r * flap;
+      }, 0.35, 1.5);
+      break;
+    }
+    case '4': {
+      // 花瓣展开
+      for (let i = 0; i < 6; i++) {
+        const angle = (i / 6) * Math.PI * 2 + t * 0.001;
+        drawCurve(x => {
+          const u = (x / w) * Math.PI * 2;
+          return cy + Math.sin(u * 2 + angle) * Math.cos(u + t*0.003) * (h*0.38) * r;
+        }, 0.3, 1.2);
+      }
+      break;
+    }
+    case '5': {
+      // 气泡上升
+      if (mbTime % 120 < 16) {
+        mbSpawnParticle(Math.random()*w, h, (Math.random()-0.5)*0.3, -0.4-Math.random()*0.6, 50+Math.random()*30, 1+Math.random()*1.5);
+      }
+      mbUpdateParticles(w, h);
+      mbDrawParticles(baseColor, isDark ? 1.8 : 1);
+      break;
+    }
+    case '6': {
+      // 雨滴
+      if (mbTime % 50 < 16) {
+        for (let i = 0; i < 2; i++) {
+          mbSpawnParticle(Math.random()*w, 0, 0, 1.5+Math.random()*1, 18+Math.random()*8, 0.6);
+        }
+      }
+      mbUpdateParticles(w, h);
+      mbDrawParticles(baseColor, isDark ? 1.8 : 1);
+      break;
+    }
+
+    // ========== 新增 10 种 ==========
+    case '7': {
+      // 海浪涌动（曲线 + 填充）
+      drawCurve(x => cy + Math.sin((x + t*0.05)*0.014) * (h*0.35) * r, 0.5, 1.5);
+      // 下方填充
+      mbCtx.beginPath();
+      for (let x = 0; x <= w; x += 2) {
+        const y = cy + Math.sin((x + t*0.05)*0.014) * (h*0.35) * r;
+        if (x === 0) mbCtx.moveTo(x, y);
+        else mbCtx.lineTo(x, y);
+      }
+      mbCtx.lineTo(w, h); mbCtx.lineTo(0, h); mbCtx.closePath();
+      const grad = mbCtx.createLinearGradient(0, cy, 0, h);
+      grad.addColorStop(0, `rgba(${baseColor},${0.15 * r})`);
+      grad.addColorStop(1, `rgba(${baseColor},0)`);
+      mbCtx.fillStyle = grad;
+      mbCtx.fill();
+      break;
+    }
+    case '8': {
+      // 羽毛轻拂
+      for (let i = 0; i < 4; i++) {
+        const offset = i * 0.6;
+        drawCurve(x => {
+          const env = Math.exp(-Math.abs((x - cx) / (w * 0.3)) * 2);
+          return cy + Math.sin((x + t*0.04)*0.03 + offset) * env * (h*0.4) * r;
+        }, 0.4 - i*0.07, 1.2);
+      }
+      break;
+    }
+    case '9': {
+      // 等高线
+      for (let i = 0; i < 5; i++) {
+        const amp = (i + 1) * 0.08;
+        drawCurve(x => {
+          const n = Math.sin(x*0.01 + t*0.005 + i*0.5) + Math.sin(x*0.03 + t*0.003 + i) * 0.5;
+          return cy + n * (h * amp) * r;
+        }, 0.3 - i*0.04, 1);
+      }
+      break;
+    }
+
+    // ========== 新增创意效果（第二个按钮） ==========
+    case 'N1': {
+      // 瀑布流（保留）
+      const cols = 40;
+      const cw = w / cols;
+      for (let i = 0; i < cols; i++) {
+        const flow = ((t * 0.003 + i * 0.17) % 1);
+        const len = 8;
+        for (let j = 0; j < len; j++) {
+          const y = (flow * h + j * 3) % h;
+          const alpha = (1 - j / len) * 0.4 * r;
+          mbCtx.fillStyle = `rgba(${baseColor},${alpha})`;
+          mbCtx.fillRect(i * cw, y, cw * 0.5, 2);
+        }
+      }
+      break;
+    }
+    case 'N3': {
+      // 潮汐涨落（保留）
+      const tideLevel = Math.sin(t * 0.001) * h * 0.2 + h * 0.5;
+      drawCurve(x => {
+        return tideLevel + Math.sin((x + t * 0.05) * 0.01) * (h * 0.08) * r;
+      }, 0.5, 1.5);
+      mbCtx.beginPath();
+      for (let x = 0; x <= w; x += 2) {
+        const y = tideLevel + Math.sin((x + t * 0.05) * 0.01) * (h * 0.08) * r;
+        if (x === 0) mbCtx.moveTo(x, y);
+        else mbCtx.lineTo(x, y);
+      }
+      mbCtx.lineTo(w, h); mbCtx.lineTo(0, h); mbCtx.closePath();
+      const tideGrad = mbCtx.createLinearGradient(0, tideLevel, 0, h);
+      tideGrad.addColorStop(0, `rgba(${baseColor},${0.12 * r})`);
+      tideGrad.addColorStop(1, `rgba(${baseColor},0)`);
+      mbCtx.fillStyle = tideGrad;
+      mbCtx.fill();
+      for (let i = 0; i < 15; i++) {
+        const fx = ((i * 67.3 + t * 0.03) % w);
+        const fy = tideLevel + Math.sin((fx + t * 0.05) * 0.01) * (h * 0.08) * r;
+        mbCtx.fillStyle = `rgba(${baseColor},${0.3 * r})`;
+        mbCtx.beginPath();
+        mbCtx.arc(fx, fy, 0.8, 0, Math.PI * 2);
+        mbCtx.fill();
+      }
+      break;
+    }
+    case 'N4': {
+      // 星座连线
+      if (!mbConstellation) {
+        mbConstellation = [];
+        for (let i = 0; i < 18; i++) {
+          mbConstellation.push({ x: Math.random() * w, y: Math.random() * h, phase: Math.random() * Math.PI * 2 });
+        }
+      }
+      for (let i = 0; i < mbConstellation.length; i++) {
+        const s = mbConstellation[i];
+        const twinkle = Math.sin(t * 0.005 + s.phase) * 0.5 + 0.5;
+        mbCtx.fillStyle = `rgba(${baseColor},${twinkle * 0.6 * r})`;
+        mbCtx.beginPath();
+        mbCtx.arc(s.x, s.y, 1.2, 0, Math.PI * 2);
+        mbCtx.fill();
+        for (let j = i + 1; j < mbConstellation.length; j++) {
+          const s2 = mbConstellation[j];
+          const dx = s.x - s2.x, dy = s.y - s2.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < w * 0.12) {
+            mbCtx.strokeStyle = `rgba(${baseColor},${(1 - dist / (w * 0.12)) * 0.15 * r})`;
+            mbCtx.lineWidth = 0.4;
+            mbCtx.beginPath();
+            mbCtx.moveTo(s.x, s.y);
+            mbCtx.lineTo(s2.x, s2.y);
+            mbCtx.stroke();
+          }
+        }
+      }
+      break;
+    }
+    case 'N6': {
+      // 弹力绳
+      const numPoints = 30;
+      const anchorY = h * 0.2;
+      const dipY = h * 0.8;
+      const bounce = Math.sin(t * 0.005) * 0.3 + 0.7;
+      mbCtx.strokeStyle = `rgba(${baseColor},${0.5 * r})`;
+      mbCtx.lineWidth = 1.5;
+      mbCtx.beginPath();
+      for (let i = 0; i <= numPoints; i++) {
+        const x = (i / numPoints) * w;
+        const wave = Math.sin((i / numPoints) * Math.PI);
+        const y = anchorY + (dipY - anchorY) * wave * bounce * r + Math.sin(t * 0.01 + i * 0.3) * 1.5;
+        if (i === 0) mbCtx.moveTo(x, y);
+        else mbCtx.lineTo(x, y);
+      }
+      mbCtx.stroke();
+      mbCtx.fillStyle = `rgba(${baseColor},${0.6 * r})`;
+      mbCtx.beginPath();
+      mbCtx.arc(0, anchorY, 2, 0, Math.PI * 2);
+      mbCtx.arc(w, anchorY, 2, 0, Math.PI * 2);
+      mbCtx.fill();
+      break;
+    }
+    case 'N13': {
+      // 极光丝带
+      for (let i = 0; i < 4; i++) {
+        const layerR = 0.15 + i * 0.05;
+        drawCurve(x => {
+          const baseY = cy + (i - 1.5) * h * 0.08;
+          const wave1 = Math.sin(x * 0.008 + t * 0.003 + i) * h * layerR;
+          const wave2 = Math.sin(x * 0.02 + t * 0.005 + i * 2) * h * 0.04;
+          return baseY + (wave1 + wave2) * r;
+        }, 0.35 - i * 0.05, 2 - i * 0.3);
+      }
+      break;
+    }
+    case 'N22': {
+      // 光纤束
+      const numFibers = 12;
+      for (let i = 0; i < numFibers; i++) {
+        const baseY = (i / numFibers) * h;
+        const phase = i * 0.4;
+        mbCtx.strokeStyle = `rgba(${baseColor},${0.3 * r})`;
+        mbCtx.lineWidth = 0.8;
+        mbCtx.beginPath();
+        for (let x = 0; x <= w; x += 3) {
+          const wave = Math.sin(x * 0.01 + t * 0.003 + phase) * 3 * r;
+          const y = baseY + wave;
+          if (x === 0) mbCtx.moveTo(x, y);
+          else mbCtx.lineTo(x, y);
+        }
+        mbCtx.stroke();
+        const pulseX = ((t * 0.05 + i * 20) % w);
+        const py = baseY + Math.sin(pulseX * 0.01 + t * 0.003 + phase) * 3 * r;
+        mbCtx.fillStyle = `rgba(${baseColor},${0.6 * r})`;
+        mbCtx.beginPath();
+        mbCtx.arc(pulseX, py, 1.5, 0, Math.PI * 2);
+        mbCtx.fill();
+      }
+      break;
+    }
+  }
+  } catch(e) {}
+
+  mbRAF = requestAnimationFrame(mbDraw);
+}
+
+function mbStart() {
+  mbActive = true;
+  mbIdle = false;
+  const isMinimal = document.body.classList.contains('layout-minimal');
+  if (isMinimal) {
+    musicBarBottom.classList.remove('idle');
+    musicBarBottom.classList.add('active');
+  } else {
+    musicBarBottom.classList.remove('active', 'idle');
+  }
+  mbResize();
+  if (!mbRAF) mbDraw();
+  mbUpdateTitles();
+  mbResetAutoHide();
+}
+
+function mbStop() {
+  mbActive = false;
+  const isMinimal = document.body.classList.contains('layout-minimal');
+  if (isMinimal) {
+    mbIdle = true;
+    musicBarBottom.classList.remove('active');
+    musicBarBottom.classList.add('idle');
+    mbParticles = [];
+    if (!mbRAF) mbDraw();
+    mbResetAutoHide();
+  } else {
+    mbIdle = false;
+    musicBarBottom.classList.remove('active', 'idle');
+    if (mbRAF) { cancelAnimationFrame(mbRAF); mbRAF = null; }
+    mbCtx2.setTransform(1, 0, 0, 1, 0, 0);
+    mbCtx2.clearRect(0, 0, musicBarBottom.width, musicBarBottom.height);
+    const dpr3 = window.devicePixelRatio || 1;
+    mbCtx2.setTransform(dpr3, 0, 0, dpr3, 0, 0);
+  }
+}
+
+function mbUpdateTitles() {
+  const id1 = mbEffectNames[mbEffect];
+  const name1 = mbEffectDisplay[id1] || id1;
+  musicFxBtn.title = `${mbEffect + 1}. ${name1}`;
+}
+
+// 切换效果
+musicFxBtn.addEventListener('click', (e) => {
+  mbEffect = (mbEffect + 1) % mbEffectNames.length;
+  localStorage.setItem(mbEffectStorageKey, String(mbEffect));
+  mbParticles = [];
+  mbUpdateTitles();
+  mbResetAutoHide();
+  if (!isPlaying) {
+    togglePlay();
+  } else {
+    mbClosed = false;
+    mbStart();
+  }
+  e.currentTarget.blur();
+});
+
+// 关闭按钮：停止律动动画
+let mbClosed = false;
+musicFxClose.addEventListener('click', (e) => {
+  mbClosed = true;
+  mbActive = false;
+  mbIdle = false;
+  musicBarBottom.classList.remove('active', 'idle');
+  if (mbHideTimer) clearTimeout(mbHideTimer);
+  musicFxBtn.classList.add('auto-hidden');
+  musicFxClose.classList.add('auto-hidden');
+  if (mbRAF) { cancelAnimationFrame(mbRAF); mbRAF = null; }
+  mbCtx2.setTransform(1, 0, 0, 1, 0, 0);
+  mbCtx2.clearRect(0, 0, musicBarBottom.width, musicBarBottom.height);
+  const dpr4 = window.devicePixelRatio || 1;
+  mbCtx2.setTransform(dpr4, 0, 0, dpr4, 0, 0);
+  e.currentTarget.blur();
+});
+
+// 5秒无操作自动隐藏切换按钮
+let mbHideTimer = null;
+let mbPointerInside = false;
+
+function mbShowControls() {
+  musicFxBtn.classList.remove('auto-hidden');
+  musicFxClose.classList.remove('auto-hidden');
+  musicFxBtn.classList.add('visible');
+  musicFxClose.classList.add('visible');
+}
+
+function mbHideControls() {
+  musicFxBtn.classList.remove('visible');
+  musicFxClose.classList.remove('visible');
+  musicFxBtn.classList.add('auto-hidden');
+  musicFxClose.classList.add('auto-hidden');
+}
+
+function mbResetAutoHide() {
+  if (mbPointerInside) {
+    mbShowControls();
+    if (mbHideTimer) clearTimeout(mbHideTimer);
+  } else {
+    mbHideControls();
+  }
+}
+
+const musicBarContainer = document.querySelector('.music-bar-bottom-container');
+if (musicBarContainer) {
+  function mbRevealControls() {
+    mbPointerInside = true;
+    mbShowControls();
+    if (mbHideTimer) clearTimeout(mbHideTimer);
+  }
+
+  function mbScheduleControlsHide(delay = 2000) {
+    mbPointerInside = false;
+    if (mbHideTimer) clearTimeout(mbHideTimer);
+    mbHideTimer = setTimeout(() => {
+      if (!mbPointerInside) {
+        mbHideControls();
+      }
+    }, delay);
+  }
+
+  musicBarContainer.addEventListener('mouseenter', () => {
+    if (mbClosed || mbActive || mbIdle) {
+      mbRevealControls();
+    }
+  });
+  musicBarContainer.addEventListener('mouseleave', () => {
+    if (mbClosed || mbActive || mbIdle) {
+      mbScheduleControlsHide(2000);
+    }
+  });
+  musicBarContainer.addEventListener('touchstart', () => {
+    if (mbClosed || mbActive || mbIdle) {
+      mbRevealControls();
+      mbScheduleControlsHide(2000);
+    }
+  }, { passive: true });
+}
+
+// observe musicPlay playing class
+const mbObserver = new MutationObserver(() => {
+  if (musicPlay.classList.contains('playing')) {
+    mbStart();
+  } else {
+    mbStop();
+  }
+});
+mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
+
+
+// ========== 背景选择器 ==========
+// === 背景选择器：纯色/渐变 + WebP 壁纸，按需创建预览 ===
+(function() {
+  const storageKey = 'kisstr_background_picker_selection_v1';
+  const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+  const imageBackgrounds = [
+    { id: '樱野', name: '樱野', url: 'wallpapers_webp/樱野.webp', thumb: 'wallpapers_webp/thumbs/樱野.webp' },
+    { id: '星夜', name: '星夜', url: 'wallpapers_webp/星夜.webp', thumb: 'wallpapers_webp/thumbs/星夜.webp' },
+    { id: '秋林', name: '秋林', url: 'wallpapers_webp/秋林.webp', thumb: 'wallpapers_webp/thumbs/秋林.webp' },
+    { id: '樱河', name: '樱河', url: 'wallpapers_webp/樱河.webp', thumb: 'wallpapers_webp/thumbs/樱河.webp' },
+    { id: '海站', name: '海站', url: 'wallpapers_webp/海站.webp', thumb: 'wallpapers_webp/thumbs/海站.webp' },
+    { id: '雨读', name: '雨读', url: 'wallpapers_webp/雨读.webp', thumb: 'wallpapers_webp/thumbs/雨读.webp' },
+    { id: '薰月', name: '薰月', url: 'wallpapers_webp/薰月.webp', thumb: 'wallpapers_webp/thumbs/薰月.webp' },
+    { id: '屋园', name: '屋园', url: 'wallpapers_webp/屋园.webp', thumb: 'wallpapers_webp/thumbs/屋园.webp' },
+    { id: '云海', name: '云海', url: 'wallpapers_webp/云海.webp', thumb: 'wallpapers_webp/thumbs/云海.webp' },
+    { id: '花街', name: '花街', url: 'wallpapers_webp/花街.webp', thumb: 'wallpapers_webp/thumbs/花街.webp' },
+    { id: '雪村', name: '雪村', url: 'wallpapers_webp/雪村.webp', thumb: 'wallpapers_webp/thumbs/雪村.webp' },
+    { id: '灯塔', name: '灯塔', url: 'wallpapers_webp/灯塔.webp', thumb: 'wallpapers_webp/thumbs/灯塔.webp' },
+    { id: '林茶', name: '林茶', url: 'wallpapers_webp/林茶.webp', thumb: 'wallpapers_webp/thumbs/林茶.webp' },
+    { id: '稻霞', name: '稻霞', url: 'wallpapers_webp/稻霞.webp', thumb: 'wallpapers_webp/thumbs/稻霞.webp' },
+    { id: '温室', name: '温室', url: 'wallpapers_webp/温室.webp', thumb: 'wallpapers_webp/thumbs/温室.webp' },
+    { id: '游园', name: '游园', url: 'wallpapers_webp/游园.webp', thumb: 'wallpapers_webp/thumbs/游园.webp' },
+    { id: '学园', name: '学园', url: 'wallpapers_webp/学园.webp', thumb: 'wallpapers_webp/thumbs/学园.webp' },
+    { id: '水族', name: '水族', url: 'wallpapers_webp/水族.webp', thumb: 'wallpapers_webp/thumbs/水族.webp' },
+    { id: '阁星', name: '阁星', url: 'wallpapers_webp/阁星.webp', thumb: 'wallpapers_webp/thumbs/阁星.webp' },
+    { id: '竹晨', name: '竹晨', url: 'wallpapers_webp/竹晨.webp', thumb: 'wallpapers_webp/thumbs/竹晨.webp' },
+    { id: '夜市', name: '夜市', url: 'wallpapers_webp/夜市.webp', thumb: 'wallpapers_webp/thumbs/夜市.webp' },
+    { id: '星象', name: '星象', url: 'wallpapers_webp/星象.webp', thumb: 'wallpapers_webp/thumbs/星象.webp' },
+    { id: '风车', name: '风车', url: 'wallpapers_webp/风车.webp', thumb: 'wallpapers_webp/thumbs/风车.webp' },
+    { id: '猫窗', name: '猫窗', url: 'wallpapers_webp/猫窗.webp', thumb: 'wallpapers_webp/thumbs/猫窗.webp' },
+    { id: '兔野', name: '兔野', url: 'wallpapers_webp/兔野.webp', thumb: 'wallpapers_webp/thumbs/兔野.webp' },
+    { id: '书童', name: '书童', url: 'wallpapers_webp/书童.webp', thumb: 'wallpapers_webp/thumbs/书童.webp' },
+    { id: '紫阳', name: '紫阳', url: 'wallpapers_webp/紫阳.webp', thumb: 'wallpapers_webp/thumbs/紫阳.webp' },
+    { id: '月秋', name: '月秋', url: 'wallpapers_webp/月秋.webp', thumb: 'wallpapers_webp/thumbs/月秋.webp' },
+    { id: '庭院', name: '庭院', url: 'wallpapers_webp/庭院.webp', thumb: 'wallpapers_webp/thumbs/庭院.webp' },
+    { id: '水母', name: '水母', url: 'wallpapers_webp/水母.webp', thumb: 'wallpapers_webp/thumbs/水母.webp' },
+    { id: '草莓', name: '草莓', url: 'wallpapers_webp/草莓.webp', thumb: 'wallpapers_webp/thumbs/草莓.webp' },
+    { id: '魔书', name: '魔书', url: 'wallpapers_webp/魔书.webp', thumb: 'wallpapers_webp/thumbs/魔书.webp' },
+    { id: '冬暖', name: '冬暖', url: 'wallpapers_webp/冬暖.webp', thumb: 'wallpapers_webp/thumbs/冬暖.webp' },
+    { id: '画室', name: '画室', url: 'wallpapers_webp/画室.webp', thumb: 'wallpapers_webp/thumbs/画室.webp' },
+    { id: '犬伴', name: '犬伴', url: 'wallpapers_webp/犬伴.webp', thumb: 'wallpapers_webp/thumbs/犬伴.webp' },
+    { id: '野餐', name: '野餐', url: 'wallpapers_webp/野餐.webp', thumb: 'wallpapers_webp/thumbs/野餐.webp' },
+    { id: '狐社', name: '狐社', url: 'wallpapers_webp/狐社.webp', thumb: 'wallpapers_webp/thumbs/狐社.webp', excludeFromRandom: true },
+    { id: '阅台', name: '阅台', url: 'wallpapers_webp/阅台.webp', thumb: 'wallpapers_webp/thumbs/阅台.webp' },
+    { id: '虹池', name: '虹池', url: 'wallpapers_webp/虹池.webp', thumb: 'wallpapers_webp/thumbs/虹池.webp', excludeFromRandom: true },
+    { id: '绿意', name: '绿意', url: 'wallpapers_webp/绿意.webp', thumb: 'wallpapers_webp/thumbs/绿意.webp', excludeFromRandom: true },
+    { id: '茶花', name: '茶花', url: 'wallpapers_webp/茶花.webp', thumb: 'wallpapers_webp/thumbs/茶花.webp' },
+    { id: '海骑', name: '海骑', url: 'wallpapers_webp/海骑.webp', thumb: 'wallpapers_webp/thumbs/海骑.webp' },
+    { id: '萤光', name: '萤光', url: 'wallpapers_webp/萤光.webp', thumb: 'wallpapers_webp/thumbs/萤光.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+  /* reorder: 精选背景 → 风景 → 人物 */
+  (function() {
+    var featuredIds = ['樱野', '星夜', '秋林'];
+    var sceneryIds = ['樱河','海站','雨读','薰月','屋园','云海','花街','雪村','灯塔','林茶','稻霞','温室','游园','学园','水族','阁星','竹晨','夜市','星象','风车'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+  let modalBuilt = false;
+  let selectedId = null;
+  let fadeTimer = null;
+  let backgroundFadeTimer = null;
+
+  function ensureThemeFadeOverlay() {
+    let overlay = document.getElementById('themeFadeOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'themeFadeOverlay';
+      overlay.className = 'theme-fade-overlay';
+      document.body.appendChild(overlay);
+    }
+    return overlay;
+  }
+
+  function runThemeFade(changeFn, enabled = true) {
+    if (fadeTimer) {
+      clearTimeout(fadeTimer);
+      fadeTimer = null;
+    }
+    if (!enabled) {
+      changeFn();
+      return;
+    }
+    const overlay = ensureThemeFadeOverlay();
+    overlay.classList.remove('active');
+    requestAnimationFrame(() => {
+      overlay.classList.add('active');
+      setTimeout(() => {
+        changeFn();
+        requestAnimationFrame(() => {
+          overlay.classList.remove('active');
+        });
+      }, 90);
+      fadeTimer = setTimeout(() => {
+        overlay.classList.remove('active');
+        fadeTimer = null;
+      }, 620);
+    });
+  }
+
+  function ensureBackgroundFadeLayer() {
+    let layer = document.getElementById('backgroundFadeLayer');
+    if (!layer) {
+      layer = document.createElement('div');
+      layer.id = 'backgroundFadeLayer';
+      layer.className = 'bg-layer-fade';
+      const bgLayer = document.querySelector('.bg-layer');
+      if (bgLayer && bgLayer.parentNode) {
+        bgLayer.parentNode.insertBefore(layer, bgLayer.nextSibling);
+      } else {
+        document.body.appendChild(layer);
+      }
+    }
+    return layer;
+  }
+
+  function fadeFromCurrentImageBackground(changeFn, enabled = true) {
+    if (backgroundFadeTimer) {
+      clearTimeout(backgroundFadeTimer);
+      backgroundFadeTimer = null;
+    }
+    if (!enabled) {
+      changeFn();
+      return;
+    }
+
+    const currentLayer = document.querySelector('.bg-layer');
+    const fadeLayer = ensureBackgroundFadeLayer();
+    const currentStyle = currentLayer ? getComputedStyle(currentLayer) : null;
+    const currentImage = currentStyle ? currentStyle.backgroundImage : '';
+    const hasCurrentImage = currentImage && currentImage !== 'none';
+
+    if (hasCurrentImage) {
+      fadeLayer.style.backgroundImage = currentImage;
+      fadeLayer.style.backgroundSize = currentStyle.backgroundSize;
+      fadeLayer.style.backgroundPosition = currentStyle.backgroundPosition;
+      fadeLayer.style.backgroundRepeat = currentStyle.backgroundRepeat;
+      fadeLayer.classList.add('visible');
+    }
+
+    changeFn();
+
+    if (hasCurrentImage) {
+      requestAnimationFrame(() => {
+        fadeLayer.classList.remove('visible');
+      });
+      backgroundFadeTimer = setTimeout(() => {
+        fadeLayer.style.backgroundImage = '';
+        backgroundFadeTimer = null;
+      }, 680);
+    }
+  }
+
+  function getImageOverlay() {
+    const isGrid = document.body.classList.contains('layout-grid');
+    return isGrid
+      ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+      : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+  }
+
+  function syncImageBackgroundChrome(bgImageValue) {
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) {
+      document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    }
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    if (themeToggle) themeToggle.title = '\u56FE\u7247\u80CC\u666F';
+  }
+
+  function paintImageBackground(url) {
+    if (!url) return;
+    url = url.replace('anime_wallpapers/', 'wallpapers_webp/');
+    url = url.replace('.jpg', '.webp');
+    const overlay = getImageOverlay();
+    document.body.classList.add('background-image-mode');
+    const bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${url}')`;
+    document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    document.body.style.setProperty('--bg-image', bgImageValue);
+    syncImageBackgroundChrome(bgImageValue);
+  }
+
+  function markActive(id) {
+    selectedId = id;
+    document.querySelectorAll('.background-card').forEach(card => {
+      card.classList.toggle('active', card.dataset.bgId === id);
+    });
+    const strip = document.getElementById('backgroundStrip');
+    if (strip) {
+      const grayScrollbarIds = ['theme-white', 'theme-dawn', 'theme-mint', 'theme-ocean', 'theme-twilight'];
+      strip.classList.toggle('gray-scrollbar', grayScrollbarIds.indexOf(id) >= 0);
+    }
+  }
+
+  function scrollCardToCenter(card) {
+    if (!card) return;
+    var strip = document.getElementById('backgroundStrip');
+    if (!strip) return;
+    var stripRect = strip.getBoundingClientRect();
+    var cardRect = card.getBoundingClientRect();
+    var target = strip.scrollLeft + (cardRect.left - stripRect.left) - (stripRect.width / 2) + (cardRect.width / 2);
+    strip.scrollTo({ left: target, behavior: 'smooth' });
+  }
+
+  function normalizeBackgroundOption(option) {
+    if (!option) return option;
+    const normalized = { ...option };
+    if (normalized.url) {
+      normalized.url = normalized.url.replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+    }
+    if (normalized.thumb) {
+      normalized.thumb = normalized.thumb.replace('anime_wallpapers/', 'wallpapers_webp/').replace('.jpg', '.webp');
+    }
+    return normalized;
+  }
+
+  function saveSelection(option) {
+    option = normalizeBackgroundOption(option);
+    localStorage.setItem(storageKey, JSON.stringify(option));
+  }
+
+  function setThemeBackground(option, shouldSave = true) {
+    runThemeFade(() => {
+      fadeFromCurrentImageBackground(() => {
+        document.body.classList.remove('background-image-mode');
+        document.documentElement.classList.remove('background-image-mode');
+        document.body.style.backgroundImage = '';
+        document.body.style.backgroundAttachment = '';
+        document.body.style.backgroundSize = '';
+        document.body.style.backgroundPosition = '';
+        document.body.style.backgroundRepeat = '';
+        document.body.style.removeProperty('--bg-image');
+        document.documentElement.style.removeProperty('--bg-image');
+        if (typeof setTheme === 'function') {
+          setTheme(option.theme);
+        } else {
+          document.documentElement.setAttribute('data-theme', option.theme);
+        }
+        if (shouldSave) saveSelection(option);
+        markActive(option.id);
+      }, shouldSave);
+    }, shouldSave);
+  }
+
+  function setImageBackground(option, shouldSave = true, preload = true) {
+    option = normalizeBackgroundOption(option);
+    const loading = document.getElementById('backgroundLoading');
+    const apply = (url) => {
+      if (url) option.url = url;
+      runThemeFade(() => {
+        fadeFromCurrentImageBackground(() => {
+          document.body.classList.add('background-image-mode');
+          paintImageBackground(option.url);
+          if (shouldSave) saveSelection(option);
+          markActive(option.id);
+          if (loading) loading.classList.remove('show');
+        }, shouldSave);
+      }, shouldSave);
+    };
+
+    if (!preload) {
+      apply(option.url);
+      return;
+    }
+
+    if (loading) loading.classList.add('show');
+    const candidates = [];
+    [option.url, encodeURI(option.url || ''), option.thumb, encodeURI(option.thumb || '')].forEach(url => {
+      if (url && candidates.indexOf(url) < 0) candidates.push(url);
+    });
+    let index = 0;
+    const tryLoad = () => {
+      const url = candidates[index];
+      if (!url) {
+        if (loading) loading.classList.remove('show');
+        console.warn('背景预加载失败，已直接应用原路径：', option.url);
+        apply(option.url);
+        return;
+      }
+      const img = new Image();
+      img.onload = () => apply(url);
+      img.onerror = () => {
+        index += 1;
+        tryLoad();
+      };
+      img.src = url;
+    };
+    tryLoad();
+  }
+
+  function applySelection(option, shouldSave = true, preload = true) {
+    if (!option) return;
+    if (option.type === 'theme') setThemeBackground(option, shouldSave);
+    if (option.type === 'image') setImageBackground(option, shouldSave, preload);
+  }
+
+  function createThemeCard(option) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'background-card';
+    btn.dataset.bgId = option.id;
+    btn.title = option.name;
+    btn.setAttribute('aria-label', option.name);
+    btn.innerHTML = `
+      <div class="background-card-preview" style="background:${option.preview}"></div>
+    `;
+    btn.addEventListener('click', () => {
+      applySelection(option, true, true);
+      scrollCardToCenter(btn);
+    });
+    return btn;
+  }
+
+  function createImageCard(option) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'background-card';
+    btn.dataset.bgId = option.id;
+    btn.title = option.name;
+    btn.setAttribute('aria-label', option.name);
+    btn.innerHTML = `
+      <img src="${option.thumb}" alt="" loading="lazy" decoding="async">
+    `;
+    btn.addEventListener('click', () => {
+      applySelection(option, true, true);
+      scrollCardToCenter(btn);
+    });
+    return btn;
+  }
+
+  function buildModal() {
+    if (modalBuilt) return;
+    modalBuilt = true;
+
+    const modal = document.createElement('div');
+    modal.id = 'backgroundModal';
+    modal.className = 'background-modal';
+    modal.innerHTML = `
+      <div class="background-modal-panel" role="dialog" aria-modal="true" aria-label="背景选择器">
+        <div class="background-modal-content">
+          <div class="background-strip" id="backgroundStrip"></div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const strip = modal.querySelector('#backgroundStrip');
+    pureBackgrounds.forEach(option => strip.appendChild(createThemeCard(option)));
+    imageBackgrounds.forEach(option => strip.appendChild(createImageCard(option)));
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    modal.addEventListener('touchstart', (event) => {
+      if (event.target === modal) {
+        closeModal();
+        event.preventDefault();
+      }
+    }, { passive: false });
+
+    /* mouse drag scrolling on the strip */
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+    let dragMoved = false;
+
+    strip.addEventListener('mousedown', (e) => {
+      isDown = true;
+      dragMoved = false;
+      strip.classList.add('dragging');
+      startX = e.pageX - strip.offsetLeft;
+      scrollLeft = strip.scrollLeft;
+    });
+
+    strip.addEventListener('mouseleave', () => {
+      isDown = false;
+      strip.classList.remove('dragging');
+    });
+
+    strip.addEventListener('mouseup', () => {
+      isDown = false;
+      strip.classList.remove('dragging');
+    });
+
+    strip.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - strip.offsetLeft;
+      const walk = x - startX;
+      if (Math.abs(walk) > 4) dragMoved = true;
+      strip.scrollLeft = scrollLeft - walk;
+    });
+
+    /* 手机触摸拖动：让主题/背景选择条在移动端可直接左右滑动 */
+    strip.addEventListener('touchstart', (e) => {
+      if (!e.touches || e.touches.length !== 1) return;
+      isDown = true;
+      dragMoved = false;
+      strip.classList.add('dragging');
+      startX = e.touches[0].pageX - strip.offsetLeft;
+      scrollLeft = strip.scrollLeft;
+    }, { passive: true });
+
+    strip.addEventListener('touchmove', (e) => {
+      if (!isDown || !e.touches || e.touches.length !== 1) return;
+      const x = e.touches[0].pageX - strip.offsetLeft;
+      const walk = x - startX;
+      if (Math.abs(walk) > 4) dragMoved = true;
+      strip.scrollLeft = scrollLeft - walk;
+    }, { passive: true });
+
+    strip.addEventListener('touchend', () => {
+      isDown = false;
+      strip.classList.remove('dragging');
+    }, { passive: true });
+
+    strip.addEventListener('touchcancel', () => {
+      isDown = false;
+      strip.classList.remove('dragging');
+    }, { passive: true });
+
+    /* prevent click after drag */
+    strip.addEventListener('click', (e) => {
+      if (dragMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+        dragMoved = false;
+      }
+    }, true);
+
+    markActive(selectedId);
+  }
+
+  function openModal() {
+    buildModal();
+    positionBackgroundPicker();
+    const modal = document.getElementById('backgroundModal');
+    modal.classList.toggle('open');
+    if (themeToggle) {
+      themeToggle.classList.toggle('background-picker-open', modal.classList.contains('open'));
+    }
+    /* scroll active card to center */
+    var activeCard = document.querySelector('.background-card.active');
+    if (activeCard) {
+      setTimeout(function() { scrollCardToCenter(activeCard); }, 80);
+    }
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('backgroundModal');
+    if (modal) modal.classList.remove('open');
+    if (themeToggle) themeToggle.classList.remove('background-picker-open');
+  }
+
+  function positionBackgroundPicker() {
+    const modal = document.getElementById('backgroundModal');
+    if (!modal || !themeToggle) return;
+    const rect = themeToggle.getBoundingClientRect();
+    const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0, 360);
+    const width = Math.max(336, Math.min(920, viewportWidth - 24));
+    const panel = modal.querySelector('.background-modal-panel');
+    if (panel) panel.style.width = `${width}px`;
+    const layoutOffset = document.body.classList.contains('layout-grid') ? 14 : 0;
+    modal.style.setProperty('--bg-picker-top', `${rect.bottom + 18 + layoutOffset}px`);
+  }
+
+  function createTrigger() {
+    const oldTrigger = document.getElementById('backgroundPickerTrigger');
+    if (oldTrigger) oldTrigger.remove();
+
+    const loading = document.createElement('div');
+    loading.id = 'backgroundLoading';
+    loading.className = 'background-loading';
+    loading.textContent = '背景加载中…';
+    document.body.appendChild(loading);
+  }
+
+  function restoreSelection() {
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      try {
+        const option = JSON.parse(saved);
+        var normalized = normalizeBackgroundOption(option);
+        /* 验证保存的背景是否仍存在于当前列表中 */
+        var found = imageBackgrounds.find(function(o) { return o.id === normalized.id || o.url === normalized.url; });
+        if (!found) {
+          found = pureBackgrounds.find(function(o) { return o.id === normalized.id || o.theme === normalized.theme; });
+        }
+        if (found) {
+          applySelection(found, false, false);
+          return;
+        }
+        /* 旧引用不存在，清除并使用随机默认 */
+        localStorage.removeItem(storageKey);
+      } catch (err) {
+        localStorage.removeItem(storageKey);
+      }
+    }
+    /* 没有用户选择时，默认从全部壁纸图片中随机；用户手动选择后仍按保存值恢复 */
+    var randomPool = imageBackgrounds.filter(function(o) { return !o.excludeFromRandom; });
+    if (randomPool.length > 0) {
+      var randomIdx = Math.floor(Math.random() * randomPool.length);
+      applySelection(randomPool[randomIdx], false, false);
+    } else if (imageBackgrounds.length > 0) {
+      applySelection(imageBackgrounds[0], false, false);
+    } else {
+      applySelection(pureBackgrounds[0], false, false);
+    }
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeModal();
+  });
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openModal();
+    }, true);
+  }
+
+  createTrigger();
+  restoreSelection();
+})();
+// ========== 背景选择器结束 ==========
+
+</script>
+</body>
+</html>
