@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
 <script>
 (function initColors() {
-  const layoutDefaultVersion = 'v141-minimal-default';
+  const layoutDefaultVersion = 'v143-magazine-default';
   if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
     localStorage.setItem('layout', 'minimal');
     localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
@@ -8200,7 +8200,7 @@ function setLayout(layout) {
   renderLinks(searchValue, currentCategory);
 }
 
-const layoutDefaultVersion = 'v141-minimal-default';
+const layoutDefaultVersion = 'v143-magazine-default';
 if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
   localStorage.setItem('layout', 'minimal');
   localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
@@ -8751,7 +8751,7 @@ function mbDraw() {
   // 颜色随主题
   const curTheme = document.documentElement.getAttribute('data-theme') || '';
   const isImageBackground = document.body.classList.contains('background-image-mode');
-  const isDark = isImageBackground || curTheme === 'midnight' || curTheme === 'dream' || curTheme === 'starry' || curTheme === 'sunset' || curTheme === 'aurora' || curTheme === 'forest' || curTheme === 'deepsea' || curTheme === 'clay';
+  const isDark = isImageBackground || curTheme === 'midnight' || curTheme === 'dream' || curTheme === 'starry' || curTheme === 'sunset' || curTheme === 'aurora' || curTheme === 'forest' || curTheme === 'deepsea' || curTheme === 'clay' || curTheme === 'ink';
   const baseColor = isDark ? '255,255,255' : '29,29,31';
   // 暗色主题和图片背景亮度增益，让白色律动更明显
   if (isDark) r = Math.min(1, r * 1.8);
@@ -9692,7 +9692,7 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
       }
     }
     /* 没有用户选择时，默认从全部壁纸图片中随机；用户手动选择后仍按保存值恢复 */
-    var defaultRandomIds = ['星夜', '雨读', '林茶', '竹晨'];
+    var defaultRandomIds = ['雨读', '林茶', '竹晨', '温室'];
     var randomPool = imageBackgrounds.filter(function(o) { return defaultRandomIds.indexOf(o.id) !== -1; });
     if (randomPool.length > 0) {
       var randomIdx = Math.floor(Math.random() * randomPool.length);
