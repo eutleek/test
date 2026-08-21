@@ -1569,6 +1569,19 @@ try {
     background: #ffffff !important;
   }
 
+  /* ink theme volume bar white (Linear 黑) */
+  [data-theme="ink"] .music-volume {
+    background: rgba(255, 255, 255, 0.7) !important;
+  }
+
+  [data-theme="ink"] .music-volume::-webkit-slider-thumb {
+    background: #ffffff !important;
+  }
+
+  [data-theme="ink"] .music-volume::-moz-range-thumb {
+    background: #ffffff !important;
+  }
+
   footer {
     text-align: center;
     padding: 40px calc(24px + var(--safe-right));
@@ -8139,7 +8152,7 @@ function setLayout(layout) {
   }
 
   if (!isImageBackground) {
-    loadThemeForLayout(layout);
+    // 切换布局时不切换主题，保持当前主题不变
   } else if (themeToggle) {
     themeToggle.title = '\u56FE\u7247\u80CC\u666F';
   }
