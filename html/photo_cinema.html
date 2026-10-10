@@ -1,0 +1,1389 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="摄影美学、电影视觉与图像纪实资源">
+<title>摄影电影 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>摄影电影</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">摄影电影 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "摄影电影",
+    "icon": "📷",
+    "color": "linear-gradient(135deg, #636e72, #2d3436)",
+    "subcategories": [
+      {
+        "name": "权威摄影媒体 (001-040)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Magnum Photos",
+            "url": "https://www.magnumphotos.com",
+            "description": "玛格南图片社官网，汇聚全球顶尖纪实摄影大师作品与经"
+          },
+          {
+            "name": "LensCulture",
+            "url": "https://www.lensculture.com",
+            "description": "全球当代摄影与艺术摄影评选平台"
+          },
+          {
+            "name": "International Center of Photography (ICP)",
+            "url": "https://www.icp.org",
+            "description": "纽约国际摄影中心，提供权威摄影展览"
+          },
+          {
+            "name": "British Journal of Photography (BJP)",
+            "url": "https://www.bjp-online.com",
+            "description": "英国老牌权威摄影杂志，关注当代新锐摄影师与前沿视觉"
+          },
+          {
+            "name": "Foam Photography Museum",
+            "url": "https://www.foam.org",
+            "description": "阿姆斯特丹 Foam 摄影博物馆"
+          },
+          {
+            "name": "Aperture Foundation",
+            "url": "https://aperture.org",
+            "description": "光圈基金会，出版大量高品质摄影画册与深度摄影评论期"
+          },
+          {
+            "name": "L'Œil de la Photographie",
+            "url": "https://loeildelaphotographie.com",
+            "description": "摄影之眼，每日报道全球摄影界展讯、拍卖"
+          },
+          {
+            "name": "World Press Photo",
+            "url": "https://www.worldpressphoto.org",
+            "description": "世界新闻摄影大赛(荷赛)官网"
+          },
+          {
+            "name": "The Photographers' Gallery",
+            "url": "https://thephotographersgallery.org.uk",
+            "description": "伦敦著名摄影师画廊，展示从早期古典胶片到数字时代的"
+          },
+          {
+            "name": "Maison Européenne de la Photographie (MEP)",
+            "url": "https://www.mep-fr.org",
+            "description": "欧洲摄影之家，展示法国及国际当代摄影艺术家的重要个"
+          },
+          {
+            "name": "Henri Cartier-Bresson Foundation",
+            "url": "https://www.henricartierbresson.org",
+            "description": "亨利·卡蒂埃-布列松基金会"
+          },
+          {
+            "name": "Hasselblad Foundation",
+            "url": "https://www.hasselbladfoundation.org",
+            "description": "哈苏基金会，颁发摄影界重量级大奖并维护庞大的国际摄"
+          },
+          {
+            "name": "George Eastman Museum",
+            "url": "https://www.eastman.org",
+            "description": "全球极老牌的摄影与电影博物馆"
+          },
+          {
+            "name": "Center for Creative Photography (CCP)",
+            "url": "https://ccp.arizona.edu",
+            "description": "收藏亚当斯等无数美国摄影大师原版底片与手稿的顶级研"
+          },
+          {
+            "name": "Jeu de Paume",
+            "url": "https://jeudepaume.org",
+            "description": "巴黎国立网球场现代艺术馆，专注于摄影"
+          },
+          {
+            "name": "C/O Berlin",
+            "url": "https://co-berlin.org",
+            "description": "柏林知名摄影艺术中心，定期展出建筑、时尚"
+          },
+          {
+            "name": "Tokyo Metropolitan Museum of Photography",
+            "url": "https://topmuseum.jp",
+            "description": "东京都摄影美术馆，展示日本及亚洲现代摄影史与视觉文"
+          },
+          {
+            "name": "Polka Magazine",
+            "url": "https://www.polkamagazine.com",
+            "description": "法国著名摄影杂志，以高品质大图印刷和深度摄影记者报"
+          },
+          {
+            "name": "Fisheye Magazine",
+            "url": "https://www.fisheyemagazine.fr",
+            "description": "关注当代年轻人视角、新锐色彩与实验性视觉的时尚摄影"
+          },
+          {
+            "name": "Blind Magazine",
+            "url": "https://www.blind-magazine.com",
+            "description": "无偏见摄影网，以故事驱动的方式呈现全球摄影师的镜头"
+          },
+          {
+            "name": "GUP Magazine",
+            "url": "https://gupmagazine.com",
+            "description": "Guide to Unique"
+          },
+          {
+            "name": "American Suburb X (ASX)",
+            "url": "https://americansuburbx.com",
+            "description": "硬核摄影评论与画册深度剖析网站，探讨摄影史"
+          },
+          {
+            "name": "Photoworks UK",
+            "url": "https://photoworks.org.uk",
+            "description": "英国国家级摄影策展机构，推动摄影在公共艺术与新媒体"
+          },
+          {
+            "name": "Photo Museum Ireland",
+            "url": "https://photomuseumireland.ie",
+            "description": "爱尔兰国家摄影博物馆，展出当代社会议题与镜头叙事。"
+          },
+          {
+            "name": "Photomonitor",
+            "url": "https://photomonitor.co.uk",
+            "description": "在线摄影艺术杂志，发表高水准的展评"
+          },
+          {
+            "name": "Yossi Milo Gallery",
+            "url": "https://www.yossimilo.com",
+            "description": "纽约知名画廊，展出极具实验性与材质突破的当代摄影艺"
+          },
+          {
+            "name": "Howard Greenberg Gallery",
+            "url": "https://www.howardgreenberg.com",
+            "description": "收藏全球 20 世纪大师经典黑白摄影与经典纪实原作"
+          },
+          {
+            "name": "Peter Fetterman Gallery",
+            "url": "https://www.peterfetterman.com",
+            "description": "主打人文主义摄影、黑白光影与经典人文纪实作品的顶级"
+          },
+          {
+            "name": "Fraenkel Gallery",
+            "url": "https://fraenkelgallery.com",
+            "description": "旧金山著名画廊，探索“摄影与一切艺术形式的交界”。"
+          },
+          {
+            "name": "Jackson Fine Art",
+            "url": "https://www.jacksonfineart.com",
+            "description": "专注于收藏级艺术摄影、植物摄影与古典印相工艺的画廊"
+          },
+          {
+            "name": "Edwynn Houk Gallery",
+            "url": "https://www.houkgallery.com",
+            "description": "展出现代主义摄影、现代派视觉构图与经典现代大师作品"
+          },
+          {
+            "name": "Hamiltons Gallery",
+            "url": "https://www.hamiltonsgallery.com",
+            "description": "伦敦顶奢摄影画廊，代理 Irving Penn"
+          },
+          {
+            "name": "Camera Work Gallery",
+            "url": "https://camerawork.de",
+            "description": "柏林著名画廊，以致敬斯蒂格利茨与展示时尚摄影"
+          },
+          {
+            "name": "Gallery 51",
+            "url": "https://www.gallery51.com",
+            "description": "专注于 20 世纪与当代经典摄影版画的专业艺术画廊"
+          },
+          {
+            "name": "Robert Mann Gallery",
+            "url": "https://www.robertmann.com",
+            "description": "纽约画廊，关注风景摄影、物体肌理与当代概念摄影。"
+          },
+          {
+            "name": "Foam Talent Archive",
+            "url": "https://www.foam.org/talent",
+            "description": "归档历年 Foam 选拔出的全球最具潜力的年轻摄影"
+          },
+          {
+            "name": "Leica Women Foto Project",
+            "url": "https://leicacamerausa.com",
+            "description": "徕卡设立的女性摄影师专项基金"
+          },
+          {
+            "name": "Musée de l'Elysée",
+            "url": "https://platine.photo",
+            "description": "瑞士知名全摄影博物馆，收藏大量极具历史价值的底片与"
+          },
+          {
+            "name": "Magnum Foundation",
+            "url": "https://www.magnumfoundation.org",
+            "description": "玛格南基金会，资助独立摄影师开展具有社会关怀的长期"
+          },
+          {
+            "name": "Photo-Eye",
+            "url": "https://www.photoeye.com",
+            "description": "全球顶尖的摄影书在线书店"
+          }
+        ]
+      },
+      {
+        "name": "纪实摄影 (041-080)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "National Geographic Photography",
+            "url": "https://www.nationalgeographic.com/photography",
+            "description": "国家地理摄影专栏，展现极致的自然风光"
+          },
+          {
+            "name": "VII Photo Agency",
+            "url": "https://viiphoto.com",
+            "description": "第七图片社，由全球知名战地与纪实摄影师建立"
+          },
+          {
+            "name": "NOOR Images",
+            "url": "https://www.noorimages.com",
+            "description": "荷兰知名独立新闻摄影合作社，关注人权"
+          },
+          {
+            "name": "Panos Pictures",
+            "url": "https://www.panos.co.uk",
+            "description": "专注全球社会发展、人文议题与全球化变迁的深度纪实图"
+          },
+          {
+            "name": "Reuters Pictures",
+            "url": "https://www.reuters.com/pictures",
+            "description": "路透社图片新闻，每日更新全球重大政治"
+          },
+          {
+            "name": "Getty Images Reportage",
+            "url": "https://www.gettyimages.com",
+            "description": "盖蒂图片社深度纪实专栏，收录高水准的新闻大片与专题"
+          },
+          {
+            "name": "Associated Press Photos",
+            "url": "https://newsroom.ap.org",
+            "description": "美联社新闻摄影，历史与现实交织的纪实画面输出地。"
+          },
+          {
+            "name": "Agence France-Presse (AFP) Photos",
+            "url": "https://www.afp.com",
+            "description": "法新社摄影图库，以独特的欧洲视角和敏锐的人文镜头闻"
+          },
+          {
+            "name": "Magnum Stories",
+            "url": "https://www.magnumphotos.com/topics",
+            "description": "玛格南专题图集，以深度图文呈现一个国家"
+          },
+          {
+            "name": "Everyday Africa",
+            "url": "https://www.everydayafrica.org",
+            "description": "打破刻板印象，由本地摄影师呈现日常"
+          },
+          {
+            "name": "Burn Magazine",
+            "url": "https://www.burnmagazine.org",
+            "description": "由玛格南摄影师 Harvey Stein 主编"
+          },
+          {
+            "name": "Social Documentary Network (SDN)",
+            "url": "https://socialdocumentary.net",
+            "description": "利用摄影探索人类生存状态"
+          },
+          {
+            "name": "Pulitzer Prizes Photography",
+            "url": "https://www.pulitzer.org",
+            "description": "普利策新闻摄影奖历年获奖作品档案"
+          },
+          {
+            "name": "Sony World Photography Awards",
+            "url": "https://www.worldphoto.org",
+            "description": "索尼世界摄影大赛，涵盖专业组"
+          },
+          {
+            "name": "Taylor Wessing Photographic Portrait Prize",
+            "url": "https://www.npg.org.uk",
+            "description": "英国国家肖像馆主办，全球极具影响力的人像肖像摄影大"
+          },
+          {
+            "name": "Picture of the Year International (POYi)",
+            "url": "https://poy.org",
+            "description": "国际年度图片大赛，老牌且严苛的新闻与视觉编辑赛事。"
+          },
+          {
+            "name": "Visa pour l'Image",
+            "url": "https://www.visapourlimage.com",
+            "description": "法国佩皮尼昂国际新闻摄影节，全球新闻摄影师的盛会。"
+          },
+          {
+            "name": "Lucie Awards",
+            "url": "https://lucies.org",
+            "description": "摄影界“奥斯卡”，表彰全球对摄影艺术做出卓越贡献的"
+          },
+          {
+            "name": "Alexia Foundation",
+            "url": "https://www.alexiafoundation.org",
+            "description": "资助利用摄影促进文化理解与世界和平的深度视觉报道。"
+          },
+          {
+            "name": "Carmignac Photojournalism Award",
+            "url": "https://www.fondationcarmignac.com",
+            "description": "卡米尼亚克新闻摄影奖，每年资助探访人权与法治受威胁"
+          },
+          {
+            "name": "W. Eugene Smith Fund",
+            "url": "https://www.smithfund.org",
+            "description": "尤金·史密斯人道主义摄影基金"
+          },
+          {
+            "name": "Leica Oskar Barnack Award",
+            "url": "https://www.leica-oskar-barnack-award.com",
+            "description": "徕卡奥斯卡·巴纳克摄影奖"
+          },
+          {
+            "name": "Ian Parry Photojournalism Grant",
+            "url": "https://www.ianparry.org",
+            "description": "旨在扶持全球年轻新闻摄影师与刚毕业学生的慈善基金项"
+          },
+          {
+            "name": "Dorothea Lange-Paul Taylor Prize",
+            "url": "https://documentarystudies.duke.edu",
+            "description": "杜克大学设立，鼓励文字与图像相结合的长期纪实学术创"
+          },
+          {
+            "name": "Manuel Rivera-Ortiz Foundation",
+            "url": "https://mrofoundation.org",
+            "description": "关注发展中国家贫困、被边缘化群体与生活样貌的摄影基"
+          },
+          {
+            "name": "CatchLight",
+            "url": "https://www.catchlight.io",
+            "description": "探索视觉霸权与社会变革，用摄影推动公众参与和社会正"
+          },
+          {
+            "name": "The Marshall Project Photography",
+            "url": "https://www.themarshallproject.org",
+            "description": "专注于美国司法体系、监狱与社会边缘人的人文纪实图集"
+          },
+          {
+            "name": "Urbanautica",
+            "url": "https://urbanautica.com",
+            "description": "关注人类学、景观变迁、城市化与空间发展的摄影学术日"
+          },
+          {
+            "name": "Landscape Stories",
+            "url": "http://www.landscapestories.net",
+            "description": "以“景观”为核心的当代艺术摄影季刊"
+          },
+          {
+            "name": "Places Journal Photography",
+            "url": "https://placesjournal.org",
+            "description": "建筑、景观与城市主义专刊中的高品质空间纪实与建筑摄"
+          },
+          {
+            "name": "Document China",
+            "url": "https://documentchina.com",
+            "description": "专注于记录中国当代社会变迁"
+          },
+          {
+            "name": "ChinaFile Photo Essay",
+            "url": "https://www.chinafile.com/photo-essays",
+            "description": "亚洲协会旗下，以精美深入的图文摄影报道呈现中国多维"
+          },
+          {
+            "name": "Invisible Photographer Asia (IPA)",
+            "url": "https://invisiblephotographer.asia",
+            "description": "亚洲隐形摄影师网，挖掘与推广亚洲本土杰出的纪实与街"
+          },
+          {
+            "name": "High Journal",
+            "url": "https://highjournal.com",
+            "description": "关注高海拔、荒野地区与边远少数族群生存形态的纪实摄"
+          },
+          {
+            "name": "Human Rights Watch Photography",
+            "url": "https://www.hrw.org/news",
+            "description": "人权观察组织的视觉报道，直击全球人权事件前线。"
+          },
+          {
+            "name": "Open Society Foundations Photography",
+            "url": "https://www.opensocietyfoundations.org",
+            "description": "开放社会基金会资助的纪录片风格视觉艺术项目档案馆。"
+          },
+          {
+            "name": "Magnum Photos Lab",
+            "url": "https://www.magnumphotos.com/education",
+            "description": "玛格南摄影教学与大师班专栏"
+          },
+          {
+            "name": "Southeast Museum of Photography",
+            "url": "https://www.smponline.org",
+            "description": "佛罗里达东南摄影博物馆，专注于展示新闻与社会纪实摄"
+          },
+          {
+            "name": "Street Photography Magazine",
+            "url": "https://streetphotographymag.com",
+            "description": "专注于街头摄影、黑白人文抓拍与捕捉日常瞬间的在线杂"
+          }
+        ]
+      },
+      {
+        "name": "电影美学 (081-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "ShotDeck",
+            "url": "https://shotdeck.com",
+            "description": "全球极巨型的电影截图与电影摄影师光影数据库"
+          },
+          {
+            "name": "FilmGrab",
+            "url": "https://film-grab.com",
+            "description": "收录数千部经典与独立电影高精截屏的电影美学宝库。"
+          },
+          {
+            "name": "Cinephilia & Beyond",
+            "url": "https://cinephiliabeyond.org",
+            "description": "电影发烧友圣地，提供大师剧本、分镜手稿"
+          },
+          {
+            "name": "American Cinematographer (ASC)",
+            "url": "https://ascmag.com",
+            "description": "美国电影摄影师协会官方杂志，顶级电影光影"
+          },
+          {
+            "name": "British Cinematographer",
+            "url": "https://britishcinematographer.co.uk",
+            "description": "欧洲权威电影摄影杂志，剖析大片与独立电影的摄影指导"
+          },
+          {
+            "name": "No Film School",
+            "url": "https://nofilmschool.com",
+            "description": "独立电影人社区，包含大量的视听语言"
+          },
+          {
+            "name": "Indiewire",
+            "url": "https://www.indiewire.com",
+            "description": "独立电影与前沿影视资讯权威媒体"
+          },
+          {
+            "name": "MUBI Notebook",
+            "url": "https://mubi.com/notebook",
+            "description": "艺术电影平台 MUBI 旗下杂志"
+          },
+          {
+            "name": "Criterion Collection Current",
+            "url": "https://www.criterion.com/current",
+            "description": "标准收藏(CC)专栏，探索影史大师经典作品的修复"
+          },
+          {
+            "name": "Filmmaker Magazine",
+            "url": "https://filmmakermagazine.com",
+            "description": "独立电影制作人杂志，探讨低成本艺术电影的美学突破与"
+          },
+          {
+            "name": "CineD",
+            "url": "https://www.cined.com",
+            "description": "电影摄影设备与前沿拍摄技术的专业测评与光影实测平台"
+          },
+          {
+            "name": "Frame Set",
+            "url": "https://frameset.app",
+            "description": "专为导演与摄影师打造的商业广告"
+          },
+          {
+            "name": "Movie Stills Database",
+            "url": "https://www.moviestillsdb.com",
+            "description": "庞大的电影剧照、幕后花絮照片与宣发海报高清数据库。"
+          },
+          {
+            "name": "Roger Deakins Forum",
+            "url": "https://www.rogerdeakins.com",
+            "description": "传奇电影摄影师罗杰·狄金斯个人论坛"
+          },
+          {
+            "name": "Hurlbut Academy",
+            "url": "https://www.hurlbutacademy.com",
+            "description": "好莱坞摄影师 Shane Hurlbut"
+          },
+          {
+            "name": "Cinema Scope",
+            "url": "https://cinema-scope.com",
+            "description": "加拿大先锋电影评论季刊，关注全球国际影展上的实验电"
+          },
+          {
+            "name": "Senses of Cinema",
+            "url": "https://sensesofcinema.com",
+            "description": "墨尔本在线电影学术期刊，收录影史大师词条与镜头语言"
+          },
+          {
+            "name": "David Bordwell’s Website",
+            "url": "https://www.davidbordwell.net",
+            "description": "电影理论家大卫·鲍德威尔博客，阐述电影形式"
+          },
+          {
+            "name": "Film Comment",
+            "url": "https://www.filmcomment.com",
+            "description": "林肯中心电影协会出版，探讨经典与当代电影视觉艺术的"
+          },
+          {
+            "name": "Screen Daily",
+            "url": "https://www.screendaily.com",
+            "description": "欧洲与国际电影市场、戛纳/威尼斯/柏林三大影展第一"
+          },
+          {
+            "name": "Directors Notes",
+            "url": "https://directorsnotes.com",
+            "description": "精选全球杰出独立短片、动画与 MV"
+          },
+          {
+            "name": "Short of the Week",
+            "url": "https://www.shortoftheweek.com",
+            "description": "全球顶尖剧情短片与实验短片策展网"
+          },
+          {
+            "name": "Vimeo Staff Picks",
+            "url": "https://vimeo.com/channels/staffpicks",
+            "description": "Vimeo 官方编辑精选，高画质短片"
+          },
+          {
+            "name": "Film Shortage",
+            "url": "https://filmshortage.com",
+            "description": "在线短片策展平台，呈现极具电影感("
+          },
+          {
+            "name": "Omeleto",
+            "url": "https://omeleto.com",
+            "description": "知名获奖短片聚合平台，收录各大国际影展入围的精彩短"
+          },
+          {
+            "name": "Moving Image Source",
+            "url": "http://www.movingimagesource.us",
+            "description": "纽约动态影像博物馆官方刊物，探讨电影"
+          },
+          {
+            "name": "Reverse Shot",
+            "url": "https://reverseshot.org",
+            "description": "关注当代影像美学、实验镜头与独立电影评论的先锋影评"
+          },
+          {
+            "name": "Bright Lights Film Journal",
+            "url": "https://brightlightsfilm.com",
+            "description": "打破传统学术范式，用流行文化与批判视角探讨电影美的"
+          },
+          {
+            "name": "Offscreen",
+            "url": "https://offscreen.com",
+            "description": "蒙特利尔电影研究期刊，探讨电影哲学"
+          },
+          {
+            "name": "Cineaste Magazine",
+            "url": "https://www.cineaste.com",
+            "description": "关注电影艺术性与政治、社会艺术交汇的著名老牌电影季"
+          },
+          {
+            "name": "Sight & Sound (BFI)",
+            "url": "https://www.bfi.org.uk/sight-and-sound",
+            "description": "英国电影协会(BFI)旗舰杂志"
+          },
+          {
+            "name": "Cahiers du Cinéma",
+            "url": "https://www.cahiersducinema.com",
+            "description": "法国《电影手册》，法国新浪潮发源地"
+          },
+          {
+            "name": "Positif Cinema",
+            "url": "https://www.revue-positif.net",
+            "description": "法国老牌电影杂志《正片》"
+          },
+          {
+            "name": "Film Heritage",
+            "url": "https://filmheritage.org",
+            "description": "专注于老电影修复、胶片保存与早期影史视觉遗产研究的"
+          },
+          {
+            "name": "Film Art Gallery",
+            "url": "https://www.filmartgallery.com",
+            "description": "收藏全球原版 Vintage"
+          },
+          {
+            "name": "Movie Poster Database",
+            "url": "https://www.cinematerial.com",
+            "description": "收录全球数十万张电影海报"
+          },
+          {
+            "name": "Cinephilia Directing",
+            "url": "https://cinephiliabeyond.org/directing",
+            "description": "汇集影史大导演创作分镜草图"
+          },
+          {
+            "name": "Soundstage Access",
+            "url": "https://www.soundstageaccess.com",
+            "description": "深入好莱坞与欧洲各大电影制片厂摄影棚"
+          },
+          {
+            "name": "European Cinematography",
+            "url": "https://imago.org",
+            "description": "欧洲摄影师联合会(IMAGO)"
+          },
+          {
+            "name": "ASC Close Up",
+            "url": "https://ascmag.com/articles/close-up",
+            "description": "顶级电影摄影师的自我剖析专栏"
+          }
+        ]
+      },
+      {
+        "name": "胶片复古 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Analog Forever Magazine",
+            "url": "https://www.analogforevermagazine.com",
+            "description": "胶片永恒，专注于暗房工艺、湿版摄影"
+          },
+          {
+            "name": "Emulsive",
+            "url": "https://emulsive.org",
+            "description": "庞大的胶片摄影知识库，包含各种停产胶片冲洗"
+          },
+          {
+            "name": "Kosmo Foto",
+            "url": "https://kosmofoto.com",
+            "description": "英国经典胶片博客，充满复古情怀的 135/120"
+          },
+          {
+            "name": "35mmc",
+            "url": "https://www.35mmc.com",
+            "description": "专注于 35mm 旁轴相机"
+          },
+          {
+            "name": "Casual Photophile",
+            "url": "https://casualphotophile.com",
+            "description": "深度老镜头、古典光学结构与复古机械相机人文美学评测"
+          },
+          {
+            "name": "Film Photography Project",
+            "url": "https://filmphotographyproject.com",
+            "description": "推广胶片复兴的非营利机构，提供电影胶片分装"
+          },
+          {
+            "name": "Japan Camera Hunter",
+            "url": "https://www.japancamerahunter.com",
+            "description": "东京著名的“相机猎人”Bellamy 博客"
+          },
+          {
+            "name": "Lomography",
+            "url": "https://www.lomography.com",
+            "description": "Lomo 摄影全球社区，主打饱和色彩、漏光"
+          },
+          {
+            "name": "Film Shooters Collective",
+            "url": "https://www.filmshooterscollective.com",
+            "description": "全球纯胶片摄影师联合会，展示纯手工冲洗与银盐印相美"
+          },
+          {
+            "name": "SilvergrainClassics",
+            "url": "https://silvergrainclassics.com",
+            "description": "德国高品质印制的胶片季刊"
+          },
+          {
+            "name": "She Shoots Film",
+            "url": "https://sheshootsfilm.photography",
+            "description": "专注于鼓励与展示女性胶片摄影师作品的独立出版物与社"
+          },
+          {
+            "name": "If You Leave",
+            "url": "https://if-you-leave.tumblr.com",
+            "description": "老牌视觉博客，主打微光、孤独感"
+          },
+          {
+            "name": "Nowhere Diary",
+            "url": "https://nowherediary.com",
+            "description": "极具温暖与公路电影质感的摄影博客"
+          },
+          {
+            "name": "Paper Journal",
+            "url": "https://paper-journal.com",
+            "description": "伦敦独立视觉杂志，收录独立摄影集"
+          },
+          {
+            "name": "Der Greif",
+            "url": "https://dergreif.org",
+            "description": "德国先锋摄影组织，以众包联合策展与跨界视觉表达著称"
+          },
+          {
+            "name": "Phases Magazine",
+            "url": "https://www.phasesmag.com",
+            "description": "每周精选发布当代独立摄影作品，风格偏向冷静"
+          },
+          {
+            "name": "Ain't-Bad",
+            "url": "https://www.aint-bad.com",
+            "description": "专注于当代摄影出版的独立机构"
+          },
+          {
+            "name": "C41 Magazine",
+            "url": "https://www.c41magazine.com",
+            "description": "意大利生活方式与独立摄影杂志，涵盖生活、时尚"
+          },
+          {
+            "name": "Subjectively Objective",
+            "url": "https://subjectivelyobjective.com",
+            "description": "专注客体美学、新地形学(New"
+          },
+          {
+            "name": "Fraction Magazine",
+            "url": "https://www.fractionmagazine.com",
+            "description": "创办于 2008 年的在线当代摄影杂志"
+          },
+          {
+            "name": "Featureshoot",
+            "url": "https://www.featureshoot.com",
+            "description": "每日展示全球摄影师的突破性项目，风格横跨宠物"
+          },
+          {
+            "name": "The Heavy Collective",
+            "url": "https://theheavycollective.com",
+            "description": "澳大利亚摄影出版平台，深入探讨摄影集("
+          },
+          {
+            "name": "Splash and Grab",
+            "url": "https://splashandgrab.co.uk",
+            "description": "英国独立纸质摄影杂志，为新锐摄影师提供展示长篇作品"
+          },
+          {
+            "name": "Float Photo Magazine",
+            "url": "https://www.floatphotomagazine.com",
+            "description": "旨在为当代年轻艺术家与摄影师提供无门槛展览与策展机"
+          },
+          {
+            "name": "Pellicola Magazine",
+            "url": "https://www.pellicolamagazine.com",
+            "description": "意大利胶片与艺术摄影网，关注胶片质感"
+          },
+          {
+            "name": "Photographic Museum of Humanity (PHmuseum)",
+            "url": "https://phmuseum.com",
+            "description": "现代数字摄影博物馆，定期举办全球摄影奖项并资助独立"
+          },
+          {
+            "name": "Photobook Store",
+            "url": "https://www.thephotobookstore.co.uk",
+            "description": "全球顶尖的签名版、限量版艺术摄影集在线专营平台。"
+          },
+          {
+            "name": "Photobook Journal",
+            "url": "https://photobookjournal.com",
+            "description": "专业摄影书书评网，对全球新出版的限量版摄影集进行深"
+          },
+          {
+            "name": "Self Publish, Be Happy",
+            "url": "https://selfpublishbehappy.com",
+            "description": "推动独立自出版摄影集(Zine)的先锋机构"
+          },
+          {
+            "name": "Yet Magazine",
+            "url": "https://yet-magazine.com",
+            "description": "瑞士摄影杂志，每期围绕一个特定的摄影哲学主题进行深"
+          },
+          {
+            "name": "Vulpin Magazine",
+            "url": "https://vulpinmagazine.com",
+            "description": "关注北欧独立摄影、冰冷风光与自然色彩语言的视觉小刊"
+          },
+          {
+            "name": "Nowhere Collective",
+            "url": "https://nowherecollective.org",
+            "description": "集结全球胶片爱好者，展示湿版"
+          },
+          {
+            "name": "Darkroom Magazine",
+            "url": "https://darkroommag.com",
+            "description": "专注于暗房放大放大机技法"
+          },
+          {
+            "name": "Lomography Magazine",
+            "url": "https://www.lomography.com/magazine",
+            "description": "Lomo 官方杂志，展示跨重曝光"
+          },
+          {
+            "name": "Film Shooters Collective",
+            "url": "https://www.filmshooterscollective.com/articles",
+            "description": "胶片摄影师专栏，分享对各年代古典胶片颗粒与色彩倾向"
+          },
+          {
+            "name": "The New Era Magazine Photography",
+            "url": "https://theneweramagazine.com",
+            "description": "斯堪的纳维亚空间与人像美学，主打自然光"
+          },
+          {
+            "name": "Pomegranate Magazine",
+            "url": "https://pomegranatemag.com",
+            "description": "关注女性视角、温润光影与情绪植物摄影的艺术小刊。"
+          },
+          {
+            "name": "Subjectively Objective Books",
+            "url": "https://subjectivelyobjective.com/books",
+            "description": "精选出版的小开本极简主义与当代风景摄影集画廊。"
+          },
+          {
+            "name": "Wave Magazine",
+            "url": "https://wavemagazine.com",
+            "description": "关注海洋、冲浪文化、海岸线与自然风光的独立摄影期刊"
+          },
+          {
+            "name": "Aint-Bad Editions",
+            "url": "https://aintbad.com/store",
+            "description": "限量发行的当代新锐摄影集与艺术单刷版画展示平台。"
+          }
+        ]
+      },
+      {
+        "name": "商业摄影 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Models.com Editorial",
+            "url": "https://models.com/editorial",
+            "description": "全球模特与时尚风向标，汇总全球顶尖时尚杂志的大片与"
+          },
+          {
+            "name": "ShowStudio",
+            "url": "https://showstudio.com",
+            "description": "时尚摄影大师 Nick Knight 创办"
+          },
+          {
+            "name": "Dazed Digital Photography",
+            "url": "https://www.dazeddigital.com/photography",
+            "description": "Dazed 摄影专栏，引领亚文化"
+          },
+          {
+            "name": "i-D Photography",
+            "url": "https://i-d.co",
+            "description": "i-D 杂志摄影版块，以独特的笑眼(Wink)标志"
+          },
+          {
+            "name": "V Magazine",
+            "url": "https://vmagazine.com",
+            "description": "美国高端先锋时尚大刊，汇聚全球顶级摄影师与奢华视觉"
+          },
+          {
+            "name": "Interview Magazine",
+            "url": "https://www.interviewmagazine.com",
+            "description": "安迪·沃霍尔创办，其肖像摄影与人物大片具备极强的波"
+          },
+          {
+            "name": "AnOther Magazine",
+            "url": "https://www.anothermag.com",
+            "description": "融合高定时尚、先锋摄影与文学艺术的高端半年刊。"
+          },
+          {
+            "name": "Document Journal",
+            "url": "https://www.documentjournal.com",
+            "description": "纽约先锋文化与时尚杂志，专注于硬核艺术摄影与超现实"
+          },
+          {
+            "name": "10 Magazine",
+            "url": "https://www.10magazine.com",
+            "description": "英美高端时尚季刊，展示精湛的灯光设计"
+          },
+          {
+            "name": "Purple Fashion",
+            "url": "https://purple.fr",
+            "description": "法国 Purple 杂志"
+          },
+          {
+            "name": "CR Fashion Book",
+            "url": "https://crfashionbook.com",
+            "description": "前 Vogue 法国主编 Carine"
+          },
+          {
+            "name": "W Magazine",
+            "url": "https://www.wmagazine.com",
+            "description": "知名奢华时尚杂志，以巨幅电影感故事大片("
+          },
+          {
+            "name": "Mastermind Magazine",
+            "url": "https://mastermindmagazine.com",
+            "description": "专注于深度文化、建筑与大画幅人像摄影的巴黎高端半年"
+          },
+          {
+            "name": "Numéro Magazine",
+            "url": "https://www.numero.com",
+            "description": "法国 Numéro 杂志，结合冷艳高定"
+          },
+          {
+            "name": "Self Service Magazine",
+            "url": "https://selfservicemagazine.com",
+            "description": "巴黎知名时尚文化大刊，以其简约"
+          },
+          {
+            "name": "Dust Magazine",
+            "url": "https://dustmagazine.com",
+            "description": "专注于探讨青年文化、原始自然与反叛美学的欧洲小众时"
+          },
+          {
+            "name": "KALTBLUT Magazine",
+            "url": "https://www.kaltblut-magazine.com",
+            "description": "柏林先锋艺术、音乐与无性别时尚摄影杂志"
+          },
+          {
+            "name": "Schön! Magazine",
+            "url": "https://schonmagazine.com",
+            "description": "联通全球线上与线下的高清时尚视觉杂志"
+          },
+          {
+            "name": "METAL Magazine",
+            "url": "https://metalmagazine.eu",
+            "description": "巴塞罗那独立时尚杂志，主打实验性人像"
+          },
+          {
+            "name": "Nowness",
+            "url": "https://www.nowness.com",
+            "description": "LVMH 旗下的顶级短片与摄影网"
+          },
+          {
+            "name": "1X.com",
+            "url": "https://1x.com",
+            "description": "由专业策展人严格筛选的顶级摄影社区，构图"
+          },
+          {
+            "name": "500px Editor's Choice",
+            "url": "https://500px.com/editors",
+            "description": "500px 编辑精选，汇聚全球高水准风光"
+          },
+          {
+            "name": "Unsplash Editorial",
+            "url": "https://unsplash.com",
+            "description": "全球知名高清晰度摄影社区"
+          },
+          {
+            "name": "Flickr Explore",
+            "url": "https://www.flickr.com/explore",
+            "description": "老牌摄影社区每日 Explore 算法精选"
+          },
+          {
+            "name": "Behance Photography",
+            "url": "https://www.behance.net/galleries/photography",
+            "description": "Behance 官方策展的摄影画廊"
+          },
+          {
+            "name": "YouPic",
+            "url": "https://youpic.com",
+            "description": "专注专业摄影师的社交与灵感网"
+          },
+          {
+            "name": "Production Paradise",
+            "url": "https://www.productionparadise.com",
+            "description": "全球高端商业摄影师、置景师"
+          },
+          {
+            "name": "Le Book",
+            "url": "https://www.lebook.com",
+            "description": "时尚与广告行业的“圣经”，收录全球顶尖摄影师"
+          },
+          {
+            "name": "Art + Commerce",
+            "url": "https://www.artandcommerce.com",
+            "description": "代理全球顶级时尚摄影师(如 Steven"
+          },
+          {
+            "name": "Management Artists",
+            "url": "https://www.managementartists.com",
+            "description": "代理全球顶级时尚摄影师、灯光师与造型师的国际经纪机"
+          },
+          {
+            "name": "Agent Peekaboo",
+            "url": "https://agentpeekaboo.com",
+            "description": "专注于先锋时尚、高饱和色彩与前卫商业摄影的代理机构"
+          },
+          {
+            "name": "Supervision New York",
+            "url": "https://supervisionmgt.com",
+            "description": "纽约与伦敦顶级艺术经纪公司"
+          },
+          {
+            "name": "MAP Ltd",
+            "url": "https://www.mapltd.com",
+            "description": "英国知名创意经纪公司，展示精美绝伦的商业人像与静物"
+          },
+          {
+            "name": "FirstView",
+            "url": "https://www.firstview.com",
+            "description": "高清晰度时装周 T 台秀场摄影档案馆"
+          },
+          {
+            "name": "Fucking Young!",
+            "url": "https://fuckingyoung.es",
+            "description": "专注于男装时尚、青春气象与前卫男模肖像的先锋杂志。"
+          },
+          {
+            "name": "LOVE Magazine Archive",
+            "url": "https://www.thelovemagazine.co.uk",
+            "description": "英国著名时尚杂志档案，以跨界"
+          },
+          {
+            "name": "Jed Root Archive",
+            "url": "https://jedroot.com",
+            "description": "传奇时尚经纪公司档案，展示 90"
+          },
+          {
+            "name": "Magnum Opus Photography",
+            "url": "https://www.magnumopus.com",
+            "description": "致力于呈现人类极致商业风光"
+          },
+          {
+            "name": "1000 Words Magazine",
+            "url": "https://www.1000wordsmag.com",
+            "description": "专业当代摄影季刊，探索图像在当代艺术与商业文化中的"
+          },
+          {
+            "name": "LensCulture Portrait Awards",
+            "url": "https://www.lensculture.com/portrait-awards",
+            "description": "LensCulture 肖像摄影奖"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑷𝑕𝑜𝑡𝑜 𝑪𝑖𝑛𝑒𝑚𝑎';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

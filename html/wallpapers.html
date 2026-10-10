@@ -1,0 +1,1817 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="高清壁纸、4K 壁纸与精选壁纸网站导航">
+<title>全球高清壁纸站收藏 | Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑊𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟𝑠 𝐶𝑜𝑙𝑙𝑒𝑐𝑡𝑖𝑜𝑛</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>全球高清壁纸站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">复活老游戏 · 让经典游戏在现代浏览器与设备上重获新生</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "全球高清壁纸",
+    "icon": "🖼️",
+    "subcategories": [
+      {
+        "name": "综合壁纸首选",
+        "links": [
+          {
+            "name": "Wallhaven",
+            "url": "https://wallhaven.cc",
+            "description": "全球知名高清壁纸社区，标签、分辨率、比例、颜色筛选非常强"
+          },
+          {
+            "name": "Wallpapers.com",
+            "url": "https://wallpapers.com",
+            "description": "超大型综合壁纸库，动漫、游戏、汽车、自然、极简、4K覆…"
+          },
+          {
+            "name": "Wallpaper Abyss / Alpha Coders",
+            "url": "https://wall.alphacoders.com",
+            "description": "超大型高清壁纸数据库，游戏、动漫、电影、自然、科幻等非…"
+          },
+          {
+            "name": "Unsplash",
+            "url": "https://unsplash.com",
+            "description": "顶级摄影图库，4K/高分辨率自然、建筑、城市、极简资源…"
+          },
+          {
+            "name": "Pexels",
+            "url": "https://www.pexels.com",
+            "description": "免费高清摄影图库，适合作为自然、城市、生活、建筑壁纸来源"
+          },
+          {
+            "name": "Pixabay",
+            "url": "https://pixabay.com",
+            "description": "超大型免费图库，4K、自然、抽象、科技、风景等覆盖广"
+          },
+          {
+            "name": "GoodFon",
+            "url": "https://www.goodfon.com",
+            "description": "海量4K/HD/手机壁纸，分类丰富，支持分辨率和颜色筛选"
+          },
+          {
+            "name": "WallpaperAccess",
+            "url": "https://wallpaperaccess.com",
+            "description": "综合型壁纸站，动漫、游戏、自然、汽车、电影等分类齐全"
+          },
+          {
+            "name": "WallpaperCave",
+            "url": "https://wallpapercave.com",
+            "description": "社区型大壁纸库，影视、游戏、动漫、明星、幻想等主题非常多"
+          },
+          {
+            "name": "WallpapersCraft",
+            "url": "https://wallpaperscraft.com",
+            "description": "高清桌面/手机壁纸，分辨率分类清楚，移动端资源丰富"
+          },
+          {
+            "name": "WallpaperFlare",
+            "url": "https://www.wallpaperflare.com",
+            "description": "大型免费高清壁纸搜索站，桌面、手机和4K资源齐全"
+          },
+          {
+            "name": "WallpapersWide",
+            "url": "https://wallpaperswide.com",
+            "description": "专注多比例、多屏幕分辨率壁纸，适合宽屏和超宽屏"
+          },
+          {
+            "name": "WallHere",
+            "url": "https://wallhere.com",
+            "description": "高清社区壁纸平台，摄影、动漫、游戏、艺术、自然等全面"
+          },
+          {
+            "name": "Peakpx",
+            "url": "https://www.peakpx.com",
+            "description": "大量免费4K高清背景，主题覆盖广，适合桌面和移动设备"
+          },
+          {
+            "name": "HDQWalls",
+            "url": "https://hdqwalls.com",
+            "description": "4K、5K、8K高清壁纸，电影、自然、汽车、科幻等内容…"
+          },
+          {
+            "name": "UHDWallpaper",
+            "url": "https://uhdwallpapers.org",
+            "description": "超高清壁纸，4K/5K/8K与宽屏资源突出"
+          },
+          {
+            "name": "WallpaperUp",
+            "url": "https://www.wallpaperup.com",
+            "description": "高清壁纸社区，支持多分辨率、分类和收藏"
+          },
+          {
+            "name": "1ZOOM",
+            "url": "https://www.1zoom.me",
+            "description": "老牌大型高清图片/壁纸站，自然、动物、汽车、城市等资源…"
+          },
+          {
+            "name": "WallpaperSafari",
+            "url": "https://wallpapersafari.com",
+            "description": "综合壁纸搜索和分类平台，主题覆盖面大"
+          },
+          {
+            "name": "Desktop Nexus",
+            "url": "https://www.desktopnexus.com",
+            "description": "老牌桌面壁纸社区，拥有大量用户上传作品"
+          },
+          {
+            "name": "WallpaperFusion",
+            "url": "https://www.wallpaperfusion.com",
+            "description": "多显示器和桌面壁纸资源，适合横向屏幕"
+          },
+          {
+            "name": "WallpapersDen",
+            "url": "https://wallpapersden.com",
+            "description": "4K/高清桌面、游戏、自然、动漫、汽车壁纸"
+          },
+          {
+            "name": "WallpaperDog",
+            "url": "https://wallpaper.dog",
+            "description": "海量4K/HD壁纸，桌面和移动设备覆盖全面"
+          },
+          {
+            "name": "WallpaperBetter",
+            "url": "https://www.wallpaperbetter.com",
+            "description": "免费高清壁纸，分类包含动漫、自然、游戏、电影、科技"
+          },
+          {
+            "name": "WallpaperStock",
+            "url": "https://wallpaperstock.net",
+            "description": "老牌免费壁纸网站，高清桌面资源丰富"
+          },
+          {
+            "name": "WallpapersHome",
+            "url": "https://wallpapershome.com",
+            "description": "高清/4K桌面壁纸，提供大量分类和尺寸"
+          },
+          {
+            "name": "Wallpapers13",
+            "url": "https://wallpapers13.com",
+            "description": "4K、HD、手机、动漫、汽车、自然综合壁纸"
+          },
+          {
+            "name": "WallpaperBat",
+            "url": "https://wallpaperbat.com",
+            "description": "免费高清壁纸，主题覆盖比较广"
+          },
+          {
+            "name": "WallpaperMob",
+            "url": "https://wallpapermob.com",
+            "description": "偏移动壁纸，同时拥有大量高清桌面资源"
+          },
+          {
+            "name": "WallpaperTip",
+            "url": "https://www.wallpapertip.com",
+            "description": "多分类高清壁纸，动漫、汽车、科技、自然等齐全"
+          },
+          {
+            "name": "GetWallpapers",
+            "url": "https://www.getwallpapers.com",
+            "description": "大量高清壁纸与主题分类"
+          },
+          {
+            "name": "HDWallpapers",
+            "url": "https://www.hdwallpapers.net",
+            "description": "老牌高清壁纸平台，桌面背景资源丰富"
+          },
+          {
+            "name": "WallpapersMap",
+            "url": "https://wallpapersmap.com",
+            "description": "高清壁纸分类搜索站，覆盖多种主题"
+          },
+          {
+            "name": "Wallspic",
+            "url": "https://wallspic.com",
+            "description": "高清摄影与艺术壁纸，风景、动物、建筑等"
+          },
+          {
+            "name": "WallpaperTag",
+            "url": "https://www.wallpapertag.com",
+            "description": "按关键词寻找高清壁纸的综合平台"
+          },
+          {
+            "name": "WallpaperAccess 4K",
+            "url": "https://wallpaperaccess.com/4k",
+            "description": "专门4K壁纸入口，覆盖多主题"
+          },
+          {
+            "name": "WallpapersCraft 4K",
+            "url": "https://wallpaperscraft.com/catalog/4k",
+            "description": "4K壁纸分类入口，桌面/手机均有"
+          },
+          {
+            "name": "Wallpapers.com 4K",
+            "url": "https://wallpapers.com/4k",
+            "description": "4K综合壁纸专区"
+          },
+          {
+            "name": "Wallpapers.com Nature",
+            "url": "https://wallpapers.com/nature",
+            "description": "自然、风景、森林、海洋等大规模分类"
+          },
+          {
+            "name": "Wallpapers.com Anime",
+            "url": "https://wallpapers.com/anime",
+            "description": "动漫壁纸专门分类"
+          },
+          {
+            "name": "Wallpapers.com Gaming",
+            "url": "https://wallpapers.com/gaming",
+            "description": "游戏与电竞壁纸"
+          },
+          {
+            "name": "Wallpapers.com Cars",
+            "url": "https://wallpapers.com/cars",
+            "description": "汽车与超级跑车壁纸"
+          },
+          {
+            "name": "Wallpapers.com Space",
+            "url": "https://wallpapers.com/space",
+            "description": "太空、宇宙、星云等壁纸"
+          },
+          {
+            "name": "Wallhaven Search",
+            "url": "https://wallhaven.cc/search",
+            "description": "支持关键词、标签、分辨率、颜色和比例的高级搜索"
+          },
+          {
+            "name": "Alpha Coders",
+            "url": "https://alphacoders.com",
+            "description": "综合视觉素材社区，与 Wallpaper Abyss …"
+          },
+          {
+            "name": "Zedge",
+            "url": "https://www.zedge.net",
+            "description": "手机壁纸、桌面壁纸和动态壁纸，内容规模大"
+          },
+          {
+            "name": "Simple Desktops",
+            "url": "https://simpledesktops.com",
+            "description": "极简桌面壁纸，适合简约工作区"
+          },
+          {
+            "name": "InterfaceLIFT",
+            "url": "https://interfacelift.com",
+            "description": "高质量摄影桌面壁纸，长期以来很受设计和Mac用户欢迎"
+          }
+        ]
+      },
+      {
+        "name": "摄影与高画质图库",
+        "links": [
+          {
+            "name": "Flickr",
+            "url": "https://www.flickr.com",
+            "description": "超大型摄影社区，可寻找高分辨率自然、城市、旅行和艺术照片"
+          },
+          {
+            "name": "500px",
+            "url": "https://500px.com",
+            "description": "专业摄影社区，风景、建筑、野生动物和城市摄影质量高"
+          },
+          {
+            "name": "Openverse",
+            "url": "https://openverse.org",
+            "description": "Creative Commons / 开放授权图片搜索…"
+          },
+          {
+            "name": "Wikimedia Commons",
+            "url": "https://commons.wikimedia.org",
+            "description": "全球开放媒体数据库，大量公版、CC授权高清图片"
+          },
+          {
+            "name": "Burst by Shopify",
+            "url": "https://burst.shopify.com",
+            "description": "免费商业摄影图库，适合商业、科技、生活和背景图"
+          },
+          {
+            "name": "StockSnap",
+            "url": "https://stocksnap.io",
+            "description": "免费高清摄影图库，适合自然、纹理、建筑和生活"
+          },
+          {
+            "name": "Kaboompics",
+            "url": "https://kaboompics.com",
+            "description": "高质量生活方式、室内、设计、颜色主题摄影"
+          },
+          {
+            "name": "Gratisography",
+            "url": "https://gratisography.com",
+            "description": "创意摄影、奇特场景与艺术感图片"
+          },
+          {
+            "name": "Life of Pix",
+            "url": "https://www.lifeofpix.com",
+            "description": "高质量摄影图库，风景、城市、自然和建筑"
+          },
+          {
+            "name": "ISO Republic",
+            "url": "https://isorepublic.com",
+            "description": "免费高清照片和视频，适合壁纸和设计"
+          },
+          {
+            "name": "Picjumbo",
+            "url": "https://picjumbo.com",
+            "description": "免费高清摄影，生活、旅行、科技、建筑"
+          },
+          {
+            "name": "Picography",
+            "url": "https://picography.co",
+            "description": "免费高分辨率摄影，适合桌面背景"
+          },
+          {
+            "name": "Negative Space",
+            "url": "https://negativespace.co",
+            "description": "免费高清摄影，适合极简和背景用途"
+          },
+          {
+            "name": "Freerange Stock",
+            "url": "https://freerangestock.com",
+            "description": "免费图片库，提供多类别高清摄影"
+          },
+          {
+            "name": "FreeImages",
+            "url": "https://www.freeimages.com",
+            "description": "大型免费图片库，背景、自然、商业素材丰富"
+          },
+          {
+            "name": "Reshot",
+            "url": "https://www.reshot.com",
+            "description": "免费视觉素材，摄影与图标资源丰富"
+          },
+          {
+            "name": "Stockvault",
+            "url": "https://www.stockvault.net",
+            "description": "免费照片、纹理、背景和设计素材"
+          },
+          {
+            "name": "Rawpixel",
+            "url": "https://www.rawpixel.com",
+            "description": "摄影、艺术、公版、设计素材"
+          },
+          {
+            "name": "Pikwizard",
+            "url": "https://pikwizard.com",
+            "description": "免费照片与设计素材，高清资源丰富"
+          },
+          {
+            "name": "FOCA Stock",
+            "url": "https://focastock.com",
+            "description": "免费摄影图库，旅行、自然、植物、生活"
+          },
+          {
+            "name": "Skitterphoto",
+            "url": "https://skitterphoto.com",
+            "description": "免费公共领域摄影"
+          },
+          {
+            "name": "Morguefile",
+            "url": "https://morguefile.com",
+            "description": "老牌免费摄影资源库"
+          },
+          {
+            "name": "Jay Mantri",
+            "url": "https://jaymantri.com",
+            "description": "风景、城市、自然类免费摄影"
+          },
+          {
+            "name": "Stokpic",
+            "url": "https://stokpic.com",
+            "description": "免费摄影，旅行、生活、风景"
+          },
+          {
+            "name": "Fancycrave",
+            "url": "https://fancycrave.com",
+            "description": "旅行和生活摄影，适合壁纸"
+          },
+          {
+            "name": "SplitShire",
+            "url": "https://www.splitshire.com",
+            "description": "设计师摄影图库"
+          },
+          {
+            "name": "FoodiesFeed",
+            "url": "https://www.foodiesfeed.com",
+            "description": "高质量食物、饮食与生活方式摄影"
+          },
+          {
+            "name": "New Old Stock",
+            "url": "https://nos.twnsnd.co",
+            "description": "老照片、复古摄影、公版历史图像"
+          },
+          {
+            "name": "Picspree",
+            "url": "https://picspree.com",
+            "description": "免费图库，摄影和商业图片"
+          },
+          {
+            "name": "Magdeleine",
+            "url": "https://magdeleine.co",
+            "description": "精选高质量摄影"
+          },
+          {
+            "name": "Freestocks",
+            "url": "https://freestocks.org",
+            "description": "免费摄影素材"
+          },
+          {
+            "name": "Styled Stock",
+            "url": "https://styledstock.co",
+            "description": "设计、桌面、生活方式照片"
+          },
+          {
+            "name": "Jeshoots",
+            "url": "https://jeshoots.com",
+            "description": "免费摄影和创意图片"
+          },
+          {
+            "name": "DesignersPics",
+            "url": "https://www.designerspics.com",
+            "description": "免费高分辨率摄影"
+          },
+          {
+            "name": "Barn Images",
+            "url": "https://barnimages.com",
+            "description": "高质量摄影，设计和背景用途"
+          },
+          {
+            "name": "Little Visuals",
+            "url": "https://littlevisuals.co",
+            "description": "风景、自然、城市摄影收藏"
+          },
+          {
+            "name": "ShotStash",
+            "url": "https://shotstash.com",
+            "description": "免费高分辨率图片"
+          },
+          {
+            "name": "Picjumbo Wallpaper",
+            "url": "https://picjumbo.com/free-stock-photos",
+            "description": "免费摄影素材"
+          },
+          {
+            "name": "Free Nature Stock",
+            "url": "https://freenaturestock.com",
+            "description": "专注自然、森林、动物和景观"
+          },
+          {
+            "name": "Nature Canvases",
+            "url": "https://naturecanvases.com",
+            "description": "精选自然与风景壁纸，按生态环境和分辨率整理"
+          },
+          {
+            "name": "Travel Coffee Book",
+            "url": "https://travelcoffeebook.com",
+            "description": "旅行、自然、山脉、海洋摄影"
+          },
+          {
+            "name": "Moveast",
+            "url": "https://moveast.me",
+            "description": "旅行与自然摄影"
+          },
+          {
+            "name": "Good Stock Photos",
+            "url": "https://goodstock.photos",
+            "description": "免费高清摄影图库"
+          },
+          {
+            "name": "Albumarium",
+            "url": "https://albumarium.com",
+            "description": "免费精选图片相册"
+          },
+          {
+            "name": "Photober",
+            "url": "https://photober.com",
+            "description": "免费高清摄影"
+          },
+          {
+            "name": "Public Domain Pictures",
+            "url": "https://www.publicdomainpictures.net",
+            "description": "公版和免费照片，背景与风景资源多"
+          },
+          {
+            "name": "Public Domain Review",
+            "url": "https://publicdomainreview.org",
+            "description": "公版历史艺术、插画、摄影"
+          },
+          {
+            "name": "Public Domain Image",
+            "url": "https://www.publicdomainimage.com",
+            "description": "公版图片资源"
+          },
+          {
+            "name": "Free Photo Bank",
+            "url": "https://freephotobank.org",
+            "description": "免费高清照片"
+          },
+          {
+            "name": "ImageFree",
+            "url": "https://imagefree.org",
+            "description": "免费高清图像和背景"
+          }
+        ]
+      },
+      {
+        "name": "艺术插画与极简设计",
+        "links": [
+          {
+            "name": "ArtStation",
+            "url": "https://www.artstation.com",
+            "description": "游戏美术、概念设计、环境艺术和插画资源极强"
+          },
+          {
+            "name": "Behance",
+            "url": "https://www.behance.net",
+            "description": "全球设计师作品社区，可找到大量高质量背景与视觉作品"
+          },
+          {
+            "name": "DeviantArt",
+            "url": "https://www.deviantart.com",
+            "description": "大型艺术社区，插画、数字艺术、幻想和壁纸资源极多"
+          },
+          {
+            "name": "Dribbble",
+            "url": "https://dribbble.com",
+            "description": "UI、插画、图形和视觉设计"
+          },
+          {
+            "name": "Artvee",
+            "url": "https://artvee.com",
+            "description": "公版艺术与高分辨率艺术作品"
+          },
+          {
+            "name": "The Met Open Access",
+            "url": "https://www.metmuseum.org/art/collection",
+            "description": "大都会博物馆开放艺术图像"
+          },
+          {
+            "name": "Art Institute of Chicago",
+            "url": "https://www.artic.edu/collection",
+            "description": "开放艺术图像和高清古典艺术"
+          },
+          {
+            "name": "Rijksmuseum",
+            "url": "https://www.rijksmuseum.nl/en/rijksstudio",
+            "description": "大量高清艺术作品与公版资源"
+          },
+          {
+            "name": "National Gallery of Art",
+            "url": "https://www.nga.gov",
+            "description": "免费开放艺术图片和高清作品"
+          },
+          {
+            "name": "Getty Open Content",
+            "url": "https://www.getty.edu/art/collection",
+            "description": "Getty 开放内容艺术图像"
+          },
+          {
+            "name": "Smithsonian Open Access",
+            "url": "https://www.si.edu/openaccess",
+            "description": "史密森开放素材和高清艺术资源"
+          },
+          {
+            "name": "Library of Congress",
+            "url": "https://www.loc.gov/pictures",
+            "description": "美国国会图书馆高清历史影像与艺术图片"
+          },
+          {
+            "name": "NYPL Digital Collections",
+            "url": "https://digitalcollections.nypl.org",
+            "description": "纽约公共图书馆开放数字收藏"
+          },
+          {
+            "name": "Europeana",
+            "url": "https://www.europeana.eu",
+            "description": "欧洲文化遗产数字图库"
+          },
+          {
+            "name": "DPLA",
+            "url": "https://dp.la",
+            "description": "美国数字公共图书馆"
+          },
+          {
+            "name": "Rawpixel Public Domain",
+            "url": "https://www.rawpixel.com/public-domain",
+            "description": "大量公版艺术、纹理、插画与复古作品"
+          },
+          {
+            "name": "Unsplash Abstract",
+            "url": "https://unsplash.com/s/photos/abstract-wallpaper",
+            "description": "高质量抽象摄影和背景"
+          },
+          {
+            "name": "Unsplash Minimal",
+            "url": "https://unsplash.com/s/photos/minimal-wallpaper",
+            "description": "极简桌面和留白摄影"
+          },
+          {
+            "name": "Unsplash Aesthetic",
+            "url": "https://unsplash.com/s/photos/aesthetic-wallpaper",
+            "description": "Aesthetic 视觉壁纸"
+          },
+          {
+            "name": "Unsplash Architecture",
+            "url": "https://unsplash.com/s/photos/architecture-wallpaper",
+            "description": "建筑、室内、城市空间"
+          },
+          {
+            "name": "Unsplash Landscape",
+            "url": "https://unsplash.com/wallpapers/nature/landscape",
+            "description": "高质量自然与风景"
+          },
+          {
+            "name": "Unsplash Space",
+            "url": "https://unsplash.com/s/photos/space-wallpaper",
+            "description": "太空、星云、宇宙"
+          },
+          {
+            "name": "Pexels Wallpaper",
+            "url": "https://www.pexels.com/search/wallpaper/",
+            "description": "免费摄影壁纸"
+          },
+          {
+            "name": "Pexels Nature",
+            "url": "https://www.pexels.com/search/nature-wallpaper/",
+            "description": "自然壁纸"
+          },
+          {
+            "name": "Pexels Architecture",
+            "url": "https://www.pexels.com/search/architecture-wallpaper/",
+            "description": "建筑壁纸"
+          },
+          {
+            "name": "Pixabay Wallpaper",
+            "url": "https://pixabay.com/images/search/wallpaper/",
+            "description": "超大型免费背景图搜索"
+          },
+          {
+            "name": "Pixabay 4K",
+            "url": "https://pixabay.com/images/search/4k-wallpaper/",
+            "description": "4K高清壁纸搜索"
+          },
+          {
+            "name": "Pixabay Nature",
+            "url": "https://pixabay.com/images/search/nature%20wallpaper/",
+            "description": "自然风景"
+          },
+          {
+            "name": "Pixabay Abstract",
+            "url": "https://pixabay.com/images/search/abstract%20wallpaper/",
+            "description": "抽象艺术"
+          },
+          {
+            "name": "Wallpapers.com Minimalist",
+            "url": "https://wallpapers.com/minimalist",
+            "description": "极简壁纸"
+          },
+          {
+            "name": "Wallpapers.com Abstract",
+            "url": "https://wallpapers.com/abstract",
+            "description": "抽象壁纸"
+          },
+          {
+            "name": "Wallpapers.com Aesthetic",
+            "url": "https://wallpapers.com/aesthetic",
+            "description": "Aesthetic 美学壁纸"
+          },
+          {
+            "name": "Wallpapers.com Dark",
+            "url": "https://wallpapers.com/dark",
+            "description": "黑暗系、AMOLED风格"
+          },
+          {
+            "name": "Wallpapers.com Pastel",
+            "url": "https://wallpapers.com/pastel",
+            "description": "柔和色、粉彩风格"
+          },
+          {
+            "name": "Wallpapers.com Pink",
+            "url": "https://wallpapers.com/pink",
+            "description": "粉色、美少女、柔和系"
+          },
+          {
+            "name": "heyeased",
+            "url": "https://heyeased.weebly.com",
+            "description": "极简、自然、Mac风壁纸"
+          },
+          {
+            "name": "Basic Apple Guy",
+            "url": "https://basicappleguy.com/basicappleblog",
+            "description": "Apple风格、Mac、iPhone、设计感壁纸"
+          },
+          {
+            "name": "Basic Apple Guy Wallpapers",
+            "url": "https://basicappleguy.com/basicappleguy",
+            "description": "苹果主题创意壁纸"
+          },
+          {
+            "name": "512 Pixels",
+            "url": "https://512pixels.net/projects/default-mac-wallpapers-in-5k",
+            "description": "历代Mac默认壁纸5K收藏"
+          },
+          {
+            "name": "MacWallpapers",
+            "url": "https://macwallpapers.net",
+            "description": "Mac桌面壁纸"
+          },
+          {
+            "name": "InterfaceLIFT",
+            "url": "https://interfacelift.com/wallpaper/",
+            "description": "精选桌面、自然和摄影壁纸"
+          },
+          {
+            "name": "WallpaperHub",
+            "url": "https://wallpaperhub.app",
+            "description": "Microsoft/Windows风格高清壁纸"
+          },
+          {
+            "name": "Microsoft Design",
+            "url": "https://design.microsoft.com",
+            "description": "微软设计视觉资源"
+          },
+          {
+            "name": "Bing Wallpaper",
+            "url": "https://www.bing.com/images/feed",
+            "description": "每日高清壁纸和摄影"
+          },
+          {
+            "name": "Windows Wallpapers",
+            "url": "https://support.microsoft.com/windows",
+            "description": "Windows官方壁纸相关入口"
+          },
+          {
+            "name": "Apple Wallpapers",
+            "url": "https://www.apple.com",
+            "description": "Apple官方视觉和系统图片"
+          },
+          {
+            "name": "Google Wallpapers",
+            "url": "https://www.google.com",
+            "description": "Google官方视觉与Pixel相关壁纸资源"
+          },
+          {
+            "name": "KDE Store",
+            "url": "https://store.kde.org",
+            "description": "KDE桌面主题、壁纸和视觉资源"
+          },
+          {
+            "name": "GNOME Wallpapers",
+            "url": "https://gitlab.gnome.org/GNOME/gnome-backgrounds",
+            "description": "GNOME官方桌面壁纸合集"
+          }
+        ]
+      },
+      {
+        "name": "动漫二次元与游戏",
+        "links": [
+          {
+            "name": "Zerochan",
+            "url": "https://www.zerochan.net",
+            "description": "动漫角色、插画、高清二次元图库"
+          },
+          {
+            "name": "Minitokyo",
+            "url": "https://www.minitokyo.net",
+            "description": "老牌动漫壁纸与扫描图社区"
+          },
+          {
+            "name": "Konachan",
+            "url": "https://konachan.net",
+            "description": "动漫壁纸数据库，分辨率筛选能力较强"
+          },
+          {
+            "name": "Yande.re",
+            "url": "https://yande.re",
+            "description": "动漫高清图片数据库"
+          },
+          {
+            "name": "Anime-Pictures",
+            "url": "https://anime-pictures.net",
+            "description": "动漫壁纸和插画，支持尺寸和标签筛选"
+          },
+          {
+            "name": "AniWall",
+            "url": "https://aniwall.com",
+            "description": "动漫高清壁纸"
+          },
+          {
+            "name": "Anime Wallpaper 4K",
+            "url": "https://sites.google.com/view/anime-wallpaper-4k",
+            "description": "4K动漫壁纸，多设备尺寸"
+          },
+          {
+            "name": "Wallpaper Abyss Anime",
+            "url": "https://wall.alphacoders.com/by_category.php?id=3",
+            "description": "海量动漫高清壁纸"
+          },
+          {
+            "name": "Wallhaven Anime",
+            "url": "https://wallhaven.cc/search?q=anime",
+            "description": "海量动漫标签壁纸"
+          },
+          {
+            "name": "WallpapersCraft Anime",
+            "url": "https://wallpaperscraft.com/catalog/anime",
+            "description": "动漫桌面/手机壁纸"
+          },
+          {
+            "name": "WallpaperAccess Anime",
+            "url": "https://wallpaperaccess.com/anime",
+            "description": "动漫壁纸合集"
+          },
+          {
+            "name": "WallpaperCave Anime",
+            "url": "https://wallpapercave.com/anime-wallpapers",
+            "description": "动漫壁纸社区"
+          },
+          {
+            "name": "WallpaperFlare Anime",
+            "url": "https://www.wallpaperflare.com/search?wallpaper=anime",
+            "description": "动漫高清图库"
+          },
+          {
+            "name": "Wallpapers13 Anime",
+            "url": "https://wallpapers13.com/anime-wallpapers",
+            "description": "动漫壁纸"
+          },
+          {
+            "name": "Peakpx Anime",
+            "url": "https://www.peakpx.com/en/search?q=anime",
+            "description": "动漫图片和壁纸"
+          },
+          {
+            "name": "WallHere Anime",
+            "url": "https://wallhere.com/en/search?search=anime",
+            "description": "动漫高清壁纸"
+          },
+          {
+            "name": "GoodFon Anime",
+            "url": "https://www.goodfon.com/anime/",
+            "description": "动漫高清壁纸"
+          },
+          {
+            "name": "DeviantArt Anime",
+            "url": "https://www.deviantart.com/search?q=anime%20wallpaper",
+            "description": "动漫艺术壁纸"
+          },
+          {
+            "name": "ArtStation Anime",
+            "url": "https://www.artstation.com/search?q=anime%20wallpaper",
+            "description": "动漫/概念艺术"
+          },
+          {
+            "name": "Steam Screenshots",
+            "url": "https://store.steampowered.com",
+            "description": "游戏官方截图和宣传图，可作为桌面素材"
+          },
+          {
+            "name": "Nintendo Official",
+            "url": "https://www.nintendo.com",
+            "description": "任天堂官方游戏艺术、截图和宣传素材"
+          },
+          {
+            "name": "PlayStation",
+            "url": "https://www.playstation.com",
+            "description": "PlayStation官方游戏视觉资源"
+          },
+          {
+            "name": "Xbox",
+            "url": "https://www.xbox.com",
+            "description": "Xbox官方游戏图像与主题"
+          },
+          {
+            "name": "SEGA",
+            "url": "https://www.sega.com",
+            "description": "SEGA游戏官方视觉素材"
+          },
+          {
+            "name": "Capcom",
+            "url": "https://www.capcom.com",
+            "description": "游戏宣传图、角色和场景视觉"
+          },
+          {
+            "name": "Bandai Namco",
+            "url": "https://www.bandainamcoent.com",
+            "description": "游戏宣传与高质量官方素材"
+          },
+          {
+            "name": "Square Enix",
+            "url": "https://www.square-enix-games.com",
+            "description": "游戏宣传图、角色和艺术素材"
+          },
+          {
+            "name": "Ubisoft",
+            "url": "https://www.ubisoft.com",
+            "description": "游戏截图和宣传视觉"
+          },
+          {
+            "name": "Rockstar Games",
+            "url": "https://www.rockstargames.com",
+            "description": "游戏视觉素材和官方截图"
+          },
+          {
+            "name": "CD PROJEKT RED",
+            "url": "https://www.cdprojektred.com",
+            "description": "Cyberpunk、The Witcher等高质量官方…"
+          },
+          {
+            "name": "Epic Games",
+            "url": "https://www.epicgames.com",
+            "description": "游戏官方视觉"
+          },
+          {
+            "name": "Riot Games",
+            "url": "https://www.riotgames.com",
+            "description": "LoL、Valorant等游戏艺术资源"
+          },
+          {
+            "name": "Blizzard",
+            "url": "https://www.blizzard.com",
+            "description": "魔兽、守望先锋等官方游戏视觉"
+          },
+          {
+            "name": "EA",
+            "url": "https://www.ea.com",
+            "description": "游戏宣传与艺术"
+          },
+          {
+            "name": "Bethesda",
+            "url": "https://bethesda.net",
+            "description": "Elder Scrolls、Fallout等游戏视觉"
+          },
+          {
+            "name": "Remedy Entertainment",
+            "url": "https://www.remedygames.com",
+            "description": "游戏截图、概念艺术"
+          },
+          {
+            "name": "Naughty Dog",
+            "url": "https://www.naughtydog.com",
+            "description": "PlayStation游戏艺术"
+          },
+          {
+            "name": "Valve",
+            "url": "https://www.valvesoftware.com",
+            "description": "Half-Life、Portal等游戏视觉"
+          },
+          {
+            "name": "Bungie",
+            "url": "https://www.bungie.net",
+            "description": "Destiny等游戏视觉资源"
+          },
+          {
+            "name": "GameWallpapers",
+            "url": "https://www.gamewallpapers.com",
+            "description": "专业游戏壁纸资源"
+          },
+          {
+            "name": "Gaming Wallpapers",
+            "url": "https://gamingwallpapers.com",
+            "description": "免费HD/4K游戏壁纸"
+          },
+          {
+            "name": "Wallpaper Abyss Gaming",
+            "url": "https://wall.alphacoders.com/by_category.php?id=10",
+            "description": "游戏高清壁纸"
+          },
+          {
+            "name": "WallpaperAccess Gaming",
+            "url": "https://wallpaperaccess.com/gaming",
+            "description": "游戏壁纸"
+          },
+          {
+            "name": "WallpaperCave Gaming",
+            "url": "https://wallpapercave.com/gaming-wallpapers",
+            "description": "游戏壁纸"
+          },
+          {
+            "name": "Wallhaven Gaming",
+            "url": "https://wallhaven.cc/search?q=gaming",
+            "description": "游戏主题标签"
+          },
+          {
+            "name": "WallpaperFlare Gaming",
+            "url": "https://www.wallpaperflare.com/search?wallpaper=gaming",
+            "description": "游戏高清壁纸"
+          },
+          {
+            "name": "Peakpx Gaming",
+            "url": "https://www.peakpx.com/en/search?q=gaming",
+            "description": "游戏壁纸"
+          },
+          {
+            "name": "GoodFon Games",
+            "url": "https://www.goodfon.com/game/",
+            "description": "游戏类壁纸"
+          }
+        ]
+      },
+      {
+        "name": "手机竖屏与动态壁纸",
+        "links": [
+          {
+            "name": "WallpapersCraft Mobile",
+            "url": "https://wallpaperscraft.com/catalog/mobile",
+            "description": "手机高清壁纸"
+          },
+          {
+            "name": "MobilesWall",
+            "url": "https://mobileswall.com",
+            "description": "手机壁纸、安卓和iPhone"
+          },
+          {
+            "name": "MobCup",
+            "url": "https://mobcup.net",
+            "description": "手机壁纸、动态背景和铃声"
+          },
+          {
+            "name": "AndroidWalls",
+            "url": "https://androidwalls.net",
+            "description": "Android手机高清壁纸"
+          },
+          {
+            "name": "Papers.co",
+            "url": "https://papers.co",
+            "description": "高质量手机、桌面壁纸"
+          },
+          {
+            "name": "Walli",
+            "url": "https://www.walliapp.com",
+            "description": "艺术家创作的手机壁纸"
+          },
+          {
+            "name": "Backdrops",
+            "url": "https://backdrops.io",
+            "description": "原创手机壁纸和设计"
+          },
+          {
+            "name": "Resplash",
+            "url": "https://resplash.com",
+            "description": "Unsplash摄影风格的移动壁纸浏览体验"
+          },
+          {
+            "name": "Unsplash Mobile",
+            "url": "https://unsplash.com/wallpapers/phone",
+            "description": "高清手机摄影壁纸"
+          },
+          {
+            "name": "Pexels Mobile",
+            "url": "https://www.pexels.com/search/mobile%20wallpaper/",
+            "description": "免费手机壁纸"
+          },
+          {
+            "name": "WallpaperAccess Mobile",
+            "url": "https://wallpaperaccess.com/mobile",
+            "description": "手机壁纸"
+          },
+          {
+            "name": "WallpaperCave Mobile",
+            "url": "https://wallpapercave.com/phone-wallpapers",
+            "description": "手机壁纸"
+          },
+          {
+            "name": "WallpaperFlare Mobile",
+            "url": "https://www.wallpaperflare.com/search?wallpaper=phone",
+            "description": "手机高清壁纸"
+          },
+          {
+            "name": "Wallpapers.com iPhone",
+            "url": "https://wallpapers.com/iphone",
+            "description": "iPhone壁纸"
+          },
+          {
+            "name": "Wallpapers.com Android",
+            "url": "https://wallpapers.com/android",
+            "description": "Android壁纸"
+          },
+          {
+            "name": "MyLiveWallpapers",
+            "url": "https://mylivewallpapers.com",
+            "description": "动态壁纸与视频背景"
+          },
+          {
+            "name": "MoeWalls",
+            "url": "https://moewalls.com",
+            "description": "动态壁纸、动漫和游戏视频壁纸"
+          },
+          {
+            "name": "LiveWallpapers4Free",
+            "url": "https://livewallpapers4free.com",
+            "description": "免费动态壁纸"
+          },
+          {
+            "name": "DesktopHut",
+            "url": "https://www.desktophut.com",
+            "description": "免费动态壁纸、视频壁纸"
+          },
+          {
+            "name": "Lively Wallpaper",
+            "url": "https://github.com/rocksdanister/lively",
+            "description": "Windows免费开源动态壁纸工具"
+          },
+          {
+            "name": "Dynamic Wallpaper Club",
+            "url": "https://dynamicwallpaper.club",
+            "description": "动态/时间变化壁纸"
+          },
+          {
+            "name": "WinDynamicDesktop",
+            "url": "https://github.com/t1m0thyj/WinDynamicDesktop",
+            "description": "Windows动态时间壁纸"
+          },
+          {
+            "name": "Hidamari",
+            "url": "https://github.com/jeffshee/hidamari",
+            "description": "Linux视频壁纸/动态壁纸"
+          },
+          {
+            "name": "Fresco",
+            "url": "https://github.com/DibbayajyotiRoy/Fresco",
+            "description": "Linux免费动态壁纸工具，可使用视频、GIF和图片"
+          },
+          {
+            "name": "WallSync",
+            "url": "https://wallsync.pages.dev",
+            "description": "汇总动漫、极简、4K、动态壁纸站点的索引"
+          },
+          {
+            "name": "KDE Plasma Wallpapers",
+            "url": "https://store.kde.org/browse?cat=132",
+            "description": "KDE壁纸社区"
+          },
+          {
+            "name": "Wallpaper Engine Workshop",
+            "url": "https://steamcommunity.com/app/431960/workshop",
+            "description": "海量动态壁纸创意社区，平台本身为付费软件"
+          },
+          {
+            "name": "ScreenPlay",
+            "url": "https://gitlab.com/Schweinepriester/screenplay",
+            "description": "开源桌面动态壁纸项目"
+          }
+        ]
+      },
+      {
+        "name": "太空科学与公版高清",
+        "links": [
+          {
+            "name": "NASA Images",
+            "url": "https://images.nasa.gov",
+            "description": "NASA官方高清图像库"
+          },
+          {
+            "name": "NASA APOD",
+            "url": "https://apod.nasa.gov",
+            "description": "每日天文图片，长期积累的高清宇宙摄影"
+          },
+          {
+            "name": "NASA Webb Telescope",
+            "url": "https://webbtelescope.org",
+            "description": "James Webb太空望远镜高分辨率宇宙图像"
+          },
+          {
+            "name": "NASA Earth Observatory",
+            "url": "https://earthobservatory.nasa.gov",
+            "description": "地球、卫星、自然现象高清图"
+          },
+          {
+            "name": "NASA Visible Earth",
+            "url": "https://visibleearth.nasa.gov",
+            "description": "地球卫星图像"
+          },
+          {
+            "name": "ESA",
+            "url": "https://www.esa.int/ESA_Multimedia/Images",
+            "description": "欧洲航天局官方图片"
+          },
+          {
+            "name": "ESA/Hubble",
+            "url": "https://esahubble.org/images",
+            "description": "哈勃望远镜高清宇宙图片"
+          },
+          {
+            "name": "ESA/Webb",
+            "url": "https://esawebb.org/images",
+            "description": "韦伯望远镜图片"
+          },
+          {
+            "name": "JPL",
+            "url": "https://www.jpl.nasa.gov/images",
+            "description": "NASA喷气推进实验室高清空间图片"
+          },
+          {
+            "name": "NOAA",
+            "url": "https://www.noaa.gov",
+            "description": "海洋、气象、地球科学高清图片"
+          },
+          {
+            "name": "USGS",
+            "url": "https://www.usgs.gov/products/multimedia",
+            "description": "地球、火山、地貌、卫星图片"
+          },
+          {
+            "name": "National Park Service",
+            "url": "https://www.nps.gov/media",
+            "description": "美国国家公园高质量自然摄影"
+          },
+          {
+            "name": "Library of Congress",
+            "url": "https://www.loc.gov/photos",
+            "description": "历史摄影、艺术、公版高清图片"
+          },
+          {
+            "name": "British Library Flickr",
+            "url": "https://www.flickr.com/photos/britishlibrary",
+            "description": "大量历史公版插画、地图和书籍图像"
+          },
+          {
+            "name": "Wikimedia Featured Pictures",
+            "url": "https://commons.wikimedia.org/wiki/Commons:Featured_pictures",
+            "description": "精选高质量开放图片"
+          },
+          {
+            "name": "Wikimedia Quality Images",
+            "url": "https://commons.wikimedia.org/wiki/Commons:Quality_images",
+            "description": "高质量开放授权图片"
+          },
+          {
+            "name": "Old Book Illustrations",
+            "url": "https://www.oldbookillustrations.com",
+            "description": "公版古典插画与艺术图像"
+          }
+        ]
+      },
+      {
+        "name": "开源壁纸库与系统收藏",
+        "links": [
+          {
+            "name": "makccr Wallpapers",
+            "url": "https://github.com/makccr/wallpapers",
+            "description": "大型个人4K壁纸仓库，自然、海洋、抽象、艺术"
+          },
+          {
+            "name": "Wallpapers by MilesCorporate",
+            "url": "https://github.com/MilesCorporate/The-Wallpaper-Collection",
+            "description": "数千张高质量桌面壁纸，4K/8K、超宽屏、游戏、NAS…"
+          },
+          {
+            "name": "Pop!_OS Wallpapers",
+            "url": "https://github.com/pop-os/wallpapers",
+            "description": "Pop!_OS官方壁纸，至少按4K级桌面显示优化"
+          },
+          {
+            "name": "Agundur KDE Wallpapers",
+            "url": "https://github.com/Agundur-KDE/Wallpapers",
+            "description": "免费4K KDE/Linux壁纸"
+          },
+          {
+            "name": "teowelton Wallpapers",
+            "url": "https://github.com/teowelton/Wallpapers",
+            "description": "精选4K壁纸合集，自然、太空、动漫、艺术"
+          },
+          {
+            "name": "WallSync GitHub",
+            "url": "https://github.com/roigoatzzz/Wallsync",
+            "description": "壁纸网站聚合索引，适合继续发掘站点"
+          },
+          {
+            "name": "Linux Wallpapers",
+            "url": "https://github.com/topics/linux-wallpapers",
+            "description": "GitHub Linux壁纸仓库聚合"
+          },
+          {
+            "name": "Wallpaper Collections GitHub",
+            "url": "https://github.com/topics/wallpapers",
+            "description": "GitHub公开壁纸仓库聚合"
+          },
+          {
+            "name": "KDE Backgrounds",
+            "url": "https://invent.kde.org/plasma/plasma-workspace-wallpapers",
+            "description": "KDE Plasma官方壁纸源码仓库"
+          },
+          {
+            "name": "Ubuntu Wallpapers",
+            "url": "https://github.com/ubuntu/ubuntu-wallpapers",
+            "description": "Ubuntu官方发行版壁纸"
+          },
+          {
+            "name": "Fedora Wallpapers",
+            "url": "https://fedoraproject.org/wiki/Wallpapers",
+            "description": "Fedora社区与发行版壁纸"
+          },
+          {
+            "name": "Debian Wallpapers",
+            "url": "https://wiki.debian.org/DebianArt",
+            "description": "Debian艺术与壁纸项目"
+          },
+          {
+            "name": "elementary Wallpapers",
+            "url": "https://github.com/elementary/wallpapers",
+            "description": "elementary OS官方壁纸"
+          },
+          {
+            "name": "Manjaro Artwork",
+            "url": "https://gitlab.manjaro.org/artwork",
+            "description": "Manjaro艺术与壁纸"
+          },
+          {
+            "name": "EndeavourOS Wallpapers",
+            "url": "https://github.com/endeavouros-team/endeavouros-wallpapers",
+            "description": "EndeavourOS壁纸"
+          },
+          {
+            "name": "Garuda Linux Artworks",
+            "url": "https://gitlab.com/garuda-linux/artwork",
+            "description": "Garuda Linux壁纸与视觉素材"
+          },
+          {
+            "name": "Arch Linux Wallpapers",
+            "url": "https://wiki.archlinux.org",
+            "description": "Arch Linux相关社区壁纸资源入口"
+          },
+          {
+            "name": "NixOS Wallpapers",
+            "url": "https://github.com/NixOS/nixos-artwork",
+            "description": "NixOS官方艺术资源"
+          },
+          {
+            "name": "Void Linux Wallpapers",
+            "url": "https://github.com/void-linux/void-artwork",
+            "description": "Void Linux艺术和壁纸"
+          },
+          {
+            "name": "openSUSE Artwork",
+            "url": "https://github.com/openSUSE/artwork",
+            "description": "openSUSE相关艺术资源"
+          },
+          {
+            "name": "Solus Artwork",
+            "url": "https://github.com/getsolus/artwork",
+            "description": "Solus壁纸和艺术资源"
+          },
+          {
+            "name": "Pop!_OS COSMIC",
+            "url": "https://system76.com/cosmic",
+            "description": "COSMIC桌面相关视觉资源"
+          },
+          {
+            "name": "elementary OS",
+            "url": "https://elementary.io",
+            "description": "官方风格壁纸与视觉设计"
+          },
+          {
+            "name": "KDE Visual Design",
+            "url": "https://kde.org/announcements/plasma",
+            "description": "KDE视觉主题与壁纸"
+          },
+          {
+            "name": "GNOME Art",
+            "url": "https://www.gnome.org",
+            "description": "GNOME视觉资源"
+          },
+          {
+            "name": "Ubuntu Community Art",
+            "url": "https://discourse.ubuntu.com",
+            "description": "Ubuntu社区艺术和壁纸讨论资源"
+          },
+          {
+            "name": "NASA Wallpaper Collection",
+            "url": "https://www.nasa.gov/image-of-the-day",
+            "description": "NASA官方每日图片"
+          },
+          {
+            "name": "Earth Observatory Wallpaper",
+            "url": "https://earthobservatory.nasa.gov/topic/image-of-the-day",
+            "description": "地球科学与自然高分辨率图像"
+          },
+          {
+            "name": "XWALLPAPERS",
+            "url": "https://xwallpapers.com",
+            "description": "免费4K原创视觉壁纸"
+          },
+          {
+            "name": "WallNest HD",
+            "url": "https://wallnesthd.com",
+            "description": "免费4K综合壁纸，自然、太空、极简、城市等"
+          },
+          {
+            "name": "WallDrop",
+            "url": "https://walldrop.net",
+            "description": "免费4K/HD壁纸，极简、抽象、自然等"
+          },
+          {
+            "name": "WallpapersEye",
+            "url": "https://wallpapereye.com",
+            "description": "综合高清壁纸平台"
+          },
+          {
+            "name": "WallpaperCraft",
+            "url": "https://wallpapercraft.com",
+            "description": "桌面与移动高清壁纸"
+          },
+          {
+            "name": "WallpapersBoat",
+            "url": "https://wallpapersboat.com",
+            "description": "免费4K和HD壁纸"
+          },
+          {
+            "name": "HiDPIPaper",
+            "url": "https://www.hidpipaper.com",
+            "description": "高DPI桌面背景"
+          },
+          {
+            "name": "UHD Wallpapers",
+            "url": "https://www.uhdwallpapers.org",
+            "description": "UHD超高清壁纸"
+          },
+          {
+            "name": "4K Wallpapers",
+            "url": "https://4kwallpapers.com",
+            "description": "4K桌面、自然、动漫、汽车等"
+          },
+          {
+            "name": "4KWallpaper",
+            "url": "https://4kwallpaper.net",
+            "description": "4K/Ultra HD壁纸"
+          },
+          {
+            "name": "4K Wallpapers Club",
+            "url": "https://4kwallpapers.net",
+            "description": "4K桌面壁纸"
+          },
+          {
+            "name": "Ultra HD Wallpapers",
+            "url": "https://ultrahdwallpapers.net",
+            "description": "UHD高清背景"
+          },
+          {
+            "name": "HD Wallpapers In",
+            "url": "https://hdwallpapers.in",
+            "description": "高清、4K壁纸分类站"
+          },
+          {
+            "name": "HD Wallpapers Rocks",
+            "url": "https://www.hdwallpapersrocks.com",
+            "description": "高清壁纸综合站"
+          },
+          {
+            "name": "HD Wallpapers Point",
+            "url": "https://www.hdwallpaperspoint.com",
+            "description": "高清桌面和手机壁纸"
+          },
+          {
+            "name": "Wallpaper Abyss 4K",
+            "url": "https://wall.alphacoders.com/by_resolution.php?w=3840&h=2160",
+            "description": "4K分辨率筛选入口"
+          },
+          {
+            "name": "Wallhaven 4K Search",
+            "url": "https://wallhaven.cc/search?q=&categories=111&purity=100&atleast=3840x2160",
+            "description": "Wallhaven 4K高级搜索入口"
+          },
+          {
+            "name": "Unsplash 4K Wallpapers",
+            "url": "https://unsplash.com/wallpapers/screen/4k",
+            "description": "Unsplash官方4K壁纸入口"
+          }
+        ]
+      }
+    ]
+  }
+];;
+
+const literaryQuotes = [
+  '壁纸是数字时代的心灵挂毯，把远方搬进眼前。——本站',
+  '一张好壁纸，能让一整天都明亮起来。——本站',
+  '高清不只是分辨率，更是对美的坚持。——本站',
+  '让每一次解锁，都遇见一片新的风景。——本站'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑊𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟𝑠 𝐶𝑜𝑙𝑙𝑒𝑐𝑡𝑖𝑜𝑛';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球新闻媒体与国际时事阅读导航">
+<title>新闻 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>新闻</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">新闻 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "新闻媒体",
+    "icon": "📰",
+    "color": "linear-gradient(135deg, #0984e3, #00cec9)",
+    "subcategories": [
+      {
+        "name": "北美地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Associated Press (AP News)",
+            "url": "https://apnews.com",
+            "description": "全球最大通讯社之一，客观中立的国际新闻第一源头。"
+          },
+          {
+            "name": "Reuters",
+            "url": "https://www.reuters.com",
+            "description": "全球顶级路透社国际新闻网，商业与全球时事结合。"
+          },
+          {
+            "name": "NPR (National Public Radio)",
+            "url": "https://www.npr.org",
+            "description": "美国国家公共广播电台，深度的国际人文与新闻特写。"
+          },
+          {
+            "name": "PBS NewsHour",
+            "url": "https://www.pbs.org/newshour",
+            "description": "美国公共电视台旗下的深度严肃国际新闻门户。"
+          },
+          {
+            "name": "CNN International",
+            "url": "https://edition.cnn.com",
+            "description": "全球极具影响力的 24 小时国际新闻大刊。"
+          },
+          {
+            "name": "ABC News (US)",
+            "url": "https://abcnews.go.com",
+            "description": "美国广播公司国际与本土综合新闻网。"
+          },
+          {
+            "name": "CBS News",
+            "url": "https://www.cbsnews.com",
+            "description": "传统三大网之一，国际热点与专题报道。"
+          },
+          {
+            "name": "NBC News",
+            "url": "https://www.nbcnews.com",
+            "description": "北美主流新闻大刊，图文与视频流并重。"
+          },
+          {
+            "name": "USA Today",
+            "url": "https://www.usatoday.com",
+            "description": "报版排版风格，快节奏全美及国际新闻。"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://www.cnbc.com",
+            "description": "专注于全球宏观经济、国际市场与财经新闻。"
+          },
+          {
+            "name": "POLITICO (US)",
+            "url": "https://www.politico.com",
+            "description": "专注于北美与国际地缘政治、政策解读。"
+          },
+          {
+            "name": "The Hill",
+            "url": "https://thehill.com",
+            "description": "华盛顿政治、政策与国际关系核心网媒。"
+          },
+          {
+            "name": "Foreign Policy",
+            "url": "https://foreignpolicy.com",
+            "description": "国际外交、地缘战略与全球时事智库网(开放文章丰富)"
+          },
+          {
+            "name": "Vox",
+            "url": "https://www.vox.com",
+            "description": "主打“解释型新闻”(Explainer)"
+          },
+          {
+            "name": "Axios",
+            "url": "https://www.axios.com",
+            "description": "独创短小精炼的“Smart Brevity”流派"
+          },
+          {
+            "name": "CBC News (Canada)",
+            "url": "https://www.cbc.ca/news",
+            "description": "加拿大国家广播公司，北美极具权威的国际观察角度。"
+          },
+          {
+            "name": "The Globe and Mail",
+            "url": "https://www.theglobeandmail.com",
+            "description": "加拿大老牌全国性日报国际版。"
+          },
+          {
+            "name": "Global News Canada",
+            "url": "https://globalnews.ca",
+            "description": "加拿大全天候国际与本土新闻门户。"
+          },
+          {
+            "name": "CTV News",
+            "url": "https://www.ctvnews.ca",
+            "description": "加拿大主流电视新闻网。"
+          },
+          {
+            "name": "National Post",
+            "url": "https://nationalpost.com",
+            "description": "加拿大深度国际评论与时事分析网。"
+          }
+        ]
+      },
+      {
+        "name": "欧洲地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "BBC News",
+            "url": "https://www.bbc.com/news",
+            "description": "全球公认最权威的国际新闻与公共广播门户。"
+          },
+          {
+            "name": "The Guardian",
+            "url": "https://www.theguardian.com",
+            "description": "英国《卫报》，完全开放的高质量国际新闻与深度调查。"
+          },
+          {
+            "name": "The Independent",
+            "url": "https://www.independent.co.uk",
+            "description": "英国独立报，纯数字化的全球新闻大刊。"
+          },
+          {
+            "name": "Sky News (UK)",
+            "url": "https://news.sky.com",
+            "description": "英国 24 小时快讯与国际现场新闻。"
+          },
+          {
+            "name": "Channel 4 News",
+            "url": "https://www.channel4.com/news",
+            "description": "英国深度调查与人权/国际冲突报道。"
+          },
+          {
+            "name": "Euronews",
+            "url": "https://www.euronews.com",
+            "description": "欧洲新闻台，多语种视角全方位报道欧洲及全球局势。"
+          },
+          {
+            "name": "France 24 (English)",
+            "url": "https://www.france24.com/en",
+            "description": "法国官方国际新闻网，极具法式国际视野。"
+          },
+          {
+            "name": "Le Monde (English)",
+            "url": "https://www.lemonde.fr/en",
+            "description": "法国《世界报》英文版，欧洲外交与思想智库新闻。"
+          },
+          {
+            "name": "RFI (Radio France Internationale)",
+            "url": "https://www.rfi.fr/en",
+            "description": "法国国际广播电台全球快讯。"
+          },
+          {
+            "name": "Le Figaro",
+            "url": "https://www.lefigaro.fr",
+            "description": "法国历史最悠久的综合性主流新闻网。"
+          },
+          {
+            "name": "Deutsche Welle (DW)",
+            "url": "https://www.dw.com",
+            "description": "德国之声，德国官方面向全球的国际新闻大刊。"
+          },
+          {
+            "name": "Der Spiegel (International)",
+            "url": "https://www.spiegel.de/international",
+            "description": "德国《镜报》国际版，深度调查报道标杆。"
+          },
+          {
+            "name": "Tagesschau",
+            "url": "https://www.tagesschau.de",
+            "description": "德国第一电视台 flagship 每日新闻网。"
+          },
+          {
+            "name": "ZEIT ONLINE",
+            "url": "https://www.zeit.de/index",
+            "description": "德国《时代周报》，聚焦政治、文化与国际思想流派。"
+          },
+          {
+            "name": "Swissinfo (SWI)",
+            "url": "https://www.swissinfo.ch/eng",
+            "description": "瑞士资讯，以中立国视角提供全球与欧洲新闻。"
+          },
+          {
+            "name": "NZZ (Neue Zürcher Zeitung)",
+            "url": "https://www.nzz.ch",
+            "description": "瑞士苏黎世报，欧洲极具深度的国际政经新闻。"
+          },
+          {
+            "name": "ANSA (English)",
+            "url": "https://www.ansa.it/english",
+            "description": "意大利国家通讯社，地中海与欧洲动态。"
+          },
+          {
+            "name": "Corriere della Sera",
+            "url": "https://www.corriere.it",
+            "description": "意大利《晚邮报》，本土最大的新闻门户。"
+          },
+          {
+            "name": "El País (English)",
+            "url": "https://english.elpais.com",
+            "description": "西班牙《国家报》英文版，南欧与拉美外交焦点。"
+          },
+          {
+            "name": "RTVE",
+            "url": "https://www.rtve.es/noticias",
+            "description": "西班牙国家广播电视台国际新闻。"
+          },
+          {
+            "name": "Dutchnews",
+            "url": "https://www.dutchnews.nl",
+            "description": "荷兰核心国际与本土时事网。"
+          },
+          {
+            "name": "NOS News",
+            "url": "https://nos.nl",
+            "description": "荷兰公共广播机构直观新闻门户。"
+          },
+          {
+            "name": "Euractiv",
+            "url": "https://www.euractiv.com",
+            "description": "专注于布鲁塞尔欧盟总部政策、法案与欧洲一体化新闻。"
+          },
+          {
+            "name": "POLITICO Europe",
+            "url": "https://www.politico.eu",
+            "description": "欧洲政治中心(布鲁塞尔)的顶尖政经快讯网。"
+          },
+          {
+            "name": "The Barents Observer",
+            "url": "https://thebarentsobserver.com",
+            "description": "专注于北极圈、斯堪的纳维亚与极地地缘政治的小众权威"
+          }
+        ]
+      },
+      {
+        "name": "亚太地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "NHK WORLD-JAPAN",
+            "url": "https://www3.nhk.or.jp/nhkworld",
+            "description": "日本放送协会官方国际新闻网，权威准确。"
+          },
+          {
+            "name": "The Japan Times",
+            "url": "https://www.japantimes.co.jp",
+            "description": "日本最老牌的英文国际新闻门户。"
+          },
+          {
+            "name": "Kyodo News (共同社)",
+            "url": "https://english.kyodonews.net",
+            "description": "日本最大的国家级通讯社。"
+          },
+          {
+            "name": "Asahi Shimbun (English)",
+            "url": "https://www.asahi.com/ajw",
+            "description": "朝日新闻英文版，深度社会与国际观察。"
+          },
+          {
+            "name": "Mainichi Shimbun (English)",
+            "url": "https://mainichi.jp/english",
+            "description": "每日新闻英文门户。"
+          },
+          {
+            "name": "Yonhap News Agency (韩联社)",
+            "url": "https://en.yna.co.kr",
+            "description": "韩国国家通讯社，东北亚局势第一一手源头。"
+          },
+          {
+            "name": "The Korea Herald",
+            "url": "https://www.koreaherald.com",
+            "description": "韩国最大英文综合新闻大刊。"
+          },
+          {
+            "name": "The Korea Times",
+            "url": "https://www.koreatimes.co.kr",
+            "description": "韩国主流国际政经与社会动态网。"
+          },
+          {
+            "name": "KBS WORLD News",
+            "url": "https://world.kbs.co.kr/service/news_main.htm?lang=e",
+            "description": "韩国国家电视台国际新闻。"
+          },
+          {
+            "name": "Channel NewsAsia (CNA)",
+            "url": "https://www.channelnewsasia.com",
+            "description": "新加坡亚洲新闻台，东南亚乃至全球极佳的视角的门户。"
+          },
+          {
+            "name": "The Straits Times",
+            "url": "https://www.straitstimes.com",
+            "description": "新加坡《海峡时报》，东南亚政经风向标。"
+          },
+          {
+            "name": "South China Morning Post (SCMP)",
+            "url": "https://www.scmp.com",
+            "description": "香港《南华早报》，中国与亚太国际关系的权威大刊。"
+          },
+          {
+            "name": "HKFP (Hong Kong Free Press)",
+            "url": "https://hongkongfp.com",
+            "description": "香港独立非营利英文新闻网。"
+          },
+          {
+            "name": "中央社 (CNA Taiwan)",
+            "url": "https://www.cna.com.tw",
+            "description": "中国台湾官方通讯社，提供实时华语国际新闻。"
+          },
+          {
+            "name": "Focus Taiwan",
+            "url": "https://focustaiwan.tw",
+            "description": "中央社英文版，亚太动态视角。"
+          },
+          {
+            "name": "Taipei Times",
+            "url": "https://www.taipeitimes.com",
+            "description": "中国台湾老牌英文每日新闻。"
+          },
+          {
+            "name": "RFA (Radio Free Asia)",
+            "url": "https://www.rfa.org/english",
+            "description": "自由亚洲电台，专注于亚洲地缘与社会议题。"
+          },
+          {
+            "name": "ABC News (Australia)",
+            "url": "https://www.abc.net.au/news",
+            "description": "澳大利亚广播公司，南半球与太平洋地区第一权威网。"
+          },
+          {
+            "name": "The Sydney Morning Herald",
+            "url": "https://www.smh.com.au",
+            "description": "悉尼先驱晨报，澳洲主流国际视野。"
+          },
+          {
+            "name": "The Age",
+            "url": "https://www.theage.com.au",
+            "description": "墨尔本主流综合新闻大刊。"
+          },
+          {
+            "name": "SBS News (Australia)",
+            "url": "https://www.sbs.com.au/news",
+            "description": "澳洲多语种与国际文化新闻门户。"
+          },
+          {
+            "name": "RNZ (Radio New Zealand)",
+            "url": "https://www.rnz.co.nz",
+            "description": "新西兰国家广播电台国际新闻。"
+          },
+          {
+            "name": "NZ Herald",
+            "url": "https://www.nzherald.co.nz",
+            "description": "新西兰先驱报，大洋洲重点新闻。"
+          },
+          {
+            "name": "Bangkok Post",
+            "url": "https://www.bangkokpost.com",
+            "description": "泰国最大英文新闻网，东盟核心观察点。"
+          },
+          {
+            "name": "The Jakarta Post",
+            "url": "https://www.thejakartapost.com",
+            "description": "印尼主流英文国际新闻门户。"
+          }
+        ]
+      },
+      {
+        "name": "中东与南亚地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Al Jazeera (English)",
+            "url": "https://www.aljazeera.com",
+            "description": "半岛电视台英文网，全球非西方视角的权威国际新闻。"
+          },
+          {
+            "name": "Al Arabiya (English)",
+            "url": "https://english.alarabiya.net",
+            "description": "沙特阿拉伯资助的阿拉伯世界主流门户。"
+          },
+          {
+            "name": "The National (UAE)",
+            "url": "https://www.thenationalnews.com",
+            "description": "阿联酋阿布扎比顶尖中东与国际英文大刊。"
+          },
+          {
+            "name": "Gulf News",
+            "url": "https://gulfnews.com",
+            "description": "迪拜主流英语新闻与中东政经网。"
+          },
+          {
+            "name": "Haaretz (English)",
+            "url": "https://www.haaretz.com",
+            "description": "以色列《哈阿雷兹》报，中东局势深度分析。"
+          },
+          {
+            "name": "The Jerusalem Post",
+            "url": "https://www.jpost.com",
+            "description": "以色列耶路撒冷邮报，实时中东冲突与外交新闻。"
+          },
+          {
+            "name": "Times of Israel",
+            "url": "https://www.timesofisrael.com",
+            "description": "独立的中东快讯与现场报道。"
+          },
+          {
+            "name": "Arab News",
+            "url": "https://www.arabnews.com",
+            "description": "中东地区广泛阅读的英文中东与国际日报。"
+          },
+          {
+            "name": "TRT World",
+            "url": "https://www.trtworld.com",
+            "description": "土耳其国家广播公司国际网，极具西亚与欧亚大陆视角。"
+          },
+          {
+            "name": "Hurriyet Daily News",
+            "url": "https://www.hurriyetdailynews.com",
+            "description": "土耳其历史最悠久的英文新闻网。"
+          },
+          {
+            "name": "The Times of India",
+            "url": "https://timesofindia.indiatimes.com",
+            "description": "印度最大英文媒体，南亚与全球动态。"
+          },
+          {
+            "name": "The Hindu",
+            "url": "https://www.thehindu.com",
+            "description": "印度严肃高质的国际新闻与外交政策报纸。"
+          },
+          {
+            "name": "NDTV News",
+            "url": "https://www.ndtv.com",
+            "description": "印度全天候电视新闻网门户。"
+          },
+          {
+            "name": "Indian Express",
+            "url": "https://indianexpress.com",
+            "description": "印度深度调查与国际政治新闻网。"
+          },
+          {
+            "name": "Dawn (Pakistan)",
+            "url": "https://www.dawn.com",
+            "description": "巴基斯坦历史最悠久的英文新闻门户。"
+          }
+        ]
+      },
+      {
+        "name": "拉丁美洲与非洲地区",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Buenos Aires Times",
+            "url": "https://www.batimes.com.ar",
+            "description": "阿根廷主流英文国际新闻大刊。"
+          },
+          {
+            "name": "Rio Times",
+            "url": "https://www.riotimesonline.com",
+            "description": "巴西及南美洲动态英文新闻网。"
+          },
+          {
+            "name": "Folha de S.Paulo (English)",
+            "url": "https://www1.folha.uol.com.br/internacional/en",
+            "description": "巴西最大的《圣保罗页报》英文网。"
+          },
+          {
+            "name": "El Universal (Mexico)",
+            "url": "https://www.eluniversal.com.mx",
+            "description": "墨西哥主流大报国际版。"
+          },
+          {
+            "name": "Mexico News Daily",
+            "url": "https://mexiconewsdaily.com",
+            "description": "专注于墨西哥与中美洲时事英文网。"
+          },
+          {
+            "name": "Santiago Times",
+            "url": "https://santiagotimes.cl",
+            "description": "智利独立英文国际新闻。"
+          },
+          {
+            "name": "TeleSUR (English)",
+            "url": "https://www.telesuretv.net/english",
+            "description": "拉美多国联合创办的拉美视角国际新闻网。"
+          },
+          {
+            "name": "News24 (South Africa)",
+            "url": "https://www.news24.com",
+            "description": "南非最大的综合新闻与全非动态门户。"
+          },
+          {
+            "name": "The Mail & Guardian (SA)",
+            "url": "https://mg.co.za",
+            "description": "南非权威深度国际调查与政治周报。"
+          },
+          {
+            "name": "SABC News",
+            "url": "https://www.sabcnews.com/sabcnews",
+            "description": "南非国家广播公司国际快讯。"
+          },
+          {
+            "name": "AllAfrica",
+            "url": "https://allafrica.com",
+            "description": "汇总全非洲各大国家与媒体最新新闻的巨大聚合网。"
+          },
+          {
+            "name": "The EastAfrican",
+            "url": "https://www.theeastafrican.co.ke",
+            "description": "肯尼亚及东非地区主流国际视野大刊。"
+          },
+          {
+            "name": "The Guardian Nigeria",
+            "url": "https://guardian.ng",
+            "description": "尼日利亚(西非最大经济体)主流每日新闻网。"
+          },
+          {
+            "name": "Premium Times (Nigeria)",
+            "url": "https://www.premiumtimesng.com",
+            "description": "尼日利亚深度调查与国际新闻。"
+          },
+          {
+            "name": "Africanews",
+            "url": "https://www.africanews.com",
+            "description": "Euronews 旗下的全非洲 24"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑵𝑒𝑤𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

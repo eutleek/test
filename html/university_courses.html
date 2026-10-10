@@ -1,0 +1,1429 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球名校公开课、MOOC 平台、计算机与自然科学自学导航">
+<title>全球大学公开课 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑈𝑛𝑖𝑣𝑒𝑟𝑠𝑖𝑡𝑦 𝐶𝑜𝑢𝑟𝑠𝑒𝑠</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>全球大学公开课</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">全球大学公开课 · 名校课程、MOOC 与自学路线导航</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "全球大学公开课",
+    "icon": "🎓",
+    "color": "linear-gradient(135deg, #059669, #0d9488)",
+    "subcategories": [
+      {
+        "name": "名校公开课",
+        "links": [
+          {
+            "name": "MIT OpenCourseWare",
+            "url": "https://ocw.mit.edu",
+            "description": "麻省理工学院官方开放课件平台，免费提供全学科课程资源。"
+          },
+          {
+            "name": "Open Yale Courses",
+            "url": "https://oyc.yale.edu",
+            "description": "耶鲁大学官方公开课，涵盖人文、历史、哲学等经典名师课堂。"
+          },
+          {
+            "name": "Harvard Online Courses",
+            "url": "https://pll.harvard.edu",
+            "description": "哈佛大学官方在线课程门户，提供大量免费旁听课程。"
+          },
+          {
+            "name": "Stanford Online",
+            "url": "https://online.stanford.edu",
+            "description": "斯坦福大学官方在线学习平台，包含科技、工程与商业公开课。"
+          },
+          {
+            "name": "Berkeley Webcast & Class Sites",
+            "url": "https://online.berkeley.edu",
+            "description": "加州大学伯克利分校官方课程资源与课堂录像门户。"
+          },
+          {
+            "name": "Oxford Podcasts",
+            "url": "https://podcasts.ox.ac.uk",
+            "description": "牛津大学官方讲座与公开课音频、视频在线资源库。"
+          },
+          {
+            "name": "Cambridge Open Learning",
+            "url": "https://www.cam.ac.uk/research/news/open-access",
+            "description": "剑桥大学官方开放学习与讲座音视频门户。"
+          },
+          {
+            "name": "Princeton Online",
+            "url": "https://online.princeton.edu",
+            "description": "普林斯顿大学官方公开课与在线学习资源平台。"
+          },
+          {
+            "name": "Columbia Online",
+            "url": "https://online.columbia.edu",
+            "description": "哥伦比亚大学官方在线课程与开放教育资源平台。"
+          },
+          {
+            "name": "Penn Online Learning",
+            "url": "https://online.upenn.edu",
+            "description": "宾夕法尼亚大学官方在线课程与开放学习入口。"
+          },
+          {
+            "name": "Cornell Online",
+            "url": "https://ecornell.cornell.edu",
+            "description": "康奈尔大学官方在线学术与专业开发课程平台。"
+          },
+          {
+            "name": "Caltech Academy",
+            "url": "https://www.caltech.edu",
+            "description": "加州理工学院官方学术讲座与开放教育资源。"
+          },
+          {
+            "name": "Chicago Online",
+            "url": "https://online.uchicago.edu",
+            "description": "芝加哥大学官方在线公开课程与学术研究讲座。"
+          },
+          {
+            "name": "Carnegie Mellon Open Learning Initiative",
+            "url": "https://oli.cmu.edu",
+            "description": "卡内基梅隆大学OLI人机交互学习科学开放课件。"
+          },
+          {
+            "name": "Johns Hopkins Open Courseware",
+            "url": "https://ocw.jhsph.edu",
+            "description": "约翰斯·霍普金斯大学公共卫生与医学公开课。"
+          },
+          {
+            "name": "Duke Online",
+            "url": "https://online.duke.edu",
+            "description": "杜克大学官方在线学习与开放教育资源门户。"
+          },
+          {
+            "name": "Northwestern Online",
+            "url": "https://www.northwestern.edu",
+            "description": "西北大学官方学术讲座与开放课程平台。"
+          },
+          {
+            "name": "Michigan Online",
+            "url": "https://online.umich.edu",
+            "description": "密歇根大学官方在线课程平台，涵盖编程、数据与人文。"
+          },
+          {
+            "name": "UCLA Extension & Free Courses",
+            "url": "https://www.ucla.edu",
+            "description": "加州大学洛杉矶分校开放讲座与在线学习库。"
+          },
+          {
+            "name": "NYU Open Education",
+            "url": "https://www.nyu.edu",
+            "description": "纽约大学官方开放课程与学术研讨视频门户。"
+          },
+          {
+            "name": "台湾大学开放式课程",
+            "url": "http://ocw.ntu.edu.tw",
+            "description": "台湾大学官方 OCW，提供高质量中文名师深度课堂录像。"
+          },
+          {
+            "name": "台湾清华大学开放式课程",
+            "url": "http://ocw.nthu.edu.tw",
+            "description": "台湾清华大学 OCW，理工与人文社科并重的名师课堂。"
+          },
+          {
+            "name": "台湾交通大学开放式课程",
+            "url": "http://ocw.nycu.edu.tw",
+            "description": "台湾交通大学 OCW，电机、资讯与基础科学顶尖课程。"
+          },
+          {
+            "name": "香港大学开放课程",
+            "url": "https://learning.hku.hk",
+            "description": "香港大学官方 MOOC 与开放学术讲座平台。"
+          },
+          {
+            "name": "香港中文大学开放课件",
+            "url": "https://www.cuhk.edu.hk",
+            "description": "香港中文大学人文、社会与中国研究公开课门户。"
+          },
+          {
+            "name": "京都大学 OpenCourseWare",
+            "url": "https://ocw.kyoto-u.ac.jp",
+            "description": "日本京都大学官方开放课件，含大量基础科学与人文课。"
+          },
+          {
+            "name": "东京大学 OpenCourseWare",
+            "url": "https://ocw.u-tokyo.ac.jp",
+            "description": "日本东京大学官方开放课件，汇集东大顶尖教授讲座。"
+          },
+          {
+            "name": "ETH Zurich Video Portal",
+            "url": "https://www.videoportal.ethz.ch",
+            "description": "苏黎世联邦理工学院官方学术讲座与课程视频库。"
+          },
+          {
+            "name": "EPFL OpenCourseWare",
+            "url": "https://www.epfl.ch",
+            "description": "洛桑联邦理工学院官方开放教育与工程学公开课。"
+          },
+          {
+            "name": "TU Delft OpenCourseWare",
+            "url": "https://ocw.tudelft.nl",
+            "description": "荷兰代尔夫特理工大学世界顶尖的水利与工程 OCW。"
+          }
+        ]
+      },
+      {
+        "name": "MOOC 平台",
+        "links": [
+          {
+            "name": "Coursera",
+            "url": "https://www.coursera.org",
+            "description": "全球最大MOOC平台，联合数百所大学免费旁听。"
+          },
+          {
+            "name": "edX",
+            "url": "https://www.edx.org",
+            "description": "哈佛与MIT联合发起的非营利MOOC平台。"
+          },
+          {
+            "name": "中国大学 MOOC",
+            "url": "https://www.icourse163.org",
+            "description": "教育部推进的高校MOOC平台，汇集985/211精品课。"
+          },
+          {
+            "name": "学堂在线",
+            "url": "https://www.xuetangx.com",
+            "description": "清华大学发起的中文MOOC平台，含全球优质公开课。"
+          },
+          {
+            "name": "网易公开课",
+            "url": "https://open.163.com",
+            "description": "老牌公开课聚合站，含TED与国际名校字幕课。"
+          },
+          {
+            "name": "FutureLearn",
+            "url": "https://www.futurelearn.com",
+            "description": "英国大型MOOC平台，数十所名校联合打造。"
+          },
+          {
+            "name": "OpenLearn",
+            "url": "https://www.open.edu/openlearn",
+            "description": "英国开放大学官方免费学习门户。"
+          },
+          {
+            "name": "Udacity",
+            "url": "https://www.udacity.com",
+            "description": "优达学城，前沿AI、数据科学与软件工程实战课。"
+          },
+          {
+            "name": "Kadenze",
+            "url": "https://www.kadenze.com",
+            "description": "艺术、设计与创意科技特色MOOC平台。"
+          },
+          {
+            "name": "Canvas Network",
+            "url": "https://www.canvas.net",
+            "description": "整合全球 K-12 与高等教育机构免费开放课程的平台。"
+          },
+          {
+            "name": "FUN MOOC",
+            "url": "https://www.fun-mooc.fr",
+            "description": "法国高等教育部主导的官方高等教育 MOOC 平台。"
+          },
+          {
+            "name": "Miríadax",
+            "url": "https://miriadax.net",
+            "description": "西语世界最大高等教育MOOC平台。"
+          },
+          {
+            "name": "iversity",
+            "url": "https://iversity.org",
+            "description": "欧洲知名的跨学科在线学习平台，提供多语种大学课程。"
+          },
+          {
+            "name": "SWAYAM",
+            "url": "https://swayam.gov.in",
+            "description": "印度国家级免费高等教育MOOC平台。"
+          },
+          {
+            "name": "超星尔雅",
+            "url": "https://erya.mooc.chaoxing.com",
+            "description": "汇集国内高校通识课与名家讲座的学术视频平台。"
+          },
+          {
+            "name": "智慧树网",
+            "url": "https://www.zhihuishu.com",
+            "description": "国内高校学分互认与共享课程平台，含海量优质通识课。"
+          },
+          {
+            "name": "好大学在线",
+            "url": "https://www.cnmooc.org",
+            "description": "上海交大发起的MOOC平台，整合C20慕课联盟。"
+          },
+          {
+            "name": "人民网公开课",
+            "url": "https://v.people.cn",
+            "description": "聚焦社会科学、党建史论与正能量人文讲座的平台。"
+          },
+          {
+            "name": "央视网公开课",
+            "url": "https://tv.cctv.com",
+            "description": "汇集《百家讲坛》等文化名家正能量学术普及精品课。"
+          }
+        ]
+      },
+      {
+        "name": "计算机与AI",
+        "links": [
+          {
+            "name": "CS50 by Harvard",
+            "url": "https://cs50.harvard.edu",
+            "description": "哈佛大学极其知名的计算机科学入门公开课官方平台。"
+          },
+          {
+            "name": "Stanford CS229",
+            "url": "https://cs229.stanford.edu",
+            "description": "斯坦福吴恩达经典机器学习公开课。"
+          },
+          {
+            "name": "Stanford CS231n",
+            "url": "https://cs231n.stanford.edu",
+            "description": "斯坦福大学计算机视觉与深度学习权威公开课程。"
+          },
+          {
+            "name": "Stanford CS224n",
+            "url": "https://web.stanford.edu/class/cs224n",
+            "description": "斯坦福大学自然语言处理与深度学习权威公开课程。"
+          },
+          {
+            "name": "Berkeley CS61A",
+            "url": "https://cs61a.org",
+            "description": "加州大学伯克利分校经典的计算机程序构造与解释公开课。"
+          },
+          {
+            "name": "Berkeley CS61B",
+            "url": "https://datastructur.es",
+            "description": "伯克利大学数据结构与算法权威入门公开课。"
+          },
+          {
+            "name": "Berkeley CS61C",
+            "url": "https://cs61c.org",
+            "description": "伯克利大学计算机系统结构（C语言与硬件）公开课。"
+          },
+          {
+            "name": "MIT 6.0001",
+            "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016",
+            "description": "MIT计算机科学与Python编程导论开放课。"
+          },
+          {
+            "name": "MIT 6.824",
+            "url": "https://pdos.csail.mit.edu/6.824",
+            "description": "MIT极负盛名的分布式系统课程。"
+          },
+          {
+            "name": "Missing Semester (MIT)",
+            "url": "https://missing.csail.mit.edu",
+            "description": "MIT经典“计算机工具箱遗漏课”，含Linux与Git。"
+          },
+          {
+            "name": "Full Stack Open",
+            "url": "https://fullstackopen.com",
+            "description": "赫尔辛基大学出品的全球极具口碑的免费全栈开发课程。"
+          },
+          {
+            "name": "Elements of AI",
+            "url": "https://www.elementsofai.com",
+            "description": "芬兰赫尔辛基大学面向公众打造的免费 AI 基础科普课。"
+          },
+          {
+            "name": "Fast.ai",
+            "url": "https://www.fast.ai",
+            "description": "专注于“由上至下”实战深度学习与大模型训练的免费课程。"
+          },
+          {
+            "name": "DeepLearning.AI",
+            "url": "https://www.deeplearning.ai",
+            "description": "吴恩达团队打造的AI与生成式AI学习平台。"
+          },
+          {
+            "name": "FreeCodeCamp",
+            "url": "https://www.freecodecamp.org",
+            "description": "全球极其火爆的免费开源编程与软件工程师自学社区。"
+          },
+          {
+            "name": "The Odin Project",
+            "url": "https://www.theodinproject.com",
+            "description": "完全免费开源的 Web 全栈开发自学体系与实战项目。"
+          },
+          {
+            "name": "Roadmap.sh",
+            "url": "https://roadmap.sh",
+            "description": "全球开发者社区极度推崇的技术领域自学路线图指南。"
+          },
+          {
+            "name": "OSSU Computer Science",
+            "url": "https://github.com/ossu/computer-science",
+            "description": "GitHub 知名开源计算机科学学士学位自学路线。"
+          },
+          {
+            "name": "Carnegie Mellon CS Academy",
+            "url": "https://academy.cs.cmu.edu",
+            "description": "卡内基梅隆大学官方 K-12 及入门计算机科学课。"
+          },
+          {
+            "name": "Teach Yourself Computer Science",
+            "url": "https://teachyourselfcs.com",
+            "description": "硅谷资深工程师撰写的 CS 核心自学书单与公开课。"
+          },
+          {
+            "name": "System Design Primer",
+            "url": "https://github.com/donnemartin/system-design-primer",
+            "description": "GitHub超20万星的分布式系统设计公开资料。"
+          },
+          {
+            "name": "Cryptozombies",
+            "url": "https://cryptozombies.io",
+            "description": "通过构建以太坊游戏学习智能合约与 Web3 开发的平台。"
+          },
+          {
+            "name": "Google AI Education",
+            "url": "https://ai.google/education",
+            "description": "谷歌官方打造的机器学习与人工智能开发免费课程。"
+          },
+          {
+            "name": "Microsoft Learn",
+            "url": "https://learn.microsoft.com",
+            "description": "微软官方提供的云计算、AI 及软件工程免费循序渐进课程。"
+          },
+          {
+            "name": "AWS Training & Certification",
+            "url": "https://aws.training",
+            "description": "亚马逊官方推出的免费云计算基础与架构公开课。"
+          },
+          {
+            "name": "Apple Developer Video",
+            "url": "https://developer.apple.com/videos",
+            "description": "苹果官方WWDC与Swift权威开发技术讲座。"
+          },
+          {
+            "name": "Kaggle Learn",
+            "url": "https://www.kaggle.com/learn",
+            "description": "数据科学与Python/SQL/机器学习实战微课。"
+          },
+          {
+            "name": "W3Schools",
+            "url": "https://www.w3schools.com",
+            "description": "全球极负盛名的基础 Web 前端与后端技术交互式学习网。"
+          },
+          {
+            "name": "MDN Web Docs",
+            "url": "https://developer.mozilla.org",
+            "description": "Mozilla打造的权威Web标准与JS教程。"
+          },
+          {
+            "name": "Software Carpentry",
+            "url": "https://software-carpentry.org",
+            "description": "专注于为科研人员传授编程与数据处理技能的开放课程。"
+          }
+        ]
+      },
+      {
+        "name": "数学与自然科学",
+        "links": [
+          {
+            "name": "Khan Academy",
+            "url": "https://www.khanacademy.org",
+            "description": "可汗学院，K-12与大学基础学科免费公益教学。"
+          },
+          {
+            "name": "3Blue1Brown",
+            "url": "https://www.3blue1brown.com",
+            "description": "用可视化动画讲解线性代数、微积分与神经网络的艺术级课。"
+          },
+          {
+            "name": "MIT Gilbert Strang Linear Algebra",
+            "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010",
+            "description": "MIT 史特朗教授权威线性代数公开课。"
+          },
+          {
+            "name": "Paul's Online Math Notes",
+            "url": "https://tutorial.math.lamar.edu",
+            "description": "极受全球大学生好评的高等数学与微积分自学笔记。"
+          },
+          {
+            "name": "Brilliant",
+            "url": "https://brilliant.org",
+            "description": "强调互动与直觉思维的科学、数学与计算机思维平台。"
+          },
+          {
+            "name": "Wolfram MathWorld",
+            "url": "https://mathworld.wolfram.com",
+            "description": "全球极具权威的在线数学百科与定理推导互动资源。"
+          },
+          {
+            "name": "Physics Classroom",
+            "url": "https://www.physicsclassroom.com",
+            "description": "专门面向中理科学生的物理基础概念交互学习网。"
+          },
+          {
+            "name": "HyperPhysics",
+            "url": "http://hyperphysics.phy-astr.gsu.edu",
+            "description": "乔治亚州立大学打造的树状物理学知识网络思维导图网。"
+          },
+          {
+            "name": "Royal Society Lectures",
+            "url": "https://royalsociety.org",
+            "description": "英国皇家学会官方顶尖科学家前沿研究与普及讲座。"
+          },
+          {
+            "name": "Perimeter Institute Lectures",
+            "url": "https://pirsa.org",
+            "description": "加拿大圆周理论物理研究所高级理论物理公开课。"
+          },
+          {
+            "name": "Periodic Videos",
+            "url": "https://www.periodicvideos.com",
+            "description": "诺丁汉大学团队制作的化学元素周期表科普视频集。"
+          },
+          {
+            "name": "Sixty Symbols",
+            "url": "https://www.sixtysymbols.com",
+            "description": "诺丁汉大学物理与天文学符号与物理现象科普平台。"
+          },
+          {
+            "name": "Numberphile",
+            "url": "https://www.numberphile.com",
+            "description": "由顶尖数学家出镜、用趣味方式讲解数学奥秘的科普网。"
+          },
+          {
+            "name": "StatQuest by Josh Starmer",
+            "url": "https://statquest.org",
+            "description": "极具趣味性的统计学、数据科学与机器学习动画课。"
+          },
+          {
+            "name": "Seeing Theory",
+            "url": "https://seeing-theory.brown.edu",
+            "description": "布朗大学学生打造的可视化概率论与统计学交互教材。"
+          },
+          {
+            "name": "GeoGebra",
+            "url": "https://www.geogebra.org",
+            "description": "全球领先的动态几何、代数与微积分三维可视化学习网。"
+          },
+          {
+            "name": "Desmos",
+            "url": "https://www.desmos.com",
+            "description": "现代交互式图形计算器与数学函数可视化教学工具。"
+          },
+          {
+            "name": "PhET Interactive Simulations",
+            "url": "https://phet.colorado.edu",
+            "description": "科罗拉多大学建立的物理、化学与生物互动仿真平台。"
+          },
+          {
+            "name": "BioInteractive by HHMI",
+            "url": "https://www.biointeractive.org",
+            "description": "霍华德·休斯医学研究所打造的高级生物科学公开资源。"
+          },
+          {
+            "name": "Chemistry LibreTexts",
+            "url": "https://chem.libretexts.org",
+            "description": "加州大学戴维斯分校主导的全学科开放数字化学教科书。"
+          }
+        ]
+      },
+      {
+        "name": "人文历史哲学",
+        "links": [
+          {
+            "name": "Justice with Michael Sandel",
+            "url": "https://www.justiceharvard.org",
+            "description": "迈克尔·桑德尔教授的哈佛《公正》公开课官方站。"
+          },
+          {
+            "name": "Smarthistory",
+            "url": "https://smarthistory.org",
+            "description": "全球极权威的开放艺术史教学平台，涵盖历代艺术精品。"
+          },
+          {
+            "name": "CrashCourse",
+            "url": "https://thecrashcourse.com",
+            "description": "极具活力的全学科快速科普动画公开课平台。"
+          },
+          {
+            "name": "TED-Ed",
+            "url": "https://ed.ted.com",
+            "description": "TED 旗下精美的高质量短篇教育动画与思考题平台。"
+          },
+          {
+            "name": "Open Culture",
+            "url": "https://www.openculture.com",
+            "description": "精选数千门全球顶级大学免费在线课程与电子书导航站。"
+          },
+          {
+            "name": "Big Think",
+            "url": "https://bigthink.com",
+            "description": "汇集全球顶尖思想家、哲学家与科学家智慧短视频平台。"
+          },
+          {
+            "name": "MasterClass Articles & Guides",
+            "url": "https://www.masterclass.com/articles",
+            "description": "MasterClass 提供的免费各领域大师知识指引。"
+          },
+          {
+            "name": "Stanford Encyclopedia of Philosophy",
+            "url": "https://plato.stanford.edu",
+            "description": "斯坦福大学权威同行评审在线哲学百科。"
+          },
+          {
+            "name": "Internet Encyclopedia of Philosophy",
+            "url": "https://iep.utm.edu",
+            "description": "国际学者共同编写的严谨哲学学科在线百科。"
+          },
+          {
+            "name": "World History Encyclopedia",
+            "url": "https://www.worldhistory.org",
+            "description": "权威且完全免费的全球历史与古代文明学习平台。"
+          },
+          {
+            "name": "BBC In Our Time",
+            "url": "https://www.bbc.co.uk/programmes/b006qykl",
+            "description": "BBC 经典深度学术广播，邀请顶尖学者讨论历史与哲学。"
+          },
+          {
+            "name": "Philosophize This!",
+            "url": "https://www.philosophizethis.org",
+            "description": "极受欢迎的入门级哲学史与哲学家思想普及播客课程。"
+          },
+          {
+            "name": "History of Philosophy Without Any Gaps",
+            "url": "https://historyofphilosophy.net",
+            "description": "伦敦国王学院教授主持的无死角哲学史。"
+          },
+          {
+            "name": "The Great Courses Daily",
+            "url": "https://www.thegreatcoursesdaily.com",
+            "description": "Wondrium 旗下经典学术普及讲座文章与音频精选。"
+          },
+          {
+            "name": "罗汉堂学术讲座",
+            "url": "https://www.luohantang.com",
+            "description": "聚合全球诺贝尔奖获得者与社科学家探讨人类未来的平台。"
+          },
+          {
+            "name": "一席 (YiXi)",
+            "url": "https://www.yixi.tv",
+            "description": "中国的 TED 演讲平台，传播人文、科技与人文关怀思想。"
+          },
+          {
+            "name": "造就 (JaoJiu)",
+            "url": "https://www.zaojiu.com",
+            "description": "关注未来科技、人文与社会创新的正能量演讲平台。"
+          },
+          {
+            "name": "腾讯视频人文公开课",
+            "url": "https://v.qq.com",
+            "description": "整合国内名家讲座、历史人文与社会科学普及视频。"
+          },
+          {
+            "name": "哔哩哔哩公开课频道",
+            "url": "https://www.bilibili.com",
+            "description": "B站官方名校名师公开课与硬核知识科普专区。"
+          },
+          {
+            "name": "喜马拉雅人文大师课",
+            "url": "https://www.ximalaya.com",
+            "description": "汇集国内顶尖高校学者人文史地播客与讲座平台。"
+          }
+        ]
+      },
+      {
+        "name": "通识教育",
+        "links": [
+          {
+            "name": "Saylor Academy",
+            "url": "https://www.saylor.org",
+            "description": "免费提供大学学分认证级别的全套开放课程公益平台。"
+          },
+          {
+            "name": "Alison",
+            "url": "https://alison.com",
+            "description": "全球知名的大型免费技能培训与职业教育课程平台。"
+          },
+          {
+            "name": "OpenStax",
+            "url": "https://openstax.org",
+            "description": "莱斯大学发起的免费高清开源大学教材与配套课程平台。"
+          },
+          {
+            "name": "LibreTexts",
+            "url": "https://libretexts.org",
+            "description": "由加州大学戴维斯分校主导的开放多学科大学数字教科书。"
+          },
+          {
+            "name": "WikiHow",
+            "url": "https://www.wikihow.com",
+            "description": "社区维护的全球最大“怎么做”生活与职业技能通识指南。"
+          },
+          {
+            "name": "Academic Earth",
+            "url": "https://academicearth.org",
+            "description": "精选全球顶尖大学免费公开课与主题通识课程网。"
+          },
+          {
+            "name": "Class Central",
+            "url": "https://www.classcentral.com",
+            "description": "全球最大MOOC搜索引擎，聚合课程评价与评分。"
+          },
+          {
+            "name": "Degreed",
+            "url": "https://degreed.com",
+            "description": "终身学习与个人技能提升与知识通识管理导航。"
+          },
+          {
+            "name": "FutureLearn Short Courses",
+            "url": "https://www.futurelearn.com/courses",
+            "description": "专注于通识教育与职业素养的高质量微型课。"
+          },
+          {
+            "name": "Open Education Global",
+            "url": "https://www.oeglobal.org",
+            "description": "全球开放教育联盟，倡导共享优质教育资源。"
+          },
+          {
+            "name": "MERLOT",
+            "url": "https://www.merlot.org",
+            "description": "加州州立大学主导的高等教育在线学习与教学资源库。"
+          },
+          {
+            "name": "OER Commons",
+            "url": "https://www.oercommons.org",
+            "description": "庞大的全球开放教育资源（OER）公共数字图书馆。"
+          },
+          {
+            "name": "SkillsShare Free Classes",
+            "url": "https://www.skillshare.com",
+            "description": "创意、手艺与商业通识免费入门公开课。"
+          },
+          {
+            "name": "LinkedIn Learning Free Courses",
+            "url": "https://www.linkedin.com/learning",
+            "description": "职业素养、领导力与职场技能精选免费课。"
+          },
+          {
+            "name": "Google Career Certificates",
+            "url": "https://grow.google/certificates",
+            "description": "谷歌职业证书体系课程资源与自学平台。"
+          },
+          {
+            "name": "IBM Training",
+            "url": "https://www.ibm.com/training",
+            "description": "IBM 官方提供的免费科技、数据与商业通识认证课。"
+          },
+          {
+            "name": "Intel Digital Readiness",
+            "url": "https://www.intel.com",
+            "description": "英特尔官方面向大众的 AI 与数字素养普及课。"
+          },
+          {
+            "name": "Cisco Networking Academy",
+            "url": "https://www.netacad.com",
+            "description": "思科网校，全球极富盛名的网络与 IT 通识课。"
+          },
+          {
+            "name": "Project Gutenberg Education",
+            "url": "https://www.gutenberg.org",
+            "description": "基于古腾堡开放文献的经典文学通识学习。"
+          },
+          {
+            "name": "Internet Archive Education",
+            "url": "https://archive.org/details/education",
+            "description": "互联网档案馆提供的数字图书与历史视听教育库。"
+          }
+        ]
+      },
+      {
+        "name": "艺术设计音乐",
+        "links": [
+          {
+            "name": "Drawabox",
+            "url": "https://drawabox.com",
+            "description": "完全免费且极为严谨的透视与视觉素描基础自学课程。"
+          },
+          {
+            "name": "CTRL+Paint",
+            "url": "https://www.ctrlpaint.com",
+            "description": "专注于数字绘画与概念设计的免费体系化视频教程库。"
+          },
+          {
+            "name": "MoMA Online Courses",
+            "url": "https://www.moma.org/research-and-learning/courses",
+            "description": "纽约现代艺术博物馆在 Coursera 上的免费艺术课。"
+          },
+          {
+            "name": "Victoria and Albert Museum Academy",
+            "url": "https://www.vam.ac.uk/info/courses",
+            "description": "大英 V&A 博物馆艺术与设计历史讲座。"
+          },
+          {
+            "name": "Berklee Online Free Resources",
+            "url": "https://online.berklee.edu/free-music-course-resources",
+            "description": "伯克利音乐学院官方免费音乐制作与声乐课。"
+          },
+          {
+            "name": "Ableton Learning Music",
+            "url": "https://learningmusic.ableton.com",
+            "description": "浏览器直接交互学习音乐创作、节奏与和声的平台。"
+          },
+          {
+            "name": "Ableton Learning Synths",
+            "url": "https://learningsynths.ableton.com",
+            "description": "浏览器实时交互学习合成器原理与声音设计的网站。"
+          },
+          {
+            "name": "SoundFly Open Courses",
+            "url": "https://soundfly.com",
+            "description": "现代音乐制作、理论与音乐商业免费公开课。"
+          },
+          {
+            "name": "Architectural Association (AA) Lectures",
+            "url": "https://www.aaschool.ac.uk",
+            "description": "伦敦建筑联盟学院建筑讲座。"
+          },
+          {
+            "name": "ArchDaily Educational",
+            "url": "https://www.archdaily.com",
+            "description": "全球权威建筑网站提供的建筑设计与历史讲座。"
+          },
+          {
+            "name": "Canva Design School",
+            "url": "https://www.canva.com/designschool",
+            "description": "设计思维、品牌视觉与平面设计基础普及课程。"
+          },
+          {
+            "name": "Blender Studio Tutorials",
+            "url": "https://studio.blender.org",
+            "description": "3D 开源动画软件 Blender 官方三维建模课。"
+          },
+          {
+            "name": "Pixar in a Box",
+            "url": "https://www.khanacademy.org/computing/pixar",
+            "description": "皮克斯动画工作室与可汗学院打造的动画制作全流程课。"
+          },
+          {
+            "name": "Unity Learn",
+            "url": "https://learn.unity.com",
+            "description": "Unity官方免费3D游戏开发与渲染教程。"
+          },
+          {
+            "name": "Unreal Engine Learning",
+            "url": "https://dev.epicgames.com/community/learning",
+            "description": "虚幻引擎官方提供的免费 3D 与影视渲染公开课。"
+          },
+          {
+            "name": "Webflow University",
+            "url": "https://university.webflow.com",
+            "description": "动效精美、幽默感十足的现代Web UI设计课。"
+          },
+          {
+            "name": "Justin Guitar",
+            "url": "https://www.justinguitar.com",
+            "description": "全球极受欢迎且口碑炸裂的免费吉他自学体系课程。"
+          },
+          {
+            "name": "Teoria Music Theory",
+            "url": "https://www.teoria.com",
+            "description": "极其严谨专业的在线乐理与听音训练交互学习网。"
+          },
+          {
+            "name": "Musictheory.net",
+            "url": "https://www.musictheory.net",
+            "description": "极其简洁清爽的乐理基础与五线谱视唱练耳网。"
+          },
+          {
+            "name": "National Gallery Education",
+            "url": "https://www.nationalgallery.org.uk/learning",
+            "description": "伦敦国家美术馆官方画作鉴赏与艺术史讲座。"
+          }
+        ]
+      },
+      {
+        "name": "语言学习",
+        "links": [
+          {
+            "name": "Duolingo",
+            "url": "https://www.duolingo.com",
+            "description": "全球极火爆的免费游戏化多语言自学平台。"
+          },
+          {
+            "name": "BBC Languages",
+            "url": "http://www.bbc.co.uk/languages",
+            "description": "BBC官方经典外语（法德西意日等）学习网。"
+          },
+          {
+            "name": "Deutsche Welle Learn German",
+            "url": "https://learngerman.dw.com",
+            "description": "德国之声官方免费德语学习全体系课程。"
+          },
+          {
+            "name": "NHK World Easy Japanese",
+            "url": "https://www.nhk.or.jp/lesson",
+            "description": "日本放送协会官方推出的免费多语种初级日语课。"
+          },
+          {
+            "name": "TV5MONDE Apprendre le français",
+            "url": "https://apprendre.tv5monde.com",
+            "description": "法国国际电视台官方免费法语学习网。"
+          },
+          {
+            "name": "Cervantes Ele digital",
+            "url": "https://www.cervantes.es",
+            "description": "西班牙塞万提斯学院官方西班牙语学习资源。"
+          },
+          {
+            "name": "Taiwan Huayu Best",
+            "url": "https://huayu.edu.tw",
+            "description": "台湾优质华语文在线学习与跨文化交流平台。"
+          },
+          {
+            "name": "汉语桥 (Chinese Bridge)",
+            "url": "http://bridge.chinese.cn",
+            "description": "面向全球中文学习者的语言与文化开放平台。"
+          },
+          {
+            "name": "Forvo",
+            "url": "https://forvo.com",
+            "description": "全球最大的词汇发音指南网，由各语言母语者录制。"
+          },
+          {
+            "name": "Language Transfer",
+            "url": "https://www.languagetransfer.org",
+            "description": "独创“思考方式”无痛苦掌控多门外语的免费音频课。"
+          },
+          {
+            "name": "Memrise Free",
+            "url": "https://www.memrise.com",
+            "description": "基于间隔重复记忆算法的实用外语词汇自学网。"
+          },
+          {
+            "name": "Tatoeba",
+            "url": "https://tatoeba.org",
+            "description": "社区驱动的极庞大跨语言互译例句与表达方式数据库。"
+          },
+          {
+            "name": "Glosbe",
+            "url": "https://glosbe.com",
+            "description": "多语种在线字典，包含数百万个真对照句子与词汇搭配。"
+          },
+          {
+            "name": "OpenCulture Free Language Courses",
+            "url": "https://www.openculture.com/freelanguagelessons",
+            "description": "精选 48 种语言免费音频与课程导航。"
+          },
+          {
+            "name": "Speechling",
+            "url": "https://speechling.com",
+            "description": "专注于外语口语发音矫正与听力训练的公益教育网。"
+          },
+          {
+            "name": "Readlang",
+            "url": "https://readlang.com",
+            "description": "帮助通过阅读外语网页与实时翻译提高词汇量的工具。"
+          },
+          {
+            "name": "YouGlish",
+            "url": "https://youglish.com",
+            "description": "输入任意词汇，自动截取YouTube真实发音。"
+          },
+          {
+            "name": "English Central",
+            "url": "https://www.englishcentral.com",
+            "description": "基于真实视频英语片段与语音智能打分的学习网。"
+          },
+          {
+            "name": "USA Learns",
+            "url": "https://www.usalearns.org",
+            "description": "美国官方资助的免费成年人英语与公民常识学习网。"
+          },
+          {
+            "name": "Easy Languages",
+            "url": "https://www.easy-languages.org",
+            "description": "通过街头真实采访学习各国地道语言与文化的公开课。"
+          }
+        ]
+      },
+      {
+        "name": "商业经济创业",
+        "links": [
+          {
+            "name": "Wharton Online Free Courses",
+            "url": "https://online.wharton.upenn.edu",
+            "description": "沃顿商学院在 MOOC 上的免费商业与金融课。"
+          },
+          {
+            "name": "Harvard Business School Working Knowledge",
+            "url": "https://hbswk.hbs.edu",
+            "description": "哈佛商学院商业思想与管理公开网。"
+          },
+          {
+            "name": "Y Combinator Startup School",
+            "url": "https://www.startupschool.org",
+            "description": "硅谷顶级孵化器 YC 打造的免费创业全流程课。"
+          },
+          {
+            "name": "Stanford Technology Ventures Program (STVP)",
+            "url": "https://ecorner.stanford.edu",
+            "description": "斯坦福大学创业与科技创新讲座。"
+          },
+          {
+            "name": "MIT Sloan Management Review",
+            "url": "https://sloanreview.mit.edu",
+            "description": "顶尖管理学与商业创新思想开放阅读。"
+          },
+          {
+            "name": "McKinsey Insights",
+            "url": "https://www.mckinsey.com/featured-insights",
+            "description": "麦肯锡官方发布的全球经济、管理与商业深度报告。"
+          },
+          {
+            "name": "BCG Insights",
+            "url": "https://www.bcg.com/publications",
+            "description": "波士顿咨询发布的商业战略、数字转型与管理创新公开库。"
+          },
+          {
+            "name": "World Economic Forum Academy",
+            "url": "https://www.weforum.org",
+            "description": "世界经济论坛关于全球经济与社会议题课。"
+          },
+          {
+            "name": "Investopedia",
+            "url": "https://www.investopedia.com",
+            "description": "全球极权威的金融、投资、经济学概念免费学习百科。"
+          },
+          {
+            "name": "Corporate Finance Institute (CFI) Free Courses",
+            "url": "https://corporatefinanceinstitute.com",
+            "description": "财务建模与金融基础课。"
+          },
+          {
+            "name": "Project Management Institute (PMI) Free Resources",
+            "url": "https://www.pmi.org",
+            "description": "官方项目管理基础。"
+          },
+          {
+            "name": "Google Digital Garage",
+            "url": "https://learndigital.withgoogle.com/digitalgarage",
+            "description": "谷歌数字营销、数据与职业发展免费认证课程。"
+          },
+          {
+            "name": "Hubspot Academy",
+            "url": "https://academy.hubspot.com",
+            "description": "全球极具影响力的免费入客式营销、销售与客服课程。"
+          },
+          {
+            "name": "SCORE Free Business Mentorship",
+            "url": "https://www.score.org",
+            "description": "美国小企业局官方创业与管理免费指引。"
+          },
+          {
+            "name": "SBA Learning Center",
+            "url": "https://www.sba.gov/learning-center",
+            "description": "美国小企业管理局提供的免费创业与商业管理课程。"
+          }
+        ]
+      },
+      {
+        "name": "学习导航工具",
+        "links": [
+          {
+            "name": "Coursemarks",
+            "url": "https://www.coursemarks.com",
+            "description": "聚合数万门在线课程并提供真实学员评分与折扣信息的平台。"
+          },
+          {
+            "name": "MOOC List",
+            "url": "https://www.mooc-list.com",
+            "description": "全球MOOC课程实时查询与开课时间导航。"
+          },
+          {
+            "name": "Learncafé",
+            "url": "https://www.learncafe.com",
+            "description": "提供大量多领域免费在线课程与自学导航的平台。"
+          },
+          {
+            "name": "Meritnation",
+            "url": "https://www.meritnation.com",
+            "description": "专注于 K-12 体系化基础学科教学与互动学习导航。"
+          },
+          {
+            "name": "Open Education Europa",
+            "url": "https://www.openeducationeuropa.eu",
+            "description": "欧洲委员会发起的欧洲开放教育资源 portal。"
+          },
+          {
+            "name": "中国开放教育资源协会 (CORE)",
+            "url": "http://www.core.org.cn",
+            "description": "推广国际顶级大学开放课件的中文字源网。"
+          },
+          {
+            "name": "搜寻网 (Mooc.org)",
+            "url": "https://www.mooc.org",
+            "description": "edX与Google联合发起的全球MOOC入口。"
+          },
+          {
+            "name": "Courseroot",
+            "url": "https://courseroot.org",
+            "description": "按学习时长与难度智能推荐全球MOOC。"
+          },
+          {
+            "name": "Lifelong Learning UK",
+            "url": "https://www.gov.uk/further-education-skills",
+            "description": "英国官方倡导的终身学习与成人教育导航门户。"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑈𝑛𝑖𝑣𝑒𝑟𝑠𝑖𝑡𝑦 𝐶𝑜𝑢𝑟𝑠𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

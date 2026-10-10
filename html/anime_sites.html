@@ -1,0 +1,1409 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="正版动画、番剧资讯、动漫社区与资源站导航">
+<title>动漫网站 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>动漫网站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">动漫网站 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "动漫网站",
+    "icon": "🎬",
+    "color": "linear-gradient(135deg, #ff7675, #fd79a8)",
+    "subcategories": [
+      {
+        "name": "官方流媒体",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "巴哈姆特动画疯",
+            "url": "https://ani.gamer.com.tw",
+            "description": "台湾地区最大的正版免费/付费动漫播放平台"
+          },
+          {
+            "name": "哔哩哔哩 (Bilibili)",
+            "url": "https://www.bilibili.com",
+            "description": "国内最大的ACG视频弹幕网站"
+          },
+          {
+            "name": "Crunchyroll",
+            "url": "https://www.crunchyroll.com",
+            "description": "全球最大的日本正版动漫流媒体平台"
+          },
+          {
+            "name": "HIDIVE",
+            "url": "https://www.hidive.com",
+            "description": "北美知名正版动漫流媒体，主打小众"
+          },
+          {
+            "name": "木棉花 Muse (YouTube官方频道)",
+            "url": "https://www.youtube.com/@MuseAsia",
+            "description": "日本动画代理商木棉花官方运营的免费正版播放频道"
+          },
+          {
+            "name": "羚邦 Ani-One (YouTube官方频道)",
+            "url": "https://www.youtube.com/@AniOneAnime",
+            "description": "知名代理商羚邦旗下的正版动画免费播放频道"
+          },
+          {
+            "name": "AbemaTV 动画频道",
+            "url": "https://abema.tv",
+            "description": "日本免费网络电视台，设有多频道动画专区"
+          },
+          {
+            "name": "d动画商城 (dアニメストア)",
+            "url": "https://animestore.docomo.ne.jp",
+            "description": "日本NTT Docomo旗下的专业动画流媒体平台"
+          },
+          {
+            "name": "TVer",
+            "url": "https://tver.jp",
+            "description": "日本各大电视台联合运营的免费民营电视台回看平台"
+          },
+          {
+            "name": "Netflix Anime",
+            "url": "https://www.netflix.com",
+            "description": "Netflix官方动画专区"
+          },
+          {
+            "name": "Amazon Prime Video Anime",
+            "url": "https://www.amazon.co.jp",
+            "description": "亚马逊旗下的流媒体服务，拥有大量独家版权日本动画及"
+          },
+          {
+            "name": "Disney+ Anime",
+            "url": "https://www.disneyplus.com",
+            "description": "迪士尼旗下流媒体平台，近年来积极引进日本热门动画并"
+          },
+          {
+            "name": "U-NEXT",
+            "url": "https://video.unext.jp",
+            "description": "日本本土大型流媒体服务商，拥有极高的动画收录量"
+          },
+          {
+            "name": "Hulu Japan",
+            "url": "https://www.hulu.jp",
+            "description": "日本Hulu平台，提供丰富的电视动画"
+          },
+          {
+            "name": "FOD (Fuji TV On Demand)",
+            "url": "https://fod.fujitv.co.jp",
+            "description": "日本富士电视台的官方流媒体平台"
+          },
+          {
+            "name": "BANDAI CHANNEL (万代频道)",
+            "url": "https://www.bch.jp",
+            "description": "万代旗下的专业动画流媒体网站"
+          },
+          {
+            "name": "AnimeFesta",
+            "url": "https://animefesta.i321.jp",
+            "description": "专注于短篇动画及特定受众动画作品的官方播放与展示平"
+          },
+          {
+            "name": "Anime Onegai",
+            "url": "https://www.animeonegai.com",
+            "description": "面向拉丁美洲市场的专业日本动漫流媒体平台"
+          },
+          {
+            "name": "IQIYI Anime (爱奇艺动漫)",
+            "url": "https://www.iqiyi.com/dongman",
+            "description": "爱奇艺官方动漫频道，拥有大量国产动画自制剧集及日本"
+          },
+          {
+            "name": "Tencent Video Anime (腾讯视频动漫)",
+            "url": "https://v.qq.com/biu/anime",
+            "description": "腾讯视频官方动漫频道，国内最大的3D国产动画及知名"
+          },
+          {
+            "name": "Youku Anime (优酷动漫)",
+            "url": "https://comic.youku.com",
+            "description": "优酷官方动漫频道，主打新国风动画与经典日本引进番剧"
+          },
+          {
+            "name": "LINE TV 动漫专区",
+            "url": "https://www.linetv.tw",
+            "description": "台湾地区主流流媒体平台之一"
+          },
+          {
+            "name": "KKTV",
+            "url": "https://www.kktv.me",
+            "description": "台湾主流串流平台，包含大量同步新番动画及繁体中文字"
+          },
+          {
+            "name": "friDay影音",
+            "url": "https://video.friday.tw",
+            "description": "远传电信旗下的影音平台，收录丰富的热门季度日本动画"
+          },
+          {
+            "name": "CathayPlay",
+            "url": "https://www.cathayplay.com",
+            "description": "专注于独立动画与华语独立电影展示的在线流媒体平台。"
+          }
+        ]
+      },
+      {
+        "name": "权威数据库与追番管理",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "MyAnimeList",
+            "url": "https://myanimelist.net",
+            "description": "全球最大的动漫数据库与社交平台"
+          },
+          {
+            "name": "Bangumi 番组计划",
+            "url": "https://bgm.tv",
+            "description": "国内最著名的ACG作品资料库与评分社区"
+          },
+          {
+            "name": "AniList",
+            "url": "https://anilist.co",
+            "description": "界面现代化、功能强大的全球动漫数据库"
+          },
+          {
+            "name": "Kitsu",
+            "url": "https://kitsu.io",
+            "description": "专为动漫及漫画爱好者设计的发现与记录平台"
+          },
+          {
+            "name": "LiveChart.me",
+            "url": "https://www.livechart.me",
+            "description": "实时更新的季度新番播出时间表"
+          },
+          {
+            "name": "Anime-Planet",
+            "url": "https://www.anime-planet.com",
+            "description": "创立多年的动漫数据库，收录超过 45000"
+          },
+          {
+            "name": "Anidb",
+            "url": "https://anidb.net",
+            "description": "硬核动漫老玩家喜爱的深度数据库"
+          },
+          {
+            "name": "Sakugabooru",
+            "url": "https://www.sakugabooru.com",
+            "description": "专注于日本动画“作画”(Sakuga)剪辑与名场面"
+          },
+          {
+            "name": "Animeshon",
+            "url": "https://animeshon.com",
+            "description": "基于开放数据构建的知识图谱型动漫数据库"
+          },
+          {
+            "name": "AnimeCharactersDatabase",
+            "url": "https://www.animecharactersdatabase.com",
+            "description": "专门用于通过发色、眼色、服装等视觉特征检索动漫角色"
+          },
+          {
+            "name": "VNDB (Visual Novel Database)",
+            "url": "https://vndb.org",
+            "description": "全球最权威的视觉小说(Galgame/乙女游戏"
+          },
+          {
+            "name": "Mangaupdates (Baka-Updates Manga)",
+            "url": "https://www.mangaupdates.com",
+            "description": "最详尽的漫画出版、改编号及动画化进度追踪数据库。"
+          },
+          {
+            "name": "Anisearch",
+            "url": "https://www.anisearch.com",
+            "description": "德语与英语双语的大型动漫及漫画综合数据库与评分评测"
+          },
+          {
+            "name": "Nautiljon",
+            "url": "https://www.nautiljon.com",
+            "description": "法语区最大的日本动漫、亚洲影视及流行文化数据库平台"
+          },
+          {
+            "name": "Shoboi Calendar (しょぼいカレンダー)",
+            "url": "https://cal.syoboi.jp",
+            "description": "日本极客圈常用的极简风格电视动画放送时间表与节目表"
+          },
+          {
+            "name": "AnimeClick",
+            "url": "https://www.animeclick.it",
+            "description": "意大利最大的日本动画、漫画及日本文化数据库与新闻资"
+          },
+          {
+            "name": "Seesaa Wiki 动画剧集整理",
+            "url": "https://wiki.seesaa.net",
+            "description": "收录大量日本资深漫迷自发整理的动画剧集历史演出"
+          },
+          {
+            "name": "allcinema 动画分站",
+            "url": "https://www.allcinema.net",
+            "description": "日本权威影视数据库，包含大量早期历史动画作品的官方"
+          },
+          {
+            "name": "Media Arts Database (文化厅媒体艺术数据库)",
+            "url": "https://mediaarts-db.artmuseums.go.jp",
+            "description": "日本文化厅建立的国家级媒体艺术资料库"
+          },
+          {
+            "name": "Anison Generation",
+            "url": "https://anison.info",
+            "description": "极其详尽的日本动画歌曲(Anison)数据库"
+          }
+        ]
+      },
+      {
+        "name": "新闻资讯媒体",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Anime News Network (ANN)",
+            "url": "https://www.animenewsnetwork.com",
+            "description": "全球最权威的英文动漫新闻门户网站"
+          },
+          {
+            "name": "Comic Natalie (コミックナタリー)",
+            "url": "https://natalie.mu/comic",
+            "description": "日本最顶尖的综合文化新闻网漫画/动画分站"
+          },
+          {
+            "name": "Animate Times",
+            "url": "https://www.animatetimes.com",
+            "description": "日本知名动漫周边零售巨头Animate旗下的新闻网"
+          },
+          {
+            "name": "Mantan Web",
+            "url": "https://mantan-web.jp",
+            "description": "每日新闻旗下的娱乐动漫新闻网，涵盖大量动画收视率"
+          },
+          {
+            "name": "Anime!Anime! (アニメ！アニメ！)",
+            "url": "https://animeanime.jp",
+            "description": "日本主流综合动漫新闻媒体，提供新番情报"
+          },
+          {
+            "name": "秋叶原总研 (アキバ総研)",
+            "url": "https://akiba-souken.com",
+            "description": "聚焦秋叶原文化、新番动画人气调查与声优动态的综合资"
+          },
+          {
+            "name": "Comic Natalie",
+            "url": "https://natalie.mu",
+            "description": "日本流行文化与ACG新闻权威门户"
+          },
+          {
+            "name": "Aniverse Navi",
+            "url": "https://aniverse-mag.com",
+            "description": "日本动漫声优、音乐活动及动画制作企划深度报道的新闻"
+          },
+          {
+            "name": "Dengeki Online (电击Online)",
+            "url": "https://dengekionline.com",
+            "description": "角川旗下的电击品牌官方新闻网"
+          },
+          {
+            "name": "Famitsu (法米通动漫分站)",
+            "url": "https://www.famitsu.com",
+            "description": "日本老牌游戏媒体的动漫频道"
+          },
+          {
+            "name": "Web Newtype",
+            "url": "https://webnewtype.com",
+            "description": "角川老牌动画杂志《Newtype》的官方网站"
+          },
+          {
+            "name": "Animedia (超！アニメディア)",
+            "url": "https://cho-animedia.jp",
+            "description": "日本经典动画杂志《Animedia》官网"
+          },
+          {
+            "name": "OTAKOMU",
+            "url": "http://otakomu.jp",
+            "description": "日本本土知名动画/漫画流行趋势与网民讨论汇总资讯站"
+          },
+          {
+            "name": "Yaraon! (やらおん！)",
+            "url": "https://yaraon-blog.com",
+            "description": "日本流量极高且具话题性的ACG资讯博客"
+          },
+          {
+            "name": "Anime Trending",
+            "url": "https://anitrendz.net",
+            "description": "欧美著名的动漫流行趋势榜单网站"
+          },
+          {
+            "name": "Anime Corner",
+            "url": "https://animecorner.me",
+            "description": "欧美知名动漫新闻与社区网站"
+          },
+          {
+            "name": "CBR (Comic Book Resources) Anime",
+            "url": "https://www.cbr.com/category/anime",
+            "description": "美洲大型流行文化网站的动漫专区"
+          },
+          {
+            "name": "Screen Rant Anime",
+            "url": "https://screenrant.com/anime",
+            "description": "知名影视媒体的动漫板块，涵盖热门日本动画解析与观影"
+          },
+          {
+            "name": "SoraNews24",
+            "url": "https://soranews24.com",
+            "description": "报道日本流行文化、圣地巡礼及动漫奇闻趣事的大型英文"
+          },
+          {
+            "name": "Gamer.com.tw (GNN新闻动漫区)",
+            "url": "https://gnn.gamer.com.tw",
+            "description": "巴哈姆特GNN新闻的动漫板块"
+          },
+          {
+            "name": "Anue 钜亨 ACG频道",
+            "url": "https://news.cnyes.com",
+            "description": "涵盖动漫产业经济、市场趋势与IP投资相关的深度财经"
+          },
+          {
+            "name": "Animate Times Chinese",
+            "url": "https://www.animatetimes.com/tag/details.php?id=30",
+            "description": "Animate Times 的中文资讯专题窗口"
+          },
+          {
+            "name": "ITmedia Keywords Anime",
+            "url": "https://www.itmedia.co.jp",
+            "description": "日本ITmedia旗下的动漫产业观察专栏"
+          },
+          {
+            "name": "Comic Book Anime",
+            "url": "https://comicbook.com/anime",
+            "description": "欧美流行文化新闻网，以快速报道日本热门动画最新预告"
+          }
+        ]
+      },
+      {
+        "name": "动画公司",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Kyoto Animation (京都动画)",
+            "url": "https://www.kyotoanimation.co.jp",
+            "description": "京都动画官方网站，代表作《冰菓》《紫罗兰永恒花园》"
+          },
+          {
+            "name": "MAPPA",
+            "url": "https://www.mappa.co.jp",
+            "description": "知名动画公司MAPPA官网"
+          },
+          {
+            "name": "ufotable (飞碟社)",
+            "url": "https://www.ufotable.com",
+            "description": "以顶尖特效作画闻名的ufotable官网"
+          },
+          {
+            "name": "Studio Ghibli (吉卜力工作室)",
+            "url": "https://www.ghibli.jp",
+            "description": "宫崎骏所在的吉卜力工作室官方网站，提供剧照下载"
+          },
+          {
+            "name": "WIT STUDIO (霸权社)",
+            "url": "https://www.witstudio.co.jp",
+            "description": "知名动画制作公司官网，代表作《间谍过家家》《国王排"
+          },
+          {
+            "name": "CloverWorks",
+            "url": "https://cloverworks.co.jp",
+            "description": "Aniplex旗下顶尖制作公司"
+          },
+          {
+            "name": "Bones (骨头社)",
+            "url": "https://www.bones.co.jp",
+            "description": "以动作戏制作见长的骨头社官网"
+          },
+          {
+            "name": "Madhouse (疯房子)",
+            "url": "https://www.madhouse.co.jp",
+            "description": "日本老牌顶尖动画制作公司"
+          },
+          {
+            "name": "A-1 Pictures",
+            "url": "https://a1p.jp",
+            "description": "Sony/Aniplex旗下的核心动画制作社"
+          },
+          {
+            "name": "Shaft (新房社)",
+            "url": "https://www.shaft-web.co.jp",
+            "description": "以独特镜头语言著称的Shaft官网"
+          },
+          {
+            "name": "Production I.G",
+            "url": "https://www.production-ig.co.jp",
+            "description": "以硬核科幻与体育番闻名的制作公司"
+          },
+          {
+            "name": "Sunrise (日升/万代南梦宫影像制作)",
+            "url": "https://www.bnfw.co.jp",
+            "description": "机器人动画霸主Sunrise官网"
+          },
+          {
+            "name": "Toei Animation (东映动画)",
+            "url": "https://www.toei-anim.co.jp",
+            "description": "日本历史最悠久的动画制作巨头"
+          },
+          {
+            "name": "Pierrot (小丑社)",
+            "url": "https://www.pierrot.jp",
+            "description": "著名长篇动画制作公司，代表作《火影忍者》《死神"
+          },
+          {
+            "name": "TMS Entertainment (TMS娱乐)",
+            "url": "https://www.tms-e.co.jp",
+            "description": "日本老牌动画制作公司，代表作《名侦探柯南》《鲁邦三"
+          },
+          {
+            "name": "P.A.WORKS",
+            "url": "https://www.pa-works.jp",
+            "description": "以精美背景画风与工作系列闻名"
+          },
+          {
+            "name": "TRIGGER (扳机社)",
+            "url": "https://st-trigger.co.jp",
+            "description": "风格极其张扬狂野的动画制作社"
+          },
+          {
+            "name": "Science SARU (科学猴)",
+            "url": "https://www.sciencesaru.com",
+            "description": "汤浅政明参与创办的独特风格制作社"
+          },
+          {
+            "name": "Doga Kobo (动画工房)",
+            "url": "https://www.dogakobo.com",
+            "description": "以日常萌系及高细腻度日常戏见长"
+          },
+          {
+            "name": "Kinema Citrus",
+            "url": "https://kinema-citrus.biz",
+            "description": "知名动画制作公司，代表作《来自深渊》《盾之勇者成名"
+          },
+          {
+            "name": "Orange (橘子社)",
+            "url": "https://www.cg-orange.com",
+            "description": "日本顶尖3D CG动画制作公司"
+          },
+          {
+            "name": "Polygon Pictures",
+            "url": "https://www.polygon.co.jp",
+            "description": "日本历史悠久的专业3D动画工作室"
+          },
+          {
+            "name": "DAVID PRODUCTION",
+            "url": "https://davidproduction.jp",
+            "description": "知名动画公司，代表作《JOJO的奇妙冒险》系列"
+          },
+          {
+            "name": "SILVER LINK. (银链)",
+            "url": "https://www.silverlink.co.jp",
+            "description": "擅长轻小说改编与萌系动画的制作社"
+          },
+          {
+            "name": "J.C.STAFF (节操社)",
+            "url": "https://www.jcstaff.co.jp",
+            "description": "产量极高的老牌制作公司，代表作《魔法禁书目录》《科"
+          },
+          {
+            "name": "Studio Deen",
+            "url": "https://www.deen.co.jp",
+            "description": "老牌动画制作公司，代表作《Fate/stay"
+          },
+          {
+            "name": "Studio Bind",
+            "url": "https://st-bind.co.jp",
+            "description": "为制作《无职转生》特地成立的高质量动画工作室。"
+          },
+          {
+            "name": "CoMix Wave Films",
+            "url": "https://www.cwfilms.jp",
+            "description": "新海诚导演作品的专属制作与发行公司"
+          },
+          {
+            "name": "Studio Ponoc",
+            "url": "https://ponoc.jp",
+            "description": "由前吉卜力成员组建的动画工作室"
+          },
+          {
+            "name": "Tatsunoko Production (龙之子)",
+            "url": "https://www.tatsunoko.co.jp",
+            "description": "日本传奇老牌动画制作公司"
+          }
+        ]
+      },
+      {
+        "name": "出版社与动画发行商",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Aniplex 官方网站",
+            "url": "https://www.aniplex.co.jp",
+            "description": "索尼旗下主导日本动画企划"
+          },
+          {
+            "name": "KADOKAWA Anime (角川动画)",
+            "url": "https://anime.kadokawa.co.jp",
+            "description": "角川集团动画官方门户，整合旗下大量轻小说"
+          },
+          {
+            "name": "BANDAI NAMCO Arts",
+            "url": "https://www.bandainamcoarts.co.jp",
+            "description": "万代南梦宫集团旗下音乐与影像企划官方网站"
+          },
+          {
+            "name": "Pony Canyon Anime (波丽佳音)",
+            "url": "https://www.ponycanyon.co.jp",
+            "description": "日本大型音乐及影像发行商"
+          },
+          {
+            "name": "King Records (KING AMUSEMENT CREATIVE)",
+            "url": "https://king-cr.jp",
+            "description": "国王唱片旗下的ACG专区"
+          },
+          {
+            "name": "Shueisha (集英社)",
+            "url": "https://www.shueisha.co.jp",
+            "description": "出版《周刊少年Jump》的出版巨头"
+          },
+          {
+            "name": "Shogakukan (小学馆)",
+            "url": "https://www.shogakukan.co.jp",
+            "description": "日本三大出版社之一，代表作有《名侦探柯南》《葬送的"
+          },
+          {
+            "name": "Kodansha (讲谈社)",
+            "url": "https://www.kodansha.co.jp",
+            "description": "日本三大出版社之一，代表作有《进击的巨人》《美少女"
+          },
+          {
+            "name": "Bushiroad (武士道)",
+            "url": "https://bushiroad.com",
+            "description": "主导《BanG Dream!》《D4DJ》《少女☆"
+          },
+          {
+            "name": "TOHO animation (东宝动画)",
+            "url": "https://tohoanimation.jp",
+            "description": "日本电影巨头东宝旗下的动画企划与发行部门"
+          },
+          {
+            "name": "Good Smile Company (良笑社/GSC)",
+            "url": "https://www.goodsmile.info",
+            "description": "知名粘土人及手办制造商，同时深度参与大量日本动画的"
+          },
+          {
+            "name": "ShoPro (小学馆集英社プロダクション)",
+            "url": "https://www.shopro.co.jp",
+            "description": "负责小学馆及集英社旗下动漫IP版权授权"
+          },
+          {
+            "name": "Genco (ジェンコ)",
+            "url": "https://www.genco.co.jp",
+            "description": "日本知名动画企划制作公司"
+          },
+          {
+            "name": "FlyingDog (飞狗唱片)",
+            "url": "https://www.flyingdog.jp",
+            "description": "JVC建伍胜利娱乐旗下的专业动画音乐与声优唱片公司"
+          },
+          {
+            "name": "MAGES. / 5pb.",
+            "url": "https://mages.co.jp",
+            "description": "主导《Steins;Gate"
+          },
+          {
+            "name": "Cygames Anime",
+            "url": "https://cygames.co.jp",
+            "description": "游戏巨头Cygames旗下的动画事业部"
+          },
+          {
+            "name": "Frontier Works",
+            "url": "https://www.fwinc.co.jp",
+            "description": "Animate集团旗下的动画企划"
+          },
+          {
+            "name": "Media Factory",
+            "url": "http://www.mediafactory.co.jp",
+            "description": "角川旗下的品牌公司，拥有MF文库J等大量热门轻小说"
+          },
+          {
+            "name": "Marvelous Anime",
+            "url": "https://www.marv.jp",
+            "description": "日本知名跨媒体娱乐公司，负责动画企划"
+          },
+          {
+            "name": "VAP (Video Audio Project)",
+            "url": "https://www.vap.co.jp",
+            "description": "日本电视台(NTV)旗下的影像公司"
+          }
+        ]
+      },
+      {
+        "name": "官方周边商城",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "AmiAmi",
+            "url": "https://www.amiami.com",
+            "description": "全球最大的日本正版动漫手办"
+          },
+          {
+            "name": "Animate Online Shop",
+            "url": "https://www.animate-onlineshop.jp",
+            "description": "日本最大型动漫连锁店Animate的官方线上商城。"
+          },
+          {
+            "name": "Tokyo Otaku Mode (TOM)",
+            "url": "https://otakumode.com",
+            "description": "面向全球电玩与动漫爱好者的正版动漫周边"
+          },
+          {
+            "name": "HobbyLink Japan (HLJ)",
+            "url": "https://www.hlj.com",
+            "description": "总部位于日本的专业模型、高达模型(Gunpla)及"
+          },
+          {
+            "name": "Bandai Premium (Premium Bandai)",
+            "url": "https://p-bandai.jp",
+            "description": "万代官方限定商品专卖商城，涵盖高达限定模型"
+          },
+          {
+            "name": "Kotobukiya (寿屋)",
+            "url": "https://www.kotobukiya.co.jp",
+            "description": "知名手办与拼装模型生产商寿屋的官方网站与在线商城。"
+          },
+          {
+            "name": "CDJapan",
+            "url": "https://www.cdjapan.co.jp",
+            "description": "提供日本正版动画Blu-ray/DVD"
+          },
+          {
+            "name": "Solaris Japan",
+            "url": "https://solarisjapan.com",
+            "description": "提供全新及二手日本正版动漫手办"
+          },
+          {
+            "name": "Aniplex+",
+            "url": "https://www.aniplexplus.com",
+            "description": "Aniplex官方线上限定商城，售卖独家限量手办"
+          },
+          {
+            "name": "Square Enix e-STORE",
+            "url": "https://store.jp.square-enix.com",
+            "description": "史克威尔艾尼克斯官方商城"
+          },
+          {
+            "name": "KADOKAWA Store (カドスト)",
+            "url": "https://store.kadokawa.co.jp",
+            "description": "角川官方直营商城，发售独家限定版轻小说"
+          },
+          {
+            "name": "Suruga-ya (骏河屋)",
+            "url": "https://www.suruga-ya.jp",
+            "description": "日本极具规模的ACG中古(二手)及新品周边"
+          },
+          {
+            "name": "Mandarake (万达灵)",
+            "url": "https://www.mandarake.co.jp",
+            "description": "日本传奇亚文化与中古动漫藏品交易巨头"
+          },
+          {
+            "name": "BOOTH",
+            "url": "https://booth.pm",
+            "description": "pixiv旗下的C2C创作者市集"
+          },
+          {
+            "name": "Movic (ムービック)",
+            "url": "https://www.movic.jp",
+            "description": "Animate集团旗下专门负责角色周边商品开发与销"
+          },
+          {
+            "name": "COSPA (コスパ)",
+            "url": "https://cospa.co.jp",
+            "description": "日本老牌正版动漫服装、Cosplay道具及二次元周"
+          },
+          {
+            "name": "Chara-Ani (キャラアニ)",
+            "url": "https://www.chara-ani.com",
+            "description": "角川集团旗下的动漫角色周边与限定限定版影碟预售平台"
+          },
+          {
+            "name": "Plaza Japan",
+            "url": "https://www.plazajapan.com",
+            "description": "面向国际市场的日本正版塑料模型"
+          },
+          {
+            "name": "1999 Hobby Search",
+            "url": "https://www.1999.co.jp",
+            "description": "日本著名的老牌模型、手办"
+          },
+          {
+            "name": "Medicos Entertainment",
+            "url": "https://www.medicos-e.net",
+            "description": "以制作《JOJO的奇妙冒险》超像可动系列闻名的周边"
+          }
+        ]
+      },
+      {
+        "name": "电视台动画",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Tokyo MX Anime (东京MX)",
+            "url": "https://s.mxtv.jp/anime",
+            "description": "日本首都圈核心深夜动画播放电视台"
+          },
+          {
+            "name": "BS11 Anime (BS11 动画专区)",
+            "url": "https://www.bs11.jp/anime",
+            "description": "日本全境免费卫星电视台，全日本漫迷收看深夜新番动画"
+          },
+          {
+            "name": "TV Tokyo Anime Anime (东京电视台)",
+            "url": "https://www.tv-tokyo.co.jp/anime",
+            "description": "播出了《火影忍者》《神奇宝贝》《银魂》等传奇动画的"
+          },
+          {
+            "name": "Fuji TV noitaminA (富士电视台 倒立男专区)",
+            "url": "https://noitaminA.tv",
+            "description": "富士电视台著名的优质深夜动画档目官方网站"
+          },
+          {
+            "name": "MBS Animeism (每日放送)",
+            "url": "https://www.mbs.jp/anime",
+            "description": "关西地区核心电视台，拥有“Animeism”及“日"
+          },
+          {
+            "name": "NHK Anime World (日本放送协会)",
+            "url": "https://www.nhk.jp/g/anime",
+            "description": "日本公共电视台NHK的动画频道"
+          },
+          {
+            "name": "AT-X",
+            "url": "https://www.at-x.com",
+            "description": "日本专业付费动画频道，以播放无修正版本及独家动画特"
+          },
+          {
+            "name": "TV Asahi Anime (朝日电视台)",
+            "url": "https://www.tv-asahi.co.jp/anime",
+            "description": "播出了《哆啦A梦》《蜡笔小新》等国民级动画的电视台"
+          },
+          {
+            "name": "Kansai TV Anime (关西电视台)",
+            "url": "https://www.ktv.jp",
+            "description": "关西地区主流电视台，参与多部热门深夜动画的制作委员"
+          },
+          {
+            "name": "BS-TBS Anime",
+            "url": "https://bs.tbs.co.jp/anime",
+            "description": "TBS旗下的卫星频道，常年播放高质量深夜轻改与漫画"
+          },
+          {
+            "name": "BS-NTV Anime (BS日视)",
+            "url": "https://www.bs4.jp/anime",
+            "description": "日本电视台旗下的卫星频道"
+          },
+          {
+            "name": "Sun TV Anime (神户太阳电视台)",
+            "url": "https://sun-tv.co.jp",
+            "description": "关西独立电视台，以无修正限制"
+          },
+          {
+            "name": "CBC TV Anime",
+            "url": "https://hicbc.com",
+            "description": "中部日本放送，深度参与多部深夜动画制作委员会的电视"
+          },
+          {
+            "name": "Animax Japan",
+            "url": "https://www.animax.co.jp",
+            "description": "索尼旗下的24小时全天候动画专业卫星电视频道。"
+          },
+          {
+            "name": "Kids Station",
+            "url": "https://www.kids-station.com",
+            "description": "日本著名的儿童及青少年动画与特摄剧集专业播放频道。"
+          }
+        ]
+      },
+      {
+        "name": "圣地巡礼展览",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Comic Market (Comiket / C展)",
+            "url": "https://www.comiket.co.jp",
+            "description": "全球最大型同人志即卖会Comic"
+          },
+          {
+            "name": "AnimeJapan",
+            "url": "https://www.animejapan.jp",
+            "description": "日本最大规模的综合性国际动漫博览会"
+          },
+          {
+            "name": "Wonder Festival (WF)",
+            "url": "https://wonfest.jp",
+            "description": "全球顶尖的手办、原型雕像与模型展会Wonder"
+          },
+          {
+            "name": "Anime World Summit (Anime Expo / AX)",
+            "url": "https://www.anime-expo.org",
+            "description": "北美最大型的日本动漫文化展览会"
+          },
+          {
+            "name": "Japan Expo",
+            "url": "https://www.japan-expo-france.jp",
+            "description": "欧洲规模最大的日本流行文化与动漫博览会"
+          },
+          {
+            "name": "Anime Tourism Association (一般社团法人动画旅游协会)",
+            "url": "https://animetourism88.com",
+            "description": "日本官方运营的“日本动漫圣地88处”权威巡礼指南与"
+          },
+          {
+            "name": "Buta-neko (舞台探访总结)",
+            "url": "http://web.archive.org/web/butane.org",
+            "description": "日本资深圣地巡礼爱好者建立的实景对比与考察记录网站"
+          },
+          {
+            "name": "Kyoto International Manga Museum (京都国际漫画博物馆)",
+            "url": "https://kyotomm.jp",
+            "description": "兼具图书馆与博物馆功能，珍藏海量日本漫画历史原稿的"
+          },
+          {
+            "name": "Suginami Animation Museum (杉并动画博物馆)",
+            "url": "https://sam.or.jp",
+            "description": "位于东京杉并区的免费动画博物馆"
+          },
+          {
+            "name": "Ghibli Museum, Mitaka (三鹰之森吉卜力美术馆)",
+            "url": "https://www.ghibli-museum.jp",
+            "description": "展示吉卜力动画艺术的专属美术馆，需要提前预约门票。"
+          },
+          {
+            "name": "Nijigen No Mori (二次元之森)",
+            "url": "https://nijigennomori.com",
+            "description": "位于淡路岛的大型户外二次元主题公园，包含火影忍者"
+          },
+          {
+            "name": "Sanrio Puroland (三丽鸥彩虹乐园)",
+            "url": "https://www.puroland.jp",
+            "description": "三丽鸥官方室内主题乐园，包含 Hello"
+          },
+          {
+            "name": "Manga Japan",
+            "url": "https://www.manga-japan.net",
+            "description": "日本漫画家及相关文化事业团体组成的促进漫画文化发展"
+          },
+          {
+            "name": "Aniplex Online Fest (AOF)",
+            "url": "https://aniplex-online-fest.com",
+            "description": "Aniplex每年面向全球举行的线上大型动漫嘉年华"
+          },
+          {
+            "name": "Tamashii Features (魂Nation)",
+            "url": "https://tamashiiweb.com",
+            "description": "万代魂系列高端完成品模型的年度新品发布展会官方网站"
+          }
+        ]
+      },
+      {
+        "name": "动漫音乐与声优事务所",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Lantis (万代南梦宫音乐)",
+            "url": "https://lantis.jp",
+            "description": "日本最顶尖的动画音乐唱片公司之一"
+          },
+          {
+            "name": "Sacra Music",
+            "url": "https://sacramusic.jp",
+            "description": "索尼音乐旗下专为面向海外市场的顶级 Anison"
+          },
+          {
+            "name": "81 Produce",
+            "url": "https://www.81produce.co.jp",
+            "description": "日本老牌声优事务所，旗下拥有大量国宝级及中坚力量声"
+          },
+          {
+            "name": "Aoni Production (青二制作)",
+            "url": "https://www.aoni.co.jp",
+            "description": "日本声优界历史最悠久、规模最大的知名声优经纪公司。"
+          },
+          {
+            "name": "Arts Vision",
+            "url": "https://www.artsvision.co.jp",
+            "description": "培养并输出了海量主流动画男女主角配音的顶级声优事务"
+          },
+          {
+            "name": "I'm Enterprise (I'm 企划)",
+            "url": "http://www.imenterprise.jp",
+            "description": "知名声优事务所，旗下拥有众多极具人气的年轻声优与偶"
+          },
+          {
+            "name": "Intention",
+            "url": "https://intention-k.com",
+            "description": "由知名声优铃村健一创办的专业声优事务所。"
+          },
+          {
+            "name": "Pro-Fit (历史档案与继承)",
+            "url": "http://www.pro-fit.co.jp",
+            "description": "曾经培养出大量年轻骨干的声优事务所"
+          },
+          {
+            "name": "Hibiki Cast (响 声优事务所)",
+            "url": "https://hibiki-cast.jp",
+            "description": "武士道旗下的声优事务所，主打 BanG"
+          },
+          {
+            "name": "Sound Inn Studios",
+            "url": "https://www.soundinn.com",
+            "description": "录制了无数日本顶尖动画管弦乐配乐(OST)的专业录"
+          },
+          {
+            "name": "HiFi-GAN / Vocaloid 官方",
+            "url": "https://www.vocaloid.com",
+            "description": "雅马哈 VOCALOID"
+          },
+          {
+            "name": "MAGES. Music",
+            "url": "http://mages.co.jp/music",
+            "description": "主打游戏与动画结合的音乐厂牌"
+          },
+          {
+            "name": "ListenJapan Anison",
+            "url": "https://recochoku.jp/genre/anison",
+            "description": "RecoChoku旗下的动画歌曲高解析度("
+          }
+        ]
+      },
+      {
+        "name": "创作社区同人",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "pixiv",
+            "url": "https://www.pixiv.net",
+            "description": "全球最大的二次元插画、漫画与小说创作者交流社区。"
+          },
+          {
+            "name": "pixiv Fanbox",
+            "url": "https://www.fanbox.cc",
+            "description": "创作者赞助平台，大量日本动画原画师与插画师在此分享"
+          },
+          {
+            "name": "ArtStation Anime Channel",
+            "url": "https://www.artstation.com/channels/anime",
+            "description": "全球CG艺术家社区的动漫频道"
+          },
+          {
+            "name": "DeviantArt Anime Section",
+            "url": "https://www.deviantart.com",
+            "description": "欧美老牌艺术社区，包含庞大的欧美二次元爱好者动画同"
+          },
+          {
+            "name": "Niconico Seiga (静画)",
+            "url": "https://seiga.niconico.jp",
+            "description": "日本Niconico旗下的插画与同人漫画创作平台"
+          },
+          {
+            "name": "TinEye Reverse Image Search",
+            "url": "https://tineye.com",
+            "description": "专业反向图像搜索工具，常用于追溯动漫截图与画师原图"
+          },
+          {
+            "name": "SauceNAO",
+            "url": "https://saucenao.com",
+            "description": "专门用于精准检索 Pixiv"
+          },
+          {
+            "name": "TRACE.MOE",
+            "url": "https://trace.moe",
+            "description": "利用算法通过一张动画截图精准匹配出其出自哪部动画"
+          },
+          {
+            "name": "ASCII.jp ACG频道",
+            "url": "https://ascii.jp",
+            "description": "日本前沿科技与ACG创意技术融合的媒体平台"
+          },
+          {
+            "name": "Clip Studio Paint (CSP)",
+            "url": "https://www.clipstudio.net",
+            "description": "全球大部分日本动画制作公司与商业漫画家使用的标准绘"
+          },
+          {
+            "name": "MediBang Paint",
+            "url": "https://medibangpaint.com",
+            "description": "免费跨平台的插画与漫画制作软件"
+          },
+          {
+            "name": "Skeb",
+            "url": "https://skeb.jp",
+            "description": "日本极具规模的客户端画师委托平台"
+          },
+          {
+            "name": "Ci-en",
+            "url": "https://ci-en.net",
+            "description": "DLsite旗下的创作者赞助与同人同好交流社区。"
+          },
+          {
+            "name": "Axfc Guide (同人文化区)",
+            "url": "https://www.axfc.net",
+            "description": "日本网络早期同人资源与文化交流的传统网络站点之一。"
+          },
+          {
+            "name": "Japan Animation Creators Association (JAniCA / 日本动画师与演出协会)",
+            "url": "http://www.janica.jp",
+            "description": "由日本一线动画师与演出导演组成的非营利组织"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑨𝑛𝑖𝑚𝑒 𝑺𝑖𝑡𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

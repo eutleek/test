@@ -1,0 +1,1378 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="电子书、公版书、学术图书、有声书与阅读平台导航">
+<title>电子书网站 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>电子书网站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">电子书网站 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "电子书网站",
+    "icon": "📖",
+    "color": "linear-gradient(135deg, #00cec9, #6c5ce7)",
+    "subcategories": [
+      {
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Project Gutenberg (古腾堡计划)",
+            "url": "https://www.gutenberg.org",
+            "description": "全球最早的数字公有领域图书电子书库"
+          },
+          {
+            "name": "Internet Archive (互联网档案馆)",
+            "url": "https://archive.org",
+            "description": "巨大的非营利数字图书馆，提供数百万本免费电子书"
+          },
+          {
+            "name": "Z-Library",
+            "url": "https://z-lib.gs",
+            "description": "全球最大的数字图书馆之一"
+          },
+          {
+            "name": "安娜的档案",
+            "url": "https://annas-archive.org",
+            "description": "著名的开源影印数字图书馆搜索引擎"
+          },
+          {
+            "name": "Library Genesis (LibGen)",
+            "url": "https://libgen.is",
+            "description": "著名的学术文献与电子书搜索引擎，提供大量科学论文"
+          },
+          {
+            "name": "Standard Ebooks",
+            "url": "https://standardebooks.org",
+            "description": "由志愿者发起的公有领域电子书精排项目"
+          },
+          {
+            "name": "Feedbooks",
+            "url": "https://www.feedbooks.com",
+            "description": "著名的电子书分发平台，包含大量优质的免费公有领域图"
+          },
+          {
+            "name": "ManyBooks",
+            "url": "https://manybooks.net",
+            "description": "提供超过5万本免费电子书的阅读与下载平台"
+          },
+          {
+            "name": "LibriVox",
+            "url": "https://librivox.org",
+            "description": "著名的免费公有领域有声书平台"
+          },
+          {
+            "name": "Wikibooks (维基教科书)",
+            "url": "https://www.wikibooks.org",
+            "description": "维基媒体基金会旗下的开源免费教科书创作平台"
+          },
+          {
+            "name": "Wikisource (维基文库)",
+            "url": "https://wikisource.org",
+            "description": "维基媒体基金会维护的自由自由内容源文本库"
+          },
+          {
+            "name": "Google Books (谷歌图书)",
+            "url": "https://books.google.com",
+            "description": "谷歌打造的全球海量图书索引与全文检索平台"
+          },
+          {
+            "name": "Amazon Kindle Store",
+            "url": "https://www.amazon.com/kindle-dbs/storefront",
+            "description": "全球最大的商业电子书分发商店"
+          },
+          {
+            "name": "Rakuten Kobo",
+            "url": "https://www.kobo.com",
+            "description": "全球知名电子书与有声书零售平台"
+          },
+          {
+            "name": "Apple Books",
+            "url": "https://www.apple.com/apple-books/",
+            "description": "苹果公司官方电子书与有声书商店"
+          },
+          {
+            "name": "Barnes & Noble NOOK",
+            "url": "https://www.barnesandnoble.com/b/ebooks/",
+            "description": "美国老牌连锁书店 Barnes & Noble"
+          },
+          {
+            "name": "Smashwords",
+            "url": "https://www.smashwords.com",
+            "description": "全球最大的独立电子书出版与分发平台"
+          },
+          {
+            "name": "Draft2Digital",
+            "url": "https://www.draft2digital.com",
+            "description": "著名的独立作者电子书自助出版与全球零售渠道分发平台"
+          },
+          {
+            "name": "BookBub",
+            "url": "https://www.bookbub.com",
+            "description": "著名的免费与限时折扣电子书推荐服务"
+          },
+          {
+            "name": "Scribd",
+            "url": "https://www.scribd.com",
+            "description": "全球知名的数字订阅服务，付费用户可无限制阅读海量电"
+          },
+          {
+            "name": "Perlego",
+            "url": "https://www.perlego.com",
+            "description": "被称为“学术界Netflix”的电子书订阅平台"
+          },
+          {
+            "name": "O'Reilly Higher Education / Learning",
+            "url": "https://www.oreilly.com",
+            "description": "全球顶尖的计算机、IT、编程与商业电子书平台"
+          },
+          {
+            "name": "SpringerLink",
+            "url": "https://link.springer.com",
+            "description": "全球最大科技与医学出版商之一 Springer"
+          },
+          {
+            "name": "ScienceDirect (Elsevier)",
+            "url": "https://www.sciencedirect.com",
+            "description": "埃尔塞维尔(Elsevier)旗下的世界顶级科学"
+          },
+          {
+            "name": "Wiley Online Library",
+            "url": "https://onlinelibrary.wiley.com",
+            "description": "全球知名出版商 Wiley 的学术资源库"
+          },
+          {
+            "name": "Taylor & Francis Online",
+            "url": "https://www.tandfonline.com",
+            "description": "权威学术出版集团 Taylor &"
+          },
+          {
+            "name": "Cambridge Core",
+            "url": "https://www.cambridge.org/core",
+            "description": "剑桥大学出版社的官方学术内容平台"
+          },
+          {
+            "name": "Oxford Academic",
+            "url": "https://academic.oup.com",
+            "description": "牛津大学出版社学术图书与期刊中心"
+          },
+          {
+            "name": "JSTOR",
+            "url": "https://www.jstor.org",
+            "description": "知名数字学术资料库，汇集数千种学术期刊"
+          },
+          {
+            "name": "DOAB (Directory of Open Access Books)",
+            "url": "https://www.doabooks.org",
+            "description": "开放获取图书目录，专门提供经同行评审的开源学术电子"
+          },
+          {
+            "name": "OAPEN Library",
+            "url": "https://oapen.org",
+            "description": "欧洲开源学术电子书托管与分发平台"
+          },
+          {
+            "name": "National Academies Press (NAP)",
+            "url": "https://nap.nationalacademies.org",
+            "description": "美国国家科学院出版物平台，提供数千本科学"
+          },
+          {
+            "name": "IntechOpen",
+            "url": "https://www.intechopen.com",
+            "description": "全球领先的科学、技术与医学(STM)开放获取("
+          },
+          {
+            "name": "IEEE Xplore",
+            "url": "https://ieeexplore.ieee.org",
+            "description": "电气电子工程师学会官方数字图书馆"
+          },
+          {
+            "name": "ACM Digital Library",
+            "url": "https://dl.acm.org",
+            "description": "国际计算机学会官方数字图书馆"
+          },
+          {
+            "name": "Bookboon",
+            "url": "https://bookboon.com",
+            "description": "专注于大学生教材与职场技能实用电子书的平台"
+          },
+          {
+            "name": "Free-eBooks.net",
+            "url": "https://www.free-ebooks.net",
+            "description": "涵盖小说、非虚构类、学术与商务类图书的免费电子书下"
+          },
+          {
+            "name": "Planet eBook",
+            "url": "https://www.planetebook.com",
+            "description": "专注于提供高品质、排版精美且完全免费的经典古典文学"
+          },
+          {
+            "name": "Global Grey Ebooks",
+            "url": "https://www.globalgreyebooks.com",
+            "description": "个人维护的高品质免费公有领域电子书网站"
+          },
+          {
+            "name": "Loyal Books",
+            "url": "http://www.loyalbooks.com",
+            "description": "提供免费公有领域电子书与对应免费有声书下载的经典图"
+          },
+          {
+            "name": "ReadPrint",
+            "url": "http://www.readprint.com",
+            "description": "免费在线阅读图书馆，为学生"
+          },
+          {
+            "name": "Authorama",
+            "url": "http://www.authorama.com",
+            "description": "简单清爽的公有领域电子书在线阅读网站"
+          },
+          {
+            "name": "PageByPage Books",
+            "url": "http://www.pagebypagebooks.com",
+            "description": "免费在线电子书库，将数百本经典古典名著按页面划分"
+          },
+          {
+            "name": "Literature.org",
+            "url": "https://literature.org",
+            "description": "经典文学作品在线阅览库，包含诸多世界名著的纯文本在"
+          },
+          {
+            "name": "Digital Book Index",
+            "url": "http://www.digitalbookindex.org",
+            "description": "综合性数字图书索引网站，指向超过16万册来自大学"
+          },
+          {
+            "name": "Perseus Digital Library",
+            "url": "https://www.perseus.tufts.edu",
+            "description": "塔夫茨大学维护的古典学数字图书馆，收录大量古希腊"
+          },
+          {
+            "name": "Online Books Page (UPenn)",
+            "url": "https://onlinebooks.library.upenn.edu",
+            "description": "宾夕法尼亚大学图书馆主办的免费电子书索引网"
+          },
+          {
+            "name": "Classic Reader",
+            "url": "http://www.classicreader.com",
+            "description": "经典的公共领域名著在线阅读库，包含数千本小说"
+          },
+          {
+            "name": "Baen Free Library",
+            "url": "https://www.baen.com/allbooks/category/index/id/2012",
+            "description": "著名科幻与奇幻出版商 Baen"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Tor.com (Reactor)",
+            "url": "https://reactormag.com",
+            "description": "著名科幻出版商 Tor 旗下的线上流行文化杂志"
+          },
+          {
+            "name": "Leanpub",
+            "url": "https://leanpub.com",
+            "description": "独特的电子书创作与销售平台，专注软件开发"
+          },
+          {
+            "name": "GitHub / Free Programming Books",
+            "url": "https://github.com/EbookFoundation/free-programming-books",
+            "description": "全球最大的开源免费编程电子书与技术文档社区整理列表"
+          },
+          {
+            "name": "Goalkicker (Programming Notes for Professionals)",
+            "url": "https://goalkicker.com",
+            "description": "基于 Stack Overflow"
+          },
+          {
+            "name": "FreeTechBooks",
+            "url": "https://www.freetechbooks.com",
+            "description": "免费计算机科学、工程、编程语言教材"
+          },
+          {
+            "name": "TechBooksForFree",
+            "url": "http://www.techbooksforfree.com",
+            "description": "提供科技、计算机、网络、操作系统及编程领域免费电子"
+          },
+          {
+            "name": "OnlineProgrammingBooks",
+            "url": "https://www.onlineprogrammingbooks.com",
+            "description": "专注于免费计算机、编程、Web开发"
+          },
+          {
+            "name": "Syncfusion Succinctly Series",
+            "url": "https://www.syncfusion.com/succinctly-free-ebooks",
+            "description": "Syncfusion 提供的“简明系列”免费技术电"
+          },
+          {
+            "name": "Microsoft Learn / Technical Documentation",
+            "url": "https://learn.microsoft.com",
+            "description": "微软官方技术文档与学习平台"
+          },
+          {
+            "name": "Red Hat Books",
+            "url": "https://www.redhat.com/en/resources/ebooks",
+            "description": "红帽(Red Hat)官方提供的云计算"
+          },
+          {
+            "name": "O'Reilly Free Security/Data/AI Ebooks",
+            "url": "https://www.oreilly.com/radar/reports/",
+            "description": "O'Reilly 提供的免费行业报告"
+          },
+          {
+            "name": "Packt Free Learning",
+            "url": "https://www.packtpub.com",
+            "description": "知名技术出版商 Packt"
+          },
+          {
+            "name": "DevDocs",
+            "url": "https://devdocs.io",
+            "description": "整合了数十种编程语言与框架官方 API"
+          },
+          {
+            "name": "Runoob (菜鸟教程)",
+            "url": "https://www.runoob.com",
+            "description": "中国著名的Web技术与编程语言入门教程网"
+          },
+          {
+            "name": "W3Schools",
+            "url": "https://www.w3schools.com",
+            "description": "全球最大的Web开发前端与后端入门教程与参考手册平"
+          },
+          {
+            "name": "Read the Docs",
+            "url": "https://readthedocs.org",
+            "description": "全球开源社区最流行的开源技术文档与开源电子书免费托"
+          },
+          {
+            "name": "GitBook",
+            "url": "https://www.gitbook.com",
+            "description": "现代化的文档与电子书在线创作、托管与发布平台"
+          },
+          {
+            "name": "BookStack",
+            "url": "https://www.bookstackapp.com",
+            "description": "免费开源的类似图书结构的个人与团队文档/电子书自托"
+          },
+          {
+            "name": "MDN Web Docs",
+            "url": "https://developer.mozilla.org",
+            "description": "Mozilla 维护的权威 Web"
+          },
+          {
+            "name": "Khan Academy (可汗学院)",
+            "url": "https://www.khanacademy.org",
+            "description": "全球著名的免费教育平台，包含海量交互式数学、科学"
+          },
+          {
+            "name": "MIT OpenCourseWare (MIT OCW)",
+            "url": "https://ocw.mit.edu",
+            "description": "麻省理工学院开放课程计划，提供大量的免费课程教材"
+          },
+          {
+            "name": "Coursera",
+            "url": "https://www.coursera.org",
+            "description": "全球知名在线教育平台，与顶尖大学合作提供课程附带的"
+          },
+          {
+            "name": "edX",
+            "url": "https://www.edx.org",
+            "description": "由哈佛与麻省理工联合创立的在线学习平台"
+          },
+          {
+            "name": "Saylor Academy",
+            "url": "https://www.saylor.org",
+            "description": "提供免费、开放的大学级别在线课程与配套免费开源教材"
+          },
+          {
+            "name": "OpenStax (Rice University)",
+            "url": "https://openstax.org",
+            "description": "莱斯大学发起的非营利项目，提供经过同行评审"
+          },
+          {
+            "name": "LibreTexts",
+            "url": "https://libretexts.org",
+            "description": "由美国国家科学基金会支持的开放教育资源(OER)平"
+          },
+          {
+            "name": "BCcampus Open Textbooks",
+            "url": "https://open.bccampus.ca",
+            "description": "加拿大不列颠哥伦比亚省发起的开放教材库"
+          },
+          {
+            "name": "Open Textbook Library",
+            "url": "https://open.umn.edu/opentextbooks",
+            "description": "明尼苏达大学维护的开放教材图书馆"
+          },
+          {
+            "name": "CK-12 Foundation",
+            "url": "https://www.ck12.org",
+            "description": "专注于K-12(中小学)STEM教育的非营利机构"
+          },
+          {
+            "name": "Curriki",
+            "url": "https://www.curriki.org",
+            "description": "面向K-12教师与学生的开放教育资源(OER)与数"
+          },
+          {
+            "name": "ManyBooks Chinese Section",
+            "url": "https://manybooks.net/language/chinese",
+            "description": "ManyBooks 网站上的中文公有领域古典文学与"
+          },
+          {
+            "name": "Haodoo (好读网站)",
+            "url": "http://www.haodoo.net",
+            "description": "台湾著名的繁体中文电子书网站"
+          },
+          {
+            "name": "CNKI (中国知网)",
+            "url": "https://www.cnki.net",
+            "description": "中国最大的学术电子期刊、博硕士论文"
+          },
+          {
+            "name": "Wanfang Data (万方数据)",
+            "url": "https://www.wanfangdata.com.cn",
+            "description": "中国大型综合性学术数据库，提供海量学术期刊"
+          },
+          {
+            "name": "VIP Paper (维普网)",
+            "url": "http://www.cqvip.com",
+            "description": "中国著名的期刊学术文献与哲学社会科学数字图书检索数"
+          },
+          {
+            "name": "National Library of China (中国国家图书馆数字共享)",
+            "url": "http://www.nlc.cn",
+            "description": "中国国家图书馆官方数字门户，提供海量珍贵古籍"
+          },
+          {
+            "name": "DuXiu (超星读秀)",
+            "url": "https://www.duxiu.com",
+            "description": "中国庞大的学术图书数据库与全文检索平台"
+          },
+          {
+            "name": "National Social Sciences Database (国家哲学社会科学学术期刊数据库)",
+            "url": "http://www.nass.org.cn",
+            "description": "中国公益性国家级社会科学学术期刊与学术图书数字开放"
+          },
+          {
+            "name": "CADAL (大学数字图书馆国际合作计划)",
+            "url": "https://www.cadal.edu.cn",
+            "description": "汇聚国内外高校珍贵中外文古籍"
+          },
+          {
+            "name": "CTEXT (中国哲学书电子化计划)",
+            "url": "https://ctext.org/zh",
+            "description": "著名的先秦两汉及历代中国古籍在线原典数据库"
+          },
+          {
+            "name": "Shuge (书格)",
+            "url": "https://shuge.org",
+            "description": "专注于自由开放的在线古籍图书馆"
+          },
+          {
+            "name": "SouYun (搜韵)",
+            "url": "https://sou-yun.cn",
+            "description": "优秀的诗词文史诗歌电子数据库"
+          },
+          {
+            "name": "SouGuji (搜古籍)",
+            "url": "https://www.souguji.com",
+            "description": "专业的古籍全文检索与电子版古籍文献查询工具平台。"
+          },
+          {
+            "name": "Kanripo (汉籍リポジトリ)",
+            "url": "https://www.kanripo.org",
+            "description": "国际学者维护的汉籍全文数据库，收集了大量经部"
+          },
+          {
+            "name": "OpenGutenberg Chinese Ebooks",
+            "url": "https://www.gutenberg.org/browse/languages/zh",
+            "description": "古腾堡计划中的中文公有领域电子书专区(收录红楼梦"
+          },
+          {
+            "name": "WeChat Read (微信读书)",
+            "url": "https://weread.qq.com",
+            "description": "腾讯旗下的跨平台移动阅读与社交读书平台"
+          },
+          {
+            "name": "Douban Read (豆瓣阅读)",
+            "url": "https://read.douban.com",
+            "description": "专注于高质量独家原创文学"
+          },
+          {
+            "name": "China Literature / Qidian (起点中文网)",
+            "url": "https://www.qidian.com",
+            "description": "阅文集团旗下中国最大的网络原创文学阅读平台"
+          },
+          {
+            "name": "Jinjiang Literature City (晋江文学城)",
+            "url": "https://www.jjwxc.net",
+            "description": "中国最具影响力的女性向网络原创文学与电子书创作阅读"
+          },
+          {
+            "name": "Zongheng Literature (纵横中文网)",
+            "url": "https://www.zongheng.com",
+            "description": "中国知名的海量网络小说与原创数字文学阅读门户网站。"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "17k Literature (17k小说网)",
+            "url": "https://www.17k.com",
+            "description": "中文在线旗下的网文创作与数字阅读平台"
+          },
+          {
+            "name": "Zhang閱 / Palm Read (掌阅科技)",
+            "url": "https://www.ireader.com.cn",
+            "description": "中国领先的数字阅读服务商"
+          },
+          {
+            "name": "Jingdong Ebooks (京东读书)",
+            "url": "https://read.jd.com",
+            "description": "京东旗下的数字电子书与有声书零售平台"
+          },
+          {
+            "name": "Dangdang Ebooks (当当云阅读)",
+            "url": "http://e.dangdang.com",
+            "description": "当当网官方电子书平台，拥有海量正版出版物电子书与限"
+          },
+          {
+            "name": "Duokan (多看阅读)",
+            "url": "https://www.duokan.com",
+            "description": "小米旗下的优质电子书阅读平台，以出色的图文排版"
+          },
+          {
+            "name": "Ximalaya (喜马拉雅FM)",
+            "url": "https://www.ximalaya.com",
+            "description": "中国最大的有声书与音频分享平台"
+          },
+          {
+            "name": "Lazy Audio (懒人听书)",
+            "url": "https://www.lrts.me",
+            "description": "著名的有声电子书与有声读物听书平台"
+          },
+          {
+            "name": "Dragon Read (番茄小说/番茄免费小说)",
+            "url": "https://fanqienovel.com",
+            "description": "字节跳动旗下的主打正版免费阅读的数字网络文学与电子"
+          },
+          {
+            "name": "Read738 (738Kindle/电子书分享社区)",
+            "url": "http://www.read738.com",
+            "description": "专注于EPUB、MOBI格式电子书推介与交流的读者"
+          },
+          {
+            "name": "Gutenberg Australia",
+            "url": "http://gutenberg.net.au",
+            "description": "澳大利亚古腾堡计划，收录因版权期限差异而在澳大利亚"
+          },
+          {
+            "name": "Gutenberg Canada",
+            "url": "http://gutenberg.ca",
+            "description": "加拿大古腾堡计划，专注于保存与分发符合加拿大版权法"
+          },
+          {
+            "name": "Ebook Foundation",
+            "url": "https://ebookfoundation.org",
+            "description": "电子书基金会官方网站，致力于推动无障碍阅读与开放电"
+          },
+          {
+            "name": "HathiTrust Digital Library",
+            "url": "https://www.hathitrust.org",
+            "description": "由全球大型学术与研究型图书馆合作建立的大型数字学术"
+          },
+          {
+            "name": "World Digital Library (WDL / UNESCO)",
+            "url": "https://www.wdl.org",
+            "description": "联合国教科文组织与美国国会图书馆联合创办的文化遗产"
+          },
+          {
+            "name": "Gallica (法国国家图书馆)",
+            "url": "https://gallica.bnf.fr",
+            "description": "法国国家图书馆的数字图书馆"
+          },
+          {
+            "name": "Deutsche Digitale Bibliothek (德国数字图书馆)",
+            "url": "https://www.deutsche-digitale-bibliothek.de",
+            "description": "德国文化与科学领域的中央数字图书馆"
+          },
+          {
+            "name": "Europeana",
+            "url": "https://www.europeana.eu",
+            "description": "欧洲数字文化遗产门户，汇集欧洲数千家档案馆"
+          },
+          {
+            "name": "British Library Digital Collections",
+            "url": "https://www.bl.uk/collection-items",
+            "description": "英国图书馆的数字藏品中心，提供珍贵历史图书"
+          },
+          {
+            "name": "National Diet Library Digital Collections (日本国立国会图书馆)",
+            "url": "https://dl.ndl.go.jp",
+            "description": "日本国立国会图书馆数字藏书平台，收录大量日文古籍"
+          },
+          {
+            "name": "BNE Digital (西班牙国家图书馆)",
+            "url": "https://www.bne.es/en/Catalogos/BibliotecaDigitalHispanica",
+            "description": "西班牙国家图书馆数字平台"
+          },
+          {
+            "name": "Scribd Documents (SlideShare)",
+            "url": "https://www.slideshare.net",
+            "description": "全球最大的专业演讲幻灯片、PDF文档"
+          },
+          {
+            "name": "Doc88 (道客巴巴)",
+            "url": "https://www.doc88.com",
+            "description": "中国知名的在线文档分享平台，包含海量行业报告"
+          },
+          {
+            "name": "Wenku Baidu (百度文库)",
+            "url": "https://wenku.baidu.com",
+            "description": "百度旗下的海量文档与电子书共享平台，涵盖教育"
+          },
+          {
+            "name": "Book118 (原创力文档)",
+            "url": "https://max.book118.com",
+            "description": "大型实用文档与电子图书分享平台"
+          },
+          {
+            "name": "Docin (豆丁网)",
+            "url": "https://www.docin.com",
+            "description": "中国老牌的文档与电子书分享交流平台"
+          },
+          {
+            "name": "360 Doc (360个人图书馆)",
+            "url": "http://www.360doc.com",
+            "description": "个人知识管理与文章摘抄分享平台"
+          },
+          {
+            "name": "Academia.edu",
+            "url": "https://www.academia.edu",
+            "description": "学术社交网络平台，研究人员在此免费分享数千万篇学术"
+          },
+          {
+            "name": "ResearchGate",
+            "url": "https://www.researchgate.net",
+            "description": "全球最大的科研人员社交平台"
+          },
+          {
+            "name": "SSRN (Social Science Research Network)",
+            "url": "https://www.ssrn.com",
+            "description": "涵盖社会科学、法律、经济及人文领域的权威预印本与电"
+          },
+          {
+            "name": "arXiv",
+            "url": "https://arxiv.org",
+            "description": "康奈尔大学维护的物理学、数学"
+          },
+          {
+            "name": "bioRxiv",
+            "url": "https://www.biorxiv.org",
+            "description": "专注于生物学领域的未出版预印本免费电子文献与研究报"
+          },
+          {
+            "name": "medRxiv",
+            "url": "https://www.medrxiv.org",
+            "description": "专注于医学、临床研究与健康科学领域的免费预印本数字"
+          },
+          {
+            "name": "CORE",
+            "url": "https://core.ac.uk",
+            "description": "全球最大的开放获取(Open"
+          },
+          {
+            "name": "PubMed Central (PMC)",
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/",
+            "description": "美国国家生物技术信息中心(NCBI)旗下的免费生物"
+          },
+          {
+            "name": "Unpaywall",
+            "url": "https://unpaywall.org",
+            "description": "著名的开放获取文献索引工具"
+          },
+          {
+            "name": "Audible",
+            "url": "https://www.audible.com",
+            "description": "亚马逊旗下的全球最大商业有声书制作与发行平台"
+          },
+          {
+            "name": "Storytel",
+            "url": "https://www.storytel.com",
+            "description": "欧洲领先的有声书与电子书流媒体订阅服务平台"
+          },
+          {
+            "name": "Chirp Books",
+            "url": "https://www.chirpbooks.com",
+            "description": "著名的无月费折扣有声书买断平台"
+          },
+          {
+            "name": "Downpour",
+            "url": "https://www.downpour.com",
+            "description": "知名独立有声书销售与无DRM限制有声电子书下载平台"
+          },
+          {
+            "name": "Audiobooks.com",
+            "url": "https://www.audiobooks.com",
+            "description": "知名有声书订阅服务，提供超30万本优质有声电子书阅"
+          },
+          {
+            "name": "Blinkist",
+            "url": "https://www.blinkist.com",
+            "description": "专注于非虚构类经典图书的“15分钟电子书精华速读与"
+          },
+          {
+            "name": "Shortform",
+            "url": "https://www.shortform.com",
+            "description": "高质量非虚构类商业、心理与哲学电子书深度导读与提炼"
+          },
+          {
+            "name": "GetAbstract",
+            "url": "https://www.getabstract.com",
+            "description": "专注于商业、管理与职场领域的精简电子书摘要与知识提"
+          },
+          {
+            "name": "Sumizen (速读/图书摘要)",
+            "url": "https://www.sumizen.com",
+            "description": "专注于提供经典书籍与前沿非虚构电子书核心要点总结的"
+          },
+          {
+            "name": "OverDrive / Libby",
+            "url": "https://www.overdrive.com",
+            "description": "全球数万家公共图书馆与学校采用的数字电子书与有声书"
+          },
+          {
+            "name": "Hoopla Digital",
+            "url": "https://www.hoopladigital.com",
+            "description": "与北美公共图书馆合作的数字媒体平台"
+          },
+          {
+            "name": "BorrowBox",
+            "url": "https://www.borrowbox.com",
+            "description": "英国、澳洲等地公共图书馆主流的电子书与有声书移动借"
+          },
+          {
+            "name": "Palace Project",
+            "url": "https://thepalaceproject.org",
+            "description": "旨在为公共图书馆提供开放"
+          },
+          {
+            "name": "CloudLibrary",
+            "url": "https://www.yourcloudlibrary.com",
+            "description": "图书馆电子书与有声书借阅服务"
+          },
+          {
+            "name": "Calibre Web",
+            "url": "https://github.com/janeczku/calibre-web",
+            "description": "优秀的开源自建电子书 Web 界面"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 151-199",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Kavita",
+            "url": "https://www.kavitareader.com",
+            "description": "现代化、功能强大的自建电子书"
+          },
+          {
+            "name": "Audiobookshelf",
+            "url": "https://www.audiobookshelf.org",
+            "description": "开源自建有声书与 Podcast 托管服务器"
+          },
+          {
+            "name": "COPS (Calibre OPDS Server)",
+            "url": "https://github.com/mikespub-org/seblucas-cops",
+            "description": "轻量级自建电子书 OPDS 服务端"
+          },
+          {
+            "name": "Komga",
+            "url": "https://komga.org",
+            "description": "专门针对漫画、绘本与电子书搭建的自建式媒体服务器平"
+          },
+          {
+            "name": "Comicsology (Amazon Comixology)",
+            "url": "https://www.amazon.com/comixology",
+            "description": "亚马逊旗下的全球最大数字漫画商店，拥有漫威"
+          },
+          {
+            "name": "WEBTOON",
+            "url": "https://www.webtoons.com",
+            "description": "全球最大的韩漫与条漫数字阅读平台"
+          },
+          {
+            "name": "Tapas",
+            "url": "https://tapas.io",
+            "description": "著名的独立数字漫画与轻小说出版平台"
+          },
+          {
+            "name": "Manga Plus (Shueisha)",
+            "url": "https://mangaplus.shueisha.co.jp",
+            "description": "集英社官方推出的免费正版日本漫画数字平台(同步更新"
+          },
+          {
+            "name": "BookWalker",
+            "url": "https://bookwalker.jp",
+            "description": "角川(KADOKAWA)旗下的直营正版电子书商店"
+          },
+          {
+            "name": "Shonen Jump App / Viz Media",
+            "url": "https://www.viz.com/shonenjump",
+            "description": "VIZ Media 旗下的正版少年Jump数字漫画"
+          },
+          {
+            "name": "Kobo Writing Life",
+            "url": "https://www.kobo.com/us/en/p/writinglife",
+            "description": "乐天 Kobo 提供的独立作者电子书自助出版与全球"
+          },
+          {
+            "name": "Kindle Direct Publishing (KDP)",
+            "url": "https://kdp.amazon.com",
+            "description": "亚马逊官方电子书自助出版平台"
+          },
+          {
+            "name": "Apple Books for Authors",
+            "url": "https://authors.apple.com",
+            "description": "苹果官方图书出版服务，帮助作者在 Apple"
+          },
+          {
+            "name": "Reedsy",
+            "url": "https://reedsy.com",
+            "description": "为电子书作者提供专业编辑、排版工具"
+          },
+          {
+            "name": "Pressbooks",
+            "url": "https://pressbooks.com",
+            "description": "基于 WordPress"
+          },
+          {
+            "name": "Sigil Ebook",
+            "url": "https://sigil-ebook.com",
+            "description": "全球最流行且完全免费开源的跨平台 EPUB"
+          },
+          {
+            "name": "Calibre Ebook Management",
+            "url": "https://calibre-ebook.com",
+            "description": "全球最强大的开源免费电子书管理、格式转换"
+          },
+          {
+            "name": "Pandoc",
+            "url": "https://pandoc.org",
+            "description": "被称为“瑞士军刀”的开源文档转换工具"
+          },
+          {
+            "name": "Jutoh",
+            "url": "https://www.jutoh.com",
+            "description": "专业的跨平台电子书创作工具"
+          },
+          {
+            "name": "Vellum",
+            "url": "https://vellum.pub",
+            "description": "macOS 平台最优雅的电子书排版与软件"
+          },
+          {
+            "name": "Goodreads",
+            "url": "https://www.goodreads.com",
+            "description": "全球最大的图书书评、阅读社交"
+          },
+          {
+            "name": "Douban Books (豆瓣读书)",
+            "url": "https://book.douban.com",
+            "description": "中国最权威的图书评分、书评撰写"
+          },
+          {
+            "name": "StoryGraph",
+            "url": "https://www.thestorygraph.com",
+            "description": "Goodreads 的强有力替代品"
+          },
+          {
+            "name": "LibraryThing",
+            "url": "https://www.librarything.com",
+            "description": "强大的个人图书收藏编目、图书社交与读者图书推荐网站"
+          },
+          {
+            "name": "Bookish",
+            "url": "https://www.bookish.com",
+            "description": "专门提供图书推荐、作者专访"
+          },
+          {
+            "name": "Litcharts",
+            "url": "https://www.litcharts.com",
+            "description": "由 SparkNotes"
+          },
+          {
+            "name": "SparkNotes",
+            "url": "https://www.sparknotes.com",
+            "description": "美国极受欢迎的文学名著学习指南"
+          },
+          {
+            "name": "CliffsNotes",
+            "url": "https://www.cliffsnotes.com",
+            "description": "著名的文学与学术名著文学指南"
+          },
+          {
+            "name": "BookRags",
+            "url": "https://www.bookrags.com",
+            "description": "提供详尽的文学作品研究指南"
+          },
+          {
+            "name": "Wiley E-Textbooks",
+            "url": "https://www.wiley.com/en-us/education/students",
+            "description": "Wiley 官方学生电子教材商店"
+          },
+          {
+            "name": "Cengage Group",
+            "url": "https://www.cengage.com",
+            "description": "知名教育出版巨头 Cengage"
+          },
+          {
+            "name": "Pearson+",
+            "url": "https://www.pearson.com/en-us/peer/pearson-plus.html",
+            "description": "培生教育集团(Pearson)官方数字教材订阅平台"
+          },
+          {
+            "name": "McGraw Hill Higher Education",
+            "url": "https://www.mheducation.com/highered",
+            "description": "麦格劳-希尔官方教育平台"
+          },
+          {
+            "name": "VitalSource",
+            "url": "https://www.vitalsource.com",
+            "description": "全球高等教育领域领先的数字教材与电子书零售及在线阅"
+          },
+          {
+            "name": "RedShelf",
+            "url": "https://redshelf.com",
+            "description": "专注于高校数字教材分发与软件服务的电子书提供商。"
+          },
+          {
+            "name": "Chegg Ebooks",
+            "url": "https://www.chegg.com/books",
+            "description": "美国著名的大学教材租赁、二手书与电子教材在线借阅平"
+          },
+          {
+            "name": "Kobo Writing Life Portal",
+            "url": "https://www.kobo.com/writinglife",
+            "description": "Kobo 专为自出版作者打造的电子书数据追踪与销售"
+          },
+          {
+            "name": "Draft2Digital Blog & Tools",
+            "url": "https://www.draft2digital.com/blog",
+            "description": "独立电子书出版领域最具实用价值的行业趋势分析与自出"
+          },
+          {
+            "name": "Alliance of Independent Authors (ALLi)",
+            "url": "https://www.allianceindependentauthors.org",
+            "description": "国际独立作者联盟，提供电子书自出版指南"
+          },
+          {
+            "name": "Author Earnings / WordsRating",
+            "url": "https://wordsrating.com",
+            "description": "提供电子书出版市场、Kindle销售趋势与图书行业"
+          },
+          {
+            "name": "Publisher Weekly Ebooks Section",
+            "url": "https://www.publishersweekly.com",
+            "description": "出版商周刊电子书专栏，追踪全球数字出版"
+          },
+          {
+            "name": "The Digital Reader",
+            "url": "https://the-digital-reader.com",
+            "description": "专注于电子书阅读器(Kindle, Kobo等)"
+          },
+          {
+            "name": "Good e-Reader",
+            "url": "https://goodereader.com",
+            "description": "全球专注于电子墨水屏(E-ink)"
+          },
+          {
+            "name": "E-Ink Official",
+            "url": "https://www.eink.com",
+            "description": "全球电子纸/电子墨水屏技术龙头 E Ink"
+          },
+          {
+            "name": "Onyx BOOX",
+            "url": "https://www.boox.com",
+            "description": "知名开放式安卓系统电子书阅读器 BOOX"
+          },
+          {
+            "name": "Remarkable Official",
+            "url": "https://remarkable.com",
+            "description": "著名极简数字纸张与手写电子书阅读器"
+          },
+          {
+            "name": "PocketBook Official",
+            "url": "https://pocketbook.ch",
+            "description": "欧洲著名电子书阅读器品牌 PocketBook"
+          },
+          {
+            "name": "Supernote (超级笔记)",
+            "url": "https://supernote.com",
+            "description": "专注于高效电子墨水屏笔记与电子书阅读设备"
+          },
+          {
+            "name": "Hanvon (汉王科技)",
+            "url": "http://www.hanvon.com.cn",
+            "description": "中国老牌电子书阅读器与手写电纸书硬件官方主页。"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑬𝑏𝑜𝑜𝑘 𝑺𝑖𝑡𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

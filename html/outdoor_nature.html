@@ -1,0 +1,1388 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="户外运动、自然探索、露营徒步与生态影像资源">
+<title>户外自然 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>户外自然</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">户外自然 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "户外自然",
+    "icon": "🏕️",
+    "color": "linear-gradient(135deg, #00b894, #55efc4)",
+    "subcategories": [
+      {
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "National Geographic",
+            "url": "https://www.nationalgeographic.com/",
+            "description": "全球知名的地理、自然、野生动物与科学探索综合门户网"
+          },
+          {
+            "name": "AllTrails",
+            "url": "https://www.alltrails.com/",
+            "description": "全球最大的徒步路线与户外徒步步道数据库及导航平台。"
+          },
+          {
+            "name": "Komoot",
+            "url": "https://www.komoot.com/",
+            "description": "智能户外路线规划与路线探索平台，涵盖徒步"
+          },
+          {
+            "name": "Outdooractive",
+            "url": "https://www.outdooractive.com/",
+            "description": "欧洲领先的户外数字导航与路线规划平台"
+          },
+          {
+            "name": "Wikiloc",
+            "url": "https://www.wikiloc.com/",
+            "description": "社区驱动的全球户外路线分享平台"
+          },
+          {
+            "name": "Gaia GPS",
+            "url": "https://www.gaiagps.com/",
+            "description": "专业的离线野外地图、拓扑图与越野探险导航工具官网。"
+          },
+          {
+            "name": "Strava",
+            "url": "https://www.strava.com/",
+            "description": "全球最大的户外跑步、骑行与户外追踪运动社区。"
+          },
+          {
+            "name": "REI Co-op",
+            "url": "https://www.rei.com/",
+            "description": "美国顶尖的户外装备零售商"
+          },
+          {
+            "name": "Patagonia",
+            "url": "https://www.patagonia.com/",
+            "description": "著名环保户外品牌，致力于环境保护理念推广与高端户外"
+          },
+          {
+            "name": "Arc'teryx",
+            "url": "https://arcteryx.com/",
+            "description": "加拿大顶级户外服饰品牌，专注于高山攀登与极端环境装"
+          },
+          {
+            "name": "Outdoor Gear Lab",
+            "url": "https://www.outdoorgearlab.com/",
+            "description": "极其客观权威的户外装备评测与实验室对比检测网站。"
+          },
+          {
+            "name": "Section Hiker",
+            "url": "https://sectionhiker.com/",
+            "description": "深度专注于轻量化徒步、露营装备评测与野外生存技巧的"
+          },
+          {
+            "name": "CleverHiker",
+            "url": "https://www.cleverhiker.com/",
+            "description": "提供高品质徒步教程、背包客指南及装备推荐的专业徒步"
+          },
+          {
+            "name": "Backpacking Light",
+            "url": "https://backpackinglight.com/",
+            "description": "全球轻量化(UL)徒步与超轻量露营领域的权威论坛与"
+          },
+          {
+            "name": "Outdoor Life",
+            "url": "https://www.outdoorlife.com/",
+            "description": "历史悠久的户外生活杂志，涵盖野外生存、钓鱼"
+          },
+          {
+            "name": "Field & Stream",
+            "url": "https://www.fieldandstream.com/",
+            "description": "专注于传统户外运动、钓鱼"
+          },
+          {
+            "name": "Backpacker Magazine",
+            "url": "https://www.backpacker.com/",
+            "description": "专注于野外背包客徒步、国家公园路线与野外装备指南。"
+          },
+          {
+            "name": "Outside Online",
+            "url": "https://www.outsideonline.com/",
+            "description": "涵盖户外文化、极限运动、荒野冒险与户外健康的综合在"
+          },
+          {
+            "name": "Adventure Journal",
+            "url": "https://www.adventure-journal.com/",
+            "description": "专注于深入探讨户外文化、荒野美学与探险故事的独立媒"
+          },
+          {
+            "name": "The Dyrt",
+            "url": "https://thedyrt.com/",
+            "description": "全球最大的露营地查找、营地预订与露营者评价社区。"
+          },
+          {
+            "name": "Hipcamp",
+            "url": "https://www.hipcamp.com/",
+            "description": "汇集私人农场、森林、露营地与木屋租赁的户外住宿预订"
+          },
+          {
+            "name": "Recreation.gov",
+            "url": "https://www.recreation.gov/",
+            "description": "美国联邦公共土地、国家公园露营地与户外许可证官方预"
+          },
+          {
+            "name": "National Park Service (NPS)",
+            "url": "https://www.nps.gov/",
+            "description": "美国国家公园管理局官网，提供国家公园地图"
+          },
+          {
+            "name": "Parks Canada",
+            "url": "https://parks.canada.ca/",
+            "description": "加拿大国家公园管理局官网"
+          },
+          {
+            "name": "European Wilderness Society",
+            "url": "https://wilderness-society.org/",
+            "description": "欧洲野生自然保护协会，致力于欧洲荒野自然保护与野化"
+          },
+          {
+            "name": "WWF (World Wildlife Fund)",
+            "url": "https://www.worldwildlife.org/",
+            "description": "世界自然基金会官网，致力于全球野生动物与自然生态保"
+          },
+          {
+            "name": "Nature Serve",
+            "url": "https://www.natureserve.org/",
+            "description": "提供北美物种、生物多样性和生态系统数据的权威自然科"
+          },
+          {
+            "name": "iNaturalist",
+            "url": "https://www.inaturalist.org/",
+            "description": "由国家地理与加州科学院联合发起的全球自然生物识别与"
+          },
+          {
+            "name": "eBird",
+            "url": "https://ebird.org/",
+            "description": "由康奈尔鸟类学实验室创建的全球观鸟者观察记录与分布"
+          },
+          {
+            "name": "Merlin Bird ID",
+            "url": "https://merlin.allaboutbirds.org/",
+            "description": "基于AI的声音与照片识别全球野生鸟类的权威观鸟应用"
+          },
+          {
+            "name": "Xeno-canto",
+            "url": "https://xeno-canto.org/",
+            "description": "全球野生鸟类鸣声与鸣叫录音的共享数据库网站。"
+          },
+          {
+            "name": "PlantNet",
+            "url": "https://plantnet.org/",
+            "description": "专注于野生植物识别、植物生物多样性调查的公众科学平"
+          },
+          {
+            "name": "Seek by iNaturalist",
+            "url": "https://www.inaturalist.org/pages/seek_app",
+            "description": "适合家庭与个人的自然植物"
+          },
+          {
+            "name": "Leave No Trace",
+            "url": "https://lnt.org/",
+            "description": "“无痕山林”国际组织官网"
+          },
+          {
+            "name": "Mountain Project",
+            "url": "https://www.mountainproject.com/",
+            "description": "全球最大的攀岩路线、攀岩点指南与野外攀岩社区。"
+          },
+          {
+            "name": "SummitPost",
+            "url": "https://www.summitpost.org/",
+            "description": "面向登山者与攀岩者的全球高山"
+          },
+          {
+            "name": "Peakbagger",
+            "url": "https://www.peakbagger.com/",
+            "description": "全球山峰数据库，供登山爱好者记录登顶日志与山脉统计"
+          },
+          {
+            "name": "14ers.com",
+            "url": "https://www.14ers.com/",
+            "description": "专注于美国科罗拉多州及各大4000米以上高山登顶路"
+          },
+          {
+            "name": "Himalayan Database",
+            "url": "https://www.himalayandatabase.com/",
+            "description": "喜马拉雅山脉探险与探险队历史登顶记录的权威数据库。"
+          },
+          {
+            "name": "Trekking Partners",
+            "url": "https://www.trekkingpartners.com/",
+            "description": "为全球长途徒步与高原结伴寻找队友的交流平台。"
+          },
+          {
+            "name": "Pacific Crest Trail Association",
+            "url": "https://www.pcta.org/",
+            "description": "美国太平洋屋脊步道(PCT)官方组织"
+          },
+          {
+            "name": "Appalachian Trail Conservancy",
+            "url": "https://appalachiantrail.org/",
+            "description": "阿巴拉契亚小径保护协会官网，提供全线长途徒步指南。"
+          },
+          {
+            "name": "Continental Divide Trail Coalition",
+            "url": "https://continentaldividetrail.org/",
+            "description": "美国大陆分水岭步道(CDT)官方保护与长途徒步指南"
+          },
+          {
+            "name": "Continental Divide Trail Society",
+            "url": "http://www.cdtsociety.org/",
+            "description": "致力于保护与推广大陆分水岭徒步路线的历史网站。"
+          },
+          {
+            "name": "Long Distance Walkers Association",
+            "url": "https://www.ldwa.org.uk/",
+            "description": "英国长途徒步爱好者协会，包含英国所有的长途步道数据"
+          },
+          {
+            "name": "Ramblers",
+            "url": "https://www.ramblers.org.uk/",
+            "description": "英国最大的徒步者慈善组织"
+          },
+          {
+            "name": "American Hiking Society",
+            "url": "https://americanhiking.org/",
+            "description": "美国徒步者协会，致力于维护国家步道系统与倡导徒步健"
+          },
+          {
+            "name": "Bushwalk Australia",
+            "url": "https://bushwalk.com/",
+            "description": "澳大利亚最活跃的荒野徒步、丛林穿越与露营论坛。"
+          },
+          {
+            "name": "NZ DOC (Department of Conservation)",
+            "url": "https://www.doc.govt.nz/",
+            "description": "新西兰环境保护署，提供著名的“九大步道”与山屋预订"
+          },
+          {
+            "name": "Walkhighlands",
+            "url": "https://www.walkhighlands.co.uk/",
+            "description": "苏格兰高地徒步与高山路线的最全面免费指南网站。"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "UKHillwalking",
+            "url": "https://www.ukhillwalking.com/",
+            "description": "英国徒步、登山与越野跑的权威社区及装备评测网。"
+          },
+          {
+            "name": "UKClimbing",
+            "url": "https://www.ukclimbing.com/",
+            "description": "英国及欧洲最大的攀岩、抱石与登山攀冰综合门户网站。"
+          },
+          {
+            "name": "Climbing Magazine",
+            "url": "https://www.climbing.com/",
+            "description": "国际知名攀岩杂志官网，包含攀岩技术"
+          },
+          {
+            "name": "Rock and Ice",
+            "url": "https://www.rockandice.com/",
+            "description": "经典攀岩与竞技冰攀杂志，分享极限攀登故事与技术细节"
+          },
+          {
+            "name": "Gripped Magazine",
+            "url": "https://gripped.com/",
+            "description": "加拿大攀岩杂志，涵盖运动攀、大岩壁与冰雪攀登新闻。"
+          },
+          {
+            "name": "Alpinist",
+            "url": "https://www.alpinist.com/",
+            "description": "专注于高山攀登艺术、纯粹阿式攀登(Alpine"
+          },
+          {
+            "name": "International Climbing and Mountaineering Federation (UIAA)",
+            "url": "https://www.theuiaa.org/",
+            "description": "国际登山联合会官网，制定攀岩安全标准与高山环境保护"
+          },
+          {
+            "name": "American Alpine Club",
+            "url": "https://americanalpineclub.org/",
+            "description": "美国阿列斯克登山俱乐部，提供高山救援保险"
+          },
+          {
+            "name": "Alpine Club",
+            "url": "https://www.alpine-club.org.uk/",
+            "description": "全球历史上第一个登山俱乐部(英国阿尔卑斯俱乐部)官"
+          },
+          {
+            "name": "British Mountaineering Council (BMC)",
+            "url": "https://www.thebmc.co.uk/",
+            "description": "英国登山理事会，维护攀岩场地、高山安全与户外培训。"
+          },
+          {
+            "name": "Wilderness Medical Society",
+            "url": "https://wms.org/",
+            "description": "荒野医学会官网，提供野外急救"
+          },
+          {
+            "name": "NOLS (National Outdoor Leadership School)",
+            "url": "https://www.nols.edu/",
+            "description": "全球权威的户外领导力与荒野急救(WFA/WFR)培"
+          },
+          {
+            "name": "Outward Bound",
+            "url": "https://www.outwardbound.org/",
+            "description": "著名的国际野外生存训练与青少年户外野外拓展机构。"
+          },
+          {
+            "name": "Bushcraft USA",
+            "url": "https://bushcraftusa.com/",
+            "description": "全球最大的荒野求生、传统野外生存技能("
+          },
+          {
+            "name": "Primitive Skills Group",
+            "url": "https://primitiveskills.org/",
+            "description": "专注于原始野外生存技能、摩擦起火与燧石制刃的手工技"
+          },
+          {
+            "name": "Survivalist Boards",
+            "url": "https://www.survivalistboards.com/",
+            "description": "涵盖防灾准备、野外生存、紧急避难与荒野技能的综合论"
+          },
+          {
+            "name": "Wilderness Survival Info",
+            "url": "https://www.wilderness-survival.net/",
+            "description": "收集丰富野外生存手册、庇护所搭设与求生植物知识网。"
+          },
+          {
+            "name": "Sea Kayaker Magazine",
+            "url": "https://www.seakayakermag.com/",
+            "description": "专注于海洋皮划艇、海上远航探险与水上安全的专业档案"
+          },
+          {
+            "name": "Paddling.com",
+            "url": "https://paddling.com/",
+            "description": "独木舟、皮划艇与桨板(SUP)路线查找"
+          },
+          {
+            "name": "American Whitewater",
+            "url": "https://www.americanwhitewater.org/",
+            "description": "保护与恢复白水河流的组织，提供水流级别与漂流路线。"
+          },
+          {
+            "name": "International Mountain Bicycling Association (IMBA)",
+            "url": "https://www.imba.com/",
+            "description": "国际山地自行车协会，致力于山地车步道规划与骑行环境"
+          },
+          {
+            "name": "Pinkbike",
+            "url": "https://www.pinkbike.com/",
+            "description": "全球最大的山地自行车(MTB)新闻"
+          },
+          {
+            "name": "Trailforks",
+            "url": "https://www.trailforks.com/",
+            "description": "全球最大的山地自行车越野路线地图与步道状况数据库。"
+          },
+          {
+            "name": "Singletracks",
+            "url": "https://www.singletracks.com/",
+            "description": "山地车路线搜索、山地装备评测与越野骑行指南。"
+          },
+          {
+            "name": "Bikerumor",
+            "url": "https://bikerumor.com/",
+            "description": "追踪自行车新技术、越野山地车与瓜车(Gravel)"
+          },
+          {
+            "name": "Bikepacking.com",
+            "url": "https://bikepacking.com/",
+            "description": "专注于山地自行车长途越野露营与自负重骑行("
+          },
+          {
+            "name": "FarOut Guides",
+            "url": "https://faroutguides.com/",
+            "description": "专为长途徒步与荒野骑行设计的离线步道地图指南平台。"
+          },
+          {
+            "name": "Wildsnow",
+            "url": "https://www.wildsnow.com/",
+            "description": "专注于野雪巡回(Backcountry"
+          },
+          {
+            "name": "Avalanche.org",
+            "url": "https://avalanche.org/",
+            "description": "北美雪崩预警与雪崩安全教育官方整合门户网站。"
+          },
+          {
+            "name": "European Avalanche Warning Services",
+            "url": "https://www.avalanches.org/",
+            "description": "欧洲雪崩预警服务联盟，提供阿尔卑斯山脉雪崩等级。"
+          },
+          {
+            "name": "POW (Protect Our Winters)",
+            "url": "https://protectourwinters.org/",
+            "description": "由户外运动爱好者发起的应对全球气候变暖与保护冬雪的"
+          },
+          {
+            "name": "International Dark-Sky Association (DarkSky)",
+            "url": "https://darksky.org/",
+            "description": "国际暗夜协会，致力于保护夜空自然环境与暗夜公园认证"
+          },
+          {
+            "name": "Clear Dark Sky",
+            "url": "http://www.cleardarksky.com/",
+            "description": "专为观星者与夜间户外摄影设计的北美天光透明度预报网"
+          },
+          {
+            "name": "Light Pollution Map",
+            "url": "https://www.lightpollutionmap.info/",
+            "description": "全球光污染地图，协助户外爱好者寻找最佳露营与观星地"
+          },
+          {
+            "name": "AstroTrails / PhotoPills",
+            "url": "https://www.photopills.com/",
+            "description": "户外风景摄影与星空摄影规划工具"
+          },
+          {
+            "name": "Earth Observatory (NASA)",
+            "url": "https://earthobservatory.nasa.gov/",
+            "description": "NASA地球观测站，发布全球自然景观"
+          },
+          {
+            "name": "USGS Earth Explorer",
+            "url": "https://earthexplorer.usgs.gov/",
+            "description": "美国地质调查局提供的高精地理拓扑"
+          },
+          {
+            "name": "OpenTopoMap",
+            "url": "https://opentopomap.org/",
+            "description": "基于OpenStreetMap数据的开源高线地形图"
+          },
+          {
+            "name": "CalTopo",
+            "url": "https://caltopo.com/",
+            "description": "极其强大的高阶户外地形图打印与搜索救援(SAR)定"
+          },
+          {
+            "name": "Fatmap",
+            "url": "https://fatmap.com/",
+            "description": "结合3D卫星图像的高清晰度户外登山"
+          },
+          {
+            "name": "PeakFinder",
+            "url": "https://www.peakfinder.org/",
+            "description": "只要输入坐标即可3D渲染并显示周围所有山峰名称的视"
+          },
+          {
+            "name": "Windfinder",
+            "url": "https://www.windfinder.com/",
+            "description": "专业的风速、浪高与天气预报网"
+          },
+          {
+            "name": "Windy.com",
+            "url": "https://www.windy.com/",
+            "description": "全球高精度风场、气压、云层与雷暴实时动态风场气象预"
+          },
+          {
+            "name": "Mountain Weather (MeteoBlue)",
+            "url": "https://www.meteoblue.com/",
+            "description": "提供高海拔高山地区微气候与山峰气象模型的专业网站。"
+          },
+          {
+            "name": "Mountain Forecast",
+            "url": "https://www.mountain-forecast.com/",
+            "description": "针对全球数千座山峰不同海拔高度的专业山峰天气预报网"
+          },
+          {
+            "name": "Snow Forecast",
+            "url": "https://www.snow-forecast.com/",
+            "description": "全球滑雪场与野雪山峰的降雪预报及雪况监测门户。"
+          },
+          {
+            "name": "Wilderness Society",
+            "url": "https://www.wilderness.org/",
+            "description": "美国荒野协会，致力于保护公共土地与原始森林不受开发"
+          },
+          {
+            "name": "Sierra Club",
+            "url": "https://www.sierraclub.org/",
+            "description": "美国历史最悠久、规模最大的探索自然与生态环境保护组"
+          },
+          {
+            "name": "The Nature Conservancy",
+            "url": "https://www.nature.org/",
+            "description": "全球著名的自然环保组织，保护对生物多样性至关重要陆"
+          },
+          {
+            "name": "Conservation International",
+            "url": "https://www.conservation.org/",
+            "description": "保护国际基金会，致力于保护地球自然的生物多样性与人"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Audubon Society",
+            "url": "https://www.audubon.org/",
+            "description": "专注于野生鸟类及其栖息地保护的保护协会门户。"
+          },
+          {
+            "name": "Earth Island Institute",
+            "url": "https://www.earthisland.org/",
+            "description": "支持环境保护活动家与环境创新的全球自然生态网络。"
+          },
+          {
+            "name": "Marine Conservation Society",
+            "url": "https://www.mcsuk.org/",
+            "description": "英国海洋保护协会，致力于海洋生物"
+          },
+          {
+            "name": "Ocean Conservancy",
+            "url": "https://oceanconservancy.org/",
+            "description": "专注于解决海洋垃圾、保护海洋野生动物与极地海洋生态"
+          },
+          {
+            "name": "Sea Shepherd Conservation Society",
+            "url": "https://seashepherd.org/",
+            "description": "著名的海洋守护者协会，采取直接行动保护海洋野生动物"
+          },
+          {
+            "name": "Coral Reef Alliance",
+            "url": "https://coral.org/",
+            "description": "致力于保护全球珊瑚礁生态系统免受污染与气候变化破坏"
+          },
+          {
+            "name": "Rainforest Alliance",
+            "url": "https://www.rainforest-alliance.org/",
+            "description": "热带雨林联盟，推广可持续林业、农业与热带生态保护。"
+          },
+          {
+            "name": "Rainforest Foundation",
+            "url": "https://rainforestfoundation.org/",
+            "description": "致力于保护雨林并捍卫原住民在雨林中的土地权利。"
+          },
+          {
+            "name": "Trees for Life",
+            "url": "https://treesforlife.org.uk/",
+            "description": "致力于恢复苏格兰高地原始卡利多尼安森林的生态野化组"
+          },
+          {
+            "name": "Rewilding Europe",
+            "url": "https://rewilding-europe.com/",
+            "description": "欧洲野生自然重构计划，旨在让欧洲土地重新恢复野生自"
+          },
+          {
+            "name": "Rewilding Britain",
+            "url": "https://www.rewildingbritain.org.uk/",
+            "description": "致力于让英国大自然恢复野性与生态多样性的倡导组织。"
+          },
+          {
+            "name": "International Union for Conservation of Nature (IUCN)",
+            "url": "https://www.iucn.org/",
+            "description": "世界自然保护联盟，发布著名的濒危物种红皮书。"
+          },
+          {
+            "name": "Global Forest Watch",
+            "url": "https://www.globalforestwatch.org/",
+            "description": "实时监测全球森林砍伐、森林火灾与树木覆盖变化的地图"
+          },
+          {
+            "name": "Wildlands Network",
+            "url": "https://wildlandsnetwork.org/",
+            "description": "致力于建立野生动物迁徙走廊，连接北美三大洲际荒野。"
+          },
+          {
+            "name": "Planet Foundation",
+            "url": "https://www.planet.com/",
+            "description": "利用卫星高频成像监测全球自然环境变化与地理地貌。"
+          },
+          {
+            "name": "Bat Conservation International",
+            "url": "https://www.batcon.org/",
+            "description": "专注于全球蝙蝠物种保护及其自然栖息地维护的专业机构"
+          },
+          {
+            "name": "Buglife",
+            "url": "https://www.buglife.org.uk/",
+            "description": "欧洲唯一致力于保护所有无脊椎动物及其栖息地的自然保"
+          },
+          {
+            "name": "Butterfly Conservation",
+            "url": "https://butterfly-conservation.org/",
+            "description": "专注于蝴蝶与蛾类生态研究、栖息地维护的自然网。"
+          },
+          {
+            "name": "Botanical Society of Britain & Ireland",
+            "url": "https://bsbi.org/",
+            "description": "不列颠群岛植物学会，研究并记录野生植物分布地图。"
+          },
+          {
+            "name": "Native Plant Trust",
+            "url": "https://www.nativeplanttrust.org/",
+            "description": "美国最悠久的野生植物保护组织"
+          },
+          {
+            "name": "Kew Gardens (Royal Botanic Gardens)",
+            "url": "https://www.kew.org/",
+            "description": "英国皇家植物园，全球植物与真菌科学研究的顶尖机构。"
+          },
+          {
+            "name": "Missouri Botanical Garden",
+            "url": "https://www.missouribotanicalgarden.org/",
+            "description": "世界顶级的植物科研机构，拥有庞大的植物标本与物种库"
+          },
+          {
+            "name": "Calflora",
+            "url": "https://www.calflora.org/",
+            "description": "致力于记录与研究加州所有野生植物分布与生态的数据库"
+          },
+          {
+            "name": "USDA Plants Database",
+            "url": "https://plants.usda.gov/",
+            "description": "美国农业部野生与栽培植物权威分类数据库。"
+          },
+          {
+            "name": "MushroomExpert",
+            "url": "https://www.mushroomexpert.com/",
+            "description": "北美真菌与野生蘑菇分类、鉴定与野外辨识的专业网站。"
+          },
+          {
+            "name": "Fungus101 (Fungi Magazine)",
+            "url": "https://www.fungimag.com/",
+            "description": "专注于野生真菌、蘑菇采集与真菌生态学的专业杂志。"
+          },
+          {
+            "name": "British Mycological Society",
+            "url": "https://www.britmycolsoc.org.uk/",
+            "description": "英国真菌学会，促进真菌科学、野外观察与真菌保护。"
+          },
+          {
+            "name": "North American Mycological Association",
+            "url": "https://namyco.org/",
+            "description": "北美真菌学协会，为野外蘑菇采集与鉴赏爱好者提供指南"
+          },
+          {
+            "name": "Wild Food UK",
+            "url": "https://www.wildfooduk.com/",
+            "description": "英国野外采集(Foraging)指南"
+          },
+          {
+            "name": "Foraging Texas",
+            "url": "https://www.foragingtexas.com/",
+            "description": "详细介绍南方荒野植物可食度"
+          },
+          {
+            "name": "Falling Fruit",
+            "url": "https://fallingfruit.org/",
+            "description": "全球城市与荒野边缘可食用植物、果树位置的共享地图。"
+          },
+          {
+            "name": "Tracker Certification (Track & Sign)",
+            "url": "https://www.trackandsign.org/",
+            "description": "荒野动物足迹追踪、行为分析与追踪师认证官方网站。"
+          },
+          {
+            "name": "CyberTracker",
+            "url": "https://www.cybertracker.org/",
+            "description": "全球动物足迹追踪技术与荒野生态保护监测评估系统。"
+          },
+          {
+            "name": "International Wolf Center",
+            "url": "https://wolf.org/",
+            "description": "致力于狼群自然生存、生态地位科普与狼群栖息地保护。"
+          },
+          {
+            "name": "Bear Trust International",
+            "url": "https://beartrust.org/",
+            "description": "专注于全球野生熊类及其自然生态系统保护的非营利网站"
+          },
+          {
+            "name": "Save the Elephants",
+            "url": "https://www.savetheelephants.org/",
+            "description": "致力于保护野生非洲象免受盗猎并维护其迁徙通道。"
+          },
+          {
+            "name": "Cheetah Conservation Fund",
+            "url": "https://cheetah.org/",
+            "description": "全球致力于保护野生猎豹及其非洲稀树草原生态的机构。"
+          },
+          {
+            "name": "Snow Leopard Trust",
+            "url": "https://snowleopard.org/",
+            "description": "致力于保护高山雪豹及其高原荒野栖息地的国际组织。"
+          },
+          {
+            "name": "International Crane Foundation",
+            "url": "https://www.savingcranes.org/",
+            "description": "致力于全球15种野生鹤类及其湿地生态系统的保护网。"
+          },
+          {
+            "name": "Hawk Mountain Sanctuary",
+            "url": "https://www.hawkmountain.org/",
+            "description": "全球首个保护猛禽的自然保护区，专注于猛禽迁徙监测。"
+          },
+          {
+            "name": "Raptors Conservation",
+            "url": "https://www.peregrinefund.org/",
+            "description": "游隼基金会，致力于保护全球濒危鹰、隼"
+          },
+          {
+            "name": "International Otters Protection",
+            "url": "https://otter.org/",
+            "description": "专注于全球水獭物种及其河流湿地环境保护的网站。"
+          },
+          {
+            "name": "Wildfowl & Wetlands Trust (WWT)",
+            "url": "https://www.wwt.org.uk/",
+            "description": "英国湿地与野鸭保护信托，保护自然湿地与水鸟生态。"
+          },
+          {
+            "name": "Ducks Unlimited",
+            "url": "https://www.ducks.org/",
+            "description": "北美最大的湿地与水鸟栖息地恢复与自然保护非营利组织"
+          },
+          {
+            "name": "Trout Unlimited",
+            "url": "https://www.tu.org/",
+            "description": "致力于保护冷水鱼类(冷水鳟鱼与鲑鱼)及其流域生态。"
+          },
+          {
+            "name": "Native Fish Coalition",
+            "url": "https://nativefishcoalition.org/",
+            "description": "致力于保护北美原生淡水鱼类与原始溪流环境。"
+          },
+          {
+            "name": "Bonefish & Tarpon Trust",
+            "url": "https://www.bonetarp.org/",
+            "description": "专注于热带浅滩与浅海鱼类栖息地生态保护的组织。"
+          },
+          {
+            "name": "Fly Fishing Forum",
+            "url": "https://www.flyfishingforum.com/",
+            "description": "飞钓(Fly Fishing)爱好者社区"
+          },
+          {
+            "name": "Midcurrent",
+            "url": "https://midcurrent.com/",
+            "description": "飞钓文学、溪流艺术、飞钓技术与自然水体保护综合网站"
+          },
+          {
+            "name": "Moldy Chum",
+            "url": "https://www.moldychum.com/",
+            "description": "充满活力的野外飞钓、溪流探险与环保新闻博客。"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Catch Magazine",
+            "url": "https://www.catchmagazine.net/",
+            "description": "高清照片与视频展示全球顶尖飞钓地点与荒野水域的摄影"
+          },
+          {
+            "name": "AnglingTimes",
+            "url": "https://www.anglingtimes.co.uk/",
+            "description": "英国著名钓鱼杂志，关注自然河流"
+          },
+          {
+            "name": "American Canoe Association (ACA)",
+            "url": "https://americancanoe.org/",
+            "description": "推广皮划艇、独木舟与水上安全的美国官方"
+          },
+          {
+            "name": "Canoe & Kayak",
+            "url": "https://www.canoekayak.com/",
+            "description": "经典水上运动杂志，包含划艇路线、水上探险与装备。"
+          },
+          {
+            "name": "Rapid Media",
+            "url": "https://paddlingmag.com/",
+            "description": "包含皮划艇、独木舟与水上漂流的《Paddling"
+          },
+          {
+            "name": "National Whitewater Centre",
+            "url": "https://www.wateractivity.co.uk/",
+            "description": "英国国家白水水上运动中心，提供白水漂流与划艇指南。"
+          },
+          {
+            "name": "River Runner",
+            "url": "https://river-runner.theoutrageousokapi.com/",
+            "description": "可以在地图上任意点点击并模拟一滴水流向大海整个流域"
+          },
+          {
+            "name": "RiverMap",
+            "url": "https://www.rivermap.org/",
+            "description": "欧洲河流实时水位、水温与漂流可行性监测地图。"
+          },
+          {
+            "name": "Freecampsites.net",
+            "url": "https://freecampsites.net/",
+            "description": "汇集全球免费野营点、野外驻扎点与车宿位置的开源社区"
+          },
+          {
+            "name": "Campendium",
+            "url": "https://www.campendium.com/",
+            "description": "房车(RV)与野外露营地详细评测"
+          },
+          {
+            "name": "iOverlander",
+            "url": "https://www.ioverlander.com/",
+            "description": "全球越野自驾与自负重露营爱好者维护的越野营地与资源"
+          },
+          {
+            "name": "Overland Journal",
+            "url": "https://overlandjournal.com/",
+            "description": "专注于自驾越野探险、荒野远征与越野装备的印刷与在线"
+          },
+          {
+            "name": "Expedition Portal",
+            "url": "https://expeditionportal.com/",
+            "description": "全球最大的越野车辆改造、荒野远征与全球自驾社区。"
+          },
+          {
+            "name": "Outdoor Journal",
+            "url": "https://www.outdoorjournal.com/",
+            "description": "国际探险与文化杂志，探讨极限探险、荒野文化与生态。"
+          },
+          {
+            "name": "SOTO Outdoors",
+            "url": "https://sotooutdoors.com/",
+            "description": "专注于高品质野外炉具、户外炊具与抗风科技网站。"
+          },
+          {
+            "name": "Snow Peak",
+            "url": "https://www.snowpeak.com/",
+            "description": "日本顶尖精致露营(Glamping)品牌"
+          },
+          {
+            "name": "MSR (Mountain Safety Research)",
+            "url": "https://www.msrgear.com/",
+            "description": "专注于户外安全、帐篷、净水器与雪地装备的研发网。"
+          },
+          {
+            "name": "Black Diamond Equipment",
+            "url": "https://www.blackdiamond装备.com/",
+            "description": "顶级攀岩、登山、头灯与滑雪装备设计官方网站。"
+          },
+          {
+            "name": "Petzl",
+            "url": "https://www.petzl.com/",
+            "description": "攀登装备、探洞装备与垂直高空安全作业器材的权威网站"
+          },
+          {
+            "name": "Hyperlite Mountain Gear",
+            "url": "https://www.hyperlitemountaingear.com/",
+            "description": "采用大力马(Dyneema)面料的顶级超轻徒步背包"
+          },
+          {
+            "name": "Zpacks",
+            "url": "https://zpacks.com/",
+            "description": "超轻量长途徒步装备专家，主打超轻超强力超轻帐篷与睡"
+          },
+          {
+            "name": "Tarptent",
+            "url": "https://www.tarptent.com/",
+            "description": "专注于轻量化庇护所与创新户外帐篷设计的专业网站。"
+          },
+          {
+            "name": "Nemo Equipment",
+            "url": "https://www.nemoequipment.com/",
+            "description": "专注于户外露营气垫、睡袋与创新露营装备设计的品牌官"
+          },
+          {
+            "name": "Sea to Summit",
+            "url": "https://seatosummit.com/",
+            "description": "澳大利亚知名轻量化露营配件、防水袋与户外餐具品牌。"
+          },
+          {
+            "name": "Therm-a-Rest",
+            "url": "https://www.thermarest.com/",
+            "description": "户外露营睡垫、充气垫与睡袋舒适度标准的业内领跑者。"
+          },
+          {
+            "name": "Cascade Designs",
+            "url": "https://www.cascadedesigns.com/",
+            "description": "旗下包含MSR、Therm-a-Rest"
+          },
+          {
+            "name": "Hilleberg",
+            "url": "https://hilleberg.com/",
+            "description": "瑞典顶级帐篷品牌(被称为“帐篷之王”)"
+          },
+          {
+            "name": "Big Agnes",
+            "url": "https://www.bigagnes.com/",
+            "description": "专注于舒适露营帐篷、轻量睡袋与露营家具的户外品牌。"
+          },
+          {
+            "name": "Osprey Packs",
+            "url": "https://www.osprey.com/",
+            "description": "全球著名的专业户外徒步背包与旅行背包品牌官网。"
+          },
+          {
+            "name": "Gregory Packs",
+            "url": "https://gregorypacks.com/",
+            "description": "专注于人体工程学重载徒步背包与舒适背负系统的品牌网"
+          },
+          {
+            "name": "Mystery Ranch",
+            "url": "https://www.mysteryranch.com/",
+            "description": "神农(神秘农场)背包官网"
+          },
+          {
+            "name": "Deuter",
+            "url": "https://www.deuter.com/",
+            "description": "德国百年背包品牌，专注于登山、徒步与户外骑行包。"
+          },
+          {
+            "name": "Lowa Boots",
+            "url": "https://www.lowaboots.com/",
+            "description": "德国顶级手工登山鞋与徒步靴品牌官网。"
+          },
+          {
+            "name": "Salomon",
+            "url": "https://www.salomon.com/",
+            "description": "越野跑鞋、越野装备与滑雪装备的国际知名品牌。"
+          },
+          {
+            "name": "La Sportiva",
+            "url": "https://www.lasportiva.com/",
+            "description": "意大利顶级攀岩鞋、高山靴与越野跑装备制造商。"
+          },
+          {
+            "name": "Scarpa",
+            "url": "https://www.scarpa.com/",
+            "description": "意大利经典户外鞋履品牌，专长于滑雪靴"
+          },
+          {
+            "name": "Hanwag",
+            "url": "https://www.hanwag.com/",
+            "description": "德国传统手工制鞋品牌，专注于耐用徒步靴与高山登山鞋"
+          },
+          {
+            "name": "Meindl",
+            "url": "https://www.meindl.de/",
+            "description": "德国经典皮质徒步鞋品牌，传承百年手工造鞋工艺。"
+          },
+          {
+            "name": "Primus",
+            "url": "https://www.primus.us/",
+            "description": "瑞典百年户外炉具品牌，专注于野外移动烹饪设备。"
+          },
+          {
+            "name": "Jetboil",
+            "url": "https://www.jetboil.com/",
+            "description": "专注于快速煮沸的高效一体式户外户外个人炉具系统。"
+          },
+          {
+            "name": "Katadyn",
+            "url": "https://www.katadyn.com/",
+            "description": "全球野外水净化系统与便携净水器领域的权威品牌。"
+          },
+          {
+            "name": "Sawyers Products",
+            "url": "https://sawyer.com/",
+            "description": "知名野外净水过滤器、防蚊液与野外急救用品网站。"
+          },
+          {
+            "name": "Garmin Outdoor",
+            "url": "https://www.garmin.com/en-US/c/outdoor-recreation/",
+            "description": "佳明户外专区，包含手持GPS"
+          },
+          {
+            "name": "SPOT Satellite Tracker",
+            "url": "https://www.findmespot.com/",
+            "description": "荒野 SOS 求救、卫星定位与轨迹追踪设备官网。"
+          },
+          {
+            "name": "Suunto",
+            "url": "https://www.suunto.com/",
+            "description": "芬兰专业户外潜水电脑表、登山指南针与运动手表官网。"
+          },
+          {
+            "name": "Silva",
+            "url": "https://silvaweden.com/",
+            "description": "瑞典指南针发明者，专注于高精度定向越野指南针与头灯"
+          },
+          {
+            "name": "Brunton",
+            "url": "https://www.brunton.com/",
+            "description": "专注于地质学、野外导航与高精度地质指南针工具官网。"
+          },
+          {
+            "name": "Ordnance Survey (OS Maps)",
+            "url": "https://www.ordnancesurvey.co.uk/",
+            "description": "英国官方国家测绘局，提供最精确的英国户外拓扑地图。"
+          },
+          {
+            "name": "IGN Rando",
+            "url": "https://ignrando.fr/",
+            "description": "法国国家地理研究所推出的法国户外徒步与地形路线平台"
+          },
+          {
+            "name": "Swisstopo",
+            "url": "https://www.swisstopo.admin.ch/",
+            "description": "瑞士国家地形测绘局，全球制图精度最高"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑶𝑢𝑡𝑑𝑜𝑜𝑟 𝑵𝑎𝑡𝑢𝑟𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

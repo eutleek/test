@@ -1,0 +1,1388 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="游戏平台、游戏资讯、独立游戏、主机资源与玩家社区导航">
+<title>游戏网站 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>游戏网站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">游戏网站 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "游戏网站",
+    "icon": "🎮",
+    "color": "linear-gradient(135deg, #0984e3, #00cec9)",
+    "subcategories": [
+      {
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "IGN",
+            "url": "https://www.ign.com",
+            "description": "全球最大的综合性游戏媒体与资讯平台"
+          },
+          {
+            "name": "GameSpot",
+            "url": "https://www.gamespot.com",
+            "description": "知名老牌游戏评测网站，包含行业新闻"
+          },
+          {
+            "name": "PC Gamer",
+            "url": "https://www.pcgamer.com",
+            "description": "专注电脑游戏领域的权威杂志与网站，提供硬件测评"
+          },
+          {
+            "name": "Polygon",
+            "url": "https://www.polygon.com",
+            "description": "深度游戏文化与娱乐评论网站，探讨游戏叙事"
+          },
+          {
+            "name": "Eurogamer",
+            "url": "https://www.eurogamer.net",
+            "description": "欧洲顶尖游戏新闻与深度分析网站"
+          },
+          {
+            "name": "Kotaku",
+            "url": "https://kotaku.com",
+            "description": "包含游戏新闻、玩家文化、迷因与行业八卦的综合流行文"
+          },
+          {
+            "name": "Destructoid",
+            "url": "https://www.destructoid.com",
+            "description": "具有独立精神的游戏博客网，提供辛辣的游戏评论"
+          },
+          {
+            "name": "TouchArcade",
+            "url": "https://toucharcade.com",
+            "description": "专注于iOS及移动端移动游戏新闻"
+          },
+          {
+            "name": "Pocket Gamer",
+            "url": "https://www.pocketgamer.com",
+            "description": "权威手游行业与游戏评测媒体，覆盖iOS"
+          },
+          {
+            "name": "Siliconera",
+            "url": "https://www.siliconera.com",
+            "description": "专注日本游戏、二次元游戏及相关流行文化本地化资讯的"
+          },
+          {
+            "name": "Gematsu",
+            "url": "https://www.gematsu.com",
+            "description": "及时可靠的日本与全球电子游戏新闻追踪网站"
+          },
+          {
+            "name": "Rock Paper Shotgun",
+            "url": "https://www.rockpapershotgun.com",
+            "description": "专注于PC独立游戏、策略游戏与独立视角的英国著名游"
+          },
+          {
+            "name": "VG247",
+            "url": "https://www.vg247.com",
+            "description": "24小时不间断更新的快讯类游戏新闻网站"
+          },
+          {
+            "name": "GamesRadar+",
+            "url": "https://www.gamesradar.com",
+            "description": "整合游戏、电影、电视节目的综合娱乐站点"
+          },
+          {
+            "name": "Shacknews",
+            "url": "https://www.shacknews.com",
+            "description": "创立于1996年的老牌PC游戏资讯网站"
+          },
+          {
+            "name": "DualShockers",
+            "url": "https://www.dualshockers.com",
+            "description": "涵盖全平台 console 及 PC"
+          },
+          {
+            "name": "VGC (Video Games Chronicle)",
+            "url": "https://www.videogameschronicle.com",
+            "description": "由资深游戏记者创办的独立独家游戏行业新闻与市场分析"
+          },
+          {
+            "name": "Digital Trends Gaming",
+            "url": "https://www.digitaltrends.com/gaming/",
+            "description": "科技与电子游戏融合的综合评测频道"
+          },
+          {
+            "name": "Pocket Gamer.biz",
+            "url": "https://www.pocketgamer.biz",
+            "description": "专注于移动游戏 B2B 市场、开发者访谈"
+          },
+          {
+            "name": "Game Informer",
+            "url": "https://www.gameinformer.com",
+            "description": "北美著名游戏杂志官方网站"
+          },
+          {
+            "name": "Steam",
+            "url": "https://store.steampowered.com",
+            "description": "全球最大的数字版PC游戏分发平台，包含社区讨论"
+          },
+          {
+            "name": "Epic Games Store",
+            "url": "https://store.epicgames.com",
+            "description": "著名PC游戏发行平台，提供每周免费游戏领用及虚幻引"
+          },
+          {
+            "name": "GOG.com",
+            "url": "https://www.gog.com",
+            "description": "CD Projekt 旗下的无数字版权管理("
+          },
+          {
+            "name": "PlayStation Store",
+            "url": "https://store.playstation.com",
+            "description": "索尼官方PlayStation游戏数字商店"
+          },
+          {
+            "name": "Xbox Official Site",
+            "url": "https://www.xbox.com",
+            "description": "微软Xbox官方主页，涵盖Game"
+          },
+          {
+            "name": "Nintendo Direct / My Nintendo",
+            "url": "https://www.nintendo.com",
+            "description": "任天堂官方网站，提供Switch游戏信息"
+          },
+          {
+            "name": "Battle.net",
+            "url": "https://battle.net",
+            "description": "暴雪娱乐官方游戏平台，托管《魔兽世界》《暗黑破坏神"
+          },
+          {
+            "name": "Ubisoft Connect",
+            "url": "https://ubisoftconnect.com",
+            "description": "育碧官方游戏发行平台，包含玩家成就系统"
+          },
+          {
+            "name": "EA App",
+            "url": "https://www.ea.com",
+            "description": "EA官方游戏平台，提供EA Play订阅"
+          },
+          {
+            "name": "itch.io",
+            "url": "https://itch.io",
+            "description": "全球最大的独立游戏开发者托管与发布平台"
+          },
+          {
+            "name": "Humble Bundle",
+            "url": "https://www.humblebundle.com",
+            "description": "著名的慈善游戏慈善包销售网站，提供游戏捆绑包"
+          },
+          {
+            "name": "Fanatical",
+            "url": "https://www.fanatical.com",
+            "description": "正版正规授权的数字版游戏激活码折扣销售网站。"
+          },
+          {
+            "name": "Green Man Gaming",
+            "url": "https://www.greenmangaming.com",
+            "description": "英国知名数字版游戏零售商"
+          },
+          {
+            "name": "Roblox",
+            "url": "https://www.roblox.com",
+            "description": "全球最大的玩家自创3D沙盒游戏与开发社区平台。"
+          },
+          {
+            "name": "Minecraft",
+            "url": "https://www.minecraft.net",
+            "description": "著名沙盒游戏《我的世界》官方网站，提供客户端下载"
+          },
+          {
+            "name": "League of Legends",
+            "url": "https://www.leagueoflegends.com",
+            "description": "《英雄联盟》官方网站，提供客户端下载、英雄资料"
+          },
+          {
+            "name": "Genshin Impact",
+            "url": "https://genshin.hoyoverse.com",
+            "description": "米哈游《原神》官方主页，提供全球多语言客户端下载"
+          },
+          {
+            "name": "World of Warcraft",
+            "url": "https://worldofwarcraft.blizzard.com",
+            "description": "《魔兽世界》官方网站，包含新资料片信息"
+          },
+          {
+            "name": "Fortnite",
+            "url": "https://www.fortnite.com",
+            "description": "《堡垒之夜》官方主页，提供全新赛季资讯"
+          },
+          {
+            "name": "Counter-Strike 2",
+            "url": "https://www.counter-strike.net",
+            "description": "V社官方《反恐精英2》主页，提供游戏更新日志"
+          },
+          {
+            "name": "Final Fantasy XIV",
+            "url": "https://www.finalfantasyxiv.com",
+            "description": "《最终幻想14》MMORPG官方网站"
+          },
+          {
+            "name": "Valorant",
+            "url": "https://playvalorant.com",
+            "description": "拳头游戏旗下战术射击游戏《无畏契约》官方主页及下载"
+          },
+          {
+            "name": "Apex Legends",
+            "url": "https://www.ea.com/games/apex-legends",
+            "description": "《Apex英雄》官方主页，提供英雄技能介绍"
+          },
+          {
+            "name": "Path of Exile",
+            "url": "https://www.pathofexile.com",
+            "description": "经典暗黑风格动作角色扮演游戏《流放之路》官方论坛与"
+          },
+          {
+            "name": "Warframe",
+            "url": "https://www.warframe.com",
+            "description": "《星际战甲》官方主页，提供补丁说明"
+          },
+          {
+            "name": "Dota 2",
+            "url": "https://www.dota2.com",
+            "description": "《Dota 2》官方主页，包含英雄数据库"
+          },
+          {
+            "name": "Grand Theft Auto Online",
+            "url": "https://www.rockstargames.com/gta-online",
+            "description": "摇滚之星官方《GTA Online》更新"
+          },
+          {
+            "name": "Dead by Daylight",
+            "url": "https://deadbydaylight.com",
+            "description": "著名非对称对抗恐怖游戏《黎明杀机》官方更新与合作联"
+          },
+          {
+            "name": "Destiny 2",
+            "url": "https://www.bungie.net",
+            "description": "棒吉(Bungie)官方《命运2》主页"
+          },
+          {
+            "name": "Eve Online",
+            "url": "https://www.eveonline.com",
+            "description": "著名太空沙盒MMO《星战前夜》官方站点"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Twitch",
+            "url": "https://www.twitch.tv",
+            "description": "全球最大的电子游戏实时直播平台"
+          },
+          {
+            "name": "YouTube Gaming",
+            "url": "https://www.youtube.com/gaming",
+            "description": "YouTube旗下游戏视频与直播汇总频道"
+          },
+          {
+            "name": "SteamDB",
+            "url": "https://steamdb.info",
+            "description": "强大的Steam第三方数据库，提供在线人数"
+          },
+          {
+            "name": "Nexus Mods",
+            "url": "https://www.nexusmods.com",
+            "description": "全球最大的游戏MOD(模组)下载与分享社区"
+          },
+          {
+            "name": "Speedrun.com",
+            "url": "https://www.speedrun.com",
+            "description": "全球电子游戏通关(Speedrun)世界纪录权威认"
+          },
+          {
+            "name": "PCPartPicker",
+            "url": "https://pcpartpicker.com",
+            "description": "玩家自主DIY电脑装机配置单生成"
+          },
+          {
+            "name": "Liquipedia",
+            "url": "https://liquipedia.net",
+            "description": "液体百科，全球电竞领域最权威的比赛赛程"
+          },
+          {
+            "name": "Metacritic Gaming",
+            "url": "https://www.metacritic.com/game",
+            "description": "综合游戏媒体评价与玩家评分的全球最大媒体影评/游戏"
+          },
+          {
+            "name": "OpenCritic",
+            "url": "https://opencritic.com",
+            "description": "无偏见的电子游戏媒体评分聚合平台"
+          },
+          {
+            "name": "HowLongToBeat",
+            "url": "https://howlongtobeat.com",
+            "description": "统计与查询各类游戏主线、全收集及通关所需时间的玩家"
+          },
+          {
+            "name": "mobafire",
+            "url": "https://www.mobafire.com",
+            "description": "著名《英雄联盟》出装策略"
+          },
+          {
+            "name": "OP.GG",
+            "url": "https://www.op.gg",
+            "description": "战绩查询与数据分析网，支持英雄联盟、无畏契约"
+          },
+          {
+            "name": "Tracker.gg",
+            "url": "https://tracker.gg",
+            "description": "提供Apex、Fortnite"
+          },
+          {
+            "name": "u.gg",
+            "url": "https://u.gg",
+            "description": "官方API支持的高精准度《英雄联盟》胜率榜"
+          },
+          {
+            "name": "VLR.gg",
+            "url": "https://www.vlr.gg",
+            "description": "专注于《无畏契约》(Valorant)全球电竞赛事"
+          },
+          {
+            "name": "HLTV.org",
+            "url": "https://www.hltv.org",
+            "description": "全球最权威的《CS:GO /"
+          },
+          {
+            "name": "Chess.com",
+            "url": "https://www.chess.com",
+            "description": "全球最大的国际象棋在线对战"
+          },
+          {
+            "name": "Mod DB",
+            "url": "https://www.moddb.com",
+            "description": "历史悠久的游戏模组、复古游戏与独立开发者游戏社区。"
+          },
+          {
+            "name": "CurseForge",
+            "url": "https://www.curseforge.com",
+            "description": "专注于《我的世界》《魔兽世界》等游戏MOD及插件的"
+          },
+          {
+            "name": "IsThereAnyDeal",
+            "url": "https://isthereanydeal.com",
+            "description": "跟踪多个数字商店中PC游戏历史最低价"
+          },
+          {
+            "name": "Unity",
+            "url": "https://unity.com",
+            "description": "著名实时3D游戏开发引擎工具官方网站"
+          },
+          {
+            "name": "Unreal Engine",
+            "url": "https://www.unrealengine.com",
+            "description": "虚幻引擎官方网站，包含次世代游戏开发文档"
+          },
+          {
+            "name": "Godot Engine",
+            "url": "https://godotengine.org",
+            "description": "免费开源的2D/3D跨平台游戏开发引擎官方网站与社"
+          },
+          {
+            "name": "GameMaker",
+            "url": "https://gamemaker.io",
+            "description": "知名2D游戏开发软件官方主页"
+          },
+          {
+            "name": "Gamasutra / Game Developer",
+            "url": "https://www.gamedeveloper.com",
+            "description": "面向游戏行业专业人士的开发者专访"
+          },
+          {
+            "name": "Game Development Stack Exchange",
+            "url": "https://gamedev.stackexchange.com",
+            "description": "专业的游戏开发、编程与系统设计问答社区。"
+          },
+          {
+            "name": "Indie DB",
+            "url": "https://www.indiedb.com",
+            "description": "独立游戏开发者展示未上线作品"
+          },
+          {
+            "name": "CryEngine",
+            "url": "https://www.cryengine.com",
+            "description": "德国Crytek公司研发的高品质游戏引擎官方网站。"
+          },
+          {
+            "name": "RPG Maker Web",
+            "url": "https://www.rpgmakerweb.com",
+            "description": "经典RPG制作大师系列工具官方网站"
+          },
+          {
+            "name": "Construct 3",
+            "url": "https://www.scirra.com",
+            "description": "基于Web端的高效无代码/低代码2D游戏开发平台。"
+          },
+          {
+            "name": "Blender",
+            "url": "https://www.blender.org",
+            "description": "免费开源的3D建模、动画"
+          },
+          {
+            "name": "ArtStation",
+            "url": "https://www.artstation.com",
+            "description": "汇聚全球顶尖游戏概念设计师"
+          },
+          {
+            "name": "Polycount",
+            "url": "https://polycount.com",
+            "description": "专注于游戏3D美术创作、角色建模与贴图绘制的行业交"
+          },
+          {
+            "name": "OpenGameArt",
+            "url": "https://opengameart.org",
+            "description": "为独立游戏开发者提供免费开源游戏音频"
+          },
+          {
+            "name": "TIGSource",
+            "url": "https://forums.tigsource.com",
+            "description": "历史悠久的独立游戏开发者交流论坛"
+          },
+          {
+            "name": "4Gamer.net",
+            "url": "https://www.4gamer.net",
+            "description": "日本规模最大且具有权威性的综合PC与主机电子游戏新"
+          },
+          {
+            "name": "Famitsu (法米通)",
+            "url": "https://www.famitsu.com",
+            "description": "日本最著名的电子游戏周刊官方网站"
+          },
+          {
+            "name": "Bahamut (巴哈姆特)",
+            "url": "https://www.gamer.com.tw",
+            "description": "台湾地区最大的动漫与电子游戏论坛与综合资讯门户(论"
+          },
+          {
+            "name": "3DMGame (3DMGAME)",
+            "url": "https://www.3dmgame.com",
+            "description": "中国大陆知名的单机游戏资讯"
+          },
+          {
+            "name": "GamerSky (游民星空)",
+            "url": "https://www.gamersky.com",
+            "description": "综合性单机与主机游戏新闻门户，提供即时资讯"
+          },
+          {
+            "name": "NGA (NGA玩家社区)",
+            "url": "https://bbs.nga.cn",
+            "description": "中国极具影响力的精英游戏玩家社区，涵盖暴雪游戏"
+          },
+          {
+            "name": "TapTap",
+            "url": "https://www.taptap.cn",
+            "description": "高品质手游分享与玩家社区平台"
+          },
+          {
+            "name": "Gcores (机核网)",
+            "url": "https://www.gcores.com",
+            "description": "专注于游戏文化、电台节目(GADIO)与次文化研究"
+          },
+          {
+            "name": "Cowlevel (奶牛关)",
+            "url": "https://cowlevel.net",
+            "description": "游戏玩家与从业人员的游戏问答"
+          },
+          {
+            "name": "Xiaoheihe (小黑盒)",
+            "url": "https://www.xiaoheihe.cn",
+            "description": "提供Steam战绩查询、游戏百科"
+          },
+          {
+            "name": "VGtime (游戏时光)",
+            "url": "https://www.vgtime.com",
+            "description": "专注主机与PC游戏文化的优质内容媒体"
+          },
+          {
+            "name": "Touhou Wiki",
+            "url": "https://touhouwiki.net",
+            "description": "著名同人系列《东方Project》最详尽的多语言官"
+          },
+          {
+            "name": "Nookipedia",
+            "url": "https://nookipedia.com",
+            "description": "专注于任天堂《集合啦！动物森友会》系列的玩家协作百"
+          },
+          {
+            "name": "Bulbapedia",
+            "url": "https://bulbapedia.bulbagarden.net",
+            "description": "全球最权威的《宝可梦》(Pokémon)官方游戏与"
+          },
+          {
+            "name": "Zelda Wiki",
+            "url": "https://zelda.fandom.com",
+            "description": "详尽记录任天堂《塞尔达传说》系列世界观"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Uspotted / U.GG TFT",
+            "url": "https://tactics.tools",
+            "description": "《云顶之弈》(TFT)阵容胜率分析"
+          },
+          {
+            "name": "Mobalytics",
+            "url": "https://mobalytics.gg",
+            "description": "游戏玩家技能提升与实时AI分析助手，支持LOL"
+          },
+          {
+            "name": "Maxroll",
+            "url": "https://maxroll.gg",
+            "description": "专注于《暗黑破坏神4》《流放之路》《失落的方舟》等"
+          },
+          {
+            "name": "Icy Veins",
+            "url": "https://www.icy-veins.com",
+            "description": "资深MMO与卡牌游戏攻略网站"
+          },
+          {
+            "name": "Wowhead",
+            "url": "https://www.wowhead.com",
+            "description": "全球最大的《魔兽世界》数据库、任务攻略"
+          },
+          {
+            "name": "Raider.IO",
+            "url": "https://raider.io",
+            "description": "《魔兽世界》大秘境(Mythic+)与团队副本全球"
+          },
+          {
+            "name": "Light.gg",
+            "url": "https://www.light.gg",
+            "description": "《命运2》官方API支持的武器随机词条评分"
+          },
+          {
+            "name": "Genshin Impact Interactive Map",
+            "url": "https://genshin-impact-map.appsample.com",
+            "description": "第三方《原神》大地图资源点、宝箱"
+          },
+          {
+            "name": "Tarkov Changes / EFT Market",
+            "url": "https://tarkov-market.com",
+            "description": "《逃离塔科夫》跳蚤市场物品价格跳动实时监控与局内物"
+          },
+          {
+            "name": "PCGW (PCGamingWiki)",
+            "url": "https://www.pcgamingwiki.com",
+            "description": "致力于修复PC游戏Bug、解锁帧率上限"
+          },
+          {
+            "name": "RetroAchievements",
+            "url": "https://retroachievements.org",
+            "description": "为经典老旧复古主机游戏(NES, PS1,"
+          },
+          {
+            "name": "Emuparadise",
+            "url": "https://www.emuparadise.me",
+            "description": "历史悠久的复古游戏电子书"
+          },
+          {
+            "name": "RomHacking.net",
+            "url": "https://www.romhacking.net",
+            "description": "全球最大的经典游戏ROM改版"
+          },
+          {
+            "name": "Vimm's Lair",
+            "url": "https://vimm.net",
+            "description": "致力于保存1980至2000年代经典复古游戏模拟器"
+          },
+          {
+            "name": "Arcade Museum",
+            "url": "https://www.arcade-museum.com",
+            "description": "投币式街机游戏机台、 Pinball"
+          },
+          {
+            "name": "Hardcore Gaming 101",
+            "url": "https://www.hardcoregaming101.net",
+            "description": "深度研究电子游戏历史、复古游戏系列演变与冷门佳作的"
+          },
+          {
+            "name": "The Cutting Room Floor",
+            "url": "https://tcrf.net",
+            "description": "专门挖掘各大游戏代码中未被使用的残存图形"
+          },
+          {
+            "name": "Speedrun.com Guides",
+            "url": "https://www.speedrun.com/guides",
+            "description": "针对各游戏速通路线、Bug利用与路线优化的教学指南"
+          },
+          {
+            "name": "SpeedRunsLive",
+            "url": "https://www.speedrunslive.com",
+            "description": "实时比赛形式的游戏速通竞速与 Twitch"
+          },
+          {
+            "name": "TASVideos",
+            "url": "https://tasvideos.org",
+            "description": "工具辅助极限通关(Tool-Assisted"
+          },
+          {
+            "name": "BoardGameGeek (BGG)",
+            "url": "https://boardgamegeek.com",
+            "description": "全球最大的桌面游戏、桌游排行榜"
+          },
+          {
+            "name": "D&D Beyond",
+            "url": "https://www.dndbeyond.com",
+            "description": "龙与地下城(Dungeons &"
+          },
+          {
+            "name": "Roll20",
+            "url": "https://roll20.net",
+            "description": "全球最流行线跑团虚拟桌面平台"
+          },
+          {
+            "name": "Chessbase",
+            "url": "https://en.chessbase.com",
+            "description": "专业国际象棋新闻、特级大师对局棋谱数据库与软件分析"
+          },
+          {
+            "name": "Tabletop Simulator (Steam Portal)",
+            "url": "https://www.tabletopsimulator.com",
+            "description": "实体桌游模拟器官方网页，支持MOD自由导入各类桌游"
+          },
+          {
+            "name": "ChessTempo",
+            "url": "https://chesstempo.com",
+            "description": "专注于国际象棋战术解题、残局练习与开局棋谱库训练网"
+          },
+          {
+            "name": "Lichess",
+            "url": "https://lichess.org",
+            "description": "完全免费且无广告的开源在线国际象棋对战与教学平台。"
+          },
+          {
+            "name": "Wargamer",
+            "url": "https://www.wargamer.com",
+            "description": "专注于桌面战棋(如战锤40k)"
+          },
+          {
+            "name": "Dicebreaker",
+            "url": "https://www.dicebreaker.com",
+            "description": "专注于桌面游戏、TRPG与卡牌游戏新闻"
+          },
+          {
+            "name": "TCGplayer",
+            "url": "https://www.tcgplayer.com",
+            "description": "全球最大的集换式卡牌游戏(万智牌、宝可梦"
+          },
+          {
+            "name": "VGCats",
+            "url": "https://www.vgcats.com",
+            "description": "经典以网络猫咪为主角吐槽各类知名电子游戏的讽刺连载"
+          },
+          {
+            "name": "Penny Arcade",
+            "url": "https://www.penny-arcade.com",
+            "description": "著名电子游戏主题网络漫画站点"
+          },
+          {
+            "name": "Extra Credits",
+            "url": "https://www.youtube.com/extracredits",
+            "description": "著名游戏设计科普、游戏历史与游戏哲学解析系列视频官"
+          },
+          {
+            "name": "Game Maker's Toolkit (GMTK)",
+            "url": "https://gamemakerstoolkit.com",
+            "description": "知名游戏设计师 Mark Brown"
+          },
+          {
+            "name": "Digital Foundry",
+            "url": "https://www.eurogamer.net/digitalfoundry",
+            "description": "最权威的游戏画质表现、帧率测试与硬件性能硬核技术分"
+          },
+          {
+            "name": "Noclip",
+            "url": "https://www.youtube.com/c/NoclipVideo",
+            "description": "由 Danny O'Dwyer"
+          },
+          {
+            "name": "Video Game History Foundation",
+            "url": "https://gamehistory.org",
+            "description": "专注于保存与保存早期电子游戏源代码"
+          },
+          {
+            "name": "Critical Distance",
+            "url": "https://critical-distance.com",
+            "description": "收集全球优秀游戏批判性文章"
+          },
+          {
+            "name": "Indie Games Plus",
+            "url": "https://indiegamesplus.com",
+            "description": "专门挖掘并介绍冷门、小众与实验性独立电子游戏的博客"
+          },
+          {
+            "name": "Push Square",
+            "url": "https://www.pushsquare.com",
+            "description": "专注于索尼 PlayStation"
+          },
+          {
+            "name": "Nintendo Life",
+            "url": "https://www.nintendo-life.com",
+            "description": "欧洲著名的任天堂主题综合媒体"
+          },
+          {
+            "name": "Pure Xbox",
+            "url": "https://www.purexbox.com",
+            "description": "专门报道微软 Xbox 硬件"
+          },
+          {
+            "name": "Pocket Tactics",
+            "url": "https://www.pockettactics.com",
+            "description": "专注于掌机与手机上的策略游戏"
+          },
+          {
+            "name": "VRFocus / Road to VR",
+            "url": "https://www.roadtovr.com",
+            "description": "专注于虚拟现实(VR)与增强现实(AR)游戏与硬件"
+          },
+          {
+            "name": "UploadVR",
+            "url": "https://uploadvr.com",
+            "description": "VR游戏行业权威新闻网，包含Meta Quest"
+          },
+          {
+            "name": "SuperData Research",
+            "url": "https://www.nielsen.com",
+            "description": "著名市场调研机构旗下专注于数字游戏与电竞市场消费数"
+          },
+          {
+            "name": "Newzoo",
+            "url": "https://newzoo.com",
+            "description": "全球首屈一指的游戏与电子竞技市场情报"
+          },
+          {
+            "name": "Sensor Tower",
+            "url": "https://sensortower.com",
+            "description": "全球移动应用与手机游戏收入"
+          },
+          {
+            "name": "App Annie / Data.ai",
+            "url": "https://www.data.ai",
+            "description": "移动游戏市场数据分析洞察平台"
+          },
+          {
+            "name": "GamesIndustry.biz",
+            "url": "https://www.gamesindustry.biz",
+            "description": "电子游戏 B2B 产业新闻领导者，涵盖并购"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Esports Charts",
+            "url": "https://escharts.com",
+            "description": "提供全球各类电子游戏电竞赛事观赛人数"
+          },
+          {
+            "name": "Esports Insider",
+            "url": "https://esportsinsider.com",
+            "description": "电子竞技产业商业资讯、投资赞助与B2B行业活动报道"
+          },
+          {
+            "name": "Dot Esports",
+            "url": "https://dotesports.com",
+            "description": "覆盖英雄联盟、Valorant"
+          },
+          {
+            "name": "Game Rant",
+            "url": "https://gamerant.com",
+            "description": "提供流行电子游戏攻略、粉丝理论"
+          },
+          {
+            "name": "Screen Rant Gaming",
+            "url": "https://screenrant.com/gaming/",
+            "description": "涵盖游戏行业趋势、游戏内彩蛋解析与买家建议的综合娱"
+          },
+          {
+            "name": "Attack of the Fanboy",
+            "url": "https://attackofthefanboy.com",
+            "description": "涵盖PC与主机端大作评测"
+          },
+          {
+            "name": "GamingBolt",
+            "url": "https://gamingbolt.com",
+            "description": "提供游戏业界访谈、画质对比"
+          },
+          {
+            "name": "TechRaptor",
+            "url": "https://techraptor.net",
+            "description": "专注于电子游戏与桌面游戏的独立评测网站"
+          },
+          {
+            "name": "Bleeding Cool Gaming",
+            "url": "https://bleedingcool.com/games/",
+            "description": "整合动漫、美漫与电子游戏潮流信息的流行文化站点游戏"
+          },
+          {
+            "name": "Hardcore Gamer",
+            "url": "https://hardcoregamer.com",
+            "description": "针对硬核玩家群体，提供深度的单机与主机游戏长文测评"
+          },
+          {
+            "name": "CGMagazine",
+            "url": "https://www.cgmagonline.com",
+            "description": "加拿大著名的计算机与电子游戏文化线上杂志"
+          },
+          {
+            "name": "Siliconera Guides",
+            "url": "https://www.siliconera.com/category/guides/",
+            "description": "针对日系RPG、二次元游戏(如原神"
+          },
+          {
+            "name": "DualShockers Features",
+            "url": "https://www.dualshockers.com/category/editorials/",
+            "description": "专注于玩家观点探讨、游戏设计反思与角色深度分析的社"
+          },
+          {
+            "name": "Strategy Gamer",
+            "url": "https://www.strategygamer.com",
+            "description": "专门针对 Grand Strategy"
+          },
+          {
+            "name": "Wccftech Gaming",
+            "url": "https://wccftech.com/category/news/gaming/",
+            "description": "结合PC硬件性能、显卡测试与最新游戏泄密爆料的科技"
+          },
+          {
+            "name": "Overclock3D (OC3D)",
+            "url": "https://www.overclock3d.net",
+            "description": "专注于PC游戏优化、画面设置性能评估及超频硬件搭配"
+          },
+          {
+            "name": "Blur Busters",
+            "url": "https://blurbusters.com",
+            "description": "专注于游戏显示器高刷新率"
+          },
+          {
+            "name": "DisplayNinja",
+            "url": "https://www.displayninja.com",
+            "description": "游戏玩家选购电竞显示器、面板类型("
+          },
+          {
+            "name": "RTINGS Gaming Monitors",
+            "url": "https://www.rtings.com/monitor",
+            "description": "最客观严谨的硬件评测网，提供基于实验室数据的电竞显"
+          },
+          {
+            "name": "TFTCentral",
+            "url": "https://tftcentral.co.uk",
+            "description": "深入探讨显示器面板、HDR画质表现与游戏响应延迟的"
+          },
+          {
+            "name": "Rock Paper Shotgun Best Lists",
+            "url": "https://www.rockpapershotgun.com/best-pc-games",
+            "description": "按类型分类(如史上最强RPG"
+          },
+          {
+            "name": "GamesRadar Hardware",
+            "url": "https://www.gamesradar.com/best-gaming-pc/",
+            "description": "针对PS5、Xbox及PC玩家的电竞椅"
+          },
+          {
+            "name": "PC Games N",
+            "url": "https://www.pcgamesn.com",
+            "description": "专注PC平台游戏动态、每日新闻"
+          },
+          {
+            "name": "Gamepur",
+            "url": "https://www.gamepur.com",
+            "description": "提供详尽的游戏保姆级通关图文攻略"
+          },
+          {
+            "name": "Twinfinite",
+            "url": "https://twinfinite.net",
+            "description": "结合动漫文化与主机游戏的综合评论网"
+          },
+          {
+            "name": "Operation Sports",
+            "url": "https://www.operationsports.com",
+            "description": "专注于体育模拟游戏(如 NBA 2K, EA"
+          },
+          {
+            "name": "SimCrew / RaceDepartment",
+            "url": "https://www.overtake.gg",
+            "description": "全球最大的赛车模拟游戏(Assetto"
+          },
+          {
+            "name": "FlightSim.to",
+            "url": "https://flightsim.to",
+            "description": "微软飞行模拟(MSFS)最著名的免费飞机机箱"
+          },
+          {
+            "name": "iRacing",
+            "url": "https://www.iracing.com",
+            "description": "全球最专业的职业级在线竞速模拟赛车平台与赛事官方主"
+          },
+          {
+            "name": "SimHQ",
+            "url": "https://simhq.com",
+            "description": "专注空战模拟、陆战模拟与赛车模拟游戏的硬核模拟玩家"
+          },
+          {
+            "name": "Star Citizen Official Site",
+            "url": "https://robertsspaceindustries.com",
+            "description": "《星际公民》官方主页，提供舰队购买"
+          },
+          {
+            "name": "No Man's Sky Official",
+            "url": "https://www.nomanssky.com",
+            "description": "《无人深空》官方主页，展示其长达数年的所有重大版本"
+          },
+          {
+            "name": "Elite Dangerous",
+            "url": "https://www.elitedangerous.com",
+            "description": "经典宇宙探索沙盒游戏《精英:危险》官方主页与银河系"
+          },
+          {
+            "name": "CD Projekt Red",
+            "url": "https://www.cdprojektred.com",
+            "description": "著名波兰游戏开发商(巫师系列"
+          },
+          {
+            "name": "Rockstar Games Newswire",
+            "url": "https://www.rockstargames.com/newswire",
+            "description": "摇滚之星官方发布旗下大作独家新闻与更新公告的官方博"
+          },
+          {
+            "name": "Square Enix North America",
+            "url": "https://square-enix-games.com",
+            "description": "史克威尔艾尼克斯官方游戏展示、前瞻与官方商店入口。"
+          },
+          {
+            "name": "Capcom Official",
+            "url": "https://www.capcom.com",
+            "description": "卡普空官方网站，提供《怪物猎人》《生化危机》《街霸"
+          },
+          {
+            "name": "Bandai Namco Entertainment",
+            "url": "https://www.bandainamcoent.com",
+            "description": "万代南梦宫官方站点，覆盖旗下漫改游戏"
+          },
+          {
+            "name": "SEGA Official",
+            "url": "https://www.sega.com",
+            "description": "世嘉官方网站，包含《如龙》《刺猬索尼克》《女神异闻"
+          },
+          {
+            "name": "Team17",
+            "url": "https://www.team17.com",
+            "description": "著名独立游戏发行商(百战天虫"
+          },
+          {
+            "name": "Devolver Digital",
+            "url": "https://www.devolverdigital.com",
+            "description": "以个性疯狂和艺术风格独特著称的著名独立游戏发行商官"
+          },
+          {
+            "name": "Annapurna Interactive",
+            "url": "https://annapurnainteractive.com",
+            "description": "顶级叙事型独立游戏(如《Stray》《Outer"
+          },
+          {
+            "name": "Raw Fury",
+            "url": "https://rawfury.com",
+            "description": "专注于微型独立游戏与艺术品味作品的独立游戏工作室官"
+          },
+          {
+            "name": "Paradox Interactive",
+            "url": "https://www.paradoxinteractive.com",
+            "description": "著名大战略游戏发售商(P社:钢铁雄心"
+          },
+          {
+            "name": "THQ Nordic",
+            "url": "https://thqnordic.com",
+            "description": "拥有大量经典IP的欧洲游戏发行巨头官方网站与作品展"
+          },
+          {
+            "name": "Remedy Entertainment",
+            "url": "https://www.remedygames.com",
+            "description": "知名叙事驱动游戏开发商(心灵杀手、控制"
+          },
+          {
+            "name": "Kojima Productions",
+            "url": "https://www.kojimaproductions.jp",
+            "description": "小岛秀夫创办的小岛工作室官方主页"
+          },
+          {
+            "name": "FromSoftware",
+            "url": "https://www.fromsoftware.jp",
+            "description": "著名硬核动作游戏开发商(艾尔登法环、黑魂"
+          },
+          {
+            "name": "Supergiant Games",
+            "url": "https://www.supergiantgames.com",
+            "description": "著名独立游戏精品工作室(《黑帝斯》《堡垒》)官方主"
+          },
+          {
+            "name": "Larian Studios",
+            "url": "https://larian.com",
+            "description": "著名角色扮演游戏开发商(《博德之门3》《神界:原罪"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑮𝑎𝑚𝑒 𝑺𝑖𝑡𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

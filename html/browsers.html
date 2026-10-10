@@ -1,0 +1,1439 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球浏览器大全：大厂浏览器、第三方开发浏览器、个人自制浏览器与奇奇怪怪特色浏览器精选导航">
+<title>浏览器大全 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Vibe Coding 大赏</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">Vibe Coding 大赏 · 个人与极小团队的 AI 编程作品导航</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+ {
+  "name": "全球浏览器大全",
+  "icon": "🌐",
+  "color": "linear-gradient(135deg, #0071e3, #00c6ff)",
+  "subcategories": [
+   {
+    "name": "国际巨头",
+    "enName": "International Giants",
+    "links": [
+     {
+      "name": "Google Chrome",
+      "url": "https://www.google.com/chrome/",
+      "description": "Google 出品，全球份额第一的浏览器"
+     },
+     {
+      "name": "Apple Safari",
+      "url": "https://www.apple.com/safari/",
+      "description": "Apple 自研，iPhone 与 Mac 内置浏览器"
+     },
+     {
+      "name": "Microsoft Edge",
+      "url": "https://www.microsoft.com/edge",
+      "description": "微软出品，Windows 内置默认浏览器"
+     },
+     {
+      "name": "Mozilla Firefox",
+      "url": "https://www.mozilla.org/firefox/",
+      "description": "Mozilla 开源旗舰，隐私优先浏览器"
+     },
+     {
+      "name": "Opera",
+      "url": "https://www.opera.com/",
+      "description": "挪威 Opera 出品，老牌创新浏览器"
+     },
+     {
+      "name": "Samsung Internet",
+      "url": "https://browser.samsung.com/",
+      "description": "三星出品，Galaxy 手机内置浏览器"
+     },
+     {
+      "name": "Yandex Browser",
+      "url": "https://browser.yandex.com/",
+      "description": "俄罗斯 Yandex 出品，独联体主流浏览器"
+     },
+     {
+      "name": "Opera GX",
+      "url": "https://www.opera.com/gx",
+      "description": "Opera 出品，全球首款游戏浏览器"
+     },
+     {
+      "name": "Brave",
+      "url": "https://brave.com/",
+      "description": "Brave 出品，默认屏蔽广告的隐私浏览器"
+     },
+     {
+      "name": "Chromium",
+      "url": "https://www.chromium.org/",
+      "description": "Google 主导的开源浏览器内核项目"
+     },
+     {
+      "name": "Vivaldi",
+      "url": "https://vivaldi.com/",
+      "description": "Vivaldi 出品，极致可定制功能型浏览器"
+     },
+     {
+      "name": "Tor Browser",
+      "url": "https://www.torproject.org/",
+      "description": "Tor Project 出品，匿名防审查浏览器"
+     },
+     {
+      "name": "DuckDuckGo Browser",
+      "url": "https://duckduckgo.com/app",
+      "description": "DuckDuckGo 出品，默认隐私保护浏览器"
+     },
+     {
+      "name": "Naver Whale",
+      "url": "https://whale.naver.com/",
+      "description": "韩国 Naver 出品，AI 智能浏览器"
+     },
+     {
+      "name": "Arc",
+      "url": "https://arc.net/",
+      "description": "Arc 团队出品，设计感浏览器"
+     },
+     {
+      "name": "Dia",
+      "url": "https://diabrowser.com/",
+      "description": "Arc 团队新作，AI 优先浏览器"
+     },
+     {
+      "name": "Amazon Silk",
+      "url": "https://www.amazon.com/silk/",
+      "description": "亚马逊出品，Fire 平板与电视内置浏览器"
+     },
+     {
+      "name": "Ecosia",
+      "url": "https://www.ecosia.org/",
+      "description": "Ecosia 出品，用利润植树的搜索引擎"
+     },
+     {
+      "name": "Avast Secure Browser",
+      "url": "https://www.avast.com/secure-browser/",
+      "description": "Avast 出品，安全厂商隐私浏览器"
+     }
+    ]
+   },
+   {
+    "name": "移动端与隐私向",
+    "enName": "Mobile & Privacy",
+    "links": [
+     {
+      "name": "Opera Mini",
+      "url": "https://www.opera.com/mini",
+      "description": "Opera 出品，省流量极速移动浏览器"
+     },
+     {
+      "name": "Firefox for Android",
+      "url": "https://www.mozilla.org/firefox/browsers/mobile/android/",
+      "description": "Mozilla 出品，安卓版 Firefox 浏览器"
+     },
+     {
+      "name": "Firefox Focus",
+      "url": "https://www.mozilla.org/firefox/browsers/mobile/focus/",
+      "description": "Mozilla 出品，专注隐私的移动浏览器"
+     },
+     {
+      "name": "Aloha Browser",
+      "url": "https://alohabrowser.com/",
+      "description": "Aloha 出品，内置免费 VPN 隐私浏览器"
+     },
+     {
+      "name": "Kiwi Browser",
+      "url": "https://kiwibrowser.com/",
+      "description": "已停更归档，安卓 Chromium 浏览器"
+     }
+    ]
+   },
+   {
+    "name": "历史经典",
+    "enName": "Historical Classics",
+    "links": [
+     {
+      "name": "Internet Explorer",
+      "url": "https://en.wikipedia.org/wiki/Internet_Explorer",
+      "description": "微软传奇浏览器，2022 年正式退役"
+     },
+     {
+      "name": "Netscape Navigator",
+      "url": "https://en.wikipedia.org/wiki/Netscape_Navigator",
+      "description": "网景传奇浏览器，现代浏览器鼻祖"
+     }
+    ]
+   },
+   {
+    "name": "Firefox 系分支",
+    "enName": "Firefox-based Forks",
+    "links": [
+     {
+      "name": "Zen Browser",
+      "url": "https://zen-browser.app",
+      "description": "火狐分支，极简分屏界面的人气新锐"
+     },
+     {
+      "name": "Floorp",
+      "url": "https://floorp.app",
+      "description": "高度可定制的 Firefox 分支"
+     },
+     {
+      "name": "Waterfox",
+      "url": "https://www.waterfox.com",
+      "description": "老牌 64 位 Firefox 隐私分支"
+     },
+     {
+      "name": "LibreWolf",
+      "url": "https://librewolf.net",
+      "description": "去除遥测的 Firefox 加固分支"
+     },
+     {
+      "name": "Pale Moon",
+      "url": "https://www.palemoon.org",
+      "description": "沿用经典界面的 Goanna 内核分支"
+     },
+     {
+      "name": "Basilisk",
+      "url": "https://www.basilisk-browser.org",
+      "description": "支持传统扩展的 XUL 浏览器"
+     },
+     {
+      "name": "SeaMonkey",
+      "url": "https://www.seamonkey-project.org",
+      "description": "Mozilla 社区维护的传统网络套件"
+     },
+     {
+      "name": "GNU IceCat",
+      "url": "https://www.gnu.org/software/gnuzilla/",
+      "description": "GNU 官方完全自由的火狐分支"
+     },
+     {
+      "name": "Dot",
+      "url": "https://www.dothq.org",
+      "description": "界面美观的 Firefox 隐私分支"
+     },
+     {
+      "name": "FireDragon",
+      "url": "https://firedragon.garudalinux.org",
+      "description": "Garuda 出品的隐私火狐分支"
+     },
+     {
+      "name": "IronFox",
+      "url": "https://ironfoxoss.org",
+      "description": "Mull 继任者，安卓隐私火狐分支"
+     },
+     {
+      "name": "IceRaven",
+      "url": "https://github.com/fork-maintainers/iceraven-browser",
+      "description": "安卓 Fenix 增强分支，扩展齐全"
+     },
+     {
+      "name": "Mull",
+      "url": "https://github.com/divested-mobile/mull-fenix",
+      "description": "安卓去追踪的隐私火狐分支"
+     }
+    ]
+   },
+   {
+    "name": "Chromium 系分支",
+    "enName": "Chromium-based Forks",
+    "links": [
+     {
+      "name": "Ungoogled Chromium",
+      "url": "https://github.com/ungoogled-software/ungoogled-chromium",
+      "description": "彻底剥离 Google 服务的 Chromium"
+     },
+     {
+      "name": "Thorium",
+      "url": "https://github.com/Alex313031/thorium",
+      "description": "编译器优化的高速 Chromium 分支"
+     },
+     {
+      "name": "Helium",
+      "url": "https://helium.computer",
+      "description": "面向大众的去谷歌 Chromium 分支"
+     },
+     {
+      "name": "Cromite",
+      "url": "https://github.com/uazo/cromite",
+      "description": "Bromite 继任，内置广告拦截"
+     },
+     {
+      "name": "Cent Browser",
+      "url": "https://www.centbrowser.com",
+      "description": "功能丰富的国产 Chromium 分支"
+     },
+     {
+      "name": "Catsxp",
+      "url": "https://www.catsxp.com",
+      "description": "简洁安全的国产 Chromium 分支"
+     },
+     {
+      "name": "Slimjet",
+      "url": "https://www.slimjet.com",
+      "description": "内置广告拦截的商业 Chromium"
+     },
+     {
+      "name": "SRWare Iron",
+      "url": "https://www.srware.net/iron/",
+      "description": "剥离追踪的德国 Chromium 分支"
+     },
+     {
+      "name": "Comodo Dragon",
+      "url": "https://www.comodo.com/home/browsers-toolbars/browser.php",
+      "description": "安全公司出品的 Chromium 浏览器"
+     },
+     {
+      "name": "Iridium",
+      "url": "https://iridiumbrowser.de",
+      "description": "去除 Google 追踪的德国 Chromium"
+     },
+     {
+      "name": "UR Browser",
+      "url": "https://www.ur-browser.com/en-US",
+      "description": "欧洲隐私导向的 Chromium 浏览器"
+     },
+     {
+      "name": "Epic Privacy Browser",
+      "url": "https://www.epicbrowser.com",
+      "description": "全程代理的隐私 Chromium"
+     }
+    ]
+   },
+   {
+    "name": "隐私与安全",
+    "enName": "Privacy & Security",
+    "links": [
+     {
+      "name": "Mullvad Browser",
+      "url": "https://mullvad.net/en/browser",
+      "description": "Tor 团队合作的反指纹浏览器"
+     },
+     {
+      "name": "Onion Browser",
+      "url": "https://onionbrowser.com",
+      "description": "iOS 上的开源 Tor 浏览器"
+     },
+     {
+      "name": "Privacy Browser",
+      "url": "https://www.stoutner.com/privacy-browser/",
+      "description": "安卓默认去追踪隐私浏览器"
+     },
+     {
+      "name": "Dooble",
+      "url": "https://textbrowser.github.io/dooble/",
+      "description": "加密导向的独立隐私浏览器"
+     }
+    ]
+   },
+   {
+    "name": "极客键盘驱动",
+    "enName": "Keyboard-driven Geek Browsers",
+    "links": [
+     {
+      "name": "qutebrowser",
+      "url": "https://qutebrowser.org",
+      "description": "Vim 键绑定的极客浏览器"
+     },
+     {
+      "name": "Nyxt",
+      "url": "https://nyxt.atlas.engineer",
+      "description": "可 Lisp 扩展的黑客浏览器"
+     },
+     {
+      "name": "Vieb",
+      "url": "https://vieb.dev",
+      "description": "全 Vim 键位的编辑器式浏览器"
+     },
+     {
+      "name": "Min",
+      "url": "https://minbrowser.org",
+      "description": "极简快速的隐私浏览器"
+     }
+    ]
+   },
+   {
+    "name": "Qt 与轻量桌面",
+    "enName": "Qt & Lightweight Desktop",
+    "links": [
+     {
+      "name": "Konqueror",
+      "url": "https://konqueror.org",
+      "description": "KDE 老牌文件管理网页浏览器"
+     },
+     {
+      "name": "Falkon",
+      "url": "https://www.falkon.org",
+      "description": "KDE 旗下轻量 Qt 浏览器"
+     },
+     {
+      "name": "Midori",
+      "url": "https://astian.org/midori-browser/",
+      "description": "轻量隐私的 GTK 浏览器"
+     },
+     {
+      "name": "Otter Browser",
+      "url": "https://otter-browser.org",
+      "description": "复刻经典 Opera 的 Qt 浏览器"
+     },
+     {
+      "name": "Luakit",
+      "url": "https://luakit.github.io",
+      "description": "可扩展的轻量 WebKit 浏览器"
+     },
+     {
+      "name": "GNOME Web (Epiphany)",
+      "url": "https://apps.gnome.org/Epiphany/",
+      "description": "GNOME 官方 WebKit 浏览器"
+     },
+     {
+      "name": "K-Meleon",
+      "url": "https://kmeleonbrowser.org",
+      "description": "Windows 经典轻量 Gecko 浏览器"
+     }
+    ]
+   },
+   {
+    "name": "商业第三方与开发者工具",
+    "enName": "Commercial & Developer Browsers",
+    "links": [
+     {
+      "name": "Obscura",
+      "url": "https://github.com/h4ckf0r0day/obscura",
+      "description": "Rust 无头浏览器引擎，AI 代理与抓取 ★28k"
+     },
+     {
+      "name": "Maxthon",
+      "url": "https://www.maxthon.com",
+      "description": "中国老牌双内核浏览器"
+     },
+     {
+      "name": "Puffin",
+      "url": "https://www.puffin.com",
+      "description": "云端渲染的极速浏览器"
+     },
+     {
+      "name": "Lunascape",
+      "url": "https://www.lunascape.org",
+      "description": "三引擎合一的日本浏览器"
+     },
+     {
+      "name": "Ghost Browser",
+      "url": "https://ghostbrowser.com",
+      "description": "多身份多账号生产力浏览器"
+     },
+     {
+      "name": "Blisk",
+      "url": "https://blisk.io",
+      "description": "开发者跨设备测试浏览器"
+     },
+     {
+      "name": "Sleipnir",
+      "url": "https://www.fenrir-inc.com/jp/sleipnir/",
+      "description": "日本 Fenrir 手势标签浏览器"
+     },
+     {
+      "name": "Sidekick",
+      "url": "https://www.meetsidekick.com",
+      "description": "效率导向的 Chromium 浏览器"
+     },
+     {
+      "name": "Suprow",
+      "url": "https://suprow.app",
+      "description": "Spaces 工作区隔离的浏览器"
+     },
+     {
+      "name": "Nook Browser",
+      "url": "https://browsewithnook.com",
+      "description": "开源多配置文件 WebKit 浏览器"
+     },
+     {
+      "name": "Orion Browser",
+      "url": "https://orionbrowser.com",
+      "description": "Kagi 打造的 WebKit 浏览器，强调零遥测、广…"
+     },
+     {
+      "name": "Kylmora",
+      "url": "https://github.com/kylmora/kylmora",
+      "description": "原生 macOS WebKit 浏览器，支持 Spac…"
+     },
+     {
+      "name": "SigmaOS",
+      "url": "https://sigmaos.com",
+      "description": "面向工作流的空间式浏览器，以工作区、任务和键盘操作为核心"
+     },
+     {
+      "name": "Wavebox",
+      "url": "https://wavebox.io",
+      "description": "Chromium 生产力浏览器，适合多账号、多应用、分…"
+     },
+     {
+      "name": "Stack Browser",
+      "url": "https://stackbrowser.com",
+      "description": "空间式浏览器，以卡片替代传统标签页，强调视觉化工作流"
+     },
+     {
+      "name": "Polypane",
+      "url": "https://polypane.app",
+      "description": "面向前端开发者的浏览器，可同时查看多个视口并提供网页调…"
+     },
+     {
+      "name": "AVG Secure Browser",
+      "url": "https://www.avg.com/secure-browser",
+      "description": "以隐私和安全为重点的 Chromium 浏览器，内置广…"
+     }
+    ]
+   },
+   {
+    "name": "消息聚合",
+    "enName": "Messaging Aggregators",
+    "links": [
+     {
+      "name": "Ferdium",
+      "url": "https://ferdium.org",
+      "description": "开源多应用消息聚合客户端"
+     },
+     {
+      "name": "Franz",
+      "url": "https://meetfranz.com",
+      "description": "一站式聚合聊天与服务"
+     },
+     {
+      "name": "Rambox",
+      "url": "https://rambox.app",
+      "description": "多账号应用聚合工作区"
+     }
+    ]
+   },
+   {
+    "name": "去中心化与移动端",
+    "enName": "Decentralized & Mobile",
+    "links": [
+     {
+      "name": "Agregore",
+      "url": "https://github.com/AgregoreWeb/agregore-browser",
+      "description": "支持 IPFS 分布式网络的浏览器"
+     },
+     {
+      "name": "Vanadium",
+      "url": "https://github.com/GrapheneOS/Vanadium",
+      "description": "GrapheneOS 加固的 Chromium"
+     },
+     {
+      "name": "Via Browser",
+      "url": "https://viayoo.com",
+      "description": "轻量简洁的国产安卓浏览器"
+     },
+     {
+      "name": "Lightning Browser",
+      "url": "https://github.com/anthonycr/Lightning-Browser",
+      "description": "轻量开源的安卓浏览器"
+     },
+     {
+      "name": "Nira Browser",
+      "url": "https://github.com/prirai/nira-browser",
+      "description": "基于 GeckoView 的 Android 浏览器，…"
+     },
+     {
+      "name": "WebLibre",
+      "url": "https://github.com/FaFre/WebLibre",
+      "description": "开源 Android Gecko 浏览器，强调隐私、标…"
+     },
+     {
+      "name": "Fennec F-Droid",
+      "url": "https://f-droid.org/en/packages/org.mozilla.fennec_fdroid/",
+      "description": "去除部分专有组件和遥测的 Firefox Androi…"
+     },
+     {
+      "name": "SmartCookieWeb-Preview",
+      "url": "https://github.com/CookieJarApps/SmartCookieWeb-Preview",
+      "description": "基于 GeckoView 的实验性 Android 浏…"
+     },
+     {
+      "name": "Fulguris",
+      "url": "https://github.com/Slion/Fulguris",
+      "description": "Android 开源浏览器，支持会话、多标签、广告拦截…"
+     },
+     {
+      "name": "Thorium Android",
+      "url": "https://github.com/Alex313031/Thorium-Android",
+      "description": "Thorium 的 Android 版本，面向 Chr…"
+     },
+     {
+      "name": "VBrowser",
+      "url": "https://github.com/vm2st/VBrowser",
+      "description": "开源 Android 安全浏览器项目"
+     },
+     {
+      "name": "MinimalBrowser",
+      "url": "https://github.com/Joao-Serrao/MinimalBrowser",
+      "description": "极简 Android 浏览器，强调轻量、隐私和基础浏览…"
+     },
+     {
+      "name": "AuraBrowser",
+      "url": "https://github.com/vikrant-project/AuraBrowser",
+      "description": "Swift + WebKit 开发的现代 iOS 开源…"
+     },
+     {
+      "name": "FREE Browser",
+      "url": "https://f-droid.org/en/packages/org.woheller69.browser/",
+      "description": "F-Droid 开源轻量浏览器，支持搜索、保存 PDF…"
+     },
+     {
+      "name": "Aegis 双端安全浏览器",
+      "url": "https://github.com/bear20252026/aegis-dual-platform",
+      "description": "Windows + Android 双端实验性安全浏览…"
+     },
+     {
+      "name": "Handshake Browser Mobile",
+      "url": "https://github.com/handshake-rs/hns-dane-browser-mobile",
+      "description": "面向 Android/iOS 的 Handshake …"
+     }
+    ]
+   },
+   {
+    "name": "AI 智能浏览器",
+    "links": [
+     {
+      "name": "Perplexity Comet",
+      "url": "https://www.perplexity.ai/comet",
+      "description": "Perplexity 推出的 AI 原生浏览器，强调智…"
+     },
+     {
+      "name": "Sigma Browser",
+      "url": "https://www.sigmabrowser.com",
+      "description": "AI 浏览器，内置 AI Agent、网页对话、深度研…"
+     },
+     {
+      "name": "Opera Neon",
+      "url": "https://operaneon.com",
+      "description": "Opera 的智能体浏览器，可让 AI 在真实浏览器会…"
+     },
+     {
+      "name": "Fellou",
+      "url": "https://fellou.ai",
+      "description": "Agentic AI 浏览器，支持深度搜索、跨网站任务…"
+     },
+     {
+      "name": "Genspark AI Browser",
+      "url": "https://www.genspark.ai",
+      "description": "Genspark AI 原生浏览器，集成 AI、自动化…"
+     },
+     {
+      "name": "BrowserOS",
+      "url": "https://browseros.com",
+      "description": "开源 AI 浏览器，基于 Chromium，支持本地模…"
+     },
+     {
+      "name": "OpenBrowser",
+      "url": "https://openbrowser.tech",
+      "description": "开源 AI 原生 Chromium 浏览器，可接入自有…"
+     }
+    ]
+   },
+   {
+    "name": "GitHub/Gitee 个人开源浏览器",
+    "enName": "GitHub/Gitee Personal Open-Source Browsers",
+    "links": [
+     {
+      "name": "moli",
+      "url": "https://github.com/lexmount/moli",
+      "description": "@lexmount Rust 无头浏览器 ★4.5k"
+     },
+     {
+      "name": "puppy-browser",
+      "url": "https://github.com/lmt-swallow/puppy-browser",
+      "description": "Rust 教学用极简小浏览器 ★648"
+     },
+     {
+      "name": "BrowserOxide",
+      "url": "https://github.com/yfedoseev/browser_oxide",
+      "description": "Rust 反检测无头浏览器引擎 ★110"
+     },
+     {
+      "name": "冲浪喵 LinysBrowser",
+      "url": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
+      "description": "个人自研原生鸿蒙浏览器，B站4.6万播放"
+     },
+     {
+      "name": "One Agent One Browser",
+      "url": "https://github.com/embedding-shapes/one-agent-one-browser",
+      "description": "一人配AI从零写浏览器，零第三方库"
+     },
+     {
+      "name": "Vie浏览器",
+      "url": "https://gitee.com/awzx3214/VieBrowser",
+      "description": "呆毛飘啊飘个人自研安卓多协议浏览器 ★44"
+     },
+     {
+      "name": "HiWave",
+      "url": "https://github.com/hiwavebrowser/hiwave",
+      "description": "个人用AI搭的现代浏览器，Rust内核 ★40"
+     },
+     {
+      "name": "Nexus Browser",
+      "url": "https://github.com/LocShadowVN/NexusBrowser",
+      "description": "零基础开发者靠AI写的Rust隐私浏览器"
+     },
+     {
+      "name": "Aurora",
+      "url": "https://github.com/JohannaWeb/Aurora",
+      "description": "@JohannaWeb 单人开发的Rust浏览器引擎"
+     },
+     {
+      "name": "ZeroWeb",
+      "url": "https://github.com/leizongmin/ZeroWeb",
+      "description": "Rust 实验性跨平台浏览器项目，自带 DOM、渲染和…"
+     },
+     {
+      "name": "Lucid Browser",
+      "url": "https://github.com/lucid-softworks/browser",
+      "description": "从零实现的 Rust 浏览器，引擎覆盖网络、HTML/…"
+     },
+     {
+      "name": "Plasmate",
+      "url": "https://github.com/plasmate-labs/plasmate",
+      "description": "面向 AI Agent 的 Rust 浏览器引擎，支持…"
+     },
+     {
+      "name": "Aris",
+      "url": "https://github.com/celestia-island/aris",
+      "description": "基于 Servo 思路衍生的纯 Rust 浏览器引擎"
+     },
+     {
+      "name": "Fen Browser",
+      "url": "https://github.com/FENBROWSER/fenbrowser",
+      "description": "独立浏览器引擎项目，强调正确性和清晰架构"
+     },
+     {
+      "name": "Starling",
+      "url": "https://github.com/starling-browser/starling",
+      "description": "基于 .NET 原语构建的实验性 Web 浏览器引擎"
+     },
+     {
+      "name": "Zyphy",
+      "url": "https://github.com/kkebo/zyphy",
+      "description": "Swift 编写的实验性 Web 浏览器引擎"
+     },
+     {
+      "name": "Gosub Engine",
+      "url": "https://github.com/gosub-io/gosub-engine",
+      "description": "Rust HTML5 浏览器引擎项目"
+     },
+     {
+      "name": "Moon Browser",
+      "url": "https://github.com/ZeroX-DG/moon",
+      "description": "从零开发的 Rust 业余浏览器，包含 DOM 与浏览…"
+     },
+     {
+      "name": "Oku Browser",
+      "url": "https://github.com/OkuBrowser/oku",
+      "description": "GTK 浏览器项目，结合 WebKit、IPFS、P2…"
+     },
+     {
+      "name": "Bunjalloo",
+      "url": "https://github.com/AntonioND/bunjalloo",
+      "description": "Nintendo DS/DSi 平台网页浏览器项目"
+     },
+     {
+      "name": "C++ Web Engine",
+      "url": "https://github.com/k754a/C-Plus-Plus-Web-Engine",
+      "description": "从零实现 HTTP、HTML、CSS、DOM、布局与渲…"
+     },
+     {
+      "name": "Genet",
+      "url": "https://github.com/merely-made/genet",
+      "description": "可嵌入式 Rust Web 引擎，支持不同复杂度的 W…"
+     },
+     {
+      "name": "ToyStack",
+      "url": "https://github.com/kresnasatya/ToyStack",
+      "description": "Swift 编写的玩具型浏览器引擎"
+     },
+     {
+      "name": "JSAR Runtime",
+      "url": "https://github.com/jsar-project/runtime",
+      "description": "面向 Spatial Web 的浏览器运行时与 Web…"
+     },
+     {
+      "name": "Naglfar",
+      "url": "https://github.com/maekawatoshiki/naglfar",
+      "description": "从零开始实现的 Rust 玩具浏览器"
+     }
+    ]
+   },
+   {
+    "name": "B站与抖音自制作品",
+    "enName": "Bilibili & Douyin Self-Made Browsers",
+    "links": [
+     {
+      "name": "奇妙浏览器",
+      "url": "https://www.bilibili.com/video/BV1ASht6aE7s/",
+      "description": "小团队自研原生鸿蒙浏览器，用户破万"
+     },
+     {
+      "name": "小白自制浏览器",
+      "url": "https://www.bilibili.com/video/BV1Re411x7su/",
+      "description": "新手耗时数月自研的全平台浏览器"
+     },
+     {
+      "name": "A588自写浏览器",
+      "url": "https://www.bilibili.com/video/BV1rWYx6tEDb/",
+      "description": "从0到1用ArkTS自写的开源鸿蒙浏览器"
+     },
+     {
+      "name": "开发一个安卓浏览器",
+      "url": "https://www.bilibili.com/video/BV1rp4y197t7/",
+      "description": "Edsuns 从零记录安卓浏览器开发过程"
+     }
+    ]
+   },
+   {
+    "name": "论坛自荐项目",
+    "enName": "Forum Self-Recommended Projects",
+    "links": [
+     {
+      "name": "从头写浏览器硬刚Chrome",
+      "url": "https://www.v2ex.com/t/1236674",
+      "description": "@coolwulf 二十年后重操旧业从零写浏览器"
+     },
+     {
+      "name": "摸鱼浏览器",
+      "url": "https://v2ex.com/t/1236719",
+      "description": "klos 自研原生悬浮摸鱼浏览器可自动隐藏"
+     }
+    ]
+   },
+   {
+    "name": "第一代与史前",
+    "enName": "First-Gen & Prehistoric",
+    "links": [
+     {
+      "name": "WorldWideWeb (Nexus)",
+      "url": "https://en.wikipedia.org/wiki/WorldWideWeb",
+      "description": "1990年诞生的史上第一个浏览器"
+     },
+     {
+      "name": "Line Mode Browser",
+      "url": "https://en.wikipedia.org/wiki/Line_Mode_Browser",
+      "description": "1991年CERN出品的纯字符终端浏览器"
+     },
+     {
+      "name": "Erwise",
+      "url": "https://en.wikipedia.org/wiki/Erwise",
+      "description": "1992年芬兰学生写的首个X图形浏览器"
+     },
+     {
+      "name": "ViolaWWW",
+      "url": "https://en.wikipedia.org/wiki/ViolaWWW",
+      "description": "1992年伯克利魏培源写的早期浏览器"
+     },
+     {
+      "name": "MidasWWW",
+      "url": "https://en.wikipedia.org/wiki/MidasWWW",
+      "description": "1992年SLAC出品的早期X窗口浏览器"
+     },
+     {
+      "name": "MacWWW (Samba)",
+      "url": "https://en.wikipedia.org/wiki/MacWWW",
+      "description": "1992年首个Macintosh平台浏览器"
+     },
+     {
+      "name": "NCSA Mosaic",
+      "url": "https://en.wikipedia.org/wiki/Mosaic_(web_browser)",
+      "description": "1993年首个流行、图文混排的浏览器"
+     },
+     {
+      "name": "Cello",
+      "url": "https://en.wikipedia.org/wiki/Cello_(web_browser)",
+      "description": "1993年首个Windows平台网页浏览器"
+     },
+     {
+      "name": "Arena",
+      "url": "https://en.wikipedia.org/wiki/Arena_(web_browser)",
+      "description": "1993年W3C的HTML3/CSS试验浏览器"
+     },
+     {
+      "name": "HotJava",
+      "url": "https://en.wikipedia.org/wiki/HotJava",
+      "description": "1995年Sun出品的首个Java Applet浏览器"
+     },
+     {
+      "name": "AMSD Ariadna",
+      "url": "https://en.wikipedia.org/wiki/AMSD_Ariadna",
+      "description": "1995年首个俄罗斯自研网页浏览器"
+     },
+     {
+      "name": "Grail",
+      "url": "https://en.wikipedia.org/wiki/Grail_(web_browser)",
+      "description": "1995年Guido用Python写成的浏览器"
+     }
+    ]
+   },
+   {
+    "name": "终端纯文本",
+    "enName": "Terminal Text-Based",
+    "links": [
+     {
+      "name": "Lynx",
+      "url": "https://lynx.invisible-island.net/",
+      "description": "1992年诞生，至今仍在维护的终端浏览器"
+     },
+     {
+      "name": "ELinks",
+      "url": "https://github.com/rkd77/elinks",
+      "description": "功能丰富、可脚本扩展的文本浏览器"
+     },
+     {
+      "name": "Links / Links2",
+      "url": "https://links.twibright.com/",
+      "description": "支持表格与图文的终端浏览器"
+     },
+     {
+      "name": "w3m",
+      "url": "https://w3m.sourceforge.net/",
+      "description": "类分页器的日式文本浏览器"
+     },
+     {
+      "name": "Browsh",
+      "url": "https://www.brow.sh/",
+      "description": "终端里渲染HTML5/JS的现代文本浏览器"
+     },
+     {
+      "name": "Carbonyl",
+      "url": "https://github.com/fathyb/carbonyl",
+      "description": "跑在终端里的Chromium ★19.5k"
+     },
+     {
+      "name": "Bombadillo",
+      "url": "https://bombadillo.colorfield.space/",
+      "description": "主打Gopher/Gemini的小互联网终端浏览器"
+     }
+    ]
+   },
+   {
+    "name": "极轻量最小",
+    "enName": "Ultra-Lightweight",
+    "links": [
+     {
+      "name": "Dillo",
+      "url": "https://dillo.org/",
+      "description": "老硬件与嵌入式上飞快的极小浏览器"
+     },
+     {
+      "name": "Naked Browser",
+      "url": "https://www.nakedbrowser.com/",
+      "description": "安卓安装包仅119KB的极简浏览器"
+     },
+     {
+      "name": "surf",
+      "url": "https://surf.suckless.org/",
+      "description": "suckless出品零配置的极简浏览器"
+     },
+     {
+      "name": "NetSurf",
+      "url": "https://www.netsurf-browser.org/",
+      "description": "自有引擎、轻量跨平台浏览器"
+     },
+     {
+      "name": "Flow",
+      "url": "https://www.ekioh.com/flow-browser/",
+      "description": "面向嵌入式/电视的多核HTML5浏览器"
+     }
+    ]
+   },
+   {
+    "name": "新引擎实验",
+    "enName": "New Engine Experiments",
+    "links": [
+     {
+      "name": "Ladybird",
+      "url": "https://github.com/LadybirdBrowser/ladybird",
+      "description": "从零写引擎的真正独立浏览器 ★38k"
+     },
+     {
+      "name": "Servo",
+      "url": "https://github.com/servo/servo",
+      "description": "Mozilla用Rust写的并行浏览器引擎 ★22k"
+     },
+     {
+      "name": "Better Web Browser",
+      "url": "https://github.com/VictorZakharov/better-web-browser",
+      "description": "从零构建的性能优先浏览器和 Windows 引擎项目，…"
+     },
+     {
+      "name": "Hastur",
+      "url": "https://github.com/robinlinden/hastur",
+      "description": "C++ 编写的实验性浏览器项目"
+     },
+     {
+      "name": "Lumen",
+      "url": "https://github.com/mberatsanli/lumen",
+      "description": "Rust 爱好者浏览器引擎，包含 HTML/CSS 解…"
+     },
+     {
+      "name": "Minium",
+      "url": "https://github.com/SubhrajitSain/Minium",
+      "description": "Python + Qt 编写的极简 Chromium …"
+     },
+     {
+      "name": "RetroKit",
+      "url": "https://github.com/cookiengineer/retrokit",
+      "description": "尝试重塑经典 WebKit，并探索轻量和安全性的浏览器…"
+     },
+     {
+      "name": "Verso",
+      "url": "https://github.com/versotile-org/verso",
+      "description": "基于 Servo 生态探索的 Rust 浏览器项目"
+     },
+     {
+      "name": "Kosmonaut",
+      "url": "https://github.com/twilco/kosmonaut",
+      "description": "Rust 编写的实验性浏览器引擎"
+     },
+     {
+      "name": "thdwb",
+      "url": "https://github.com/danfragoso/thdwb",
+      "description": "Go 编写的实验性浏览器和浏览器引擎项目"
+     }
+    ]
+   },
+   {
+    "name": "老平台怀旧",
+    "enName": "Legacy Platforms",
+    "links": [
+     {
+      "name": "Arachne",
+      "url": "https://en.wikipedia.org/wiki/Arachne_(web_browser)",
+      "description": "1996年DOS平台的图形网页浏览器"
+     },
+     {
+      "name": "IBrowse",
+      "url": "https://www.ibrowse-dev.net/",
+      "description": "Amiga系统上至今仍更新的浏览器"
+     },
+     {
+      "name": "AWeb",
+      "url": "https://en.wikipedia.org/wiki/AWeb",
+      "description": "Amiga原生、曾随系统附赠的浏览器"
+     },
+     {
+      "name": "Voyager",
+      "url": "https://en.wikipedia.org/wiki/Voyager_(web_browser)",
+      "description": "Amiga上最早支持标签页的浏览器"
+     },
+     {
+      "name": "Origyn Web Browser",
+      "url": "https://en.wikipedia.org/wiki/Origyn_Web_Browser",
+      "description": "Amiga/MorphOS上的WebKit浏览器"
+     },
+     {
+      "name": "Mosaic-CK",
+      "url": "https://www.floodgap.com/retrotech/machten/mosaic/",
+      "description": "NCSA Mosaic的现代可玩重制版"
+     },
+     {
+      "name": "Classilla",
+      "url": "https://www.floodgap.com/software/classilla/",
+      "description": "为老Mac OS 8.6/9续命的浏览器"
+     },
+     {
+      "name": "TenFourFox",
+      "url": "https://www.floodgap.com/software/tenfourfox/",
+      "description": "为PowerPC Mac优化的火狐分支"
+     },
+     {
+      "name": "iCab",
+      "url": "https://www.icab.de/",
+      "description": "仍在维护的经典Mac浏览器"
+     }
+    ]
+   },
+   {
+    "name": "奇思妙想",
+    "enName": "Quirky & Creative",
+    "links": [
+     {
+      "name": "EmuOS",
+      "url": "https://emupedia.net/beta/emuos",
+      "description": "浏览器里运行的怀旧Windows系统"
+     },
+     {
+      "name": "v86",
+      "url": "https://copy.sh/v86/",
+      "description": "浏览器里跑x86虚拟机装Windows/Linux"
+     },
+     {
+      "name": "Windows 93",
+      "url": "https://windows93.net/",
+      "description": "浏览器里的魔性仿Windows桌面"
+     },
+     {
+      "name": "Windows 96",
+      "url": "https://windows96.net/",
+      "description": "浏览器里恶搞的Windows系统桌面"
+     },
+     {
+      "name": "EWW",
+      "url": "https://www.gnu.org/software/emacs/manual/html_mono/eww.html",
+      "description": "在Emacs编辑器里浏览网页"
+     },
+     {
+      "name": "Amaya",
+      "url": "https://en.wikipedia.org/wiki/Amaya_(web_browser)",
+      "description": "W3C自家的浏览器兼所见即所得编辑器"
+     },
+     {
+      "name": "Agora",
+      "url": "https://en.wikipedia.org/wiki/Agora_(web_browser)",
+      "description": "1994年靠收发邮件上网的浏览器"
+     }
+    ]
+   }
+  ]
+ }
+];;
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑩𝑟𝑜𝑤𝑠𝑒𝑟𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

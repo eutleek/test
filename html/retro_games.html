@@ -1,0 +1,1271 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="让老游戏在现代浏览器与设备上重获新生：网页模拟器、网页复刻、Flash 复活、开源重制与老游戏归档导航">
+<title>复活老游戏 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>复活老游戏</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">复活老游戏 · 让经典游戏在现代浏览器与设备上重获新生</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "复活老游戏",
+    "icon": "🎮",
+    "color": "linear-gradient(135deg, #6a5af9, #00d2ff)",
+    "subcategories": [
+      {
+        "name": "网页复刻单机游戏",
+        "enName": "Web Remakes",
+        "links": [
+          {
+            "name": "Miu2D",
+            "url": "https://miu2d.com",
+            "description": "AI 复刻剑侠情缘三部曲，网页直接玩"
+          },
+          {
+            "name": "红警在线版",
+            "url": "https://www.ra2web.com/",
+            "description": "红警2网页版 - 在线玩"
+          },
+          {
+            "name": "DOS Zone",
+            "url": "https://dos.zone",
+            "description": "浏览器直接玩 DOS 老单机，免费无广告"
+          },
+          {
+            "name": "ClassicReload",
+            "url": "https://www.classicreload.com",
+            "description": "6000+ 款 DOS/主机老游戏，浏览器直接玩"
+          },
+          {
+            "name": "sm64js",
+            "url": "https://sm64js.com",
+            "description": "超级马里奥64纯 JS/WebGL 网页重制"
+          },
+          {
+            "name": "OpenLara",
+            "url": "https://github.com/XProger/OpenLara",
+            "description": "古墓丽影开源引擎，附 WebGL 网页试玩"
+          },
+          {
+            "name": "QuakeJS",
+            "url": "https://github.com/inolen/quakejs",
+            "description": "雷神之锤3 浏览器多人版，HTML5 重制"
+          }
+        ]
+      },
+      {
+        "name": "Flash 游戏复活",
+        "enName": "Flash Revival",
+        "links": [
+          {
+            "name": "Ruffle",
+            "url": "https://ruffle.rs",
+            "description": "开源 Flash 模拟器，浏览器复活老 SWF"
+          },
+          {
+            "name": "Flashpoint",
+            "url": "https://bluemaxima.org/flashpoint/",
+            "description": "Flash 游戏考古保存项目，存档九万余款"
+          },
+          {
+            "name": "Newgrounds",
+            "url": "https://www.newgrounds.com",
+            "description": "Flash 游戏门户鼻祖，经典作品仍在线可玩"
+          },
+          {
+            "name": "Armor Games",
+            "url": "https://armorgames.com",
+            "description": "知名 Flash 游戏站，王国保卫战等经典续玩"
+          },
+          {
+            "name": "Kongregate",
+            "url": "https://www.kongregate.com",
+            "description": "老牌浏览器游戏社区，海量 Flash 佳作仍可玩"
+          },
+          {
+            "name": "Nitrome",
+            "url": "https://www.nitrome.com",
+            "description": "知名 Flash 工作室，老游戏转 HTML5 在线玩"
+          },
+          {
+            "name": "Flashpoint Web",
+            "url": "https://github.com/darkraise/flashpoint-web",
+            "description": "Flashpoint 本地档案的现代 Web 界面，可…"
+          },
+          {
+            "name": "Flash Arcade",
+            "url": "https://github.com/anmol-pawa/flash-arcade",
+            "description": "基于 Ruffle 的浏览器 Flash 游戏播放器与…"
+          },
+          {
+            "name": "Flashback",
+            "url": "https://github.com/freehuntx/flashback",
+            "description": "尝试让经典 Flash 多人游戏重新在浏览器中工作"
+          },
+          {
+            "name": "Swiff",
+            "url": "https://github.com/almindor/swiff",
+            "description": "面向 Android 的 Flash 与旧网页游戏播放…"
+          },
+          {
+            "name": "Internet Archive Flash Games",
+            "url": "https://archive.org/details/softwarelibrary_flash_games",
+            "description": "Internet Archive Flash 游戏软件…"
+          },
+          {
+            "name": "Flash Museum",
+            "url": "https://flashmuseum.org",
+            "description": "Flash 游戏、动画与互动内容的保存与展示网站"
+          },
+          {
+            "name": "Ruffle Demo",
+            "url": "https://ruffle.rs/demo/",
+            "description": "Ruffle 官方网页演示入口，可测试旧 SWF/Fl…"
+          }
+        ]
+      },
+      {
+        "name": "网页模拟器在线玩",
+        "enName": "Web Emulators",
+        "links": [
+          {
+            "name": "Internet Archive",
+            "url": "https://archive.org/details/softwarelibrary",
+            "description": "互联网档案馆游戏库，浏览器直接玩DOS与街机老游戏"
+          },
+          {
+            "name": "RetroGames.cz",
+            "url": "https://www.retrogames.cz/",
+            "description": "自称收录1855个原版老游戏，浏览器即点即玩"
+          },
+          {
+            "name": "Vizzed",
+            "url": "https://www.vizzed.com/",
+            "description": "万款老游戏在线玩，支持即时存档与联机对战"
+          },
+          {
+            "name": "MyEmulator",
+            "url": "https://myemulator.onl/",
+            "description": "GBA/NES/SNES等多平台在线玩，宝可梦游戏丰富"
+          },
+          {
+            "name": "Retrogames.cc",
+            "url": "https://www.retrogames.cc/",
+            "description": "街机/PS/GBA/N64等多平台浏览器在线玩"
+          },
+          {
+            "name": "ClassicEmu",
+            "url": "https://classicemu.com/",
+            "description": "自称2582游戏跨23平台，浏览器即开即玩"
+          },
+          {
+            "name": "PlayRetroGames",
+            "url": "https://playretrogames.com/",
+            "description": "SNES等经典主机游戏浏览器在线玩，即点即玩"
+          },
+          {
+            "name": "Free80sArcade",
+            "url": "https://www.free80sarcade.com/",
+            "description": "80年代街机与主机经典游戏，浏览器免费玩"
+          },
+          {
+            "name": "EmuOS",
+            "url": "https://emupedia.net/beta/emuos/",
+            "description": "网页版复古Windows桌面，内置老游戏与软件"
+          },
+          {
+            "name": "PlayClassic.games",
+            "url": "https://playclassic.games/",
+            "description": "DOS与经典主机游戏浏览器在线玩"
+          },
+          {
+            "name": "RetroGames.games",
+            "url": "https://retrogames.games/",
+            "description": "NES/SNES/GBA/MD等多平台浏览器即点即玩"
+          },
+          {
+            "name": "RetroGames.me",
+            "url": "https://www.retrogames.me/",
+            "description": "多平台在线模拟器，含PC Engine等冷门机型"
+          },
+          {
+            "name": "WePlayRetro",
+            "url": "https://weplayretro.games/",
+            "description": "精选NES/SNES/MD游戏，浏览器直接即点即玩"
+          },
+          {
+            "name": "WePlayDOS",
+            "url": "https://weplaydos.games/",
+            "description": "经典DOS游戏浏览器在线玩，DOOM文明等即点即玩"
+          },
+          {
+            "name": "DOS Games Archive",
+            "url": "https://www.dosgamesarchive.com/",
+            "description": "自称1663款DOS游戏，多数可浏览器在线玩"
+          },
+          {
+            "name": "ZX Spectrum Online",
+            "url": "https://zxspectrum.xyz/",
+            "description": "自称4219+款ZX Spectrum游戏在线浏览器玩"
+          },
+          {
+            "name": "RetroUprising",
+            "url": "https://retrouprising.com/",
+            "description": "复古游戏社区，街机与主机游戏浏览器在线玩"
+          },
+          {
+            "name": "EmulatorJS",
+            "url": "https://emulatorjs.org",
+            "description": "基于 WebAssembly 的浏览器端多平台模拟器框架"
+          },
+          {
+            "name": "DOSBox Online",
+            "url": "https://joeheyming.github.io/dos/",
+            "description": "浏览器直接运行部分 MS-DOS 经典游戏的在线项目"
+          },
+          {
+            "name": "Retro Game Emulator",
+            "url": "https://joeheyming.github.io/emulator/",
+            "description": "浏览器端 NES、SNES、Genesis、GB、N6…"
+          },
+          {
+            "name": "PlayF2P Retro Games",
+            "url": "https://www.playf2p.com",
+            "description": "浏览器在线复古游戏平台，覆盖多个经典主机平台"
+          }
+        ]
+      },
+      {
+        "name": "开源引擎重制",
+        "enName": "Open Source Remakes",
+        "links": [
+          {
+            "name": "OpenRA",
+            "url": "https://github.com/OpenRA/OpenRA",
+            "description": "@OpenRA 红警与命令与征服开源重制 ★17.5k"
+          },
+          {
+            "name": "OpenRCT2",
+            "url": "https://github.com/OpenRCT2/OpenRCT2",
+            "description": "@OpenRCT2 过山车大亨2开源重制 ★16.3k"
+          },
+          {
+            "name": "openage",
+            "url": "https://github.com/SFTtech/openage",
+            "description": "@SFTtech 帝国时代2引擎开源克隆 ★14.5k"
+          },
+          {
+            "name": "OpenDiablo2",
+            "url": "https://github.com/OpenDiablo2/OpenDiablo2",
+            "description": "@OpenDiablo2 暗黑2开源重制 ★11.1k"
+          },
+          {
+            "name": "DevilutionX",
+            "url": "https://github.com/diasurgical/devilutionX",
+            "description": "@diasurgical 暗黑1现代开源移植 ★9.8k"
+          },
+          {
+            "name": "OpenTTD",
+            "url": "https://github.com/OpenTTD/OpenTTD",
+            "description": "@OpenTTD 豪华运输大亨开源复刻 ★8.3k"
+          },
+          {
+            "name": "OpenMW",
+            "url": "https://github.com/OpenMW/openmw",
+            "description": "@OpenMW 上古卷轴3晨风开源引擎 ★6.6k"
+          },
+          {
+            "name": "VCMI",
+            "url": "https://github.com/vcmi/vcmi",
+            "description": "@vcmi 英雄无敌3开源引擎 ★5.9k"
+          },
+          {
+            "name": "DOOM 3 BFG",
+            "url": "https://github.com/id-Software/DOOM-3-BFG",
+            "description": "@id-Software 毁灭战士3开源 ★5.4k"
+          },
+          {
+            "name": "CorsixTH",
+            "url": "https://github.com/CorsixTH/CorsixTH",
+            "description": "@CorsixTH 主题医院开源复刻 ★4.6k"
+          },
+          {
+            "name": "fheroes2",
+            "url": "https://github.com/ihhub/fheroes2",
+            "description": "@ihhub 英雄无敌2引擎重制 ★3.5k"
+          },
+          {
+            "name": "GZDoom",
+            "url": "https://github.com/ZDoom/gzdoom",
+            "description": "@ZDoom 现代增强Doom引擎 ★3.1k"
+          },
+          {
+            "name": "ioquake3",
+            "url": "https://github.com/ioquake/ioq3",
+            "description": "@ioquake Quake3现代社区引擎 ★2.8k"
+          },
+          {
+            "name": "ScummVM",
+            "url": "https://github.com/scummvm/scummvm",
+            "description": "@scummvm 经典冒险游戏引擎合集 ★2.8k"
+          },
+          {
+            "name": "Chocolate Doom",
+            "url": "https://github.com/chocolate-doom/chocolate-doom",
+            "description": "@chocolate-doom 原汁原味Doom复刻"
+          },
+          {
+            "name": "OpenJK",
+            "url": "https://github.com/JACoders/OpenJK",
+            "description": "@JACoders 绝地学院原社区维护 ★2.3k"
+          },
+          {
+            "name": "OpenXcom",
+            "url": "https://github.com/OpenXcom/OpenXcom",
+            "description": "@OpenXcom X-COM初代开源克隆 ★2.2k"
+          },
+          {
+            "name": "OpenLoco",
+            "url": "https://github.com/OpenLoco/OpenLoco",
+            "description": "@OpenLoco 运输大亨精神续作开源复刻 ★1.9k"
+          },
+          {
+            "name": "OpenSAGE",
+            "url": "https://github.com/OpenSAGE/OpenSAGE",
+            "description": "@OpenSAGE 命令与征服将军引擎 ★1.6k"
+          },
+          {
+            "name": "Freeciv",
+            "url": "https://github.com/freeciv/freeciv",
+            "description": "@freeciv 文明Like回合策略开源 ★1.6k"
+          },
+          {
+            "name": "Unknown Horizons",
+            "url": "https://github.com/unknown-horizons/unknown-horizons",
+            "description": "@unknown-horizons 大航海殖民经营复刻"
+          },
+          {
+            "name": "Arx Libertatis",
+            "url": "https://arx-libertatis.org",
+            "description": "Arx Fatalis 开源重制"
+          },
+          {
+            "name": "Daggerfall Unity",
+            "url": "https://github.com/Interkarma/daggerfall-unity",
+            "description": "Unity 开源重制 Daggerfall，支持宽屏、…"
+          },
+          {
+            "name": "GemRB",
+            "url": "https://gemrb.org",
+            "description": "开源重实现 BioWare Infinity Engi…"
+          },
+          {
+            "name": "Exult",
+            "url": "https://exult.sourceforge.io",
+            "description": "开源重制 Ultima VII 引擎，让经典 Ulti…"
+          },
+          {
+            "name": "Pentagram",
+            "url": "https://pentagram.sourceforge.net",
+            "description": "开源 Ultima VIII 引擎重实现项目"
+          },
+          {
+            "name": "Nuvie",
+            "url": "https://github.com/nuvie/nuvie",
+            "description": "Ultima VI、Martian Dreams、Th…"
+          },
+          {
+            "name": "Xu4",
+            "url": "https://xu4.sourceforge.net",
+            "description": "Ultima IV 开源重实现，现代平台运行经典 RPG"
+          },
+          {
+            "name": "FreeCol",
+            "url": "https://www.freecol.org",
+            "description": "Colonization 风格开源重制，保留经典殖民经…"
+          },
+          {
+            "name": "Widelands",
+            "url": "https://www.widelands.org",
+            "description": "受 Settlers 系列启发的开源经济与即时战略项目"
+          },
+          {
+            "name": "Warzone 2100",
+            "url": "https://www.wz2100.net",
+            "description": "经典 1999 RTS 开源项目，支持现代系统与持续更新"
+          },
+          {
+            "name": "KeeperFX",
+            "url": "https://keeperfx.net",
+            "description": "Dungeon Keeper 开源引擎重制与增强项目"
+          },
+          {
+            "name": "OpenXcom",
+            "url": "https://openxcom.org",
+            "description": "X-COM UFO Defense 开源引擎重实现"
+          },
+          {
+            "name": "OpenXcom Extended",
+            "url": "https://github.com/SupSuper/OpenXcom",
+            "description": "OpenXcom 的扩展版本，增加现代玩法、Mod 与…"
+          },
+          {
+            "name": "OpenApoc",
+            "url": "https://github.com/OpenApoc/OpenApoc",
+            "description": "X-COM Apocalypse 开源引擎重实现"
+          },
+          {
+            "name": "OpenDUNE",
+            "url": "https://github.com/OpenDUNE/OpenDUNE",
+            "description": "Dune II 开源重制引擎，使用现代技术运行经典 R…"
+          },
+          {
+            "name": "Dune Dynasty",
+            "url": "https://github.com/wwarthen/Dune-Dynasty",
+            "description": "Dune II 引擎重实现项目，面向现代系统"
+          },
+          {
+            "name": "Dune Legacy",
+            "url": "https://www.dunelegacy.com",
+            "description": "Dune II 开源重制，加入高清、多人和现代系统支持"
+          },
+          {
+            "name": "OpenFodder",
+            "url": "https://github.com/OpenFodder/openfodder",
+            "description": "Cannon Fodder 开源引擎重实现，并提供网页…"
+          },
+          {
+            "name": "Jazz² Resurrection",
+            "url": "https://github.com/deathkiller/jazz2-native",
+            "description": "Jazz Jackrabbit 2 开源原生重实现，支…"
+          },
+          {
+            "name": "OpenTyrian",
+            "url": "https://github.com/opentyrian/opentyrian",
+            "description": "经典纵版射击游戏 Tyrian 的开源移植"
+          },
+          {
+            "name": "OpenLieroX",
+            "url": "https://github.com/OpenLieroX/OpenLieroX",
+            "description": "Liero 风格实时多人游戏的开源重制"
+          },
+          {
+            "name": "OpenLiero",
+            "url": "https://github.com/lierolibre/lierolibre",
+            "description": "Liero 风格经典实时多人游戏的开源实现"
+          },
+          {
+            "name": "The Force Engine",
+            "url": "https://github.com/luciusDXL/TheForceEngine",
+            "description": "Star Wars: Dark Forces 的现代开…"
+          },
+          {
+            "name": "OpenJKDF2",
+            "url": "https://github.com/shinyquagsire23/OpenJKDF2",
+            "description": "Dark Forces II 与 Mysteries …"
+          },
+          {
+            "name": "OpenMoHAA",
+            "url": "https://github.com/openmoh/openmohaa",
+            "description": "Medal of Honor: Allied Assa…"
+          },
+          {
+            "name": "Xash3D FWGS",
+            "url": "https://github.com/FWGS/xash3d-fwgs",
+            "description": "GoldSrc 风格开源引擎，可运行 Half-Lif…"
+          },
+          {
+            "name": "Nuclide",
+            "url": "https://github.com/Thinkofname/nuclide",
+            "description": "面向 GoldSrc 类游戏的开源引擎与 Mod 平台"
+          },
+          {
+            "name": "OpenXRay",
+            "url": "https://github.com/OpenXRay/xray-16",
+            "description": "S.T.A.L.K.E.R. 系列 X-Ray 引擎的…"
+          },
+          {
+            "name": "Raze",
+            "url": "https://github.com/ZDoom/Raze",
+            "description": "支持 Duke Nukem 3D、Blood、Shad…"
+          },
+          {
+            "name": "Rednukem",
+            "url": "https://github.com/atsb/Rednukem",
+            "description": "面向 Duke Nukem 3D 与多款 Build …"
+          },
+          {
+            "name": "NBlood",
+            "url": "https://github.com/ZDoom/NBlood",
+            "description": "Blood 开源源端口，支持现代系统与高分辨率"
+          },
+          {
+            "name": "Powerslave EX",
+            "url": "https://github.com/zhsso/PowerslaveEX",
+            "description": "经典 Powerslave/Exhumed 主机版的现…"
+          },
+          {
+            "name": "Yamagi Quake II",
+            "url": "https://www.yamagi.org/quake2/",
+            "description": "Quake II 的高兼容现代开源客户端"
+          },
+          {
+            "name": "QuakeSpasm",
+            "url": "https://quakespasm.sourceforge.net",
+            "description": "经典 Quake 现代源端口，支持高清显示与现代平台"
+          },
+          {
+            "name": "vkQuake",
+            "url": "https://github.com/Novum/vkQuake",
+            "description": "使用 Vulkan 渲染的 Quake 源端口"
+          },
+          {
+            "name": "Ironwail",
+            "url": "https://github.com/andrejewski/ironwail",
+            "description": "基于 QuakeSpasm 的高性能 Quake 源端口"
+          },
+          {
+            "name": "TyrQuake",
+            "url": "https://github.com/apalomba/tyrquake",
+            "description": "Quake 的跨平台开源源端口"
+          },
+          {
+            "name": "ioquake3",
+            "url": "https://ioquake3.org",
+            "description": "Quake III Arena 开源引擎与现代客户端"
+          },
+          {
+            "name": "dhewm3",
+            "url": "https://github.com/dhewm/dhewm3",
+            "description": "Doom 3 开源源端口，修复现代系统兼容问题"
+          },
+          {
+            "name": "RBDOOM-3-BFG",
+            "url": "https://github.com/RobertBeckebans/RBDOOM-3-BFG",
+            "description": "Doom 3 BFG Edition 的现代开源增强源…"
+          },
+          {
+            "name": "ECWolf",
+            "url": "https://maniacsvault.net/ecwolf/",
+            "description": "Wolfenstein 3D 系列现代源端口，支持扩展…"
+          },
+          {
+            "name": "GZDoom",
+            "url": "https://zdoom.org",
+            "description": "Doom、Heretic、Hexen、Strife 等…"
+          },
+          {
+            "name": "Zandronum",
+            "url": "https://zandronum.com",
+            "description": "面向多人游戏的 Doom 源端口与现代化平台"
+          },
+          {
+            "name": "Odamex",
+            "url": "https://odamex.net",
+            "description": "专注网络多人体验的 Doom 源端口"
+          },
+          {
+            "name": "Doomsday Engine",
+            "url": "https://dengine.net",
+            "description": "支持 Doom、Heretic、Hexen 等经典游戏…"
+          },
+          {
+            "name": "Crispy Doom",
+            "url": "https://github.com/fabiangreffrath/crispy-doom",
+            "description": "保持经典体验并提高分辨率与兼容性的 Doom 源端口"
+          },
+          {
+            "name": "RealRTCW",
+            "url": "https://github.com/iortcw/RealRTCW",
+            "description": "Return to Castle Wolfenstei…"
+          },
+          {
+            "name": "The Ur-Quan Masters",
+            "url": "https://sc2.sourceforge.net",
+            "description": "Star Control II 的开源版本与现代平台移植"
+          },
+          {
+            "name": "OpenBOR",
+            "url": "https://www.chronocrash.com",
+            "description": "开放式 2D 动作游戏引擎，可复兴街机时代横版游戏玩法"
+          },
+          {
+            "name": "IKEMEN GO",
+            "url": "https://github.com/K4thos/Ikemen_GO",
+            "description": "开源 2D 格斗游戏引擎，支持经典格斗游戏式玩法与自制…"
+          },
+          {
+            "name": "Solarus",
+            "url": "https://www.solarus-games.org",
+            "description": "开源动作冒险引擎，适合经典俯视角 Zelda 风格游戏"
+          },
+          {
+            "name": "EasyRPG Player",
+            "url": "https://easyrpg.org/player/",
+            "description": "RPG Maker 2000/2003 游戏开源运行环…"
+          },
+          {
+            "name": "OpenSWE1R",
+            "url": "https://github.com/MateuszVis/openswe1r",
+            "description": "经典雪地竞速游戏的现代开源重实现尝试"
+          },
+          {
+            "name": "Xoreos",
+            "url": "https://xoreos.org",
+            "description": "Neverwinter Nights 等经典 BioW…"
+          },
+          {
+            "name": "OpenJazz",
+            "url": "https://github.com/AlisterT/openjazz",
+            "description": "Jazz Jackrabbit 经典 PC 游戏开源引…"
+          },
+          {
+            "name": "Cannonball",
+            "url": "https://github.com/djyt/cannonball",
+            "description": "OutRun 原版引擎的现代开源重制"
+          },
+          {
+            "name": "Sonic 3 A.I.R.",
+            "url": "https://sonic3air.org",
+            "description": "Sonic 3 & Knuckles 的现代增强版本"
+          },
+          {
+            "name": "Ship of Harkinian",
+            "url": "https://github.com/HarbourMasters/Shipwright",
+            "description": "The Legend of Zelda: Ocarin…"
+          },
+          {
+            "name": "2 Ship 2 Harkinian",
+            "url": "https://github.com/HarbourMasters/2ship2harkinian",
+            "description": "Majora's Mask 的原生现代化重实现项目"
+          },
+          {
+            "name": "Zelda Classic",
+            "url": "https://www.zeldaclassic.com",
+            "description": "经典 Zelda 风格引擎与编辑器，可制作和游玩复古内容"
+          },
+          {
+            "name": "Flashpoint Archive",
+            "url": "https://flashpointarchive.org/",
+            "description": "网页游戏、Flash、Shockwave 等历史内容保…"
+          },
+          {
+            "name": "OpenRA",
+            "url": "https://www.openra.net/",
+            "description": "Westwood 经典 RTS 的现代开源重制平台"
+          },
+          {
+            "name": "OpenMW",
+            "url": "https://openmw.org/",
+            "description": "Morrowind 开源引擎重实现"
+          }
+        ]
+      },
+      {
+        "name": "国产老游戏复活",
+        "enName": "Chinese Revivals",
+        "links": [
+          {
+            "name": "jynew 群侠传",
+            "url": "https://github.com/jynew/jynew",
+            "description": "@jynew 金庸群侠传Unity开源重制 ★9.0k"
+          },
+          {
+            "name": "kys-cpp",
+            "url": "https://github.com/scarsty/kys-cpp",
+            "description": "@scarsty 金庸群侠传C++复刻 ★3.0k"
+          },
+          {
+            "name": "SDLPAL",
+            "url": "https://github.com/sdlpal/sdlpal",
+            "description": "@sdlpal 仙剑奇侠传现代重制 ★2.0k"
+          }
+        ]
+      },
+      {
+        "name": "模拟器项目",
+        "enName": "Emulator Projects",
+        "links": [
+          {
+            "name": "RetroArch",
+            "url": "https://github.com/libretro/RetroArch",
+            "description": "@libretro 跨平台模拟器前端，老机种一站式"
+          },
+          {
+            "name": "RPCS3",
+            "url": "https://github.com/RPCS3/rpcs3",
+            "description": "@RPCS3 首个开源PS3模拟器 ★19.9k"
+          },
+          {
+            "name": "PCSX2",
+            "url": "https://pcsx2.net",
+            "description": "开源PS2模拟器，高清化游玩PS2经典"
+          },
+          {
+            "name": "Dolphin",
+            "url": "https://dolphin-emu.org",
+            "description": "GameCube/Wii开源模拟器，全高清游玩"
+          },
+          {
+            "name": "js-dos",
+            "url": "https://js-dos.com",
+            "description": "浏览器内运行DOS/Win9x程序的JS引擎"
+          },
+          {
+            "name": "FreeJ2ME",
+            "url": "https://github.com/TASEmulators/freej2me",
+            "description": "J2ME 手机游戏开源模拟器，适合复活老式 Java …"
+          },
+          {
+            "name": "SameBoy",
+            "url": "https://sameboy.github.io",
+            "description": "高兼容性的 Game Boy / Game Boy C…"
+          },
+          {
+            "name": "Gambatte",
+            "url": "https://github.com/sinamas/gambatte",
+            "description": "专注准确性的 Game Boy / Game Boy …"
+          },
+          {
+            "name": "Mednafen",
+            "url": "https://mednafen.github.io",
+            "description": "多系统开源模拟器，覆盖大量经典主机平台"
+          },
+          {
+            "name": "Ares",
+            "url": "https://ares-emu.net",
+            "description": "高保真多系统开源模拟器项目"
+          },
+          {
+            "name": "BizHawk",
+            "url": "https://tasvideos.org/BizHawk",
+            "description": "多系统模拟器与复古游戏研究工具"
+          },
+          {
+            "name": "Mesen",
+            "url": "https://www.mesen.ca",
+            "description": "高精度 NES、SNES 等经典主机模拟器与调试工具"
+          },
+          {
+            "name": "Mesen2",
+            "url": "https://github.com/SourMesen/Mesen2",
+            "description": "Mesen 系列多系统模拟器的新一代开源项目"
+          },
+          {
+            "name": "bsnes",
+            "url": "https://github.com/bsnes-emu/bsnes",
+            "description": "以高准确度著称的 Super Nintendo 模拟器…"
+          },
+          {
+            "name": "Snes9x",
+            "url": "https://www.snes9x.com",
+            "description": "经典 SNES 模拟器，支持现代桌面系统"
+          },
+          {
+            "name": "DuckStation",
+            "url": "https://www.duckstation.org",
+            "description": "高精度 PlayStation 1 模拟器，提供现代图…"
+          },
+          {
+            "name": "melonDS",
+            "url": "https://melonds.kuribo64.net",
+            "description": "Nintendo DS 开源模拟器"
+          },
+          {
+            "name": "DeSmuME",
+            "url": "https://desmume.org",
+            "description": "经典 Nintendo DS 开源模拟器与调试工具"
+          },
+          {
+            "name": "PPSSPP",
+            "url": "https://www.ppsspp.org",
+            "description": "PlayStation Portable 开源模拟器，…"
+          },
+          {
+            "name": "Flycast",
+            "url": "https://flycast.org",
+            "description": "Dreamcast、Naomi、Atomiswave …"
+          },
+          {
+            "name": "FinalBurn Neo",
+            "url": "https://github.com/finalburnneo/FBNeo",
+            "description": "街机与多主机经典游戏的开源模拟器项目"
+          },
+          {
+            "name": "Stella",
+            "url": "https://stella-emu.github.io",
+            "description": "Atari 2600 高兼容开源模拟器"
+          },
+          {
+            "name": "86Box",
+            "url": "https://86box.net",
+            "description": "PC 硬件级复古模拟器，可复现 1980s-2000s…"
+          },
+          {
+            "name": "PCem",
+            "url": "https://pcem-emulator.co.uk",
+            "description": "老式 IBM PC 兼容机模拟器，适合 DOS/Win…"
+          },
+          {
+            "name": "DOSBox-X",
+            "url": "https://dosbox-x.com",
+            "description": "增强型 DOSBox，兼容大量 DOS 时代经典游戏与…"
+          },
+          {
+            "name": "DOSBox Pure",
+            "url": "https://github.com/schellingb/dosbox-pure",
+            "description": "面向现代模拟器前端的 DOSBox 核心"
+          }
+        ]
+      },
+      {
+        "name": "老游戏归档与怀旧",
+        "enName": "Archives & Communities",
+        "links": [
+          {
+            "name": "My Abandonware",
+            "url": "https://www.myabandonware.com",
+            "description": "老牌 abandonware 老游戏博物馆"
+          },
+          {
+            "name": "DOSBox",
+            "url": "https://www.dosbox.com",
+            "description": "经典 DOS 游戏官方模拟器"
+          },
+          {
+            "name": "DOSBox Staging",
+            "url": "https://www.dosbox-staging.org",
+            "description": "DOSBox 现代增强分支"
+          },
+          {
+            "name": "MAME",
+            "url": "https://www.mamedev.org",
+            "description": "街机与多机台经典模拟器"
+          },
+          {
+            "name": "WinWorld",
+            "url": "https://winworldpc.com",
+            "description": "古董 Windows 系统与软件归档"
+          },
+          {
+            "name": "Classic DOS Games",
+            "url": "https://classicdosgames.com",
+            "description": "浏览器直接玩 DOS 老游戏"
+          },
+          {
+            "name": "Retromags",
+            "url": "https://retromags.com",
+            "description": "复古游戏杂志扫描档案馆"
+          },
+          {
+            "name": "Time Extension",
+            "url": "https://www.timeextension.com",
+            "description": "现代复古游戏新闻与深度报道"
+          },
+          {
+            "name": "Internet Arcade",
+            "url": "https://archive.org/details/internetarcade",
+            "description": "Internet Archive 街机游戏网页模拟档案馆"
+          },
+          {
+            "name": "Console Living Room",
+            "url": "https://archive.org/details/consolelivingroom",
+            "description": "Internet Archive 经典家用游戏机在线模…"
+          },
+          {
+            "name": "MS-DOS Games Library",
+            "url": "https://archive.org/details/softwarelibrary_msdos_games",
+            "description": "Internet Archive MS-DOS 软件与…"
+          },
+          {
+            "name": "Classic PC Games",
+            "url": "https://archive.org/details/classicpcgames",
+            "description": "Internet Archive 老 PC 游戏与历史…"
+          },
+          {
+            "name": "Nostalgia Lab",
+            "url": "https://nostalgialab.org",
+            "description": "复古游戏数据库与资料平台，覆盖多个经典游戏平台"
+          },
+          {
+            "name": "DOS Games",
+            "url": "https://dos.games",
+            "description": "专注经典 DOS 游戏保存、元数据与浏览器游玩的社区项目"
+          },
+          {
+            "name": "Addicting Games",
+            "url": "https://www.addictinggames.com",
+            "description": "经典网页小游戏门户，可用于寻找 Flash 时代作品"
+          },
+          {
+            "name": "Miniclip",
+            "url": "https://www.miniclip.com",
+            "description": "老牌网页游戏品牌，可作为经典浏览器小游戏历史资料入口"
+          },
+          {
+            "name": "itch.io Retro Remakes",
+            "url": "https://itch.io/games/tag-remake/tag-retro",
+            "description": "大量独立复古重制与经典游戏精神续作，可筛选浏览器作品"
+          },
+          {
+            "name": "Open Source Game Clones",
+            "url": "https://osgameclones.com",
+            "description": "开源经典游戏克隆数据库，可按原作、平台和开发状态检索"
+          },
+          {
+            "name": "Source Ports Database",
+            "url": "https://emulation.gametechwiki.com/index.php/Source_ports",
+            "description": "复古游戏源端口与引擎资料库，适合继续发掘经典作品现代化…"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑹𝑒𝑡𝑟𝑜 𝑮𝑎𝑚𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

@@ -1,0 +1,1378 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="地图、地理、卫星影像与空间数据资源导航">
+<title>地图地理 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>地图地理</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">地图地理 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "地图地理",
+    "icon": "🗺️",
+    "color": "linear-gradient(135deg, #00b894, #0984e3)",
+    "subcategories": [
+      {
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Google Maps",
+            "url": "https://www.google.com/maps",
+            "description": "全球覆盖率最高、使用最广泛的交互式地图与街景服务平"
+          },
+          {
+            "name": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org/",
+            "description": "全球最大的开源可编辑协同地理地理数据与地图社区。"
+          },
+          {
+            "name": "ArcGIS Online",
+            "url": "https://www.arcgis.com/",
+            "description": "Esri推出的专业地理信息系统(GIS)云端地图创"
+          },
+          {
+            "name": "NASA Earthdata",
+            "url": "https://earthdata.nasa.gov/",
+            "description": "美国宇航局官方遥感卫星数据"
+          },
+          {
+            "name": "USGS EarthExplorer",
+            "url": "https://earthexplorer.usgs.gov/",
+            "description": "美国地质调查局高精遥感图像"
+          },
+          {
+            "name": "Mapbox",
+            "url": "https://www.mapbox.com/",
+            "description": "全球顶尖的自定义地图设计"
+          },
+          {
+            "name": "Copernicus Open Access Hub",
+            "url": "https://dataspace.copernicus.eu/",
+            "description": "欧洲空间局(ESA)“哥白尼计划”哨兵卫星遥感影像"
+          },
+          {
+            "name": "Google Earth Engine",
+            "url": "https://earthengine.google.com/",
+            "description": "全球级地理空间分析平台，结合海量卫星图像与超级计算"
+          },
+          {
+            "name": "QGIS",
+            "url": "https://www.qgis.org/",
+            "description": "最受欢迎的免费开源桌面地理信息系统(GIS)软件与"
+          },
+          {
+            "name": "Natural Earth",
+            "url": "https://www.naturalearthdata.com/",
+            "description": "面向地图制图师的免费矢量与栅格地图基础数据集。"
+          },
+          {
+            "name": "Geofabrik",
+            "url": "https://www.geofabrik.de/",
+            "description": "提供按国家和地区划分的最新"
+          },
+          {
+            "name": "Sentinel Hub",
+            "url": "https://www.sentinel-hub.com/",
+            "description": "基于云端的全球卫星影像实时渲染"
+          },
+          {
+            "name": "Planet Labs",
+            "url": "https://www.planet.com/",
+            "description": "提供高频次、每日更新的全球高分辨率卫星图像与地理监"
+          },
+          {
+            "name": "Maxar Technologies",
+            "url": "https://www.maxar.com/",
+            "description": "全球商业高分辨率光学卫星影像与地理空间情报服务巨头"
+          },
+          {
+            "name": "Landsat Look",
+            "url": "https://landsatlook.usgs.gov/",
+            "description": "USGS官方推出的历代Landsat卫星地表图像交"
+          },
+          {
+            "name": "MapTiler",
+            "url": "https://www.maptiler.com/",
+            "description": "提供极速地图切片、矢量切片服务与地理空间数据发布平"
+          },
+          {
+            "name": "CARTO",
+            "url": "https://carto.com/",
+            "description": "面向企业级商业智能、空间分析与可视化地图打造的云原"
+          },
+          {
+            "name": "Leaflet",
+            "url": "https://leafletjs.com/",
+            "description": "轻量级、移动端友好的开源JavaScript交互式"
+          },
+          {
+            "name": "OpenLayers",
+            "url": "https://openlayers.org/",
+            "description": "高性能、功能强大的开源WebGIS前端地图加载与渲"
+          },
+          {
+            "name": "CesiumJS",
+            "url": "https://cesium.com/cesiumjs/",
+            "description": "专注于Web端3D地球、三维建筑与地理时空数据渲染"
+          },
+          {
+            "name": "National Geographic Maps",
+            "url": "https://www.nationalgeographic.com/maps",
+            "description": "国家地理官方地图门户，汇集历史手绘图"
+          },
+          {
+            "name": "David Rumsey Map Collection",
+            "url": "https://www.davidrumsey.com/",
+            "description": "全球最大的古地图数字化收藏库"
+          },
+          {
+            "name": "Old Maps Online",
+            "url": "https://www.oldmapsonline.org/",
+            "description": "通过空间地理坐标检索全球数百个图书馆藏古地图的门户"
+          },
+          {
+            "name": "Ordnance Survey",
+            "url": "https://www.ordnancesurvey.co.uk/",
+            "description": "英国官方测绘局，提供全球最高精度与艺术感强烈的地形"
+          },
+          {
+            "name": "IGN Rando (France)",
+            "url": "https://ignrando.fr/",
+            "description": "法国国家地理研究所推出的高精拓扑地图与户外路线规划"
+          },
+          {
+            "name": "Swisstopo",
+            "url": "https://www.swisstopo.admin.ch/",
+            "description": "瑞士国家地形测绘局，以极致精密的山体阴影与地形绘图"
+          },
+          {
+            "name": "USGS National Map",
+            "url": "https://www.usgs.gov/programs/national-map",
+            "description": "美国国家地质测绘图，提供全面准确的北美地形与水文数"
+          },
+          {
+            "name": "Worldmaps (Harvard)",
+            "url": "https://worldmap.harvard.edu/",
+            "description": "哈佛大学发起的地理空间数据共享与多学科可视化制图平"
+          },
+          {
+            "name": "Flightradar24",
+            "url": "https://www.flightradar24.com/",
+            "description": "全球最受欢迎的实时航班跟踪"
+          },
+          {
+            "name": "MarineTraffic",
+            "url": "https://www.marinetraffic.com/",
+            "description": "全球船舶实时定位、港口追踪与海洋航线地理可视化网。"
+          },
+          {
+            "name": "Windy",
+            "url": "https://www.windy.com/",
+            "description": "全球高精度可视化风场、气压"
+          },
+          {
+            "name": "Ventusky",
+            "url": "https://www.ventusky.com/",
+            "description": "捷克推出的实时3D大气、气象与自然灾害地理可视化地"
+          },
+          {
+            "name": "Earth Nullschool",
+            "url": "https://earth.nullschool.net/",
+            "description": "著名的全三维交互式全球风速、洋流"
+          },
+          {
+            "name": "World Imagery Wayback",
+            "url": "https://livingatlas.arcgis.com/wayback/",
+            "description": "Esri推出的历史卫星图数据库"
+          },
+          {
+            "name": "Global Forest Watch",
+            "url": "https://www.globalforestwatch.org/",
+            "description": "实时监测全球森林砍伐、森林火灾与树木覆盖变化的交互"
+          },
+          {
+            "name": "Global Fishing Watch",
+            "url": "https://globalfishingwatch.org/",
+            "description": "利用卫星与AIS数据追踪全球商业捕捞活动与海洋保护"
+          },
+          {
+            "name": "WorldPop",
+            "url": "https://www.worldpop.org/",
+            "description": "开放获取的高分辨率全球人口空间分布"
+          },
+          {
+            "name": "LandScan (ORNL)",
+            "url": "https://landscan.ornl.gov/",
+            "description": "美国橡树岭国家实验室开发的全球高分辨率人口地理分布"
+          },
+          {
+            "name": "SEDAC (CIESIN)",
+            "url": "https://sedac.ciesin.columbia.edu/",
+            "description": "哥伦比亚大学社会经济数据与应用中心"
+          },
+          {
+            "name": "FAO GeoNetwork",
+            "url": "https://www.fao.org/geonetwork/",
+            "description": "联合国粮农组织(FAO)官方地理空间数据"
+          },
+          {
+            "name": "UNEP Environment Live",
+            "url": "https://www.unep.org/",
+            "description": "联合国环境规划署提供的全球环境监测"
+          },
+          {
+            "name": "GEBCO",
+            "url": "https://www.gebco.net/",
+            "description": "国际水文组织与海洋学委员会联合发布的全球海底地形图"
+          },
+          {
+            "name": "NOAA National Centers for Environmental Information",
+            "url": "https://www.ncei.noaa.gov/",
+            "description": "全球权威的气候、海洋、地质与极地地理数据中心。"
+          },
+          {
+            "name": "EMODnet",
+            "url": "https://emodnet.ec.europa.eu/",
+            "description": "欧洲海洋观测与数据网络，集成欧洲各海域水深"
+          },
+          {
+            "name": "Marine Regions",
+            "url": "https://www.marineregions.org/",
+            "description": "提供全球标准海洋地理名称"
+          },
+          {
+            "name": "Sea Level Rise Viewer",
+            "url": "https://coast.noaa.gov/digitalcoast/tools/slr.html",
+            "description": "NOAA推出的海平面上升模拟与沿海淹没灾害地理可视"
+          },
+          {
+            "name": "Global Disaster Alert and Coordination System (GDACS)",
+            "url": "https://www.gdacs.org/",
+            "description": "联合国外交与地震、海啸、飓风灾害实时地理预警系统。"
+          },
+          {
+            "name": "USGS Earthquake Hazards Program",
+            "url": "https://earthquake.usgs.gov/",
+            "description": "全球地震实时监测、震中地理坐标定位与历史断层数据。"
+          },
+          {
+            "name": "Volcano Discovery",
+            "url": "https://www.volcanodiscovery.com/",
+            "description": "全球火山喷发实时追踪、火山分布交互式地图与活动报告"
+          },
+          {
+            "name": "FIRMS (NASA)",
+            "url": "https://firms.modaps.eosdis.nasa.gov/",
+            "description": "NASA实时火灾信息资源系统"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "ReliefWeb Crisis Map",
+            "url": "https://reliefweb.int/topics/maps",
+            "description": "联合国人道主义事务协调厅(OCHA)全球危机与救援"
+          },
+          {
+            "name": "Humanitarian OpenStreetMap Team (HOT)",
+            "url": "https://www.hotosm.org/",
+            "description": "利用开源地图进行人道主义救援"
+          },
+          {
+            "name": "MapAction",
+            "url": "https://mapaction.org/",
+            "description": "专注于在人道主义危机与自然灾害现场提供即时地图救援"
+          },
+          {
+            "name": "Gapminder World",
+            "url": "https://www.gapminder.org/",
+            "description": "结合地理坐标、时间轴与全球健康贫富差异的动态可视化"
+          },
+          {
+            "name": "Our World in Data - Maps",
+            "url": "https://ourworldindata.org/",
+            "description": "汇集全球人口、经济、气候与疾病分布的专业地理数据图"
+          },
+          {
+            "name": "World Inequality Database",
+            "url": "https://wid.world/",
+            "description": "全球收入与财富不平等空间地理分布交互式分析平台。"
+          },
+          {
+            "name": "Climate Central - Coastal Risk Screening Tool",
+            "url": "https://coastal.climatecentral.org/",
+            "description": "基于高精DEM数据的全球淹没风险与气候变化预测交互"
+          },
+          {
+            "name": "Copernicus Climate Change Service (C3S)",
+            "url": "https://climate.copernicus.eu/",
+            "description": "欧洲哥伦比亚计划气候变化监测"
+          },
+          {
+            "name": "ERA5 Reanalysis",
+            "url": "https://cds.climate.copernicus.eu/",
+            "description": "全球最常用的大气、陆地和海洋气候再分析高精度地理网"
+          },
+          {
+            "name": "WorldClim",
+            "url": "https://www.worldclim.org/",
+            "description": "全球高分辨率气象与气候网格数据集"
+          },
+          {
+            "name": "CHELSA Climate",
+            "url": "https://chelsa-climate.org/",
+            "description": "提供全球极高分辨率的陆地表层气象与降水空间地理数据"
+          },
+          {
+            "name": "GBIF (Global Biodiversity Information Facility)",
+            "url": "https://www.gbif.org/",
+            "description": "全球生物多样性信息网络，提供数以亿计的物种空间地理"
+          },
+          {
+            "name": "IUCN Red List Spatial Data",
+            "url": "https://www.iucnredlist.org/resources/spatial-data-download",
+            "description": "世界自然保护联盟濒危物种地理分布图与栖息地范围矢量"
+          },
+          {
+            "name": "Protected Planet",
+            "url": "https://www.protectedplanet.net/",
+            "description": "全球陆地与海洋自然保护区"
+          },
+          {
+            "name": "One Earth Map",
+            "url": "https://www.oneearth.org/",
+            "description": "基于生物地理区域(Bioregions)划分的全球"
+          },
+          {
+            "name": "Ecoregions 2017 (Resolve)",
+            "url": "https://ecoregions.appspot.com/",
+            "description": "展示全球846个陆地生态区与自然植被地理分布的互动"
+          },
+          {
+            "name": "Global Land Cover Share (GLCNMO)",
+            "url": "https://www.gsi.go.jp/",
+            "description": "基于卫星遥感判读的全球土地利用与地表覆盖类型地理图"
+          },
+          {
+            "name": "ESA WorldCover",
+            "url": "https://esa-worldcover.org/",
+            "description": "欧洲空间局推出的全球10米极高分辨率地表覆盖分类地"
+          },
+          {
+            "name": "Dynamic World",
+            "url": "https://dynamicworld.app/",
+            "description": "Google与WRI联合推出的基于"
+          },
+          {
+            "name": "Global Surface Water Explorer",
+            "url": "https://global-surface-water.appspot.com/",
+            "description": "欧盟委员会推出的近40年全球地表水体变化与时空地理"
+          },
+          {
+            "name": "HydroSHEDS",
+            "url": "https://www.hydrosheds.org/",
+            "description": "基于高程数据构建的全球水文地理数据(含水系"
+          },
+          {
+            "name": "Freshwater Species Conservation Assessment",
+            "url": "https://www.freshwaterbiodiversity.eu/",
+            "description": "全球淡水生态系统、河流地理网格与生物多样性评价地图"
+          },
+          {
+            "name": "OpenTopography",
+            "url": "https://opentopography.org/",
+            "description": "提供全球高精度激光雷达(LiDAR)地形数据与高程"
+          },
+          {
+            "name": "CGIAR-CSI SRTM DEM",
+            "url": "https://srtm.csi.cgiar.org/",
+            "description": "经过断点修补的全球SRTM"
+          },
+          {
+            "name": "ALOS World 3D (JAXA)",
+            "url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/index.htm",
+            "description": "日本宇宙航空研究开发机构发布的全球30米高程数字地"
+          },
+          {
+            "name": "FABDEM",
+            "url": "https://a2k.isric.org/",
+            "description": "扣除了树木和建筑高度后的全球高精度裸地数字高程("
+          },
+          {
+            "name": "Mapillary",
+            "url": "https://www.mapillary.com/",
+            "description": "基于众包街景照片、利用计算机视觉构建的开放式街景地"
+          },
+          {
+            "name": "KartaView",
+            "url": "https://kartaview.org/",
+            "description": "开放式众包道路街景影像库"
+          },
+          {
+            "name": "Baidu Maps",
+            "url": "https://map.baidu.com/",
+            "description": "中国主流的在线地图服务商，提供精准的电子地图"
+          },
+          {
+            "name": "Amap (Gaode Maps)",
+            "url": "https://www.amap.com/",
+            "description": "高德地图官网，中国领先的数字地图内容"
+          },
+          {
+            "name": "Tencent Maps",
+            "url": "https://map.qq.com/",
+            "description": "腾讯地图官网，提供高清街景"
+          },
+          {
+            "name": "Tianditu (National Platform for Common Geospatial Information Services)",
+            "url": "https://www.tianditu.gov.cn/",
+            "description": "中国“天地图”国家地理信息公共服务平台"
+          },
+          {
+            "name": "Geospatial Data Cloud (GSCLOUD)",
+            "url": "http://www.gscloud.cn/",
+            "description": "中国科学院地理资源所地理空间数据云"
+          },
+          {
+            "name": "CalTopo",
+            "url": "https://caltopo.com/",
+            "description": "北美高级户外登山、搜救与地形定制绘制利器"
+          },
+          {
+            "name": "Fatmap",
+            "url": "https://fatmap.com/",
+            "description": "结合高分辨率卫星图像与地形高程的全球3D户外滑雪与"
+          },
+          {
+            "name": "PeakFinder",
+            "url": "https://www.peakfinder.org/",
+            "description": "只要输入世界任意地理坐标即可全景3D渲染周围山峰名"
+          },
+          {
+            "name": "Peakbagger",
+            "url": "https://www.peakbagger.com/",
+            "description": "全球山峰地理数据库，记录山峰坐标"
+          },
+          {
+            "name": "SummitPost",
+            "url": "https://www.summitpost.org/",
+            "description": "由攀登者维护的全球主要高山地理"
+          },
+          {
+            "name": "Wikiloc",
+            "url": "https://www.wikiloc.com/",
+            "description": "全球户外爱好者上传的户外轨迹"
+          },
+          {
+            "name": "AllTrails",
+            "url": "https://www.alltrails.com/",
+            "description": "全球最大的徒步路线、越野步道与野外地理信息导览平台"
+          },
+          {
+            "name": "Komoot",
+            "url": "https://www.komoot.com/",
+            "description": "欧洲热门的智能户外路线规划与路线探索平台"
+          },
+          {
+            "name": "Gaia GPS",
+            "url": "https://www.gaiagps.com/",
+            "description": "专业的野外离线拓扑地图、猎场地图与野外探险导航服务"
+          },
+          {
+            "name": "Strava Global Heatmap",
+            "url": "https://www.strava.com/heatmap",
+            "description": "汇总全球数亿次运动轨迹生成的全球人类户外活动热力分"
+          },
+          {
+            "name": "Light Pollution Map",
+            "url": "https://www.lightpollutionmap.info/",
+            "description": "结合VIIRS卫星数据的全球光污染与暗夜星空观测地"
+          },
+          {
+            "name": "Clear Dark Sky",
+            "url": "http://www.cleardarksky.com/",
+            "description": "专为北美观星者设计的天体透明度"
+          },
+          {
+            "name": "SunCalc",
+            "url": "https://www.suncalc.org/",
+            "description": "任意地理坐标与特定日期的日出日落角度"
+          },
+          {
+            "name": "MoonCalc",
+            "url": "https://www.mooncalc.org/",
+            "description": "测算全球任意地理位置月升月落角度"
+          },
+          {
+            "name": "Shadowmap",
+            "url": "https://shadowmap.org/",
+            "description": "基于3D建筑物模型与地形模拟全球任意时刻太阳光照阴"
+          },
+          {
+            "name": "Overpass Turbo",
+            "url": "https://overpass-turbo.eu/",
+            "description": "OpenStreetMap的高级数据挖掘工具"
+          },
+          {
+            "name": "Taginfo (OpenStreetMap)",
+            "url": "https://taginfo.openstreetmap.org/",
+            "description": "统计并展示OSM数据库中所有地理标签使用频率与分布"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "OSM Buildings",
+            "url": "https://osmbuildings.org/",
+            "description": "基于OpenStreetMap数据的Web端全球"
+          },
+          {
+            "name": "BoundingBox Finder",
+            "url": "https://bboxfinder.com/",
+            "description": "快速框选地图并获取指定地理区域经纬度坐标("
+          },
+          {
+            "name": "EPSG.io",
+            "url": "https://epsg.io/",
+            "description": "全球坐标系、地图投影(EPSG代码)查询"
+          },
+          {
+            "name": "Proj.org",
+            "url": "https://proj.org/",
+            "description": "著名的开源地理坐标转换与地图投影变换标准库官方网站"
+          },
+          {
+            "name": "GDAL",
+            "url": "https://gdal.org/",
+            "description": "地理空间数据转换的标准栅格/矢量开源库("
+          },
+          {
+            "name": "Geoserver",
+            "url": "https://geoserver.org/",
+            "description": "最主流的开源地理信息服务器，支持发布WMS"
+          },
+          {
+            "name": "MapServer",
+            "url": "https://mapserver.org/",
+            "description": "基于C语言的高性能开源WebGIS渲染引擎与地图发"
+          },
+          {
+            "name": "PostGIS",
+            "url": "https://postgis.net/",
+            "description": "最强大的开源空间数据库扩展"
+          },
+          {
+            "name": "Turf.js",
+            "url": "https://turfjs.org/",
+            "description": "著名的Web端JavaScript空间分析与地理计"
+          },
+          {
+            "name": "Shapely",
+            "url": "https://shapely.readthedocs.io/",
+            "description": "Python中最常用的平面几何对象计算与地理空间要"
+          },
+          {
+            "name": "GeoPandas",
+            "url": "https://geopandas.org/",
+            "description": "将Pandas数据分析能力延伸至地理空间数据的"
+          },
+          {
+            "name": "Pyproj",
+            "url": "https://pyproj4.github.io/pyproj/",
+            "description": "Python下专门用于经纬度投影转换与大圆距离计算"
+          },
+          {
+            "name": "Rasterio",
+            "url": "https://rasterio.readthedocs.io/",
+            "description": "基于GDAL构建的Python高效栅格影像处理与地"
+          },
+          {
+            "name": "Fiona",
+            "url": "https://fiona.readthedocs.io/",
+            "description": "专为Python工程师打造的矢量地理数据API接口"
+          },
+          {
+            "name": "Folium",
+            "url": "https://python-visualization.github.io/folium/",
+            "description": "将Python地理数据处理能力与Leaflet交互"
+          },
+          {
+            "name": "Deck.gl",
+            "url": "https://deck.gl/",
+            "description": "Uber开源的基于WebGL的大规模地理空间数据可"
+          },
+          {
+            "name": "kepler.gl",
+            "url": "https://kepler.gl/",
+            "description": "基于Deck.gl的大数据量地理时空轨迹与热力图极"
+          },
+          {
+            "name": "GeoDA",
+            "url": "https://geodacenter.github.io/",
+            "description": "芝加哥大学开发的免费空间计量经济学与空间统计分析软"
+          },
+          {
+            "name": "Whitebox Geospatial",
+            "url": "https://www.whiteboxgeo.com/",
+            "description": "专注于水文分析、地形因子提取与高级遥感处理的"
+          },
+          {
+            "name": "SAGA GIS",
+            "url": "https://saga-gis.sourceforge.io/",
+            "description": "德国开发的注重地学分析、土壤制图与地形分析的开源桌"
+          },
+          {
+            "name": "GRASS GIS",
+            "url": "https://grass.osgeo.org/",
+            "description": "历史悠久、功能极其强大的地理空间数据管理"
+          },
+          {
+            "name": "OSGeo (Open Source Geospatial Foundation)",
+            "url": "https://www.osgeo.org/",
+            "description": "开源地理空间基金会官网，支持全球地理信息开源软件与"
+          },
+          {
+            "name": "OGC (Open Geospatial Consortium)",
+            "url": "https://www.ogc.org/",
+            "description": "开放地理空间信息协会，制定WMS、WFS"
+          },
+          {
+            "name": "USGS Mineral Resources Data System",
+            "url": "https://mrdata.usgs.gov/",
+            "description": "美国地质调查局全球矿产资源"
+          },
+          {
+            "name": "OneGeology",
+            "url": "http://www.onegeology.org/",
+            "description": "全球地质调查机构联合打造的动态数字地质图与地球地质"
+          },
+          {
+            "name": "Macrostrat",
+            "url": "https://macrostrat.org/",
+            "description": "结合地质图、地层柱与古地理演化的全球地质时空数据库"
+          },
+          {
+            "name": "Paleobiology Database (PBDB)",
+            "url": "https://paleobiodb.org/",
+            "description": "包含全球古生物化石出土地点地理坐标与地质年代的空间"
+          },
+          {
+            "name": "GPlates",
+            "url": "https://www.gplates.org/",
+            "description": "专为板块构造重建、大陆漂移历史与古地理地图可视化打"
+          },
+          {
+            "name": "Deep-Time Digital Earth (DDE)",
+            "url": "https://www.ddeworld.org/",
+            "description": "国际地质科学联合会支持的大深时地球历史地理数据与深"
+          },
+          {
+            "name": "SoilGrids (ISRIC)",
+            "url": "https://www.soilgrids.org/",
+            "description": "利用机器学习预测的全球250米分辨率土壤性质与剖面"
+          },
+          {
+            "name": "FAO SoiMAP",
+            "url": "https://www.fao.org/soils-portal/",
+            "description": "联合国粮农组织全球土壤退化"
+          },
+          {
+            "name": "ISRIC World Soil Information",
+            "url": "https://www.isric.org/",
+            "description": "国际土壤参考与信息中心，全球最权威的土壤地理数据库"
+          },
+          {
+            "name": "World Database on Protected Areas (WDPA)",
+            "url": "https://www.unep-wcmc.org/",
+            "description": "联合国环境署与IUCN维护的全球自然保护区地理矢量"
+          },
+          {
+            "name": "Global Administrative Areas (GADM)",
+            "url": "https://gadm.org/",
+            "description": "全球各国家和地区行政区划高精矢量边界数据(按行政级"
+          },
+          {
+            "name": "Natural Earth Administrative Boundaries",
+            "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/",
+            "description": "经妥善处理的国际公认标准国家界线与争议地区地图矢量"
+          },
+          {
+            "name": "Humanitarian Data Exchange (HDX)",
+            "url": "https://data.humdata.org/",
+            "description": "联合国人道协调厅维护的全人群"
+          },
+          {
+            "name": "UN Data Spatial",
+            "url": "https://data.un.org/",
+            "description": "联合国官方数据门户，提供按国家和地理区域划分的各类"
+          },
+          {
+            "name": "World Bank Spatial Data",
+            "url": "https://microdata.worldbank.org/",
+            "description": "世界银行提供的全球贫困、基础设施与经济空间地理数据"
+          },
+          {
+            "name": "Eurostat GISCO",
+            "url": "https://ec.europa.eu/eurostat/web/gisco",
+            "description": "欧盟统计局地理信息系统，提供欧洲标准化行政界线与网"
+          },
+          {
+            "name": "U.S. Census Bureau TIGER/Line",
+            "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html",
+            "description": "美国人口普查局官方高精地形"
+          },
+          {
+            "name": "Ordnance Survey OpenData",
+            "url": "https://www.ordnancesurvey.co.uk/products/opendata",
+            "description": "英国测绘局开源发布的矢量地图"
+          },
+          {
+            "name": "Statoids",
+            "url": "http://www.statoids.com/",
+            "description": "记录全球所有国家及其下属一级"
+          },
+          {
+            "name": "Geonames",
+            "url": "https://www.geonames.org/",
+            "description": "包含全球超过2500万个地理实体名称、坐标"
+          },
+          {
+            "name": "Getty Thesaurus of Geographic Names (TGN)",
+            "url": "https://www.getty.edu/research/tools/vocabularies/tgn/",
+            "description": "盖蒂研究所维护的历史与现代地理名称"
+          },
+          {
+            "name": "Pleiades Ancient Places",
+            "url": "https://pleiades.stoa.org/",
+            "description": "古希腊、古罗马及地中海古代世界历史地理位置与遗址坐"
+          },
+          {
+            "name": "China Historical GIS (CHGIS)",
+            "url": "https://chgis.fairbank.fas.harvard.edu/",
+            "description": "复旦大学与哈佛大学合作建立的中国历史时期行政区划与"
+          },
+          {
+            "name": "Digital Atlas of the Roman Empire",
+            "url": "https://imperium.ahlfeldt.se/",
+            "description": "基于地理信息系统建立的罗马帝国公路网"
+          },
+          {
+            "name": "ORBIS (Stanford)",
+            "url": "https://orbis.stanford.edu/",
+            "description": "斯坦福大学建立的古罗马世界交通物流与地理时空模拟系"
+          },
+          {
+            "name": "Old Maps of the World",
+            "url": "https://www.maps-of-the-world.net/",
+            "description": "汇集大量历史高清世界地图"
+          },
+          {
+            "name": "Library of Congress Map Collections",
+            "url": "https://www.loc.gov/maps/",
+            "description": "美国国会图书馆官方地图馆藏"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 151-198",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "British Library Georeferencer",
+            "url": "https://www.bl.uk/maps/",
+            "description": "英国图书馆将馆藏历史古地图与现代经纬度坐标相融合的"
+          },
+          {
+            "name": "Perry-Castañeda Library Map Collection",
+            "url": "https://maps.lib.utexas.edu/maps/",
+            "description": "德克萨斯大学奥斯汀分校著名的公共领域电子历史与地形"
+          },
+          {
+            "name": "Mapster",
+            "url": "https://mapster.me/",
+            "description": "专注于历史人文地理、互动地图故事叙述与历史疆域可视"
+          },
+          {
+            "name": "True Size Of",
+            "url": "https://thetruesize.com/",
+            "description": "可在地图上自由拖动国家以直观对比墨卡托投影下真实面"
+          },
+          {
+            "name": "Projection Wizard",
+            "url": "https://projectionwizard.org/",
+            "description": "根据用户选择的全球经纬度区域自动推荐最佳地图投影方"
+          },
+          {
+            "name": "Map Projections (USGS)",
+            "url": "https://pubs.usgs.gov/gip/7000015/report.pdf",
+            "description": "USGS地图投影原理与全球各种常见地图投影参数对比"
+          },
+          {
+            "name": "Mercator Puzzle",
+            "url": "https://world-geography-games.com/",
+            "description": "通过拼图游戏直观体验地图投影变形与全球国家实际形状"
+          },
+          {
+            "name": "MapChart",
+            "url": "https://www.mapchart.net/",
+            "description": "允许用户自定义给世界各国"
+          },
+          {
+            "name": "Pixel Map Generator",
+            "url": "https://pixelmap.amcharts.com/",
+            "description": "将全球或特定国家地图一键生成像素风"
+          },
+          {
+            "name": "Cartogram Central",
+            "url": "https://www.viewsoftheworld.net/",
+            "description": "著名地理学家创建的变形地图(Cartogram"
+          },
+          {
+            "name": "Worldmapper",
+            "url": "https://worldmapper.org/",
+            "description": "包含数百幅根据全球社会、经济与环境指标重组变形的世"
+          },
+          {
+            "name": "Equal Earth Map Projection",
+            "url": "https://equal-earth.com/",
+            "description": "旨在准确展现全球大陆真实相对面积大小的等面积地图投"
+          },
+          {
+            "name": "City-Data",
+            "url": "https://www.city-data.com/",
+            "description": "结合地理位置集成美国各城市详细人口、房屋"
+          },
+          {
+            "name": "Urban Observatory",
+            "url": "https://www.urbanobservatory.org/",
+            "description": "Esri发起的全球数十座大都市土地利用"
+          },
+          {
+            "name": "Walk Score",
+            "url": "https://www.walkscore.com/",
+            "description": "根据地理位置计算周边步行便利度"
+          },
+          {
+            "name": "Transitland",
+            "url": "https://www.transit.land/",
+            "description": "整合全球公共交通线路、公交站点地理坐标与GTFS数"
+          },
+          {
+            "name": "OpenFlights",
+            "url": "https://openflights.org/",
+            "description": "全球机场地理坐标、航线拓扑图与飞行轨迹开放数据库。"
+          },
+          {
+            "name": "Great Circle Mapper",
+            "url": "http://www.gcmap.com/",
+            "description": "计算全球机场间大圆航线距离"
+          },
+          {
+            "name": "Cablemap (Submarine Cable Map)",
+            "url": "https://www.submarinecablemap.com/",
+            "description": "TeleGeography绘制的全球海底光缆地理分"
+          },
+          {
+            "name": "Infrapedia",
+            "url": "https://www.infrapedia.com/",
+            "description": "展示全球互联网基础设施(海底光缆、陆地光缆"
+          },
+          {
+            "name": "Open Infrastructure Map",
+            "url": "https://openinframap.org/",
+            "description": "基于OpenStreetMap数据渲染的全球电力线"
+          },
+          {
+            "name": "Global Power Plant Database",
+            "url": "https://global-power-plants.datasettes.com/",
+            "description": "包含全球数万座发电厂位置"
+          },
+          {
+            "name": "Open Railway Map",
+            "url": "https://www.openrailwaymap.org/",
+            "description": "基于OSM的全球铁路网线、信号系统"
+          },
+          {
+            "name": "Road Traffic Indicators (World Bank)",
+            "url": "https://mrt.worldbank.org/",
+            "description": "利用地理空间大数据分析全球道路交通流量与通达性的数"
+          },
+          {
+            "name": "Google Street View",
+            "url": "https://www.google.com/streetview/",
+            "description": "全球覆盖范围广的全景街景地图"
+          },
+          {
+            "name": "MapCrunch",
+            "url": "https://www.mapcrunch.com/",
+            "description": "随机将用户带入全球任意角落Google街景的虚拟环"
+          },
+          {
+            "name": "City Guesser",
+            "url": "https://virtualvacation.us/guess",
+            "description": "基于实景路线视频与地图坐标猜测所在城市地理位置的游"
+          },
+          {
+            "name": "GeoGuessr",
+            "url": "https://www.geoguessr.com/",
+            "description": "全球极具人气的通过全景街景图像推断地理经纬度坐标的"
+          },
+          {
+            "name": "Seterra Geography",
+            "url": "https://www.geoguessr.com/seterra/",
+            "description": "经典地名、国旗、行政区划与地理知识测验平台。"
+          },
+          {
+            "name": "Geospatial World",
+            "url": "https://www.geospatialworld.net/",
+            "description": "专注于全球GIS行业、卫星遥感"
+          },
+          {
+            "name": "GIS Lounge",
+            "url": "https://www.gislounge.com/",
+            "description": "提供GIS技术教程、地图学前沿"
+          },
+          {
+            "name": "Directions Magazine",
+            "url": "https://www.directionsmag.com/",
+            "description": "涵盖地理空间技术、位置服务"
+          },
+          {
+            "name": "Spatial Source",
+            "url": "https://www.spatialsource.com.au/",
+            "description": "澳大利亚及亚太地区主要的测绘"
+          },
+          {
+            "name": "Spatial Resonance",
+            "url": "https://maptastik.com/",
+            "description": "探讨制图学美学、可视化设计与地理空间叙事的独立博客"
+          },
+          {
+            "name": "Map Lab (Bloomberg CityLab)",
+            "url": "https://www.bloomberg.com/citylab/maps",
+            "description": "彭博社旗下探讨城市地图、历史地图与空间政治的专业专"
+          },
+          {
+            "name": "ArcUser Magazine",
+            "url": "https://www.esri.com/about/newsroom/arcuser/",
+            "description": "Esri官方出版物，分享全球GIS空间分析案例"
+          },
+          {
+            "name": "GIS Stack Exchange",
+            "url": "https://gis.stackexchange.com/",
+            "description": "全球地理信息系统(GIS)开发者与制图师问答与技术"
+          },
+          {
+            "name": "Reddit /r/GIS",
+            "url": "https://www.reddit.com/r/gis/",
+            "description": "Reddit上最活跃的GIS专业人员"
+          },
+          {
+            "name": "Reddit /r/MapPorn",
+            "url": "https://www.reddit.com/r/MapPorn/",
+            "description": "汇集全球高颜值、创意十足"
+          },
+          {
+            "name": "MapScaping Podcast",
+            "url": "https://mapscaping.com/",
+            "description": "专注于地理空间技术、GIS未来方向"
+          },
+          {
+            "name": "Geoawesomeness",
+            "url": "https://geoawesomeness.com/",
+            "description": "专注于无人机测绘、位置大数据"
+          },
+          {
+            "name": "Esri StoryMaps",
+            "url": "https://storymaps.arcgis.com/",
+            "description": "将地图与富文本、照片、视频相结合进行空间地理交互式"
+          },
+          {
+            "name": "Knight Lab StoryMap JS",
+            "url": "https://storymap.knightlab.com/",
+            "description": "适合记者与历史学者，按时间轴与地理坐标讲述历史事件"
+          },
+          {
+            "name": "Felt",
+            "url": "https://felt.com/",
+            "description": "现代协同制图网页工具，允许团队像在画布上一样轻松绘"
+          },
+          {
+            "name": "Mapme",
+            "url": "https://mapme.com/",
+            "description": "专注于为企业、旅游景区和房地产打造可视化互动故事地"
+          },
+          {
+            "name": "ZeeMaps",
+            "url": "https://www.zeemaps.com/",
+            "description": "允许用户快速批量导入地址/坐标并生成标注点与热力图"
+          },
+          {
+            "name": "BatchGeo",
+            "url": "https://batchgeo.com/",
+            "description": "快速将Excel表格中的地址和经纬度数据转换为交互"
+          },
+          {
+            "name": "Maplines",
+            "url": "https://mapline.com/",
+            "description": "专注于商业销售区域划定、物流路线映射与地理空间管理"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑴𝑎𝑝𝑠 𝑮𝑒𝑜𝑔𝑟𝑎𝑝𝑕𝑦';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

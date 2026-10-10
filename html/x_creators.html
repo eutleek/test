@@ -1,0 +1,1373 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="X 平台热门账号与全球意见领袖导航">
+<title>X平台 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>X平台</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">X平台 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "X平台",
+    "icon": "𝕏",
+    "color": "linear-gradient(135deg, #111111, #636e72)",
+    "subcategories": [
+      {
+        "name": "热门账号 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Elon Musk",
+            "url": "https://x.com/elonmusk",
+            "description": "X平台所有者、特斯拉及SpaceX CEO"
+          },
+          {
+            "name": "Donald J. Trump",
+            "url": "https://x.com/realDonaldTrump",
+            "description": "美国前总统、政界极具轰动效应与舆论号召力的超级政治"
+          },
+          {
+            "name": "Barack Obama",
+            "url": "https://x.com/BarackObama",
+            "description": "美国前总统奥巴马，长期蝉联X平台全球粉丝量前列的政"
+          },
+          {
+            "name": "Justin Bieber",
+            "url": "https://x.com/justinbieber",
+            "description": "全球流行乐坛巨星，在X平台上拥有庞大且活跃的粉丝基"
+          },
+          {
+            "name": "Cristiano Ronaldo",
+            "url": "https://x.com/Cristiano",
+            "description": "全球足坛顶流巨星C罗，在各大社交平台均拥有统治级的"
+          },
+          {
+            "name": "Rihanna",
+            "url": "https://x.com/rihanna",
+            "description": "国际流行天后兼商业帝国主理人蕾哈娜"
+          },
+          {
+            "name": "Katy Perry",
+            "url": "https://x.com/katyperry",
+            "description": "流行天后“水果姐”，其在X平台的粉丝订阅量长期稳居"
+          },
+          {
+            "name": "Taylor Swift",
+            "url": "https://x.com/taylorswift13",
+            "description": "全球乐坛现象级巨星泰勒·斯威夫特"
+          },
+          {
+            "name": "Narendra Modi",
+            "url": "https://x.com/narendramodi",
+            "description": "印度现任总理莫迪，全球政界在X平台上活跃度与粉丝量"
+          },
+          {
+            "name": "Ariana Grande",
+            "url": "https://x.com/ArianaGrande",
+            "description": "美国流行音乐天后爱莉安娜·格兰德。"
+          },
+          {
+            "name": "Joe Biden",
+            "url": "https://x.com/JoeBiden",
+            "description": "美国总统官方政务及个人观点发布账号。"
+          },
+          {
+            "name": "Ellen DeGeneres",
+            "url": "https://x.com/TheEllenShow",
+            "description": "美国知名电视脱口秀主持人。"
+          },
+          {
+            "name": "Lady Gaga",
+            "url": "https://x.com/ladygaga",
+            "description": "国际流行乐坛与影视巨星。"
+          },
+          {
+            "name": "NASA",
+            "url": "https://x.com/NASA",
+            "description": "美国国家航空航天局官方账号，实时发布宇宙探索"
+          },
+          {
+            "name": "YouTube",
+            "url": "https://x.com/YouTube",
+            "description": "全球最大视频平台官方X账号"
+          },
+          {
+            "name": "X (Twitter)",
+            "url": "https://x.com/X",
+            "description": "X平台官方账号，推送产品更新、平台公告与官方整活。"
+          },
+          {
+            "name": "Bill Gates",
+            "url": "https://x.com/BillGates",
+            "description": "微软创始人、慈善家，在X平台上分享全球公共卫生"
+          },
+          {
+            "name": "CNN Breaking News",
+            "url": "https://x.com/cnnbrk",
+            "description": "全球突发新闻权威发布账号。"
+          },
+          {
+            "name": "The New York Times",
+            "url": "https://x.com/nytimes",
+            "description": "《纽约时报》官方账号，追踪全球深度时政"
+          },
+          {
+            "name": "BBC News",
+            "url": "https://x.com/BBCNews",
+            "description": "英国广播公司新闻官方账号。"
+          },
+          {
+            "name": "Reuters",
+            "url": "https://x.com/Reuters",
+            "description": "路透社官方，全球金融与突发重大地缘政治新闻风向标。"
+          },
+          {
+            "name": "Bloomberg",
+            "url": "https://x.com/business",
+            "description": "彭博社官方财经账号，洞察全球华尔街资本市场与经济动"
+          },
+          {
+            "name": "Wall Street Journal",
+            "url": "https://x.com/WSJ",
+            "description": "《华尔街日报》官方财经新闻与深度调查账号。"
+          },
+          {
+            "name": "LeBron James",
+            "url": "https://x.com/KingJames",
+            "description": "NBA传奇巨星勒布朗·詹姆斯"
+          },
+          {
+            "name": "Neymar Jr",
+            "url": "https://x.com/neymarjr",
+            "description": "巴西足球天王内马尔官方个人账号。"
+          },
+          {
+            "name": "Champions League",
+            "url": "https://x.com/ChampionsLeague",
+            "description": "欧洲冠军联赛官方账号，全球足球迷狂欢阵地。"
+          },
+          {
+            "name": "NBA",
+            "url": "https://x.com/NBA",
+            "description": "美国职业篮球联赛官方账号。"
+          },
+          {
+            "name": "Premier League",
+            "url": "https://x.com/premierleague",
+            "description": "英格兰足球超级联赛官方账号。"
+          },
+          {
+            "name": "PlayStation",
+            "url": "https://x.com/PlayStation",
+            "description": "索尼PlayStation官方游戏动态与主机宣发账"
+          },
+          {
+            "name": "Xbox",
+            "url": "https://x.com/Xbox",
+            "description": "微软Xbox官方游戏生态与社区互动账号。"
+          },
+          {
+            "name": "IGN",
+            "url": "https://x.com/IGN",
+            "description": "全球顶级游戏与娱乐媒体官方账号。"
+          },
+          {
+            "name": "The Game Awards",
+            "url": "https://x.com/thegameawards",
+            "description": "全球年度游戏大典官方账号"
+          },
+          {
+            "name": "Geoff Keighley",
+            "url": "https://x.com/geoffkeighley",
+            "description": "游戏界知名制作人、TGA主持人"
+          },
+          {
+            "name": "Sam Altman",
+            "url": "https://x.com/sama",
+            "description": "OpenAI CEO，全球人工智能大模型浪潮核心掌"
+          },
+          {
+            "name": "Yann LeCun",
+            "url": "https://x.com/ylecun",
+            "description": "Meta首席AI科学家、图灵奖得主"
+          },
+          {
+            "name": "Andrej Karpathy",
+            "url": "https://x.com/karpathy",
+            "description": "前特斯拉AI负责人、OpenAI联合创始人"
+          },
+          {
+            "name": "Jensen Huang",
+            "url": "https://x.com/nvidia",
+            "description": "显卡巨头英伟达(NVIDIA)官方及黄仁勋相关"
+          },
+          {
+            "name": "Sundar Pichai",
+            "url": "https://x.com/sundarpichai",
+            "description": "谷歌及Alphabet CEO"
+          },
+          {
+            "name": "Satya Nadella",
+            "url": "https://x.com/satyanadella",
+            "description": "微软CEO萨提亚·纳德拉"
+          },
+          {
+            "name": "Demis Hassabis",
+            "url": "https://x.com/demishassabis",
+            "description": "Google DeepMind CEO"
+          },
+          {
+            "name": "Linus Torvalds",
+            "url": "https://x.com/linus__torvalds",
+            "description": "Linux与Git之父，在X上有极高关注度与历史极"
+          },
+          {
+            "name": "Vitalik Buterin",
+            "url": "https://x.com/VitalikButerin",
+            "description": "以太坊创始人，全球加密货币与区块链领域最具思想深度"
+          },
+          {
+            "name": "CZ Binance",
+            "url": "https://x.com/cz_binance",
+            "description": "币安创始人，加密货币全球风向标人物之一。"
+          },
+          {
+            "name": "Ark Invest (Cathie Wood)",
+            "url": "https://x.com/CathieDWood",
+            "description": "“木头姐”凯茜·伍德，方舟投资掌门人"
+          },
+          {
+            "name": "Marcus Brownlee (MKBHD)",
+            "url": "https://x.com/MKBHD",
+            "description": "全球顶流科技数码博主，在X平台同步分享极高品质的数"
+          },
+          {
+            "name": "MrBeast",
+            "url": "https://x.com/MrBeast",
+            "description": "全球第一网红，在X平台频繁发布短视频整活及大制作幕"
+          },
+          {
+            "name": "Hideo Kojima",
+            "url": "https://x.com/Kojima_Hideo",
+            "description": "日本传奇游戏制作人小岛秀夫，以分享电影"
+          },
+          {
+            "name": "SpaceX",
+            "url": "https://x.com/SpaceX",
+            "description": "太空探索技术公司官方X账号，星舰发射全球瞩目。"
+          },
+          {
+            "name": "OpenAI",
+            "url": "https://x.com/OpenAI",
+            "description": "ChatGPT背后的AI巨头官方账号。"
+          },
+          {
+            "name": "Anthropic",
+            "url": "https://x.com/AnthropicAI",
+            "description": "顶尖AI大模型研发公司Claude官方账号。"
+          }
+        ]
+      },
+      {
+        "name": "热门账号 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Shakira",
+            "url": "https://x.com/shakira",
+            "description": "拉丁音乐天后夏奇拉官方X账号。"
+          },
+          {
+            "name": "Selena Gomez",
+            "url": "https://x.com/selenagomez",
+            "description": "美国知名歌手、演员赛琳娜·戈麦斯。"
+          },
+          {
+            "name": "Demi Lovato",
+            "url": "https://x.com/ddlovato",
+            "description": "美国实力派流行女歌手及演员。"
+          },
+          {
+            "name": "Miley Cyrus",
+            "url": "https://x.com/MileyCyrus",
+            "description": "国际巨星麦莉·赛勒斯官方账号。"
+          },
+          {
+            "name": "Snoop Dogg",
+            "url": "https://x.com/SnoopDogg",
+            "description": "西海岸说唱教父史努比狗狗。"
+          },
+          {
+            "name": "Nicki Minaj",
+            "url": "https://x.com/NICKIMINAJ",
+            "description": "说唱界女王“麻辣鸡”尼基·米娜。"
+          },
+          {
+            "name": "Lil Wayne",
+            "url": "https://x.com/LilTunechi",
+            "description": "美国传奇说唱巨星莉尔·韦恩。"
+          },
+          {
+            "name": "Chance The Rapper",
+            "url": "https://x.com/chancetherapper",
+            "description": "独立说唱音乐人及格莱美得主。"
+          },
+          {
+            "name": "Harry Styles",
+            "url": "https://x.com/Harry_Styles",
+            "description": "英国流行乐坛顶流男歌手哈里·斯泰尔斯。"
+          },
+          {
+            "name": "Niall Horan",
+            "url": "https://x.com/NiallOfficial",
+            "description": "歌手尼尔·霍兰官方账号。"
+          },
+          {
+            "name": "Louis Tomlinson",
+            "url": "https://x.com/Louis_Tomlinson",
+            "description": "音乐人路易斯·汤姆林森。"
+          },
+          {
+            "name": "Liam Payne",
+            "url": "https://x.com/LiamPayne",
+            "description": "流行歌手利亚姆·佩恩官方账号。"
+          },
+          {
+            "name": "Ed Sheeran",
+            "url": "https://x.com/edsheeran",
+            "description": "英国创作型流行歌手艾德·希兰。"
+          },
+          {
+            "name": "Shawn Mendes",
+            "url": "https://x.com/ShawnMendes",
+            "description": "加拿大流行男歌手肖恩·蒙德兹。"
+          },
+          {
+            "name": "Charlie Puth",
+            "url": "https://x.com/charlieputh",
+            "description": "流行音乐才子查理·普斯。"
+          },
+          {
+            "name": "Halsey",
+            "url": "https://x.com/halsey",
+            "description": "美国独立流行女歌手海尔希。"
+          },
+          {
+            "name": "Marshmello",
+            "url": "https://x.com/marshmello",
+            "description": "知名电音DJ棉花糖。"
+          },
+          {
+            "name": "David Guetta",
+            "url": "https://x.com/davidguetta",
+            "description": "全球电音教父大卫·库塔。"
+          },
+          {
+            "name": "Zedd",
+            "url": "https://x.com/Zedd",
+            "description": "国际知名电子音乐制作人。"
+          },
+          {
+            "name": "Calvin Harris",
+            "url": "https://x.com/CalvinHarris",
+            "description": "苏格兰金牌DJ兼音乐制作人卡尔文·哈里斯。"
+          },
+          {
+            "name": "Steve Aoki",
+            "url": "https://x.com/steveaoki",
+            "description": "狂热电音DJ史蒂夫·青木。"
+          },
+          {
+            "name": "Tiësto",
+            "url": "https://x.com/tiesto",
+            "description": "电音传奇巨匠蒂斯托。"
+          },
+          {
+            "name": "Martin Garrix",
+            "url": "https://x.com/MartinGarrix",
+            "description": "荷兰天才电音DJ小马丁。"
+          },
+          {
+            "name": "Diplo",
+            "url": "https://x.com/diplo",
+            "description": "知名音乐制作人及DJ。"
+          },
+          {
+            "name": "Mark Ronson",
+            "url": "https://x.com/MarkRonson",
+            "description": "奥斯卡及格莱美金牌音乐制作人。"
+          },
+          {
+            "name": "Pharrell Williams",
+            "url": "https://x.com/Pharrell",
+            "description": "潮流教父、音乐制作人菲董。"
+          },
+          {
+            "name": "Tim Cook",
+            "url": "https://x.com/tim_cook",
+            "description": "苹果公司CEO蒂姆·库克，分享苹果生态"
+          },
+          {
+            "name": "Shantanu Narayen",
+            "url": "https://x.com/ShantanuNarayen",
+            "description": "Adobe CEO，创意软件巨头掌舵人。"
+          },
+          {
+            "name": "Arvind Krishna",
+            "url": "https://x.com/ArvindKrishna",
+            "description": "IBM董事长兼CEO。"
+          },
+          {
+            "name": "Michael Dell",
+            "url": "https://x.com/MichaelDell",
+            "description": "戴尔科技创始人兼CEO。"
+          },
+          {
+            "name": "Marc Benioff",
+            "url": "https://x.com/Benioff",
+            "description": "赛富时(Salesforce)创始人兼CEO"
+          },
+          {
+            "name": "Jack Dorsey",
+            "url": "https://x.com/jack",
+            "description": "推特(现X)联合创始人、Block"
+          },
+          {
+            "name": "Evan Spiegel",
+            "url": "https://x.com/evanspiegel",
+            "description": "Snapchat创始人兼CEO。"
+          },
+          {
+            "name": "Brian Chesky",
+            "url": "https://x.com/bchesky",
+            "description": "Airbnb联合创始人兼CEO。"
+          },
+          {
+            "name": "Stewart Butterfield",
+            "url": "https://x.com/stewart",
+            "description": "Slack创始人。"
+          },
+          {
+            "name": "Paul Graham",
+            "url": "https://x.com/paulg",
+            "description": "硅谷传奇孵化器Y Combinator创始人"
+          },
+          {
+            "name": "Marc Andreessen",
+            "url": "https://x.com/pmarca",
+            "description": "硅谷传奇风投家、Netscape联合创始人。"
+          },
+          {
+            "name": "Ben Horowitz",
+            "url": "https://x.com/bhorowitz",
+            "description": "a16z风投联合创始人。"
+          },
+          {
+            "name": "Naval Ravikant",
+            "url": "https://x.com/naval",
+            "description": "硅谷哲学家、AngelList创始人"
+          },
+          {
+            "name": "Balaji Srinivasan",
+            "url": "https://x.com/balajis",
+            "description": "前Coinbase CTO、前a16z合伙人"
+          },
+          {
+            "name": "Chris Dixon",
+            "url": "https://x.com/cdixon",
+            "description": "顶级Web3与加密货币投资人。"
+          },
+          {
+            "name": "Fred Ehrsam",
+            "url": "https://x.com/FEhrsam",
+            "description": "Coinbase联合创始人。"
+          },
+          {
+            "name": "Brian Armstrong",
+            "url": "https://x.com/brian_armstrong",
+            "description": "Coinbase CEO。"
+          },
+          {
+            "name": "Anatoly Yakovenko",
+            "url": "https://x.com/aeyakovenko",
+            "description": "Solana公链创始人。"
+          },
+          {
+            "name": "Stani Kulechov",
+            "url": "https://x.com/stani",
+            "description": "Aave创始人。"
+          },
+          {
+            "name": "Hayden Adams",
+            "url": "https://x.com/haydenzadams",
+            "description": "Uniswap创始人。"
+          },
+          {
+            "name": "Ryan Selkis",
+            "url": "https://x.com/twobitidiot",
+            "description": "Messari创始人。"
+          },
+          {
+            "name": "Arthur Hayes",
+            "url": "https://x.com/CryptoHayes",
+            "description": "BitMEX创始人，以宏观经济与加密市场深度分析见"
+          },
+          {
+            "name": "Stephen Curry",
+            "url": "https://x.com/StephenCurry30",
+            "description": "NBA传奇球星库里，三分之神。"
+          },
+          {
+            "name": "Kevin Durant",
+            "url": "https://x.com/KDTrey5",
+            "description": "NBA超级巨星杜兰特，X平台活跃的篮球手。"
+          }
+        ]
+      },
+      {
+        "name": "热门账号 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Giannis Antetokounmpo",
+            "url": "https://x.com/Giannis_An34",
+            "description": "NBA巨星“字母哥”。"
+          },
+          {
+            "name": "Luka Doncic",
+            "url": "https://x.com/luka7doncic",
+            "description": "NBA新生代领军人物东契奇。"
+          },
+          {
+            "name": "Kyrie Irving",
+            "url": "https://x.com/KyrieIrving",
+            "description": "NBA球星欧文。"
+          },
+          {
+            "name": "Tom Brady",
+            "url": "https://x.com/TomBrady",
+            "description": "美式橄榄球传奇巨星汤姆·布雷迪。"
+          },
+          {
+            "name": "Patrick Mahomes",
+            "url": "https://x.com/PatrickMahomes",
+            "description": "NFL顶流四分卫马霍姆斯。"
+          },
+          {
+            "name": "Travis Kelce",
+            "url": "https://x.com/tkelce",
+            "description": "NFL球星、跨界娱乐顶流特拉维斯·凯尔斯。"
+          },
+          {
+            "name": "Shohei Ohtani",
+            "url": "https://x.com/Angels (注: 活跃于MLB官方及相关报道)",
+            "description": "MLB棒球巨星大谷翔平。"
+          },
+          {
+            "name": "Serena Williams",
+            "url": "https://x.com/serenawilliams",
+            "description": "网球传奇女王小威廉姆斯。"
+          },
+          {
+            "name": "Roger Federer",
+            "url": "https://x.com/rogerfederer",
+            "description": "网球天王费德勒官方账号。"
+          },
+          {
+            "name": "Rafael Nadal",
+            "url": "https://x.com/RafaelNadal",
+            "description": "网球巨星纳达尔。"
+          },
+          {
+            "name": "Novak Djokovic",
+            "url": "https://x.com/DjokerNole",
+            "description": "网球名将德约科维奇。"
+          },
+          {
+            "name": "Lewis Hamilton",
+            "url": "https://x.com/LewisHamilton",
+            "description": "F1赛车七冠王汉密尔顿。"
+          },
+          {
+            "name": "Max Verstappen",
+            "url": "https://x.com/Max33Verstappen",
+            "description": "F1世界冠军维斯塔潘。"
+          },
+          {
+            "name": "Charles Leclerc",
+            "url": "https://x.com/Charles_Leclerc",
+            "description": "法拉利F1明星车手勒克莱尔。"
+          },
+          {
+            "name": "Daniel Ricciardo",
+            "url": "https://x.com/danielricciardo",
+            "description": "F1人气车手里卡多。"
+          },
+          {
+            "name": "Lando Norris",
+            "url": "https://x.com/LandoNorris",
+            "description": "F1新生代车手诺里斯。"
+          },
+          {
+            "name": "Kylian Mbappé",
+            "url": "https://x.com/KMbappe",
+            "description": "法国足球巨星姆巴佩。"
+          },
+          {
+            "name": "Erling Haaland",
+            "url": "https://x.com/ErlingHaaland",
+            "description": "挪威神锋哈兰德。"
+          },
+          {
+            "name": "Kevin De Bruyne",
+            "url": "https://x.com/DeBruyneKev",
+            "description": "曼城中场核心德布劳内。"
+          },
+          {
+            "name": "Harry Kane",
+            "url": "https://x.com/HKane",
+            "description": "英格兰国家队队长哈里·凯恩。"
+          },
+          {
+            "name": "Robert Lewandowski",
+            "url": "https://x.com/lewy_official",
+            "description": "顶级前锋莱万多夫斯基。"
+          },
+          {
+            "name": "Toni Kroos",
+            "url": "https://x.com/ToniKroos",
+            "description": "传奇中场克罗斯。"
+          },
+          {
+            "name": "Luka Modrić",
+            "url": "https://x.com/lukamodric10",
+            "description": "金球奖得主莫德里奇。"
+          },
+          {
+            "name": "Sergio Ramos",
+            "url": "https://x.com/SergioRamos",
+            "description": "著名球星拉莫斯。"
+          },
+          {
+            "name": "Marcelo Vieira",
+            "url": "https://x.com/MarceloM12",
+            "description": "前皇马传奇边后卫马塞洛。"
+          },
+          {
+            "name": "Gerard Piqué",
+            "url": "https://x.com/3gerardpique",
+            "description": "皮克，足球名将及国王联赛创始人。"
+          },
+          {
+            "name": "Zlatan Ibrahimović",
+            "url": "https://x.com/Ibrahim_Officia (或 Zlatan Ibrahimovic)",
+            "description": "传奇球星伊布。"
+          },
+          {
+            "name": "David Beckham",
+            "url": "https://x.com/davidbeckham (注: IG更活跃，但常被X各方提及)",
+            "description": "足球偶像贝克汉姆。"
+          },
+          {
+            "name": "The White House",
+            "url": "https://x.com/WhiteHouse",
+            "description": "美国白宫官方账号。"
+          },
+          {
+            "name": "Downing Street",
+            "url": "https://x.com/10DowningStreet",
+            "description": "英国首相府官方账号。"
+          },
+          {
+            "name": "Emmanuel Macron",
+            "url": "https://x.com/EmmanuelMacron",
+            "description": "法国总统马克龙。"
+          },
+          {
+            "name": "Olaf Scholz",
+            "url": "https://x.com/Bundeskanzler",
+            "description": "德国总理官方账号。"
+          },
+          {
+            "name": "Justin Trudeau",
+            "url": "https://x.com/JustinTrudeau",
+            "description": "加拿大总理特鲁多。"
+          },
+          {
+            "name": "Volodymr Zelenskyy",
+            "url": "https://x.com/ZelenskyyUa",
+            "description": "乌克兰总统泽连斯基。"
+          },
+          {
+            "name": "United Nations (UN)",
+            "url": "https://x.com/UN",
+            "description": "联合国官方账号。"
+          },
+          {
+            "name": "World Health Organization (WHO)",
+            "url": "https://x.com/WHO",
+            "description": "世界卫生组织官方账号。"
+          },
+          {
+            "name": "NATO",
+            "url": "https://x.com/NATO",
+            "description": "北约官方账号。"
+          },
+          {
+            "name": "European Commission",
+            "url": "https://x.com/EU_Commission",
+            "description": "欧盟委员会官方账号。"
+          },
+          {
+            "name": "Financial Times",
+            "url": "https://x.com/FT",
+            "description": "英国《金融时报》官方账号。"
+          },
+          {
+            "name": "The Economist",
+            "url": "https://x.com/TheEconomist",
+            "description": "《经济学人》官方账号。"
+          },
+          {
+            "name": "Forbes",
+            "url": "https://x.com/Forbes",
+            "description": "《福布斯》杂志官方账号。"
+          },
+          {
+            "name": "Fortune",
+            "url": "https://x.com/FortuneMagazine",
+            "description": "《财富》杂志官方账号。"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://x.com/CNBC",
+            "description": "美国消费者新闻与商业频道官方账号。"
+          },
+          {
+            "name": "Fox News",
+            "url": "https://x.com/FoxNews",
+            "description": "福克斯新闻官方账号。"
+          },
+          {
+            "name": "MSNBC",
+            "url": "https://x.com/MSNBC",
+            "description": "MSNBC官方新闻账号。"
+          },
+          {
+            "name": "ABC News",
+            "url": "https://x.com/ABC",
+            "description": "美国广播公司新闻官方账号。"
+          },
+          {
+            "name": "CBS News",
+            "url": "https://x.com/CBSNews",
+            "description": "哥伦比亚广播公司新闻官方账号。"
+          },
+          {
+            "name": "AP News",
+            "url": "https://x.com/AP",
+            "description": "美联社官方新闻账号。"
+          },
+          {
+            "name": "AFP",
+            "url": "https://x.com/AFP",
+            "description": "法新社官方账号。"
+          },
+          {
+            "name": "Al Jazeera English",
+            "url": "https://x.com/AJEnglish",
+            "description": "半岛电视台英文频道。"
+          }
+        ]
+      },
+      {
+        "name": "热门账号 151-197",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "DW News",
+            "url": "https://x.com/dwnews",
+            "description": "德国之声官方新闻。"
+          },
+          {
+            "name": "France 24",
+            "url": "https://x.com/France24",
+            "description": "法国24台官方账号。"
+          },
+          {
+            "name": "Sky News",
+            "url": "https://x.com/SkyNews",
+            "description": "英国天空新闻官方账号。"
+          },
+          {
+            "name": "The Guardian",
+            "url": "https://x.com/guardian",
+            "description": "英国《卫报》官方账号。"
+          },
+          {
+            "name": "The Telegraph",
+            "url": "https://x.com/Telegraph",
+            "description": "英国《每日电讯报》官方账号。"
+          },
+          {
+            "name": "Independent",
+            "url": "https://x.com/Independent",
+            "description": "英国《独立报》官方账号。"
+          },
+          {
+            "name": "TIME",
+            "url": "https://x.com/TIME",
+            "description": "美国《时代周刊》官方账号。"
+          },
+          {
+            "name": "Newsweek",
+            "url": "https://x.com/Newsweek",
+            "description": "《新闻周刊》官方账号。"
+          },
+          {
+            "name": "Wired",
+            "url": "https://x.com/WIRED",
+            "description": "《连线》杂志官方科技与文化账号。"
+          },
+          {
+            "name": "The Verge",
+            "url": "https://x.com/verge",
+            "description": "顶尖科技媒体The Verge官方账号。"
+          },
+          {
+            "name": "TechCrunch",
+            "url": "https://x.com/TechCrunch",
+            "description": "科技创业与风投媒体。"
+          },
+          {
+            "name": "Engadget",
+            "url": "https://x.com/engadget",
+            "description": "消费电子数码资讯。"
+          },
+          {
+            "name": "CNET",
+            "url": "https://x.com/CNET",
+            "description": "科技产品与导购评测。"
+          },
+          {
+            "name": "Mashable",
+            "url": "https://x.com/mashable",
+            "description": "互联网文化与数码流行趋势。"
+          },
+          {
+            "name": "Gizmodo",
+            "url": "https://x.com/Gizmodo",
+            "description": "极客科技与未来生活方式。"
+          },
+          {
+            "name": "Vice",
+            "url": "https://x.com/VICE",
+            "description": "另类青年文化与深度调查纪实媒体。"
+          },
+          {
+            "name": "BuzzFeed",
+            "url": "https://x.com/BuzzFeed",
+            "description": "全球网络流行文化与娱乐媒体。"
+          },
+          {
+            "name": "GameSpot",
+            "url": "https://x.com/GameSpot",
+            "description": "专业游戏评测媒体。"
+          },
+          {
+            "name": "Kotaku",
+            "url": "https://x.com/Kotaku",
+            "description": "游戏文化与行业新闻。"
+          },
+          {
+            "name": "Polygon",
+            "url": "https://x.com/Polygon",
+            "description": "游戏与流行文化深度解析。"
+          },
+          {
+            "name": "PC Gamer",
+            "url": "https://x.com/pcgamer",
+            "description": "PC游戏玩家专属资讯阵地。"
+          },
+          {
+            "name": "Eurogamer",
+            "url": "https://x.com/eurogamer",
+            "description": "欧洲老牌游戏媒体。"
+          },
+          {
+            "name": "Empire Magazine",
+            "url": "https://x.com/empiremagazine",
+            "description": "电影专业杂志《帝国》。"
+          },
+          {
+            "name": "Rolling Stone",
+            "url": "https://x.com/RollingStone",
+            "description": "传奇音乐与流行文化杂志《滚石》。"
+          },
+          {
+            "name": "Billboard",
+            "url": "https://x.com/billboard",
+            "description": "美国公告牌音乐排行榜官方账号。"
+          },
+          {
+            "name": "Variety",
+            "url": "https://x.com/Variety",
+            "description": "好莱坞娱乐产业权威媒体《综艺》。"
+          },
+          {
+            "name": "The Hollywood Reporter",
+            "url": "https://x.com/THR",
+            "description": "好莱坞报道者官方账号。"
+          },
+          {
+            "name": "Deadline Hollywood",
+            "url": "https://x.com/DEADLINE",
+            "description": "影视圈幕后爆料与票房风向标。"
+          },
+          {
+            "name": "IndieWire",
+            "url": "https://x.com/IndieWire",
+            "description": "独立电影与艺术片垂直媒体。"
+          },
+          {
+            "name": "Rotten Tomatoes",
+            "url": "https://x.com/RottenTomatoes",
+            "description": "烂番茄影视评分官方账号。"
+          },
+          {
+            "name": "IMDb",
+            "url": "https://x.com/IMDb",
+            "description": "全球最大影视资料库官方账号。"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://x.com/netflix",
+            "description": "流媒体巨头奈飞官方账号。"
+          },
+          {
+            "name": "Prime Video",
+            "url": "https://x.com/PrimeVideo",
+            "description": "亚马逊影视官方账号。"
+          },
+          {
+            "name": "Disney+",
+            "url": "https://x.com/disneyplus",
+            "description": "迪士尼流媒体官方账号。"
+          },
+          {
+            "name": "Max",
+            "url": "https://x.com/StreamOnMax",
+            "description": "华纳Max流媒体官方账号。"
+          },
+          {
+            "name": "Paramount+",
+            "url": "https://x.com/paramountplus",
+            "description": "派拉蒙流媒体官方账号。"
+          },
+          {
+            "name": "Peacock",
+            "url": "https://x.com/peacock",
+            "description": "NBC环球旗下流媒体账号。"
+          },
+          {
+            "name": "Apple TV",
+            "url": "https://x.com/AppleTV",
+            "description": "苹果影视流媒体官方账号。"
+          },
+          {
+            "name": "Hulu",
+            "url": "https://x.com/hulu",
+            "description": "美国Hulu流媒体官方账号。"
+          },
+          {
+            "name": "Crunchyroll",
+            "url": "https://x.com/Crunchyroll",
+            "description": "全球最大动漫流媒体官方账号。"
+          },
+          {
+            "name": "NASA Webb Telescope",
+            "url": "https://x.com/NASAWebb",
+            "description": "詹姆斯·韦布空间望远镜官方账号"
+          },
+          {
+            "name": "ESA (European Space Agency)",
+            "url": "https://x.com/esa",
+            "description": "欧洲空间局官方账号。"
+          },
+          {
+            "name": "CERN",
+            "url": "https://x.com/CERN",
+            "description": "欧洲核子研究组织，探寻宇宙粒子物理奥秘。"
+          },
+          {
+            "name": "Nature Magazine",
+            "url": "https://x.com/Nature",
+            "description": "国际顶级科学期刊《自然》官方账号。"
+          },
+          {
+            "name": "Science Magazine",
+            "url": "https://x.com/ScienceMagazine",
+            "description": "美国《科学》杂志官方前沿科研账号。"
+          },
+          {
+            "name": "MIT Tech Review",
+            "url": "https://x.com/techreview",
+            "description": "麻省理工科技评论官方账号。"
+          },
+          {
+            "name": "New Scientist",
+            "url": "https://x.com/newscientist",
+            "description": "新科学家杂志官方科普账号。"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑿 𝑪𝑟𝑒𝑎𝑡𝑜𝑟𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

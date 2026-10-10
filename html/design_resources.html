@@ -1,0 +1,1459 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="字体、图标、配色、插画与设计素材导航">
+<title>设计资源大全 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑫𝑒𝑠𝑖𝑔𝑛 𝑅𝑒𝑠𝑜𝑢𝑟𝑐𝑒𝑠</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>设计资源大全</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">设计资源大全 · 字体、图标、配色与设计素材导航</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "设计资源大全",
+    "icon": "🎨",
+    "color": "linear-gradient(135deg, #f093fb, #f5576c)",
+    "subcategories": [
+      {
+        "name": "免费可商用字体资源",
+        "links": [
+          {
+            "name": "Google Fonts",
+            "url": "https://fonts.google.com",
+            "description": "谷歌开源字体库，提供大量免费可商用英文与多语言字体。"
+          },
+          {
+            "name": "字由",
+            "url": "https://www.hellofont.cn",
+            "description": "集成海量免费可商用中英文字体，支持一键无缝激活客户端。"
+          },
+          {
+            "name": "猫啃网",
+            "url": "https://www.maoken.com",
+            "description": "专注于免费可商用中文字体收集与历史整理的专业站。"
+          },
+          {
+            "name": "100font",
+            "url": "https://www.100font.com",
+            "description": "界面极简且收录超全的免费商用中文字体下载网站。"
+          },
+          {
+            "name": "字体天下",
+            "url": "https://www.zitimq.com",
+            "description": "提供海量商用免费中文字体在线预览与免注册下载。"
+          },
+          {
+            "name": "汉仪字库",
+            "url": "https://www.hanyi.com.cn",
+            "description": "知名字库厂商，提供多款免费个人及商用中文艺术字体。"
+          },
+          {
+            "name": "方正字库",
+            "url": "https://www.foundertype.com",
+            "description": "提供方正黑体、书宋等多款经典免费可商用字体。"
+          },
+          {
+            "name": "华康字库",
+            "url": "https://www.dynacw.com.cn",
+            "description": "提供华康金天体等免费商用字体，适合特定设计场景。"
+          },
+          {
+            "name": "思源黑体",
+            "url": "https://github.com/adobe-fonts/source-han-sans",
+            "description": "Adobe与Google联合推出的开源无衬线中文字体。"
+          },
+          {
+            "name": "思源宋体",
+            "url": "https://github.com/adobe-fonts/source-han-serif",
+            "description": "高质量的开源衬线中文字体，全面覆盖多语种字符。"
+          },
+          {
+            "name": "阿里巴巴普惠体",
+            "url": "https://alibabafont.taobao.com",
+            "description": "阿里官方打造的免费商用字体，涵盖多语种及字重。"
+          },
+          {
+            "name": "站酷字体",
+            "url": "https://www.zcool.com.cn/special/zcoolfonts",
+            "description": "站酷推出的酷黑体、快乐体等多款免费开源商用字体。"
+          },
+          {
+            "name": "抖音美好体",
+            "url": "https://www.douyin.com",
+            "description": "抖音官方推出的现代无衬线风格免费商用品牌字体。"
+          },
+          {
+            "name": "腾讯体",
+            "url": "https://brand.tencent.com",
+            "description": "腾讯官方倾斜斜体风格免费商用中文字体。"
+          },
+          {
+            "name": "钉钉进步体",
+            "url": "https://www.dingtalk.com",
+            "description": "钉钉推出的倾斜无衬线字体，极具科技感与视觉张力。"
+          },
+          {
+            "name": "FontSpace",
+            "url": "https://www.fontspace.com",
+            "description": "收录超10万款免费英文与艺术字体的全球知名平台。"
+          },
+          {
+            "name": "DaFont",
+            "url": "https://www.dafont.com",
+            "description": "庞大的免费英文与创意字体下载库，支持分类筛选。"
+          },
+          {
+            "name": "Font Squirrel",
+            "url": "https://www.fontsquirrel.com",
+            "description": "精选无版权纠纷的高品质可商用英文字体资源站。"
+          },
+          {
+            "name": "1001 Fonts",
+            "url": "https://www.1001fonts.com",
+            "description": "拥有丰富免费英文与手写风格字体的历史老牌网站。"
+          },
+          {
+            "name": "Typewolf",
+            "url": "https://www.typewolf.com",
+            "description": "顶尖字体排版灵感与Google Fonts精选推荐站。"
+          },
+          {
+            "name": "Fontsh",
+            "url": "https://fontsh.com",
+            "description": "精选独立设计师创作的开源与免费商用字体展示库。"
+          },
+          {
+            "name": "Abstract Fonts",
+            "url": "https://www.abstractfonts.com",
+            "description": "提供数万款艺术、像素、现代风格的免费英文字体。"
+          },
+          {
+            "name": "FontFabric",
+            "url": "https://www.fontfabric.com",
+            "description": "知名字体工坊，提供多款高品质免费试用及商用字体。"
+          },
+          {
+            "name": "Uncut",
+            "url": "https://uncut.wtf",
+            "description": "专注于现代前沿风格与极简主义开源字体的展示库。"
+          },
+          {
+            "name": "Collletttivo",
+            "url": "https://www.collletttivo.it",
+            "description": "开放式字体设计团队，提供多款独特免费开源字体。"
+          },
+          {
+            "name": "Velvetyne",
+            "url": "https://velvetyne.fr",
+            "description": "法国开源字体合作社，提供大量极具个性的艺术字体。"
+          },
+          {
+            "name": "Google Fonts Knowledge",
+            "url": "https://fonts.google.com/knowledge",
+            "description": "谷歌推出的字体排版与字体设计专业知识库。"
+          },
+          {
+            "name": "Fontshare",
+            "url": "https://www.fontshare.com",
+            "description": "印度字厂推出的高品质免费商用字体库。"
+          },
+          {
+            "name": "Free Typography",
+            "url": "https://freetypography.com",
+            "description": "专注于分享全球优质免费可商用英文字体的博客。"
+          },
+          {
+            "name": "League of Moveable Type",
+            "url": "https://www.theleagueofmoveabletype.com",
+            "description": "历史上第一个开源字体运动平台，高品质经典。"
+          },
+          {
+            "name": "Omnibus-Type",
+            "url": "https://www.omnibus-type.com",
+            "description": "专注于网页与响应式排版的开源字体设计团队。"
+          },
+          {
+            "name": "Lost Type",
+            "url": "http://www.losttype.com",
+            "description": "知名定制字体工坊，提供付费模式及部分免费试用。"
+          },
+          {
+            "name": "Font Meme",
+            "url": "https://fontmeme.com",
+            "description": "电影、品牌及动漫流行字体的识别与在线生成器。"
+          },
+          {
+            "name": "WhatTheFont",
+            "url": "https://www.myfonts.com/pages/whatthefont",
+            "description": "MyFonts旗下强大的在线图片上传识别字体工具。"
+          },
+          {
+            "name": "FontInUse",
+            "url": "https://fontsinuse.com",
+            "description": "收集全球真实设计作品中的字体排版与应用案例。"
+          },
+          {
+            "name": "日本的字",
+            "url": "https://freefonts.jp",
+            "description": "收录大量免费可商用日文字体，汉字覆盖率极高。"
+          },
+          {
+            "name": "FONT FREE",
+            "url": "https://fontfree.me",
+            "description": "日本最大的免费日文字体检索与下载导航网站。"
+          },
+          {
+            "name": "Hakusyu Fonts",
+            "url": "https://www.hakusyu.com",
+            "description": "日本白舟书体提供的多款免费毛笔书法日文字体。"
+          },
+          {
+            "name": "造字工房",
+            "url": "http://www.makefont.com",
+            "description": "提供多款个性化设计的汉字字体预览与特定免费。"
+          },
+          {
+            "name": "字体视界",
+            "url": "https://www.17font.com",
+            "description": "汇集众多字体厂商及独立设计师免费商用字体库。"
+          }
+        ]
+      },
+      {
+        "name": "开源图标矢量库",
+        "links": [
+          {
+            "name": "Iconify",
+            "url": "https://iconify.design",
+            "description": "集成数万个流行图标集的超大型统一开源矢量图标库。"
+          },
+          {
+            "name": "Lucide Icons",
+            "url": "https://lucide.dev",
+            "description": "简洁美观的开源图标库，支持矢量导出与代码集成。"
+          },
+          {
+            "name": "Font Awesome",
+            "url": "https://fontawesome.com",
+            "description": "经典且功能全面的图标库，含大量免费矢量图标。"
+          },
+          {
+            "name": "Iconfont",
+            "url": "https://www.iconfont.cn",
+            "description": "阿里巴巴矢量图标库，国内最大免费图标素材平台。"
+          },
+          {
+            "name": "Feather Icons",
+            "url": "https://feathericons.com",
+            "description": "极简风格的开源 SVG 图标集，适合现代化 UI 设计。"
+          },
+          {
+            "name": "Phosphor Icons",
+            "url": "https://phosphoricons.com",
+            "description": "灵活性极高且支持多种粗细风格的开源图标库。"
+          },
+          {
+            "name": "Heroicons",
+            "url": "https://heroicons.com",
+            "description": "Tailwind团队打造的高品质现代化开源图标集。"
+          },
+          {
+            "name": "Tabler Icons",
+            "url": "https://tabler-icons.io",
+            "description": "数千个极简Stroke风格的开源SVG图标。"
+          },
+          {
+            "name": "Remix Icon",
+            "url": "https://remixicon.com",
+            "description": "专为设计师和前端开发者打造的开源精美矢量图标库。"
+          },
+          {
+            "name": "Material Symbols",
+            "url": "https://fonts.google.com/icons",
+            "description": "谷歌官方Material Design设计系统图标库。"
+          },
+          {
+            "name": "Bootstrap Icons",
+            "url": "https://icons.getbootstrap.com",
+            "description": "Bootstrap 官方出品的开源免费 SVG 图标库。"
+          },
+          {
+            "name": "Simple Icons",
+            "url": "https://simpleicons.org",
+            "description": "收录全球数千个知名品牌与技术的矢量 Logo 图标。"
+          },
+          {
+            "name": "IconPark",
+            "url": "https://iconpark.oceanengine.com",
+            "description": "字节跳动出品的高质开源图标库，支持实时自定义。"
+          },
+          {
+            "name": "SVG Repo",
+            "url": "https://www.svgrepo.com",
+            "description": "超过50万个免费可商用的矢量 SVG 图标与插画库。"
+          },
+          {
+            "name": "Noun Project",
+            "url": "https://thenounproject.com",
+            "description": "汇集全球设计师作品的庞大符号与 SVG 图标平台。"
+          },
+          {
+            "name": "Boxicons",
+            "url": "https://boxicons.com",
+            "description": "专为 Web 开发设计的开源高清矢量图标集合。"
+          },
+          {
+            "name": "CSS Icons",
+            "url": "https://css.gg",
+            "description": "纯 CSS 代码绘制的极简轻量化图标库。"
+          },
+          {
+            "name": "IcoMoon",
+            "url": "https://icomoon.io",
+            "description": "强大的矢量图标定制与字体图标包在线生成工具。"
+          },
+          {
+            "name": "Lineicons",
+            "url": "https://lineicons.com",
+            "description": "拥有数千个高品质线框风格的矢量 UI 图标库。"
+          },
+          {
+            "name": "Eva Icons",
+            "url": "https://akveo.github.io/eva-icons",
+            "description": "包含多达四百个常用开源矢量图标的精美组件库。"
+          },
+          {
+            "name": "Octicons",
+            "url": "https://primer.style/octicons",
+            "description": "GitHub 官方使用的开源 SVG 矢量图标集合。"
+          },
+          {
+            "name": "Ionicons",
+            "url": "https://ionic.io/ionicons",
+            "description": "Ionic出品，适配Web/iOS/安卓的图标。"
+          },
+          {
+            "name": "Dripicons",
+            "url": "https://github.com/amitjakhu/dripicons",
+            "description": "风格柔和且完全免费的通用线框矢量图标集。"
+          },
+          {
+            "name": "Weather Icons",
+            "url": "https://erikflowers.github.io/weather-icons",
+            "description": "专为天气预报应用打造的222个矢量天气图标。"
+          },
+          {
+            "name": "Unicons",
+            "url": "https://iconscout.com/unicons",
+            "description": "IconScout出品的高品质多风格开源UI图标库。"
+          },
+          {
+            "name": "Healthicons",
+            "url": "https://healthicons.org",
+            "description": "专注于医疗健康领域的开源免费矢量图标平台。"
+          },
+          {
+            "name": "CryptoIcons",
+            "url": "https://cryptoicons.org",
+            "description": "收录数百种主流加密货币与区块链图标的矢量库。"
+          },
+          {
+            "name": "System UIcons",
+            "url": "https://systemuicons.com",
+            "description": "专为系统界面设计打造的轻量极简 SVG 图标库。"
+          },
+          {
+            "name": "Radix Icons",
+            "url": "https://icons.radix-ui.com",
+            "description": "WorkOS团队打造的15x15像素极简图标集。"
+          },
+          {
+            "name": "Iconoir",
+            "url": "https://iconoir.com",
+            "description": "规模庞大的开源 SVG 图标库，支持各类主流框架。"
+          },
+          {
+            "name": "MingCute Icon",
+            "url": "https://www.mingcute.com",
+            "description": "风格精美、圆润优雅的开源通用矢量图标集。"
+          },
+          {
+            "name": "Flaticon",
+            "url": "https://www.flaticon.com",
+            "description": "全球最大的免费与付费矢量图标及贴纸搜索引擎。"
+          },
+          {
+            "name": "Icons8",
+            "url": "https://icons8.com",
+            "description": "提供图标、插画、音乐及照片的全方位设计资源站。"
+          },
+          {
+            "name": "Lordicon",
+            "url": "https://lordicon.com",
+            "description": "提供大量高质量动态 SVG/Lottie 动画图标库。"
+          },
+          {
+            "name": "UseAnimations",
+            "url": "https://useanimations.com",
+            "description": "专门提供微交互动效的开源免费 Lottie 图标库。"
+          },
+          {
+            "name": "SVGMix",
+            "url": "https://svgmix.com",
+            "description": "超过 30 万个免费 SVG 图标与矢量插画的集合网站。"
+          },
+          {
+            "name": "Svgl",
+            "url": "https://svgl.app",
+            "description": "专门收录现代前端与科技品牌 SVG Logo 的精选库。"
+          },
+          {
+            "name": "VectorLogoZone",
+            "url": "https://www.vectorlogo.zone",
+            "description": "专为开发者打造的高品质科技品牌 SVG Logo 库。"
+          },
+          {
+            "name": "Logo Wine",
+            "url": "https://www.logo.wine",
+            "description": "各大主流品牌最新SVG及PNG Logo资源站。"
+          },
+          {
+            "name": "Iconfinder",
+            "url": "https://www.iconfinder.com",
+            "description": "包含百万级免费与付费图标的专业搜索与下载平台。"
+          }
+        ]
+      },
+      {
+        "name": "配色工具与灵感",
+        "links": [
+          {
+            "name": "Coolors",
+            "url": "https://coolors.co",
+            "description": "极速调色板生成器，一键随机生成协调的配色方案。"
+          },
+          {
+            "name": "Color Hunt",
+            "url": "https://colorhunt.co",
+            "description": "开放的配色灵感社区，每日更新设计师精选调色板。"
+          },
+          {
+            "name": "Adobe Color",
+            "url": "https://color.adobe.com",
+            "description": "官方专业色彩轮，支持提取渐变、主题及无障碍对比。"
+          },
+          {
+            "name": "Happy Hues",
+            "url": "https://www.happyhues.co",
+            "description": "具象化界面配色展示工具，实时预览色彩在 UI 的效果。"
+          },
+          {
+            "name": "BrandColors",
+            "url": "https://brandcolors.net",
+            "description": "全球最大知名品牌官方色彩 HEX 代码收录库。"
+          },
+          {
+            "name": "Webgradients",
+            "url": "https://webgradients.com",
+            "description": "180个精心挑选的线性渐变色集合，支持 CSS 复制。"
+          },
+          {
+            "name": "CSS Gradient",
+            "url": "https://cssgradient.io",
+            "description": "强大的在线渐变色生成器与渐变色彩学习工具。"
+          },
+          {
+            "name": "Paletton",
+            "url": "https://paletton.com",
+            "description": "经典的色彩学理论配色工具，支持补色与对比色生成。"
+          },
+          {
+            "name": "Nippon Colors",
+            "url": "https://nipponcolors.com",
+            "description": "日本传统配色网站，呈现经典古风色彩与视觉美学。"
+          },
+          {
+            "name": "Chinese Colors",
+            "url": "http://zhongguose.com",
+            "description": "中国传统颜色搭配网站，呈现古典东方色彩文化。"
+          },
+          {
+            "name": "Colorion",
+            "url": "https://colorion.co",
+            "description": "提供丰富的色彩搭配、渐变色及图片取色灵感平台。"
+          },
+          {
+            "name": "Colorspace",
+            "url": "https://mycolor.space",
+            "description": "简单一键根据单色生成整套协调色彩方案的工具。"
+          },
+          {
+            "name": "Material Palette",
+            "url": "https://www.materialpalette.com",
+            "description": "快速预览并生成Material Design规范配色。"
+          },
+          {
+            "name": "Mesh Gradients",
+            "url": "https://meshgradient.in",
+            "description": "打造超炫逼真渐变网格风格背景的在线工具。"
+          },
+          {
+            "name": "Khroma",
+            "url": "https://www.khroma.co",
+            "description": "基于 AI 学习设计师喜好并生成个性化配色的神器。"
+          },
+          {
+            "name": "Colorable",
+            "url": "https://colorable.jxnblk.com",
+            "description": "专为无障碍设计打造的文本与背景对比度实时检测器。"
+          },
+          {
+            "name": "Color contrast analyzer",
+            "url": "https://webaim.org/resources/contrastchecker",
+            "description": "评估网页颜色对比度是否符合 WCAG 标准。"
+          },
+          {
+            "name": "UI Gradients",
+            "url": "https://uigradients.com",
+            "description": "社区驱动的高质量 UI 渐变色集合，一键复制代码。"
+          },
+          {
+            "name": "Pigment",
+            "url": "https://pigment.shapefactory.co",
+            "description": "基于光照与色彩饱和度的智能配色生成器。"
+          },
+          {
+            "name": "Colorbox",
+            "url": "https://colorbox.io",
+            "description": "Lyft 团队出品的算法调色板生成器，适合系统化 UI。"
+          },
+          {
+            "name": "Color Visualizer",
+            "url": "https://color.adobe.com/create/color-wheel",
+            "description": "交互式色彩匹配工具，适合产品与品牌视觉设计。"
+          },
+          {
+            "name": "Palettte App",
+            "url": "https://palettte.app",
+            "description": "专为构建设计系统 UI 色阶而生的专业调色板编辑工具。"
+          },
+          {
+            "name": "Picular",
+            "url": "https://picular.co",
+            "description": "被称为“色彩搜索引擎”，根据输入关键词提取相应色彩。"
+          },
+          {
+            "name": "Gradient Magic",
+            "url": "https://www.gradientmagic.com",
+            "description": "包含大量不规则与独特纹理的 CSS 渐变色库。"
+          },
+          {
+            "name": "Color Mind",
+            "url": "http://colormind.io",
+            "description": "基于深度学习从图像与艺术作品中提取配色的 AI 工具。"
+          },
+          {
+            "name": "Colorsinspo",
+            "url": "https://colorsinspo.com",
+            "description": "一站式配色全能平台，包含颜色选择、调色板及教程。"
+          },
+          {
+            "name": "Colormind.io",
+            "url": "http://colormind.io/bootstrap",
+            "description": "强大的AI配色引擎，支持网站UI实时颜色预览。"
+          },
+          {
+            "name": "Dopely Colors",
+            "url": "https://colors.dopely.top",
+            "description": "功能极全的配色工具集，含渐变、调色板及对比度。"
+          },
+          {
+            "name": "Flat UI Colors",
+            "url": "https://flatuicolors.com",
+            "description": "针对 Flat 扁平化设计风格的经典流行配色板。"
+          },
+          {
+            "name": "Realtime Colors",
+            "url": "https://www.realtimecolors.com",
+            "description": "实时在真实网站模板上测试你的配色方案工具。"
+          }
+        ]
+      },
+      {
+        "name": "插画3D动效素材",
+        "links": [
+          {
+            "name": "unDraw",
+            "url": "https://undraw.co",
+            "description": "扁平风格矢量插画库，支持自定义全站插画的主配色。"
+          },
+          {
+            "name": "Freepik",
+            "url": "https://www.freepik.com",
+            "description": "丰富的免费矢量图、插画、PSD 及设计素材下载站。"
+          },
+          {
+            "name": "Reshot",
+            "url": "https://www.reshot.com",
+            "description": "提供大量独家免费可商用的 SVG 图标与精美矢量插画。"
+          },
+          {
+            "name": "Storyset",
+            "url": "https://storyset.com",
+            "description": "Freepik 旗下可在线定制动效与颜色的免费矢量插画。"
+          },
+          {
+            "name": "Blush",
+            "url": "https://blush.design",
+            "description": "支持拼装与定制全球顶级插画家作品的矢量插画库。"
+          },
+          {
+            "name": "Humaaans",
+            "url": "https://www.humaaans.com",
+            "description": "知名人物插画库，可自由混合搭配角色发型、衣服与姿势。"
+          },
+          {
+            "name": "Open Doodles",
+            "url": "https://www.opendoodles.com",
+            "description": "极其随性优雅的涂鸦风格开源矢量插画集合。"
+          },
+          {
+            "name": "Opendesign",
+            "url": "https://open.design",
+            "description": "社区驱动的免费开源设计资源与矢量插画分发平台。"
+          },
+          {
+            "name": "DrawKit",
+            "url": "https://www.drawkit.com",
+            "description": "包含大量手绘与矢量风格的免费高品质插画包。"
+          },
+          {
+            "name": "Absurd Design",
+            "url": "https://absurd.design",
+            "description": "独具特色的荒谬与抽象手绘风格矢量插画集合。"
+          },
+          {
+            "name": "LottieFiles",
+            "url": "https://lottiefiles.com",
+            "description": "全球最大的 Lottie 轻量级矢量动画素材与插件平台。"
+          },
+          {
+            "name": "Icons8 Ouch",
+            "url": "https://icons8.com/illustrations",
+            "description": "专业 UI 插画库，覆盖多种热门视觉风格与场景。"
+          },
+          {
+            "name": "Illostration",
+            "url": "https://illostration.com",
+            "description": "提供大量 3D 与扁平风格的免费矢量插画资源。"
+          },
+          {
+            "name": "Ira Design",
+            "url": "https://iradesign.io",
+            "description": "支持自定义背景、角色与物件颜色的矢量插画生成器。"
+          },
+          {
+            "name": "Glaze",
+            "url": "https://www.glazestock.com",
+            "description": "精选高品质矢量插画资源站，适用于商业与个人项目。"
+          },
+          {
+            "name": "ManyPixels",
+            "url": "https://www.manypixels.co/gallery",
+            "description": "包含数百个现代化 2D/3D 免费矢量插画的资源库。"
+          },
+          {
+            "name": "LukaszAdam",
+            "url": "https://lukaszadam.com/illustrations",
+            "description": "独立设计师创作的免费可商用矢量插画与图标包。"
+          },
+          {
+            "name": "Paper Illustration",
+            "url": "https://iconscout.com/paper-illustrations",
+            "description": "精美的纸雕风格免费矢量插画与场景组件。"
+          },
+          {
+            "name": "Craftwork",
+            "url": "https://craftwork.design",
+            "description": "顶级品质的免费及付费UI模板、插画与3D素材。"
+          },
+          {
+            "name": "Handz",
+            "url": "https://www.handz.design",
+            "description": "开源的 3D 手势素材库，包含多种动作、配色与材质。"
+          },
+          {
+            "name": "Humans 3D",
+            "url": "https://www.3dicons.co",
+            "description": "自由组合组装的 3D 人物形象设计素材资源包。"
+          },
+          {
+            "name": "Salem3D",
+            "url": "https://salem3d.com",
+            "description": "免费高品质 3D 渲染元素与设计素材集合。"
+          },
+          {
+            "name": "Khushmeen",
+            "url": "https://khushmeen.com",
+            "description": "精选高质感的扁平与艺术风格免费插画下载博客。"
+          },
+          {
+            "name": "Freeillustrations",
+            "url": "https://freeillustrations.xyz",
+            "description": "汇集全网优秀免费插画素材的搜索与导航站。"
+          },
+          {
+            "name": "Pixeltrue",
+            "url": "https://www.pixeltrue.com/free-illustrations",
+            "description": "高质量免费SVG插画与Lottie动效素材。"
+          },
+          {
+            "name": "Vectorzi",
+            "url": "https://vectorzi.com",
+            "description": "专注于提供免费矢量图、背景与插画资源的网站。"
+          },
+          {
+            "name": "Vexels",
+            "url": "https://www.vexels.com",
+            "description": "包含大量矢量图、图形设计与印花样机素材的平台。"
+          },
+          {
+            "name": "3Dicons",
+            "url": "https://3dicons.co",
+            "description": "开源3D常用图标素材库，支持PNG与Blender。"
+          },
+          {
+            "name": "Toy Faces",
+            "url": "https://amritpaldesign.com/toy-faces",
+            "description": "极其受欢迎的可爱卡通玩具风格 3D 头像素材包。"
+          },
+          {
+            "name": "Minimalistic Illust",
+            "url": "https://minimalisticillustrations.com",
+            "description": "极简线稿风格的免费矢量插画与设计素材。"
+          }
+        ]
+      },
+      {
+        "name": "样机与包装展示",
+        "links": [
+          {
+            "name": "Smartmockups",
+            "url": "https://smartmockups.com",
+            "description": "在线快速将设计图合成至真实场景样机的强悍工具。"
+          },
+          {
+            "name": "Mockup World",
+            "url": "https://www.mockupworld.co",
+            "description": "汇集全网优质免费 PSD 样机资源的专业导航站。"
+          },
+          {
+            "name": "Yellow Images",
+            "url": "https://yellowimages.com",
+            "description": "顶级高精度的包装、服饰与产品 Mockup 素材库。"
+          },
+          {
+            "name": "Graphic Burger",
+            "url": "https://graphicburger.com",
+            "description": "经典品质设计素材站，含大量高质 PSD 样机与 UI。"
+          },
+          {
+            "name": "Artboard Studio",
+            "url": "https://artboard.studio",
+            "description": "强大的在线样机拼贴与视觉包装设计创作平台。"
+          },
+          {
+            "name": "Shots.so",
+            "url": "https://shots.so",
+            "description": "极具美感的在线截图与产品展示样机快速美化工具。"
+          },
+          {
+            "name": "Anthony Boyd Graphics",
+            "url": "https://www.anthonyboyd.graphics",
+            "description": "独立设计师打造的高精度现代电子产品样机。"
+          },
+          {
+            "name": "Premium Pixels",
+            "url": "https://www.premiumpixels.com",
+            "description": "老牌高品质免费 PSD 样机、图标与纹理资源博客。"
+          },
+          {
+            "name": "Original Mockups",
+            "url": "https://originalmockups.com",
+            "description": "专为包装与品牌视觉打造的高精度 PSD 样机。"
+          },
+          {
+            "name": "Placeit",
+            "url": "https://placeit.net",
+            "description": "Envoy 旗下强大的在线产品样机与视频演示自动生成器。"
+          },
+          {
+            "name": "Dimmy.club",
+            "url": "https://dimmy.club",
+            "description": "极简风格的设备屏幕样机在线生成工具（Mac/iOS）。"
+          },
+          {
+            "name": "Mockups Design",
+            "url": "https://mockups-design.com",
+            "description": "完全免费且可用于商业项目的整套高品质样机。"
+          },
+          {
+            "name": "ls.graphics",
+            "url": "https://www.ls.graphics",
+            "description": "极其精致的现代化 UI 设备样机与高阶设计素材。"
+          },
+          {
+            "name": "Device Shots",
+            "url": "https://deviceshots.com",
+            "description": "快速将截图插入各大品牌手机与电脑设备的在线样机。"
+          },
+          {
+            "name": "Previewed",
+            "url": "https://previewed.app",
+            "description": "专为App Store截图与宣传册打造3D样机。"
+          },
+          {
+            "name": "Mockup Phone",
+            "url": "https://mockuphone.com",
+            "description": "将网页或 App 界面合成至手机屏幕的轻量在线工具。"
+          },
+          {
+            "name": "Coverr Mockups",
+            "url": "https://coverr.co",
+            "description": "带有真实动态视频背景的高级展示样机生成器。"
+          },
+          {
+            "name": "Shotsnapp",
+            "url": "https://shotsnapp.com",
+            "description": "简单易用的移动端与桌面端设备样机在线图像生成器。"
+          },
+          {
+            "name": "FreePik Mockups",
+            "url": "https://www.freepik.com/psd/mockup",
+            "description": "Freepik旗下庞大的免费PSD设备与包装样机库。"
+          },
+          {
+            "name": "Designbolts",
+            "url": "https://www.designbolts.com",
+            "description": "定期更新优质包装、海报及品牌 Vis 免费样机网站。"
+          }
+        ]
+      },
+      {
+        "name": "UI组件设计系统",
+        "links": [
+          {
+            "name": "Figma Community",
+            "url": "https://www.figma.com/community",
+            "description": "Figma 官方社区，全球最大 UI 组件与原型资源库。"
+          },
+          {
+            "name": "UI8",
+            "url": "https://ui8.net",
+            "description": "顶级UI Kit、设计系统与3D资源下载站。"
+          },
+          {
+            "name": "Uplabs",
+            "url": "https://www.uplabs.com",
+            "description": "每日更新网页与移动端 UI 设计资源及源码模板社区。"
+          },
+          {
+            "name": "Cruip",
+            "url": "https://cruip.com",
+            "description": "HTML/Tailwind/React高品质落地页模板。"
+          },
+          {
+            "name": "HTML5 UP",
+            "url": "https://html5up.net",
+            "description": "响应式HTML5与CSS3网页模板平台，完全免费开源。"
+          },
+          {
+            "name": "Tailwind UI",
+            "url": "https://tailwindui.com",
+            "description": "Tailwind官方出品的顶尖UI组件与网页模板库。"
+          },
+          {
+            "name": "One Page Love",
+            "url": "https://onepagelove.com",
+            "description": "全球优秀单页网页（One-Page）模板与灵感展示站。"
+          },
+          {
+            "name": "TemplatesWise",
+            "url": "https://www.templateswise.com",
+            "description": "包含大量免费 PPT 模板、图表及演示文稿素材。"
+          },
+          {
+            "name": "Slidesgo",
+            "url": "https://slidesgo.com",
+            "description": "Freepik旗下Slides与PPT模板库。"
+          },
+          {
+            "name": "Canva",
+            "url": "https://www.canva.com",
+            "description": "全球知名在线视觉设计平台，含海量优质模版资源。"
+          },
+          {
+            "name": "稿定设计",
+            "url": "https://www.gaoding.com",
+            "description": "国内领先的商业视觉与电商海报模板在线设计平台。"
+          },
+          {
+            "name": "创客贴",
+            "url": "https://www.chuangkit.com",
+            "description": "简单好用的在线平面设计工具，包含丰富图片模板。"
+          },
+          {
+            "name": "AdminLTE",
+            "url": "https://adminlte.io",
+            "description": "极其经典的开源免费响应式后台管理面板 UI 模板。"
+          },
+          {
+            "name": "Flowbite",
+            "url": "https://flowbite.com",
+            "description": "基于Tailwind CSS的开源UI组件库与设计系统。"
+          },
+          {
+            "name": "DaisyUI",
+            "url": "https://daisyui.com",
+            "description": "极其流行且轻量的 Tailwind CSS 组件库资源。"
+          },
+          {
+            "name": "Shadcn UI",
+            "url": "https://ui.shadcn.com",
+            "description": "现代前端极其火爆的复用型 UI 组件库设计规范。"
+          },
+          {
+            "name": "Chakra UI",
+            "url": "https://chakra-ui.com",
+            "description": "模块化且无障碍支持良好的 React 界面组件库。"
+          },
+          {
+            "name": "Ant Design",
+            "url": "https://ant.design",
+            "description": "阿里巴巴出品的极具影响力的企业级 UI 设计语言。"
+          },
+          {
+            "name": "Element Plus",
+            "url": "https://element-plus.org",
+            "description": "基于 Vue 3 的经典企业级桌面端组件库与资源。"
+          },
+          {
+            "name": "Framer Supply",
+            "url": "https://www.framer.com/supply",
+            "description": "Framer 官方与社区打造的高质网页模板与交互组件。"
+          }
+        ]
+      },
+      {
+        "name": "纹理背景与素材",
+        "links": [
+          {
+            "name": "Subtle Patterns",
+            "url": "https://www.toptal.com/designers/subtlepatterns",
+            "description": "Toptal 旗下经典的免费无缝背景纹理图案库。"
+          },
+          {
+            "name": "Hero Patterns",
+            "url": "https://heropatterns.com",
+            "description": "可自定义色彩与透明度的 SVG 背景纹理代码库。"
+          },
+          {
+            "name": "Pattern Monster",
+            "url": "https://pattern.monster",
+            "description": "强大的 SVG 无缝平铺图案在线生成与定制工具。"
+          },
+          {
+            "name": "Transparent Textures",
+            "url": "https://www.transparenttextures.com",
+            "description": "将纹理叠加至任意背景色的在线无缝纹理预览器。"
+          },
+          {
+            "name": "Poly Haven",
+            "url": "https://polyhaven.com",
+            "description": "100%免费开源的3D纹理、HDRi环境光与高精模型库。"
+          },
+          {
+            "name": "AmbientCG",
+            "url": "https://ambientcg.com",
+            "description": "庞大的公共领域（CC0）高分辨率 PBR 材质与纹理库。"
+          },
+          {
+            "name": "CGBookcase",
+            "url": "https://www.cgbookcase.com",
+            "description": "独立艺术家打造的免费高品质 PBR 材质与纹理平台。"
+          },
+          {
+            "name": "TextureLabs",
+            "url": "https://texturelabs.org",
+            "description": "知名视觉艺术家创立的高精纹理与图像叠加素材库。"
+          },
+          {
+            "name": "Haikei",
+            "url": "https://haikei.app",
+            "description": "强大的在线 SVG 形状、波浪与网格背景图像生成工具。"
+          },
+          {
+            "name": "Blobmaker",
+            "url": "https://www.blobmaker.app",
+            "description": "极简的在线随机有机流体 SVG 形状生成器。"
+          },
+          {
+            "name": "MagicPattern",
+            "url": "https://www.magicpattern.design",
+            "description": "包含多种 CSS/SVG 图案、渐变与背景生成器工具集。"
+          },
+          {
+            "name": "BGJar",
+            "url": "https://bgjar.com",
+            "description": "科技感、波浪及几何风格的免费SVG背景生成器。"
+          },
+          {
+            "name": "Cool Backgrounds",
+            "url": "https://coolbackgrounds.io",
+            "description": "一键生成炫酷几何、粒子与渐变背景图像的网站。"
+          },
+          {
+            "name": "SVG Wave",
+            "url": "https://svgwave.in",
+            "description": "快速定制生成动态与静态波浪 SVG 图形的在线工具。"
+          },
+          {
+            "name": "CSS Fancy Border Radius",
+            "url": "https://9elements.github.io/fancy-border-radius",
+            "description": "轻松生成不规则有机流体边框代码的视觉工具。"
+          },
+          {
+            "name": "Trianglify",
+            "url": "https://trianglify.io",
+            "description": "将色彩与几何图案融合生成低多边形背景图像的工具。"
+          },
+          {
+            "name": "Ready Player Me",
+            "url": "https://readyplayer.me",
+            "description": "强大的跨平台3D虚拟化身在线创建系统。"
+          },
+          {
+            "name": "Spline Community",
+            "url": "https://spline.design",
+            "description": "交互式3D场景设计工具Spline的官方素材库。"
+          },
+          {
+            "name": "Mixamo",
+            "url": "https://www.mixamo.com",
+            "description": "Adobe旗下免费的3D角色模型与动作捕捉动画库。"
+          },
+          {
+            "name": "Sketchfab",
+            "url": "https://sketchfab.com",
+            "description": "全球最大的 3D 模型预览、分享与免费/付费下载平台。"
+          },
+          {
+            "name": "Sketchy Size",
+            "url": "https://socialsizes.io",
+            "description": "快速在线转换与调整各平台社交媒体封面尺寸的工具。"
+          },
+          {
+            "name": "Screely",
+            "url": "https://www.screely.com",
+            "description": "一键将平淡的软件截图转换为高级样机展示图的工具。"
+          },
+          {
+            "name": "Carbon",
+            "url": "https://carbon.now.sh",
+            "description": "将源代码转换为高颜值、可定制背景图片的代码截图工具。"
+          },
+          {
+            "name": "Ray.so",
+            "url": "https://ray.so",
+            "description": "Vercel 出品的高颜值代码图片在线生成与美化工具。"
+          },
+          {
+            "name": "App Icon Generator",
+            "url": "https://appicon.co",
+            "description": "快速一键生成多尺寸iOS与Android应用图标。"
+          },
+          {
+            "name": "RealFaviconGenerator",
+            "url": "https://realfavicongenerator.net",
+            "description": "全网最专业的多端 Favicon 网页图标生成工具。"
+          },
+          {
+            "name": "Poeti",
+            "url": "https://poeti.app",
+            "description": "专为设计师打造的精选 UI 视觉设计与设计资源导航。"
+          },
+          {
+            "name": "UX Design CC",
+            "url": "https://uxdesign.cc",
+            "description": "汇集全球顶级 UX/UI 设计文章、资源与工具的媒体。"
+          },
+          {
+            "name": "Design Resources AI",
+            "url": "https://designresources.ai",
+            "description": "汇总各类提升设计生产力的 AI 工具与资源平台。"
+          },
+          {
+            "name": "OpenPeeps",
+            "url": "https://www.openpeeps.com",
+            "description": "知名手绘风格插画组合包，支持自由搭配人物造型。"
+          },
+          {
+            "name": "Free Design Resources",
+            "url": "https://freedesignresources.net",
+            "description": "每日更新的高品质免费 UI Kit、字体与样机站。"
+          },
+          {
+            "name": "Webdesign Resources",
+            "url": "https://webdesignresources.io",
+            "description": "精选高质前端 UI 组件、模板与工具的导航平台。"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑫𝑒𝑠𝑖𝑔𝑛 𝑅𝑒𝑠𝑜𝑢𝑟𝑐𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

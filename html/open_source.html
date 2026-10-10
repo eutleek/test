@@ -1,0 +1,1389 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="开源软件、开源项目与开源文化资源">
+<title>开源项目 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>开源项目</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">开源项目 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "开源项目",
+    "icon": "🧩",
+    "color": "linear-gradient(135deg, #00b894, #6c5ce7)",
+    "subcategories": [
+      {
+        "name": "托管平台 (001-040)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "GitHub",
+            "url": "https://github.com",
+            "description": "全球极大的代码托管与开发者社区，开源项目协作"
+          },
+          {
+            "name": "GitLab",
+            "url": "https://gitlab.com",
+            "description": "强大的 DevOps 平台与开源代码托管服务"
+          },
+          {
+            "name": "Codeberg",
+            "url": "https://codeberg.org",
+            "description": "由非营利组织运营的纯粹开源托管平台"
+          },
+          {
+            "name": "SourceForge",
+            "url": "https://sourceforge.net",
+            "description": "老牌开源软件托管平台，提供庞大的桌面端与服务器端免"
+          },
+          {
+            "name": "Apache Software Foundation (ASF)",
+            "url": "https://www.apache.org",
+            "description": "全球极大的开源软件基金会，托管了 Spark"
+          },
+          {
+            "name": "Linux Foundation",
+            "url": "https://www.linuxfoundation.org",
+            "description": "推动 Linux 内核及现代开源技术(云原生"
+          },
+          {
+            "name": "Eclipse Foundation",
+            "url": "https://www.eclipse.org",
+            "description": "知名开源软件基金会，提供 Eclipse IDE"
+          },
+          {
+            "name": "Free Software Foundation (FSF)",
+            "url": "https://www.fsf.org",
+            "description": "自由软件基金会，由 Stallman 创办"
+          },
+          {
+            "name": "Open Source Initiative (OSI)",
+            "url": "https://opensource.org",
+            "description": "开源倡议组织，定义与认可“开源许可协议(OSI"
+          },
+          {
+            "name": "Cloud Native Computing Foundation (CNCF)",
+            "url": "https://www.cncf.io",
+            "description": "云原生计算基金会，托管 Kubernetes"
+          },
+          {
+            "name": "OpenInfra Foundation",
+            "url": "https://openinfra.dev",
+            "description": "开放基础设施基金会，推动 OpenStack"
+          },
+          {
+            "name": "Python Software Foundation (PSF)",
+            "url": "https://www.python.org/psf",
+            "description": "支持与推广 Python"
+          },
+          {
+            "name": "Rust Foundation",
+            "url": "https://rustfoundation.org",
+            "description": "致力于维护、发展与资助 Rust"
+          },
+          {
+            "name": "Node.js Foundation (OpenJS)",
+            "url": "https://openjsf.org",
+            "description": "OpenJS 基金会，托管 Node.js"
+          },
+          {
+            "name": "Mozilla Foundation",
+            "url": "https://www.mozilla.org",
+            "description": "开源先驱基金会，致力于维护开放互联网"
+          },
+          {
+            "name": "Software Freedom Conservancy (SFC)",
+            "url": "https://sfconservancy.org",
+            "description": "为 Git、Inkscape"
+          },
+          {
+            "name": "Software in the Public Interest (SPI)",
+            "url": "https://www.spi-inc.org",
+            "description": "协助 Debian、Arch Linux"
+          },
+          {
+            "name": "OWASP Foundation",
+            "url": "https://owasp.org",
+            "description": "开放 Web 应用程序安全项目"
+          },
+          {
+            "name": "Gitee (码云)",
+            "url": "https://gitee.com",
+            "description": "中国本土知名的代码托管与研发协作平台"
+          },
+          {
+            "name": "OpenAtom Foundation (开放原子开源基金会)",
+            "url": "https://www.openatom.org",
+            "description": "中国首个开源基金会，托管 OpenHarmony"
+          },
+          {
+            "name": "Framagit",
+            "url": "https://framagit.org",
+            "description": "由法国 Framasoft 提供的非营利"
+          },
+          {
+            "name": "Savannah (GNU)",
+            "url": "https://savannah.gnu.org",
+            "description": "自由软件基金会创办的官方代码托管平台"
+          },
+          {
+            "name": "OSDN",
+            "url": "https://osdn.net",
+            "description": "开源软件开发网络，为开源项目提供下载镜像"
+          },
+          {
+            "name": "Bitbucket",
+            "url": "https://bitbucket.org",
+            "description": "Atlassian 旗下的代码托管平台"
+          },
+          {
+            "name": "Launchpad",
+            "url": "https://launchpad.net",
+            "description": "Canonical 开发的开源协作平台"
+          },
+          {
+            "name": "Radicle",
+            "url": "https://radicle.xyz",
+            "description": "基于 P2P 网络与密码学的去中心化开源代码托管与"
+          },
+          {
+            "name": "GitGutter / Forgejo",
+            "url": "https://forgejo.org",
+            "description": "由社区驱动的轻量级去中心化开源 Git 服务软件"
+          },
+          {
+            "name": "Open Source Collective",
+            "url": "https://opencollective.com/opensource",
+            "description": "为开源项目提供透明化筹款"
+          },
+          {
+            "name": "GitHub Sponsors",
+            "url": "https://github.com/sponsors",
+            "description": "GitHub 官方设立的开源资助渠道"
+          },
+          {
+            "name": "Tidelift",
+            "url": "https://tidelift.com",
+            "description": "企业级开源软件供应链保障平台"
+          },
+          {
+            "name": "NumFOCUS",
+            "url": "https://numfocus.org",
+            "description": "支持 NumPy、Pandas、SciPy"
+          },
+          {
+            "name": "Blender Foundation",
+            "url": "https://www.blender.org/foundation",
+            "description": "支持顶级开源 3D 创作套件 Blender"
+          },
+          {
+            "name": "KDE e.V.",
+            "url": "https://ev.kde.org",
+            "description": "代表 KDE 开源社区的非营利组织"
+          },
+          {
+            "name": "GNOME Foundation",
+            "url": "https://www.gnome.org/foundation",
+            "description": "支持 GNOME 自由桌面环境及周边开源生态系统发"
+          },
+          {
+            "name": "Document Foundation",
+            "url": "https://www.documentfoundation.org",
+            "description": "知名开源办公套件 LibreOffice"
+          },
+          {
+            "name": "VideoLAN",
+            "url": "https://www.videolan.org",
+            "description": "知名开源媒体播放器 VLC 以及"
+          },
+          {
+            "name": "Matrix.org Foundation",
+            "url": "https://matrix.org",
+            "description": "开放去中心化实时通信协议 Matrix"
+          },
+          {
+            "name": "RISC-V International",
+            "url": "https://riscv.org",
+            "description": "开放指令集架构 RISC-V 的国际标准化组织"
+          },
+          {
+            "name": "Open3D Engine (O3DE)",
+            "url": "https://o3de.org",
+            "description": "Linux 基金会托管的 AAA 级开源跨平台"
+          },
+          {
+            "name": "OpenSSF (Open Source Security Foundation)",
+            "url": "https://openssf.org",
+            "description": "专注于提升全球开源软件供应链安全"
+          }
+        ]
+      },
+      {
+        "name": "操作系统 (041-080)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Linux Kernel Archives",
+            "url": "https://www.kernel.org",
+            "description": "Linux 操作系统内核官方源码发布库与主线更新大"
+          },
+          {
+            "name": "Debian",
+            "url": "https://www.debian.org",
+            "description": "老牌纯粹由社区维护的开源 Linux 发行版"
+          },
+          {
+            "name": "Ubuntu",
+            "url": "https://ubuntu.com",
+            "description": "全球极受欢迎的开源 Linux 操作系统"
+          },
+          {
+            "name": "Fedora Project",
+            "url": "https://fedoraproject.org",
+            "description": "由红帽赞助的先锋开源 Linux 发行版"
+          },
+          {
+            "name": "Arch Linux",
+            "url": "https://www.archlinux.org",
+            "description": "以极简、滚动更新(Rolling"
+          },
+          {
+            "name": "Alpine Linux",
+            "url": "https://alpinelinux.org",
+            "description": "基于 musl libc 和 busybox"
+          },
+          {
+            "name": "FreeBSD",
+            "url": "https://www.freebsd.org",
+            "description": "高性能的开源类 Unix 操作系统"
+          },
+          {
+            "name": "OpenBSD",
+            "url": "https://www.openbsd.org",
+            "description": "以极致安全性、主动代码审计和严谨开发著称的开源类"
+          },
+          {
+            "name": "OpenWrt",
+            "url": "https://openwrt.org",
+            "description": "专为嵌入式设备(如无线路由器)打造的强大开源"
+          },
+          {
+            "name": "Proxmox VE",
+            "url": "https://www.proxmox.com",
+            "description": "基于 Debian 的开源企业级虚拟化管理平台"
+          },
+          {
+            "name": "Kubernetes",
+            "url": "https://kubernetes.io",
+            "description": "谷歌开源的自动化容器编排系统"
+          },
+          {
+            "name": "Docker Open Source",
+            "url": "https://www.docker.com",
+            "description": "颠覆软件交付方式的容器化平台"
+          },
+          {
+            "name": "Terraform (OpenTofu)",
+            "url": "https://opentofu.org",
+            "description": "OpenTofu 是基于 MPL"
+          },
+          {
+            "name": "Prometheus",
+            "url": "https://prometheus.io",
+            "description": "云原生计算基金会(CNCF)旗下的开源系统监控与报"
+          },
+          {
+            "name": "Grafana",
+            "url": "https://grafana.com",
+            "description": "极具影响力的开源时序数据分析与可视化面板"
+          },
+          {
+            "name": "Envoy Proxy",
+            "url": "https://www.envoyproxy.io",
+            "description": "高质轻量的开源边缘与服务网关(Service"
+          },
+          {
+            "name": "Istio",
+            "url": "https://istio.io",
+            "description": "开源的服务网关(Service"
+          },
+          {
+            "name": "Ansible",
+            "url": "https://www.ansible.com",
+            "description": "简单易用的开源自动化运维工具，支持配置管理"
+          },
+          {
+            "name": "OpenStack",
+            "url": "https://www.openstack.org",
+            "description": "巨型开源云计算平台，用于构建公共云与私有云基础设施"
+          },
+          {
+            "name": "Ceph",
+            "url": "https://ceph.io",
+            "description": "开源的分布式存储系统，提供高扩展性的对象存储"
+          },
+          {
+            "name": "PostgreSQL",
+            "url": "https://www.postgresql.org",
+            "description": "功能极其强大的开源对象关系型数据库系统"
+          },
+          {
+            "name": "MariaDB",
+            "url": "https://mariadb.org",
+            "description": "由 MySQL 原班人马打造的开源关系型数据库"
+          },
+          {
+            "name": "Redis / Valkey",
+            "url": "https://valkey.io",
+            "description": "Valkey 是由 Linux"
+          },
+          {
+            "name": "ClickHouse",
+            "url": "https://clickhouse.com",
+            "description": "面向列的开源分布式联机分析处理(OLAP)数据库"
+          },
+          {
+            "name": "Apache Kafka",
+            "url": "https://kafka.apache.org",
+            "description": "高吞吐量的分布式开源事件流处理平台"
+          },
+          {
+            "name": "Apache Spark",
+            "url": "https://spark.apache.org",
+            "description": "开源的多语言数据处理引擎，专为大规模数据分析"
+          },
+          {
+            "name": "RabbitMQ",
+            "url": "https://www.rabbitmq.com",
+            "description": "基于 AMQP 协议的经典开源分布式消息代理中间件"
+          },
+          {
+            "name": "Nginx",
+            "url": "https://nginx.org",
+            "description": "高性能开源 HTTP Web 服务器与反向代理"
+          },
+          {
+            "name": "Caddy",
+            "url": "https://caddyserver.com",
+            "description": "基于 Go 语言编写的现代开源 Web 服务器"
+          },
+          {
+            "name": "Traefik",
+            "url": "https://traefik.io",
+            "description": "现代开源反向代理与负载均衡器"
+          },
+          {
+            "name": "Keycloak",
+            "url": "https://www.keycloak.org",
+            "description": "红帽开源的单点登录(SSO)与身份认证管理解决方案"
+          },
+          {
+            "name": "HashiCorp Vault (OpenBao)",
+            "url": "https://openbao.org",
+            "description": "OpenBao 是在 Linux"
+          },
+          {
+            "name": "Home Assistant",
+            "url": "https://www.home-assistant.io",
+            "description": "全球极受欢迎的开源智能家居控制中心"
+          },
+          {
+            "name": "Pi-hole",
+            "url": "https://pi-hole.net",
+            "description": "基于 DNS 的开源网络级广告与跟踪器拦截工具"
+          },
+          {
+            "name": "TrueNAS CORE",
+            "url": "https://www.truenas.com",
+            "description": "基于 OpenZFS 文件系统的强大开源网络附加存"
+          },
+          {
+            "name": "OPNSense",
+            "url": "https://opnsense.org",
+            "description": "基于 HardenedBSD"
+          },
+          {
+            "name": "pfSense",
+            "url": "https://www.pfsense.org",
+            "description": "经典开源防火墙与路由器软件"
+          },
+          {
+            "name": "WireGuard",
+            "url": "https://www.wireguard.com",
+            "description": "极其快速、现代化且代码量小巧的开源安全网络隧道"
+          },
+          {
+            "name": "Tailscale (open-source client)",
+            "url": "https://tailscale.com/opensource",
+            "description": "基于 WireGuard 构建的打洞网络服务"
+          },
+          {
+            "name": "Headscale",
+            "url": "https://github.com/juanfont/headscale",
+            "description": "Tailscale 控制平面的开源自我托管实现"
+          }
+        ]
+      },
+      {
+        "name": "开发工具与AI (081-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Visual Studio Code (VSCodium)",
+            "url": "https://vscodium.com",
+            "description": "VSCodium 是移除微软遥测与商业追踪的纯粹开"
+          },
+          {
+            "name": "Neovim",
+            "url": "https://neovim.io",
+            "description": "旨在重构与扩展 Vim 的开源高扩展性文本编辑器"
+          },
+          {
+            "name": "GCC (GNU Compiler Collection)",
+            "url": "https://gcc.gnu.org",
+            "description": "GNU 编译器套件，支持 C、C++"
+          },
+          {
+            "name": "LLVM / Clang",
+            "url": "https://llvm.org",
+            "description": "模块化与可重用的开源编译器和工具链技术集合"
+          },
+          {
+            "name": "Git",
+            "url": "https://git-scm.com",
+            "description": "Linus Torvalds"
+          },
+          {
+            "name": "Curl",
+            "url": "https://curl.se",
+            "description": "全球广泛使用的命令行开源数据传输工具与库"
+          },
+          {
+            "name": "FFmpeg",
+            "url": "https://ffmpeg.org",
+            "description": "极其强悍的开源音视频处理工具与音视频编解码跨平台套"
+          },
+          {
+            "name": "Python",
+            "url": "https://www.python.org",
+            "description": "广泛用于 Web 开发、数据分析"
+          },
+          {
+            "name": "Rust",
+            "url": "https://www.rust-lang.org",
+            "description": "注重内存安全与并发性能的现代开源系统级编程语言。"
+          },
+          {
+            "name": "Go Language",
+            "url": "https://go.dev",
+            "description": "谷歌开发的开源静态类型编程语言"
+          },
+          {
+            "name": "Node.js",
+            "url": "https://nodejs.org",
+            "description": "基于 Chrome V8 引擎构建的开源"
+          },
+          {
+            "name": "Deno",
+            "url": "https://deno.com",
+            "description": "由 Node.js 创造者打造的现代开源"
+          },
+          {
+            "name": "Bun",
+            "url": "https://bun.sh",
+            "description": "速度极快的全能型开源 JavaScript"
+          },
+          {
+            "name": "React",
+            "url": "https://react.dev",
+            "description": "Meta 开源的构建用户界面的"
+          },
+          {
+            "name": "Vue.js",
+            "url": "https://vuejs.org",
+            "description": "独立社区驱动的渐进式 JavaScript 框架"
+          },
+          {
+            "name": "Svelte",
+            "url": "https://svelte.dev",
+            "description": "无虚拟 DOM 的编译型开源前端框架"
+          },
+          {
+            "name": "Tailwind CSS",
+            "url": "https://tailwindcss.com",
+            "description": "实用工具优先(Utility-First)的开源"
+          },
+          {
+            "name": "Flutter",
+            "url": "https://flutter.dev",
+            "description": "谷歌开源的 UI 软件开发工具包"
+          },
+          {
+            "name": "React Native",
+            "url": "https://reactnative.dev",
+            "description": "允许使用 React 和 JavaScript"
+          },
+          {
+            "name": "Electron",
+            "url": "https://www.electronjs.org",
+            "description": "使用 Web 技术(JavaScript"
+          },
+          {
+            "name": "Tauri",
+            "url": "https://tauri.app",
+            "description": "基于 Rust 构建的轻量级跨平台桌面应用开源框架"
+          },
+          {
+            "name": "PyTorch",
+            "url": "https://pytorch.org",
+            "description": "Linux 基金会托管的开源深度学习框架"
+          },
+          {
+            "name": "TensorFlow",
+            "url": "https://www.tensorflow.org",
+            "description": "谷歌开源的端到端机器学习平台"
+          },
+          {
+            "name": "Hugging Face Transformers",
+            "url": "https://huggingface.co/docs/transformers",
+            "description": "极受欢迎的开源 NLP 与 AI 大模型库"
+          },
+          {
+            "name": "Ollama",
+            "url": "https://ollama.com",
+            "description": "在本地快速运行、配置与管理开源大语言模型(如"
+          },
+          {
+            "name": "LocalAI",
+            "url": "https://localai.io",
+            "description": "兼容 OpenAI API 规范的开源本地 AI"
+          },
+          {
+            "name": "LangChain",
+            "url": "https://www.langchain.com",
+            "description": "用于构建大语言模型(LLM)驱动的应用和"
+          },
+          {
+            "name": "LlamaIndex",
+            "url": "https://www.llamaindex.ai",
+            "description": "专门为 LLM 应用连接私有数据源与构建"
+          },
+          {
+            "name": "vLLM",
+            "url": "https://vllm.ai",
+            "description": "高吞吐量、低延迟的开源 LLM 推理与服务引擎"
+          },
+          {
+            "name": "llama.cpp",
+            "url": "https://github.com/ggerganov/llama.cpp",
+            "description": "纯 C/C++ 实现的无依赖 LLM 推理引擎"
+          },
+          {
+            "name": "Stable Diffusion WebUI",
+            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+            "description": "基于 Gradio 构建的图像生成大模型"
+          },
+          {
+            "name": "ComfyUI",
+            "url": "https://github.com/comfyanonymous/ComfyUI",
+            "description": "基于模块化结点图(Node-based)的极高自由"
+          },
+          {
+            "name": "Dify",
+            "url": "https://dify.ai",
+            "description": "开源的大模型 LLMOps 平台"
+          },
+          {
+            "name": "AnythingLLM",
+            "url": "https://anythingllm.com",
+            "description": "全能型开源企业级 RAG 应用"
+          },
+          {
+            "name": "DB-GPT",
+            "url": "https://github.com/eosphoros-ai/DB-GPT",
+            "description": "结合大模型与原生数据库的开源 AI"
+          },
+          {
+            "name": "Supabase",
+            "url": "https://supabase.com",
+            "description": "开源的 Firebase 替代品"
+          },
+          {
+            "name": "PocketBase",
+            "url": "https://pocketbase.io",
+            "description": "由单个 Go 文件构建的开源实时后端服务"
+          },
+          {
+            "name": "Appwrite",
+            "url": "https://appwrite.io",
+            "description": "开源的开发者后端服务(BaaS)，为 Web"
+          },
+          {
+            "name": "Meilisearch",
+            "url": "https://www.meilisearch.com",
+            "description": "速度极快、开箱即用的开源搜索引擎"
+          },
+          {
+            "name": "Typesense",
+            "url": "https://typesense.org",
+            "description": "开源的容错型高实时搜索引擎"
+          }
+        ]
+      },
+      {
+        "name": "生产力工具 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "LibreOffice",
+            "url": "https://www.libreoffice.org",
+            "description": "功能强大的开源免费办公套件，支持文字处理"
+          },
+          {
+            "name": "OnlyOffice",
+            "url": "https://www.onlyoffice.com",
+            "description": "高度兼容微软 Office 格式的开源办公套件"
+          },
+          {
+            "name": "Thunderbird",
+            "url": "https://www.thunderbird.net",
+            "description": "Mozilla 旗下的开源跨平台邮件客户端"
+          },
+          {
+            "name": "OBS Studio",
+            "url": "https://obsproject.com",
+            "description": "免费开源的视频录制与直播推流软件，功能极其强悍"
+          },
+          {
+            "name": "Blender",
+            "url": "https://www.blender.org",
+            "description": "全能开源 3D 建模、动画、渲染"
+          },
+          {
+            "name": "GIMP",
+            "url": "https://www.gimp.org",
+            "description": "跨平台开源图像处理与修图软件"
+          },
+          {
+            "name": "Inkscape",
+            "url": "https://inkscape.org",
+            "description": "功能强悍的开源矢量图形编辑器"
+          },
+          {
+            "name": "Krita",
+            "url": "https://krita.org",
+            "description": "专为概念艺术家、插画师与纹理画家打造的免费开源数字"
+          },
+          {
+            "name": "Darktable",
+            "url": "https://www.darktable.org",
+            "description": "开源的 RAW 格式摄影照片后期处理软件与非破坏性"
+          },
+          {
+            "name": "RawTherapee",
+            "url": "https://rawtherapee.com",
+            "description": "专注于 RAW 格式高级调色与细节还原的跨平台开源"
+          },
+          {
+            "name": "Audacity",
+            "url": "https://www.audacityteam.org",
+            "description": "开源跨平台多轨音频录制与编辑软件"
+          },
+          {
+            "name": "Shotcut",
+            "url": "https://shotcut.org",
+            "description": "免费开源的跨平台视频编辑器"
+          },
+          {
+            "name": "Kdenlive",
+            "url": "https://kdenlive.org",
+            "description": "基于 KDE 框架的开源非线性视频剪辑软件"
+          },
+          {
+            "name": "VLC Media Player",
+            "url": "https://www.videolan.org/vlc",
+            "description": "跨平台开源多媒体播放器，支持无需另外安装编解码包播"
+          },
+          {
+            "name": "HandBrake",
+            "url": "https://handbrake.fr",
+            "description": "开源的跨平台视频压制与格式转换工具"
+          },
+          {
+            "name": "KeePassXC",
+            "url": "https://keepassxc.org",
+            "description": "完全开源且本地存储的跨平台密码管理器"
+          },
+          {
+            "name": "Bitwarden Open Source",
+            "url": "https://bitwarden.com",
+            "description": "知名的跨平台开源密码管理服务"
+          },
+          {
+            "name": "7-Zip",
+            "url": "https://www.7-zip.org",
+            "description": "高压缩率的开源文件归档与解压缩软件"
+          },
+          {
+            "name": "ShareX",
+            "url": "https://getsharex.com",
+            "description": "Windows 平台下极其强大的开源截图"
+          },
+          {
+            "name": "Flameshot",
+            "url": "https://flameshot.org",
+            "description": "功能丰富、支持标注且界面美观的开源"
+          },
+          {
+            "name": "Joplin",
+            "url": "https://joplinapp.org",
+            "description": "支持端到端加密(E2EE)的开源"
+          },
+          {
+            "name": "Obsidian (Open Ecosystem)",
+            "url": "https://obsidian.md",
+            "description": "虽然核心软件闭源，但拥有完全透明的开放本地"
+          },
+          {
+            "name": "Logseq",
+            "url": "https://logseq.com",
+            "description": "专注于大纲结构与知识图谱的开源隐私优先本地知识库软"
+          },
+          {
+            "name": "AppFlowy",
+            "url": "https://www.appflowy.io",
+            "description": "基于 Flutter 和 Rust 构建的开源"
+          },
+          {
+            "name": "Focalboard",
+            "url": "https://www.focalboard.com",
+            "description": "Mattermost 开发的开源项目管理与看板工具"
+          },
+          {
+            "name": "Calibre",
+            "url": "https://calibre-ebook.com",
+            "description": "功能极其庞大的开源电子书管理、转换与阅读管理神器。"
+          },
+          {
+            "name": "Sumatrapdf",
+            "url": "https://www.sumatrapdfreader.org",
+            "description": "极其轻量、启动迅速的 Windows 平台开源"
+          },
+          {
+            "name": "Zotero",
+            "url": "https://www.zotero.org",
+            "description": "全球学者与学生广泛使用的开源文献管理工具"
+          },
+          {
+            "name": "Transmission",
+            "url": "https://transmissionbt.com",
+            "description": "极简且资源占用极低的开源 BitTorrent"
+          },
+          {
+            "name": "qBittorrent",
+            "url": "https://www.qbittorrent.org",
+            "description": "功能完备的开源 BT/PT 下载客户端"
+          },
+          {
+            "name": "Syncthing",
+            "url": "https://syncthing.net",
+            "description": "去中心化、端到端加密的开源连续文件同步程序"
+          },
+          {
+            "name": "FileZilla",
+            "url": "https://filezilla-project.org",
+            "description": "经典且功能丰富的开源 FTP"
+          },
+          {
+            "name": "Wireshark",
+            "url": "https://www.wireshark.org",
+            "description": "全球极知名的开源网络数据包分析工具"
+          },
+          {
+            "name": "BleachBit",
+            "url": "https://www.bleachbit.org",
+            "description": "开源的系统垃圾清理与隐私保护工具"
+          },
+          {
+            "name": "Nextcloud",
+            "url": "https://nextcloud.com",
+            "description": "强大的自托管开源网盘与协同云平台，包含文件同步"
+          },
+          {
+            "name": "OwnCloud",
+            "url": "https://owncloud.com",
+            "description": "经典自托管开源云存储平台"
+          },
+          {
+            "name": "Immich",
+            "url": "https://immich.app",
+            "description": "功能强悍的自托管开源相册备份与管理系统"
+          },
+          {
+            "name": "Jellyfin",
+            "url": "https://jellyfin.org",
+            "description": "完全无广告、无订阅费的开源媒体服务器"
+          },
+          {
+            "name": "Calibre-Web",
+            "url": "https://github.com/janeczku/calibre-web",
+            "description": "基于 Calibre 数据库的优雅开源 Web"
+          },
+          {
+            "name": "Paperless-ngx",
+            "url": "https://docs.paperless-ngx.com",
+            "description": "带 OCR 文字识别的开源个人文档管理系统"
+          }
+        ]
+      },
+      {
+        "name": "开源文化 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Creative Commons (CC)",
+            "url": "https://creativecommons.org",
+            "description": "知识共享组织，提供标准化的开源文化许可协议(如"
+          },
+          {
+            "name": "Choose an Open Source License",
+            "url": "https://choosealicense.com",
+            "description": "GitHub 制作的极简指南"
+          },
+          {
+            "name": "TLDRLegal",
+            "url": "https://tldrlegal.com",
+            "description": "用通俗易懂的语言解释各类开源许可协议(GPL"
+          },
+          {
+            "name": "Open Source Guides",
+            "url": "https://opensource.guides",
+            "description": "GitHub 官方编写的开源指南，涵盖如何创建"
+          },
+          {
+            "name": "First Contributions",
+            "url": "https://firstcontributions.github.io",
+            "description": "专为开源新手设计的实战引导项目"
+          },
+          {
+            "name": "Google Summer of Code (GSoC)",
+            "url": "https://summerofcode.withgoogle.com",
+            "description": "谷歌举办的全球性活动，资助学生向各类开源软件组织贡"
+          },
+          {
+            "name": "Hacktoberfest",
+            "url": "https://hacktoberfest.com",
+            "description": "每年 10 月举办的开源庆祝活动"
+          },
+          {
+            "name": "Open Source Initiative Blog",
+            "url": "https://opensource.org/blog",
+            "description": "探讨开源定义演变、许可协议合规以及 AI"
+          },
+          {
+            "name": "GNU Operating System Essay Archive",
+            "url": "https://www.gnu.org/philosophy",
+            "description": "自由软件之父 Stallman 的哲学文章合集"
+          },
+          {
+            "name": "Open Source Weekly / News",
+            "url": "https://opensource.com",
+            "description": "红帽发起的开源新闻与知识分享社区"
+          },
+          {
+            "name": "Upstream (Tidelift Podcast)",
+            "url": "https://tidelift.com/about/podcast",
+            "description": "探讨开源维护者生存现状、软件供应链安全与开源商业化"
+          },
+          {
+            "name": "SustainOSS",
+            "url": "https://sustainoss.org",
+            "description": "专注于“开源可持续性”的社区与 Podcast"
+          },
+          {
+            "name": "The Architecture of Open Source Applications (AOSA)",
+            "url": "https://aosabook.org",
+            "description": "免费在线图书，剖析 Git、LLVM"
+          },
+          {
+            "name": "Open Source Diversity",
+            "url": "https://opensourcediversity.org",
+            "description": "致力于促进开源社区多样性"
+          },
+          {
+            "name": "Changelog Podcast",
+            "url": "https://changelog.com",
+            "description": "知名开发者 PodCast"
+          },
+          {
+            "name": "GitHub Innovation Graph",
+            "url": "https://innovationgraph.github.com",
+            "description": "GitHub 推出的全球开源趋势与代码贡献数据图谱"
+          },
+          {
+            "name": "OSS Capital Blog",
+            "url": "https://oss.capital",
+            "description": "专注商业化开源(COSS)领域的风险投资机构"
+          },
+          {
+            "name": "Linux Weekly News (LWN.net)",
+            "url": "https://lwn.net",
+            "description": "深度的 Linux 内核开发动态"
+          },
+          {
+            "name": "FOSDEM",
+            "url": "https://fosdem.org",
+            "description": "欧洲极具规模的免费开源软件开发者盛会"
+          },
+          {
+            "name": "OSCON (O'Reilly Open Source Conference Archive)",
+            "url": "https://www.oreilly.com",
+            "description": "O'Reilly 经典的开源大会遗产"
+          },
+          {
+            "name": "Open Source Hardware Association (OSHWA)",
+            "url": "https://www.oshwa.org",
+            "description": "开源硬件协会，定义开源硬件标准并提供开源硬件产品认"
+          },
+          {
+            "name": "Arduino Open Source",
+            "url": "https://www.arduino.cc",
+            "description": "全球知名的开源电子原型平台"
+          },
+          {
+            "name": "Raspberry Pi Open Documentation",
+            "url": "https://www.raspberrypi.com/documentation",
+            "description": "树莓派开源文档库，展示微型计算机在教育"
+          },
+          {
+            "name": "Open Source Seeds",
+            "url": "https://opensourceseeds.org",
+            "description": "将开源许可理念延伸至农业种子领域"
+          },
+          {
+            "name": "Open COVID License",
+            "url": "https://opencovidpledge.org",
+            "description": "科技界在应对公共危机时免费共享专利与开源技术的历史"
+          },
+          {
+            "name": "Open Knowledge Foundation (OKF)",
+            "url": "https://okfn.org",
+            "description": "倡导开放数据、开放科学与开源文化在公共政策领域应用"
+          },
+          {
+            "name": "OpenStreetMap (OSM)",
+            "url": "https://www.openstreetmap.org",
+            "description": "被称为“地图界的维基百科”"
+          },
+          {
+            "name": "Wikimedia Commons",
+            "url": "https://commons.wikimedia.org",
+            "description": "维基媒体共享资源库，收录数千万张基于自由许可("
+          },
+          {
+            "name": "Gutenberg Project",
+            "url": "https://www.gutenberg.org",
+            "description": "古腾堡计划，全球极老牌的公有领域(Public"
+          },
+          {
+            "name": "Internet Archive Software Library",
+            "url": "https://archive.org/details/software",
+            "description": "互联网档案馆的开源与复古软件档案馆"
+          },
+          {
+            "name": "Open Game Art",
+            "url": "https://opengameart.org",
+            "description": "为独立游戏开发者提供的开源/自由许可游戏素材("
+          },
+          {
+            "name": "Public Domain Vectors",
+            "url": "https://publicdomainvectors.org",
+            "description": "提供数十万张完全进入公有领域(CC0)"
+          },
+          {
+            "name": "Open Music Archive",
+            "url": "https://openmusicarchive.org",
+            "description": "致力于寻找、数字录制与分发版权过期的公有领域音乐录"
+          },
+          {
+            "name": "Sourceware.org",
+            "url": "https://sourceware.org",
+            "description": "为 GDB、Valgrind"
+          },
+          {
+            "name": "Open Source Metrics (CHAOSS)",
+            "url": "https://chaoss.community",
+            "description": "Linux 基金会旗下，用科学指标与分析软件评估开"
+          },
+          {
+            "name": "Linux Foundation Research",
+            "url": "https://www.linuxfoundation.org/research",
+            "description": "发布权威的开源技术发展报告"
+          },
+          {
+            "name": "Linux Story (开源工场)",
+            "url": "https://linuxstory.org",
+            "description": "专注开源文化普及、Linux"
+          },
+          {
+            "name": "开源中国 (OSCHINA)",
+            "url": "https://www.oschina.net",
+            "description": "国内历史悠久的开源技术社区，提供开源软件资讯"
+          },
+          {
+            "name": "GitHub Awesome Lists",
+            "url": "https://github.com/sindresorhus/awesome",
+            "description": "GitHub 极具传奇色彩的开源项目"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑶𝑝𝑒𝑛 𝑺𝑜𝑢𝑟𝑐𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

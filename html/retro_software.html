@@ -1,0 +1,2308 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="让经典软件在现代系统上重获新生：老系统模拟、社区接手续命、经典工具复刻与怀旧档案导航">
+<title>复活老软件 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>复活老软件</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">复活老软件 · 让经典软件在新时代继续发光</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "复活老软件",
+    "icon": "🕰️",
+    "subcategories": [
+      {
+        "name": "老系统与PC模拟复活",
+        "links": [
+          {
+            "name": "Proton",
+            "url": "https://github.com/ValveSoftware/Proton",
+            "description": "★33k Linux 运行 Windows 游戏兼容层"
+          },
+          {
+            "name": "AppleWin",
+            "url": "https://github.com/AppleWin/AppleWin",
+            "description": "★931 Apple II 模拟器，经典 8 位机"
+          },
+          {
+            "name": "Stella",
+            "url": "https://github.com/stella-emu/stella",
+            "description": "★765 雅达利 2600 开源模拟器"
+          },
+          {
+            "name": "ZEsarUX",
+            "url": "https://github.com/chernandezba/zesarux",
+            "description": "★431 ZX Spectrum 多功能模拟器"
+          },
+          {
+            "name": "Cloudpilot",
+            "url": "https://github.com/cloudpilot-emu/cloudpilot",
+            "description": "浏览器跑PalmOS ★320"
+          },
+          {
+            "name": "ARAnyM",
+            "url": "https://github.com/aranym/aranym",
+            "description": "★141 Atari 电脑硬件模拟器"
+          },
+          {
+            "name": "v86",
+            "url": "https://github.com/copy/v86",
+            "description": "浏览器内x86 PC模拟器 ★23.5k"
+          },
+          {
+            "name": "ReactOS",
+            "url": "https://github.com/reactos/reactos",
+            "description": "Windows NT开源复刻系统 ★18.2k"
+          },
+          {
+            "name": "86Box",
+            "url": "https://github.com/86Box/86Box",
+            "description": "精确复刻老x86 PC ★4.9k"
+          },
+          {
+            "name": "OTVDM",
+            "url": "https://github.com/otya128/winevdm",
+            "description": "在 64 位 Windows 运行 16 位程序"
+          },
+          {
+            "name": "DOSBox-X",
+            "url": "https://github.com/dosbox-x/dosbox-x",
+            "description": "★2.8k DOSBox 增强分支，保留大量模拟功能"
+          },
+          {
+            "name": "VICE",
+            "url": "https://vice-emu.sourceforge.io/",
+            "description": "★2.5k Commodore 全系电脑模拟器"
+          },
+          {
+            "name": "DOSBox Staging",
+            "url": "https://github.com/dosbox-staging/dosbox-staging",
+            "description": "★2.2k DOSBox 现代延续版，持续开发维护"
+          },
+          {
+            "name": "EKA2L1",
+            "url": "https://github.com/EKA2L1/EKA2L1",
+            "description": "Symbian手机系统模拟器 ★2.0k"
+          },
+          {
+            "name": "Basilisk II",
+            "url": "https://github.com/cebix/macemu",
+            "description": "经典68k Mac OS模拟器 ★1.6k"
+          },
+          {
+            "name": "Higan",
+            "url": "https://github.com/higan-emu/higan",
+            "description": "★1.4k 多机种精确模拟器，追求原真"
+          },
+          {
+            "name": "Mesen",
+            "url": "https://github.com/SourMesen/Mesen",
+            "description": "★1.3k FC/SFC 模拟器，精确还原"
+          },
+          {
+            "name": "PCem",
+            "url": "https://pcem-emulator.co.uk/",
+            "description": "★1.2k 老 PC 硬件模拟器，运行 DOS/Win"
+          },
+          {
+            "name": "Wine",
+            "url": "https://www.winehq.org",
+            "description": "Windows API兼容层"
+          },
+          {
+            "name": "PCjs",
+            "url": "https://pcjs.org",
+            "description": "网页老PC与软件博物馆"
+          },
+          {
+            "name": "FreeDOS",
+            "url": "https://www.freedos.org",
+            "description": "兼容MS-DOS的开源系统"
+          },
+          {
+            "name": "FS-UAE",
+            "url": "https://fs-uae.net",
+            "description": "Amiga家用电脑模拟器"
+          },
+          {
+            "name": "Hatari",
+            "url": "https://hatari-emu.org",
+            "description": "Atari ST电脑模拟器"
+          },
+          {
+            "name": "Mini vMac",
+            "url": "https://www.gryphel.com/c/minivmac/",
+            "description": "微型 Mac 模拟器，复古苹果系统"
+          },
+          {
+            "name": "WinUAE",
+            "url": "https://www.winuae.net/",
+            "description": "Amiga 经典模拟器 Windows 版"
+          },
+          {
+            "name": "VirtualBox",
+            "url": "https://www.virtualbox.org/",
+            "description": "甲骨文开源虚拟机，运行老系统"
+          },
+          {
+            "name": "Lightspark",
+            "url": "https://lightspark.github.io",
+            "description": "Adobe Flash/SWF 的开源实现，目标是运行…"
+          },
+          {
+            "name": "OpenSilver",
+            "url": "https://opensilver.net",
+            "description": "Silverlight 开源重实现，让旧 Silver…"
+          },
+          {
+            "name": "SheepShaver",
+            "url": "https://sheepshaver.cebix.net",
+            "description": "PowerPC Macintosh 模拟器，可运行经典…"
+          },
+          {
+            "name": "Infinite Mac",
+            "url": "https://infinitemac.org",
+            "description": "在浏览器中运行经典 Mac OS 6/7/8 环境的 …"
+          },
+          {
+            "name": "QEMU",
+            "url": "https://www.qemu.org",
+            "description": "大型开源硬件模拟器，可运行大量老系统与旧软件"
+          },
+          {
+            "name": "Box86",
+            "url": "https://github.com/ptitSeb/box86",
+            "description": "在 ARM/Linux 等现代平台运行 x86 Lin…"
+          },
+          {
+            "name": "Box64",
+            "url": "https://github.com/ptitSeb/box64",
+            "description": "在 ARM64/Linux 等平台运行 x86_64 …"
+          },
+          {
+            "name": "FEX",
+            "url": "https://github.com/FEX-Emu/FEX",
+            "description": "现代 Linux 上运行 x86/x64 软件的动态二…"
+          },
+          {
+            "name": "Hangover",
+            "url": "https://github.com/AndreRH/hangover",
+            "description": "基于 Wine/Box64/FEX 的 ARM 环境 …"
+          },
+          {
+            "name": "Trinity Desktop Environment",
+            "url": "https://www.trinitydesktop.org",
+            "description": "KDE 3.5 的社区延续桌面环境，保留经典 Linu…"
+          },
+          {
+            "name": "MATE",
+            "url": "https://mate-desktop.org",
+            "description": "GNOME 2 的社区延续桌面环境，典型传统 Unix…"
+          },
+          {
+            "name": "Winetricks",
+            "url": "https://github.com/Winetricks/winetricks",
+            "description": "Wine 经典辅助工具"
+          },
+          {
+            "name": "Proton-GE",
+            "url": "https://github.com/GloriousEggroll/proton-ge-custom",
+            "description": "社区维护 Proton 分支"
+          },
+          {
+            "name": "DXVK",
+            "url": "https://github.com/doitsujin/dxvk",
+            "description": "Direct3D 9/10/11 到 Vulkan 的…"
+          },
+          {
+            "name": "vkd3d-proton",
+            "url": "https://github.com/HansKristian-Work/vkd3d-proton",
+            "description": "Direct3D 12 到 Vulkan 的兼容层"
+          },
+          {
+            "name": "D8VK",
+            "url": "https://github.com/AlpyneDreams/d8vk",
+            "description": "Direct3D 8 到 Vulkan 的兼容项目"
+          },
+          {
+            "name": "OpenAL Soft",
+            "url": "https://github.com/kcat/openal-soft",
+            "description": "OpenAL API 的现代开源实现"
+          },
+          {
+            "name": "SDL",
+            "url": "https://www.libsdl.org",
+            "description": "经典跨平台多媒体开发库"
+          },
+          {
+            "name": "libpng",
+            "url": "https://libpng.org",
+            "description": "经典 PNG 开源库"
+          },
+          {
+            "name": "libjpeg-turbo",
+            "url": "https://libjpeg-turbo.org",
+            "description": "经典 JPEG 库现代高性能延续"
+          },
+          {
+            "name": "FreeType",
+            "url": "https://freetype.org",
+            "description": "经典字体渲染库"
+          },
+          {
+            "name": "Gnash",
+            "url": "https://www.gnu.org/software/gnash/",
+            "description": "GNU 体系 Flash Player 开源实现"
+          },
+          {
+            "name": "Wine Gecko",
+            "url": "https://gitlab.winehq.org/wine/wine-gecko",
+            "description": "Wine 旧 Windows 网页组件兼容运行时"
+          },
+          {
+            "name": "Wine Mono",
+            "url": "https://gitlab.winehq.org/wine/wine-mono",
+            "description": "Wine .NET/Mono 兼容运行时"
+          },
+          {
+            "name": "Haiku",
+            "url": "https://www.haiku-os.org",
+            "description": "继承 BeOS 理念的开源现代操作系统"
+          },
+          {
+            "name": "SerenityOS",
+            "url": "https://serenityos.org",
+            "description": "1990s GUI 风格与自研桌面软件体系的现代操作系统"
+          },
+          {
+            "name": "KolibriOS",
+            "url": "https://kolibrios.org",
+            "description": "极小型操作系统，延续 DOS/早期 GUI 文化"
+          },
+          {
+            "name": "MenuetOS",
+            "url": "https://menuetos.net",
+            "description": "纯汇编微型操作系统"
+          },
+          {
+            "name": "9front",
+            "url": "https://9front.org",
+            "description": "Plan 9 的社区延续与维护版本"
+          },
+          {
+            "name": "Plan 9",
+            "url": "https://9p.io/plan9/",
+            "description": "Bell Labs 经典分布式操作系统"
+          },
+          {
+            "name": "Inferno",
+            "url": "https://www.vitanuova.com/inferno/",
+            "description": "Plan 9 思想延伸出的分布式操作系统环境"
+          }
+        ]
+      },
+      {
+        "name": "老软件档案馆",
+        "links": [
+          {
+            "name": "Software Heritage",
+            "url": "https://www.softwareheritage.org",
+            "description": "全球源代码档案馆"
+          },
+          {
+            "name": "Internet Archive 光盘库",
+            "url": "https://archive.org/details/cdromarchive",
+            "description": "Shareware与光盘软件合集"
+          },
+          {
+            "name": "Bitsavers",
+            "url": "https://bitsavers.org",
+            "description": "复古计算机手册软件存档"
+          },
+          {
+            "name": "Version Museum",
+            "url": "https://www.versionmuseum.com",
+            "description": "软件版本视觉史博物馆"
+          },
+          {
+            "name": "TUHS",
+            "url": "https://www.tuhs.org",
+            "description": "UNIX历史与遗产存档"
+          },
+          {
+            "name": "OldVersion",
+            "url": "https://www.oldversion.com/",
+            "description": "老版本软件下载档案馆"
+          },
+          {
+            "name": "Vetusware",
+            "url": "https://vetusware.com/",
+            "description": "老软件仓库，收录历代经典程序"
+          },
+          {
+            "name": "WinWorldPC",
+            "url": "https://winworldpc.com/",
+            "description": "老系统与软件镜像博物馆"
+          },
+          {
+            "name": "Macintosh Garden",
+            "url": "https://macintoshgarden.org/",
+            "description": "Mac 老软件与游戏收藏馆"
+          },
+          {
+            "name": "Macintosh Repository",
+            "url": "https://www.macintoshrepository.org/",
+            "description": "Mac 老软件归档库"
+          },
+          {
+            "name": "textfiles.com",
+            "url": "https://textfiles.com/",
+            "description": "互联网早期文本文件存档"
+          },
+          {
+            "name": "The Old Net",
+            "url": "https://theoldnet.com/",
+            "description": "重现 90 年代老网页"
+          },
+          {
+            "name": "Neocities",
+            "url": "https://neocities.org/",
+            "description": "重振个人主页文化的免费建站"
+          }
+        ]
+      },
+      {
+        "name": "经典应用社区接手",
+        "links": [
+          {
+            "name": "MPV",
+            "url": "https://github.com/mpv-player/mpv",
+            "description": "★37k MPlayer 系开源播放器，活跃开发"
+          },
+          {
+            "name": "Notepad++",
+            "url": "https://github.com/notepad-plus-plus/notepad-plus-plus",
+            "description": "★29k 经典文本编辑器，社区持续开发"
+          },
+          {
+            "name": "Kodi",
+            "url": "https://github.com/xbmc/kodi",
+            "description": "★21k XBMC 社区接手的开源媒体中心"
+          },
+          {
+            "name": "QB64 Phoenix",
+            "url": "https://github.com/QB64-Phoenix-Edition/QB64pe",
+            "description": "QB64 社区接手分支 ★249"
+          },
+          {
+            "name": "VirtualDub2",
+            "url": "https://github.com/shekh/VirtualDub2",
+            "description": "★77 经典视频处理工具社区接手版"
+          },
+          {
+            "name": "Sandboxie Plus",
+            "url": "https://github.com/sandboxie-plus/Sandboxie",
+            "description": "★19.1k 沙盒工具社区接管版，继续更新"
+          },
+          {
+            "name": "MPC-HC",
+            "url": "https://github.com/clsid2/mpc-hc",
+            "description": "★15.8k 经典媒体播放器，社区接手维护"
+          },
+          {
+            "name": "VeraCrypt",
+            "url": "https://github.com/veracrypt/VeraCrypt",
+            "description": "TrueCrypt 社区继承者 ★11.7k"
+          },
+          {
+            "name": "Open-Shell",
+            "url": "https://github.com/Open-Shell/Open-Shell-Menu",
+            "description": "Classic Shell 后继者，开始菜单 ★9.4k"
+          },
+          {
+            "name": "MariaDB",
+            "url": "https://github.com/MariaDB/server",
+            "description": "MySQL 社区分支，开源数据库 ★8.3k"
+          },
+          {
+            "name": "QTTabBar",
+            "url": "https://github.com/indiff/qttabbar",
+            "description": "★4.9k 资源管理器多标签，老工具续更"
+          },
+          {
+            "name": "MPC-BE",
+            "url": "https://github.com/Aleksoid1978/MPC-BE",
+            "description": "★4.5k MPC 播放器另一活跃分支"
+          },
+          {
+            "name": "LibreOffice",
+            "url": "https://github.com/LibreOffice/core",
+            "description": "OpenOffice 社区分支，办公套件 ★4.4k"
+          },
+          {
+            "name": "HexChat",
+            "url": "https://github.com/hexchat/hexchat",
+            "description": "★3.2k X-Chat 社区接手版 IRC 客户端"
+          },
+          {
+            "name": "SeaMonkey",
+            "url": "https://www.seamonkey-project.org/",
+            "description": "Netscape/Mozilla 套件社区继承"
+          },
+          {
+            "name": "Audacious",
+            "url": "https://audacious-media-player.org/",
+            "description": "Winamp 风格轻量音频播放器"
+          },
+          {
+            "name": "Escargot",
+            "url": "https://escargot.chat/",
+            "description": "MSN Messenger 复活，可网页登录"
+          },
+          {
+            "name": "7-Zip",
+            "url": "https://www.7-zip.org/",
+            "description": "开源压缩工具，持续更新"
+          },
+          {
+            "name": "Thunderbird",
+            "url": "https://www.thunderbird.net/",
+            "description": "Mozilla 老牌邮件客户端"
+          },
+          {
+            "name": "Miranda NG",
+            "url": "https://www.miranda-ng.org/",
+            "description": "经典多协议即时通讯，社区维护"
+          },
+          {
+            "name": "Pidgin",
+            "url": "https://www.pidgin.im/",
+            "description": "老牌多协议聊天客户端"
+          },
+          {
+            "name": "Apache OpenOffice",
+            "url": "https://www.openoffice.org/",
+            "description": "StarOffice 开源继承者"
+          },
+          {
+            "name": "PuTTY",
+            "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+            "description": "经典 SSH 终端工具，持续更新"
+          },
+          {
+            "name": "MPC-QT",
+            "url": "https://github.com/mpc-qt/mpc-qt",
+            "description": "Media Player Classic 的 Qt 重…"
+          },
+          {
+            "name": "ExplorerPatcher",
+            "url": "https://github.com/valinet/ExplorerPatcher",
+            "description": "恢复和扩展旧版 Windows 任务栏、开始菜单等经典…"
+          },
+          {
+            "name": "WinFile",
+            "url": "https://github.com/microsoft/winfile",
+            "description": "微软经典 Windows File Manager 的…"
+          },
+          {
+            "name": "ScummVM",
+            "url": "https://www.scummvm.org",
+            "description": "经典冒险游戏引擎重实现，支持大量 DOS、Amiga、…"
+          },
+          {
+            "name": "Open Salamander",
+            "url": "https://www.altap.cz/salamander/",
+            "description": "经典 Windows 双栏文件管理器的长期延续"
+          },
+          {
+            "name": "Sally",
+            "url": "https://github.com/borhani59/sally",
+            "description": "活跃维护、致敬 Open Salamander 工作流…"
+          },
+          {
+            "name": "Quopus Commander",
+            "url": "https://github.com/lastylegp/Quopus",
+            "description": "2026 项目，致敬 Amiga Directory …"
+          },
+          {
+            "name": "Explorer++",
+            "url": "https://explorerplusplus.com",
+            "description": "经典 Win32 文件管理器"
+          },
+          {
+            "name": "CubicExplorer",
+            "url": "https://github.com/misaki/CubicExplorer",
+            "description": "经典 Windows 标签文件管理器项目"
+          },
+          {
+            "name": "Tablacus Explorer",
+            "url": "https://tablacus.github.io/explorer_en.html",
+            "description": "高度可定制 Windows 文件管理器"
+          },
+          {
+            "name": "XYplorer",
+            "url": "https://www.xyplorer.com",
+            "description": "经典 Windows 高级文件管理器"
+          },
+          {
+            "name": "PowerDesk",
+            "url": "https://www.vicomsoft.com",
+            "description": "经典 Windows 双窗格文件管理路线"
+          },
+          {
+            "name": "xplorer2",
+            "url": "https://www.zabkat.com",
+            "description": "经典 Windows 双窗格文件管理器"
+          },
+          {
+            "name": "SpeedCommander",
+            "url": "https://www.speedproject.de",
+            "description": "经典 Windows 文件管理器路线"
+          },
+          {
+            "name": "WizFile",
+            "url": "https://antibody-software.com/wizfile",
+            "description": "传统桌面文件搜索工具路线"
+          },
+          {
+            "name": "WinMerge",
+            "url": "https://winmerge.org",
+            "description": "经典 Windows 文件/目录比较工具"
+          },
+          {
+            "name": "Beyond Compare",
+            "url": "https://www.scootersoftware.com",
+            "description": "经典文件比较与同步软件"
+          },
+          {
+            "name": "aria2",
+            "url": "https://aria2.github.io",
+            "description": "经典命令行下载器"
+          },
+          {
+            "name": "uGet",
+            "url": "https://github.com/ugetdm/uget",
+            "description": "经典 Linux 下载管理器"
+          },
+          {
+            "name": "Persepolis Download Manager",
+            "url": "https://persepolisdm.github.io",
+            "description": "基于 aria2 的传统桌面下载管理器"
+          },
+          {
+            "name": "FileZilla",
+            "url": "https://filezilla-project.org",
+            "description": "经典 FTP/SFTP 客户端和服务器"
+          },
+          {
+            "name": "WinSCP",
+            "url": "https://winscp.net",
+            "description": "Windows 经典 SFTP/FTP 文件管理器"
+          },
+          {
+            "name": "lftp",
+            "url": "https://lftp.yar.ru",
+            "description": "Unix 经典高级 FTP/SFTP 客户端"
+          },
+          {
+            "name": "NcFTP",
+            "url": "https://www.ncftp.com/ncftp/",
+            "description": "经典 Unix FTP 命令行客户端"
+          },
+          {
+            "name": "Yafc",
+            "url": "https://github.com/sebastinas/yafc",
+            "description": "经典 Unix FTP 客户端社区项目"
+          },
+          {
+            "name": "PeaZip",
+            "url": "https://peazip.github.io",
+            "description": "传统桌面压缩软件路线的开源延续"
+          },
+          {
+            "name": "NanaZip",
+            "url": "https://github.com/M2Team/NanaZip",
+            "description": "7-Zip 技术生态的现代 Windows 原生延伸"
+          },
+          {
+            "name": "Keka",
+            "url": "https://www.keka.io",
+            "description": "macOS 经典轻量压缩软件"
+          },
+          {
+            "name": "The Unarchiver",
+            "url": "https://theunarchiver.com",
+            "description": "macOS 老牌解压工具"
+          },
+          {
+            "name": "unar",
+            "url": "https://github.com/ashang/unar",
+            "description": "The Unarchiver 系命令行解包工具"
+          },
+          {
+            "name": "Winaero Tweaker",
+            "url": "https://winaero.com/winaero-tweaker/",
+            "description": "调整和恢复大量经典 Windows 行为"
+          },
+          {
+            "name": "7+ Taskbar Tweaker",
+            "url": "https://rammichael.com/7-taskbar-tweaker",
+            "description": "经典 Windows 任务栏自定义工具"
+          },
+          {
+            "name": "OldNewExplorer",
+            "url": "https://www.msfn.org/board/topic/170375-oldnewexplorer/",
+            "description": "恢复 Windows 旧版 Explorer 外观与行为"
+          },
+          {
+            "name": "Windhawk",
+            "url": "https://windhawk.net",
+            "description": "模块化恢复/修改经典 Windows UI 行为"
+          },
+          {
+            "name": "TranslucentTB",
+            "url": "https://github.com/TranslucentTB/TranslucentTB",
+            "description": "Windows 传统任务栏透明和定制工具"
+          },
+          {
+            "name": "TaskbarX",
+            "url": "https://github.com/ChrisAnd1998/TaskbarX",
+            "description": "经典 Windows 任务栏居中工具"
+          },
+          {
+            "name": "ShellBags Explorer",
+            "url": "https://ericzimmerman.github.io",
+            "description": "经典 Windows 系统分析工具生态"
+          },
+          {
+            "name": "Process Explorer",
+            "url": "https://learn.microsoft.com/sysinternals/downloads/process-explorer",
+            "description": "Windows Sysinternals 经典进程管理…"
+          },
+          {
+            "name": "Autoruns",
+            "url": "https://learn.microsoft.com/sysinternals/downloads/autoruns",
+            "description": "经典 Windows 启动项管理工具"
+          },
+          {
+            "name": "Process Monitor",
+            "url": "https://learn.microsoft.com/sysinternals/downloads/procmon",
+            "description": "经典 Windows 系统监视工具"
+          },
+          {
+            "name": "RegShot",
+            "url": "https://github.com/Seabreg/Regshot",
+            "description": "经典注册表/系统状态快照工具"
+          },
+          {
+            "name": "WinAudit",
+            "url": "https://www.parmavex.co.uk/winaudit.html",
+            "description": "经典 Windows 硬件与软件审计工具"
+          },
+          {
+            "name": "Belarc Advisor",
+            "url": "https://www.belarc.com/products/belarc-advisor",
+            "description": "经典 Windows 系统信息审计软件"
+          },
+          {
+            "name": "HWiNFO",
+            "url": "https://www.hwinfo.com",
+            "description": "老牌 Windows 硬件信息工具"
+          },
+          {
+            "name": "Speccy",
+            "url": "https://www.ccleaner.com/speccy",
+            "description": "经典 Windows 硬件信息工具"
+          },
+          {
+            "name": "CrystalDiskInfo",
+            "url": "https://crystalmark.info/en/software/crystaldiskinfo/",
+            "description": "经典硬盘健康检测工具"
+          },
+          {
+            "name": "CPU-Z",
+            "url": "https://www.cpuid.com/softwares/cpu-z.html",
+            "description": "经典 CPU/硬件检测工具"
+          },
+          {
+            "name": "GPU-Z",
+            "url": "https://www.techpowerup.com/gpuz/",
+            "description": "经典显卡信息检测工具"
+          },
+          {
+            "name": "NirSoft Utilities",
+            "url": "https://www.nirsoft.net",
+            "description": "大量经典 Windows 小工具集合"
+          },
+          {
+            "name": "Everything",
+            "url": "https://www.voidtools.com",
+            "description": "经典高性能文件搜索工具"
+          },
+          {
+            "name": "WinDirStat",
+            "url": "https://windirstat.net",
+            "description": "经典磁盘空间可视化分析工具"
+          },
+          {
+            "name": "SpaceSniffer",
+            "url": "https://www.uderzo.it/main_products/space_sniffer/",
+            "description": "经典 Windows 磁盘空间分析工具"
+          },
+          {
+            "name": "TreeSize Free",
+            "url": "https://www.jam-software.com/treesize_free",
+            "description": "经典目录容量分析器"
+          },
+          {
+            "name": "Process Hacker",
+            "url": "https://processhacker.sourceforge.io",
+            "description": "经典高级 Windows 任务/进程管理工具"
+          },
+          {
+            "name": "System Informer",
+            "url": "https://systeminformer.sourceforge.io",
+            "description": "Process Hacker 社区接班项目"
+          },
+          {
+            "name": "Open Hardware Monitor",
+            "url": "https://openhardwaremonitor.org",
+            "description": "经典开源硬件监测工具"
+          },
+          {
+            "name": "Libre Hardware Monitor",
+            "url": "https://github.com/LibreHardwareMonitor/LibreHardwareMonitor",
+            "description": "Open Hardware Monitor 社区现代延续"
+          }
+        ]
+      },
+      {
+        "name": "音乐软件复活",
+        "links": [
+          {
+            "name": "Strawberry",
+            "url": "https://github.com/strawberrymusicplayer/strawberry",
+            "description": "★4k Clementine 继承者音乐播放器"
+          },
+          {
+            "name": "OpenMPT",
+            "url": "https://github.com/OpenMPT/openmpt",
+            "description": "ModPlug Tracker 社区继承 ★782"
+          },
+          {
+            "name": "FamiTracker",
+            "url": "https://github.com/Dn-Programming-Core-Management/Dn-FamiTracker",
+            "description": "★700 FC 红白机音乐编辑器"
+          },
+          {
+            "name": "WebAmp",
+            "url": "https://github.com/captbaritone/webamp",
+            "description": "Winamp 2 网页复刻版 ★11.3k"
+          },
+          {
+            "name": "LMMS",
+            "url": "https://github.com/LMMS/lmms",
+            "description": "★10.4k 开源音乐工作站，续 FL 风格"
+          },
+          {
+            "name": "MilkyTracker",
+            "url": "https://github.com/milkytracker/MilkyTracker",
+            "description": "FastTracker II 复刻追踪器 ★2.1k"
+          },
+          {
+            "name": "Schism Tracker",
+            "url": "https://github.com/schismtracker/schismtracker",
+            "description": "Impulse Tracker 复刻 ★1.6k"
+          },
+          {
+            "name": "DeaDBeeF",
+            "url": "https://github.com/DeaDBeeF-Player/deadbeef",
+            "description": "★1.4k Linux 老牌音频播放器"
+          },
+          {
+            "name": "foobar2000",
+            "url": "https://www.foobar2000.org/",
+            "description": "2002 年至今活跃的老牌播放器"
+          },
+          {
+            "name": "Winamp",
+            "url": "https://www.winamp.com/",
+            "description": "官方 2023 年复活的经典播放器"
+          },
+          {
+            "name": "WACUP",
+            "url": "https://getwacup.com/",
+            "description": "Winamp 社区增强复活版"
+          },
+          {
+            "name": "XMPlay",
+            "url": "https://www.un4seen.com/xmplay.html",
+            "description": "Un4seen 出品轻量老牌播放器"
+          },
+          {
+            "name": "AIMP",
+            "url": "https://www.aimp.ru/",
+            "description": "经典音频播放器，持续更新"
+          },
+          {
+            "name": "Qmmp",
+            "url": "https://qmmp.ylsoftware.com/",
+            "description": "Winamp 风格开源播放器"
+          },
+          {
+            "name": "SunVox",
+            "url": "https://warmplace.ru/soft/sunvox/",
+            "description": "老牌模块合成器，跨平台"
+          },
+          {
+            "name": "Renoise",
+            "url": "https://www.renoise.com/",
+            "description": "经典 Tracker 音乐工作站"
+          },
+          {
+            "name": "DefleMask",
+            "url": "https://www.deflemask.com/",
+            "description": "跨平台芯片音乐制作工具"
+          },
+          {
+            "name": "Music Player Daemon",
+            "url": "https://www.musicpd.org/",
+            "description": "老牌音乐播放守护进程"
+          },
+          {
+            "name": "Cog",
+            "url": "https://cogx.org/",
+            "description": "Mac 老牌音频播放器"
+          },
+          {
+            "name": "RetroArch",
+            "url": "https://www.retroarch.com",
+            "description": "多系统复古游戏平台前端与 Libretro 核心生态"
+          },
+          {
+            "name": "OpenEmu",
+            "url": "https://openemu.org",
+            "description": "macOS 多平台复古模拟器前端，统一管理经典主机"
+          },
+          {
+            "name": "VLC",
+            "url": "https://www.videolan.org/vlc/",
+            "description": "经典跨平台媒体播放器，兼容大量老媒体格式"
+          },
+          {
+            "name": "MPlayer",
+            "url": "https://www.mplayerhq.hu",
+            "description": "经典命令行/桌面媒体播放器，支持大量历史媒体格式"
+          },
+          {
+            "name": "SMPlayer",
+            "url": "https://www.smplayer.info",
+            "description": "传统桌面媒体播放器前端，支持 MPlayer/MPV"
+          },
+          {
+            "name": "QMPlay2",
+            "url": "https://github.com/zaps166/QMPlay2",
+            "description": "Qt 多媒体播放器，保持传统本地媒体库体验"
+          },
+          {
+            "name": "Celluloid",
+            "url": "https://celluloid-player.github.io",
+            "description": "GTK 前端媒体播放器，延续轻量本地播放路线"
+          },
+          {
+            "name": "Haruna",
+            "url": "https://haruna.kde.org",
+            "description": "KDE/MPV 轻量媒体播放器，传统桌面操作方式"
+          },
+          {
+            "name": "Clementine",
+            "url": "https://www.clementine-player.org",
+            "description": "经典桌面音乐播放器，延续 Amarok 早期体验"
+          },
+          {
+            "name": "Quod Libet",
+            "url": "https://quodlibet.readthedocs.io",
+            "description": "经典本地音乐库播放器，强大的标签和管理功能"
+          },
+          {
+            "name": "Exaile",
+            "url": "https://www.exaile.org",
+            "description": "GTK 经典音乐播放器与音乐库管理软件"
+          },
+          {
+            "name": "Rhythmbox",
+            "url": "https://wiki.gnome.org/Apps/Rhythmbox",
+            "description": "GNOME 经典音乐管理器"
+          },
+          {
+            "name": "Sayonara Player",
+            "url": "https://sayonara-player.com",
+            "description": "轻量 Linux 音乐播放器，延续传统本地音乐库体验"
+          },
+          {
+            "name": "Pragha",
+            "url": "https://pragha-music-player.github.io",
+            "description": "轻量 GTK 音乐播放器，定位传统桌面用户"
+          },
+          {
+            "name": "Elisa",
+            "url": "https://apps.kde.org/elisa/",
+            "description": "KDE 本地音乐播放器"
+          },
+          {
+            "name": "Dopamine",
+            "url": "https://github.com/digimezzo/dopamine-windows",
+            "description": "Windows 本地音乐播放器，强调简单直观的经典音乐…"
+          },
+          {
+            "name": "MusicBee",
+            "url": "https://getmusicbee.com",
+            "description": "Windows 老牌音乐库播放器，插件和标签管理能力强"
+          },
+          {
+            "name": "Resonic",
+            "url": "https://resonic.at",
+            "description": "Windows 高性能音频浏览器与播放器，保持传统文件…"
+          },
+          {
+            "name": "Winyl",
+            "url": "https://github.com/winyl-player/winyl",
+            "description": "经典 Windows 本地音乐播放器开源项目"
+          },
+          {
+            "name": "Cmus",
+            "url": "https://cmus.github.io",
+            "description": "经典终端音乐播放器"
+          },
+          {
+            "name": "Mopidy",
+            "url": "https://mopidy.com",
+            "description": "MPD 生态的现代扩展服务器"
+          }
+        ]
+      },
+      {
+        "name": "经典开发工具复活",
+        "links": [
+          {
+            "name": "MS-DOS",
+            "url": "https://github.com/microsoft/MS-DOS",
+            "description": "★32k 微软官方开源的 MS-DOS 源码"
+          },
+          {
+            "name": "VFPX",
+            "url": "https://github.com/VFPX/VFPX",
+            "description": "★7k Visual FoxPro 社区延续项目"
+          },
+          {
+            "name": "Dev-C++",
+            "url": "https://github.com/Embarcadero/Dev-Cpp",
+            "description": "经典 C++ IDE，Embarcadero 重启"
+          },
+          {
+            "name": "TwinBASIC",
+            "url": "https://github.com/WaynePhillipsEA/twinbasic",
+            "description": "VB6 现代复刻兼容 IDE ★475"
+          },
+          {
+            "name": "PC-BASIC",
+            "url": "https://github.com/robhagemans/pcbasic",
+            "description": "GW-BASIC 解释器现代复活 ★468"
+          },
+          {
+            "name": "C64Studio",
+            "url": "https://github.com/GeorgRottensteiner/C64Studio",
+            "description": "★342 Commodore 64 集成开发环境"
+          },
+          {
+            "name": "SmallBASIC",
+            "url": "https://github.com/smallbasic/SmallBASIC",
+            "description": "★248 BASIC 语言的现代开源版"
+          },
+          {
+            "name": "GW-BASIC",
+            "url": "https://github.com/microsoft/GW-BASIC",
+            "description": "★3.5k 微软官方开源的老 BASIC 解释器"
+          },
+          {
+            "name": "Turbo Vision",
+            "url": "https://github.com/magiblot/tvision",
+            "description": "Borland 文本UI框架现代移植 ★3.2k"
+          },
+          {
+            "name": "Far Manager",
+            "url": "https://github.com/FarGroup/FarManager",
+            "description": "Norton 风格老牌文件管理器 ★2.2k"
+          },
+          {
+            "name": "Harbour",
+            "url": "https://github.com/harbour/core",
+            "description": "★1.3k Clipper 语言开源继承者"
+          },
+          {
+            "name": "FreeBASIC",
+            "url": "https://github.com/freebasic/fbc",
+            "description": "BASIC 现代开源编译器 ★1.1k"
+          },
+          {
+            "name": "Midnight Commander",
+            "url": "https://github.com/MidnightCommander/mc",
+            "description": "1994 年双栏文件管理器 ★1.0k"
+          },
+          {
+            "name": "Lazarus",
+            "url": "https://www.lazarus-ide.org/",
+            "description": "Delphi 开源复刻 IDE"
+          },
+          {
+            "name": "Free Pascal",
+            "url": "https://www.freepascal.org/",
+            "description": "Turbo Pascal 精神续作编译器"
+          },
+          {
+            "name": "GnuCOBOL",
+            "url": "https://gnucobol.sourceforge.io/",
+            "description": "COBOL 开源现代实现"
+          },
+          {
+            "name": "Squeak",
+            "url": "https://squeak.org/",
+            "description": "Smalltalk 活体开源环境"
+          },
+          {
+            "name": "Pharo",
+            "url": "https://pharo.org/",
+            "description": "Smalltalk 现代开源延续"
+          },
+          {
+            "name": "PureBasic",
+            "url": "https://www.purebasic.com/",
+            "description": "经典 BASIC 商业语言，持续更新"
+          },
+          {
+            "name": "SWI-Prolog",
+            "url": "https://www.swi-prolog.org/",
+            "description": "老牌 Prolog 逻辑编程环境"
+          },
+          {
+            "name": "REALbasic/Xojo",
+            "url": "https://www.xojo.com/",
+            "description": "经典 BASIC 开发工具延续"
+          },
+          {
+            "name": "Delphi Community",
+            "url": "https://www.embarcadero.com/products/delphi",
+            "description": "经典 Delphi 官方免费社区版"
+          },
+          {
+            "name": "OpenWatcom",
+            "url": "https://github.com/open-watcom/open-watcom-v2",
+            "description": "续命经典 Watcom C/C++ 与 FORTRAN…"
+          },
+          {
+            "name": "Retro68",
+            "url": "https://github.com/autc04/Retro68",
+            "description": "复古 Macintosh 软件开发工具链，可重新编译经…"
+          },
+          {
+            "name": "Open Object Rexx",
+            "url": "https://sourceforge.net/projects/oorexx",
+            "description": "经典 Rexx 语言的开源延续实现"
+          },
+          {
+            "name": "Regina REXX",
+            "url": "https://regina-rexx.sourceforge.net",
+            "description": "跨平台 REXX 解释器，延续经典脚本语言"
+          },
+          {
+            "name": "xHarbour",
+            "url": "https://github.com/xHarbour-org/xharbour",
+            "description": "Clipper/Harbour 生态的兼容延续实现"
+          },
+          {
+            "name": "Vim",
+            "url": "https://www.vim.org",
+            "description": "从 vi 时代持续发展至今的经典 Unix 文本编辑器"
+          },
+          {
+            "name": "Emacs",
+            "url": "https://www.gnu.org/software/emacs/",
+            "description": "GNU 经典编辑器，自 1980 年代延续至今"
+          },
+          {
+            "name": "Neovim",
+            "url": "https://neovim.io",
+            "description": "Vim 的现代重构分支，保持经典 modal 编辑体验"
+          },
+          {
+            "name": "MicroEmacs",
+            "url": "https://www.microemacs.org",
+            "description": "经典 MicroEMACS 的持续维护与复古编辑器生态"
+          },
+          {
+            "name": "JOVE",
+            "url": "https://github.com/jonathangray/jove",
+            "description": "Joe's Own Version of Emacs，…"
+          },
+          {
+            "name": "mg",
+            "url": "https://github.com/hboetes/mg",
+            "description": "基于 MicroGnuEmacs 的轻量经典 Unix…"
+          },
+          {
+            "name": "QEmacs",
+            "url": "https://bellard.org/qemacs/",
+            "description": "Fabrice Bellard 的轻量多语言文本编辑器"
+          },
+          {
+            "name": "NEdit",
+            "url": "https://github.com/unixwork/stoffel",
+            "description": "Motif 时代经典 NEdit 的社区维护生态"
+          },
+          {
+            "name": "NEdit-ng",
+            "url": "https://github.com/unixwork/nedit-ng",
+            "description": "NEdit 的现代 Qt 社区重制版本"
+          },
+          {
+            "name": "SciTE",
+            "url": "https://www.scintilla.org/SciTEDownload.html",
+            "description": "经典轻量文本编辑器与 Scintilla 编辑组件"
+          },
+          {
+            "name": "Notepad2",
+            "url": "https://github.com/zufuliu/notepad2",
+            "description": "经典 Windows Notepad2 风格的现代 W…"
+          },
+          {
+            "name": "Notepad2-mod",
+            "url": "https://github.com/XhmikosR/notepad2-mod",
+            "description": "Notepad2 的增强社区分支"
+          },
+          {
+            "name": "Notepad3",
+            "url": "https://github.com/rizonesoft/Notepad3",
+            "description": "Notepad2-mod 体系的现代持续维护版本"
+          },
+          {
+            "name": "AkelPad",
+            "url": "https://akelpad.sourceforge.net",
+            "description": "轻量原生 Windows 文本编辑器，延续传统 Not…"
+          },
+          {
+            "name": "TED Notepad",
+            "url": "https://jsimlo.sk/tednotepad/",
+            "description": "传统 Windows 小型文本编辑器，长期保持轻量路线"
+          },
+          {
+            "name": "Metapad",
+            "url": "https://liquidninja.com/metapad/",
+            "description": "经典 Notepad 替代品，追求极低资源占用"
+          },
+          {
+            "name": "Programmer's Notepad",
+            "url": "https://www.pnotepad.org",
+            "description": "经典 Windows 程序员文本编辑器的长期项目"
+          },
+          {
+            "name": "Textadept",
+            "url": "https://orbitalquark.github.io/textadept/",
+            "description": "Lua 驱动的轻量程序员编辑器，保持传统极简工作流"
+          },
+          {
+            "name": "Cream",
+            "url": "https://cream.sourceforge.net",
+            "description": "面向普通用户重新包装 Vim 的经典项目"
+          },
+          {
+            "name": "Geany",
+            "url": "https://www.geany.org",
+            "description": "轻量传统 IDE/编辑器，保持经典桌面软件风格"
+          },
+          {
+            "name": "Notepadqq",
+            "url": "https://notepadqq.com",
+            "description": "Linux/Qt 风格的 Notepad++ 类编辑器"
+          },
+          {
+            "name": "Mousepad",
+            "url": "https://docs.xfce.org/xfce/mousepad/start",
+            "description": "XFCE 经典轻量文本编辑器"
+          },
+          {
+            "name": "Leafpad",
+            "url": "https://github.com/stevenhoneyman/leafpad",
+            "description": "经典 GTK 轻量文本编辑器的社区版本"
+          },
+          {
+            "name": "KiTTY",
+            "url": "https://www.9bis.net/kitty/",
+            "description": "PuTTY 分支，加入会话管理与额外功能"
+          },
+          {
+            "name": "PuTTYTray",
+            "url": "https://github.com/FauxFaux/PuTTYTray",
+            "description": "经典 PuTTY 托盘版社区分支"
+          },
+          {
+            "name": "SuperPuTTY",
+            "url": "https://github.com/jimradford/superputty",
+            "description": "PuTTY 多会话标签管理前端"
+          },
+          {
+            "name": "Tera Term",
+            "url": "https://teratermproject.github.io",
+            "description": "历史悠久的 Windows 终端仿真器"
+          },
+          {
+            "name": "Poderosa",
+            "url": "https://github.com/poderosaproject/poderosa",
+            "description": "经典 Windows SSH/Telnet 多终端客户端"
+          },
+          {
+            "name": "ConEmu",
+            "url": "https://conemu.github.io",
+            "description": "经典 Windows 控制台增强工具"
+          },
+          {
+            "name": "Cmder",
+            "url": "https://cmder.app",
+            "description": "Windows 经典命令行环境现代封装"
+          },
+          {
+            "name": "mintty",
+            "url": "https://mintty.github.io",
+            "description": "经典轻量终端模拟器"
+          },
+          {
+            "name": "rxvt-unicode",
+            "url": "https://software.schmorp.de/pkg/rxvt-unicode.html",
+            "description": "经典 Unix X11 终端模拟器"
+          },
+          {
+            "name": "xterm",
+            "url": "https://invisible-island.net/xterm/",
+            "description": "X Window 时代经典终端模拟器"
+          },
+          {
+            "name": "Alacritty",
+            "url": "https://alacritty.org",
+            "description": "现代 GPU 终端，延续传统终端工作流"
+          },
+          {
+            "name": "TCC/LE",
+            "url": "https://jpsoft.com",
+            "description": "4DOS/4NT 命令行传统的商业延续"
+          },
+          {
+            "name": "4DOS",
+            "url": "https://github.com/4DOS/4os2",
+            "description": "DOS 时代经典增强命令解释器生态"
+          },
+          {
+            "name": "FreeCOM",
+            "url": "https://github.com/FDOS/freecom",
+            "description": "FreeDOS 的 COMMAND.COM 风格命令解…"
+          },
+          {
+            "name": "HX DOS Extender",
+            "url": "https://github.com/Baron-von-Riedesel/HX",
+            "description": "帮助 DOS 程序获得现代扩展能力"
+          }
+        ]
+      },
+      {
+        "name": "复古界面与网页复刻",
+        "links": [
+          {
+            "name": "Puter",
+            "url": "https://github.com/HeyPuter/puter",
+            "description": "★43k 开源网页操作系统"
+          },
+          {
+            "name": "OldOS",
+            "url": "https://github.com/zzarcon/oldOS",
+            "description": "★10k 网页复刻 iOS 4 系统界面"
+          },
+          {
+            "name": "React95",
+            "url": "https://github.com/react95-io/React95",
+            "description": "★10k React 组件复刻 Win95 界面"
+          },
+          {
+            "name": "daedalOS",
+            "url": "https://github.com/dustinbrett/daedalOS",
+            "description": "网页版复古桌面操作系统复刻 ★13.0k"
+          },
+          {
+            "name": "98.css",
+            "url": "https://github.com/jdan/98.css",
+            "description": "Windows 98 界面风格 CSS ★11.5k"
+          },
+          {
+            "name": "jspaint",
+            "url": "https://github.com/1j01/jspaint",
+            "description": "画图 MSPaint 网页复刻 ★7.9k"
+          },
+          {
+            "name": "React95",
+            "url": "https://github.com/arturbien/React95",
+            "description": "Windows 95 风 React 组件库 ★7.3k"
+          },
+          {
+            "name": "RetroBar",
+            "url": "https://github.com/dremin/RetroBar",
+            "description": "Win95/98 风 Windows 任务栏 ★4.4k"
+          },
+          {
+            "name": "XP.css",
+            "url": "https://github.com/botoxparty/XP.css",
+            "description": "Windows XP 界面风格 CSS ★3.1k"
+          },
+          {
+            "name": "EmuOS",
+            "url": "https://github.com/Emupedia/emupedia.github.io",
+            "description": "★3.1k 网页版复古系统+游戏平台"
+          },
+          {
+            "name": "7.css",
+            "url": "https://github.com/khang-nd/7.css",
+            "description": "★2.4k Win7 风格 CSS 复刻框架"
+          },
+          {
+            "name": "Terminal.css",
+            "url": "https://github.com/Gioni06/terminal.css",
+            "description": "★1.5k 复古终端风格 CSS 框架"
+          },
+          {
+            "name": "98.js",
+            "url": "https://github.com/1j01/98",
+            "description": "浏览器里的 Windows 98 桌面 ★1.4k"
+          },
+          {
+            "name": "Windows 93",
+            "url": "https://www.windows93.net/",
+            "description": "网页版复古系统恶搞之作"
+          },
+          {
+            "name": "Windows 96",
+            "url": "https://windows96.net/",
+            "description": "网页版 90 年代系统复刻"
+          }
+        ]
+      },
+      {
+        "name": "怀旧社区与资讯",
+        "links": [
+          {
+            "name": "VOGONS",
+            "url": "https://www.vogons.org/",
+            "description": "DOS 老硬件老软件知名论坛"
+          },
+          {
+            "name": "Computer History Museum",
+            "url": "https://computerhistory.org",
+            "description": "计算机历史博物馆线上档案"
+          },
+          {
+            "name": "Retrocomputing SE",
+            "url": "https://retrocomputing.stackexchange.com",
+            "description": "老电脑问答StackExchange社区"
+          },
+          {
+            "name": "Vintage Computer Federation",
+            "url": "https://vcfed.org",
+            "description": "老电脑爱好者联合会与展会"
+          },
+          {
+            "name": "The OS/2 Museum",
+            "url": "https://www.os2museum.com/",
+            "description": "OS/2 历史与老软件档案博客"
+          },
+          {
+            "name": "ToastyTech",
+            "url": "https://www.toastytech.com/",
+            "description": "老 GUI 与软件图鉴站"
+          },
+          {
+            "name": "The Digital Antiquarian",
+            "url": "https://www.filfre.net/",
+            "description": "游戏与软件史深度博客"
+          },
+          {
+            "name": "Old Computer Museum",
+            "url": "https://oldcomputermuseum.com/",
+            "description": "老电脑实物线上博物馆"
+          },
+          {
+            "name": "Reddit Retrocomputing",
+            "url": "https://www.reddit.com/r/retrocomputing/",
+            "description": "复古计算讨论社区"
+          },
+          {
+            "name": "Hacker News",
+            "url": "https://news.ycombinator.com/",
+            "description": "极客新闻社区，怀旧讨论"
+          }
+        ]
+      },
+      {
+        "name": "老办公软件复活",
+        "links": [
+          {
+            "name": "WordPerfect",
+            "url": "https://www.wordperfect.com/",
+            "description": "经典文字处理，仍在销售"
+          },
+          {
+            "name": "WPS Office",
+            "url": "https://www.wps.com/",
+            "description": "金山老牌办公软件正统延续"
+          },
+          {
+            "name": "SoftMaker Office",
+            "url": "https://www.softmaker.com/",
+            "description": "德国老牌办公套件"
+          },
+          {
+            "name": "Scribus",
+            "url": "https://www.scribus.net/",
+            "description": "开源桌面排版，接 PageMaker"
+          },
+          {
+            "name": "Calligra",
+            "url": "https://calligra.org/",
+            "description": "KOffice 社区接手的办公套件"
+          },
+          {
+            "name": "永中Office",
+            "url": "https://www.yozosoft.com/",
+            "description": "国产老牌办公套件"
+          },
+          {
+            "name": "OnlyOffice",
+            "url": "https://www.onlyoffice.com/",
+            "description": "开源办公套件，兼容老文档"
+          },
+          {
+            "name": "QuarkXPress",
+            "url": "https://www.quark.com/",
+            "description": "经典桌面排版软件仍在售"
+          },
+          {
+            "name": "AbiWord",
+            "url": "https://www.abisource.com/",
+            "description": "轻量开源老字处理软件"
+          },
+          {
+            "name": "Gnumeric",
+            "url": "https://www.gnumeric.org",
+            "description": "经典 GNOME 电子表格软件，轻量路线持续维护"
+          },
+          {
+            "name": "Siag Office",
+            "url": "https://siag.nu",
+            "description": "1990 年代起源的 Unix 轻量办公套件"
+          },
+          {
+            "name": "KOffice",
+            "url": "https://github.com/KDE/koffice",
+            "description": "KDE 老牌办公套件历史项目与代码遗产"
+          },
+          {
+            "name": "Calligra Sheets",
+            "url": "https://calligra.org/sheets/",
+            "description": "KOffice/Calligra 系列电子表格的现代延续"
+          },
+          {
+            "name": "AbiCollab",
+            "url": "https://github.com/AbiWord/abiword",
+            "description": "AbiWord 时代协作编辑技术遗产项目"
+          },
+          {
+            "name": "Ted",
+            "url": "https://www.nllgg.nl/Ted/",
+            "description": "经典 Unix/X 文档编辑器，体积很小"
+          },
+          {
+            "name": "LyX",
+            "url": "https://www.lyx.org",
+            "description": "经典结构化文档编辑器，延续 TeX/Lyx 桌面工作流"
+          },
+          {
+            "name": "GnuCash",
+            "url": "https://www.gnucash.org",
+            "description": "经典自由财务管理软件，1990s 开始持续发展"
+          },
+          {
+            "name": "Dia",
+            "url": "https://gitlab.gnome.org/GNOME/dia",
+            "description": "经典 GNOME 图表绘制工具"
+          },
+          {
+            "name": "Planner",
+            "url": "https://github.com/Planner-Maker/planner",
+            "description": "经典 GNOME 项目管理软件的社区延续"
+          }
+        ]
+      },
+      {
+        "name": "老图像与设计软件",
+        "links": [
+          {
+            "name": "GrafX2",
+            "url": "https://grafx2.gitlab.io/",
+            "description": "★1.4k Deluxe Paint 精神延续像素画"
+          },
+          {
+            "name": "CorelDRAW",
+            "url": "https://www.coreldraw.com/",
+            "description": "经典矢量绘图软件持续更新"
+          },
+          {
+            "name": "Paint Shop Pro",
+            "url": "https://www.paintshoppro.com/",
+            "description": "经典图像编辑，Corel 接手"
+          },
+          {
+            "name": "IrfanView",
+            "url": "https://www.irfanview.com/",
+            "description": "1996 年诞生的看图工具仍更新"
+          },
+          {
+            "name": "XnView",
+            "url": "https://www.xnview.com/",
+            "description": "老牌看图与格式转换工具"
+          },
+          {
+            "name": "ACDSee",
+            "url": "https://www.acdsee.com/",
+            "description": "经典看图软件持续更新"
+          },
+          {
+            "name": "FastStone Image Viewer",
+            "url": "https://www.faststone.org/",
+            "description": "老牌免费看图软件"
+          },
+          {
+            "name": "Paint.NET",
+            "url": "https://www.getpaint.net/",
+            "description": "经典开源图像编辑软件"
+          },
+          {
+            "name": "LightWave 3D",
+            "url": "https://www.lightwave3d.com/",
+            "description": "老牌 3D 动画软件仍在售"
+          },
+          {
+            "name": "VueScan",
+            "url": "https://www.hamrick.com/",
+            "description": "老牌扫描软件持续更新"
+          },
+          {
+            "name": "PhotoFiltre",
+            "url": "https://www.photofiltre-studio.com/",
+            "description": "轻量老牌图像编辑工具"
+          },
+          {
+            "name": "ArtRage",
+            "url": "https://www.artrage.com/",
+            "description": "模拟绘画老牌软件"
+          },
+          {
+            "name": "Pinta",
+            "url": "https://www.pinta-project.com",
+            "description": "Paint.NET 风格的开源轻量绘图软件"
+          },
+          {
+            "name": "LazPaint",
+            "url": "https://github.com/bgrabitmap/lazpaint",
+            "description": "轻量开源光栅图像编辑器，保留传统桌面绘图体验"
+          },
+          {
+            "name": "mtPaint",
+            "url": "https://github.com/wjaguar/mtPaint",
+            "description": "老牌超轻量像素绘图软件"
+          },
+          {
+            "name": "MyPaint",
+            "url": "https://mypaint.app",
+            "description": "经典自由绘画软件，专注自然绘画笔刷"
+          },
+          {
+            "name": "PhotoDemon",
+            "url": "https://photodemon.org",
+            "description": "便携式 Windows 图像编辑器，强调传统单机软件体验"
+          },
+          {
+            "name": "RealWorld Paint",
+            "url": "https://www.rw-designer.com/image-editor",
+            "description": "传统 Windows 图片编辑器，支持像素画和动画 G…"
+          },
+          {
+            "name": "Chasys Draw IES",
+            "url": "https://www.jpchacha.com/chasysdraw/index.php",
+            "description": "Windows 多功能图像编辑和动画工具"
+          },
+          {
+            "name": "KolourPaint",
+            "url": "https://apps.kde.org/kolourpaint/",
+            "description": "KDE 的经典 Paint 风格轻量绘图软件"
+          },
+          {
+            "name": "Tux Paint",
+            "url": "https://tuxpaint.org",
+            "description": "经典儿童绘图软件，长期维护"
+          }
+        ]
+      },
+      {
+        "name": "老音视频与媒体工具",
+        "links": [
+          {
+            "name": "Double Commander",
+            "url": "https://github.com/doublecmd/doublecmd",
+            "description": "★4.6k Total Commander 开源复刻"
+          },
+          {
+            "name": "Adobe Audition",
+            "url": "https://www.adobe.com/products/audition.html",
+            "description": "Cool Edit Pro 被 Adobe 接管续命"
+          },
+          {
+            "name": "Vegas Pro",
+            "url": "https://www.vegascreativesoftware.com/",
+            "description": "Sonic Foundry 遗产，Magix 接手"
+          },
+          {
+            "name": "ACID",
+            "url": "https://www.magix.com/us/music-maker/acid/",
+            "description": "经典音乐制作软件，Magix 接手"
+          },
+          {
+            "name": "GoldWave",
+            "url": "https://www.goldwave.com/",
+            "description": "老牌音频编辑器持续更新"
+          },
+          {
+            "name": "Exact Audio Copy",
+            "url": "https://www.exactaudiocopy.de/",
+            "description": "经典无损抓轨软件持续更新"
+          },
+          {
+            "name": "Nero",
+            "url": "https://www.nero.com/",
+            "description": "经典刻录软件持续更新"
+          },
+          {
+            "name": "ImgBurn",
+            "url": "https://www.imgburn.com/",
+            "description": "轻量刻录工具持续更新"
+          },
+          {
+            "name": "PotPlayer",
+            "url": "https://potplayer.daum.net/",
+            "description": "韩国经典播放器持续更新"
+          },
+          {
+            "name": "KMPlayer",
+            "url": "https://www.kmplayer.com/",
+            "description": "经典播放器，社区版延续"
+          },
+          {
+            "name": "GOM Player",
+            "url": "https://www.gomlab.com/",
+            "description": "老牌播放器持续更新"
+          },
+          {
+            "name": "WinRAR",
+            "url": "https://www.rarlab.com/",
+            "description": "经典压缩软件持续更新"
+          },
+          {
+            "name": "WinZip",
+            "url": "https://www.winzip.com/",
+            "description": "老牌压缩软件仍在售"
+          },
+          {
+            "name": "Total Commander",
+            "url": "https://www.ghisler.com/",
+            "description": "Windows Commander 改名延续"
+          },
+          {
+            "name": "FormatFactory",
+            "url": "https://www.pcfreetime.com/",
+            "description": "老牌格式转换工具"
+          }
+        ]
+      },
+      {
+        "name": "老网络与通信",
+        "links": [
+          {
+            "name": "mIRC",
+            "url": "https://www.mirc.com/",
+            "description": "1995 年诞生的 IRC 客户端仍更新"
+          },
+          {
+            "name": "Irssi",
+            "url": "https://irssi.org/",
+            "description": "经典终端 IRC 客户端"
+          },
+          {
+            "name": "WeeChat",
+            "url": "https://weechat.org/",
+            "description": "轻量终端聊天客户端"
+          },
+          {
+            "name": "Trillian",
+            "url": "https://www.trillian.im/",
+            "description": "经典多协议聊天软件仍在"
+          },
+          {
+            "name": "TeamSpeak",
+            "url": "https://www.teamspeak.com/",
+            "description": "老牌语音通信软件仍在售"
+          },
+          {
+            "name": "Pegasus Mail",
+            "url": "https://www.pegasusmail.org/",
+            "description": "1990 年邮件客户端仍更新"
+          },
+          {
+            "name": "The Bat!",
+            "url": "https://www.ritlabs.com/en/products/thebat/",
+            "description": "经典邮件客户端持续更新"
+          },
+          {
+            "name": "Quassel IRC",
+            "url": "https://quassel-irc.org",
+            "description": "现代延续的经典 IRC 客户端，支持分离客户端与核心"
+          },
+          {
+            "name": "KVIrc",
+            "url": "https://www.kvirc.net",
+            "description": "老牌 Qt IRC 客户端，经典 IRC 功能完整"
+          },
+          {
+            "name": "Konversation",
+            "url": "https://konversation.kde.org",
+            "description": "KDE 经典 IRC 客户端"
+          },
+          {
+            "name": "ZNC",
+            "url": "https://github.com/znc/znc",
+            "description": "经典 IRC bouncer，让 IRC 会话长期保持…"
+          },
+          {
+            "name": "InspIRCd",
+            "url": "https://www.inspircd.org",
+            "description": "现代维护的经典 IRC 服务器"
+          },
+          {
+            "name": "UnrealIRCd",
+            "url": "https://www.unrealircd.org",
+            "description": "历史悠久的 IRC 服务器软件"
+          },
+          {
+            "name": "ngIRCd",
+            "url": "https://ngircd.barton.de",
+            "description": "轻量现代 IRC 服务器"
+          },
+          {
+            "name": "BitchX",
+            "url": "https://github.com/BitchX/BitchX",
+            "description": "经典 Unix IRC 客户端代码生态"
+          },
+          {
+            "name": "Gajim",
+            "url": "https://gajim.org",
+            "description": "经典 XMPP 桌面客户端"
+          },
+          {
+            "name": "Psi+",
+            "url": "https://psi-plus.com",
+            "description": "传统 XMPP 高级桌面客户端"
+          },
+          {
+            "name": "Dino",
+            "url": "https://dino.im",
+            "description": "现代 GTK XMPP 客户端，保留传统即时通信理念"
+          },
+          {
+            "name": "Sylpheed",
+            "url": "https://sylpheed.sraoss.jp/en/",
+            "description": "经典 GTK 邮件客户端"
+          },
+          {
+            "name": "Claws Mail",
+            "url": "https://www.claws-mail.org",
+            "description": "Sylpheed 系传统邮件客户端生态的长期延续"
+          },
+          {
+            "name": "NeoMutt",
+            "url": "https://neomutt.org",
+            "description": "Mutt 的现代社区延续版本"
+          },
+          {
+            "name": "Alpine",
+            "url": "https://alpineapp.email",
+            "description": "继承 Pine 传统的终端邮件客户端"
+          },
+          {
+            "name": "Balsa",
+            "url": "https://pawsa.fedorapeople.org/balsa/",
+            "description": "GNOME 时代经典 GTK 邮件客户端"
+          },
+          {
+            "name": "Trojitá",
+            "url": "https://trojita.flaska.net",
+            "description": "轻量 Qt IMAP 邮件客户端"
+          },
+          {
+            "name": "KMail",
+            "url": "https://apps.kde.org/kmail2/",
+            "description": "KDE 经典邮件软件"
+          },
+          {
+            "name": "OpenSSH",
+            "url": "https://www.openssh.com",
+            "description": "经典 SSH 软件栈"
+          },
+          {
+            "name": "OpenSSL",
+            "url": "https://www.openssl.org",
+            "description": "经典 SSL/TLS 软件库"
+          },
+          {
+            "name": "OpenLDAP",
+            "url": "https://www.openldap.org",
+            "description": "经典 LDAP 软件栈"
+          },
+          {
+            "name": "BIND",
+            "url": "https://www.isc.org/bind/",
+            "description": "经典 DNS 服务器软件"
+          },
+          {
+            "name": "Sendmail",
+            "url": "https://www.proofpoint.com/us/products/email-protection/sendmail",
+            "description": "Unix 经典邮件服务器历史软件"
+          },
+          {
+            "name": "Postfix",
+            "url": "https://www.postfix.org",
+            "description": "经典 Unix 邮件传输代理"
+          },
+          {
+            "name": "Dovecot",
+            "url": "https://www.dovecot.org",
+            "description": "经典 IMAP/POP3 邮件服务器"
+          },
+          {
+            "name": "Samba",
+            "url": "https://www.samba.org",
+            "description": "经典 SMB/CIFS 互操作软件栈"
+          },
+          {
+            "name": "NFS-Ganesha",
+            "url": "https://nfs-ganesha.github.io",
+            "description": "用户态 NFS 服务器"
+          }
+        ]
+      },
+      {
+        "name": "老游戏引擎与制作工具",
+        "links": [
+          {
+            "name": "Exult",
+            "url": "https://github.com/exult/exult",
+            "description": "★700 Ultima 7 引擎开源复刻"
+          },
+          {
+            "name": "ResidualVM",
+            "url": "https://github.com/residualvm/residualvm",
+            "description": "★500 老 3D 冒险游戏引擎复刻"
+          },
+          {
+            "name": "DOOM (id Tech)",
+            "url": "https://github.com/id-Software/DOOM",
+            "description": "★19.6k 1993 年 DOOM 引擎官方开源"
+          },
+          {
+            "name": "GemRB",
+            "url": "https://github.com/gemrb/gemrb",
+            "description": "★1.3k 博德之门引擎开源复刻"
+          },
+          {
+            "name": "Clickteam Fusion",
+            "url": "https://www.clickteam.com/",
+            "description": "Klik Play 遗产延续的游戏制作"
+          },
+          {
+            "name": "RPG Maker 2000",
+            "url": "https://www.rpgmakerweb.com/",
+            "description": "经典 RPG 制作工具系列"
+          },
+          {
+            "name": "RenPy",
+            "url": "https://www.renpy.org/",
+            "description": "视觉小说开源制作引擎"
+          },
+          {
+            "name": "GameMaker",
+            "url": "https://gamemaker.io/",
+            "description": "经典游戏制作软件官方重启"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑹𝑒𝑡𝑟𝑜 𝑺𝑜𝑓𝑡𝑤𝑎𝑟𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

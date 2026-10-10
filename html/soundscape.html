@@ -1,0 +1,1394 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="声学艺术、独立音乐与环境音景资源">
+<title>声学艺术 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>声学艺术</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">声学艺术 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "声学艺术",
+    "icon": "🎼",
+    "color": "linear-gradient(135deg, #55efc4, #74b9ff)",
+    "subcategories": [
+      {
+        "name": "音乐厂牌 (001-040)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Pitchfork",
+            "url": "https://pitchfork.com",
+            "description": "全球极具影响力的独立音乐评论媒体"
+          },
+          {
+            "name": "Bandcamp",
+            "url": "https://bandcamp.com",
+            "description": "独立音乐人与无损数字唱片大本营，发掘全球小众"
+          },
+          {
+            "name": "Resident Advisor (RA)",
+            "url": "https://ra.co",
+            "description": "电子音乐、俱乐部文化与先锋声音艺术的权威风向标。"
+          },
+          {
+            "name": "Discogs",
+            "url": "https://www.discogs.com",
+            "description": "全球最大的音乐实体唱片(黑胶、CD"
+          },
+          {
+            "name": "Tiny Mix Tapes",
+            "url": "https://www.tinymixtapes.com",
+            "description": "专注实验音乐、噪声、噪音电子与前卫声音艺术评论的独"
+          },
+          {
+            "name": "Boomkat",
+            "url": "https://boomkat.com",
+            "description": "英国知名独立唱片行，主打极简微声("
+          },
+          {
+            "name": "Bleep",
+            "url": "https://bleep.com",
+            "description": "Warp Records 旗下"
+          },
+          {
+            "name": "The Quietus",
+            "url": "https://thequietus.com",
+            "description": "英国独立文化与先锋音乐杂志，深入探讨摇滚、电子"
+          },
+          {
+            "name": "XLR8R",
+            "url": "https://xlr8r.com",
+            "description": "老牌电子音乐与声音设计杂志，提供前沿音乐人访谈"
+          },
+          {
+            "name": "Electronic Sound Magazine",
+            "url": "https://electronicsound.co.uk",
+            "description": "英国专注电子音乐、合成器文化与复古硬件声学的纸质与"
+          },
+          {
+            "name": "Warp Records",
+            "url": "https://warp.net",
+            "description": "传奇英国独立厂牌，缔造了 Aphex Twin"
+          },
+          {
+            "name": "4AD",
+            "url": "https://4ad.com",
+            "description": "极具仙音(Heavenly"
+          },
+          {
+            "name": "Erased Tapes",
+            "url": "https://www.erasedtapes.com",
+            "description": "新古典主义(Neo-Classical)旗舰厂牌"
+          },
+          {
+            "name": "Ghostly International",
+            "url": "https://ghostly.com",
+            "description": "融合先锋电子音乐、视觉艺术"
+          },
+          {
+            "name": "Ninja Tune",
+            "url": "https://ninjatune.net",
+            "description": "伦敦传奇独立厂牌，主打爵士采样、Trip-Hop"
+          },
+          {
+            "name": "ECM Records",
+            "url": "https://www.ecmrecords.com",
+            "description": "德国顶级爵士与古典厂牌，以标志性的“寂静之外最美的"
+          },
+          {
+            "name": "Kranky",
+            "url": "https://www.kranky.net",
+            "description": "专注于 Ambient、Post-Rock"
+          },
+          {
+            "name": "Mute Records",
+            "url": "https://mutereords.com",
+            "description": "先锋合成器流行(Synth-Pop)"
+          },
+          {
+            "name": "Sub Pop",
+            "url": "https://www.subpop.com",
+            "description": "西雅图传奇独立厂牌，发掘了 Grunge"
+          },
+          {
+            "name": "Rough Trade",
+            "url": "https://www.roughtrade.com",
+            "description": "英国老牌唱片店与独立厂牌"
+          },
+          {
+            "name": "Touch Music",
+            "url": "https://touch33.net",
+            "description": "英国先锋声音艺术厂牌，专注于野外录音(Field"
+          },
+          {
+            "name": "Editions Mego",
+            "url": "https://editionsmego.com",
+            "description": "奥地利实验电子厂牌，推动数字噪声"
+          },
+          {
+            "name": "RVNG Intl.",
+            "url": "https://igetrvng.com",
+            "description": "纽约前卫音乐厂牌，探索新世纪音乐(New"
+          },
+          {
+            "name": "Numero Group",
+            "url": "https://numerogroup.com",
+            "description": "著名的挖掘遗珠厂牌，专注于重新发掘与修复历史上被遗"
+          },
+          {
+            "name": "Drag City",
+            "url": "https://www.dragcity.com",
+            "description": "芝加哥独立厂牌，主打实验民谣"
+          },
+          {
+            "name": "Sacred Bones Records",
+            "url": "https://www.sacredbonesrecords.com",
+            "description": "纽约独立厂牌，主打暗黑哥特、哥特摇滚"
+          },
+          {
+            "name": "Type Records",
+            "url": "https://typerecords.com",
+            "description": "专注于电影感环境音(Cinematic"
+          },
+          {
+            "name": "Room40",
+            "url": "https://room40.org",
+            "description": "澳大利亚解构主义声音艺术家 Lawrence"
+          },
+          {
+            "name": "Important Records",
+            "url": "https://importantrecords.com",
+            "description": "专注于无人声音乐(Drone)、磬木声学"
+          },
+          {
+            "name": "NTS Radio",
+            "url": "https://www.nts.live",
+            "description": "伦敦独立先锋电台，全球地下音乐人"
+          },
+          {
+            "name": "Dublab",
+            "url": "https://www.dublab.com",
+            "description": "洛杉矶非营利独立广播电台"
+          },
+          {
+            "name": "Worldwide FM",
+            "url": "https://worldwidefm.net",
+            "description": "Gilles Peterson"
+          },
+          {
+            "name": "KEXP",
+            "url": "https://www.kexp.org",
+            "description": "享誉全球的西雅图非营利电台"
+          },
+          {
+            "name": "NPR Tiny Desk Concerts",
+            "url": "https://www.npr.org/series/tiny-desk-concerts",
+            "description": "NPR 旗下办公桌原声现场专栏"
+          },
+          {
+            "name": "AllMusic",
+            "url": "https://www.allmusic.com",
+            "description": "庞大的音乐百科档案馆，支持按曲风、乐器"
+          },
+          {
+            "name": "Rate Your Music (RYM)",
+            "url": "https://rateyourmusic.com",
+            "description": "全球音乐发烧友建立的巨型音乐评分"
+          },
+          {
+            "name": "Discogs Blog",
+            "url": "https://blog.discogs.com",
+            "description": "探讨黑胶唱片保养、黑胶刻录技术"
+          },
+          {
+            "name": "Sounding Out!",
+            "url": "https://soundstudiesblog.com",
+            "description": "声音研究(Sound Studies)学术博客"
+          },
+          {
+            "name": "The Wire Magazine",
+            "url": "https://www.thewire.co.uk",
+            "description": "英国顶级前卫音乐与现代声音艺术杂志"
+          },
+          {
+            "name": "Musicworks Magazine",
+            "url": "https://www.musicworks.ca",
+            "description": "加拿大先锋声学艺术杂志，探索乐器改装"
+          }
+        ]
+      },
+      {
+        "name": "环境白噪 (041-080)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "myNoise",
+            "url": "https://mynoise.net",
+            "description": "全球顶尖的定制化声音发生器"
+          },
+          {
+            "name": "Earth.fm",
+            "url": "https://earth.fm",
+            "description": "自然界的“Spotify”"
+          },
+          {
+            "name": "Radio Aporee",
+            "url": "https://aporee.org/maps",
+            "description": "开放的空间声音地图(Soundmaps)"
+          },
+          {
+            "name": "British Library Sounds",
+            "url": "https://sounds.bl.uk",
+            "description": "大英图书馆音频档案馆，保存数十万段历史录音"
+          },
+          {
+            "name": "Xeno-canto",
+            "url": "https://xeno-canto.org",
+            "description": "全球鸟类鸣声共享数据库，收录全球数万种鸟类在不同地"
+          },
+          {
+            "name": "Cities and Memory",
+            "url": "https://citiesandmemory.com",
+            "description": "全球声音艺术与野外录音结合项目"
+          },
+          {
+            "name": "Ambient Sleeping Pill",
+            "url": "https://ambientsleepingpill.com",
+            "description": "无间断无人声 Ambient 音乐电台，专为助眠"
+          },
+          {
+            "name": "Noisli",
+            "url": "https://www.noisli.com",
+            "description": "极简主义专注与放松声音混合器，支持自由叠加雨声"
+          },
+          {
+            "name": "A Soft Murmur",
+            "url": "https://asoftmurmur.com",
+            "description": "优雅自然环境音生成工具，提供海浪、雷暴"
+          },
+          {
+            "name": "Ambient World",
+            "url": "https://ambientworld.com",
+            "description": "收录来自世界各地的自然沉浸式音景与城市背景音("
+          },
+          {
+            "name": "Lofi Girl",
+            "url": "https://lofigirl.com",
+            "description": "全球知名的 Lo-Fi Hip Hop"
+          },
+          {
+            "name": "Coffitivity",
+            "url": "https://coffitivity.com",
+            "description": "还原真实咖啡馆背景环境音"
+          },
+          {
+            "name": "Rainymood",
+            "url": "https://rainymood.com",
+            "description": "老牌高清雨声发生器，还原不同强度与质感的雨滴击打声"
+          },
+          {
+            "name": "Sounds of Forest (Timber Festival)",
+            "url": "https://timberfestival.org.uk/soundsoftheforest",
+            "description": "全球森林声学地图，收集世界各地森林树叶沙沙声与生态"
+          },
+          {
+            "name": "Wildambience",
+            "url": "https://wildambience.com",
+            "description": "澳大利亚野外录音师建立，收录高解析度热带雨林"
+          },
+          {
+            "name": "Nature Soundmap",
+            "url": "https://www.naturesoundmap.com",
+            "description": "由专业生态声音录制师联合创建"
+          },
+          {
+            "name": "Ocean Conservation Research Audio",
+            "url": "https://ocr.org/audio-library",
+            "description": "海洋声学研究机构，收录鲸鱼歌唱"
+          },
+          {
+            "name": "Sound-Set",
+            "url": "https://sound-set.com",
+            "description": "专为空间氛围打造的音效库，涵盖温室、图书馆"
+          },
+          {
+            "name": "Mynoise Sound Generators",
+            "url": "https://mynoise.net/noises.php",
+            "description": "myNoise 旗下完整的音源目录，包含藏音颂钵"
+          },
+          {
+            "name": "Sound-Scaper",
+            "url": "https://sound-scaper.com",
+            "description": "提供极简环境音、太空背景辐射声与声学合成器模拟音。"
+          },
+          {
+            "name": "Purrli",
+            "url": "https://purrli.com",
+            "description": "猫咪呼噜声发生器，利用音频模拟猫咪放松时的低频震动"
+          },
+          {
+            "name": "Hipstersound",
+            "url": "https://hipstersound.com",
+            "description": "生成各种不同风情的德州酒吧"
+          },
+          {
+            "name": "Soundrown",
+            "url": "https://soundrown.com",
+            "description": "涵盖公园、喷泉、火车的极简环境声混音平台。"
+          },
+          {
+            "name": "Free Sound",
+            "url": "https://freesound.org",
+            "description": "巨型 Collaborative 开放声音数据库"
+          },
+          {
+            "name": "Soundly",
+            "url": "https://getsoundly.com",
+            "description": "专业云端音效库，提供影视级高精度空间环境音与声学设"
+          },
+          {
+            "name": "BBC Sound Effects",
+            "url": "https://sound-effects.bbcrewind.co.uk",
+            "description": "BBC 开放的超过 16,000"
+          },
+          {
+            "name": "Soniss Free Archive",
+            "url": "https://soniss.com/gameaudiogdc",
+            "description": "每年 GDC 期间开放的巨量商业级音效包"
+          },
+          {
+            "name": "ZapSplat",
+            "url": "https://www.zapsplat.com",
+            "description": "涵盖数万段无版权室内声学、家具摩擦声"
+          },
+          {
+            "name": "Epidemic Sound Ambient",
+            "url": "https://www.epidemicsound.com/sound-effects/ambient",
+            "description": "专业影视与空间背景音乐/音效流媒体库。"
+          },
+          {
+            "name": "Asana Rebel Soundscapes",
+            "url": "https://asanarebel.com/soundscapes",
+            "description": "配合瑜伽、呼吸练习与冥想的空间声学音频站。"
+          },
+          {
+            "name": "Brain.fm",
+            "url": "https://www.brain.fm",
+            "description": "基于功能性音乐(Functional"
+          },
+          {
+            "name": "Endel",
+            "url": "https://endel.io",
+            "description": "AI 驱动的个性化实时生成音景，根据时间"
+          },
+          {
+            "name": "Focus@Will",
+            "url": "https://www.focusatwill.com",
+            "description": "结合神经科学定制的音乐流媒体"
+          },
+          {
+            "name": "Sleepjar",
+            "url": "https://sleepjar.com",
+            "description": "专注睡眠声学，提供粉红噪音"
+          },
+          {
+            "name": "Calm Audio Archive",
+            "url": "https://www.calm.com",
+            "description": "Calm 旗下放松音频库，包含风吹麦浪"
+          },
+          {
+            "name": "Headspace Music",
+            "url": "https://www.headspace.com/music",
+            "description": "由名家打造的冥想空间音乐与低频环境背景声。"
+          },
+          {
+            "name": "Insight Timer Sound Therapy",
+            "url": "https://insighttimer.com",
+            "description": "收录全球颂钵、水晶钵、铜锣与自然声学疗愈音频库。"
+          },
+          {
+            "name": "Acoustic Ecology (WFAE)",
+            "url": "https://www.wfae.net",
+            "description": "世界声学生态协会，探讨声景(Soundscape)"
+          },
+          {
+            "name": "Quiet Parks International",
+            "url": "https://www.quietparks.org",
+            "description": "国际静音公园组织，致力于寻找并保护地球上无人工噪音"
+          },
+          {
+            "name": "One Square Inch of Silence",
+            "url": "https://onesquareinch.org",
+            "description": "位于美国奥林匹克国家公园的“一平方英寸寂静”项目"
+          }
+        ]
+      },
+      {
+        "name": "Hi-Fi (081-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "What Hi-Fi?",
+            "url": "https://www.whathifi.com",
+            "description": "全球知名的 Hi-Fi 音响、功放"
+          },
+          {
+            "name": "Stereophile",
+            "url": "https://www.stereophile.com",
+            "description": "美国老牌发烧音响杂志，提供极度严苛的音响设备测量与"
+          },
+          {
+            "name": "High Fidelity Magazine",
+            "url": "https://highfidelity.pl",
+            "description": "波兰顶级 Hi-Fi 发烧网站"
+          },
+          {
+            "name": "Audioholics",
+            "url": "https://www.audioholics.com",
+            "description": "家庭影院与发烧音响硬核科普网"
+          },
+          {
+            "name": "Sound & Vision",
+            "url": "https://www.soundandvision.com",
+            "description": "专注于家庭影院系统、顶级扬声器与室内声学避震的专业"
+          },
+          {
+            "name": "InnerFidelity (Archive)",
+            "url": "https://www.stereophile.com/category/innerfidelity",
+            "description": "资深耳机发烧友圣地，收录庞大的耳机频响曲线与声学分"
+          },
+          {
+            "name": "Audio Science Review (ASR)",
+            "url": "https://www.audiosciencereview.com",
+            "description": "以客观仪器测试(AP 仪测量)为导向的发烧音响与解"
+          },
+          {
+            "name": "Head-Fi",
+            "url": "https://www.head-fi.org",
+            "description": "全球最大的耳机、便携发烧播放器与耳放交流社区。"
+          },
+          {
+            "name": "6moons",
+            "url": "https://6moons.com",
+            "description": "充满文人气息的高端 Hi-Fi 测评网"
+          },
+          {
+            "name": "The Absolute Sound",
+            "url": "https://www.theabsolutesound.com",
+            "description": "权威奢华音响杂志，关注天价发烧音响与音乐重现的极致"
+          },
+          {
+            "name": "Darko.Audio",
+            "url": "https://darko.audio",
+            "description": "以现代极简审美呈现发烧音响"
+          },
+          {
+            "name": "Part-Time Audiophile",
+            "url": "https://parttimeaudiophile.com",
+            "description": "关注高端发烧音响展会、独立管机(电子管)与现代黑胶"
+          },
+          {
+            "name": "Mono and Stereo",
+            "url": "https://www.monoandstereo.com",
+            "description": "展示全球顶奢发烧音响、手工打造功放与画廊级扬声器的"
+          },
+          {
+            "name": "TNT-Audio",
+            "url": "https://www.tnt-audio.com",
+            "description": "独立非商业 Hi-Fi 网站"
+          },
+          {
+            "name": "SoundStage! Network",
+            "url": "https://www.soundstage.com",
+            "description": "庞大的发烧音响网媒家族，包含设备评测"
+          },
+          {
+            "name": "Hifi Pig",
+            "url": "https://hifipig.com",
+            "description": "英国时尚发烧音响网，评测包括新古典唱盘"
+          },
+          {
+            "name": "SoundOnSound (SOS)",
+            "url": "https://www.soundonsound.com",
+            "description": "专业录音室与声音工程杂志，涵盖录音室声学装修"
+          },
+          {
+            "name": "Tape Op",
+            "url": "https://tapeop.com",
+            "description": "专注录音艺术与独立录音室创作的杂志"
+          },
+          {
+            "name": "Gearspace (formerly Gearslutz)",
+            "url": "https://gearspace.com",
+            "description": "全球最大的录音师、混音师"
+          },
+          {
+            "name": "Acoustical Surfaces",
+            "url": "https://www.acousticalsurfaces.com",
+            "description": "专业室内声学改造方案商，详解吸音板"
+          },
+          {
+            "name": "GIK Acoustics",
+            "url": "https://www.gikacoustics.com",
+            "description": "室内声学处理权威平台，提供听音室低频陷阱与声学扩散"
+          },
+          {
+            "name": "RealTraps",
+            "url": "https://realtraps.com",
+            "description": "著名声学专家 Ethan Winer 创立"
+          },
+          {
+            "name": "Primacoustic",
+            "url": "https://www.primacoustic.com",
+            "description": "专业空间声学控制方案网，涵盖演播室"
+          },
+          {
+            "name": "Vicoustic",
+            "url": "https://vicoustic.com",
+            "description": "将高颜值设计与极佳声学吸音相结合的葡萄牙现代声学墙"
+          },
+          {
+            "name": "RPG Acoustic Tools",
+            "url": "https://www.rpgacoustic.com",
+            "description": "现代室内声学扩散体(Diffuser)理论与产品研"
+          },
+          {
+            "name": "ASC TubeTrap",
+            "url": "https://www.tubetrap.com",
+            "description": "柱状低频陷阱鼻祖，详解房间驻波(Standing"
+          },
+          {
+            "name": "Ethan Winer's Audio Articles",
+            "url": "https://ethanwiner.com/articles.html",
+            "description": "声音工程大师 Ethan Winer 的个人网站"
+          },
+          {
+            "name": "Genelec Studio Monitors",
+            "url": "https://www.genelec.com",
+            "description": "芬兰真力官网，专业监听音箱标杆"
+          },
+          {
+            "name": "Neumann Berlin",
+            "url": "https://www.neumann.com",
+            "description": "德国诺伊曼，顶级录音室话筒与精确监听音箱的代名词。"
+          },
+          {
+            "name": "ATC Loudspeakers",
+            "url": "https://atc.audio",
+            "description": "英国 ATC 官方网，以传奇的馒头中音单元与顶级监"
+          },
+          {
+            "name": "Bowers & Wilkins (B&W)",
+            "url": "https://www.bowerswilkins.com",
+            "description": "英国老牌音响巨头，拥有鹦鹉螺(Nautilus)等"
+          },
+          {
+            "name": "Bang & Olufsen (B&O)",
+            "url": "https://www.bang-olufsen.com",
+            "description": "丹麦奢华视听品牌，将极致家居美学与先锋声学工程完美"
+          },
+          {
+            "name": "Devialet",
+            "url": "https://www.devialet.com",
+            "description": "法国帝瓦雷，以膨胀式低音与先锋超现代造型音频设备著"
+          },
+          {
+            "name": "KEF",
+            "url": "https://kef.com",
+            "description": "英国经典音响品牌，同轴共汽单元(Uni-Q)与极简"
+          },
+          {
+            "name": "Teenage Engineering",
+            "url": "https://teenage.engineering",
+            "description": "瑞典先锋设计团队，打造极具包豪斯美感的掌上合成器与"
+          },
+          {
+            "name": "Linn Products",
+            "url": "https://www.linn.co.uk",
+            "description": "苏格兰顶级音响品牌，拥有一代传奇黑胶唱机"
+          },
+          {
+            "name": "McIntosh Laboratory",
+            "url": "https://www.mcintoshlabs.com",
+            "description": "美国麦景图，标志性的湖蓝色 VU"
+          },
+          {
+            "name": "Naim Audio",
+            "url": "https://www.naimaudio.com",
+            "description": "英国高端音响品牌，主打音乐感"
+          },
+          {
+            "name": "Transrotor",
+            "url": "https://www.transrotor.de",
+            "description": "德国巨型亚克力与金属机械黑胶唱机"
+          },
+          {
+            "name": "Clearaudio",
+            "url": "https://clearaudio.de",
+            "description": "德国清澈黑胶唱机，极致的高精机械加工与透明声学美学"
+          }
+        ]
+      },
+      {
+        "name": "听音空间 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Vinyl Factory",
+            "url": "https://thevinylfactory.com",
+            "description": "探讨黑胶文化、唱片封面设计"
+          },
+          {
+            "name": "Dust & Grooves",
+            "url": "https://www.dustandgrooves.com",
+            "description": "走进全球顶级黑胶唱片收藏家的私人书房与听音室"
+          },
+          {
+            "name": "Sound System Culture",
+            "url": "https://soundsystemculture.com",
+            "description": "记录自建牙买加音响系统、街头声学与大型手工音箱墙文"
+          },
+          {
+            "name": "Tokyo Jazz Joints",
+            "url": "https://www.tokyojazzjoints.com",
+            "description": "记录日本即将消失的“爵士喫茶店”(Jazz"
+          },
+          {
+            "name": "Jazz Kissa",
+            "url": "https://jazzkissa.db.tc",
+            "description": "日本爵士咖啡馆档案馆，展示老式黑胶"
+          },
+          {
+            "name": "Audio Shelter",
+            "url": "https://audioshelter.com",
+            "description": "展示结合极简居家室内设计"
+          },
+          {
+            "name": "Listening Room Minimal",
+            "url": "https://listeningroomminimal.com",
+            "description": "极简主义听音室灵感网，探讨如何将音箱隐形融入现代家"
+          },
+          {
+            "name": "Records Hidden In Homes",
+            "url": "https://recordshiddeninhomes.tumblr.com",
+            "description": "展示如何在小户型公寓中精妙收纳数百乃至数千张黑胶唱"
+          },
+          {
+            "name": "Custom Vinyl Cabinets",
+            "url": "https://customvinylcabinets.com",
+            "description": "专为黑胶发烧友打造的手工实木唱片柜"
+          },
+          {
+            "name": "Symbol Audio",
+            "url": "https://symbolaudio.com",
+            "description": "结合现代家具设计与高保真音响系统的顶级实木"
+          },
+          {
+            "name": "Wrensilva",
+            "url": "https://wrensilva.com",
+            "description": "加州手工制造的复古现代高定 Hi-Fi 音响柜"
+          },
+          {
+            "name": "Department of Acoustic Ecology",
+            "url": "https://acousticecology.org",
+            "description": "研究环境音学、住宅防噪与如何构建惬意居家听觉环境。"
+          },
+          {
+            "name": "Apartment Therapy Listening Corners",
+            "url": "https://www.apartmenttherapy.com/tag/listening-room",
+            "description": "探访普通人家中的音乐角、黑胶架与高颜值角落布置。"
+          },
+          {
+            "name": "Spoken Label Record Storage",
+            "url": "https://spokenlabel.com",
+            "description": "专为极简主义者打造的模块化悬挂式唱片展示架。"
+          },
+          {
+            "name": "Analog Room",
+            "url": "https://analogroom.com",
+            "description": "展示全模拟信号(黑胶、开盘带"
+          },
+          {
+            "name": "Open Reel Tape Deck Culture",
+            "url": "https://openreeltape.com",
+            "description": "开盘带(Reel-to-Reel)发烧友网站"
+          },
+          {
+            "name": "Hi-Fi Choice Magazine",
+            "url": "https://www.hifichoice.com",
+            "description": "英国老牌音响杂志，侧重于高性价比居家音响系统的搭配"
+          },
+          {
+            "name": "Modern Listener",
+            "url": "https://modernlistener.com",
+            "description": "专为现代都市公寓打造的蓝牙流媒体"
+          },
+          {
+            "name": "Minimal Soundspaces",
+            "url": "https://minimalsoundspaces.com",
+            "description": "展示线条硬朗、干净、无杂乱线缆的现代化听音环境。"
+          },
+          {
+            "name": "The Record Collector Room",
+            "url": "https://recordcollectorroom.com",
+            "description": "全球唱片发烧友的实景展示"
+          },
+          {
+            "name": "Plant & Turntable",
+            "url": "https://plantandturntable.tumblr.com",
+            "description": "展示将观叶植物(龟背竹、块根)与黑胶唱机融合的家居"
+          },
+          {
+            "name": "HiFi Rose",
+            "url": "https://hifirose.com",
+            "description": "韩国顶级流媒体播放器品牌"
+          },
+          {
+            "name": "Klipsch Heritage",
+            "url": "https://www.klipsch.com/heritage-premium-audio",
+            "description": "杰士号角音箱复古系列(Klipschorn"
+          },
+          {
+            "name": "JBL Synthesis & Classic",
+            "url": "https://www.jblsynthesis.com",
+            "description": "JBL 复古 L100 Classic 系列"
+          },
+          {
+            "name": "Tannoy Loudspeakers",
+            "url": "https://www.tannoy.com",
+            "description": "天朗同轴音箱，古典英伦家具风格与温润同轴声学的代表"
+          },
+          {
+            "name": "Sonus Faber",
+            "url": "https://www.sonusfaber.com",
+            "description": "意大利世霸，将小提琴木工手艺"
+          },
+          {
+            "name": "Franco Serblin",
+            "url": "https://www.francoserblin.it",
+            "description": "音箱设计大师个人品牌，如弧形木质雕塑般的室内声学杰"
+          },
+          {
+            "name": "DeVore Fidelity",
+            "url": "https://devorefidelity.com",
+            "description": "纽约独立音箱品牌，打造支持小功率管机推动的高灵敏度"
+          },
+          {
+            "name": "Oswalds Mill Audio (OMA)",
+            "url": "https://oswaldsmillaudio.com",
+            "description": "结合铸铁、铸铜与百年沉水木的巨型画廊级号角音箱设计"
+          },
+          {
+            "name": "Fern & Roby",
+            "url": "https://www.fernandroby.com",
+            "description": "采用回收废旧铸铁与美洲再生木材打造的极简质感音响与"
+          },
+          {
+            "name": "Acoustical Interior Guide",
+            "url": "https://acousticalinterior.com",
+            "description": "讲解地毯、厚窗帘、布艺沙发如何作为天然吸音材质改善"
+          },
+          {
+            "name": "Soundproofing Company",
+            "url": "https://www.soundproofingcompany.com",
+            "description": "详解房间防噪、隔音墙构造"
+          },
+          {
+            "name": "Room Acoustics 101",
+            "url": "https://roomacoustics101.com",
+            "description": "面向初学者的室内声学基础"
+          },
+          {
+            "name": "Hifi Furniture Design",
+            "url": "https://hififurniture.co.uk",
+            "description": "英国专门设计防震音响架、大理石避震板与高承重唱片柜"
+          },
+          {
+            "name": "Quadraspire",
+            "url": "https://quadraspire.co.uk",
+            "description": "专为 Hi-Fi 避震打造的竹制与铝合金模块化音响"
+          },
+          {
+            "name": "Solidsteel",
+            "url": "https://solidsteel.it",
+            "description": "意大利专业音响机架与音箱脚架"
+          },
+          {
+            "name": "IsoAcoustics",
+            "url": "https://isoacoustics.com",
+            "description": "专业音箱隔离避震脚垫，减少音箱与桌面/地面共振的技"
+          },
+          {
+            "name": "Sbooster",
+            "url": "https://www.sbooster.com",
+            "description": "专注于升级流媒体设备线型电源"
+          },
+          {
+            "name": "Roon Labs",
+            "url": "https://roonlabs.com",
+            "description": "顶级发烧级数字音乐管理软件"
+          },
+          {
+            "name": "Audirvana",
+            "url": "https://audirvana.com",
+            "description": "专为音质打造的高解析度本地与流媒体数字音乐播放器。"
+          }
+        ]
+      },
+      {
+        "name": "交互音效 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Spatial Audio Lab",
+            "url": "https://spatialaudio.org",
+            "description": "研究 3D 沉浸式空间音频"
+          },
+          {
+            "name": "Dolby Atmos Music",
+            "url": "https://www.dolby.com/music",
+            "description": "杜比全景声音乐官方专栏，探索三维立体的三维空间声音"
+          },
+          {
+            "name": "Sennheiser AMBEO",
+            "url": "https://www.sennheiser.com/ambeo",
+            "description": "森海塞尔 3D 沉浸式声音捕捉"
+          },
+          {
+            "name": "IRCAM (Paris)",
+            "url": "https://www.ircam.fr",
+            "description": "法国声学/音乐协调研究所"
+          },
+          {
+            "name": "IRCAM Forum",
+            "url": "https://forum.ircam.fr",
+            "description": "声学科学家与先锋作曲家交流前沿声音合成与音频算法的"
+          },
+          {
+            "name": "Cycling '74 (Max/MSP)",
+            "url": "https://cycling74.com",
+            "description": "视觉化声音与交互编程软件 Max/MSP 官网"
+          },
+          {
+            "name": "SuperCollider",
+            "url": "https://supercollider.github.io",
+            "description": "用于实时声音合成与算法作曲("
+          },
+          {
+            "name": "Pure Data (Pd)",
+            "url": "https://puredata.info",
+            "description": "开源交互式图形声音编程环境"
+          },
+          {
+            "name": "Processing Sound Archive",
+            "url": "https://processing.org/reference/libraries/sound",
+            "description": "利用代码生成图形并实时联动声音合成的数字艺术教程。"
+          },
+          {
+            "name": "Web Audio API Showcase",
+            "url": "https://webaudio.github.io/sample-code",
+            "description": "W3C 官方展示基于浏览器 Web Audio"
+          },
+          {
+            "name": "Chrome Music Lab",
+            "url": "https://musiclab.chromeexperiments.com",
+            "description": "谷歌出品的可视化声音与节奏互动实验网"
+          },
+          {
+            "name": "Incredibox",
+            "url": "https://www.incredibox.com",
+            "description": "交互式口技(B-Box)与节奏组合游戏"
+          },
+          {
+            "name": "Patatap",
+            "url": "https://patatap.com",
+            "description": "按下键盘即可触发对应几何图形与打击乐音效的极简交互"
+          },
+          {
+            "name": "Typatone",
+            "url": "https://typatone.com",
+            "description": "将输入的任何文字转换为独一无二音乐旋律与视觉色彩的"
+          },
+          {
+            "name": "Blob Opera",
+            "url": "https://artsandculture.google.com/experiment/blob-opera",
+            "description": "谷歌利用机器学习打造的交互式四声部歌剧演播实验。"
+          },
+          {
+            "name": "Soundtoys",
+            "url": "https://www.soundtoys.com",
+            "description": "顶级声音效果器插件，提供复古模拟暖化"
+          },
+          {
+            "name": "Teenage Engineering Pocket Operators",
+            "url": "https://teenage.engineering/products/po",
+            "description": "极简掌上电子乐器，展示极简电路与交互声学的魅力。"
+          },
+          {
+            "name": "Monome",
+            "url": "https://monome.org",
+            "description": "极简格子灯光控制器与开源音频设备"
+          },
+          {
+            "name": "Makeie Makey Audio",
+            "url": "https://makeymakey.com",
+            "description": "将任何导电物体(香蕉、水"
+          },
+          {
+            "name": "Bare Conductive",
+            "url": "https://www.bareconductive.com",
+            "description": "导电油漆与感应板，可将墙面、木板变为触控声学墙。"
+          },
+          {
+            "name": "Spatial Sound Institute",
+            "url": "https://spatialsoundinstitute.com",
+            "description": "探索 4D 全景声、空间声学感知与声音对身体/意识"
+          },
+          {
+            "name": "ZKM Audio Concepts",
+            "url": "https://zkm.de/en/audio",
+            "description": "卡尔斯鲁厄艺术与媒体中心的大型声音艺术装置与声学穹"
+          },
+          {
+            "name": "Tate Modern Sound Art",
+            "url": "https://www.tate.org.uk/art/art-terms/s/sound-art",
+            "description": "泰特美术馆声音艺术专栏，探讨声音如何作为一种雕塑与"
+          },
+          {
+            "name": "Museum of Sound",
+            "url": "https://museumofsound.org",
+            "description": "收集各种即将消失的机械声音(老式打印机、拨号上网"
+          },
+          {
+            "name": "Museum of Endangered Sounds",
+            "url": "https://savethesounds.info",
+            "description": "拯救危险的声音，收藏 80-90"
+          },
+          {
+            "name": "Designing Sound",
+            "url": "https://designingsound.org",
+            "description": "专为电影、游戏与交互设计打造的声音设计("
+          },
+          {
+            "name": "ASO (Audio Engineering Society)",
+            "url": "https://www.aes.org",
+            "description": "音频工程学会，全球声音科学"
+          },
+          {
+            "name": "Acoustical Society of America (ASA)",
+            "url": "https://acousticalsociety.org",
+            "description": "美国声学学会，涵盖建筑声学、水下声学"
+          },
+          {
+            "name": "Sonic Arts Union Archive",
+            "url": "https://sonicartsunion.org",
+            "description": "探索 60-70 年代前卫实验声音"
+          },
+          {
+            "name": "Resonances (CNRS Sound Lab)",
+            "url": "https://www.cnrs.fr",
+            "description": "法国国家科学研究中心声学实验室"
+          },
+          {
+            "name": "Sounding Architecture",
+            "url": "https://soundingarchitecture.com",
+            "description": "探讨建筑空间形态如何决定室内混响、回音与声音漫射。"
+          },
+          {
+            "name": "Acoustic Ecology Institute",
+            "url": "https://aei.org",
+            "description": "关注海洋与陆地工业噪音对生态影响的科学普及与研究机"
+          },
+          {
+            "name": "Auditory Neuroscience",
+            "url": "https://auditoryneuroscience.com",
+            "description": "牛津大学听觉神经科学网，探讨大脑如何感知音高"
+          },
+          {
+            "name": "Music and Spatiality",
+            "url": "https://musicandspatiality.org",
+            "description": "研究音乐作曲中的空间维度(Spatiality)与"
+          },
+          {
+            "name": "Interactive Audio Weekly",
+            "url": "https://interactiveaudioweekly.com",
+            "description": "每周推送最新的游戏声音设计"
+          },
+          {
+            "name": "Game Audio Network Guild (G.A.N.G.)",
+            "url": "https://www.audiogang.org",
+            "description": "游戏声音设计网，展示现代互动媒体中实时变化的空间声"
+          },
+          {
+            "name": "Spatial Audio Company",
+            "url": "https://spatialaudio.co",
+            "description": "提供商业空间、展厅与画廊 3D"
+          },
+          {
+            "name": "Sonosphere",
+            "url": "https://sonosphere.org",
+            "description": "专注于探索声音艺术、3D"
+          },
+          {
+            "name": "Sound Studies Online",
+            "url": "https://www.soundstudiesonline.com",
+            "description": "学术级声音研究网络，收录大量关于听觉"
+          },
+          {
+            "name": "UbuWeb Sound",
+            "url": "https://www.ubu.com/sound",
+            "description": "全球极大的先锋艺术档案馆 UbuWeb"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑺𝑜𝑢𝑛𝑑𝑠𝑐𝑎𝑝𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

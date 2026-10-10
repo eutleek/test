@@ -1,0 +1,1394 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="高级时装、先锋设计师品牌、奢侈品与古着档案">
+<title>高级时装 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>高级时装</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">高级时装 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "高级时装",
+    "icon": "🧵",
+    "color": "linear-gradient(135deg, #e84393, #fd79a8)",
+    "subcategories": [
+      {
+        "name": "国际时装媒体 (1-40)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Vogue Runway",
+            "url": "https://www.vogue.com/fashion-shows",
+            "description": "全球权威时装周官方秀场高清图库"
+          },
+          {
+            "name": "The Business of Fashion (BoF)",
+            "url": "https://www.businessoffashion.com",
+            "description": "时尚商业领域的“华尔街日报”，深度剖析奢侈品集团"
+          },
+          {
+            "name": "WWD (Women's Wear Daily)",
+            "url": "https://wwd.com",
+            "description": "创办于 1910 年的时尚界权威日报"
+          },
+          {
+            "name": "Dazed Digital",
+            "url": "https://www.dazeddigital.com",
+            "description": "英国先锋青年文化与亚文化时尚杂志"
+          },
+          {
+            "name": "i-D Magazine",
+            "url": "https://i-d.co",
+            "description": "以标志性单眼微笑封面闻名的英国先锋街头时尚与青年文"
+          },
+          {
+            "name": "AnOther Magazine",
+            "url": "https://www.anothermag.com",
+            "description": "将高级时装、视觉艺术与文学融合的先锋双年刊视觉网。"
+          },
+          {
+            "name": "ShowStudio",
+            "url": "https://showstudio.com",
+            "description": "时尚摄影大师 Nick Knight"
+          },
+          {
+            "name": "Highsnobiety",
+            "url": "https://www.highsnobiety.com",
+            "description": "潮流亚文化、高街时装与跨界联名趋势的头部商业媒体。"
+          },
+          {
+            "name": "Hypebeast",
+            "url": "https://hypebeast.com",
+            "description": "全球高街潮流、球鞋文化与先锋男装发布的知名资讯平台"
+          },
+          {
+            "name": "CR Fashion Book",
+            "url": "https://crfashionbook.com",
+            "description": "前 Vogue 法国版主编 Carine"
+          },
+          {
+            "name": "Office Magazine",
+            "url": "https://officemagazine.net",
+            "description": "纽约独立时尚与艺术杂志，展示非主流时装大片与地下亚"
+          },
+          {
+            "name": "System Magazine",
+            "url": "https://system-magazine.com",
+            "description": "深度采访顶级时装设计师、品牌 CEO"
+          },
+          {
+            "name": "Mastermind Magazine",
+            "url": "https://mastermindmagazine.com",
+            "description": "法国高端时尚与文化半年刊"
+          },
+          {
+            "name": "Perfect Magazine",
+            "url": "https://www.theperfectmagazine.com",
+            "description": "知名造型师 Katie Grand"
+          },
+          {
+            "name": "Document Journal",
+            "url": "https://www.documentjournal.com",
+            "description": "纽约先锋文化杂志，收录大量实验性高定造型与哲思时尚"
+          },
+          {
+            "name": "Purple Fashion Magazine",
+            "url": "https://purple.fr",
+            "description": "Olivier Zahm"
+          },
+          {
+            "name": "Fantastic Man",
+            "url": "https://fantasticman.com",
+            "description": "荷兰极简主义男装时尚杂志"
+          },
+          {
+            "name": "Gentlewoman",
+            "url": "https://thegentlewoman.co.uk",
+            "description": "以冷静、睿智与极简美学塑造现代女性形象的高端时尚刊"
+          },
+          {
+            "name": "V Magazine",
+            "url": "https://vmagazine.com",
+            "description": "美国大型时尚流行文化杂志"
+          },
+          {
+            "name": "Interview Magazine",
+            "url": "https://www.interviewmagazine.com",
+            "description": "安迪·沃霍尔创办的传奇杂志"
+          },
+          {
+            "name": "Numéro France",
+            "url": "https://www.numero.com",
+            "description": "法国高端时尚杂志，以未来感视觉"
+          },
+          {
+            "name": "HERO Magazine",
+            "url": "https://hero-magazine.com",
+            "description": "伦敦男装与文化杂志，追踪新锐男装设计师与青年艺术家"
+          },
+          {
+            "name": "032c",
+            "url": "https://032c.com",
+            "description": "柏林先锋文化与时装品牌媒体，探讨当代艺术"
+          },
+          {
+            "name": "Metal Magazine",
+            "url": "https://metalmagazine.eu",
+            "description": "巴塞罗那独立时尚杂志，关注新锐设计"
+          },
+          {
+            "name": "Glamcult",
+            "url": "https://www.glamcult.com",
+            "description": "阿姆斯特丹地下先锋时装与独立音乐视觉杂志。"
+          },
+          {
+            "name": "Wallpaper* Fashion",
+            "url": "https://www.wallpaper.com/fashion",
+            "description": "设计圣经 Wallpaper* 旗下的时装专栏"
+          },
+          {
+            "name": "Flaunt Magazine",
+            "url": "https://flaunt.com",
+            "description": "洛杉矶时尚与文化杂志，融合好莱坞星光与先锋时装造型"
+          },
+          {
+            "name": "Buffalo Zine",
+            "url": "https://buffalozine.com",
+            "description": "形式多变的实验性时尚刊物，每期改变排版与纸张形式。"
+          },
+          {
+            "name": "Sleek Magazine",
+            "url": "https://www.sleek-mag.com",
+            "description": "柏林艺术与时尚杂志，探讨数字艺术"
+          },
+          {
+            "name": "Tank Magazine",
+            "url": "https://tankmagazine.com",
+            "description": "英国独立时尚与文化杂志，以独特的开本与深度时尚理论"
+          },
+          {
+            "name": "Kinfolk Fashion",
+            "url": "https://www.kinfolk.com/fashion",
+            "description": "慢生活美学代表，展示大地色系、舒适面料与极简时装。"
+          },
+          {
+            "name": "Vestoj",
+            "url": "https://vestoj.com",
+            "description": "探讨服装社会学、时尚理论与哲学历史的专业学术型时尚"
+          },
+          {
+            "name": "Fashion Theory Journal",
+            "url": "https://www.tandfonline.com/toc/rftf20/current",
+            "description": "国际学术界关于服装、时尚与身体政治的研讨期刊。"
+          },
+          {
+            "name": "Fashionista",
+            "url": "https://fashionista.com",
+            "description": "北美主流时尚网，报道秀场评论"
+          },
+          {
+            "name": "Fashion Network",
+            "url": "https://ww.fashionnetwork.com",
+            "description": "全球时尚与奢侈品行业实况新闻"
+          },
+          {
+            "name": "The Impression",
+            "url": "https://theimpression.com",
+            "description": "专注时尚广告大片、秀场分析与品牌视觉传达的行业智库"
+          },
+          {
+            "name": "Models.com",
+            "url": "https://models.com",
+            "description": "全球超模排行榜、摄影师、造型师与时尚大片制作团队数"
+          },
+          {
+            "name": "Tagwalk",
+            "url": "https://www.tagwalk.com",
+            "description": "被称为“时尚界 Google”，按面料、色彩"
+          },
+          {
+            "name": "FirstView",
+            "url": "https://www.firstview.com",
+            "description": "老牌高清秀场细节图库，收录大量 90"
+          },
+          {
+            "name": "Catwalkpictures",
+            "url": "https://www.catwalkpictures.com",
+            "description": "专业秀场后台(Backstage)与细节摄影大片数"
+          }
+        ]
+      },
+      {
+        "name": "奢侈品电商 (41-80)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "SSENSE",
+            "url": "https://www.ssense.com",
+            "description": "加拿大先锋奢品电商，拥有极具品味的买手阵容与独特的"
+          },
+          {
+            "name": "Farfetch",
+            "url": "https://www.farfetch.com",
+            "description": "全球买手店聚合平台，连接全球数百家独立时尚精品店的"
+          },
+          {
+            "name": "Net-a-Porter",
+            "url": "https://www.net-a-porter.com",
+            "description": "全球顶级女性奢品电商，以杂志化排版与高定包装服务著"
+          },
+          {
+            "name": "MR PORTER",
+            "url": "https://www.mrporter.com",
+            "description": "全球高端男装奢品购物平台，汇聚绅士剪裁"
+          },
+          {
+            "name": "LN-CC (Late Night Chameleon Cafe)",
+            "url": "https://www.ln-cc.com",
+            "description": "伦敦先锋概念买手店，主打暗黑先锋"
+          },
+          {
+            "name": "Dover Street Market (DSM)",
+            "url": "https://www.doverstreetmarket.com",
+            "description": "川久保玲创办的顶级概念买手店"
+          },
+          {
+            "name": "Antonioli",
+            "url": "https://www.antonioli.eu",
+            "description": "米兰知名暗黑先锋买手店，主营 Rick"
+          },
+          {
+            "name": "LuisaViaRoma (LVR)",
+            "url": "https://www.luisaviaroma.com",
+            "description": "意大利老牌奢侈品买手店，收录知名大牌与欧洲新锐设计"
+          },
+          {
+            "name": "Mytheresa",
+            "url": "https://www.mytheresa.com",
+            "description": "德国高端奢侈品电商，主打顶级大牌独家胶囊系列与高定"
+          },
+          {
+            "name": "MATCHESFASHION",
+            "url": "https://www.matchesfashion.com",
+            "description": "英国高端奢品买手网，以精选的审美眼光与优雅搭配造型"
+          },
+          {
+            "name": "Voo Store",
+            "url": "https://www.voostore.com",
+            "description": "柏林文化概念买手店，融合街头艺术"
+          },
+          {
+            "name": "Machine-A",
+            "url": "https://www.machine-a.com",
+            "description": "伦敦先锋买手店，专门扶持中央圣马丁等学院的新锐毕业"
+          },
+          {
+            "name": "SVD (Siwasdescalzo)",
+            "url": "https://www.sivasdescalzo.com",
+            "description": "西班牙高端潮流与限量球鞋买手店"
+          },
+          {
+            "name": "Browns Fashion",
+            "url": "https://www.brownsfashion.com",
+            "description": "伦敦传奇买手店，历史上最早发掘"
+          },
+          {
+            "name": "End Clothing",
+            "url": "https://www.endclothing.com",
+            "description": "英国男装潮流与先锋户外买手店"
+          },
+          {
+            "name": "Slam Jam",
+            "url": "https://www.slamjam.com",
+            "description": "意大利地下亚文化与高街潮流教父级买手店。"
+          },
+          {
+            "name": "Notre",
+            "url": "https://www.notre-shop.com",
+            "description": "芝加哥高端生活方式与先锋男装买手店。"
+          },
+          {
+            "name": "Haven",
+            "url": "https://havenshop.com",
+            "description": "加拿大顶级机能与日系高端男装买手店(主打"
+          },
+          {
+            "name": "Bodega",
+            "url": "https://bdgastore.com",
+            "description": "波士顿传奇隐蔽式买手店，融合高街潮流与先锋设计。"
+          },
+          {
+            "name": "KITH",
+            "url": "https://kith.com",
+            "description": "Ronnie Fieg 创办的纽约高街潮流与高端"
+          },
+          {
+            "name": "Tres Bien",
+            "url": "https://tres-bien.com",
+            "description": "瑞典极简主义与运动街头融合的知名买手店。"
+          },
+          {
+            "name": "SOTF (Store of the Future)",
+            "url": "https://www.sotf.com",
+            "description": "意大利奢华街头与先锋鞋履概念买手店。"
+          },
+          {
+            "name": "The Broken Arm",
+            "url": "https://www.thebrokenarm.com",
+            "description": "巴黎时尚圈核心概念买手店"
+          },
+          {
+            "name": "Tom Greyhound",
+            "url": "https://tomgreyhound.com",
+            "description": "韩国现代集团旗下的巴黎先锋时尚买手店。"
+          },
+          {
+            "name": "KM20",
+            "url": "https://www.km20.ru",
+            "description": "莫斯科知名先锋买手店，引爆东欧高街与先锋时装风潮。"
+          },
+          {
+            "name": "Gate-194",
+            "url": "https://gate-194.com",
+            "description": "柏林暗黑先锋与工匠风格(Artisanal)概念买"
+          },
+          {
+            "name": "Darklands Berlin",
+            "url": "https://www.darklandsberlin.com",
+            "description": "全球知名暗黑工匠先锋买手店"
+          },
+          {
+            "name": "Hide M",
+            "url": "https://hidem.de",
+            "description": "德国专注于先锋皮衣、暗黑工匠与独家手工作品的小众买"
+          },
+          {
+            "name": "PNP Anti-Hero",
+            "url": "https://pnp-firenze.com",
+            "description": "佛罗伦萨先锋工匠买手店，主营 Carol"
+          },
+          {
+            "name": "Ink Hong Kong",
+            "url": "https://ink-store.com",
+            "description": "香港传奇先锋买手店，专注于极具先锋剪裁与材质实验的"
+          },
+          {
+            "name": "H Lorenzo",
+            "url": "https://www.hlorenzo.com",
+            "description": "洛杉矶先锋买手店，汇集全球前卫与高定感实验品牌。"
+          },
+          {
+            "name": "Atelier New York",
+            "url": "https://www.ateliernewyork.com",
+            "description": "纽约先锋暗黑与极简主义服装买手店。"
+          },
+          {
+            "name": "Maxfield LA",
+            "url": "https://www.maxfieldla.com",
+            "description": "洛杉矶传奇奢华古着与先锋高定买手店"
+          },
+          {
+            "name": "Restir",
+            "url": "https://www.restir.com",
+            "description": "东京港区高端先锋时尚与高科技高定概念店。"
+          },
+          {
+            "name": "Addicted Seoul",
+            "url": "https://addictedseoul.com",
+            "description": "首尔江南区先锋暗黑与先锋工匠服装买手店。"
+          },
+          {
+            "name": "Biffi Boutiques",
+            "url": "https://www.biffi.com",
+            "description": "米兰历史悠久的高端时尚买手店"
+          },
+          {
+            "name": "Selfridges Fashion",
+            "url": "https://www.selfridges.com/cat/fashion",
+            "description": "伦敦百货巨头，其 Fashion Floor"
+          },
+          {
+            "name": "Printemps Luxe",
+            "url": "https://www.printemps.com",
+            "description": "巴黎春天的奢品专区，展示法国高定与高端设计师品牌。"
+          },
+          {
+            "name": "Le Bon Marché",
+            "url": "https://www.lebonmarche.com",
+            "description": "巴黎左岸高端百货，以艺术策展式呈现奢侈品与先锋服饰"
+          },
+          {
+            "name": "Bergdorf Goodman",
+            "url": "https://www.bergdorfgoodman.com",
+            "description": "纽约第五大道老牌顶奢百货"
+          }
+        ]
+      },
+      {
+        "name": "档案馆 (81-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Grailed",
+            "url": "https://www.grailed.com",
+            "description": "全球最大的二手先锋时装、Archive"
+          },
+          {
+            "name": "Vestiaire Collective",
+            "url": "https://www.vestiairecollective.com",
+            "description": "欧洲二手奢品与 Vintage 时尚交易平台"
+          },
+          {
+            "name": "The RealReal",
+            "url": "https://www.therealreal.com",
+            "description": "美国上市二手奢侈品寄售巨头"
+          },
+          {
+            "name": "1stDibs Fashion",
+            "url": "https://www.1stdibs.com/fashion",
+            "description": "全球高端古董与 Vintage"
+          },
+          {
+            "name": "What Goes Around Comes Around (WGACA)",
+            "url": "https://www.whatgoesaroundnyc.com",
+            "description": "纽约知名 Vintage 奢品机构"
+          },
+          {
+            "name": "Resurrection Vintage",
+            "url": "https://www.resurrectionvintage.com",
+            "description": "纽约与洛杉矶传奇 Vintage 展厅"
+          },
+          {
+            "name": "Byronesque",
+            "url": "https://www.byronesque.com",
+            "description": "专门收录 80-90 年代先锋暗黑(如"
+          },
+          {
+            "name": "Archive Store Tokyo",
+            "url": "https://archivestore-tokyo.com",
+            "description": "东京涩谷地下 Archive 博物馆式买手店"
+          },
+          {
+            "name": "Middleman Store",
+            "url": "https://middlemanstore.com",
+            "description": "知名先锋男装 Archive 网站"
+          },
+          {
+            "name": "Silverwoods",
+            "url": "https://silverwoodsearch.com",
+            "description": "专注于 Helmut Lang, Raf"
+          },
+          {
+            "name": "Dotcomesoon",
+            "url": "https://dotcomesoon.com",
+            "description": "专注于收集 90 年代日本先锋设计(三宅一生"
+          },
+          {
+            "name": "Huiben Shop",
+            "url": "https://huibenshop.com",
+            "description": "严选先锋男装、工匠服装与稀有 Archive"
+          },
+          {
+            "name": "Paris Saint-Germain Vintage",
+            "url": "https://psgvintagestore.com",
+            "description": "巴黎专业古着店，专注 70-90"
+          },
+          {
+            "name": "Didier Ludot",
+            "url": "https://www.didierludot.fr",
+            "description": "巴黎皇家宫殿古苑内的传奇高定古着店"
+          },
+          {
+            "name": "Kerry Taylor Auctions",
+            "url": "https://www.kerrytaylorauctions.com",
+            "description": "伦敦拍卖行，专门拍卖皇家服饰"
+          },
+          {
+            "name": "Augusta Auctions",
+            "url": "https://www.augusta-auction.com",
+            "description": "美国专业纺织品与古着服饰拍卖行"
+          },
+          {
+            "name": "Historic Charleston Vintage",
+            "url": "https://historiccharlestonvintage.com",
+            "description": "专注于北美历史风格重构、复古工装与古董纺织品。"
+          },
+          {
+            "name": "Re-See",
+            "url": "https://www.resee.com",
+            "description": "巴黎前时尚编辑创立的高端 Vintage 平台"
+          },
+          {
+            "name": "Reluxe",
+            "url": "https://reluxefashion.com",
+            "description": "知名造型师 Clare Richardson"
+          },
+          {
+            "name": "Open24 Hours Vintage",
+            "url": "https://open24hourshop.com",
+            "description": "专注于收集 90 年代极简主义(Prada,"
+          },
+          {
+            "name": "Vintage Qoo Tokyo",
+            "url": "https://www.qoo-online.com",
+            "description": "东京著名 Chanel Vintage 收藏站"
+          },
+          {
+            "name": "Amore Vintage Tokyo",
+            "url": "https://amorevintagejapan.com",
+            "description": "东京表参道奢华古着店，藏有全球最全的"
+          },
+          {
+            "name": "Ragtag Japan",
+            "url": "https://www.ragtag.jp",
+            "description": "日本二手设计师品牌巨头，涵盖几乎所有日本与欧洲先锋"
+          },
+          {
+            "name": "KOMEHYO (米兵)",
+            "url": "https://komehyo.jp",
+            "description": "日本历史悠久且庞大的二手奢侈品与古着珠宝鉴定交易平"
+          },
+          {
+            "name": "Brandear Japan",
+            "url": "https://brandear.jp",
+            "description": "日本大型二手奢侈品回收与销售平台，库存量极大。"
+          },
+          {
+            "name": "2nd Street Japan",
+            "url": "https://www.2ndstreet.jp",
+            "description": "日本知名连锁古着综合店，含有海量日本本土潮牌与先锋"
+          },
+          {
+            "name": "Sekai-mon (World Door)",
+            "url": "https://www.sekaimon.com",
+            "description": "连接日本买家与全球稀有 Vintage"
+          },
+          {
+            "name": "Vintage Fashion Guild (VFG)",
+            "url": "https://vintagefashionguild.org",
+            "description": "古着时尚公会，提供权威的古着品牌 Label"
+          },
+          {
+            "name": "Decades Inc.",
+            "url": "https://www.decadesinc.com",
+            "description": "洛杉矶传奇 Vintage 店"
+          },
+          {
+            "name": "Lily et Cie",
+            "url": "https://www.lilyetcie.com",
+            "description": "比佛利山庄顶级古着店，藏有数万件博物馆级高级定制服"
+          },
+          {
+            "name": "Cherish Vintage",
+            "url": "https://cherishvintage.com",
+            "description": "专注于 20 世纪初至 70"
+          },
+          {
+            "name": "Pechuga Vintage",
+            "url": "https://pechugavintage.com",
+            "description": "知名 Vivienne Westwood"
+          },
+          {
+            "name": "Tunell Vintage",
+            "url": "https://tunellvintage.com",
+            "description": "欧洲独立古着机构，专注于 80"
+          },
+          {
+            "name": "Vintage Clothing Gallery",
+            "url": "https://www.vintageclothinggallery.com",
+            "description": "展示欧洲维多利亚时期至爱德华时期古董衣的数字画廊。"
+          },
+          {
+            "name": "Wayward Collection",
+            "url": "https://waywardcollection.com",
+            "description": "严选 20 世纪高定服装"
+          },
+          {
+            "name": "The Vintage Twin",
+            "url": "https://thevintagetwin.com",
+            "description": "纽约改造古着与复古牛仔裤定制的潮流古着站。"
+          },
+          {
+            "name": "Beyond Retro",
+            "url": "https://www.beyondretro.com",
+            "description": "英国大型复古古着连锁品牌"
+          },
+          {
+            "name": "Rokit Vintage",
+            "url": "https://www.rokit.co.uk",
+            "description": "伦敦老牌古着店，主打亚文化、摇滚风格与复古运动服。"
+          },
+          {
+            "name": "Thrifted.com",
+            "url": "https://www.thrifted.com",
+            "description": "欧洲知名在线 Thrift 店"
+          },
+          {
+            "name": "Brick Vintage",
+            "url": "https://www.brickvintage.com",
+            "description": "英国专注于 50-80 年代复古印花与年代感服装的"
+          }
+        ]
+      },
+      {
+        "name": "时尚博物馆 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "The Met Costume Institute",
+            "url": "https://www.metmuseum.org/prime-topics/costume-institute",
+            "description": "纽约大都会艺术博物馆服装学院"
+          },
+          {
+            "name": "FIT Museum Collection",
+            "url": "https://fashionmuseum.fitnyc.edu",
+            "description": "纽约时尚理工学院(FIT)博物馆"
+          },
+          {
+            "name": "V&A Fashion Collection",
+            "url": "https://www.vam.ac.uk/collections/fashion",
+            "description": "伦敦维多利亚与艾尔伯特博物馆"
+          },
+          {
+            "name": "Palais Galliera",
+            "url": "https://www.palaisgalliera.paris.fr",
+            "description": "巴黎市立时尚博物馆，记录法国高定历史"
+          },
+          {
+            "name": "Musée Yves Saint Laurent Paris",
+            "url": "https://museeyslparis.com",
+            "description": "伊夫·圣罗兰巴黎博物馆，展示 YSL 大师手稿"
+          },
+          {
+            "name": "Dior Heritage (La Galerie Dior)",
+            "url": "https://www.galeriedior.com",
+            "description": "迪奥展廊，展示 1947 年 New Look"
+          },
+          {
+            "name": "Gucci Osteria & Garden (Gucci Archive)",
+            "url": "https://www.gucci.com/us/en/st/stories/inspirations-and-codes",
+            "description": "古驰品牌档案馆与历史基因编码在线展示平台。"
+          },
+          {
+            "name": "Ferragamo Museum",
+            "url": "https://www.ferragamo.com/museo/en",
+            "description": "菲拉格慕博物馆，藏有大量 20"
+          },
+          {
+            "name": "Cristóbal Balenciaga Museoa",
+            "url": "https://www.cristobalbalenciagamuseoa.com",
+            "description": "巴伦西亚加官方博物馆，展示“高级定制建筑师”"
+          },
+          {
+            "name": "ModeMuseum Antwerp (MoMu)",
+            "url": "https://www.momu.be",
+            "description": "安特卫普时尚博物馆，安特卫普六君子("
+          },
+          {
+            "name": "Kyoto Costume Institute (KCI)",
+            "url": "https://www.kci.or.jp",
+            "description": "京都服饰文化研究财团，东西方服饰交融与西方服装历史"
+          },
+          {
+            "name": "Kobe Fashion Museum",
+            "url": "https://www.fashionmuseum.jp",
+            "description": "日本神户时尚博物馆，汇集全球纺织品"
+          },
+          {
+            "name": "Bata Shoe Museum",
+            "url": "https://batashoemuseum.ca",
+            "description": "多伦多巴塔鞋履博物馆，收藏人类历史上数万双跨越时空"
+          },
+          {
+            "name": "Museum of Fashion (Guimet/Galliera)",
+            "url": "https://www.parismusees.paris.fr",
+            "description": "巴黎各大市立博物馆联合时尚资源库。"
+          },
+          {
+            "name": "McCord Stewart Museum Costume",
+            "url": "https://www.musee-mccord-stewart.ca/en/collections/costume-fashion",
+            "description": "加拿大麦考德博物馆，专注于北美民俗服饰与 19"
+          },
+          {
+            "name": "Europeana Fashion",
+            "url": "https://www.europeana.eu/en/collections/topic/46-fashion",
+            "description": "欧洲数字图书馆时尚专题，汇集全欧洲数十家博物馆的服"
+          },
+          {
+            "name": "Fashion Institute of Design & Merchandising (FIDM) Museum",
+            "url": "https://fidmmuseum.org",
+            "description": "洛杉矶 FIDM 博物馆"
+          },
+          {
+            "name": "RISD Museum Costume and Textiles",
+            "url": "https://risdmuseum.org/art-design/collection/costume-and-textiles",
+            "description": "罗德岛设计学院博物馆，以高水准的织物结构与先锋服装"
+          },
+          {
+            "name": "Kent State University Museum",
+            "url": "https://www.kent.edu/museum",
+            "description": "肯特州立大学博物馆，拥有庞大的 20"
+          },
+          {
+            "name": "Centraal Museum Utrecht Fashion",
+            "url": "https://www.centraalmuseum.nl/en",
+            "description": "荷兰中央博物馆，以收藏 Viktor &"
+          },
+          {
+            "name": "National Gallery of Victoria (NGV) Fashion",
+            "url": "https://www.ngv.vic.gov.au/explore/collection/management/fashion-and-textiles",
+            "description": "墨尔本 NGV 博物馆，拥有出色的当代先锋高定与国"
+          },
+          {
+            "name": "Texas Fashion Collection (TFC)",
+            "url": "https://tfc.unt.edu",
+            "description": "北德克萨斯大学时尚收藏库"
+          },
+          {
+            "name": "Indianapolis Museum of Art Fashion",
+            "url": "https://discovernewfields.org/art/collections/fashion-arts",
+            "description": "印第安纳波利斯艺术博物馆"
+          },
+          {
+            "name": "Phoenix Art Museum Fashion Design",
+            "url": "https://phxart.org/art/collections/fashion-design",
+            "description": "菲尼克斯艺术博物馆，展示极具现代感的时装工程与高定"
+          },
+          {
+            "name": "Goldstein Museum of Design",
+            "url": "https://gmd.cdes.umn.edu",
+            "description": "明尼苏达大学戈德斯坦设计博物馆，关注日常服装"
+          },
+          {
+            "name": "Drexel Digital Museum Fashion Events",
+            "url": "https://www.drexel.edu/westphal/resources/digital-museum",
+            "description": "德雷塞尔大学时尚数字博物馆"
+          },
+          {
+            "name": "Museum of Applied Arts and Sciences (MAAS) Fashion",
+            "url": "https://maas.museum/fashion",
+            "description": "悉尼应用艺术与科学博物馆"
+          },
+          {
+            "name": "Design Museum London Fashion",
+            "url": "https://designmuseum.org/exhibitions/fashion",
+            "description": "伦敦设计博物馆时尚专栏，探讨现代服装工程"
+          },
+          {
+            "name": "Cooper Hewitt Smithsonian Design Museum",
+            "url": "https://www.cooperhewitt.org",
+            "description": "史密森尼库珀·休伊特设计博物馆，专注于图案设计"
+          },
+          {
+            "name": "Museum of Arts and Design (MAD) Textiles",
+            "url": "https://madmuseum.org",
+            "description": "纽约艺术与设计博物馆，聚焦手工面料"
+          },
+          {
+            "name": "Costume Society of America (CSA)",
+            "url": "https://costumesocietyamerica.com",
+            "description": "美国服装学会，发布服装史研究论文"
+          },
+          {
+            "name": "Costume Society UK",
+            "url": "https://costumesociety.org.uk",
+            "description": "英国服装学会，专注于英国及欧洲纺织品与服装历史保护"
+          },
+          {
+            "name": "Fashion History Timeline (FIT)",
+            "url": "https://fashionhistory.fitnyc.edu",
+            "description": "FIT 打造的开源时尚史时间线"
+          },
+          {
+            "name": "Commercial Pattern Archive (CoPA)",
+            "url": "https://copa.uri.edu",
+            "description": "罗德岛大学商业版型档案馆"
+          },
+          {
+            "name": "Textile Museum Washington D.C.",
+            "url": "https://museum.gwu.edu",
+            "description": "华盛顿纺织品博物馆，藏有全球古老地毯"
+          },
+          {
+            "name": "Threads Magazine",
+            "url": "https://www.threadsmagazine.com",
+            "description": "专业高级裁缝、高级定制版型与缝纫工艺深度技术杂志。"
+          },
+          {
+            "name": "University of Fashion",
+            "url": "https://www.universityoffashion.com",
+            "description": "涵盖立裁、平面打版、时装画与高级缝纫工艺的在线教育"
+          },
+          {
+            "name": "Fashion Era History",
+            "url": "https://www.fashion-era.com",
+            "description": "详尽记录维多利亚时期、爱德华时期及 20"
+          },
+          {
+            "name": "We Wear Culture (Google Arts & Culture)",
+            "url": "https://artsandculture.google.com/project/fashion",
+            "description": "谷歌艺术与文化“时尚视角”"
+          },
+          {
+            "name": "Catwalk to Collection Archive",
+            "url": "https://www.catwalktocollection.com",
+            "description": "对比分析秀场样衣与最终商业量产版演变过程的学术档案"
+          }
+        ]
+      },
+      {
+        "name": "工匠先锋 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Maison Margiela Official",
+            "url": "https://www.maisonmargiela.com",
+            "description": "解构主义宗师品牌官网，展示 Artisanal"
+          },
+          {
+            "name": "Rick Owens Official",
+            "url": "https://www.rickowens.eu",
+            "description": "暗黑哥特与野兽派建筑美学宗师 Rick"
+          },
+          {
+            "name": "Comme des Garçons Official",
+            "url": "https://www.comme-des-garcons.com",
+            "description": "川久保玲的反叛帝国，展现挑战传统服装形态的实验性作"
+          },
+          {
+            "name": "Yohji Yamamoto Official",
+            "url": "https://www.yohjiyamamoto.co.jp",
+            "description": "山本耀司官方网站，诠释黑色诗意"
+          },
+          {
+            "name": "Ann Demeulemeester",
+            "url": "https://www.anndemeulemeester.com",
+            "description": "安特卫普六君子之一，主打浪漫哥特"
+          },
+          {
+            "name": "Dries Van Noten",
+            "url": "https://www.driesvannoten.com",
+            "description": "印花与色彩大师，将印花工艺与考究剪裁发挥到极致。"
+          },
+          {
+            "name": "Carol Christian Poell (CCP) Knowledge base",
+            "url": "https://www.carolchristianpoell.com",
+            "description": "神级工匠先锋设计师 CCP"
+          },
+          {
+            "name": "Boris Bidjan Saberi",
+            "url": "https://www.borisbidjansaberi.com",
+            "description": "融合巴塞罗那解构主义、游牧风格与复杂染色工艺的先锋"
+          },
+          {
+            "name": "Label Under Construction (LUC)",
+            "url": "https://www.labelunderconstruction.com",
+            "description": "Luca Laurini 创立的针织工匠品牌"
+          },
+          {
+            "name": "M.A.+ (Maurizio Amadei)",
+            "url": "https://www.m-a-plus.com",
+            "description": "C-Diem 核心成员 Maurizio"
+          },
+          {
+            "name": "Paul Harnden Shoemakers",
+            "url": "https://www.paulharndenshoemakers.com",
+            "description": "隐世英国工匠大师，以 19"
+          },
+          {
+            "name": "Elena Dawson",
+            "url": "https://www.elenadawson.co.uk",
+            "description": "英国独立先锋设计师，主打未锁边raw-edge"
+          },
+          {
+            "name": "Ziggy Chen",
+            "url": "https://www.ziggychen.com",
+            "description": "中国先锋设计师陈翔的品牌"
+          },
+          {
+            "name": "Uma Wang",
+            "url": "https://www.umawang.com",
+            "description": "先锋设计师王汁，以自研面料"
+          },
+          {
+            "name": "Yang Li",
+            "url": "https://www.yangli.eu",
+            "description": "暗黑与哥特摇滚剪裁，结合数字艺术与先锋音乐的美学品"
+          },
+          {
+            "name": "Guidi Official",
+            "url": "https://www.guidi.it",
+            "description": "创立于 1896 年的意大利皮具工匠小屋"
+          },
+          {
+            "name": "Isaac Sellam Experience",
+            "url": "https://www.isaacsellam.com",
+            "description": "巴黎皮革先锋实验品牌，以金属定制扣件与超前皮衣剪裁"
+          },
+          {
+            "name": "Taichi Murakami",
+            "url": "https://taichimurakami.com",
+            "description": "日本先锋设计师，独立研发极小众高科技金属面料与立体"
+          },
+          {
+            "name": "Geoffrey B. Small",
+            "url": "https://www.geoffreybsmall.com",
+            "description": "手工缝制与可持续工匠奢品先驱"
+          },
+          {
+            "name": "Jan-Jan Van Essche",
+            "url": "https://www.janjanvanessche.com",
+            "description": "安特卫普先锋设计师，主打无缝线宽松轮廓"
+          },
+          {
+            "name": "Kiko Kostadinov",
+            "url": "https://kikokostadinov.com",
+            "description": "保加利亚先锋设计师，主打高级工作服结构"
+          },
+          {
+            "name": "Craig Green",
+            "url": "https://www.craiggreen.com",
+            "description": "伦敦男装大师，以雕塑感铠甲造型"
+          },
+          {
+            "name": "Marine Serre",
+            "url": "https://marineserre.com",
+            "description": "以新月标志闻名的法国先锋品牌"
+          },
+          {
+            "name": "Y/Project",
+            "url": "https://yproject.fr",
+            "description": "以极高难度的变体剪裁、多穿式结构与解构牛仔闻名的巴"
+          },
+          {
+            "name": "Peter Do",
+            "url": "https://peterdo.net",
+            "description": "继承 Old Celine"
+          },
+          {
+            "name": "Coperni",
+            "url": "https://coperni.fr",
+            "description": "将前沿科技(如喷雾织物衣服"
+          },
+          {
+            "name": "Ottolinger",
+            "url": "https://www.ottolinger.com",
+            "description": "柏林先锋女装，以火烧处理"
+          },
+          {
+            "name": "Eckhaus Latta",
+            "url": "https://eckhauslatta.com",
+            "description": "纽约先锋艺术品牌，打破性别界限"
+          },
+          {
+            "name": "Charles Jeffrey LOVERBOY",
+            "url": "https://charlesjeffreyloverboy.com",
+            "description": "伦敦夜店文化与苏格兰格子呢结合的狂野先锋设计。"
+          },
+          {
+            "name": "Stefan Cooke",
+            "url": "https://stefancooke.co.uk",
+            "description": "专注于男装表面肌理再造、镂空与古着图案重构的伦敦品"
+          },
+          {
+            "name": "Martine Rose",
+            "url": "https://martine-rose.com",
+            "description": "伦敦先锋男装，将 90 年代亚文化"
+          },
+          {
+            "name": "Wales Bonner",
+            "url": "https://walesbonner.net",
+            "description": "融合牙买加文化、欧洲考究定制剪裁与文学底蕴的高端设"
+          },
+          {
+            "name": "Post Archive Faction (PAF)",
+            "url": "https://postarchivefaction.com",
+            "description": "韩国先锋机能品牌，按 1.0"
+          },
+          {
+            "name": "Hyein Seo",
+            "url": "https://hyeinseo.com",
+            "description": "首尔机能反叛女装品牌，主打反乌托邦亚文化与绑带结构"
+          },
+          {
+            "name": "Rokh",
+            "url": "https://rokh.com",
+            "description": "解构经典风衣与解构礼服的新锐品牌"
+          },
+          {
+            "name": "Conner Ives",
+            "url": "https://www.connerives.com",
+            "description": "主打全 Vintage 旧衣回收再造("
+          },
+          {
+            "name": "Chopova Lowena",
+            "url": "https://chopovalowena.com",
+            "description": "融合保加利亚传统民俗百褶裙"
+          },
+          {
+            "name": "Cecile Bahnsen",
+            "url": "https://cecilibahnsen.com",
+            "description": "哥本哈根高端女装，以超轻盈云朵面料"
+          },
+          {
+            "name": "Simone Rocha",
+            "url": "https://simonerocha.com",
+            "description": "将珍珠、薄纱、维多利亚宫廷暗黑与少女感完美结合的独"
+          },
+          {
+            "name": "Noir Kei Ninomiya (Comme des Garçons)",
+            "url": "https://www.instagram.com/noirkeininomiya",
+            "description": "川久保玲弟子二宫启创办，无缝线"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑪𝑜𝑢𝑡𝑢𝑟𝑒 𝑨𝑟𝑐𝑕𝑖𝑣𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

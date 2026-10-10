@@ -1,0 +1,1388 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="播客平台、音频节目、访谈内容与声音媒体导航">
+<title>播客网站 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>播客网站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">播客网站 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "播客网站",
+    "icon": "🎙️",
+    "color": "linear-gradient(135deg, #74b9ff, #a29bfe)",
+    "subcategories": [
+      {
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com",
+            "description": "苹果官方播客平台，全球最大的播客目录与分发生态之一"
+          },
+          {
+            "name": "Spotify for Podcasts",
+            "url": "https://podcasters.spotify.com",
+            "description": "全球最大的音乐与播客流媒体平台"
+          },
+          {
+            "name": "Google Podcasts (Archive)",
+            "url": "https://podcasts.google.com",
+            "description": "谷歌官方播客整合服务(现已逐步迁移整合至"
+          },
+          {
+            "name": "YouTube Music Podcasts",
+            "url": "https://music.youtube.com",
+            "description": "谷歌旗下支持视频与纯音频无缝切换的综合播客与音乐流"
+          },
+          {
+            "name": "Amazon Music / Audible Podcasts",
+            "url": "https://music.amazon.com/podcasts",
+            "description": "亚马逊旗下结合音频与有声书的播客服务"
+          },
+          {
+            "name": "Pocket Casts",
+            "url": "https://pocketcasts.com",
+            "description": "全球发烧友极力推荐的跨平台高级播客播放器"
+          },
+          {
+            "name": "Overcast",
+            "url": "https://overcast.fm",
+            "description": "专为iOS打造的传奇级播客客户端"
+          },
+          {
+            "name": "Castro",
+            "url": "https://castro.fm",
+            "description": "专注于“收件箱管理机制”的创新型iOS播客客户端"
+          },
+          {
+            "name": "Downcast",
+            "url": "https://www.downcastapp.com",
+            "description": "历史悠久且功能极其强大全面的专业级跨平台播客下载与"
+          },
+          {
+            "name": "AntennaPod",
+            "url": "https://antennapod.org",
+            "description": "免费且完全开源的 Android 播客客户端"
+          },
+          {
+            "name": "Player FM",
+            "url": "https://player.fm",
+            "description": "强大的多终端网页版及移动端播客播放器"
+          },
+          {
+            "name": "Castbox",
+            "url": "https://castbox.fm",
+            "description": "著名的流媒体播客平台，支持应用内人声搜索"
+          },
+          {
+            "name": "Podbean",
+            "url": "https://www.podbean.com",
+            "description": "全球领先的专业播客托管服务商与播客分发平台"
+          },
+          {
+            "name": "Libsyn",
+            "url": "https://libsyn.com",
+            "description": "创立于2004年的老牌专业播客托管与发布平台"
+          },
+          {
+            "name": "Buzzsprout",
+            "url": "https://www.buzzsprout.com",
+            "description": "界面极佳且易于上手的播客托管平台"
+          },
+          {
+            "name": "Anchor (by Spotify)",
+            "url": "https://anchor.fm",
+            "description": "Spotify 旗下的免费播客创建与发布平台"
+          },
+          {
+            "name": "Transistor",
+            "url": "https://transistor.fm",
+            "description": "专为专业创作者、企业与品牌打造的高品质播客托管与数"
+          },
+          {
+            "name": "Simplecast",
+            "url": "https://simplecast.com",
+            "description": "著名的企业级播客托管平台"
+          },
+          {
+            "name": "Captivate",
+            "url": "https://www.captivate.fm",
+            "description": "专为增长型创作者设计的播客托管平台"
+          },
+          {
+            "name": "Acast",
+            "url": "https://www.acast.com",
+            "description": "全球知名的独立播客托管与广告变现网络"
+          },
+          {
+            "name": "Blubrry",
+            "url": "https://blubrry.com",
+            "description": "结合 WordPress"
+          },
+          {
+            "name": "RSS.com",
+            "url": "https://rss.com",
+            "description": "经典且操作简便的播客托管服务，提供无限存储"
+          },
+          {
+            "name": "RedCircle",
+            "url": "https://redcircle.com",
+            "description": "专为独立播客创作者打造的托管与变现平台"
+          },
+          {
+            "name": "Megaphone (by Spotify)",
+            "url": "https://www.megaphone.spotify.com",
+            "description": "专为大型出版商和顶级播客网打造的企业级播客发布与插"
+          },
+          {
+            "name": "Podomatic",
+            "url": "https://www.podomatic.com",
+            "description": "创立悠久的个人播客托管社区"
+          },
+          {
+            "name": "Omny Studio",
+            "url": "https://omnystudio.com",
+            "description": "专注于广播电台及大型传媒机构的企业级播客管理与专业"
+          },
+          {
+            "name": "Spreaker",
+            "url": "https://www.spreaker.com",
+            "description": "iHeartMedia 旗下的播客托管与实时音频直"
+          },
+          {
+            "name": "Sounder.fm",
+            "url": "https://www.sounder.fm",
+            "description": "基于 AI 驱动的播客音频内容分析"
+          },
+          {
+            "name": "Soundcloud Podcasts",
+            "url": "https://soundcloud.com",
+            "description": "著名音乐分享平台提供的 RSS 播客托管服务"
+          },
+          {
+            "name": "Firstory",
+            "url": "https://firstory.me",
+            "description": "华语圈极其流行的自动化播客托管平台"
+          },
+          {
+            "name": "SoundOn (声浪)",
+            "url": "https://www.soundon.fm",
+            "description": "台湾知名的播客托管与广告媒合平台"
+          },
+          {
+            "name": "Xiaoyuzhou (小宇宙 App)",
+            "url": "https://www.xiaoyuzhoufm.com",
+            "description": "中国极具影响力的中文播客社区平台"
+          },
+          {
+            "name": "Ximalaya Podcasts (喜马拉雅)",
+            "url": "https://www.ximalaya.com",
+            "description": "中国最大的综合音频平台，包含大量优质独家播客"
+          },
+          {
+            "name": "Lizhi FM (荔枝FM)",
+            "url": "https://www.lizhi.fm",
+            "description": "中国知名的声音互动与播客社区"
+          },
+          {
+            "name": "NetEase Cloud Music Podcasts (网易云音乐播客)",
+            "url": "https://music.163.com",
+            "description": "网易云音乐旗下的播客频道"
+          },
+          {
+            "name": "FM Qingting (蜻蜓FM)",
+            "url": "https://www.qingting.fm",
+            "description": "中国老牌网络音频电台与播客平台，涵盖文化文化"
+          },
+          {
+            "name": "Apple Podcasts for Creators",
+            "url": "https://podcasters.apple.com",
+            "description": "苹果官方创作者后台，用于提交节目"
+          },
+          {
+            "name": "Podchaser",
+            "url": "https://www.podchaser.com",
+            "description": "被称为“播客界的IMDb”"
+          },
+          {
+            "name": "Listen Notes",
+            "url": "https://www.listennotes.com",
+            "description": "全球最强大的播客搜索引擎"
+          },
+          {
+            "name": "Podnews",
+            "url": "https://podnews.net",
+            "description": "全球播客与新闻音频行业的每日权威资讯简报与技术前沿"
+          },
+          {
+            "name": "Chartable",
+            "url": "https://chartable.com",
+            "description": "著名的播客数据分析与排名追踪网"
+          },
+          {
+            "name": "Podtrac",
+            "url": "https://www.podtrac.com",
+            "description": "权威的播客测量与行业数据评估公司"
+          },
+          {
+            "name": "Podindex (Podcast Index)",
+            "url": "https://podcastindex.org",
+            "description": "倡导开放播客生态系统的"
+          },
+          {
+            "name": "NPR Podcasts",
+            "url": "https://www.npr.org/podcasts",
+            "description": "美国全国公共广播电台官方播客门户"
+          },
+          {
+            "name": "BBC Sounds",
+            "url": "https://www.bbc.co.uk/sounds",
+            "description": "英国广播公司(BBC)官方音频平台"
+          },
+          {
+            "name": "WNYC Studios",
+            "url": "https://www.wnycstudios.org",
+            "description": "纽约知名公共广播机构旗下的顶级播客制作中心"
+          },
+          {
+            "name": "The New York Times Audio",
+            "url": "https://www.nytimes.com/spotlight/podcasts",
+            "description": "纽约时报官方播客频道，包含全球现象级新闻播客《"
+          },
+          {
+            "name": "TED Audio Collective",
+            "url": "https://www.ted.com/podcasts",
+            "description": "TED 官方播客节目网络"
+          },
+          {
+            "name": "Gimlet Media (by Spotify)",
+            "url": "https://gimletmedia.com",
+            "description": "著名叙事型故事播客制作公司"
+          },
+          {
+            "name": "Wondery",
+            "url": "https://wondery.com",
+            "description": "亚马逊旗下的高级播客网，以引人入胜的真实犯罪"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "iHeartPodcasts",
+            "url": "https://www.iheart.com/podcast",
+            "description": "北美最大的广播与音频网络之一"
+          },
+          {
+            "name": "Slate Podcasts",
+            "url": "https://slate.com/podcasts",
+            "description": "著名线上杂志 Slate 旗下的政治"
+          },
+          {
+            "name": "Vox Media Podcast Network",
+            "url": "https://www.vox.com/podcasts",
+            "description": "Vox 旗下的解释型新闻与科技播客网络"
+          },
+          {
+            "name": "The Ringer Podcast Network",
+            "url": "https://www.theringer.com/podcasts",
+            "description": "Bill Simmons 创办的体育"
+          },
+          {
+            "name": "Pushkin Industries",
+            "url": "https://www.pushkin.fm",
+            "description": "著名作家 Malcolm Gladwell"
+          },
+          {
+            "name": "Radiotopia (by PRX)",
+            "url": "https://www.radiotopia.fm",
+            "description": "知名独立播客公社，汇聚《99%"
+          },
+          {
+            "name": "Crooked Media",
+            "url": "https://crooked.com",
+            "description": "由前白宫幕僚创办的政治与社会文化播客网络"
+          },
+          {
+            "name": "Earwolf",
+            "url": "https://www.earwolf.com",
+            "description": "专注于喜剧与幽默访谈的著名播客网络"
+          },
+          {
+            "name": "Eostre / Exactly Right Media",
+            "url": "https://exactlyrightmedia.com",
+            "description": "专注于真实犯罪与喜剧领域的播客网"
+          },
+          {
+            "name": "Headgum",
+            "url": "https://headgum.com",
+            "description": "著名的喜剧、生活与科技主题独立播客网络及技术分发平"
+          },
+          {
+            "name": "Maximum Fun",
+            "url": "https://maximumfun.org",
+            "description": "听众资助型的独立喜剧与流行文化播客合作社"
+          },
+          {
+            "name": "BBC World Service Podcasts",
+            "url": "https://www.bbc.co.uk/programmes/p02nq0gn/podcasts",
+            "description": "BBC 世界频道提供的全球新闻"
+          },
+          {
+            "name": "CBC Podcasts",
+            "url": "https://www.cbc.ca/podcasts",
+            "description": "加拿大广播公司官方播客门户"
+          },
+          {
+            "name": "ABC Listen (Australia)",
+            "url": "https://www.abc.net.au/listen",
+            "description": "澳大利亚广播公司官方音频平台"
+          },
+          {
+            "name": "Serial Podcast",
+            "url": "https://serialpodcast.org",
+            "description": "引爆现代非虚构纪实播客热潮的传奇犯罪调查播客《"
+          },
+          {
+            "name": "99% Invisible",
+            "url": "https://99percentinvisible.org",
+            "description": "探讨设计、建筑及日常生活中隐形力量的传奇设计类播客"
+          },
+          {
+            "name": "Radiolab",
+            "url": "https://radiolab.org",
+            "description": "结合深邃科学、哲学与极具前卫音频剪辑艺术的顶尖叙事"
+          },
+          {
+            "name": "The Joe Rogan Experience",
+            "url": "https://www.joerogan.com",
+            "description": "全球播放量最高的访谈类播客之一，涵盖科技、运动"
+          },
+          {
+            "name": "Huberman Lab",
+            "url": "https://www.hubermanlab.com",
+            "description": "斯坦福大学神经生物学教授 Andrew"
+          },
+          {
+            "name": "The Tim Ferriss Show",
+            "url": "https://tim.blog/podcast",
+            "description": "《每周工作4小时》作者主持的访谈播客"
+          },
+          {
+            "name": "Lex Fridman Podcast",
+            "url": "https://lexfridman.com/podcast",
+            "description": "麻省理工研究员主持的深度访谈播客，探讨人工智能"
+          },
+          {
+            "name": "Freakonomics Radio",
+            "url": "https://freakonomics.com",
+            "description": "《魔鬼经济学》作者主持的播客"
+          },
+          {
+            "name": "Stuff You Should Know",
+            "url": "https://www.iheart.com/podcast/105-stuff-you-should-know-26940263",
+            "description": "经典科普播客，用通俗幽默的语言解释从黑洞到口香糖的"
+          },
+          {
+            "name": "Planet Money (NPR)",
+            "url": "https://www.npr.org/sections/money",
+            "description": "NPR 旗下最成功的解释型经济学播客"
+          },
+          {
+            "name": "Hard Fork (NYT)",
+            "url": "https://www.nytimes.com/column/hard-fork",
+            "description": "纽约时报旗下探讨硅谷前沿科技"
+          },
+          {
+            "name": "Acquired",
+            "url": "https://www.acquired.fm",
+            "description": "商业科技领域顶流播客，深度拆解苹果、英伟达"
+          },
+          {
+            "name": "Darknet Diaries",
+            "url": "https://darknetdiaries.com",
+            "description": "极具戏剧性的网络安全播客，讲述黑客"
+          },
+          {
+            "name": "Software Engineering Daily",
+            "url": "https://softwareengineeringdaily.com",
+            "description": "专注于软件工程、架构设计与后端技术的硬核技术访谈播"
+          },
+          {
+            "name": "Syntax.fm",
+            "url": "https://syntax.fm",
+            "description": "著名 Web 开发者 Wes Bos 与"
+          },
+          {
+            "name": "The Changelog",
+            "url": "https://changelog.com",
+            "description": "专注于开源软件、软件开发与现代编程文化的播客网络与"
+          },
+          {
+            "name": "Design Matters with Debbie Millman",
+            "url": "https://www.debbiemillman.com/designmatters",
+            "description": "全球首个设计类播客，深度访谈顶尖设计师"
+          },
+          {
+            "name": "Song Exploder",
+            "url": "https://songexploder.net",
+            "description": "著名的音乐拆解播客，邀请知名音乐人将自己的热门单曲"
+          },
+          {
+            "name": "On Being",
+            "url": "https://onbeing.org",
+            "description": "探讨人生终极问题、精神信仰与人类存在意义的公共哲理"
+          },
+          {
+            "name": "Philosophilize This!",
+            "url": "https://www.philosophizethis.org",
+            "description": "适合所有人的哲学入门播客"
+          },
+          {
+            "name": "Dan Carlin's Hardcore History",
+            "url": "https://www.dancarlin.com/hardcore-history-series",
+            "description": "现象级史诗历史播客，主讲人以数小时的长卷式戏剧化叙"
+          },
+          {
+            "name": "Revolutions",
+            "url": "https://thehistoryofrome.typepad.com/revolutions_podcast",
+            "description": "著名历史播客主 Mike Duncan"
+          },
+          {
+            "name": "The History of Rome",
+            "url": "https://thehistoryofrome.typepad.com",
+            "description": "历史类播客的开山鼻祖之一"
+          },
+          {
+            "name": "Stuff You Missed in History Class",
+            "url": "https://www.iheart.com/podcast/stuff-you-missed-in-history-cla-21122437",
+            "description": "专关注历史上被主流教科书遗忘的奇人异事与冷门历史事"
+          },
+          {
+            "name": "SmartLess",
+            "url": "https://www.smartless.com",
+            "description": "由 Jason Bateman"
+          },
+          {
+            "name": "How Did This Get Made?",
+            "url": "https://www.hdtgmpodcast.com",
+            "description": "著名喜剧电影吐槽播客，专门剖析和爆笑调侃影史烂片。"
+          },
+          {
+            "name": "Filmspotting",
+            "url": "https://www.filmspotting.net",
+            "description": "芝加哥老牌电影评论与影迷探讨播客"
+          },
+          {
+            "name": "Kermode and Mayo's Takes",
+            "url": "https://www.take-pod.com",
+            "description": "英国知名影评人 Mark Kermode"
+          },
+          {
+            "name": "Scriptnotes",
+            "url": "https://johnaugust.com/scriptnotes",
+            "description": "好莱坞资深编剧 John August 与"
+          },
+          {
+            "name": "The Daily Stoic",
+            "url": "https://dailystoic.com/podcast",
+            "description": "结合斯多葛哲学与现代生活的每日正念与人生智慧播客。"
+          },
+          {
+            "name": "On Purpose with Jay Shetty",
+            "url": "https://jayshetty.me/podcast",
+            "description": "前僧侣 Jay Shetty 主持的心理健康"
+          },
+          {
+            "name": "Mind Pump",
+            "url": "https://mindpumpmedia.com",
+            "description": "打破健身迷思的专业健身、营养与体能训练科普播客。"
+          },
+          {
+            "name": "The Peter Attia Drive",
+            "url": "https://peterattiamd.com/podcast",
+            "description": "知名医学博士 Peter Attia"
+          },
+          {
+            "name": "BBC 6 Minute English",
+            "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english",
+            "description": "全球英语学习者必备的6分钟短小精悍的实用英语学习播"
+          },
+          {
+            "name": "All Ears English",
+            "url": "https://www.allearsenglish.com",
+            "description": "专注真实美语对话、文化交流与雅思备考的高能量英语教"
+          },
+          {
+            "name": "Luke’s English Podcast",
+            "url": "https://teacherluke.co.uk",
+            "description": "英国资深教师与脱口秀演员 Luke"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Riverside.fm",
+            "url": "https://riverside.fm",
+            "description": "全球顶尖的云端远程高码率(4K视频/无损音频)播客"
+          },
+          {
+            "name": "Zencastr",
+            "url": "https://zencastr.com",
+            "description": "专业的云端多轨道远程音频/视频播客录制与 AI"
+          },
+          {
+            "name": "Descript",
+            "url": "https://www.descript.com",
+            "description": "突破性的“基于文本编辑音频”的 AI"
+          },
+          {
+            "name": "SquadCast (by Descript)",
+            "url": "https://squadcast.fm",
+            "description": "专注于高保真远程音频录制且内置云端备份的播客创作者"
+          },
+          {
+            "name": "Audacity",
+            "url": "https://www.audacityteam.org",
+            "description": "全球最流行、完全免费且开源的跨平台音频录制与编辑软"
+          },
+          {
+            "name": "Hindenburg Journalist",
+            "url": "https://hindenburg.com",
+            "description": "专为播客主、新闻记者与广播制作人设计的专业级音频剪"
+          },
+          {
+            "name": "Adobe Podcast (Enhance Speech)",
+            "url": "https://podcast.adobe.com",
+            "description": "包含强大的 AI 免费人声降噪与音频增强功能的在线"
+          },
+          {
+            "name": "Auphonic",
+            "url": "https://auphonic.com",
+            "description": "自动化的音频后期处理云服务，提供自动响度平衡"
+          },
+          {
+            "name": "Podcastle",
+            "url": "https://podcastle.ai",
+            "description": "基于 AI 的全功能播客创作平台，支持语音合成"
+          },
+          {
+            "name": "Cleanvoice AI",
+            "url": "https://cleanvoice.ai",
+            "description": "自动剪除音频中“嗯、啊”口头禅"
+          },
+          {
+            "name": "Headliner",
+            "url": "https://www.headliner.app",
+            "description": "快速将播客音频转换为适合社交媒体("
+          },
+          {
+            "name": "Wavve",
+            "url": "https://wavve.co",
+            "description": "将播客音频片段转化为动态波形图与文字字幕视频的营销"
+          },
+          {
+            "name": "PodSqueeze",
+            "url": "https://podsqueeze.com",
+            "description": "一键将播客音频生成博客文章、推文摘要"
+          },
+          {
+            "name": "Podpage",
+            "url": "https://www.podpage.com",
+            "description": "专为播客节目分钟级自动生成高颜值 SEO"
+          },
+          {
+            "name": "Podcorn",
+            "url": "https://podcorn.com",
+            "description": "连接独立播客创作者与品牌广告主的原生播客赞助与广告"
+          },
+          {
+            "name": "Patreon Podcasts",
+            "url": "https://www.patreon.com",
+            "description": "全球最大的创作者会员订阅平台"
+          },
+          {
+            "name": "Memberful",
+            "url": "https://memberful.com",
+            "description": "结合 WordPress"
+          },
+          {
+            "name": "Substack Podcasts",
+            "url": "https://substack.com",
+            "description": "著名新闻通讯平台提供的付费播客发布与邮件订阅一体化"
+          },
+          {
+            "name": "Buy Me a Coffee (Podcasts)",
+            "url": "https://www.buymeacoffee.com",
+            "description": "简便的创作者小额打赏平台"
+          },
+          {
+            "name": "Supercast",
+            "url": "https://www.supercast.com",
+            "description": "专注于帮助顶尖播客主建立百万美元级付费订阅业务的专"
+          },
+          {
+            "name": "Supporting Cast",
+            "url": "https://www.supportingcast.fm",
+            "description": "由 Slate 推出的企业级播客付费订阅与会员内容"
+          },
+          {
+            "name": "Gstory (故事FM)",
+            "url": "https://storyfm.cn",
+            "description": "中国极具影响力的声音记录片播客"
+          },
+          {
+            "name": "JustPod",
+            "url": "https://justpod.cn",
+            "description": "中国知名的播客制作机构与音频文化企业"
+          },
+          {
+            "name": "Sheng FM (声动活泼)",
+            "url": "https://shengfm.cn",
+            "description": "中国优质的商业与科技创新播客媒体"
+          },
+          {
+            "name": "LoudMurmur (鼓噪/声动/大观)",
+            "url": "https://loudmurmur.fm",
+            "description": "专注于海外文化、政治哲学与社会议题探讨的知名中文播"
+          },
+          {
+            "name": "Loudness (日谈公园)",
+            "url": "https://www.ritanpark.com",
+            "description": "中国知名流行文化与生活方式播客，涵盖电影、音乐"
+          },
+          {
+            "name": "Tangsuan Radio (糖蒜广播)",
+            "url": "http://www.tangsuanradio.com",
+            "description": "中国最早成立的独立网络广播与复古音乐文化播客之一。"
+          },
+          {
+            "name": "Yizhouji (一周集)",
+            "url": "https://yizhouji.fm",
+            "description": "专注于设计、人文与数字生活的精选中文播客节目。"
+          },
+          {
+            "name": "IT Gongsi (IT公论 Archive)",
+            "url": "https://ipn.li/itgongsi",
+            "description": "IPN 网络旗下的经典早期科技播客"
+          },
+          {
+            "name": "IPN Network",
+            "url": "https://ipn.li",
+            "description": "中国早期极具传奇色彩的独立播客网络"
+          },
+          {
+            "name": "Digital Life (数码荔枝/科技播客)",
+            "url": "https://www.lizhi.io",
+            "description": "科技与软件爱好者聚集的数字生活与工具探讨播客社区。"
+          },
+          {
+            "name": "Bowuzhi (博物志)",
+            "url": "https://bowuzhi.fm",
+            "description": "探讨博物馆、艺术、建筑与展览文化的独立人文播客。"
+          },
+          {
+            "name": "Typeish (字谈字畅)",
+            "url": "https://thetype.com/typechat",
+            "description": "全球首个以字体设计、排版与文字符号文化为主题的中文"
+          },
+          {
+            "name": "Web Worker (Web Worker 播客)",
+            "url": "https://www.webworker.tech",
+            "description": "专注于前端开发、程序员职场与 Web"
+          },
+          {
+            "name": "Hardcore Core (硬核电台)",
+            "url": "https://hardcore.fm",
+            "description": "专注于亚文化、重型音乐、极限运动与先锋艺术的硬核音"
+          },
+          {
+            "name": "Radio National (RN - ABC)",
+            "url": "https://www.abc.net.au/radionational",
+            "description": "澳大利亚国家广播电台，提供顶尖的想法"
+          },
+          {
+            "name": "Radio France Podcasts",
+            "url": "https://www.radiofrance.fr/podcasts",
+            "description": "法国广播电台官方门户，收录海量高品味法语文化"
+          },
+          {
+            "name": "Deutschlandfunk Audio-Archiv",
+            "url": "https://www.deutschlandfunk.de/podcasts",
+            "description": "德国公共广播电台官方播客，提供深度德语新闻"
+          },
+          {
+            "name": "NHK World Japan Podcasts",
+            "url": "https://www.nhk.or.jp/nhkworld/en/podcast/",
+            "description": "日本 NHK 官方多语言播客，报道日本新闻"
+          },
+          {
+            "name": "RTE Radio Podcasts (Ireland)",
+            "url": "https://www.rte.ie/radio/podcasts",
+            "description": "爱尔兰国家广播电台官方播客，包含爱尔兰历史"
+          },
+          {
+            "name": "Radio Canada OHdio",
+            "url": "https://ici.radio-canada.ca/ohdio",
+            "description": "加拿大法语广播官方平台，提供高品质法语播客与有声书"
+          },
+          {
+            "name": "Swissinfo Podcasts",
+            "url": "https://www.swissinfo.ch/eng/podcasts",
+            "description": "瑞士资讯官方播客，用多语言探讨瑞士民主"
+          },
+          {
+            "name": "RFI Podcasts (Radio France Internationale)",
+            "url": "https://www.rfi.fr/en/podcasts/",
+            "description": "法国国际广播电台英文与多语言播客"
+          },
+          {
+            "name": "Deutsche Welle (DW) Podcasts",
+            "url": "https://www.dw.com/en/podcasts/s-100862",
+            "description": "德国之声官方播客，提供德语学习与国际时事焦点分析。"
+          },
+          {
+            "name": "Monocle Radio",
+            "url": "https://monocle.com/radio",
+            "description": "知名生活方式杂志 Monocle"
+          },
+          {
+            "name": "Financial Times Podcasts",
+            "url": "https://www.ft.com/podcasts",
+            "description": "金融时报官方播客频道，涵盖《FT News"
+          },
+          {
+            "name": "The Economist Podcasts",
+            "url": "https://www.economist.com/podcasts",
+            "description": "经济学人官方播客，提供地缘政治"
+          },
+          {
+            "name": "Bloomberg Podcasts",
+            "url": "https://www.bloomberg.com/podcasts",
+            "description": "彭博社官方播客网络，涵盖金融市场"
+          },
+          {
+            "name": "Wall Street Journal Podcasts",
+            "url": "https://www.wsj.com/podcasts",
+            "description": "华尔街日报官方播客，包含《The"
+          },
+          {
+            "name": "Harvard Business Review Podcasts",
+            "url": "https://hbr.org/2019/04/podcasts",
+            "description": "哈佛商业评论官方播客网络"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "McKinsey & Company Podcasts",
+            "url": "https://www.mckinsey.com/featured-insights/mckinsey-podcast",
+            "description": "麦肯锡管理咨询官方播客，探讨企业战略"
+          },
+          {
+            "name": "MIT Technology Review Podcasts",
+            "url": "https://www.technologyreview.com/podcasts/",
+            "description": "麻省理工科技评论官方播客"
+          },
+          {
+            "name": "Nature Podcast",
+            "url": "https://www.nature.com/nature/podcast",
+            "description": "顶级科学期刊《Nature》官方播客"
+          },
+          {
+            "name": "Science Magazine Podcast",
+            "url": "https://www.science.org/podcasts",
+            "description": "《Science》科学杂志官方播客"
+          },
+          {
+            "name": "Scientific American Podcasts",
+            "url": "https://www.scientificamerican.com/podcasts/",
+            "description": "《科学美国人》官方播客，包含经典短快频科普《"
+          },
+          {
+            "name": "New Scientist Podcast",
+            "url": "https://www.newscientist.com/podcasts/",
+            "description": "知名科技杂志《New Scientist》每周带来"
+          },
+          {
+            "name": "StarTalk Radio",
+            "url": "https://startalkradio.net",
+            "description": "天体物理学家 Neil deGrasse"
+          },
+          {
+            "name": "NASA Podcasts",
+            "url": "https://www.nasa.gov/podcasts",
+            "description": "美国国家航空航天局(NASA)官方播客网络"
+          },
+          {
+            "name": "National Geographic Podcasts",
+            "url": "https://www.nationalgeographic.com/podcasts/overheard",
+            "description": "国家地理官方播客《Overheard》"
+          },
+          {
+            "name": "Stuff They Don't Want You To Know",
+            "url": "https://www.iheart.com/podcast/105-stuff-they-dont-want-you-t-26941221",
+            "description": "深入探讨阴谋论、政府秘密与未解之谜的理性分析播客。"
+          },
+          {
+            "name": "Lore Podcast",
+            "url": "https://www.lorepodcast.com",
+            "description": "现象级恐怖历史与民间传说播客"
+          },
+          {
+            "name": "Crimejunkie Podcast",
+            "url": "https://crimejunkiepodcast.com",
+            "description": "北美极受欢迎的真实犯罪播客"
+          },
+          {
+            "name": "Casefile True Crime",
+            "url": "https://casefilepodcast.com",
+            "description": "匿名主持人带来的高分冷峻风格真实犯罪与历史大案叙事"
+          },
+          {
+            "name": "My Favorite Murder",
+            "url": "https://www.myfavoritemurder.com",
+            "description": "结合喜剧与真实犯罪的爆笑且治愈的先锋播客节目。"
+          },
+          {
+            "name": "You're Wrong About",
+            "url": "https://yourewrongabout.com",
+            "description": "重新审视和翻案历史上被公众与媒体严重误解的历史人物"
+          },
+          {
+            "name": "Slow Burn (Slate)",
+            "url": "https://slate.com/podcasts/slow-burn",
+            "description": "深度复盘美国重大政治丑闻(水门事件"
+          },
+          {
+            "name": "Maintenance Phase",
+            "url": "https://www.maintenancephase.com",
+            "description": "严谨爆笑地拆解减肥热潮、伪健康科学与减肥饮食迷思的"
+          },
+          {
+            "name": "Revisionist History",
+            "url": "https://www.pushkin.fm/show/revisionist-history/",
+            "description": "葛拉威尔主持的重新检视被忽视或误解的过去人事物的思"
+          },
+          {
+            "name": "Heavyweight",
+            "url": "https://gimletmedia.com/shows/heavyweight",
+            "description": "帮助普通人回到过去解决人生遗憾与心理结扣的极具情感"
+          },
+          {
+            "name": "Beautiful Stories From Anonymous People",
+            "url": "https://www.earwolf.com/show/beautiful-anonymous/",
+            "description": "主持人与匿名电话听众1小时无过滤自由倾诉人生的感人"
+          },
+          {
+            "name": "Ear Hustle",
+            "url": "https://www.earhustlesq.com",
+            "description": "在美国加州圣昆丁监狱内部录制的讲述真实服刑人员生活"
+          },
+          {
+            "name": "The Moth Podcast",
+            "url": "https://themoth.org/podcasts",
+            "description": "全球著名的现场无讲稿真实故事讲述大会官方音频播客。"
+          },
+          {
+            "name": "Mortified",
+            "url": "https://getmortified.com",
+            "description": "成年人在台上当众朗读自己青少年时期极其尴尬的日记与"
+          },
+          {
+            "name": "Welcome to Night Vale",
+            "url": "https://www.welcometonightvale.com",
+            "description": "以虚拟沙漠小镇广播电台形式呈现的狂热超自然与科幻广"
+          },
+          {
+            "name": "The Magnus Archives",
+            "url": "https://rustyquill.com/show/the-magnus-archives/",
+            "description": "英国极其著名的维多利亚式超自然恐怖档案馆音频广播剧"
+          },
+          {
+            "name": "Alice Isn't Dead",
+            "url": "https://www.nightvalepresents.com/aliceisntdead",
+            "description": "讲述卡车司机穿越美国寻找失踪妻子并遭遇怪诞恐怖事件"
+          },
+          {
+            "name": "Limetown",
+            "url": "https://www.twowup.com/limetown",
+            "description": "讲述知名研究机构700名科学家一夜之间神秘失踪的调"
+          },
+          {
+            "name": "Blackout",
+            "url": "https://qcodemedia.com/blackout",
+            "description": "影星 Rami Malek"
+          },
+          {
+            "name": "Homecoming",
+            "url": "https://gimletmedia.com/shows/homecoming",
+            "description": "知名好莱坞明星配音的惊悚心理学广播剧(后改编为亚马"
+          },
+          {
+            "name": "Passenger List",
+            "url": "https://passengerlist.org",
+            "description": "讲述一架从伦敦飞往纽约的客机在密歇根湖上空消失的调"
+          },
+          {
+            "name": "D&D Podcast (Dungeons & Dragons)",
+            "url": "https://dnd.wizards.com/podcasts",
+            "description": "龙与地下城官方及跑团玩家的最爱"
+          },
+          {
+            "name": "Critical Role Podcast",
+            "url": "https://critrole.com",
+            "description": "顶级配音演员们现场跑团的现象级《龙与地下城》桌面角"
+          },
+          {
+            "name": "The Adventure Zone",
+            "url": "https://maximumfun.org/podcasts/the-adventure-zone/",
+            "description": "McElroy 兄弟与父亲共同进行的爆笑家庭"
+          },
+          {
+            "name": "Game Maker's Notebook",
+            "url": "https://www.interactive.org/interviews/the_game_makers_notebook.asp",
+            "description": "独立游戏艺术与科学学院主办的顶级电子游戏制作人对谈"
+          },
+          {
+            "name": "Giant Bombcast",
+            "url": "https://www.giantbomb.com/podcasts/",
+            "description": "电子游戏界老牌爆笑 Weekly 播客"
+          },
+          {
+            "name": "KEXP Music Podcasts",
+            "url": "https://www.kexp.org/podcasts/",
+            "description": "西雅图传奇独立音乐电台 KEXP"
+          },
+          {
+            "name": "NPR Tiny Desk Concerts (Audio)",
+            "url": "https://www.npr.org/series/tiny-desk-concerts/",
+            "description": "NPR 标志性桌前音乐会现场高保真音频播客。"
+          },
+          {
+            "name": "Dissect Podcast",
+            "url": "https://dissectpodcast.com",
+            "description": "逐字逐句逐个音轨深度剖析当代经典嘻哈与 R&B"
+          },
+          {
+            "name": "Switched on Pop",
+            "url": "https://switchedonpop.com",
+            "description": "由音乐学家与作曲家主持的拆解流行音乐制作技巧与金曲"
+          },
+          {
+            "name": "Tape Notes",
+            "url": "https://tapenotes.co",
+            "description": "深入音乐制作人与艺术家工作室"
+          },
+          {
+            "name": "Pitchfork Radio / Podcasts",
+            "url": "https://pitchfork.com",
+            "description": "著名独立音乐乐评网站 Pitchfork"
+          },
+          {
+            "name": "Grammar Girl Quick and Dirty Tips",
+            "url": "https://www.quickanddirtytips.com/grammar-girl",
+            "description": "全球著名的语法与写作技巧科普播客"
+          },
+          {
+            "name": "The English We Speak (BBC)",
+            "url": "https://www.bbc.co.uk/learningenglish/english/features/the-english-we-speak",
+            "description": "BBC 官方出品，专门讲解最新英式英语流行俚语与地"
+          },
+          {
+            "name": "Coffee Break Languages",
+            "url": "https://coffeebreaklanguages.com",
+            "description": "经典的语言学习播客，支持利用咖啡时间轻松学习法语"
+          },
+          {
+            "name": "Duolingo Podcasts",
+            "url": "https://podcast.duolingo.com",
+            "description": "多邻国官方出品，通过慢速双语故事帮助语言学习者提高"
+          },
+          {
+            "name": "JapanesePod101",
+            "url": "https://www.japanesepod101.com",
+            "description": "全球极受欢迎的日语学习播客体系"
+          },
+          {
+            "name": "PodTrapper / Podkicker",
+            "url": "https://www.podkicker.com",
+            "description": "极简主义 Android 播客播放客户端"
+          },
+          {
+            "name": "GrapheneOS / F-Droid Podcast Apps",
+            "url": "https://f-droid.org",
+            "description": "开源软件应用商店，提供大量注重隐私保护且完全免费的"
+          },
+          {
+            "name": "Open Podcast API Standard",
+            "url": "https://podcaststandards.org",
+            "description": "旨在维护互联网开放音频基础设施与去除平台垄断的播客"
+          },
+          {
+            "name": "World Radio Map Podcasts",
+            "url": "https://worldradiormap.com",
+            "description": "结合全球地图位置检索全球各地传统电台与在线播客流媒"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑷𝑜𝑑𝑐𝑎𝑠𝑡𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

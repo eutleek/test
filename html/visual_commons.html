@@ -1,0 +1,1424 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="高清无版权图库、公有领域视觉与开放影像资源">
+<title>视觉图库 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>视觉图库</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">视觉图库 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "视觉图库",
+    "icon": "🖼️",
+    "color": "linear-gradient(135deg, #00b894, #0984e3)",
+    "subcategories": [
+      {
+        "name": "综合顶级免费商用图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Unsplash",
+            "url": "https://unsplash.com",
+            "description": "全球最著名的无版权摄影图库"
+          },
+          {
+            "name": "Pexels",
+            "url": "https://www.pexels.com",
+            "description": "汇集大量高画质无版权照片与高质量免版税短视频素材。"
+          },
+          {
+            "name": "Pixabay",
+            "url": "https://pixabay.com",
+            "description": "老牌免费图库，除了海量摄影照片，还收录插画"
+          },
+          {
+            "name": "Freepik",
+            "url": "https://www.freepik.com",
+            "description": "全球最大的综合视觉素材库，包含照片、矢量图"
+          },
+          {
+            "name": "Burst (by Shopify)",
+            "url": "https://burst.shopify.com",
+            "description": "Shopify 旗下的免费高画质图库，专为电商"
+          },
+          {
+            "name": "StockSnap.io",
+            "url": "https://stocksnap.io",
+            "description": "每日更新的高清免费图库，支持按浏览量和下载量精准筛"
+          },
+          {
+            "name": "Kaboompics",
+            "url": "https://kaboompics.com",
+            "description": "主打生活方式、室内设计与调色板分析的图库。"
+          },
+          {
+            "name": "Reshot",
+            "url": "https://www.reshot.com",
+            "description": "专注于独家、非同质化现代摄影作品与极简矢量图标的免"
+          },
+          {
+            "name": "Gratisography",
+            "url": "https://gratisography.com",
+            "description": "充满幽默感、古灵精怪与超现实主义风格的免费摄影图库"
+          },
+          {
+            "name": "Picjumbo",
+            "url": "https://picjumbo.com",
+            "description": "摄影师 Viktor Hanacek"
+          },
+          {
+            "name": "Life of Pix",
+            "url": "https://www.lifeofpix.com",
+            "description": "蒙特利尔广告公司创办的免费摄影站"
+          },
+          {
+            "name": "Rawpixel",
+            "url": "https://www.rawpixel.com",
+            "description": "提供大量极高品质的公有领域艺术画作与复古摄影。"
+          },
+          {
+            "name": "Skitterphoto",
+            "url": "https://skitterphoto.com",
+            "description": "摄影师自发建立的 CC0"
+          },
+          {
+            "name": "ISO Republic",
+            "url": "https://isorepublic.com",
+            "description": "专注于高分辨率商业摄影、建筑空间与高清纹理背景。"
+          },
+          {
+            "name": "SplitShire",
+            "url": "https://www.splitshire.com",
+            "description": "摄影师 Daniel Nanescu"
+          },
+          {
+            "name": "Foodiesfeed",
+            "url": "https://www.foodiesfeed.com",
+            "description": "专注于全球美食、食材与精致料理的高清无版权美食图库"
+          },
+          {
+            "name": "New Old Stock",
+            "url": "https://nos.tweeki.in",
+            "description": "汇集公共档案馆中珍贵的历史复古黑白与彩色老照片。"
+          },
+          {
+            "name": "Picspree",
+            "url": "https://picspree.com",
+            "description": "由 Getty Images"
+          },
+          {
+            "name": "ShotStash",
+            "url": "https://shotstash.com",
+            "description": "专注于网页开发者与创意设计师使用的现代高分辨率摄影"
+          },
+          {
+            "name": "Foca Stock",
+            "url": "https://focastock.com",
+            "description": "摄影师 Jeffrey Betts"
+          }
+        ]
+      },
+      {
+        "name": "无版权灵感图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Pikwizard",
+            "url": "https://pikwizard.com",
+            "description": "收录超过百万张高质量照片与视频"
+          },
+          {
+            "name": "Freeify",
+            "url": "https://freeify.pro",
+            "description": "纯粹由社区贡献的无版权图库，界面清爽"
+          },
+          {
+            "name": "Nappy",
+            "url": "https://nappy.co",
+            "description": "专注于展示多元有色人种高品质生活与工作的无版权图库"
+          },
+          {
+            "name": "CreateHER Stock",
+            "url": "https://createherstock.com",
+            "description": "专注黑人女性与现代生活方式的无版权与高质量摄影图库"
+          },
+          {
+            "name": "Jopwell Collection",
+            "url": "https://www.jopwell.com",
+            "description": "专注于职场多元化、真实办公与科技场景的免费高清摄影"
+          },
+          {
+            "name": "Morguefile",
+            "url": "https://morguefile.com",
+            "description": "历史悠久的专业设计师参考图库"
+          },
+          {
+            "name": "Good Free Photos",
+            "url": "https://www.goodfreephotos.com",
+            "description": "按地理位置分类的免费公共领域照片库"
+          },
+          {
+            "name": "Realistic Shots",
+            "url": "https://realisticshots.com",
+            "description": "每周更新的高清真实生活场景照片"
+          },
+          {
+            "name": "PhotoBER",
+            "url": "https://www.photober.com",
+            "description": "专注于商业、自然与城市建筑的个人免费共享摄影图库。"
+          },
+          {
+            "name": "Magdeleine",
+            "url": "https://magdeleine.co",
+            "description": "精选高清摄影图库，支持按主色调"
+          },
+          {
+            "name": "Freely Photos",
+            "url": "https://freelyphotos.com",
+            "description": "专注于宗教、沉思、仪式与心灵主题的免费 CC0"
+          },
+          {
+            "name": "Focus Fitness Free Stock",
+            "url": "https://www.focusfitness.net/stock-photos",
+            "description": "专注于健身、健康饮食、运动与生活习惯的高清无版权图"
+          },
+          {
+            "name": "Moveast",
+            "url": "https://moveast.me",
+            "description": "摄影师记录其全球旅行轨迹的无版权摄影日志"
+          },
+          {
+            "name": "Travel Coffee Book",
+            "url": "https://travelcoffeebook.com",
+            "description": "记录全球旅行瞬间的高清图库"
+          },
+          {
+            "name": "BARN IMAGES",
+            "url": "https://barnimages.com",
+            "description": "由两位拉脱维亚摄影师发起的项目"
+          },
+          {
+            "name": "Cupcake",
+            "url": "https://cupcake.nilssonlee.se",
+            "description": "摄影师 Jonas Wimmerström"
+          },
+          {
+            "name": "Refe (Free)",
+            "url": "https://getrefe.tumblr.com",
+            "description": "主打现代科技、数字设备与人类真实交互场景的高清摄影"
+          },
+          {
+            "name": "Jay Mantri",
+            "url": "https://jaymantri.com",
+            "description": "摄影师 Jay Mantri 每周更新的极简主义"
+          },
+          {
+            "name": "DesignersPics",
+            "url": "https://www.designerspics.com",
+            "description": "专为设计师与网页创作者打造的高分辨率无版权分类摄影"
+          },
+          {
+            "name": "Stokpic",
+            "url": "https://stokpic.com",
+            "description": "由摄影师 Ed Gregory 创办"
+          }
+        ]
+      },
+      {
+        "name": "博物馆与公有领域图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Met Open Access (大都会艺术博物馆)",
+            "url": "https://www.metmuseum.org/art/collection",
+            "description": "超过 40 万张高分辨率公有领域艺术品与历史文物照"
+          },
+          {
+            "name": "Rijksmuseum Open Data (阿姆斯特丹国家博物馆)",
+            "url": "https://www.rijksmuseum.nl/en/research/art-data",
+            "description": "提供伦勃朗等大师名画的超高清晰度无版权下载。"
+          },
+          {
+            "name": "National Gallery of Art Open Access",
+            "url": "https://www.nga.gov/open-access-images.html",
+            "description": "美国国家艺术馆，5 万余件名画与雕塑高清公有图库。"
+          },
+          {
+            "name": "British Library on Flickr",
+            "url": "https://www.flickr.com/photos/britishlibrary",
+            "description": "英国图书馆公开的 100 多万张古典书籍插画"
+          },
+          {
+            "name": "Paris Musées",
+            "url": "https://www.parismuseescollections.paris.fr/en",
+            "description": "巴黎博物馆联盟，免费提供旗下 14"
+          },
+          {
+            "name": "Smithsonian Open Access",
+            "url": "https://www.si.edu/openaccess",
+            "description": "史密森尼学会开放数百万张历史文物"
+          },
+          {
+            "name": "Art Institute of Chicago Open Access",
+            "url": "https://www.artic.edu/collection",
+            "description": "芝加哥艺术博物馆，包含梵高"
+          },
+          {
+            "name": "Getty Open Content",
+            "url": "https://www.getty.edu/art/collection",
+            "description": "盖蒂基金会开放的近 10"
+          },
+          {
+            "name": "Yale Center for British Art",
+            "url": "https://britishart.yale.edu",
+            "description": "耶鲁大学英国艺术中心，提供免费公开的英国艺术典藏。"
+          },
+          {
+            "name": "Biodiversity Heritage Library (BHL)",
+            "url": "https://www.flickr.com/photos/biodivlibrary",
+            "description": "海量 18–19 世纪精美动植物手绘插画与自然科学"
+          },
+          {
+            "name": "Library of Congress Prints & Photographs",
+            "url": "https://www.loc.gov/pictures",
+            "description": "美国国会图书馆，收录海量历史照片与复古海报。"
+          },
+          {
+            "name": "NASA Images",
+            "url": "https://images.nasa.gov",
+            "description": "美国宇航局官方公开的海量宇宙星空"
+          },
+          {
+            "name": "Musée d'Orsay Collections",
+            "url": "https://www.musee-orsay.fr/en/collections",
+            "description": "巴黎奥赛博物馆官方，印象派与后印象派艺术大师画作全"
+          },
+          {
+            "name": "The Walters Art Museum",
+            "url": "https://art.thewalters.org",
+            "description": "沃尔特斯艺术博物馆，提供涵盖古埃及到现代的无版权艺"
+          },
+          {
+            "name": "Los Angeles County Museum of Art (LACMA)",
+            "url": "https://collections.lacma.org",
+            "description": "洛杉矶郡立艺术博物馆 2 万余张高清无版权图。"
+          },
+          {
+            "name": "European Digital Library (Europeana)",
+            "url": "https://www.europeana.eu",
+            "description": "欧洲数千家机构联合开放的数百万艺术"
+          },
+          {
+            "name": "Wellcome Collection",
+            "url": "https://wellcomecollection.org",
+            "description": "英国维尔康基金会，专注于医学史"
+          },
+          {
+            "name": "Cleveland Museum of Art Open Access",
+            "url": "https://www.clevelandart.org/art/collection/search",
+            "description": "克利夫兰艺术博物馆，包含极其完整的亚洲与古典艺术图"
+          },
+          {
+            "name": "Tokyo National Museum Collection",
+            "url": "https://colbase.nich.go.jp",
+            "description": "东京国立博物馆数字典藏，收录日本浮世绘与古代美术作"
+          },
+          {
+            "name": "Public Domain Review",
+            "url": "https://publicdomainreview.org",
+            "description": "专门挖掘与展示历史文献中奇特"
+          }
+        ]
+      },
+      {
+        "name": "材质渲染素材",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Textures.com",
+            "url": "https://www.textures.com",
+            "description": "全球最著名的 3D 建模与设计材质库"
+          },
+          {
+            "name": "Poly Haven",
+            "url": "https://polyhaven.com",
+            "description": "100% 免费开源的高高清 HDRi 环境光照"
+          },
+          {
+            "name": "AmbientCG",
+            "url": "https://ambientcg.com",
+            "description": "采用 CC0 协议的超高清 PBR 材质贴图库"
+          },
+          {
+            "name": "cgBookcase",
+            "url": "https://www.cgbookcase.com",
+            "description": "免费无版权的 PBR 材质与纹理网站"
+          },
+          {
+            "name": "Wild Textures",
+            "url": "https://www.wildtextures.com",
+            "description": "专注于粗粝、复古、自然与皮革等特种材质的免费高分辨"
+          },
+          {
+            "name": "Texture Fabrik",
+            "url": "https://texturefabrik.com",
+            "description": "由设计师创建的抽象纹理、流体色彩"
+          },
+          {
+            "name": "Lost and Taken",
+            "url": "https://lostandtaken.com",
+            "description": "专注于各种复古纸张、水彩染色"
+          },
+          {
+            "name": "Substance Share",
+            "url": "https://share.substance3d.com",
+            "description": "Adobe 旗下 3D 社区共享的庞大程序化材质与"
+          },
+          {
+            "name": "PBRMaterials",
+            "url": "https://pbrmaterials.com",
+            "description": "专注于物理渲染(PBR)的建筑与工业材质特写图库。"
+          },
+          {
+            "name": "Architextures",
+            "url": "https://architextures.org",
+            "description": "专注于建筑与室内设计的纹理生成器与施工材质案例库。"
+          },
+          {
+            "name": "TextureX",
+            "url": "https://www.texturex.com",
+            "description": "提供高清大尺寸的金属锈迹"
+          },
+          {
+            "name": "Paper Texture Archive",
+            "url": "https://www.papertextures.com",
+            "description": "专注于各种特种纸、牛皮纸"
+          },
+          {
+            "name": "Wood Texture Archives",
+            "url": "https://www.woodtextures.com",
+            "description": "全球各种树木木纹、木地板与实木切割面的高清材质库。"
+          },
+          {
+            "name": "Marble & Stone Textures",
+            "url": "https://www.marbletextures.com",
+            "description": "奢华大理石、花岗岩与天然矿石纹理的极高分辨率图库。"
+          },
+          {
+            "name": "Fabric Textures Archive",
+            "url": "https://www.fabrictextures.com",
+            "description": "专注于纺织品、亚麻、丝绸与牛仔面料微距肌理图库。"
+          },
+          {
+            "name": "Concrete Textures Lab",
+            "url": "https://www.concretetextures.org",
+            "description": "清水混凝土、粗粝水泥与建筑脱模纹理的细节摄影库。"
+          },
+          {
+            "name": "Glass & Light Refraction",
+            "url": "https://www.lighttextures.com",
+            "description": "专注于玻璃折射、光斑焦散与焦外虚化的背景库。"
+          },
+          {
+            "name": "Rust & Decay Textures",
+            "url": "https://www.decaytextures.com",
+            "description": "工业废墟、金属腐蚀与岁月剥落痕迹的微距摄影档案。"
+          },
+          {
+            "name": "Organic Patterns in Nature",
+            "url": "https://www.patternedby-nature.com",
+            "description": "专注于植物叶脉、龟裂大地与动物皮毛的自然几何纹理。"
+          },
+          {
+            "name": "Abstract Fluid Textures",
+            "url": "https://www.fluidtextures.com",
+            "description": "流体画、丙烯颜料扩散与超现实液体纹理的视觉素材库。"
+          }
+        ]
+      },
+      {
+        "name": "摄影社区艺术",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "500px",
+            "url": "https://500px.com",
+            "description": "全球顶尖专业摄影师社区，寻找高级摄影灵感与光影构图"
+          },
+          {
+            "name": "Behance Photography",
+            "url": "https://www.behance.net/galleries/photography",
+            "description": "Adobe 旗下顶尖视觉艺术平台"
+          },
+          {
+            "name": "VSCO Studio",
+            "url": "https://vsco.co",
+            "description": "以独特胶片滤镜美学著称的摄影社区与视觉灵感展示流。"
+          },
+          {
+            "name": "Magnum Photos",
+            "url": "https://www.magnumphotos.com",
+            "description": "纪实摄影与人文摄影的殿堂级官方图库与文章集锦。"
+          },
+          {
+            "name": "1X.com",
+            "url": "https://1x.com",
+            "description": "极高门槛的策展型摄影社区"
+          },
+          {
+            "name": "PhotoVogue (Vogue Italia)",
+            "url": "https://www.vogue.com/photovogue",
+            "description": "Vogue 旗下的先锋时尚"
+          },
+          {
+            "name": "LensCulture",
+            "url": "https://www.lensculture.com",
+            "description": "全球当代摄影奖项平台，提供深度摄影论述与当代视觉作"
+          },
+          {
+            "name": "Aperture Foundation",
+            "url": "https://aperture.org",
+            "description": "专注于摄影艺术出版、名家展影与专业摄影评论。"
+          },
+          {
+            "name": "Analog Forever Magazine",
+            "url": "https://www.analogforevermagazine.com",
+            "description": "专注传统银盐胶片、湿版摄影与复古暗房摄影艺术。"
+          },
+          {
+            "name": "British Journal of Photography (BJP)",
+            "url": "https://www.bjp-online.com",
+            "description": "世界上历史最悠久的英国专业摄影杂志网。"
+          },
+          {
+            "name": "Aether Magazine",
+            "url": "https://aethermagazine.com",
+            "description": "专注于沉静美学、极简视觉与超现实主义摄影的艺术数字"
+          },
+          {
+            "name": "Der Greif",
+            "url": "https://dergreif.org",
+            "description": "德国著名先锋摄影杂志，展示极具当代艺术感与实验性质"
+          },
+          {
+            "name": "Phroom Magazine",
+            "url": "https://phroomplatform.com",
+            "description": "专注于现代当代摄影、三维艺术与视觉研究的展陈平台。"
+          },
+          {
+            "name": "Yet Magazine",
+            "url": "https://yet-magazine.com",
+            "description": "瑞士当代摄影杂志，侧重于视觉叙事"
+          },
+          {
+            "name": "C41 Magazine",
+            "url": "https://www.c41magazine.issue",
+            "description": "意大利跨界视觉杂志，关注生活方式、时尚"
+          },
+          {
+            "name": "Self Publish, Be Happy (SPBH)",
+            "url": "https://selfpublishbehappy.com",
+            "description": "专注于独立摄影书出版、DIY 摄影美学与先锋视觉。"
+          },
+          {
+            "name": "GUP Magazine",
+            "url": "https://gupmagazine.com",
+            "description": "荷兰专业当代摄影杂志，报道前沿摄影艺术。"
+          },
+          {
+            "name": "Fisheye Magazine",
+            "url": "https://www.fisheyemagazine.fr",
+            "description": "法国先锋摄影网，关注数字时代下摄影边界的拓宽与新锐"
+          },
+          {
+            "name": "BOOOOOOOM Photography",
+            "url": "https://www.booooooom.com/category/photography",
+            "description": "全球极具影响力的独立艺术平台"
+          },
+          {
+            "name": "PHmuseum",
+            "url": "https://phmuseum.com",
+            "description": "专注于当代摄影展、人才奖项与视觉策展的数字博物馆。"
+          }
+        ]
+      },
+      {
+        "name": "免费商用图库",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Stockvault",
+            "url": "https://www.stockvault.net",
+            "description": "老牌免费摄影素材库，包含数万张高分辨率风景"
+          },
+          {
+            "name": "Freeimages",
+            "url": "https://www.freeimages.com",
+            "description": "庞大的免费素材共享平台，分类齐全，涵盖商业"
+          },
+          {
+            "name": "Freerange Stock",
+            "url": "https://freerangestock.com",
+            "description": "由专业摄影师团队维护的高清晰度免费商用照片与插画网"
+          },
+          {
+            "name": "Canva Free Photos",
+            "url": "https://www.canva.com/photos/free",
+            "description": "Canva 旗下的免费图像资源库"
+          },
+          {
+            "name": "Vecteezy Free Photos",
+            "url": "https://www.vecteezy.com/free-photos",
+            "description": "不仅有矢量图，还收录了海量高画质免版税摄影作品。"
+          },
+          {
+            "name": "Depositphotos Free Section",
+            "url": "https://depositphotos.com/free-stock-photos.html",
+            "description": "知名微图库的免费专区，提供安全可靠的商业级免费图片"
+          },
+          {
+            "name": "Motion Array Free Photos",
+            "url": "https://motionarray.com/free-stock-photos",
+            "description": "主打现代调性、视频感十足的高清商业与科技摄影。"
+          },
+          {
+            "name": "VistaCreate Free Stock",
+            "url": "https://create.vista.com/colors/photos",
+            "description": "设计工具 Vista 提供的免费素材库"
+          },
+          {
+            "name": "Stocker",
+            "url": "https://stocker.org.ua",
+            "description": "专注于极简风格、自然光线与现代日常的高清 CC0"
+          },
+          {
+            "name": "Free Nature Stock",
+            "url": "https://freenaturestock.com",
+            "description": "由摄影师 Adrian Pelletier 创立"
+          },
+          {
+            "name": "Picography",
+            "url": "https://picography.co",
+            "description": "精选的高分辨率无版权照片站"
+          },
+          {
+            "name": "BucketListly Photos",
+            "url": "https://photos.bucketlistly.blog",
+            "description": "旅行家 Pete R. 共享的全球各大洲风土人情与"
+          },
+          {
+            "name": "ISO Republic Food",
+            "url": "https://isorepublic.com/food-photos",
+            "description": "专注于高精致度料理、咖啡"
+          },
+          {
+            "name": "Landing Stock",
+            "url": "https://landingstock.com",
+            "description": "专为网页落地页(Landing"
+          },
+          {
+            "name": "Startup Stock Photos",
+            "url": "https://startupstockphotos.com",
+            "description": "专注于初创公司、办公室讨论"
+          },
+          {
+            "name": "Styled Stock",
+            "url": "https://styledstock.co",
+            "description": "专注于女性美学、干净台面"
+          },
+          {
+            "name": "Little Visuals",
+            "url": "https://littlevisuals.co",
+            "description": "纪念已故摄影师的 CC0 图库"
+          },
+          {
+            "name": "FancyCrave",
+            "url": "https://fancycrave.com",
+            "description": "主打情绪感、叙事感与旅行故事的高品质摄影集锦。"
+          },
+          {
+            "name": "AllTheFreeStock",
+            "url": "https://allthefreestock.com",
+            "description": "聚合类资源站，一站式搜索全球各大无版权图像"
+          },
+          {
+            "name": "LibreShot",
+            "url": "https://libreshot.com",
+            "description": "摄影师 Martin Vorel 贡献的免费图库"
+          }
+        ]
+      },
+      {
+        "name": "全球博物馆档案",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "British Museum Collection",
+            "url": "https://www.britishmuseum.org/collection",
+            "description": "大英博物馆数字档案，公开数十万件全球历史文物的高清"
+          },
+          {
+            "name": "Victoria and Albert Museum (V&A)",
+            "url": "https://collections.vam.ac.uk",
+            "description": "英国 V&A 博物馆，专注于艺术、时装"
+          },
+          {
+            "name": "National Library of Sweden (KB)",
+            "url": "https://www.kb.se",
+            "description": "瑞典国家图书馆数字档案，收录北欧历史手稿"
+          },
+          {
+            "name": "National Gallery London",
+            "url": "https://www.nationalgallery.org.uk/paintings/search-the-collection",
+            "description": "伦敦国家美术馆，收录达芬奇"
+          },
+          {
+            "name": "Vatican Digital Library (DigiVatLib)",
+            "url": "https://digi.vatlib.it",
+            "description": "梵蒂冈数字图书馆，公开极度珍贵的手抄本"
+          },
+          {
+            "name": "Prado Museum Open Collection",
+            "url": "https://www.museodelprado.es/en/the-collection",
+            "description": "西班牙普拉多博物馆，包含委拉斯开兹"
+          },
+          {
+            "name": "Mauritshuis Collection",
+            "url": "https://www.mauritshuis.nl/en/our-collection",
+            "description": "荷兰莫瑞泰斯皇家美术馆，包含《戴珍珠耳环的少女》超"
+          },
+          {
+            "name": "Uffizi Galleries Digital",
+            "url": "https://www.uffizi.it/en/artworks",
+            "description": "佛罗伦萨乌菲兹美术馆，文艺复兴时期艺术巨作高清数据"
+          },
+          {
+            "name": "National Museum of Korea Digital",
+            "url": "https://www.museum.go.kr/site/eng/archive/united",
+            "description": "韩国国立中央博物馆，展示古代朝鲜半岛陶瓷"
+          },
+          {
+            "name": "Newberry Library Digital Collections",
+            "url": "https://www.newberry.org/digital-collections",
+            "description": "芝加哥纽贝里图书馆，收录大量古代地图"
+          },
+          {
+            "name": "National Library of Denmark (KB)",
+            "url": "https://www.kb.dk/en",
+            "description": "丹麦国家图书馆，开放北欧文学手稿"
+          },
+          {
+            "name": "Austrian National Library (ÖNB)",
+            "url": "https://www.onb.ac.at/en",
+            "description": "奥地利国家图书馆，含有丰富的哈布斯堡王朝历史图像与"
+          },
+          {
+            "name": "Hermitage Museum Digital Collection",
+            "url": "https://www.hermitagemuseum.org",
+            "description": "圣彼得堡埃尔米塔日(冬宫)博物馆"
+          },
+          {
+            "name": "Science Museum Group Collection",
+            "url": "https://collection.sciencemuseumgroup.org.uk",
+            "description": "英国科学博物馆集团，开放工业革命机器"
+          },
+          {
+            "name": "Morgan Library & Museum Digital",
+            "url": "https://www.themorgan.org/collection",
+            "description": "纽约摩根图书馆，收录中世纪稀有手抄本"
+          },
+          {
+            "name": "Museum of Fine Arts Boston (MFA)",
+            "url": "https://collections.mfa.org",
+            "description": "波士顿美术馆，提供数十万件全球艺术品的高清数字画像"
+          },
+          {
+            "name": "National Portrait Gallery London",
+            "url": "https://www.npg.org.uk/collections",
+            "description": "英国国家肖像馆，收录数百年来影响历史的肖像画与名人"
+          },
+          {
+            "name": "Royal Collection Trust",
+            "url": "https://www.rct.uk/collection",
+            "description": "英国皇室艺术收藏，包含大量拉斐尔手稿"
+          },
+          {
+            "name": "Dumbarton Oaks Digital Collections",
+            "url": "https://www.doaks.org/research/library-archives",
+            "description": "哈佛大学顿巴顿橡树园，专注于拜占庭与前哥伦布时期艺"
+          },
+          {
+            "name": "Yale University Art Gallery",
+            "url": "https://artgallery.yale.edu/collection",
+            "description": "耶鲁大学艺术博物馆，开放数万张涵盖古今的艺术品"
+          }
+        ]
+      },
+      {
+        "name": "3D 贴图与纹理素材",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Poly Haven Textures",
+            "url": "https://polyhaven.com/textures",
+            "description": "100% 免费的 8K 超高清 PBR 材质贴图"
+          },
+          {
+            "name": "CGAxis Free Models & Textures",
+            "url": "https://cgaxis.com/free-3d-models",
+            "description": "提供高品质免费三维家具模型"
+          },
+          {
+            "name": "Sketchfab Free Cultural Models",
+            "url": "https://sketchfab.com/blogs/community/category/cultural-heritage",
+            "description": "全球最大的 3D 模型平台"
+          },
+          {
+            "name": "3dtextures.me",
+            "url": "https://3dtextures.me",
+            "description": "设计师 Joao Paulo 维护的免费 PBR"
+          },
+          {
+            "name": "ShareTextures",
+            "url": "https://www.sharetextures.com",
+            "description": "由建筑师团队创建的免费 CC0 建筑贴图库"
+          },
+          {
+            "name": "OpenGameArt",
+            "url": "https://opengameart.org",
+            "description": "开源游戏素材社区，包含海量像素纹理"
+          },
+          {
+            "name": "TextureCan",
+            "url": "https://www.texturecan.com",
+            "description": "提供高质量 3D 渲染专用的 CG 材质贴图"
+          },
+          {
+            "name": "FreePBR",
+            "url": "https://freepbr.com",
+            "description": "专注于真实感渲染(PBR)的金属、水泥"
+          },
+          {
+            "name": "Architectural Material Lab",
+            "url": "https://www.archmatlab.com",
+            "description": "专为建筑效果图打造的极简墙面"
+          },
+          {
+            "name": "Texture Haven Archive",
+            "url": "https://polyhaven.com/all",
+            "description": "Poly Haven 前身"
+          },
+          {
+            "name": "TextureLib",
+            "url": "https://texturelib.com",
+            "description": "收录超过 6000 张高清晰度建筑物立面"
+          },
+          {
+            "name": "Seamless Textures Pro",
+            "url": "https://www.seamlesstexture.me",
+            "description": "专注于可无缝平铺(Tileable)的地面"
+          },
+          {
+            "name": "HDRI Haven",
+            "url": "https://polyhaven.com/hdris",
+            "description": "全球顶尖的免费 16K HDRi"
+          },
+          {
+            "name": "Paper & Canvas Textures",
+            "url": "https://www.canvastextures.com",
+            "description": "专注于水彩纸、麻布画布、复古羊皮纸与特种纸纹理特写"
+          },
+          {
+            "name": "Marble Scans Collection",
+            "url": "https://www.marblescans.com",
+            "description": "高精度扫描的天然大理石板材"
+          },
+          {
+            "name": "Metal Decay Textures",
+            "url": "https://www.metaldecay.com",
+            "description": "工业重金属锈蚀、剥落漆面与氧化铜绿的微距肌理素材。"
+          },
+          {
+            "name": "Wood Grain HD",
+            "url": "https://www.woodgrainhd.com",
+            "description": "各种名贵木材(胡桃木、橡木"
+          },
+          {
+            "name": "Fabric Micro Scans",
+            "url": "https://www.fabricmicro.com",
+            "description": "高倍放大镜头下的亚麻、粗花呢、皮革缝线与真丝肌理。"
+          },
+          {
+            "name": "Liquid Surface Textures",
+            "url": "https://www.watertextures.com",
+            "description": "泳池水面波纹、雨后积水焦散与流体色彩扩散材质。"
+          },
+          {
+            "name": "Soil & Ground Textures",
+            "url": "https://www.groundtextures.com",
+            "description": "泥土、干裂大地、鹅卵石路面与苔藓地表的超高清"
+          }
+        ]
+      },
+      {
+        "name": "新闻纪实档案",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "National Archives Flickr Commons",
+            "url": "https://www.flickr.com/photos/usnationalarchives",
+            "description": "美国国家档案馆公开的数万张历史事件"
+          },
+          {
+            "name": "British Empire & Commonwealth Collection",
+            "url": "https://www.bristolmuseums.org.uk/bristol-archives",
+            "description": "布里斯托档案馆，记录 19–20"
+          },
+          {
+            "name": "Imperial War Museums Photos",
+            "url": "https://www.iwm.org.uk/collections/photographs",
+            "description": "帝国战争博物馆，收录一战"
+          },
+          {
+            "name": "NASA Scientific Visualization Studio",
+            "url": "https://svs.gsfc.nasa.gov",
+            "description": "宇航局科学可视化工作室，提供高分辨率地球卫星图与深"
+          },
+          {
+            "name": "NOAA Photo Library",
+            "url": "https://photolib.noaa.gov",
+            "description": "美国海洋和大气管理局，收录极光"
+          },
+          {
+            "name": "US Geological Survey (USGS) Multimedia",
+            "url": "https://www.usgs.gov/media/images",
+            "description": "地质调查局，收录火山喷发、峡谷地貌与卫星遥感地图。"
+          },
+          {
+            "name": "Australian War Memorial Archives",
+            "url": "https://www.awm.gov.au/collection",
+            "description": "澳大利亚战争纪念馆，收录大量太平洋战争与历史人文照"
+          },
+          {
+            "name": "Library of Virginia Digital",
+            "url": "https://www.lva.virginia.gov/public/digital.asp",
+            "description": "弗吉尼亚州立图书馆，包含大量早期北美殖民与拓荒历史"
+          },
+          {
+            "name": "Denver Public Library Western History",
+            "url": "https://digital.denverlibrary.org",
+            "description": "丹佛公共图书馆，收录美国西部牛仔"
+          },
+          {
+            "name": "Seattle Municipal Archives",
+            "url": "https://www.seattle.gov/cityarchives",
+            "description": "西雅图城市档案馆，展示 20"
+          },
+          {
+            "name": "California State Library Digital",
+            "url": "https://www.library.ca.gov/collections",
+            "description": "加州州立图书馆，收录淘金热"
+          },
+          {
+            "name": "State Library of New South Wales",
+            "url": "https://www.sl.nsw.gov.au/collections",
+            "description": "澳大利亚新南威尔士州立图书馆"
+          },
+          {
+            "name": "Nationaal Archief Netherlands",
+            "url": "https://www.nationaalarchief.nl/en",
+            "description": "荷兰国家档案馆，公开数十万张大航海时代与近代欧洲历"
+          },
+          {
+            "name": "Finnish Defence Forces Photo Archive",
+            "url": "https://sa-kuva.fi",
+            "description": "芬兰二战历史摄影档案，真实记录二战北欧冰雪战场与人"
+          },
+          {
+            "name": "Swiss National Museum Collections",
+            "url": "https://www.landesmuseum.ch/en/collection",
+            "description": "瑞士国家博物馆，收录阿尔卑斯山脉人文民俗与历史图册"
+          },
+          {
+            "name": "Wellcome Medical History Images",
+            "url": "https://wellcomecollection.org/collections",
+            "description": "专注于全球医疗发展史、古代药房与防疫历史的珍贵图像"
+          },
+          {
+            "name": "Smithsonian Institution Archives",
+            "url": "https://siarchives.si.edu",
+            "description": "史密森尼学会档案馆，收录科学探险"
+          },
+          {
+            "name": "Digital Public Library of America Artifacts",
+            "url": "https://dp.la/exhibitions",
+            "description": "DPLA 联合全美数千家机构打造的历史专题与老照片"
+          },
+          {
+            "name": "Europeana Historic Newspapers",
+            "url": "https://www.europeana.eu/en/collections/topic/18-newspapers",
+            "description": "欧洲历史报纸数字网，包含数百年来的报纸排版与新闻插"
+          },
+          {
+            "name": "Library of Congress Historic Posters",
+            "url": "https://www.loc.gov/free-to-use/posters",
+            "description": "美国国会图书馆收录的复古宣传海报"
+          }
+        ]
+      },
+      {
+        "name": "先锋摄影理论",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Photoworks UK",
+            "url": "https://photoworks.org.uk",
+            "description": "英国知名摄影机构，倡导当代摄影思考"
+          },
+          {
+            "name": "Aperture Foundation Visuals",
+            "url": "https://aperture.org/ideas",
+            "description": "光圈基金会文章与视觉专栏"
+          },
+          {
+            "name": "Foam Fotografiemuseum Amsterdam",
+            "url": "https://www.foam.org",
+            "description": "阿姆斯特丹 Foam 摄影博物馆"
+          },
+          {
+            "name": "Magnum Photos Essays",
+            "url": "https://www.magnumphotos.com/photographers",
+            "description": "玛格南图片社摄影师专题，展现大师级视觉叙事与现场镜"
+          },
+          {
+            "name": "British Journal of Photography Projects",
+            "url": "https://www.bjp-online.com/projects",
+            "description": "BJP 选出的年度优秀摄影项目"
+          },
+          {
+            "name": "Photographic Museum of Humanity (PHmuseum)",
+            "url": "https://phmuseum.com/grants",
+            "description": "专注于当代人文与纪实摄影奖项"
+          },
+          {
+            "name": "LensCulture Awards Gallery",
+            "url": "https://www.lensculture.com/awards",
+            "description": "LensCulture 历届肖像、街拍"
+          },
+          {
+            "name": "Vogue Italia PhotoVogue Showcase",
+            "url": "https://www.vogue.com/photovogue/photographers",
+            "description": "PhotoVogue 平台挑选的先锋时尚"
+          },
+          {
+            "name": "Self Publish, Be Happy Books",
+            "url": "https://selfpublishbehappy.com/collection",
+            "description": "独立摄影书(Photobook)出版圣地"
+          },
+          {
+            "name": "American Suburb X (ASX)",
+            "url": "https://americansuburbx.com",
+            "description": "专注于摄影理论评论、大师访谈与极具批判性的艺术摄影"
+          },
+          {
+            "name": "Nearest Truth Conversations",
+            "url": "https://www.nearesttruth.com/episodes",
+            "description": "当代艺术摄影师对话录，分享作品集构思与视觉语言创作"
+          },
+          {
+            "name": "Contemporary Art Daily Photography",
+            "url": "https://www.contemporaryartdaily.com",
+            "description": "每日更新全球画廊与艺术展现场的高清晰度展陈记录摄影"
+          },
+          {
+            "name": "Feature Shoot Portfolio",
+            "url": "https://www.featureshoot.com/category/portfolios",
+            "description": "精选全球独立摄影师的完整专题作品集，风格独树一帜。"
+          },
+          {
+            "name": "Modern Street Photography Archive",
+            "url": "https://www.in-public.com",
+            "description": "iN-PUBLiC 街拍集体"
+          },
+          {
+            "name": "Fine Art Photography Journal",
+            "url": "https://www.fineartphotojournal.com",
+            "description": "纯粹美术摄影、画意摄影与暗房工艺创作解析。"
+          },
+          {
+            "name": "Minimalist Photography Awards",
+            "url": "https://minimalistphotographyawards.com",
+            "description": "极简主义摄影大奖官方展，展示留白、线条与极致光影。"
+          },
+          {
+            "name": "Urban Landscape Photography Lab",
+            "url": "https://www.urbanlandscape.org",
+            "description": "专注于人造环境、废弃空间与城市边角美学("
+          },
+          {
+            "name": "Experimental Photography Network",
+            "url": "https://www.experimentalphoto.org",
+            "description": "探讨针孔摄影、多重曝光、冲印实验与数字混合媒介。"
+          },
+          {
+            "name": "Conceptual Photography Index",
+            "url": "https://www.conceptualphoto.org",
+            "description": "用镜头传达哲学概念、隐喻与超现实主义设想的作品集。"
+          },
+          {
+            "name": "International Photography Awards (IPA)",
+            "url": "https://www.photoawards.com/winner",
+            "description": "IPA 国际摄影奖官方数据库"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑽𝑖𝑠𝑢𝑎𝑙 𝑪𝑜𝑚𝑚𝑜𝑛𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

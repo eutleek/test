@@ -1,0 +1,1558 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球 AI 应用、模型、工具与开源项目导航">
+<title>全球 AI - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑮𝒍𝒐𝒃𝒂𝒍 𝑨𝑰</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>全球 AI</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">全球 AI · 应用、模型、工具与开源项目导航</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "全球 AI",
+    "icon": "🌐",
+    "color": "linear-gradient(135deg, #00d4ff, #7b2ff7)",
+    "subcategories": [
+      {
+        "name": "AI应用",
+        "enName": "AI Apps",
+        "links": [
+          {
+            "name": "ChatGPT",
+            "url": "https://chatgpt.com",
+            "description": "全球最火AI对话应用，月活数亿，GPT-6 驱动，功能最全生态最强",
+            "_aiCompany": "OpenAI (美国)",
+            "_aiScore": 99,
+            "_aiTags": [
+              "对话助手",
+              "C端",
+              "全球第一"
+            ]
+          },
+          {
+            "name": "Perplexity",
+            "url": "https://www.perplexity.ai",
+            "description": "AI搜索标杆，带引用来源回答，Deep Research深度研究功能强",
+            "_aiCompany": "Perplexity AI (美国)",
+            "_aiScore": 92,
+            "_aiTags": [
+              "AI搜索",
+              "引用来源",
+              "研究工具"
+            ]
+          },
+          {
+            "name": "Gemini Advanced",
+            "url": "https://gemini.google.com",
+            "description": "Google官方AI助手，深度集成Gmail/Docs/Drive，Workspace用户首选",
+            "_aiCompany": "Google (美国)",
+            "_aiScore": 89,
+            "_aiTags": [
+              "对话助手",
+              "Google生态",
+              "多模态"
+            ]
+          },
+          {
+            "name": "豆包 Doubao",
+            "url": "https://www.doubao.com",
+            "description": "国内C端体验最佳，月活破亿，多模态生成，办公模式强",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 90,
+            "_aiTags": [
+              "对话助手",
+              "C端",
+              "字节系"
+            ]
+          },
+          {
+            "name": "文心一言 / 文心App",
+            "url": "https://yiyan.baidu.com",
+            "description": "国内月活最高AI应用，2亿+用户，统一入口整合百度全系AI能力",
+            "_aiCompany": "百度 Baidu (中国)",
+            "_aiScore": 89,
+            "_aiTags": [
+              "对话助手",
+              "百度系",
+              "国民级"
+            ]
+          },
+          {
+            "name": "腾讯元宝",
+            "url": "https://yuanbao.tencent.com",
+            "description": "微信内置AI助手，四引擎切换，文件交付能力强，阅后即焚隐私保护",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 90,
+            "_aiTags": [
+              "对话助手",
+              "微信生态",
+              "国产"
+            ]
+          },
+          {
+            "name": "Microsoft Copilot",
+            "url": "https://copilot.microsoft.com",
+            "description": "微软官方AI助手，深度集成Windows/Office，企业用户量大",
+            "_aiCompany": "Microsoft (美国)",
+            "_aiScore": 88,
+            "_aiTags": [
+              "对话助手",
+              "微软生态",
+              "企业级"
+            ]
+          },
+          {
+            "name": "Poe",
+            "url": "https://poe.com",
+            "description": "多模型聚合平台，一个App用GPT/Claude/Gemini等所有模型",
+            "_aiCompany": "Quora (美国)",
+            "_aiScore": 86,
+            "_aiTags": [
+              "多模型聚合",
+              "平台型",
+              "海外"
+            ]
+          },
+          {
+            "name": "通义千问 App",
+            "url": "https://tongyi.aliyun.com",
+            "description": "阿里C端旗舰AI助手，统一千问品牌，开源模型也可体验",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 85,
+            "_aiTags": [
+              "对话助手",
+              "阿里系",
+              "开源"
+            ]
+          },
+          {
+            "name": "Character.AI",
+            "url": "https://character.ai",
+            "description": "AI角色聊天鼻祖，2000万月活，Google软收购后仍独立运营",
+            "_aiCompany": "Character.AI (美国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "角色聊天",
+              "娱乐陪伴",
+              "海外"
+            ]
+          },
+          {
+            "name": "即梦 AI",
+            "url": "https://jimeng.jianying.com",
+            "description": "AI绘画+视频生成工具，Seedance/Seedream驱动，国内最火AI创作工具",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "AI绘画",
+              "视频生成",
+              "创作工具"
+            ]
+          },
+          {
+            "name": "通义听悟",
+            "url": "https://tingwu.aliyun.com",
+            "description": "语音转写会议纪要神器，多语种字幕，职场学习必备",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "会议纪要",
+              "语音转写",
+              "效率工具"
+            ]
+          },
+          {
+            "name": "ima 知识库",
+            "url": "https://ima.qq.com",
+            "description": "腾讯AI知识库工作台，上传本地文件/公众号构建专属知识库问答",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 80,
+            "_aiTags": [
+              "知识库",
+              "RAG",
+              "腾讯系"
+            ]
+          },
+          {
+            "name": "飞书 AI",
+            "url": "https://www.feishu.cn",
+            "description": "飞书内置AI，文档/会议/多维表格全场景智能辅助，办公首选",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 83,
+            "_aiTags": [
+              "办公AI",
+              "飞书生态",
+              "企业级"
+            ]
+          },
+          {
+            "name": "剪映 AI",
+            "url": "https://www.capcut.cn",
+            "description": "视频剪辑AI工具，AI脚本/AI数字人/智能剪辑，创作者必备",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "视频剪辑",
+              "创作工具",
+              "字节系"
+            ]
+          },
+          {
+            "name": "腾讯文档 AI",
+            "url": "https://docs.qq.com",
+            "description": "在线文档内置AI，智能写作/表格分析/PPT生成，办公效率工具",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 79,
+            "_aiTags": [
+              "办公AI",
+              "文档工具",
+              "腾讯系"
+            ]
+          },
+          {
+            "name": "腾讯会议 AI",
+            "url": "https://meeting.tencent.com",
+            "description": "会议实时转写/智能纪要/实时翻译，混元大模型驱动",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "会议AI",
+              "效率工具",
+              "腾讯系"
+            ]
+          },
+          {
+            "name": "猫箱",
+            "url": "https://maoxiangai.com",
+            "description": "虚拟情感陪伴AI，角色对话丰富，字节系情感陪伴产品",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 76,
+            "_aiTags": [
+              "情感陪伴",
+              "角色聊天",
+              "字节系"
+            ]
+          },
+          {
+            "name": "星野",
+            "url": "https://www.xingyeai.com",
+            "description": "AI虚拟陪伴社交，Glow品牌重启版，年轻用户群体大",
+            "_aiCompany": "MiniMax (中国)",
+            "_aiScore": 77,
+            "_aiTags": [
+              "情感陪伴",
+              "社交",
+              "MiniMax"
+            ]
+          },
+          {
+            "name": "通义星尘",
+            "url": "https://tongyi.aliyun.com/xingchen",
+            "description": "角色定制平台，创建虚拟人设知识库，游戏教育陪伴场景",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 75,
+            "_aiTags": [
+              "角色定制",
+              "NPC",
+              "阿里系"
+            ]
+          },
+          {
+            "name": "通义点金",
+            "url": "https://tongyi.aliyun.com",
+            "description": "金融AI助手，市场分析风险预警财报解读，投研场景专用",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 74,
+            "_aiTags": [
+              "金融AI",
+              "投研工具",
+              "阿里系"
+            ]
+          },
+          {
+            "name": "DuMate",
+            "url": "https://dumate.baidu.com",
+            "description": "百度AI编程助手，文心大模型驱动，代码补全与调试",
+            "_aiCompany": "百度 Baidu (中国)",
+            "_aiScore": 73,
+            "_aiTags": [
+              "编程助手",
+              "百度系",
+              "IDE插件"
+            ]
+          },
+          {
+            "name": "HuggingChat",
+            "url": "https://huggingface.co/chat",
+            "description": "开源模型聊天平台，115+开源模型可体验，开发者社区活跃",
+            "_aiCompany": "Hugging Face (美国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "开源模型",
+              "社区",
+              "开发者"
+            ]
+          },
+          {
+            "name": "Meta AI",
+            "url": "https://ai.meta.com",
+            "description": "Meta社交内置AI，Instagram/WhatsApp/Facebook全系集成",
+            "_aiCompany": "Meta (美国)",
+            "_aiScore": 77,
+            "_aiTags": [
+              "社交内置",
+              "Meta生态",
+              "海外"
+            ]
+          },
+          {
+            "name": "Meta Muse",
+            "url": "https://www.meta.ai",
+            "description": "Meta 个人 Agent，代处理邮件/填表/购物/预约，2026-09 登顶美区 App Store",
+            "_aiCompany": "Meta (美国)",
+            "_aiScore": 88,
+            "_aiTags": [
+              "个人Agent",
+              "任务执行",
+              "海外"
+            ]
+          },
+          {
+            "name": "Notion AI",
+            "url": "https://www.notion.so/product/ai",
+            "description": "笔记与知识库内置AI，写作总结翻译全能，全球数千万用户",
+            "_aiCompany": "Notion Labs (美国)",
+            "_aiScore": 85,
+            "_aiTags": [
+              "笔记AI",
+              "效率工具",
+              "海外"
+            ]
+          },
+          {
+            "name": "Canva Magic Studio",
+            "url": "https://www.canva.com/magic-studio",
+            "description": "全球最大设计平台AI工具，图像视频PPT全场景，亿级用户",
+            "_aiCompany": "Canva (澳大利亚)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "设计AI",
+              "全场景",
+              "全球用户"
+            ]
+          },
+          {
+            "name": "Kimi App",
+            "url": "https://kimi.moonshot.cn",
+            "description": "Kimi官方客户端，长文档阅读与分析最强，科研办公首选",
+            "_aiCompany": "月之暗面 Moonshot AI (中国)",
+            "_aiScore": 91,
+            "_aiTags": [
+              "对话助手",
+              "长文档",
+              "国产"
+            ]
+          },
+          {
+            "name": "天工 AI App",
+            "url": "https://www.tiangong.cn",
+            "description": "天工大模型官方应用，搜索+创作+编程全功能，A股上市公司背景",
+            "_aiCompany": "昆仑万维 Kunlun (中国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "对话助手",
+              "全模态",
+              "A股上市"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "大模型",
+        "enName": "LLM",
+        "links": [
+          {
+            "name": "GPT-6 Astra",
+            "url": "https://openai.com",
+            "description": "OpenAI 2026-09 最新旗舰，推理/代码/多模态全面升级，生态最完善",
+            "_aiCompany": "OpenAI (美国)",
+            "_aiScore": 99,
+            "_aiTags": [
+              "闭源",
+              "多模态",
+              "API"
+            ]
+          },
+          {
+            "name": "Claude Fable 5",
+            "url": "https://www.anthropic.com",
+            "description": "Anthropic 2026-06 旗舰，当前 Agent 榜第一，知识工作与推理天花板",
+            "_aiCompany": "Anthropic (美国)",
+            "_aiScore": 97,
+            "_aiTags": [
+              "闭源",
+              "长文本",
+              "安全对齐"
+            ]
+          },
+          {
+            "name": "Gemini 3.8 Pro",
+            "url": "https://deepmind.google",
+            "description": "Google 最新旗舰多模态，超长上下文，原生集成 Google 搜索",
+            "_aiCompany": "Google DeepMind (美国)",
+            "_aiScore": 96,
+            "_aiTags": [
+              "闭源",
+              "多模态",
+              "超长上下文"
+            ]
+          },
+          {
+            "name": "Kimi K3",
+            "url": "https://kimi.moonshot.cn",
+            "description": "国产最强，全球前三，代码前端能力局部超越国际头部，长文本鼻祖",
+            "_aiCompany": "月之暗面 Moonshot AI (中国)",
+            "_aiScore": 94,
+            "_aiTags": [
+              "闭源",
+              "长文本",
+              "国产"
+            ]
+          },
+          {
+            "name": "Grok 4.6",
+            "url": "https://x.ai",
+            "description": "马斯克旗下，实时信息与社交趋势理解强，幽默风格独特，Grok 5 尚未发布",
+            "_aiCompany": "xAI (美国)",
+            "_aiScore": 91,
+            "_aiTags": [
+              "闭源",
+              "实时搜索",
+              "X生态"
+            ]
+          },
+          {
+            "name": "GLM-5.3",
+            "url": "https://www.zhipuai.cn",
+            "description": "智谱最新旗舰，当前最强开源权重之一，中文推理与 Agent 能力领先",
+            "_aiCompany": "智谱AI Zhipu (中国)",
+            "_aiScore": 90,
+            "_aiTags": [
+              "部分开源",
+              "中文推理",
+              "Agent能力"
+            ]
+          },
+          {
+            "name": "文心大模型 5.1",
+            "url": "https://yiyan.baidu.com",
+            "description": "中文语义理解最深，知识图谱最全，与百度搜索百科深度整合，月活2亿+",
+            "_aiCompany": "百度 Baidu (中国)",
+            "_aiScore": 89,
+            "_aiTags": [
+              "闭源",
+              "中文最强",
+              "企业服务"
+            ]
+          },
+          {
+            "name": "Qwen 3.8",
+            "url": "https://tongyi.aliyun.com",
+            "description": "阿里最新开源旗舰，Apache 2.0，代码数学突出，全球开源生态影响力最大",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 89,
+            "_aiTags": [
+              "开源",
+              "Apache 2.0",
+              "云原生"
+            ]
+          },
+          {
+            "name": "Llama 4 / 5 系列",
+            "url": "https://ai.meta.com",
+            "description": "全球最大开源模型生态，社区微调版最多，国际化项目首选",
+            "_aiCompany": "Meta AI (美国)",
+            "_aiScore": 88,
+            "_aiTags": [
+              "开源",
+              "MoE架构",
+              "社区生态"
+            ]
+          },
+          {
+            "name": "Mistral 系列",
+            "url": "https://mistral.ai",
+            "description": "欧洲AI代表，高效推理，代码模型Devstral突出，Apache 2.0开源",
+            "_aiCompany": "Mistral AI (法国)",
+            "_aiScore": 87,
+            "_aiTags": [
+              "开源",
+              "高效推理",
+              "欧洲"
+            ]
+          },
+          {
+            "name": "豆包 Seed 2.1 Pro",
+            "url": "https://www.doubao.com",
+            "description": "极致性价比，推理成本行业最低，C端体验最佳，电商短视频场景强",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 86,
+            "_aiTags": [
+              "闭源",
+              "高性价比",
+              "C端体验"
+            ]
+          },
+          {
+            "name": "混元 Hy3",
+            "url": "https://hunyuan.tencent.com",
+            "description": "MoE架构2950亿参数，登顶OpenRouter全球调用量榜，微信生态深度打通",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 85,
+            "_aiTags": [
+              "闭源",
+              "MoE架构",
+              "社交生态"
+            ]
+          },
+          {
+            "name": "DeepSeek V4",
+            "url": "https://www.deepseek.com",
+            "description": "DeepSeek 最新一代，代码榜登顶，开源高性价比，开发者社区活跃",
+            "_aiCompany": "深度求索 DeepSeek (中国)",
+            "_aiScore": 85,
+            "_aiTags": [
+              "开源",
+              "代码强",
+              "高性价比"
+            ]
+          },
+          {
+            "name": "星火 X2",
+            "url": "https://xinghuo.xfyun.cn",
+            "description": "语音技术积淀深厚，教育医疗行业落地多，多模态交互成熟",
+            "_aiCompany": "科大讯飞 iFlytek (中国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "闭源",
+              "语音AI",
+              "教育医疗"
+            ]
+          },
+          {
+            "name": "Command R+",
+            "url": "https://cohere.com",
+            "description": "企业级RAG专长，检索增强生成领先，适合企业知识库场景",
+            "_aiCompany": "Cohere (加拿大)",
+            "_aiScore": 83,
+            "_aiTags": [
+              "闭源",
+              "RAG专长",
+              "企业级"
+            ]
+          },
+          {
+            "name": "Gemma 4",
+            "url": "https://ai.google.dev/gemma",
+            "description": "Google 2026-04 最新开源模型，Apache 2.0，多模态，端侧部署友好",
+            "_aiCompany": "Google (美国)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "开源",
+              "轻量高效",
+              "Google技术"
+            ]
+          },
+          {
+            "name": "Phi-4",
+            "url": "https://azure.microsoft.com",
+            "description": "微软小模型天花板，参数小能力强，边缘设备部署首选",
+            "_aiCompany": "Microsoft (美国)",
+            "_aiScore": 81,
+            "_aiTags": [
+              "开源",
+              "小模型",
+              "边缘部署"
+            ]
+          },
+          {
+            "name": "MiniMax 海螺",
+            "url": "https://www.minimaxi.com",
+            "description": "多模态综合能力强，音视频生成突出，C端产品矩阵丰富",
+            "_aiCompany": "MiniMax (中国)",
+            "_aiScore": 81,
+            "_aiTags": [
+              "闭源",
+              "多模态",
+              "音视频"
+            ]
+          },
+          {
+            "name": "阶跃星辰 Step-2",
+            "url": "https://www.stepfun.com",
+            "description": "多模态生成质量高，角色扮演类产品经验丰富，技术迭代快",
+            "_aiCompany": "阶跃星辰 StepFun (中国)",
+            "_aiScore": 80,
+            "_aiTags": [
+              "闭源",
+              "多模态",
+              "角色扮演"
+            ]
+          },
+          {
+            "name": "百川 Baichuan 4",
+            "url": "https://www.baichuan-ai.com",
+            "description": "王小川创立，中文理解扎实，开源闭源双线布局，行业落地广",
+            "_aiCompany": "百川智能 Baichuan (中国)",
+            "_aiScore": 79,
+            "_aiTags": [
+              "部分开源",
+              "中文理解",
+              "行业落地"
+            ]
+          },
+          {
+            "name": "日日新 SenseNova",
+            "url": "https://platform.sensenova.cn",
+            "description": "计算机视觉出身，多模态理解强，企业级服务完善",
+            "_aiCompany": "商汤科技 SenseTime (中国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "闭源",
+              "视觉AI",
+              "企业级"
+            ]
+          },
+          {
+            "name": "Midjourney V8.2",
+            "url": "https://www.midjourney.com",
+            "description": "AI 绘画艺术标杆，光影构图顶级，2026-07 默认版，个性化与美学升级",
+            "_aiCompany": "Midjourney Inc. (美国)",
+            "_aiScore": 88,
+            "_aiTags": [
+              "图像生成",
+              "艺术级",
+              "云端订阅"
+            ]
+          },
+          {
+            "name": "FLUX 2 Pro",
+            "url": "https://blackforestlabs.ai",
+            "description": "Stable Diffusion原班人马打造，开源图像生成新王，4MP分辨率，写实人像突出",
+            "_aiCompany": "Black Forest Labs (德国)",
+            "_aiScore": 85,
+            "_aiTags": [
+              "图像生成",
+              "开源",
+              "开发者友好"
+            ]
+          },
+          {
+            "name": "GPT-image-2",
+            "url": "https://openai.com",
+            "description": "OpenAI 官方图像生成模型，与 ChatGPT 深度集成，中文 Prompt 理解准确",
+            "_aiCompany": "OpenAI (美国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "图像生成",
+              "OpenAI",
+              "多模态集成"
+            ]
+          },
+          {
+            "name": "Runway Gen-4.5",
+            "url": "https://runwayml.com",
+            "description": "电影级AI视频生成，摄像机运动控制专业，角色一致性强，影视级工具链",
+            "_aiCompany": "Runway ML (美国)",
+            "_aiScore": 83,
+            "_aiTags": [
+              "视频生成",
+              "电影级",
+              "专业工具"
+            ]
+          },
+          {
+            "name": "Suno V5",
+            "url": "https://suno.com",
+            "description": "AI 音乐生成市场第一，2026-09 发布 V5，录音室级音质，完整歌曲含人声",
+            "_aiCompany": "Suno Inc. (美国)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "音乐生成",
+              "人声演唱",
+              "市场第一"
+            ]
+          },
+          {
+            "name": "Stable Diffusion 3",
+            "url": "https://stability.ai",
+            "description": "开源图像生成鼻祖，完全本地部署可控性强，自定义模型LoRA生态最丰富",
+            "_aiCompany": "Stability AI (英国)",
+            "_aiScore": 80,
+            "_aiTags": [
+              "图像生成",
+              "开源",
+              "本地部署"
+            ]
+          },
+          {
+            "name": "Pika 2.2",
+            "url": "https://pika.art",
+            "description": "短视频AI生成神器，社交内容创作首选，特效丰富上手快，性价比高",
+            "_aiCompany": "Pika Labs (美国)",
+            "_aiScore": 79,
+            "_aiTags": [
+              "视频生成",
+              "短视频",
+              "创作者工具"
+            ]
+          },
+          {
+            "name": "Udio",
+            "url": "https://www.udio.com",
+            "description": "高保真AI音乐生成，器乐音质突出，48kHz立体声输出，专业音乐制作人首选",
+            "_aiCompany": "Udio (美国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "音乐生成",
+              "高保真",
+              "专业级"
+            ]
+          },
+          {
+            "name": "天工大模型",
+            "url": "https://www.tiangong.cn",
+            "description": "双千亿级大模型，A股上市公司，ARR突破8亿美元，短剧/音乐/世界模型全布局",
+            "_aiCompany": "昆仑万维 Kunlun (中国)",
+            "_aiScore": 77,
+            "_aiTags": [
+              "开源",
+              "全模态",
+              "A股上市"
+            ]
+          },
+          {
+            "name": "Gemini Omni 1.1 Flash",
+            "url": "https://deepmind.google",
+            "description": "Google 对话式视频生成，40 秒连续画面、4K 导出，2026-08 发布",
+            "_aiCompany": "Google DeepMind (美国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "视频生成",
+              "多模态",
+              "Google"
+            ]
+          },
+          {
+            "name": "Seedance 2.5",
+            "url": "https://jimeng.jianying.com",
+            "description": "视频生成模型，支持30秒连续视频直出，多模态参考素材输入",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "视频生成",
+              "多模态",
+              "国产"
+            ]
+          },
+          {
+            "name": "Seedream 5.0 Pro",
+            "url": "https://jimeng.jianying.com",
+            "description": "图像生成模型，原生4K画质，即梦APP内置，中文Prompt理解精准",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 80,
+            "_aiTags": [
+              "图像生成",
+              "4K画质",
+              "国产"
+            ]
+          },
+          {
+            "name": "通义万相 Wan 3.0",
+            "url": "https://tongyi.aliyun.com/wan",
+            "description": "阿里视频生成旗舰，原生 30 秒视频，四模态参考，图声文全要素",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "图像生成",
+              "多模态",
+              "阿里系"
+            ]
+          },
+          {
+            "name": "HappyHorse 1.1",
+            "url": "https://tongyi.aliyun.com",
+            "description": "阿里 ATH 旗下视频模型，与通义万相并行，人物一致性强，1.1 版 2026-06 更新",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 77,
+            "_aiTags": [
+              "视频生成",
+              "多模态",
+              "阿里系"
+            ]
+          },
+          {
+            "name": "文心一格",
+            "url": "https://yige.baidu.com",
+            "description": "百度AI绘画平台，已整合入文心App，中文Prompt理解准确",
+            "_aiCompany": "百度 Baidu (中国)",
+            "_aiScore": 75,
+            "_aiTags": [
+              "图像生成",
+              "百度系",
+              "已整合"
+            ]
+          },
+          {
+            "name": "豆包音频大模型",
+            "url": "https://www.doubao.com",
+            "description": "语音生成模型，音色自然，支持多语种，已接入豆包全系产品",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 74,
+            "_aiTags": [
+              "语音生成",
+              "多语种",
+              "字节系"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "AI Agent",
+        "enName": "AI Agent",
+        "links": [
+          {
+            "name": "扣子 Coze",
+            "url": "https://www.coze.cn",
+            "description": "零代码搭建Agent，插件生态最丰富，国内用户量最大，新手友好",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 95,
+            "_aiTags": [
+              "低代码",
+              "插件生态",
+              "C端"
+            ]
+          },
+          {
+            "name": "ChatGPT Work",
+            "url": "https://chatgpt.com",
+            "description": "OpenAI 官方 Agent，代处理网页任务与多步工作流，Pro 订阅",
+            "_aiCompany": "OpenAI (美国)",
+            "_aiScore": 94,
+            "_aiTags": [
+              "GUI Agent",
+              "网页操作",
+              "OpenAI"
+            ]
+          },
+          {
+            "name": "Claude Computer Use",
+            "url": "https://www.anthropic.com",
+            "description": "可操控桌面GUI的Agent，支持Win/macOS/Linux，自动化办公稳健",
+            "_aiCompany": "Anthropic (美国)",
+            "_aiScore": 93,
+            "_aiTags": [
+              "桌面控制",
+              "办公自动化",
+              "跨平台"
+            ]
+          },
+          {
+            "name": "Cursor Agent",
+            "url": "https://cursor.sh",
+            "description": "AI代码编辑器Agent，全项目理解与重构，开发者首选编程智能体",
+            "_aiCompany": "Anysphere (美国)",
+            "_aiScore": 92,
+            "_aiTags": [
+              "编程Agent",
+              "代码重构",
+              "IDE"
+            ]
+          },
+          {
+            "name": "Claude Code",
+            "url": "https://www.anthropic.com",
+            "description": "命令行编程Agent，SWE-bench 80%+，软件工程领域统治级表现",
+            "_aiCompany": "Anthropic (美国)",
+            "_aiScore": 91,
+            "_aiTags": [
+              "编程Agent",
+              "CLI",
+              "代码工程"
+            ]
+          },
+          {
+            "name": "Microsoft Copilot Studio",
+            "url": "https://www.microsoft.com/copilot",
+            "description": "企业级Agent构建平台，深度集成Office 365生态，企业首选",
+            "_aiCompany": "Microsoft (美国)",
+            "_aiScore": 90,
+            "_aiTags": [
+              "企业级",
+              "Office集成",
+              "低代码"
+            ]
+          },
+          {
+            "name": "腾讯元器",
+            "url": "https://yuanqi.tencent.com",
+            "description": "混元大模型驱动，支持发布到QQ/微信，社交生态Agent平台",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 88,
+            "_aiTags": [
+              "低代码",
+              "微信生态",
+              "社交"
+            ]
+          },
+          {
+            "name": "通义灵码 / Qoder",
+            "url": "https://tongyi.aliyun.com/lingma",
+            "description": "专注编程Agent，代码生成解释优化，IDE插件日活超200万",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 87,
+            "_aiTags": [
+              "编程Agent",
+              "代码补全",
+              "IDE插件"
+            ]
+          },
+          {
+            "name": "AutoGLM",
+            "url": "https://www.zhipuai.cn",
+            "description": "手机端GUI Agent，订餐购票等任务成功率88%，国内最强移动端智能体",
+            "_aiCompany": "智谱AI Zhipu (中国)",
+            "_aiScore": 86,
+            "_aiTags": [
+              "手机Agent",
+              "GUI操作",
+              "国产"
+            ]
+          },
+          {
+            "name": "Zapier Central",
+            "url": "https://zapier.com/central",
+            "description": "工作流自动化Agent，连接5000+应用，企业级自动化首选",
+            "_aiCompany": "Zapier (美国)",
+            "_aiScore": 85,
+            "_aiTags": [
+              "工作流",
+              "SaaS集成",
+              "企业级"
+            ]
+          },
+          {
+            "name": "TRAE",
+            "url": "https://trae.ai",
+            "description": "AI研发工具IDE，对标Claude Code完整矩阵，字节内部全量使用",
+            "_aiCompany": "字节跳动 ByteDance (中国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "编程IDE",
+              "研发工具",
+              "字节系"
+            ]
+          },
+          {
+            "name": "WorkBuddy / CodeBuddy",
+            "url": "https://workbuddy.qq.com",
+            "description": "腾讯AI工作台，办公+编程双Agent，混元Hy3驱动，文件交付能力强",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "办公Agent",
+              "编程Agent",
+              "腾讯系"
+            ]
+          },
+          {
+            "name": "QClaw / ClawPro",
+            "url": "https://qclaw.qq.com",
+            "description": "本地AI助手，首创微信直连模式，个人效率工具，企业版ClawPro",
+            "_aiCompany": "腾讯 Tencent (中国)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "本地助手",
+              "微信直连",
+              "效率工具"
+            ]
+          },
+          {
+            "name": "Relevance AI Agents",
+            "url": "https://relevanceai.com/agents",
+            "description": "无代码开发环境，轻松实现智能体团队任务自动化",
+            "_aiCompany": "Relevance AI (澳大利亚)",
+            "_aiScore": 82,
+            "_aiTags": [
+              "无代码",
+              "团队协作",
+              "自动化"
+            ]
+          },
+          {
+            "name": "Salesforce Agent Builder",
+            "url": "https://www.salesforce.com",
+            "description": "CRM场景Agent，低代码构建，销售客服场景深度优化",
+            "_aiCompany": "Salesforce (美国)",
+            "_aiScore": 81,
+            "_aiTags": [
+              "CRM",
+              "低代码",
+              "企业级"
+            ]
+          },
+          {
+            "name": "Voiceflow",
+            "url": "https://www.voiceflow.com",
+            "description": "对话式Agent设计平台，客服机器人首选，团队协作功能强",
+            "_aiCompany": "Voiceflow (加拿大)",
+            "_aiScore": 80,
+            "_aiTags": [
+              "对话设计",
+              "客服机器人",
+              "协作"
+            ]
+          },
+          {
+            "name": "蚂蚁数科 Agentar",
+            "url": "https://www.antgroup.com",
+            "description": "全栈式智能体开发平台，贯通算力调度数据治理模型训推全链路",
+            "_aiCompany": "蚂蚁集团 Ant Group (中国)",
+            "_aiScore": 79,
+            "_aiTags": [
+              "全栈平台",
+              "企业级",
+              "金融"
+            ]
+          },
+          {
+            "name": "文心千帆智能体平台",
+            "url": "https://qianfan.cloud.baidu.com",
+            "description": "百度企业级Agent开发平台，30万+企业客户，行业模型丰富",
+            "_aiCompany": "百度 Baidu (中国)",
+            "_aiScore": 79,
+            "_aiTags": [
+              "企业级",
+              "百度系",
+              "行业模型"
+            ]
+          },
+          {
+            "name": "Betteryeah",
+            "url": "https://www.betteryeah.com",
+            "description": "零门槛Agent平台，Agent Store应用商店模式，上手极快",
+            "_aiCompany": "前阿里团队 (中国)",
+            "_aiScore": 78,
+            "_aiTags": [
+              "零门槛",
+              "应用商店",
+              "C端"
+            ]
+          },
+          {
+            "name": "Wegic",
+            "url": "https://js.design",
+            "description": "对话式网页设计开发Agent，自然语言描述需求直接生成网页",
+            "_aiCompany": "即时设计 (中国)",
+            "_aiScore": 77,
+            "_aiTags": [
+              "网页设计",
+              "低代码",
+              "设计工具"
+            ]
+          },
+          {
+            "name": "MindStudio",
+            "url": "https://www.mindstudio.ai",
+            "description": "无代码AI Agent搭建平台，200+模型与千级集成，企业与高校客户广泛",
+            "_aiCompany": "MindStudio (美国)",
+            "_aiScore": 76,
+            "_aiTags": [
+              "无代码",
+              "Agent搭建",
+              "企业级"
+            ]
+          },
+          {
+            "name": "百炼平台",
+            "url": "https://bailian.aliyun.com",
+            "description": "阿里云企业级Agent开发平台，一键部署Serverless推理，开发者友好",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 80,
+            "_aiTags": [
+              "企业级",
+              "云原生",
+              "阿里系"
+            ]
+          },
+          {
+            "name": "Devin Desktop",
+            "url": "https://devin.ai",
+            "description": "全球首个自主AI软件工程师，独立完成PR与代码任务，云沙箱运行；Cognition 2025年收购Windsurf剩余资产",
+            "_aiCompany": "Cognition AI (美国)",
+            "_aiScore": 90,
+            "_aiTags": [
+              "自主编程",
+              "AI工程师",
+              "云端运行"
+            ]
+          },
+          {
+            "name": "GitHub Copilot",
+            "url": "https://github.com/copilot",
+            "description": "代码补全市场第一，VS Code原生集成，企业用户量最大，生态最完善",
+            "_aiCompany": "GitHub / Microsoft (美国)",
+            "_aiScore": 89,
+            "_aiTags": [
+              "代码补全",
+              "IDE集成",
+              "微软生态"
+            ]
+          },
+          {
+            "name": "Gemini Code Assist",
+            "url": "https://cloud.google.com/products/gemini/code-assist",
+            "description": "Google官方编程助手，GCP深度集成，支持VS Code/JetBrains双平台",
+            "_aiCompany": "Google (美国)",
+            "_aiScore": 83,
+            "_aiTags": [
+              "编程助手",
+              "Google云",
+              "IDE插件"
+            ]
+          },
+          {
+            "name": "Cline",
+            "url": "https://github.com/cline/cline",
+            "description": "VS Code最强开源Agent插件，支持多模型，文件编辑终端操作全自动化",
+            "_aiCompany": "开源社区 (美国)",
+            "_aiScore": 79,
+            "_aiTags": [
+              "开源",
+              "VS Code",
+              "自主编程"
+            ]
+          },
+          {
+            "name": "Aider",
+            "url": "https://aider.chat",
+            "description": "命令行编程Agent，Apache 2.0开源，Git集成好，支持本地大模型",
+            "_aiCompany": "Aider (美国)",
+            "_aiScore": 77,
+            "_aiTags": [
+              "开源",
+              "CLI",
+              "本地部署"
+            ]
+          },
+          {
+            "name": "Continue",
+            "url": "https://www.continue.dev",
+            "description": "开源VS Code插件，BYO模型完全免费，支持所有主流大模型",
+            "_aiCompany": "Continue Dev (美国)",
+            "_aiScore": 76,
+            "_aiTags": [
+              "开源",
+              "VS Code",
+              "免费"
+            ]
+          },
+          {
+            "name": "QoderWork",
+            "url": "https://tongyi.aliyun.com",
+            "description": "桌面端办公Agent，日常工作自动化，数字员工形态",
+            "_aiCompany": "阿里巴巴 Alibaba (中国)",
+            "_aiScore": 75,
+            "_aiTags": [
+              "办公Agent",
+              "桌面应用",
+              "阿里系"
+            ]
+          },
+          {
+            "name": "Manus",
+            "url": "https://manus.im",
+            "description": "通用型AI Agent，自主完成研究/建站/做PPT/游戏等多步任务并交付完整成果，2.0已发布",
+            "_aiCompany": "Butterfly Effect (新加坡)",
+            "_aiScore": 90,
+            "_aiTags": [
+              "通用Agent",
+              "自主任务",
+              "云端运行"
+            ]
+          },
+          {
+            "name": "Lovable",
+            "url": "https://lovable.dev",
+            "description": "瑞典氛围编程平台，自然语言生成完整全栈应用，8个月ARR破1亿美元的AI独角兽",
+            "_aiCompany": "Lovable (瑞典)",
+            "_aiScore": 88,
+            "_aiTags": [
+              "应用构建",
+              "氛围编程",
+              "全栈生成"
+            ]
+          },
+          {
+            "name": "Genspark",
+            "url": "https://www.genspark.ai",
+            "description": "一站式AI工作空间Super Agent，自动完成研究/文档/表格/幻灯片，与微软战略合作",
+            "_aiCompany": "MainFunc (美国)",
+            "_aiScore": 84,
+            "_aiTags": [
+              "AI工作空间",
+              "Super Agent",
+              "自动化"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑮𝒍𝒐𝒃𝒂𝒍 𝑨𝑰';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

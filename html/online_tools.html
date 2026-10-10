@@ -1,0 +1,2769 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="免费在线工具、效率工具与无需安装的网页应用导航">
+<title>免费在线工具 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑂𝑛𝑙𝑖𝑛𝑒 𝑇𝑜𝑜𝑙𝑠</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>免费在线工具</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">免费在线工具 · 图片PDF视频音频处理一站式</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "免费在线工具",
+    "icon": "🛠️",
+    "color": "linear-gradient(135deg, #3a1c71, #d76d77)",
+    "subcategories": [
+      {
+        "name": "综合型在线工具",
+        "links": [
+          {
+            "name": "TinyWow",
+            "url": "https://tinywow.com",
+            "description": "图片、PDF、文件、视频、AI、转换等超大型综合工具箱"
+          },
+          {
+            "name": "iLovePDF",
+            "url": "https://www.ilovepdf.com",
+            "description": "PDF合并、拆分、压缩、转换、OCR、签名等"
+          },
+          {
+            "name": "Smallpdf",
+            "url": "https://smallpdf.com",
+            "description": "PDF转换、压缩、编辑、OCR、签名一站式平台"
+          },
+          {
+            "name": "PDF24 Tools",
+            "url": "https://tools.pdf24.org",
+            "description": "超大型免费PDF工具集合，合并、转换、OCR、压缩、编辑"
+          },
+          {
+            "name": "CloudConvert",
+            "url": "https://cloudconvert.com",
+            "description": "文件、图片、视频、音频、文档、电子书等大规模格式转换"
+          },
+          {
+            "name": "FreeConvert",
+            "url": "https://www.freeconvert.com",
+            "description": "视频、图片、音频、文档、压缩、PDF综合工具"
+          },
+          {
+            "name": "Convertio",
+            "url": "https://convertio.co",
+            "description": "超大型在线格式转换平台"
+          },
+          {
+            "name": "Zamzar",
+            "url": "https://www.zamzar.com",
+            "description": "老牌在线文件格式转换平台"
+          },
+          {
+            "name": "Online-Convert",
+            "url": "https://www.online-convert.com",
+            "description": "图片、视频、音频、文档、电子书综合转换"
+          },
+          {
+            "name": "123APPS",
+            "url": "https://123apps.com",
+            "description": "音视频编辑、录音、剪辑、转换、PDF等综合工具"
+          },
+          {
+            "name": "Media.io",
+            "url": "https://www.media.io",
+            "description": "在线视频、音频、图片和AI工具"
+          },
+          {
+            "name": "Kapwing",
+            "url": "https://www.kapwing.com",
+            "description": "视频、GIF、图片、字幕、压缩、转换"
+          },
+          {
+            "name": "VEED",
+            "url": "https://www.veed.io",
+            "description": "在线视频编辑、压缩、字幕、格式转换"
+          },
+          {
+            "name": "Clideo",
+            "url": "https://clideo.com",
+            "description": "视频压缩、剪辑、转换、GIF工具"
+          },
+          {
+            "name": "EZGIF",
+            "url": "https://ezgif.com",
+            "description": "GIF、视频、图片转换和压缩老牌工具站"
+          },
+          {
+            "name": "iLoveIMG",
+            "url": "https://www.iloveimg.com",
+            "description": "图片压缩、裁剪、调整、转换、加水印等"
+          },
+          {
+            "name": "Img2Go",
+            "url": "https://www.img2go.com",
+            "description": "图片编辑、压缩、转换、OCR、AI图片工具"
+          },
+          {
+            "name": "Fotor",
+            "url": "https://www.fotor.com",
+            "description": "图片编辑、增强、抠图、AI工具"
+          },
+          {
+            "name": "Pixlr",
+            "url": "https://pixlr.com",
+            "description": "在线图片编辑器、背景移除、滤镜、设计"
+          },
+          {
+            "name": "Photopea",
+            "url": "https://www.photopea.com",
+            "description": "浏览器内专业图片编辑器，兼容PSD、Sketch、XD等"
+          },
+          {
+            "name": "Canva",
+            "url": "https://www.canva.com",
+            "description": "图片、PDF、设计、抠图、压缩、文档等综合工具"
+          },
+          {
+            "name": "Adobe Express",
+            "url": "https://www.adobe.com/express",
+            "description": "Adobe在线图片、视频、PDF和背景处理工具"
+          },
+          {
+            "name": "LunaPic",
+            "url": "https://www.lunapic.com",
+            "description": "免费在线图片编辑、滤镜、动画、裁剪、透明背景"
+          },
+          {
+            "name": "BeFunky",
+            "url": "https://www.befunky.com",
+            "description": "图片编辑、拼图、设计工具"
+          },
+          {
+            "name": "PhotoRoom",
+            "url": "https://www.photoroom.com",
+            "description": "商品图、抠图、背景替换、图片生成"
+          },
+          {
+            "name": "Pixelcut",
+            "url": "https://www.pixelcut.ai",
+            "description": "AI抠图、商品图、放大、背景处理"
+          },
+          {
+            "name": "Clipdrop",
+            "url": "https://clipdrop.co",
+            "description": "抠图、清理、放大、换背景、光照等AI图片工具"
+          },
+          {
+            "name": "Cleanup.pictures",
+            "url": "https://cleanup.pictures",
+            "description": "在线去除图片中的人物、物体和杂物"
+          },
+          {
+            "name": "Remove.bg",
+            "url": "https://www.remove.bg",
+            "description": "AI一键抠图、透明背景"
+          },
+          {
+            "name": "Erase.bg",
+            "url": "https://www.erase.bg",
+            "description": "自动删除图片背景"
+          },
+          {
+            "name": "WatermarkRemover.io",
+            "url": "https://www.watermarkremover.io",
+            "description": "AI去水印、背景处理"
+          },
+          {
+            "name": "Prepostseo",
+            "url": "https://www.prepostseo.com",
+            "description": "SEO、图片、PDF、OCR、文本等数百个小工具"
+          },
+          {
+            "name": "GigaCalculator",
+            "url": "https://www.gigacalculator.com",
+            "description": "计算器、单位转换、日期、数学等"
+          },
+          {
+            "name": "Calculator.net",
+            "url": "https://www.calculator.net",
+            "description": "大型在线计算器集合"
+          },
+          {
+            "name": "Omni Calculator",
+            "url": "https://www.omnicalculator.com",
+            "description": "数千种专业在线计算器"
+          },
+          {
+            "name": "RapidTables",
+            "url": "https://www.rapidtables.com",
+            "description": "电学、数学、单位、颜色、时间、编码等工具"
+          },
+          {
+            "name": "Toolsley",
+            "url": "https://www.toolsley.com",
+            "description": "文件、哈希、密码、图片、文本等在线小工具"
+          },
+          {
+            "name": "TaimurTools",
+            "url": "https://taimurtools.com",
+            "description": "PDF、图片、文本、开发者、AI综合工具"
+          },
+          {
+            "name": "TinyTool",
+            "url": "https://tinytool.in",
+            "description": "图片、文本、PDF、SEO、开发者工具合集"
+          },
+          {
+            "name": "10015 Tools",
+            "url": "https://10015.io",
+            "description": "大量前端、图片、文本、开发者实用工具"
+          },
+          {
+            "name": "OnlineTools",
+            "url": "https://onlinetools.com",
+            "description": "单用途在线工具集合"
+          },
+          {
+            "name": "Browserling",
+            "url": "https://www.browserling.com",
+            "description": "文本、开发、编码、转换、网络等大量工具"
+          },
+          {
+            "name": "OmgIMG",
+            "url": "https://omgimg.com",
+            "description": "图片压缩、调整、转换"
+          },
+          {
+            "name": "Simple Image Resizer",
+            "url": "https://www.simpleimageresizer.com",
+            "description": "在线调整图片尺寸"
+          },
+          {
+            "name": "ResizePixel",
+            "url": "https://www.resizepixel.com",
+            "description": "图片调整大小、压缩、转换、裁剪"
+          },
+          {
+            "name": "IMGonline",
+            "url": "https://www.imgonline.com.ua/eng/",
+            "description": "大量图片处理工具"
+          },
+          {
+            "name": "AConvert",
+            "url": "https://www.aconvert.com",
+            "description": "图片、文档、视频、音频、PDF格式转换"
+          },
+          {
+            "name": "AnyConv",
+            "url": "https://anyconv.com",
+            "description": "多格式文件转换"
+          },
+          {
+            "name": "FileZigZag",
+            "url": "https://www.filezigzag.com",
+            "description": "在线文档、图片、音频、视频等文件转换"
+          }
+        ]
+      },
+      {
+        "name": "图片压缩转换",
+        "links": [
+          {
+            "name": "TinyPNG",
+            "url": "https://tinypng.com",
+            "description": "PNG、JPEG、WebP压缩"
+          },
+          {
+            "name": "TinyJPG",
+            "url": "https://tinyjpg.com",
+            "description": "JPEG图片压缩"
+          },
+          {
+            "name": "Squoosh",
+            "url": "https://squoosh.app",
+            "description": "Google推出的浏览器图片压缩工具"
+          },
+          {
+            "name": "Compressor.io",
+            "url": "https://compressor.io",
+            "description": "JPEG、PNG、GIF、SVG图片压缩"
+          },
+          {
+            "name": "Optimizilla",
+            "url": "https://imagecompressor.com",
+            "description": "JPG、PNG在线压缩与质量调整"
+          },
+          {
+            "name": "CompressJPEG",
+            "url": "https://compressjpeg.com",
+            "description": "JPEG批量压缩"
+          },
+          {
+            "name": "CompressPNG",
+            "url": "https://compresspng.com",
+            "description": "PNG在线压缩"
+          },
+          {
+            "name": "JPEG Optimizer",
+            "url": "https://jpeg-optimizer.com",
+            "description": "JPEG压缩与尺寸优化"
+          },
+          {
+            "name": "JPEG.io",
+            "url": "https://www.jpeg.io",
+            "description": "图片在线转换JPEG"
+          },
+          {
+            "name": "JPG2PNG",
+            "url": "https://jpg2png.com",
+            "description": "JPG转PNG"
+          },
+          {
+            "name": "PNG2JPG",
+            "url": "https://png2jpg.com",
+            "description": "PNG转JPG"
+          },
+          {
+            "name": "SVGOMG",
+            "url": "https://svgomg.net",
+            "description": "SVG优化与压缩"
+          },
+          {
+            "name": "SVGO Playground",
+            "url": "https://svgo.dev",
+            "description": "SVG优化器在线体验"
+          },
+          {
+            "name": "WebP Converter",
+            "url": "https://webp-converter.com",
+            "description": "图片转换WebP"
+          },
+          {
+            "name": "WebP.to",
+            "url": "https://webp.to",
+            "description": "WebP/JPG/PNG格式转换"
+          },
+          {
+            "name": "ConvertICO",
+            "url": "https://convertico.com",
+            "description": "图片转ICO图标"
+          },
+          {
+            "name": "ICO Convert",
+            "url": "https://icoconvert.com",
+            "description": "JPG、PNG转ICO"
+          },
+          {
+            "name": "RealFaviconGenerator",
+            "url": "https://realfavicongenerator.net",
+            "description": "网站Favicon全套生成"
+          },
+          {
+            "name": "Favicon.io",
+            "url": "https://favicon.io",
+            "description": "Favicon生成与转换"
+          },
+          {
+            "name": "Favic-o-Matic",
+            "url": "https://favicomatic.com",
+            "description": "Favicon和Apple Touch Icon生成"
+          },
+          {
+            "name": "ImageResizer",
+            "url": "https://imageresizer.com",
+            "description": "图片压缩、调整和批处理"
+          },
+          {
+            "name": "CompressNow",
+            "url": "https://compressnow.com",
+            "description": "JPEG/PNG/GIF压缩"
+          },
+          {
+            "name": "Kraken.io",
+            "url": "https://kraken.io/web-interface",
+            "description": "图片压缩和优化"
+          },
+          {
+            "name": "ShortPixel",
+            "url": "https://shortpixel.com/online-image-compression",
+            "description": "图片压缩优化"
+          },
+          {
+            "name": "Imagify",
+            "url": "https://imagify.io/online-compression",
+            "description": "图片压缩"
+          },
+          {
+            "name": "JPEGmini",
+            "url": "https://www.jpegmini.com",
+            "description": "JPEG图片优化"
+          },
+          {
+            "name": "ImageSmaller",
+            "url": "https://imagesmaller.com",
+            "description": "在线压缩图片"
+          },
+          {
+            "name": "Compress-Or-Die",
+            "url": "https://compress-or-die.com",
+            "description": "高级JPEG/PNG/WebP压缩"
+          },
+          {
+            "name": "Toolur Image Compressor",
+            "url": "https://compress.toolur.com",
+            "description": "图片压缩"
+          },
+          {
+            "name": "Shrink.media",
+            "url": "https://www.shrink.media",
+            "description": "AI图片压缩与尺寸处理"
+          },
+          {
+            "name": "Upscale.media",
+            "url": "https://www.upscale.media",
+            "description": "AI图片放大和增强"
+          },
+          {
+            "name": "ImgUpscaler",
+            "url": "https://imgupscaler.com",
+            "description": "AI图片放大"
+          },
+          {
+            "name": "Bigjpg",
+            "url": "https://bigjpg.com",
+            "description": "AI图片放大，动漫/插画效果突出"
+          },
+          {
+            "name": "VanceAI Image Upscaler",
+            "url": "https://vanceai.com/image-enlarger",
+            "description": "AI图片放大"
+          },
+          {
+            "name": "Icons8 Smart Upscaler",
+            "url": "https://icons8.com/upscaler",
+            "description": "AI图片放大"
+          },
+          {
+            "name": "Zyro Image Upscaler",
+            "url": "https://zyro.com/tools/image-upscaler",
+            "description": "图片AI放大"
+          },
+          {
+            "name": "Image Enlarger",
+            "url": "https://imglarger.com",
+            "description": "图片放大与增强"
+          },
+          {
+            "name": "Waifu2x",
+            "url": "https://www.waifu2x.net",
+            "description": "动漫/插画AI放大与降噪"
+          },
+          {
+            "name": "Waifu2x.udp.jp",
+            "url": "https://waifu2x.udp.jp",
+            "description": "动漫图片放大降噪"
+          },
+          {
+            "name": "Upscayl Online",
+            "url": "https://upscayl.org",
+            "description": "开源AI图片放大生态入口"
+          },
+          {
+            "name": "Pixelied",
+            "url": "https://pixelied.com",
+            "description": "在线图片设计和编辑"
+          },
+          {
+            "name": "VistaCreate",
+            "url": "https://create.vista.com",
+            "description": "在线设计与图片工具"
+          },
+          {
+            "name": "Picsart",
+            "url": "https://picsart.com",
+            "description": "图片编辑、背景处理、AI工具"
+          },
+          {
+            "name": "Fotor Background Remover",
+            "url": "https://www.fotor.com/features/background-remover/",
+            "description": "图片背景移除"
+          },
+          {
+            "name": "Cutout.pro",
+            "url": "https://www.cutout.pro",
+            "description": "AI抠图、图片增强、视频背景去除"
+          },
+          {
+            "name": "Removal.AI",
+            "url": "https://removal.ai",
+            "description": "AI自动抠图"
+          },
+          {
+            "name": "Slazzer",
+            "url": "https://www.slazzer.com",
+            "description": "AI图片背景删除"
+          },
+          {
+            "name": "BG-Remover",
+            "url": "https://www.bg-remover.com",
+            "description": "在线AI图片背景移除"
+          }
+        ]
+      },
+      {
+        "name": "抠图与去水印",
+        "links": [
+          {
+            "name": "PhotoRoom Background Remover",
+            "url": "https://www.photoroom.com/tools/background-remover",
+            "description": "商品图自动抠图"
+          },
+          {
+            "name": "Adobe Express Background Remover",
+            "url": "https://www.adobe.com/express/feature/image/remove-background",
+            "description": "Adobe在线抠图"
+          },
+          {
+            "name": "Canva Background Remover",
+            "url": "https://www.canva.com/features/background-remover/",
+            "description": "Canva背景移除"
+          },
+          {
+            "name": "Pixlr Remove Background",
+            "url": "https://pixlr.com/remove-background/",
+            "description": "AI背景移除"
+          },
+          {
+            "name": "BgEraser",
+            "url": "https://bgeraser.com",
+            "description": "AI背景处理"
+          },
+          {
+            "name": "Depositphotos Background Remover",
+            "url": "https://depositphotos.com/bgremover.html",
+            "description": "在线背景移除"
+          },
+          {
+            "name": "Icons8 Background Remover",
+            "url": "https://icons8.com/bgremover",
+            "description": "AI抠图"
+          },
+          {
+            "name": "ClipDrop Remove Background",
+            "url": "https://clipdrop.co/remove-background",
+            "description": "AI去背景"
+          },
+          {
+            "name": "AI Background Remover",
+            "url": "https://www.pixelcut.ai/background-remover",
+            "description": "AI抠图"
+          },
+          {
+            "name": "PicWish",
+            "url": "https://picwish.com",
+            "description": "背景移除、增强、图片工具"
+          },
+          {
+            "name": "Vmake",
+            "url": "https://vmake.ai",
+            "description": "商品图背景、抠图和AI编辑"
+          },
+          {
+            "name": "insMind",
+            "url": "https://www.insmind.com",
+            "description": "AI抠图、背景生成、图片编辑"
+          },
+          {
+            "name": "Dzine",
+            "url": "https://www.dzine.ai",
+            "description": "AI图像编辑和背景工具"
+          },
+          {
+            "name": "HitPaw Online",
+            "url": "https://online.hitpaw.com",
+            "description": "图片/视频AI处理工具"
+          },
+          {
+            "name": "Aiseesoft Online",
+            "url": "https://www.aiseesoft.com/online-tools/",
+            "description": "图片、视频、PDF、音频在线工具"
+          },
+          {
+            "name": "Inpaint",
+            "url": "https://theinpaint.com",
+            "description": "在线移除图片中的物体、人物、水印"
+          },
+          {
+            "name": "Magic Eraser",
+            "url": "https://magiceraser.io",
+            "description": "在线擦除图片物体"
+          },
+          {
+            "name": "Magic Studio Cleanup",
+            "url": "https://magicstudio.com/cleanup",
+            "description": "AI清理图片"
+          },
+          {
+            "name": "SnapEdit",
+            "url": "https://snapedit.app",
+            "description": "AI去物体、去背景、图片增强"
+          },
+          {
+            "name": "WatermarkRemover.ai",
+            "url": "https://watermarkremover.ai",
+            "description": "AI图片去水印"
+          },
+          {
+            "name": "Dewatermark.ai",
+            "url": "https://dewatermark.ai",
+            "description": "AI去除图片水印"
+          },
+          {
+            "name": "Fotor Watermark Remover",
+            "url": "https://www.fotor.com/features/remove-watermark/",
+            "description": "在线去水印"
+          },
+          {
+            "name": "Media.io Watermark Remover",
+            "url": "https://www.media.io/watermark-remover.html",
+            "description": "图片/视频去水印"
+          },
+          {
+            "name": "PicWish Watermark Remover",
+            "url": "https://picwish.com/watermark-remover",
+            "description": "去水印和去物体"
+          },
+          {
+            "name": "Vmake Watermark Remover",
+            "url": "https://vmake.ai/tools/watermark-remover",
+            "description": "商品图去水印"
+          },
+          {
+            "name": "Aiseesoft Watermark Remover",
+            "url": "https://www.aiseesoft.com/online-watermark-remover/",
+            "description": "图片视频水印移除"
+          },
+          {
+            "name": "HitPaw Watermark Remover",
+            "url": "https://online.hitpaw.com/watermark-remover-online.html",
+            "description": "AI去水印"
+          },
+          {
+            "name": "Watermark Remover Plus",
+            "url": "https://watermarkremoverplus.com",
+            "description": "在线图片去水印"
+          },
+          {
+            "name": "Apowersoft Watermark Remover",
+            "url": "https://www.apowersoft.com/online-watermark-remover",
+            "description": "图片去水印"
+          },
+          {
+            "name": "VanceAI Retoucher",
+            "url": "https://vanceai.com/retoucher/",
+            "description": "AI物体移除"
+          },
+          {
+            "name": "Cutout.Pro Object Remover",
+            "url": "https://www.cutout.pro/remove-unwanted-objects",
+            "description": "AI对象移除"
+          },
+          {
+            "name": "Photoroom Retouch",
+            "url": "https://www.photoroom.com/tools/retouch",
+            "description": "商品图物体清理"
+          },
+          {
+            "name": "Pixa",
+            "url": "https://www.pixa.com",
+            "description": "AI图片处理、抠图、放大"
+          },
+          {
+            "name": "ImgCreator",
+            "url": "https://imgcreator.zmo.ai",
+            "description": "AI图片处理和生成"
+          },
+          {
+            "name": "insMind Object Remover",
+            "url": "https://www.insmind.com/object-remover/",
+            "description": "AI去物体"
+          },
+          {
+            "name": "AI Ease",
+            "url": "https://www.aiease.ai",
+            "description": "AI图片编辑与背景工具"
+          },
+          {
+            "name": "Artguru",
+            "url": "https://www.artguru.ai",
+            "description": "AI图片编辑、艺术化和增强"
+          },
+          {
+            "name": "Hotpot AI",
+            "url": "https://hotpot.ai",
+            "description": "图片修复、背景、图形和AI工具"
+          },
+          {
+            "name": "Vectormagic",
+            "url": "https://vectormagic.com",
+            "description": "位图转矢量"
+          },
+          {
+            "name": "Vectorizer",
+            "url": "https://vectorizer.ai",
+            "description": "图片自动矢量化"
+          },
+          {
+            "name": "Autotracer",
+            "url": "https://www.autotracer.org",
+            "description": "JPG/PNG转SVG/EPS/PDF等矢量格式"
+          },
+          {
+            "name": "Convertio Vectorizer",
+            "url": "https://convertio.co/vectorizer/",
+            "description": "在线图片矢量化"
+          },
+          {
+            "name": "Picsvg",
+            "url": "https://picsvg.com",
+            "description": "图片转SVG"
+          },
+          {
+            "name": "PNG2SVG",
+            "url": "https://png2svg.com",
+            "description": "PNG/JPG转SVG"
+          },
+          {
+            "name": "SVG Converter",
+            "url": "https://www.svgviewer.dev/svg-to-png-converter",
+            "description": "SVG转换PNG等格式"
+          }
+        ]
+      },
+      {
+        "name": "OCR 识别",
+        "links": [
+          {
+            "name": "OCR.space",
+            "url": "https://ocr.space",
+            "description": "在线OCR和免费OCR API"
+          },
+          {
+            "name": "OnlineOCR",
+            "url": "https://www.onlineocr.net",
+            "description": "图片/PDF转可编辑文本"
+          },
+          {
+            "name": "i2OCR",
+            "url": "https://www.i2ocr.com",
+            "description": "多语言在线OCR"
+          },
+          {
+            "name": "NewOCR",
+            "url": "https://www.newocr.com",
+            "description": "图片在线文字识别"
+          },
+          {
+            "name": "Convertio OCR",
+            "url": "https://convertio.co/ocr/",
+            "description": "图片/PDF OCR"
+          },
+          {
+            "name": "Google Drive OCR",
+            "url": "https://drive.google.com",
+            "description": "Google Drive文档OCR"
+          },
+          {
+            "name": "Adobe OCR",
+            "url": "https://www.adobe.com/acrobat/online/ocr-pdf.html",
+            "description": "PDF OCR与文字识别"
+          },
+          {
+            "name": "Smallpdf OCR",
+            "url": "https://smallpdf.com/pdf-ocr",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "PDF24 OCR",
+            "url": "https://tools.pdf24.org/en/ocr-pdf",
+            "description": "PDF扫描件OCR"
+          },
+          {
+            "name": "iLovePDF OCR",
+            "url": "https://www.ilovepdf.com/ocr-pdf",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "Prepostseo OCR",
+            "url": "https://www.prepostseo.com/image-to-text",
+            "description": "图片转文字"
+          },
+          {
+            "name": "ImageToText.info",
+            "url": "https://www.imagetotext.info",
+            "description": "图片OCR"
+          },
+          {
+            "name": "ImageToText.io",
+            "url": "https://www.imagetotext.io",
+            "description": "图片转文字"
+          },
+          {
+            "name": "OCR.best",
+            "url": "https://ocr.best",
+            "description": "在线OCR"
+          },
+          {
+            "name": "OCR2Edit",
+            "url": "https://www.ocr2edit.com",
+            "description": "图片/PDF OCR"
+          },
+          {
+            "name": "Nanonets OCR",
+            "url": "https://nanonets.com/ocr",
+            "description": "AI文档OCR"
+          },
+          {
+            "name": "Rossum",
+            "url": "https://rossum.ai",
+            "description": "AI文档识别"
+          },
+          {
+            "name": "Docsumo",
+            "url": "https://docsumo.com",
+            "description": "文档OCR和数据提取"
+          },
+          {
+            "name": "Veryfi",
+            "url": "https://www.veryfi.com",
+            "description": "发票、收据OCR和数据提取"
+          },
+          {
+            "name": "Klippa",
+            "url": "https://www.klippa.com",
+            "description": "文档OCR和数据提取"
+          },
+          {
+            "name": "Mindee",
+            "url": "https://www.mindee.com",
+            "description": "OCR和文档解析API"
+          },
+          {
+            "name": "OCR API",
+            "url": "https://ocr-api.com",
+            "description": "OCR API"
+          },
+          {
+            "name": "OCR Guru",
+            "url": "https://www.ocrguru.com",
+            "description": "在线图片OCR"
+          },
+          {
+            "name": "Convert Image to Text",
+            "url": "https://convertimagetotext.com",
+            "description": "图片转文本"
+          },
+          {
+            "name": "Text Fairy Web",
+            "url": "https://textfairy.app",
+            "description": "OCR相关工具"
+          },
+          {
+            "name": "Brandfolder Image to Text",
+            "url": "https://www.brandfolder.com",
+            "description": "图片与内容识别"
+          },
+          {
+            "name": "Mathpix",
+            "url": "https://mathpix.com",
+            "description": "数学公式、PDF、图片OCR"
+          },
+          {
+            "name": "Mathpix Snip",
+            "url": "https://mathpix.com/ocr",
+            "description": "数学公式和科学文档OCR"
+          },
+          {
+            "name": "EquatIO",
+            "url": "https://www.texthelp.com/products/equatio/",
+            "description": "数学公式图片识别"
+          },
+          {
+            "name": "Aspose OCR",
+            "url": "https://products.aspose.app/ocr",
+            "description": "多格式OCR"
+          },
+          {
+            "name": "GroupDocs OCR",
+            "url": "https://products.groupdocs.app/ocr",
+            "description": "文档在线OCR"
+          },
+          {
+            "name": "PDF Candy OCR",
+            "url": "https://pdfcandy.com/ocr-pdf.html",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "HiPDF OCR",
+            "url": "https://www.hipdf.com/ocr",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "AvePDF OCR",
+            "url": "https://avepdf.com/ocr-pdf",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "LightPDF OCR",
+            "url": "https://lightpdf.com/ocr",
+            "description": "PDF/图片OCR"
+          },
+          {
+            "name": "PDFgear OCR",
+            "url": "https://www.pdfgear.com/ocr-pdf/",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "Nanonets Image to Text",
+            "url": "https://nanonets.com/image-to-text",
+            "description": "图片OCR"
+          },
+          {
+            "name": "Simplified Image to Text",
+            "url": "https://simplified.com/ai-writer/image-to-text",
+            "description": "AI图片转文字"
+          },
+          {
+            "name": "Editpad Image to Text",
+            "url": "https://www.editpad.org/tool/image-to-text",
+            "description": "图片OCR"
+          },
+          {
+            "name": "SmallSEOTools Image to Text",
+            "url": "https://smallseotools.com/image-to-text-converter/",
+            "description": "图片转文字"
+          }
+        ]
+      },
+      {
+        "name": "PDF 在线工具",
+        "links": [
+          {
+            "name": "PDF Candy",
+            "url": "https://pdfcandy.com",
+            "description": "PDF转换、压缩、编辑、OCR"
+          },
+          {
+            "name": "Sejda PDF",
+            "url": "https://www.sejda.com",
+            "description": "PDF编辑、合并、拆分、OCR"
+          },
+          {
+            "name": "PDF2Go",
+            "url": "https://www.pdf2go.com",
+            "description": "PDF编辑、压缩、转换、OCR"
+          },
+          {
+            "name": "Soda PDF Online",
+            "url": "https://www.sodapdf.com",
+            "description": "在线PDF编辑与转换"
+          },
+          {
+            "name": "AvePDF",
+            "url": "https://avepdf.com",
+            "description": "PDF转换、压缩、OCR、编辑"
+          },
+          {
+            "name": "HiPDF",
+            "url": "https://www.hipdf.com",
+            "description": "PDF转换、压缩、OCR"
+          },
+          {
+            "name": "PDFgear",
+            "url": "https://www.pdfgear.com",
+            "description": "PDF编辑、转换、OCR"
+          },
+          {
+            "name": "PDFescape",
+            "url": "https://www.pdfescape.com",
+            "description": "PDF编辑、表单、注释"
+          },
+          {
+            "name": "Xodo PDF Online",
+            "url": "https://xodo.com",
+            "description": "PDF编辑、转换、签名"
+          },
+          {
+            "name": "Adobe Acrobat Online",
+            "url": "https://www.adobe.com/acrobat/online.html",
+            "description": "PDF压缩、转换、编辑、签名"
+          },
+          {
+            "name": "PDF Bob",
+            "url": "https://pdfbob.com",
+            "description": "PDF编辑、合并、拆分"
+          },
+          {
+            "name": "PDFfiller",
+            "url": "https://www.pdffiller.com",
+            "description": "在线PDF填写和签名"
+          },
+          {
+            "name": "DocHub",
+            "url": "https://www.dochub.com",
+            "description": "PDF编辑、填写、签名"
+          },
+          {
+            "name": "DocFly",
+            "url": "https://www.docfly.com",
+            "description": "PDF编辑、转换、填写"
+          },
+          {
+            "name": "FormSwift",
+            "url": "https://formswift.com",
+            "description": "PDF表格与文档"
+          },
+          {
+            "name": "PDF Joiner",
+            "url": "https://pdfjoiner.com",
+            "description": "PDF合并、拆分"
+          },
+          {
+            "name": "PDF Compressor",
+            "url": "https://www.pdfcompressor.com",
+            "description": "PDF压缩"
+          },
+          {
+            "name": "JPG to PDF",
+            "url": "https://jpg2pdf.com",
+            "description": "JPG图片转PDF"
+          },
+          {
+            "name": "PDF to JPG",
+            "url": "https://pdftojpg.com",
+            "description": "PDF转JPG"
+          },
+          {
+            "name": "PDF to PNG",
+            "url": "https://pdftopng.com",
+            "description": "PDF转PNG"
+          },
+          {
+            "name": "PDF to Word",
+            "url": "https://pdftoword.com",
+            "description": "PDF转Word"
+          },
+          {
+            "name": "PDF to Excel",
+            "url": "https://pdftoexcel.com",
+            "description": "PDF转Excel"
+          },
+          {
+            "name": "PDF to PPT",
+            "url": "https://pdftoppt.com",
+            "description": "PDF转PowerPoint"
+          },
+          {
+            "name": "PDF Online",
+            "url": "https://www.pdfonline.com",
+            "description": "PDF创建、转换"
+          },
+          {
+            "name": "PDF Tools",
+            "url": "https://www.pdftools.com",
+            "description": "PDF转换和处理"
+          },
+          {
+            "name": "PDF Converter",
+            "url": "https://www.pdfconverter.com",
+            "description": "PDF转换"
+          },
+          {
+            "name": "PDFChef",
+            "url": "https://pdfchef.com",
+            "description": "PDF编辑、合并、压缩、转换"
+          },
+          {
+            "name": "PDFsam Online",
+            "url": "https://pdfsam.org",
+            "description": "PDF分割、合并等工具"
+          },
+          {
+            "name": "Stirling PDF",
+            "url": "https://stirlingpdf.com",
+            "description": "开源PDF本地/网页工具，合并、转换、OCR等"
+          },
+          {
+            "name": "PDF24 Creator",
+            "url": "https://www.pdf24.org",
+            "description": "PDF桌面工具与在线生态"
+          },
+          {
+            "name": "PDFResizer",
+            "url": "https://pdfresizer.com",
+            "description": "PDF压缩、调整、合并、拆分"
+          },
+          {
+            "name": "PDFaid",
+            "url": "https://www.pdfaid.com",
+            "description": "PDF编辑与转换"
+          },
+          {
+            "name": "PDFescape Online",
+            "url": "https://www.pdfescape.com/online/",
+            "description": "在线PDF编辑"
+          },
+          {
+            "name": "PDF Buddy",
+            "url": "https://www.pdfbuddy.com",
+            "description": "PDF编辑、签名"
+          },
+          {
+            "name": "PDFSimpli",
+            "url": "https://pdfsimpli.com",
+            "description": "PDF编辑、转换、填写"
+          },
+          {
+            "name": "LightPDF",
+            "url": "https://lightpdf.com",
+            "description": "PDF、OCR、转换、编辑"
+          },
+          {
+            "name": "Online2PDF",
+            "url": "https://online2pdf.com",
+            "description": "PDF合并、压缩、转换、OCR"
+          },
+          {
+            "name": "PDF24 PDF to Word",
+            "url": "https://tools.pdf24.org/en/pdf-to-word",
+            "description": "PDF转Word"
+          },
+          {
+            "name": "PDF24 PDF to Excel",
+            "url": "https://tools.pdf24.org/en/pdf-to-excel",
+            "description": "PDF转Excel"
+          },
+          {
+            "name": "PDF24 PDF to Images",
+            "url": "https://tools.pdf24.org/en/pdf-to-images",
+            "description": "PDF转图片"
+          },
+          {
+            "name": "PDF24 Images to PDF",
+            "url": "https://tools.pdf24.org/en/images-to-pdf",
+            "description": "图片转PDF"
+          },
+          {
+            "name": "PDF24 Protect PDF",
+            "url": "https://tools.pdf24.org/en/protect-pdf",
+            "description": "PDF加密"
+          },
+          {
+            "name": "PDF24 Unlock PDF",
+            "url": "https://tools.pdf24.org/en/unlock-pdf",
+            "description": "PDF解除密码"
+          },
+          {
+            "name": "PDF24 Rotate PDF",
+            "url": "https://tools.pdf24.org/en/rotate-pdf-pages",
+            "description": "PDF旋转"
+          },
+          {
+            "name": "PDF24 Compare",
+            "url": "https://tools.pdf24.org/en/compare-pdf",
+            "description": "PDF比较"
+          },
+          {
+            "name": "PDFToolsBase",
+            "url": "https://pdftoolsbase.com",
+            "description": "浏览器本地PDF工具集合"
+          }
+        ]
+      },
+      {
+        "name": "文档格式转换",
+        "links": [
+          {
+            "name": "ConvertFiles",
+            "url": "https://convertfiles.com",
+            "description": "多格式文件转换"
+          },
+          {
+            "name": "MConverter",
+            "url": "https://mconverter.eu",
+            "description": "大量文件转换"
+          },
+          {
+            "name": "Vertopal",
+            "url": "https://www.vertopal.com",
+            "description": "文档、图片、音频等在线转换"
+          },
+          {
+            "name": "Aspose Apps",
+            "url": "https://products.aspose.app",
+            "description": "文档、PDF、图像、CAD等转换"
+          },
+          {
+            "name": "GroupDocs",
+            "url": "https://products.groupdocs.app",
+            "description": "文档查看、转换、比较"
+          },
+          {
+            "name": "FileFormat Apps",
+            "url": "https://products.fileformat.com",
+            "description": "文档、PDF、图像在线工具"
+          },
+          {
+            "name": "OnlineConvertFree",
+            "url": "https://onlineconvertfree.com",
+            "description": "文件格式转换"
+          },
+          {
+            "name": "ConvertHelper",
+            "url": "https://www.converthelper.net",
+            "description": "多格式文件转换"
+          },
+          {
+            "name": "Convert.world",
+            "url": "https://convert.world",
+            "description": "在线文件转换"
+          },
+          {
+            "name": "Docupub",
+            "url": "https://www.docupub.com",
+            "description": "文档、PDF、PostScript工具"
+          },
+          {
+            "name": "DocsPal",
+            "url": "https://www.docspal.com",
+            "description": "文档、视频、图片转换"
+          },
+          {
+            "name": "FreeFileConvert",
+            "url": "https://www.freefileconvert.com",
+            "description": "文件转换"
+          },
+          {
+            "name": "Office-Converter",
+            "url": "https://www.office-converter.com",
+            "description": "Office文档转换"
+          },
+          {
+            "name": "DocConvert",
+            "url": "https://docconvert.org",
+            "description": "文档转换"
+          },
+          {
+            "name": "Word.to",
+            "url": "https://word.to",
+            "description": "文件转换工具"
+          },
+          {
+            "name": "Excel to PDF",
+            "url": "https://exceltopdf.com",
+            "description": "Excel转PDF"
+          },
+          {
+            "name": "Word to PDF",
+            "url": "https://wordto.pdf",
+            "description": "Word转PDF"
+          },
+          {
+            "name": "PPT to PDF",
+            "url": "https://pptto.com",
+            "description": "PPT转PDF"
+          },
+          {
+            "name": "HTML to PDF",
+            "url": "https://www.sejda.com/html-to-pdf",
+            "description": "HTML网页转PDF"
+          },
+          {
+            "name": "URL to PDF",
+            "url": "https://urlpdf.com",
+            "description": "URL转PDF"
+          },
+          {
+            "name": "Webpage to PDF",
+            "url": "https://www.web2pdfconvert.com",
+            "description": "网页转PDF"
+          },
+          {
+            "name": "PrintFriendly",
+            "url": "https://www.printfriendly.com",
+            "description": "网页清理、打印、PDF生成"
+          }
+        ]
+      },
+      {
+        "name": "音视频GIF",
+        "links": [
+          {
+            "name": "AudioMass",
+            "url": "https://audiomass.co",
+            "description": "浏览器音频编辑器"
+          },
+          {
+            "name": "AudioTrimmer",
+            "url": "https://audiotrimmer.com",
+            "description": "音频剪辑和转换"
+          },
+          {
+            "name": "MP3Cut",
+            "url": "https://mp3cut.net",
+            "description": "音频剪辑、转换和铃声制作"
+          },
+          {
+            "name": "Online Audio Converter",
+            "url": "https://online-audio-converter.com",
+            "description": "音频格式转换"
+          },
+          {
+            "name": "Online Video Cutter",
+            "url": "https://online-video-cutter.com",
+            "description": "视频裁剪"
+          },
+          {
+            "name": "Compress2Go",
+            "url": "https://compress2go.com",
+            "description": "视频、图片、PDF压缩"
+          },
+          {
+            "name": "Flixier",
+            "url": "https://flixier.com",
+            "description": "在线视频编辑"
+          },
+          {
+            "name": "InVideo",
+            "url": "https://invideo.io",
+            "description": "视频编辑和AI视频工具"
+          },
+          {
+            "name": "Canva Video",
+            "url": "https://www.canva.com/video-editor/",
+            "description": "在线视频编辑"
+          },
+          {
+            "name": "Adobe Express Video",
+            "url": "https://www.adobe.com/express/create/video",
+            "description": "在线视频编辑"
+          },
+          {
+            "name": "GIFMaker.me",
+            "url": "https://gifmaker.me",
+            "description": "GIF制作、图片转GIF"
+          },
+          {
+            "name": "GIFRun",
+            "url": "https://gifrun.com",
+            "description": "在线GIF制作"
+          },
+          {
+            "name": "Giphy GIF Maker",
+            "url": "https://giphy.com/create/gifmaker",
+            "description": "GIF制作"
+          },
+          {
+            "name": "Kapwing GIF Maker",
+            "url": "https://www.kapwing.com/tools/make/gif",
+            "description": "在线GIF制作"
+          },
+          {
+            "name": "Ezgif Video to GIF",
+            "url": "https://ezgif.com/video-to-gif",
+            "description": "视频转GIF"
+          },
+          {
+            "name": "Ezgif GIF Optimizer",
+            "url": "https://ezgif.com/optimize",
+            "description": "GIF压缩优化"
+          },
+          {
+            "name": "OnlineConverter Video",
+            "url": "https://www.onlineconverter.com/video",
+            "description": "在线视频转换"
+          },
+          {
+            "name": "FreeConvert Video",
+            "url": "https://www.freeconvert.com/video-converter",
+            "description": "视频格式转换"
+          },
+          {
+            "name": "CloudConvert Video",
+            "url": "https://cloudconvert.com/video-converter",
+            "description": "在线视频转换"
+          },
+          {
+            "name": "Convertio Video",
+            "url": "https://convertio.co/video-converter/",
+            "description": "视频格式转换"
+          },
+          {
+            "name": "Zamzar Video",
+            "url": "https://www.zamzar.com/convert/video/",
+            "description": "视频转换"
+          },
+          {
+            "name": "FreeConvert Audio",
+            "url": "https://www.freeconvert.com/audio-converter",
+            "description": "音频格式转换"
+          },
+          {
+            "name": "CloudConvert Audio",
+            "url": "https://cloudconvert.com/audio-converter",
+            "description": "音频格式转换"
+          },
+          {
+            "name": "Convertio Audio",
+            "url": "https://convertio.co/audio-converter/",
+            "description": "音频格式转换"
+          }
+        ]
+      },
+      {
+        "name": "文本数据工具",
+        "links": [
+          {
+            "name": "WordCounter",
+            "url": "https://wordcounter.net",
+            "description": "字数统计、阅读时间、关键词"
+          },
+          {
+            "name": "WordCounter360",
+            "url": "https://www.wordcounter360.com",
+            "description": "字数统计和文本分析"
+          },
+          {
+            "name": "Character Counter",
+            "url": "https://charactercountonline.com",
+            "description": "字符、单词、行数统计"
+          },
+          {
+            "name": "LetterCount",
+            "url": "https://lettercount.com",
+            "description": "字符统计"
+          },
+          {
+            "name": "Case Converter",
+            "url": "https://caseconverter.com",
+            "description": "大小写转换"
+          },
+          {
+            "name": "ConvertCase",
+            "url": "https://convertcase.net",
+            "description": "文本大小写、格式转换"
+          },
+          {
+            "name": "Remove Line Breaks",
+            "url": "https://removelinebreaks.net",
+            "description": "清除文本换行"
+          },
+          {
+            "name": "Text Fixer",
+            "url": "https://www.textfixer.com",
+            "description": "文本清理、大小写、换行、排序"
+          },
+          {
+            "name": "Diffchecker",
+            "url": "https://www.diffchecker.com",
+            "description": "文本、代码、文档差异比较"
+          },
+          {
+            "name": "JSON Formatter",
+            "url": "https://jsonformatter.curiousconcept.com",
+            "description": "JSON格式化和验证"
+          },
+          {
+            "name": "JSONLint",
+            "url": "https://jsonlint.com",
+            "description": "JSON语法检查"
+          },
+          {
+            "name": "JSON Editor Online",
+            "url": "https://jsoneditoronline.org",
+            "description": "JSON编辑和格式化"
+          },
+          {
+            "name": "JSON Crack",
+            "url": "https://jsoncrack.com",
+            "description": "JSON可视化"
+          },
+          {
+            "name": "YAML Formatter",
+            "url": "https://jsonformatter.org/yaml-formatter",
+            "description": "YAML格式化"
+          },
+          {
+            "name": "XML Formatter",
+            "url": "https://www.xmlvalidation.com",
+            "description": "XML格式化和验证"
+          },
+          {
+            "name": "CSV to JSON",
+            "url": "https://csvjson.com",
+            "description": "CSV/JSON相互转换"
+          },
+          {
+            "name": "Table Convert",
+            "url": "https://tableconvert.com",
+            "description": "CSV、Excel、Markdown、HTML表格转换"
+          },
+          {
+            "name": "CSV Converter",
+            "url": "https://www.convertcsv.com",
+            "description": "CSV转换和数据处理"
+          },
+          {
+            "name": "Markdown Table Generator",
+            "url": "https://www.tablesgenerator.com/markdown_tables",
+            "description": "Markdown表格生成"
+          },
+          {
+            "name": "TablesGenerator",
+            "url": "https://www.tablesgenerator.com",
+            "description": "LaTeX/Markdown/HTML表格生成"
+          },
+          {
+            "name": "Markdown2PDF",
+            "url": "https://md2pdf.net",
+            "description": "Markdown转PDF"
+          },
+          {
+            "name": "Markdown Live Preview",
+            "url": "https://markdownlivepreview.com",
+            "description": "Markdown实时预览"
+          },
+          {
+            "name": "StackEdit",
+            "url": "https://stackedit.io",
+            "description": "在线Markdown编辑器"
+          },
+          {
+            "name": "Dillinger",
+            "url": "https://dillinger.io",
+            "description": "在线Markdown编辑器"
+          },
+          {
+            "name": "HackMD",
+            "url": "https://hackmd.io",
+            "description": "Markdown在线协作编辑器"
+          },
+          {
+            "name": "Hemingway Editor",
+            "url": "https://hemingwayapp.com",
+            "description": "英文写作和可读性检查"
+          },
+          {
+            "name": "LanguageTool",
+            "url": "https://languagetool.org",
+            "description": "语法、拼写、文本检查"
+          },
+          {
+            "name": "Grammarly",
+            "url": "https://www.grammarly.com",
+            "description": "英文语法和拼写检查"
+          },
+          {
+            "name": "QuillBot",
+            "url": "https://quillbot.com",
+            "description": "改写、语法、总结、翻译"
+          },
+          {
+            "name": "DeepL Write",
+            "url": "https://www.deepl.com/write",
+            "description": "AI写作和英文文本润色"
+          }
+        ]
+      },
+      {
+        "name": "编码与URL工具",
+        "links": [
+          {
+            "name": "Base64 Encode",
+            "url": "https://www.base64encode.org",
+            "description": "Base64编码/解码"
+          },
+          {
+            "name": "Base64.Guru",
+            "url": "https://base64.guru",
+            "description": "Base64、图片、文件编码工具"
+          },
+          {
+            "name": "URL Decode",
+            "url": "https://www.urldecoder.org",
+            "description": "URL编码/解码"
+          },
+          {
+            "name": "URL Encoder",
+            "url": "https://www.urlencoder.org",
+            "description": "URL编码"
+          },
+          {
+            "name": "CyberChef",
+            "url": "https://gchq.github.io/CyberChef/",
+            "description": "超大型编码、转换、哈希、数据处理工具"
+          },
+          {
+            "name": "DevToys",
+            "url": "https://devtoys.app",
+            "description": "开发者工具集合"
+          },
+          {
+            "name": "Regex101",
+            "url": "https://regex101.com",
+            "description": "正则表达式测试和调试"
+          },
+          {
+            "name": "Regexr",
+            "url": "https://regexr.com",
+            "description": "正则在线测试"
+          },
+          {
+            "name": "RegEx Pal",
+            "url": "https://www.regexpal.com",
+            "description": "正则测试"
+          },
+          {
+            "name": "UUID Generator",
+            "url": "https://www.uuidgenerator.net",
+            "description": "UUID/GUID生成"
+          },
+          {
+            "name": "UUIDTools",
+            "url": "https://www.uuidtools.com",
+            "description": "UUID工具"
+          },
+          {
+            "name": "Nano ID",
+            "url": "https://zelark.github.io/nano-id-cc",
+            "description": "Nano ID生成"
+          },
+          {
+            "name": "Hashes.com",
+            "url": "https://hashes.com",
+            "description": "哈希工具与数据库"
+          },
+          {
+            "name": "MD5 Hash Generator",
+            "url": "https://www.md5hashgenerator.com",
+            "description": "MD5生成"
+          },
+          {
+            "name": "SHA256 Online",
+            "url": "https://emn178.github.io/online-tools/sha256.html",
+            "description": "SHA256计算"
+          },
+          {
+            "name": "SHA1 Online",
+            "url": "https://emn178.github.io/online-tools/sha1.html",
+            "description": "SHA1计算"
+          },
+          {
+            "name": "JWT.io",
+            "url": "https://jwt.io",
+            "description": "JWT解析和开发工具"
+          },
+          {
+            "name": "JWT Decoder",
+            "url": "https://www.jwt.io",
+            "description": "JWT调试"
+          },
+          {
+            "name": "URL Parser",
+            "url": "https://urlparser.com",
+            "description": "URL分析"
+          },
+          {
+            "name": "QueryString",
+            "url": "https://querystring.org",
+            "description": "URL Query参数处理"
+          },
+          {
+            "name": "HTTP Status Codes",
+            "url": "https://httpstatuses.com",
+            "description": "HTTP状态码查询"
+          },
+          {
+            "name": "What Is My IP",
+            "url": "https://whatismyipaddress.com",
+            "description": "IP查询"
+          },
+          {
+            "name": "IPinfo",
+            "url": "https://ipinfo.io",
+            "description": "IP地址查询"
+          },
+          {
+            "name": "BrowserLeaks",
+            "url": "https://browserleaks.com",
+            "description": "浏览器/网络隐私检测"
+          },
+          {
+            "name": "SSL Labs",
+            "url": "https://www.ssllabs.com/ssltest/",
+            "description": "SSL/TLS测试"
+          },
+          {
+            "name": "SecurityHeaders",
+            "url": "https://securityheaders.com",
+            "description": "网站HTTP安全头检测"
+          },
+          {
+            "name": "GTmetrix",
+            "url": "https://gtmetrix.com",
+            "description": "网站性能测试"
+          },
+          {
+            "name": "PageSpeed Insights",
+            "url": "https://pagespeed.web.dev",
+            "description": "Google网站性能检测"
+          },
+          {
+            "name": "WebPageTest",
+            "url": "https://www.webpagetest.org",
+            "description": "网站速度和性能测试"
+          }
+        ]
+      },
+      {
+        "name": "QR条码工具",
+        "links": [
+          {
+            "name": "QR Code Generator",
+            "url": "https://www.qr-code-generator.com",
+            "description": "QR二维码生成"
+          },
+          {
+            "name": "QRCode Monkey",
+            "url": "https://www.qrcode-monkey.com",
+            "description": "免费二维码生成"
+          },
+          {
+            "name": "QRServer",
+            "url": "https://api.qrserver.com",
+            "description": "QR二维码生成API"
+          },
+          {
+            "name": "QRStuff",
+            "url": "https://www.qrstuff.com",
+            "description": "二维码生成"
+          },
+          {
+            "name": "TEC-IT Barcode",
+            "url": "https://barcode.tec-it.com",
+            "description": "一维码、二维码生成"
+          },
+          {
+            "name": "Barcode Generator",
+            "url": "https://barcode.tec-it.com/en",
+            "description": "多种条码生成"
+          },
+          {
+            "name": "ZXing Decoder Online",
+            "url": "https://zxing.org/w/decode.jspx",
+            "description": "图片二维码/条码识别"
+          },
+          {
+            "name": "Inlite Barcode Reader",
+            "url": "https://online-barcode-reader.inliteresearch.com",
+            "description": "在线条码识别"
+          },
+          {
+            "name": "ColorHexa",
+            "url": "https://www.colorhexa.com",
+            "description": "HEX/RGB颜色分析"
+          },
+          {
+            "name": "Coolors",
+            "url": "https://coolors.co",
+            "description": "在线配色方案生成"
+          },
+          {
+            "name": "Adobe Color",
+            "url": "https://color.adobe.com",
+            "description": "配色、色轮、主题生成"
+          },
+          {
+            "name": "Canva Color Palette Generator",
+            "url": "https://www.canva.com/colors/color-palette-generator/",
+            "description": "图片提取配色"
+          },
+          {
+            "name": "Image Color Picker",
+            "url": "https://imagecolorpicker.com",
+            "description": "图片取色"
+          },
+          {
+            "name": "HTML Color Codes",
+            "url": "https://htmlcolorcodes.com",
+            "description": "HTML颜色查询"
+          },
+          {
+            "name": "Color Picker",
+            "url": "https://www.w3schools.com/colors/colors_picker.asp",
+            "description": "在线取色器"
+          },
+          {
+            "name": "ColorBrewer",
+            "url": "https://colorbrewer2.org",
+            "description": "数据可视化配色"
+          },
+          {
+            "name": "Random.org",
+            "url": "https://www.random.org",
+            "description": "随机数、随机字符串、随机数据"
+          },
+          {
+            "name": "TimeAndDate",
+            "url": "https://www.timeanddate.com",
+            "description": "时间、日期、时区、倒计时"
+          },
+          {
+            "name": "Epoch Converter",
+            "url": "https://www.epochconverter.com",
+            "description": "Unix时间戳转换"
+          },
+          {
+            "name": "Time.is",
+            "url": "https://time.is",
+            "description": "世界时间和时间校准"
+          },
+          {
+            "name": "World Time Buddy",
+            "url": "https://www.worldtimebuddy.com",
+            "description": "时区转换"
+          },
+          {
+            "name": "Date Duration Calculator",
+            "url": "https://www.timeanddate.com/date/duration.html",
+            "description": "日期间隔计算"
+          },
+          {
+            "name": "UnitConverters",
+            "url": "https://www.unitconverters.net",
+            "description": "单位转换"
+          },
+          {
+            "name": "ConvertUnits",
+            "url": "https://www.convertunits.com",
+            "description": "单位换算"
+          },
+          {
+            "name": "UnitJuggler",
+            "url": "https://www.unitjuggler.com",
+            "description": "单位转换"
+          },
+          {
+            "name": "Metric-Conversions",
+            "url": "https://www.metric-conversions.org",
+            "description": "国际单位转换"
+          },
+          {
+            "name": "CalculatorSoup",
+            "url": "https://www.calculatorsoup.com",
+            "description": "大量数学和生活计算器"
+          },
+          {
+            "name": "Symbolab",
+            "url": "https://www.symbolab.com",
+            "description": "数学计算和公式求解"
+          },
+          {
+            "name": "WolframAlpha",
+            "url": "https://www.wolframalpha.com",
+            "description": "数学、科学和知识计算"
+          }
+        ]
+      },
+      {
+        "name": "网页截图工具",
+        "links": [
+          {
+            "name": "Screenshot.rocks",
+            "url": "https://screenshot.rocks",
+            "description": "网页截图和设备样机"
+          },
+          {
+            "name": "BrowserFrame",
+            "url": "https://browserframe.com",
+            "description": "浏览器窗口截图样机"
+          },
+          {
+            "name": "MockupBro",
+            "url": "https://mockupbro.com",
+            "description": "在线设备样机生成"
+          },
+          {
+            "name": "Screely",
+            "url": "https://screely.com",
+            "description": "截图美化和背景生成"
+          },
+          {
+            "name": "Shottr Web",
+            "url": "https://shottr.cc",
+            "description": "截图工具相关入口"
+          },
+          {
+            "name": "URL2PNG",
+            "url": "https://www.url2png.com",
+            "description": "URL网页截图API"
+          },
+          {
+            "name": "ScreenshotAPI",
+            "url": "https://screenshotapi.net",
+            "description": "网页截图API"
+          },
+          {
+            "name": "Microlink",
+            "url": "https://microlink.io",
+            "description": "URL转截图、PDF、元数据"
+          },
+          {
+            "name": "PagePeeker",
+            "url": "https://pagepeeker.com",
+            "description": "网站缩略图截图"
+          },
+          {
+            "name": "Website Planet Tools",
+            "url": "https://www.websiteplanet.com/webtools/",
+            "description": "IP、DNS、速度等网站工具"
+          },
+          {
+            "name": "Down For Everyone Or Just Me",
+            "url": "https://downforeveryoneorjustme.com",
+            "description": "网站是否宕机检查"
+          },
+          {
+            "name": "Is It Down Right Now",
+            "url": "https://www.isitdownrightnow.com",
+            "description": "网站状态检测"
+          },
+          {
+            "name": "UptimeRobot",
+            "url": "https://uptimerobot.com",
+            "description": "网站在线监测"
+          },
+          {
+            "name": "Pingdom Tools",
+            "url": "https://tools.pingdom.com",
+            "description": "网站性能检测"
+          },
+          {
+            "name": "DNS Checker",
+            "url": "https://dnschecker.org",
+            "description": "DNS传播检查"
+          },
+          {
+            "name": "MXToolbox",
+            "url": "https://mxtoolbox.com",
+            "description": "DNS、MX、黑名单等网络检测"
+          },
+          {
+            "name": "WhatsMyDNS",
+            "url": "https://www.whatsmydns.net",
+            "description": "全球DNS传播检测"
+          },
+          {
+            "name": "DNSlytics",
+            "url": "https://dnslytics.com",
+            "description": "DNS查询和网站信息"
+          },
+          {
+            "name": "ViewDNS",
+            "url": "https://viewdns.info",
+            "description": "DNS/IP/域名工具"
+          },
+          {
+            "name": "SecurityTrails",
+            "url": "https://securitytrails.com",
+            "description": "DNS、域名和互联网数据"
+          },
+          {
+            "name": "BuiltWith",
+            "url": "https://builtwith.com",
+            "description": "网站技术栈识别"
+          },
+          {
+            "name": "Wappalyzer",
+            "url": "https://www.wappalyzer.com",
+            "description": "网站技术识别"
+          },
+          {
+            "name": "WhatRuns",
+            "url": "https://www.whatruns.com",
+            "description": "网站技术识别"
+          },
+          {
+            "name": "SimilarTech",
+            "url": "https://www.similartech.com",
+            "description": "网站技术分析"
+          },
+          {
+            "name": "Robots.txt Generator",
+            "url": "https://www.robotstxt.org",
+            "description": "robots.txt相关工具"
+          },
+          {
+            "name": "XML-Sitemaps",
+            "url": "https://www.xml-sitemaps.com",
+            "description": "Sitemap生成"
+          },
+          {
+            "name": "Sitemap Generator",
+            "url": "https://www.sitemaps.org",
+            "description": "Sitemap规范及工具"
+          },
+          {
+            "name": "Schema Markup Validator",
+            "url": "https://validator.schema.org",
+            "description": "Schema结构化数据验证"
+          },
+          {
+            "name": "Google Rich Results Test",
+            "url": "https://search.google.com/test/rich-results",
+            "description": "富媒体结果检测"
+          },
+          {
+            "name": "W3C Validator",
+            "url": "https://validator.w3.org",
+            "description": "HTML网页标准验证"
+          }
+        ]
+      },
+      {
+        "name": "在线代码运行",
+        "links": [
+          {
+            "name": "JSFiddle",
+            "url": "https://jsfiddle.net",
+            "description": "在线HTML/CSS/JS编辑运行"
+          },
+          {
+            "name": "CodePen",
+            "url": "https://codepen.io",
+            "description": "前端代码在线编辑和展示"
+          },
+          {
+            "name": "JS Bin",
+            "url": "https://jsbin.com",
+            "description": "HTML/CSS/JS在线运行"
+          },
+          {
+            "name": "CodeSandbox",
+            "url": "https://codesandbox.io",
+            "description": "在线Web开发环境"
+          },
+          {
+            "name": "StackBlitz",
+            "url": "https://stackblitz.com",
+            "description": "浏览器内运行前端项目"
+          },
+          {
+            "name": "Replit",
+            "url": "https://replit.com",
+            "description": "在线代码编辑和运行"
+          },
+          {
+            "name": "GitHub Codespaces",
+            "url": "https://github.com/features/codespaces",
+            "description": "云端开发环境"
+          },
+          {
+            "name": "OneCompiler",
+            "url": "https://onecompiler.com",
+            "description": "多语言在线编译运行"
+          },
+          {
+            "name": "JDoodle",
+            "url": "https://www.jdoodle.com",
+            "description": "多语言在线编译"
+          },
+          {
+            "name": "OnlineGDB",
+            "url": "https://www.onlinegdb.com",
+            "description": "在线编译和调试"
+          },
+          {
+            "name": "Programiz",
+            "url": "https://www.programiz.com",
+            "description": "在线编译器和学习工具"
+          },
+          {
+            "name": "TutorialsPoint Coding Ground",
+            "url": "https://www.tutorialspoint.com/codingground.htm",
+            "description": "在线编程运行环境"
+          },
+          {
+            "name": "Wandbox",
+            "url": "https://wandbox.org",
+            "description": "多语言在线编译执行"
+          },
+          {
+            "name": "Compiler Explorer",
+            "url": "https://godbolt.org",
+            "description": "编译器与汇编分析"
+          },
+          {
+            "name": "SQL Fiddle",
+            "url": "https://sqlfiddle.com",
+            "description": "在线SQL测试"
+          },
+          {
+            "name": "DB Fiddle",
+            "url": "https://dbfiddle.uk",
+            "description": "在线SQL数据库测试"
+          },
+          {
+            "name": "SQLiteOnline",
+            "url": "https://sqliteonline.com",
+            "description": "浏览器SQL数据库工具"
+          },
+          {
+            "name": "SQLime",
+            "url": "https://sqlime.org",
+            "description": "在线SQLite"
+          },
+          {
+            "name": "Postman Web",
+            "url": "https://www.postman.com",
+            "description": "API测试与调试"
+          },
+          {
+            "name": "Hoppscotch",
+            "url": "https://hoppscotch.io",
+            "description": "开源在线API客户端"
+          },
+          {
+            "name": "Insomnia Cloud",
+            "url": "https://insomnia.rest",
+            "description": "API测试工具"
+          },
+          {
+            "name": "ReqBin",
+            "url": "https://reqbin.com",
+            "description": "HTTP/API在线请求"
+          },
+          {
+            "name": "HTTPBin",
+            "url": "https://httpbin.org",
+            "description": "HTTP测试服务"
+          },
+          {
+            "name": "JSONPlaceholder",
+            "url": "https://jsonplaceholder.typicode.com",
+            "description": "REST API测试"
+          },
+          {
+            "name": "Mocky",
+            "url": "https://designer.mocky.io",
+            "description": "模拟API响应"
+          },
+          {
+            "name": "Webhook.site",
+            "url": "https://webhook.site",
+            "description": "Webhook调试"
+          },
+          {
+            "name": "RequestBin",
+            "url": "https://requestbin.com",
+            "description": "HTTP请求测试"
+          },
+          {
+            "name": "Beeceptor",
+            "url": "https://beeceptor.com",
+            "description": "Mock API与HTTP测试"
+          },
+          {
+            "name": "Mockoon",
+            "url": "https://mockoon.com",
+            "description": "API模拟工具"
+          }
+        ]
+      },
+      {
+        "name": "文件与数据处理",
+        "links": [
+          {
+            "name": "Unzip Online",
+            "url": "https://unzip-online.com",
+            "description": "在线解压ZIP"
+          },
+          {
+            "name": "EzyZip",
+            "url": "https://www.ezyzip.com",
+            "description": "浏览器解压、压缩ZIP等"
+          },
+          {
+            "name": "Archive Extractor",
+            "url": "https://extract.me",
+            "description": "在线解压RAR/ZIP/7Z等"
+          },
+          {
+            "name": "B1 Online Archiver",
+            "url": "https://b1.org/online",
+            "description": "在线解压多种压缩格式"
+          },
+          {
+            "name": "WobZIP",
+            "url": "https://wobzip.org",
+            "description": "在线解压"
+          },
+          {
+            "name": "Online ZIP",
+            "url": "https://onlinezip.com",
+            "description": "ZIP处理"
+          },
+          {
+            "name": "FileToZip",
+            "url": "https://filetozip.com",
+            "description": "文件转ZIP"
+          },
+          {
+            "name": "ZipFiles",
+            "url": "https://zipfiles.org",
+            "description": "在线压缩文件"
+          },
+          {
+            "name": "ZIP Extractor",
+            "url": "https://zipextractor.app",
+            "description": "浏览器解压"
+          },
+          {
+            "name": "GZIP Test",
+            "url": "https://www.gzip.org",
+            "description": "GZIP相关工具"
+          },
+          {
+            "name": "7-Zip Online",
+            "url": "https://www.7zipper.com",
+            "description": "在线压缩/解压"
+          },
+          {
+            "name": "Online Hash Tool",
+            "url": "https://emn178.github.io/online-tools/",
+            "description": "MD5、SHA、HMAC等工具"
+          },
+          {
+            "name": "HexEd.it",
+            "url": "https://hexed.it",
+            "description": "在线十六进制编辑器"
+          },
+          {
+            "name": "Hex Decoder",
+            "url": "https://hexdecoder.org",
+            "description": "Hex编码解码"
+          },
+          {
+            "name": "Binary to Text",
+            "url": "https://www.binaryhexconverter.com",
+            "description": "二进制、十六进制、文本转换"
+          },
+          {
+            "name": "Decimal to Binary",
+            "url": "https://www.rapidtables.com/convert/number/decimal-to-binary.html",
+            "description": "进制转换"
+          },
+          {
+            "name": "Unix Timestamp",
+            "url": "https://www.unixtimestamp.com",
+            "description": "Unix时间戳工具"
+          },
+          {
+            "name": "QRCode Scanner",
+            "url": "https://qrcodescan.in",
+            "description": "二维码在线识别"
+          },
+          {
+            "name": "Data URI Generator",
+            "url": "https://dopiaza.org/tools/data-uri-tool.php",
+            "description": "Data URI生成"
+          },
+          {
+            "name": "URI.js",
+            "url": "https://medialize.github.io/URI.js/",
+            "description": "URI处理"
+          },
+          {
+            "name": "URLVoid",
+            "url": "https://www.urlvoid.com",
+            "description": "网站信誉/黑名单查询"
+          },
+          {
+            "name": "VirusTotal",
+            "url": "https://www.virustotal.com",
+            "description": "文件/URL安全检测"
+          },
+          {
+            "name": "MetaDefender Cloud",
+            "url": "https://metadefender.opswat.com",
+            "description": "在线文件多引擎检测"
+          },
+          {
+            "name": "Jotti",
+            "url": "https://virusscan.jotti.org",
+            "description": "文件多引擎扫描"
+          },
+          {
+            "name": "Hybrid Analysis",
+            "url": "https://www.hybrid-analysis.com",
+            "description": "文件安全分析"
+          },
+          {
+            "name": "Any.Run",
+            "url": "https://any.run",
+            "description": "交互式文件沙箱"
+          },
+          {
+            "name": "Intezer Analyze",
+            "url": "https://analyze.intezer.com",
+            "description": "文件与代码分析"
+          },
+          {
+            "name": "URLScan",
+            "url": "https://urlscan.io",
+            "description": "网站/URL行为和页面分析"
+          }
+        ]
+      },
+      {
+        "name": "图片PDF工具",
+        "links": [
+          {
+            "name": "Image Online.co",
+            "url": "https://www.imgonline.co",
+            "description": "图片在线处理"
+          },
+          {
+            "name": "ImgCandy",
+            "url": "https://imgcandy.com",
+            "description": "图片压缩、转换、裁剪"
+          },
+          {
+            "name": "ImgTools",
+            "url": "https://imgtools.co",
+            "description": "图片工具合集"
+          },
+          {
+            "name": "Online Image Tool",
+            "url": "https://onlineimagetool.com",
+            "description": "图片转换、压缩"
+          },
+          {
+            "name": "Image Converter",
+            "url": "https://www.image-converter.com",
+            "description": "图片格式转换"
+          },
+          {
+            "name": "ImageConvert.org",
+            "url": "https://imageconvert.org",
+            "description": "图片转换和压缩"
+          },
+          {
+            "name": "Simple Image Converter",
+            "url": "https://www.simpleimageconverter.com",
+            "description": "图片格式转换"
+          },
+          {
+            "name": "Raw.Pics",
+            "url": "https://raw.pics.io",
+            "description": "RAW图片在线查看和转换"
+          },
+          {
+            "name": "PhotoKit",
+            "url": "https://photokit.com",
+            "description": "图片编辑、背景、压缩"
+          },
+          {
+            "name": "IMGonline Watermark",
+            "url": "https://www.imgonline.com.ua/eng/add-watermark-to-image.php",
+            "description": "图片水印处理"
+          },
+          {
+            "name": "OCRmyPDF Demo",
+            "url": "https://ocrmypdf.readthedocs.io",
+            "description": "OCRmyPDF项目和在线相关资源"
+          },
+          {
+            "name": "PDF OCR Online",
+            "url": "https://www.pdfocr.net",
+            "description": "PDF OCR"
+          },
+          {
+            "name": "OCR Convert",
+            "url": "https://ocrconvert.com",
+            "description": "图片/PDF文字识别"
+          },
+          {
+            "name": "OCR Online",
+            "url": "https://ocr.online",
+            "description": "OCR识别"
+          },
+          {
+            "name": "PDF Converter Online",
+            "url": "https://www.freepdfconvert.com",
+            "description": "PDF转换"
+          },
+          {
+            "name": "PDF Converter Online",
+            "url": "https://www.pdfconverteronline.com",
+            "description": "PDF转换"
+          },
+          {
+            "name": "PDF Merge",
+            "url": "https://www.pdfmerge.com",
+            "description": "PDF合并"
+          },
+          {
+            "name": "PDF Split",
+            "url": "https://www.pdfsplit.com",
+            "description": "PDF拆分"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑂𝑛𝑙𝑖𝑛𝑒 𝑇𝑜𝑜𝑙𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

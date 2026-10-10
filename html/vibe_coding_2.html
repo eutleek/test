@@ -1,0 +1,1889 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Vibe Coding 大赏第二辑：个人与极小团队用 AI 编程自制的创意、领先、好玩项目——AI 音乐绘画、桌宠硬件、生成艺术与更多脑洞作品">
+<title>Vibe Coding 大赏 第二辑 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Vibe Coding 大赏 · 第二辑</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">Vibe Coding 大赏 第二辑 · 创意与脑洞的 AI 编程作品导航</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+ {
+  "name": "Vibe Coding 大赏 第二辑",
+  "icon": "✨",
+  "color": "linear-gradient(135deg, #ff6a5a, #ffb700)",
+  "subcategories": [
+   {
+    "name": "浏览器起始页与导航",
+    "enName": "Start Pages",
+    "links": [
+     {
+      "name": "浏览器操作系统",
+      "url": "https://www.bilibili.com/video/BV1j7Gg6RETs/",
+      "description": "传说当中的帅锅-极客 个人手搓的类浏览器OS"
+     },
+     {
+      "name": "枝理 Tab",
+      "url": "https://github.com/fchange/tab-garden",
+      "description": "V2EX@fchange 不抢眼的新标签页扩展"
+     },
+     {
+      "name": "Startboard",
+      "url": "https://startboard.so/",
+      "description": "HN@SunshineTheCat 简洁的浏览器起始页与"
+     },
+     {
+      "name": "Anori",
+      "url": "https://anori.sinja.io/",
+      "description": "HN@OlegWock 用小部件自由拼装自己的新标签页"
+     },
+     {
+      "name": "Dashy",
+      "url": "https://github.com/Lissy93/dashy",
+      "description": "@Lissy93 自托管仪表盘 ★26.6k"
+     },
+     {
+      "name": "Sun Panel 太阳面板",
+      "url": "https://github.com/hslr-s/sun-panel",
+      "description": "@hslr-s 国人开发的服务器 ★5.3k"
+     },
+     {
+      "name": "bento",
+      "url": "https://github.com/migueravila/bento",
+      "description": "@migueravila 极简优雅 ★2.2k"
+     },
+     {
+      "name": "tilde",
+      "url": "https://github.com/xvvvyz/tilde",
+      "description": "@xvvvyz 极简单行终端风浏览器起始页 ★873"
+     },
+     {
+      "name": "webstack-go",
+      "url": "https://github.com/ch3nnn/webstack-go",
+      "description": "@ch3nnn 前后端分离的网址导航站 ★370"
+     },
+     {
+      "name": "Card-Tab",
+      "url": "https://github.com/hmhm2022/Card-Tab",
+      "description": "@hmhm2022 部署在 ★538"
+     },
+     {
+      "name": "menav",
+      "url": "https://github.com/rbetree/menav",
+      "description": "@rbetree 一键部署的个人导航站生成器 ★308"
+     },
+     {
+      "name": "simptab",
+      "url": "https://github.com/Kenshin/simptab",
+      "description": "@Kenshin 极简Chrome新标签页 ★716"
+     },
+     {
+      "name": "markdown-new-tab",
+      "url": "https://github.com/plibither8/markdown-new-tab",
+      "description": "@plibither8 在新标签页里直接写 ★838"
+     }
+    ]
+   },
+   {
+    "name": "音乐播放器",
+    "enName": "Music Players",
+    "links": [
+     {
+      "name": "2MB 本地音乐播放器",
+      "url": "https://github.com/WWRJ3321/IRISMusic",
+      "description": "未忘人间 让AI写了个仅2MB的本地音乐播放器"
+     },
+     {
+      "name": "6MB B站音乐播放器",
+      "url": "https://www.bilibili.com/video/BV1jGTu6rEzV/",
+      "description": "捡漏可以捡到宝吗 基于Tauriv2+ 1271播放"
+     },
+     {
+      "name": "Meta 开源 AI 音乐生成工具",
+      "url": "https://github.com/facebookresearch/audiocraft",
+      "description": "AI百晓生 Meta开源AI音乐生成工具 3.0万播放"
+     },
+     {
+      "name": "Khua Player：专为 Apple 芯片优化的 macOS 多媒体播放器",
+      "url": "https://khua.app/",
+      "description": "V2EX@nake13 macOS播放器又慢又难用"
+     },
+     {
+      "name": "Radiccio",
+      "url": "https://radiccio.music/",
+      "description": "HN@dmdeller 音乐播放器，支持本地文件"
+     },
+     {
+      "name": "CLAVIER-36 生成音乐编程环境",
+      "url": "https://clavier36.com/p/LtZDdcRP3haTWHErgvdM",
+      "description": "HN@river_dillon 一台为生成音乐设计的编程"
+     },
+     {
+      "name": "YesPlayMusic",
+      "url": "https://github.com/qier222/YesPlayMusic",
+      "description": "@qier222 高颜值第三方网易云播放器 ★33.3k"
+     },
+     {
+      "name": "HyPlayer",
+      "url": "https://github.com/HyPlayer/HyPlayer",
+      "description": "@HyPlayer 第三方网易云音乐播放器 ★1.4k"
+     },
+     {
+      "name": "listen1_desktop",
+      "url": "https://github.com/listen1/listen1_desktop",
+      "description": "@listen1 桌面版，一个播放器聚合各 ★11.4k"
+     },
+     {
+      "name": "spotify-player",
+      "url": "https://github.com/aome510/spotify-player",
+      "description": "@aome510 终端里功能完整的 ★7.3k"
+     },
+     {
+      "name": "spotifast",
+      "url": "https://github.com/crmne/spotifast",
+      "description": "@crmne 写的轻快原生Spotify本地 ★4.8k"
+     },
+     {
+      "name": "EchoMusic",
+      "url": "https://github.com/hoowhoami/EchoMusic",
+      "description": "@hoowhoami 简约第三方酷狗概念版音 ★3.3k"
+     },
+     {
+      "name": "Tauon",
+      "url": "https://github.com/Taiko2k/Tauon",
+      "description": "@Taiko2k 现代感十足的桌面音乐播放器 ★2.9k"
+     },
+     {
+      "name": "BloomeeTunes",
+      "url": "https://github.com/HemantKArya/BloomeeTunes",
+      "description": "@HemantKArya 跨平台无广告音乐 ★2.2k"
+     },
+     {
+      "name": "blackcandy",
+      "url": "https://github.com/blackcandy-org/blackcandy",
+      "description": "@blackcandy-org 自托管音乐串 ★4422"
+     },
+     {
+      "name": "sonixd",
+      "url": "https://github.com/jeffvli/sonixd",
+      "description": "@jeffvli 功能完整的Subsonic ★1914"
+     },
+     {
+      "name": "audioling",
+      "url": "https://github.com/audioling/audioling",
+      "description": "@audioling 主打自托管音乐服务器的音 ★915"
+     },
+     {
+      "name": "china-dictatorship",
+      "url": "https://github.com/cirosantilli/china-dictatorship",
+      "description": "@cirosantilli 反中共政治宣传库 ★3.2k"
+     }
+    ]
+   },
+   {
+    "name": "浏览器插件与扩展",
+    "enName": "Browser Extensions",
+    "links": [
+     {
+      "name": "AI 批量搜索插件",
+      "url": "https://www.bilibili.com/video/BV1ER5e6eEY9/",
+      "description": "名字就叫30 自研开源免费AI批量搜索浏览器插件"
+     },
+     {
+      "name": "区分测试/生产环境的 Chrome 插件 EnvMate",
+      "url": "https://github.com/knktc/EnvMate",
+      "description": "V2EX@knktc 用Codex搓的环境区分插件"
+     },
+     {
+      "name": "Refined Hacker News",
+      "url": "https://github.com/plibither8/refined-hacker-news",
+      "description": "HN@plibither8 美化与增强 HN259分"
+     },
+     {
+      "name": "HN Enhancer",
+      "url": "https://github.com/levelup-apps/hn-enhancer",
+      "description": "HN@georgeck 自带模型即可总结HN评论区的扩展"
+     },
+     {
+      "name": "Nanobrowser",
+      "url": "https://github.com/nanobrowser/nanobrowser",
+      "description": "@nanobrowser 开源 ★13.9k"
+     },
+     {
+      "name": "read-frog",
+      "url": "https://github.com/mengxi-ream/read-frog",
+      "description": "@mengxi-ream 陪读蛙，边读边练的 ★9.9k"
+     },
+     {
+      "name": "ublacklist",
+      "url": "https://github.com/iorate/ublacklist",
+      "description": "@iorate 把指定站点从Google搜索 ★6.7k"
+     },
+     {
+      "name": "search-by-image",
+      "url": "https://github.com/dessant/search-by-image",
+      "description": "@dessant 一键以图搜图的浏览器扩展 ★3.8k"
+     },
+     {
+      "name": "HaramBlur",
+      "url": "https://github.com/alganzory/HaramBlur",
+      "description": "@alganzory 体面上网 ★2.1k"
+     },
+     {
+      "name": "markdown-viewer",
+      "url": "https://github.com/simov/markdown-viewer",
+      "description": "@simov 在浏览器里直接预览 ★1.7k"
+     },
+     {
+      "name": "news-feed-eradicator",
+      "url": "https://github.com/jordwest/news-feed-eradicator",
+      "description": "@jordwest 删掉社交首页信息流 ★1.5k"
+     },
+     {
+      "name": "cloud-document-converter",
+      "url": "https://github.com/whale4113/cloud-document-converter",
+      "description": "@whale4113 把飞书文档一键转成 ★1.3k"
+     },
+     {
+      "name": "hoverzoom",
+      "url": "https://github.com/extesy/hoverzoom",
+      "description": "@extesy 鼠标悬停即放大图片的 ★2061"
+     },
+     {
+      "name": "sokuji",
+      "url": "https://github.com/kizuna-ai-lab/sokuji",
+      "description": "@kizuna-ai-lab 双语会议实时双 ★1361"
+     },
+     {
+      "name": "fake-filler-extension",
+      "url": "https://github.com/FakeFiller/fake-filler-extension",
+      "description": "@FakeFiller 一键自动填充表单的跨浏 ★654"
+     }
+    ]
+   },
+   {
+    "name": "系统清理与优化工具",
+    "enName": "System Cleaners",
+    "links": [
+     {
+      "name": "MangoDisk",
+      "url": "https://github.com/harry0703/MangoDisk",
+      "description": "资源汇社区 开源免费磁盘清理工具MangoDisk"
+     },
+     {
+      "name": "kiro-cleaner",
+      "url": "https://github.com/vibe-coding-labs/kiro-cleaner",
+      "description": "V2EX@CC11001100 定期清理KiroIDE缓"
+     },
+     {
+      "name": "PDFMergely",
+      "url": "https://pdfmergely.com/",
+      "description": "HN@pdfmergely 纯浏览器端 HN18分"
+     },
+     {
+      "name": "BleachBit",
+      "url": "https://github.com/bleachbit/bleachbit",
+      "description": "@bleachbit Windows ★7.0k"
+     },
+     {
+      "name": "dua-cli",
+      "url": "https://github.com/Byron/dua-cli",
+      "description": "@Byron 快速可视化磁盘占用并删除垃圾数 ★6.3k"
+     },
+     {
+      "name": "WxCleaner",
+      "url": "https://github.com/yqxie1991/WxCleaner",
+      "description": "@yqxie1991 微信重复文件智能哈希识 ★1.1k"
+     },
+     {
+      "name": "czkawka-tauri",
+      "url": "https://github.com/shixinhuang99/czkawka-tauri",
+      "description": "@shixinhuang99 的Tauri跨平 ★231"
+     },
+     {
+      "name": "Radix",
+      "url": "https://github.com/colinvkim/Radix",
+      "description": "@colinvkim 极快的macOS磁盘空间 ★895"
+     },
+     {
+      "name": "cull",
+      "url": "https://github.com/legostin/cull",
+      "description": "@legostin 交互式TUI磁盘空间分析器 ★165"
+     }
+    ]
+   },
+   {
+    "name": "第三方自制浏览器",
+    "enName": "Custom Browsers",
+    "links": [
+     {
+      "name": "小白自制浏览器",
+      "url": "https://www.bilibili.com/video/BV1Re411x7su/",
+      "description": "是鱼布斯啊 新手自研超简洁、几秒启动的全平台浏览器"
+     },
+     {
+      "name": "从头写浏览器硬刚 Chrome",
+      "url": "https://github.com/openwebf/webf",
+      "description": "V2EX@coolwulf 有内核开发背景的作者基于"
+     },
+     {
+      "name": "Thorium",
+      "url": "https://github.com/Alex313031/thorium",
+      "description": "@Alex313031 基于 ★7.5k"
+     }
+    ]
+   },
+   {
+    "name": "桌面效率工具",
+    "enName": "Desktop Tools",
+    "links": [
+     {
+      "name": "SSH 终端 Devlog",
+      "url": "https://github.com/Solsynth/MaidKit",
+      "description": "LittleShee 因没有顺手的SSH终端而自研并开源"
+     },
+     {
+      "name": "DeskBox 桌面整理",
+      "url": "https://github.com/Tianyu199509/DeskBox",
+      "description": "大雨实验室 花了200亿 38万播放"
+     },
+     {
+      "name": "iMonet 看图工具",
+      "url": "https://github.com/wflixu/iMonet",
+      "description": "独立开发Luke 自己写的看图工具已上架 301播放"
+     },
+     {
+      "name": "DeepSeek Harness 悬浮球插件",
+      "url": "https://github.com/mini-yifan/dsh-orb-cordis",
+      "description": "小凡师弟 DSH悬浮球插件 1.2万播放"
+     },
+     {
+      "name": "3天做的建站工具",
+      "url": "https://www.bilibili.com/video/BV1heFSzVEJ3/",
+      "description": "范米花儿 3天做出前后台一体、已开源的个人专属建站工具"
+     },
+     {
+      "name": "小万·安卓本地Agent",
+      "url": "https://www.bilibili.com/video/BV1TG4C6MEfN/",
+      "description": "喵爱吃鱼干 安卓端本地Agent助手"
+     },
+     {
+      "name": "三天上架的删图App",
+      "url": "https://www.bilibili.com/video/BV1fCj968ES4/",
+      "description": "MakerJacki 3.5天开发的左滑右 2345播放"
+     },
+     {
+      "name": "字幕工作室",
+      "url": "https://bibigpt.co/download/desktop",
+      "description": "吕立青_ 本地做的字幕工作室 3077播放"
+     },
+     {
+      "name": "Binglish：macOS 桌面英语角",
+      "url": "https://github.com/klemperer/binglish",
+      "description": "V2EX@v3v2k 必应每日美图叠加单词"
+     },
+     {
+      "name": "vibe coding 实用工具合集",
+      "url": "https://github.com/cn0xroot/CC-Monitor",
+      "description": "V2EX@0xroot 整理的一套自己"
+     },
+     {
+      "name": "PicLite 图轻 开源图片压缩",
+      "url": "https://github.com/amiaoapp/PicLite",
+      "description": "V2EX@appmews 开源跨平台本地图片"
+     },
+     {
+      "name": "网易云音乐 ncm-cli",
+      "url": "https://github.com/YUCLing/open-orpheus",
+      "description": "V2EX@rome7054 命令行版网易云音乐工具"
+     },
+     {
+      "name": "Secret：开源阅后即焚临时分享小秘密工具",
+      "url": "https://secret.witt.im/",
+      "description": "V2EX@heywitt 开源的加密临时分享工具，发文本"
+     },
+     {
+      "name": "Glanceables",
+      "url": "https://github.com/devin-liu/glanceables",
+      "description": "HN@its_down_again 把任意网站变成"
+     },
+     {
+      "name": "Reladraw: a diagram language where you place things",
+      "url": "https://github.com/reladraw/reladraw",
+      "description": "HN@jpwalsh234 一门「图的摆放由你决定」的画"
+     },
+     {
+      "name": "Snip：在屏幕上涂鸦就能指挥 Claude 编程的开源工具",
+      "url": "https://github.com/rixinhahaha/snip",
+      "description": "屏幕涂鸦指挥Claude编程的开源工具"
+     },
+     {
+      "name": "screenity",
+      "url": "https://github.com/alyssaxuu/screenity",
+      "description": "@alyssaxuu 免费无限制 ★18.7k"
+     },
+     {
+      "name": "ChatGPT-Shortcut",
+      "url": "https://github.com/rockbenben/ChatGPT-Shortcut",
+      "description": "@rockbenben 可搜索的提示词库 ★8.8k"
+     },
+     {
+      "name": "Clipboard",
+      "url": "https://github.com/Slackadays/Clipboard",
+      "description": "@Slackadays 魔性好用的跨平台剪贴 ★5.9k"
+     },
+     {
+      "name": "PasteMD",
+      "url": "https://github.com/RICHQAQ/PasteMD",
+      "description": "@RICHQAQ 一键把Markdown ★5.4k"
+     },
+     {
+      "name": "moodist",
+      "url": "https://github.com/remvze/moodist",
+      "description": "@remvze 帮你专注平静的环境白噪音 ★3.9k"
+     },
+     {
+      "name": "commafeed",
+      "url": "https://github.com/Athou/commafeed",
+      "description": "@Athou GoogleReader阅读器 ★3628"
+     },
+     {
+      "name": "rssguard",
+      "url": "https://github.com/martinrotter/rssguard",
+      "description": "@martinrotter 带播客的RSS阅 ★2784"
+     },
+     {
+      "name": "fusion",
+      "url": "https://github.com/0x2E/fusion",
+      "description": "@0x2E 轻量、自托管友好的RSS阅读器 ★2188"
+     },
+     {
+      "name": "LightC",
+      "url": "https://github.com/Chunyu33/light-c",
+      "description": "@Chunyu33 免费开源C盘清理工具 ★2.7k"
+     },
+     {
+      "name": "chat-ollama",
+      "url": "https://github.com/sugarforever/chat-ollama",
+      "description": "@sugarforever 本地跑 ★3.5k"
+     },
+     {
+      "name": "yt-short-clipper",
+      "url": "https://github.com/jipraks/yt-short-clipper",
+      "description": "@jipraks 把长YouTube视频一键 ★1021"
+     },
+     {
+      "name": "screenarc",
+      "url": "https://github.com/tamnguyenvan/screenarc",
+      "description": "@tamnguyenvan 跨屏录制与剪辑 ★728"
+     },
+     {
+      "name": "eIsland",
+      "url": "https://github.com/JNTMTMTM/eIsland",
+      "description": "@JNTMTMTM 上仿Apple灵动岛的悬浮 ★320"
+     },
+     {
+      "name": "simutil",
+      "url": "https://github.com/dungngminh/simutil",
+      "description": "@dungngminh 跨平台TUI小工具 ★1177"
+     },
+     {
+      "name": "Clipy",
+      "url": "https://github.com/JunWeiUp/Clipy",
+      "description": "@JunWeiUp 开源跨平台剪贴板管理 ★117"
+     },
+     {
+      "name": "sbb-tui",
+      "url": "https://github.com/Necrom4/sbb-tui",
+      "description": "@Necrom4 瑞士公共交通时刻表的TUI客 ★327"
+     },
+     {
+      "name": "MacMonitor",
+      "url": "https://github.com/ryyansafar/MacMonitor",
+      "description": "@ryyansafar 实时 ★100"
+     },
+     {
+      "name": "NBLM2PPTX",
+      "url": "https://github.com/laihenyi/NBLM2PPTX",
+      "description": "@laihenyi 用GeminiAI把 ★343"
+     }
+    ]
+   },
+   {
+    "name": "笔记与知识管理",
+    "enName": "Notes & Knowledge",
+    "links": [
+     {
+      "name": "开源在线笔记软件",
+      "url": "https://github.com/redTreeOnWall/memorains",
+      "description": "红鳞绿羽 自己写了两年的在线笔记软件 1.6万播放"
+     },
+     {
+      "name": "Edna",
+      "url": "https://edna.arslexis.io/",
+      "description": "HN@kjksf 面向开发者的笔记应用 HN331分"
+     },
+     {
+      "name": "Frame",
+      "url": "https://github.com/jddunn/frame",
+      "description": "HN@johnnyfived 能对你的笔记内容回答问题的"
+     },
+     {
+      "name": "note-gen",
+      "url": "https://github.com/codexu/note-gen",
+      "description": "@codexu 本地优先Markdown笔 ★12.9k"
+     },
+     {
+      "name": "Lorien",
+      "url": "https://github.com/mbrlabs/Lorien",
+      "description": "@mbrlabs 无限画布灵感捕捉白板 ★6.8k"
+     },
+     {
+      "name": "flatnotes",
+      "url": "https://github.com/dullage/flatnotes",
+      "description": "@dullage 无数据库 ★3.2k"
+     },
+     {
+      "name": "Alexandrie",
+      "url": "https://github.com/Smaug6739/Alexandrie",
+      "description": "@Smaug6739 离线优先的Notion ★2.8k"
+     },
+     {
+      "name": "mdx-notes",
+      "url": "https://github.com/maqi1520/mdx-notes",
+      "description": "@maqi1520 跨平台笔记软件 ★1.6k"
+     },
+     {
+      "name": "notes",
+      "url": "https://github.com/pimterry/notes",
+      "description": "@pimterry 简单愉悦、Unix风 ★1.3k"
+     },
+     {
+      "name": "GitJournal",
+      "url": "https://github.com/GitJournal/GitJournal",
+      "description": "@GitJournal 集成Git的移动端优 ★4233"
+     }
+    ]
+   },
+   {
+    "name": "网盘与下载工具",
+    "enName": "Download Tools",
+    "links": [
+     {
+      "name": "开源自托管图床 imgli 图鲤",
+      "url": "https://github.com/yixian-huang/imgli",
+      "description": "V2EX@mirror Go单二进制，支持S3"
+     },
+     {
+      "name": "seanime",
+      "url": "https://github.com/5rahim/seanime",
+      "description": "@5rahim 开源动漫/媒体服务器 ★4.2k"
+     },
+     {
+      "name": "pyload",
+      "url": "https://github.com/pyload/pyload",
+      "description": "@pyload 写的免费开源下载管理器 ★3879"
+     },
+     {
+      "name": "motrix-webextension",
+      "url": "https://github.com/gautamkrishnar/motrix-webextension",
+      "description": "@gautamkrishnar 下载管理器的 ★2011"
+     }
+    ]
+   },
+   {
+    "name": "自托管服务与仪表盘",
+    "enName": "Self-hosted & Dashboard",
+    "links": [
+     {
+      "name": "自托管朋友圈 Ech0",
+      "url": "https://github.com/lin-snow/Ech0",
+      "description": "V2EX@L1nSn0w 类朋友圈的自托管社交应用"
+     },
+     {
+      "name": "Dreeve",
+      "url": "https://github.com/dreeveapp/dreeve",
+      "description": "HN@frogfuhrer 自托管的运动健身数据仪表盘"
+     },
+     {
+      "name": "LXI.ai Bookmarks",
+      "url": "https://lxi.ai/",
+      "description": "HN@devinhn 用TF-IDF向量自动聚合相似书签"
+     },
+     {
+      "name": "gatus",
+      "url": "https://github.com/TwiN/gatus",
+      "description": "@TwiN 面向开发者的自动化状态页与告警 ★12.2k"
+     },
+     {
+      "name": "Pulse",
+      "url": "https://github.com/rcourtman/Pulse",
+      "description": "@rcourtman Docker ★6.8k"
+     },
+     {
+      "name": "neko",
+      "url": "https://github.com/m1k1o/neko",
+      "description": "@m1k1o 里跑的自托管虚拟浏览器 ★22.4k"
+     },
+     {
+      "name": "zerobyte",
+      "url": "https://github.com/nicotsx/zerobyte",
+      "description": "@nicotsx 基于restic的自托管自 ★7.0k"
+     },
+     {
+      "name": "K7",
+      "url": "https://github.com/kaybi-gh/K7",
+      "description": "@kaybi-gh 面向家庭小圈子的自托管媒体 ★273"
+     },
+     {
+      "name": "omnom",
+      "url": "https://github.com/asciimoo/omnom",
+      "description": "@asciimoo 内容存档保留服务 ★666"
+     },
+     {
+      "name": "grimoire",
+      "url": "https://github.com/goniszewski/grimoire",
+      "description": "@goniszewski 面向极客的书签管理 ★2858"
+     },
+     {
+      "name": "osmosmemo",
+      "url": "https://github.com/osmoscraft/osmosmemo",
+      "description": "@osmoscraft 把GitHub仓库当作 ★488"
+     }
+    ]
+   },
+   {
+    "name": "开发工具",
+    "enName": "Dev Tools",
+    "links": [
+     {
+      "name": "达芬奇自动剪辑插件",
+      "url": "https://www.bilibili.com/video/BV13tVU6xEM7/",
+      "description": "觅影长风 用VibeCoding制作达芬奇 2101播放"
+     },
+     {
+      "name": "Batch Renamer Pro",
+      "url": "https://www.bilibili.com/video/BV1oej16eEmN/",
+      "description": "阿幸要喝酒 做的批量文件命名工具 1053播放"
+     },
+     {
+      "name": "本地 AI Agent Gateway PocketPilot",
+      "url": "https://pp.95ym.cn/",
+      "description": "V2EX@stoneTojing 让家里的Cursor"
+     },
+     {
+      "name": "ACP Agent 桌面客户端 Fello",
+      "url": "https://github.com/Zythum/fello",
+      "description": "V2EX@zythum 开源Agent客户端，集对话"
+     },
+     {
+      "name": ".NET+mihomo 纯控制台代理管理工具",
+      "url": "https://github.com/meowioo/Paprika",
+      "description": "V2EX@Uta Vibecoding的控制台代理菜单"
+     },
+     {
+      "name": "本地脱敏还原网关 maskit 0.4",
+      "url": "https://github.com/xiaYuTian11/maskit",
+      "description": "V2EX@xiayutian11 支持内置模型和浏览器扩"
+     },
+     {
+      "name": "极空间 NAS 零配置 CLI+MCP",
+      "url": "https://github.com/skyzhao1223/zspace-cli",
+      "description": "V2EX@skyzt 不用密码/SSH/DDNS"
+     },
+     {
+      "name": "Void Editor",
+      "url": "https://voideditor.com/",
+      "description": "HN@andrewpareles 开源的Cursor风格"
+     },
+     {
+      "name": "codeg",
+      "url": "https://github.com/xintaofei/codeg",
+      "description": "@xintaofei 聚合多Claude ★3.8k"
+     },
+     {
+      "name": "agtx",
+      "url": "https://github.com/fynnfluegge/agtx",
+      "description": "@fynnfluegge 编码Agent的黑 ★1.7k"
+     },
+     {
+      "name": "aichat",
+      "url": "https://github.com/sigoden/aichat",
+      "description": "@sigoden 一体化LLMCLI ★10.5k"
+     },
+     {
+      "name": "tabularis",
+      "url": "https://github.com/TabularisDB/tabularis",
+      "description": "@TabularisDB 内置数据库驱动的桌 ★5097"
+     },
+     {
+      "name": "h-m-m",
+      "url": "https://github.com/nadrad/h-m-m",
+      "description": "@nadrad 键盘优先的黑客思维导图 ★2292"
+     },
+     {
+      "name": "ekphos",
+      "url": "https://github.com/nostacks/ekphos",
+      "description": "@nostacks 轻量终端 ★1066"
+     }
+    ]
+   },
+   {
+    "name": "AI 聊天与智能体",
+    "enName": "AI Chat & Agents",
+    "links": [
+     {
+      "name": "枫云AI助手",
+      "url": "https://github.com/MewCo-AI/mewco_ai_assistant_comm",
+      "description": "枫影剑Maple 开源AI助手社区版开发教 1698播放"
+     },
+     {
+      "name": "让 DeepSeek 给我做网站",
+      "url": "https://www.bilibili.com/video/BV1PX9iYQE6g/",
+      "description": "边边搞笑 尝试让DeepSeek给我做网 21.7万播放"
+     },
+     {
+      "name": "Midra开源AI作曲Agent",
+      "url": "https://github.com/xiaoduolu/midra",
+      "description": "增殖的指名者 把自然语言描述转成编曲结构再 7856播放"
+     },
+     {
+      "name": "Agent 工作台 muselab",
+      "url": "https://github.com/hesorchen/muselab",
+      "description": "V2EX@hesorchen 基于"
+     },
+     {
+      "name": "AI 指挥官 + Agent 托管平台 AgentClaw",
+      "url": "https://github.com/vorojar/AgentClaw",
+      "description": "V2EX@rosibo 每个Agent独立Soul/技能"
+     },
+     {
+      "name": "Pac-Bench: how well can models one-shot Pac-Man?",
+      "url": "https://jonclegg.github.io/pacman-bakeoff/",
+      "description": "HN@thefourthchime 让各家大模型一次生成"
+     },
+     {
+      "name": "Open-Claude-Cowork",
+      "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
+      "description": "@DevAgentForge 桌面端 ★3397"
+     },
+     {
+      "name": "olib-mobile",
+      "url": "https://github.com/shiyi-0x7f/olib-mobile",
+      "description": "@shiyi-0x7f 全程用AI助手写的开 ★1282"
+     },
+     {
+      "name": "Agentshire",
+      "url": "https://github.com/Agentshire/Agentshire",
+      "description": "@Agentshire 把AIagent可视 ★1297"
+     }
+    ]
+   },
+   {
+    "name": "AI 创作与生成",
+    "enName": "AI Creation",
+    "links": [
+     {
+      "name": "OCV 一键成片",
+      "url": "https://github.com/IFRIT-Zhou/One-Click-VidGen",
+      "description": "-IFRIT- 个人自研并开源的一键成片视频生成器"
+     },
+     {
+      "name": "AI互动故事引擎",
+      "url": "https://akasa.fun",
+      "description": "陌上尘少年人 做了个可玩的互动故事引擎akasa.fun"
+     },
+     {
+      "name": "DogLM：在一个 AI 生成的游戏里，你能摸到这只狗吗？",
+      "url": "https://mikeushakov.github.io/doglm/",
+      "description": "HN@mikeushakov 6分/1评"
+     },
+     {
+      "name": "WorldX",
+      "url": "https://github.com/YGYOOO/WorldX",
+      "description": "@YGYOOO 一句话生成一个AI自主驱动的 ★1511"
+     }
+    ]
+   },
+   {
+    "name": "AI 绘画与艺术",
+    "enName": "AI Art",
+    "links": [
+     {
+      "name": "ComfyUI 像素动画一键生成",
+      "url": "https://www.bilibili.com/video/BV1ZCSEBzEis/",
+      "description": "星仁军师 ComfyUI像素动画一键稳定生 1.8万播放"
+     },
+     {
+      "name": "零代码3D网页",
+      "url": "https://www.bilibili.com/video/BV1qUKVeuEsv/",
+      "description": "SYXMA 音乐制作人零前端基础完全制作的 3583播放"
+     },
+     {
+      "name": "用 Claude Code 生成的精美交互式科普解释页",
+      "url": "https://paraschopra.github.io/explainers/",
+      "description": "HN@paraschopra 43分/30评"
+     },
+     {
+      "name": "Artificial Ivy in the Browser",
+      "url": "https://da.nmcardle.com/grow",
+      "description": "HN@dnmc 浏览器里一片会自然生长摇曳的生成式常春藤"
+     },
+     {
+      "name": "Blotter",
+      "url": "https://github.com/bradley/Blotter",
+      "description": "@bradley 文字特效库 ★3.1k"
+     },
+     {
+      "name": "ooosplat",
+      "url": "https://github.com/ooolabdev/ooosplat",
+      "description": "@ooolabdev 本地一键把视频和图片变 ★1717"
+     },
+     {
+      "name": "minecraft-citygen",
+      "url": "https://github.com/chengmarc/minecraft-citygen",
+      "description": "@chengmarc 把你在 ★192"
+     },
+     {
+      "name": "inkloom",
+      "url": "https://github.com/Inkloom-art/inkloom",
+      "description": "@Inkloom-art 专门做logo设计的 ★665"
+     },
+     {
+      "name": "open-storyboard-canvas",
+      "url": "https://github.com/ganbo-gab/open-storyboard-canvas",
+      "description": "@ganbo-gab 开源AI分镜与导演台画布 ★362"
+     },
+     {
+      "name": "ai-subtitles",
+      "url": "https://github.com/Nutlope/ai-subtitles",
+      "description": "@Nutlope 用AI给任意视频生成字幕 ★462"
+     }
+    ]
+   },
+   {
+    "name": "AI 视频与剪辑",
+    "enName": "AI Video",
+    "links": [
+     {
+      "name": "开源 AI 数字人直播系统",
+      "url": "https://github.com/lipku/livetalking",
+      "description": "屾哥ai说 开源免费AI数字人直播系统 2.4万播放"
+     },
+     {
+      "name": "dramaclaw",
+      "url": "https://github.com/dramaclaw/dramaclaw",
+      "description": "@dramaclaw 通用AIGC视频引擎 ★6.6k"
+     },
+     {
+      "name": "youtube-shorts-pipeline",
+      "url": "https://github.com/rushindrasinha/youtube-shorts-pipeline",
+      "description": "@rushindrasinha 自动化 ★2.3k"
+     }
+    ]
+   },
+   {
+    "name": "AI 应用与好玩项目",
+    "enName": "AI Apps & Fun",
+    "links": [
+     {
+      "name": "624台掌机数据工具",
+      "url": "https://www.bilibili.com/video/BV1K9uu6hEp9/",
+      "description": "知喵~ 用VibeCoding把624台掌机数据做成查询"
+     },
+     {
+      "name": "AI书架APP",
+      "url": "https://www.bilibili.com/video/BV1XuJBzbEEZ/",
+      "description": "赛博太白 用Trae开发的AI书架APP来管 663播放"
+     },
+     {
+      "name": "AI把游戏搬进MC",
+      "url": "https://www.bilibili.com/video/BV1ohNj69Eqg/",
+      "description": "秦无邪OvO 没写一行代码"
+     },
+     {
+      "name": "AI做了一个B站",
+      "url": "https://www.bilibili.com/video/BV1azKo6eESt/",
+      "description": "萌sir壹号 从设计到开发，让AI帮自己复刻了一个B站"
+     },
+     {
+      "name": "VUP手搓舰礼回馈小程序",
+      "url": "https://www.bilibili.com/video/BV1yxT264EdN/",
+      "description": "Cattleya_栗 无计算机背景的VUP用 779播放"
+     },
+     {
+      "name": "闻啼鸟AI识鸟App",
+      "url": "https://www.bilibili.com/video/BV195zeBEEjN/",
+      "description": "技术爬爬虾 录一段鸟叫AI分析鸟种并弹 245157播放"
+     },
+     {
+      "name": "Codex 额度重置查询工具",
+      "url": "https://codexreset.remit.ee/",
+      "description": "V2EX@awendujitang 自己做的查询"
+     },
+     {
+      "name": "开源项目推荐站（开发者自荐）",
+      "url": "https://zendot.org/",
+      "description": "V2EX@Hifone 做了个开源项目推荐站"
+     },
+     {
+      "name": "aidchot.com：AI 与数据中心热点聚合站",
+      "url": "https://aidchot.com/",
+      "description": "V2EX@qq723985066 自做的AI新闻聚合站"
+     },
+     {
+      "name": "k-synth：用 APL（或一个 dumb K 方言）驱动的合成器",
+      "url": "https://octetta.github.io/k-synth/",
+      "description": "HN@octetta 92分/33评"
+     },
+     {
+      "name": "korb：用逆向工程的 REWE API 在命令行下单 groceries",
+      "url": "https://github.com/yannick-cw/korb",
+      "description": "HN@wazHFsRy 205分/85评"
+     },
+     {
+      "name": "GDevelop",
+      "url": "https://github.com/4ian/GDevelop",
+      "description": "@4ian 🎮人人可用的开源跨平台2D ★27.1k"
+     },
+     {
+      "name": "what-to-eat",
+      "url": "https://github.com/liu-ziting/what-to-eat",
+      "description": "@liu-ziting 一饭封神 ★3.6k"
+     },
+     {
+      "name": "AIHOT",
+      "url": "https://github.com/KKKKhazix/AIHOT",
+      "description": "@KKKKhazix 自己找热点 ★4.8k"
+     },
+     {
+      "name": "SurfSense",
+      "url": "https://github.com/MODSetter/SurfSense",
+      "description": "@MODSetter 离线、隐私优先的开源 ★16.3k"
+     },
+     {
+      "name": "metastream",
+      "url": "https://github.com/samuelmaddock/metastream",
+      "description": "@samuelmaddock 和朋友一起同步 ★2.6k"
+     },
+     {
+      "name": "cursor-effects",
+      "url": "https://github.com/tholman/cursor-effects",
+      "description": "@tholman 给浏览器加复古鼠标特效 ★4067"
+     },
+     {
+      "name": "twinny",
+      "url": "https://github.com/twinnydotdev/twinny",
+      "description": "@twinnydotdev Code开源 ★3663"
+     },
+     {
+      "name": "deepseek_ocr_app",
+      "url": "https://github.com/rdumasia303/deepseek_ocr_app",
+      "description": "@rdumasia303 用 ★1889"
+     },
+     {
+      "name": "autobe",
+      "url": "https://github.com/wrtnlabs/autobe",
+      "description": "@wrtnlabs VibeCodingag ★1.4k"
+     },
+     {
+      "name": "drunk-claude",
+      "url": "https://github.com/KorroAi/drunk-claude",
+      "description": "@KorroAi 从“微醺”到“断片”的强度滑 ★197"
+     },
+     {
+      "name": "vibecoded-design-tells",
+      "url": "https://github.com/JCarterJohnson/vibecoded-design-tells",
+      "description": "@JCarterJohnson 扫了320万条 ★507"
+     },
+     {
+      "name": "director_ai",
+      "url": "https://github.com/freestylefly/director_ai",
+      "description": "@freestylefly 漫剧制作App ★1777"
+     },
+     {
+      "name": "holo-card-studio",
+      "url": "https://github.com/EverettFish/holo-card-studio",
+      "description": "@EverettFish 一句描述或上传参考 ★1856"
+     },
+     {
+      "name": "open-wallpaper-engine",
+      "url": "https://github.com/waywallen/open-wallpaper-engine",
+      "description": "@waywallen 主要面向Linux的开源 ★236"
+     },
+     {
+      "name": "vidwall",
+      "url": "https://github.com/jaywcjlove/vidwall",
+      "description": "@jaywcjlove 把4K视频设为 ★127"
+     },
+     {
+      "name": "RetroMac",
+      "url": "https://github.com/klotzbrocken/RetroMac",
+      "description": "@klotzbrocken 把你的Mac变成复 ★118"
+     },
+     {
+      "name": "writ-fm",
+      "url": "https://github.com/keltokhy/writ-fm",
+      "description": "@keltokhy /7不间断的AI网络电台 ★380"
+     }
+    ]
+   },
+   {
+    "name": "游戏与娱乐",
+    "enName": "Games",
+    "links": [
+     {
+      "name": "BVR空战模拟器",
+      "url": "https://github.com/LpIuma/Canvas_game",
+      "description": "Lpluma 借助Gemini+ 4997播放"
+     },
+     {
+      "name": "网页3D小蜜蜂",
+      "url": "https://github.com/erxiansheng/xingjilieshou",
+      "description": "1603366374 网页3D太空射击游戏 1万播放"
+     },
+     {
+      "name": "给 OC 做了个游戏",
+      "url": "https://www.bilibili.com/video/BV1vS421w7SK/",
+      "description": "鸽手名苏 给OC做了个游戏 16.5万播放"
+     },
+     {
+      "name": "AI 修仙文字冒险仙途",
+      "url": "https://github.com/qianye60/xiantu",
+      "description": "千夜_qianye AI修仙文字冒险仙途 1.1万播放"
+     },
+     {
+      "name": "斗罗网页模拟器",
+      "url": "https://www.bilibili.com/video/BV1tEbj6KE9m/",
+      "description": "白鳞逐水 自制网页小游戏斗罗模拟器，带修炼突破成神系统"
+     },
+     {
+      "name": "虫潮前哨防守",
+      "url": "https://www.bilibili.com/video/BV1Ujad6DEuf/",
+      "description": "飞刀班长 AI辅助做的低多边形基地防守小游戏"
+     },
+     {
+      "name": "自制Unity FPS",
+      "url": "https://www.bilibili.com/video/BV1hsgN6oEGw/",
+      "description": "晴天呼呼w 一UnityFPS内测个人竞技对局实录"
+     },
+     {
+      "name": "自研游戏引擎进展",
+      "url": "https://www.bilibili.com/video/BV1qrtY6hEmz/",
+      "description": "那只敏捷的棕毛狐狸 两个月自研游戏引擎迭代"
+     },
+     {
+      "name": "独立游戏《弑神匕首》",
+      "url": "https://www.bilibili.com/video/BV1Dtjv6ZEDb/",
+      "description": "SuperJelly 一个人2D动作独立游 1766播放"
+     },
+     {
+      "name": "国风搭积木游戏叠梦小筑",
+      "url": "https://www.bilibili.com/video/BV1kWLD6XEBr/",
+      "description": "卡卡波比Studio 花一个月做的国风极 14810播放"
+     },
+     {
+      "name": "把童年游戏《铁甲风暴》封装进 Docker 一键启动",
+      "url": "https://github.com/ety001/lzc-appdb",
+      "description": "V2EX@ety001 把小时候玩的《铁甲风暴》打包成"
+     },
+     {
+      "name": "Encircle：极简手绘风烧脑网页小游戏",
+      "url": "https://mehuleo.github.io/encircle/",
+      "description": "HN@arttaboi 26分/14评"
+     },
+     {
+      "name": "Chess-Inspired Roguelike",
+      "url": "https://princechazz.com/",
+      "description": "HN@cowboy_henk 把国际象棋走子规则"
+     },
+     {
+      "name": "light-novel-library_Wenku8_Android",
+      "url": "https://github.com/MewX/light-novel-library_Wenku8_Android",
+      "description": "@MewX 轻小说文库Wenku8安卓第三方 ★3055"
+     },
+     {
+      "name": "NovelReader",
+      "url": "https://github.com/newbiechen1024/NovelReader",
+      "description": "@newbiechen1024 仿任阅的追书 ★1796"
+     },
+     {
+      "name": "Mango",
+      "url": "https://github.com/getmango/Mango",
+      "description": "@getmango 自托管漫画服务器与 ★1777"
+     },
+     {
+      "name": "Microverse",
+      "url": "https://github.com/KsanaDock/Microverse",
+      "description": "@KsanaDock 基于Godot4的上帝 ★2485"
+     },
+     {
+      "name": "spotatui",
+      "url": "https://github.com/LargeModGames/spotatui",
+      "description": "@LargeModGames 写的飞快终端音 ★1400"
+     },
+     {
+      "name": "legend-of-elya-n64",
+      "url": "https://github.com/Scottcjn/legend-of-elya-n64",
+      "description": "@Scottcjn 一台N64游戏 ★146"
+     },
+     {
+      "name": "Setrixtui",
+      "url": "https://github.com/Mjoyufull/Setrixtui",
+      "description": "@Mjoyufull 用Ratatui写的俄罗 ★151"
+     },
+     {
+      "name": "SafeLLMPlayground",
+      "url": "https://github.com/RUIYUN-ML/SafeLLMPlayground",
+      "description": "@RUIYUN-ML 用LLM做文字冒险游戏的 ★351"
+     }
+    ]
+   },
+   {
+    "name": "桌面美化与宠物",
+    "enName": "Desktop Pets & Themes",
+    "links": [
+     {
+      "name": "波兰球重力桌宠 AI 版",
+      "url": "https://www.bilibili.com/video/BV1WGez6TEgm/",
+      "description": "猫巫联盟 波兰球重力桌宠AI版 8.7万播放"
+     },
+     {
+      "name": "DeepSeek×Live2D 情感桌宠",
+      "url": "https://github.com/phoiex/AAAAGENT",
+      "description": "冰魄柠檬 DeepSeek 2.4万播放"
+     },
+     {
+      "name": "呆呆鱼桌宠手机版",
+      "url": "https://www.bilibili.com/video/BV1hEhg6fEVU/",
+      "description": "呆呆鱼一点都不呆 高人气呆呆鱼桌宠推出安卓手机版"
+     },
+     {
+      "name": "DSH看板娘插件",
+      "url": "https://github.com/hacxy/dsh-live2d",
+      "description": "喝甜酒也迷糊 DSH看板娘插件"
+     },
+     {
+      "name": "若叶睦AI桌宠",
+      "url": "https://www.bilibili.com/video/BV1XZcSzSE2r/",
+      "description": "孤独摇摆阳 用Unity做的 22908播放"
+     },
+     {
+      "name": "监控AI任务的桌面宠物",
+      "url": "https://www.bilibili.com/video/BV1Y2Ex6kEEf/",
+      "description": "chocpink_ 做了个桌宠实时演出 21125播放"
+     },
+     {
+      "name": "大模型榜单可视化网站",
+      "url": "https://airace.lol/",
+      "description": "V2EX@mqx 做的一个把各家大模型榜单可视化呈现的网"
+     },
+     {
+      "name": "Pts.js 创意可视化编程库",
+      "url": "https://ptsjs.org/",
+      "description": "HN@wmnn 一个用于数据可视化与创意编程的JS库"
+     },
+     {
+      "name": "Tinkersynth 奇趣生成艺术机",
+      "url": "https://tinkersynth.com/slopes",
+      "description": "HN@joshwcomeau 一台whimsical风格"
+     },
+     {
+      "name": "claude-pet：用 PowerShell/Win32 写的 Claude Code 桌面宠物",
+      "url": "https://github.com/SHIN620265/claude-pet",
+      "description": "HN@shin620265 1分/0评"
+     },
+     {
+      "name": "linux-wallpaperengine",
+      "url": "https://github.com/Almamu/linux-wallpaperengine",
+      "description": "@Almamu 上运行 ★4.6k"
+     },
+     {
+      "name": "MusicDNA",
+      "url": "https://github.com/harjot-oberai/MusicDNA",
+      "description": "@harjot-oberai 端渲染DNA可 ★2.9k"
+     },
+     {
+      "name": "BetterLyrics",
+      "url": "https://github.com/jayfunc/BetterLyrics",
+      "description": "@jayfunc 优雅可深度定制的歌词可视化 ★2.2k"
+     },
+     {
+      "name": "coucou",
+      "url": "https://github.com/Louis-CFM/coucou",
+      "description": "@Louis-CFM 一只住在macOS刘海 ★2655"
+     },
+     {
+      "name": "kkclaw",
+      "url": "https://github.com/kk43994/kkclaw",
+      "description": "@kk43994 一只可爱的桌面龙虾AI助手 ★174"
+     },
+     {
+      "name": "ansi-saver",
+      "url": "https://github.com/lardissone/ansi-saver",
+      "description": "@lardissone ANSI艺术屏保 ★194"
+     },
+     {
+      "name": "oc-claw",
+      "url": "https://github.com/rainnoon/oc-claw",
+      "description": "@rainnoon 监控OpenClaw ★351"
+     },
+     {
+      "name": "warashi",
+      "url": "https://github.com/inni918/warashi",
+      "description": "@inni918 免费开源的桌面AI伴侣 ★117"
+     },
+     {
+      "name": "claude-usage-monitor",
+      "url": "https://github.com/renatoaug/claude-usage-monitor",
+      "description": "@renatoaug 上的可爱像素桌宠 ★103"
+     },
+     {
+      "name": "Artemis",
+      "url": "https://github.com/momori777/Artemis",
+      "description": "@momori777 本地AI女友后宫 ★372"
+     }
+    ]
+   },
+   {
+    "name": "创意硬件与 DIY",
+    "enName": "Hardware & DIY",
+    "links": [
+     {
+      "name": "蔚蓝档案 AI 聊天桃信",
+      "url": "https://www.momotalk.top",
+      "description": "卤v 全网最还原的蔚蓝档案学生AI聊天 32.6万播放"
+     },
+     {
+      "name": "树莓派 Zero W 迷你笔记本",
+      "url": "https://www.bilibili.com/video/BV1ey4y1r795/",
+      "description": "纸盒咕咕咕 用树莓派ZeroWDIY一台迷 2.8万播放"
+     },
+     {
+      "name": "树莓派手办舞台",
+      "url": "https://github.com/dww1999zj-cn/figure-stage",
+      "description": "土豆最爱猪肉脯 树莓派+摄像头识别手办"
+     },
+     {
+      "name": "ESP32迷你WiFi机器人",
+      "url": "https://www.bilibili.com/video/BV1jiuo67E1T/",
+      "description": "极客阿尔法 用ESP32自制迷你WiFi小车"
+     },
+     {
+      "name": "Vibe Coding专用键盘",
+      "url": "https://github.com/wellswang/vckb",
+      "description": "GeekLogic 把网上流传的 603378播放"
+     },
+     {
+      "name": "60 块小米遥控器 = VibeCoding 神器",
+      "url": "https://github.com/HD838A/remote-mic-app",
+      "description": "V2EX@itgoyo 发现60块的小米遥控器竟是绝佳的"
+     },
+     {
+      "name": "AI Pulse：Dock 旁的假 LED 灯条",
+      "url": "https://github.com/leog/ai-pulse",
+      "description": "HN@leog_me 在macOSDock旁贴一条假"
+     },
+     {
+      "name": "amurex",
+      "url": "https://github.com/thepersonalaicompany/amurex",
+      "description": "@thepersonalaicompany ★2.9k"
+     },
+     {
+      "name": "VCPToolBox",
+      "url": "https://github.com/lioensky/VCPToolBox",
+      "description": "@lioensky 部署在AI模型API与前 ★2.3k"
+     },
+     {
+      "name": "ClawPuter",
+      "url": "https://github.com/bryant24hao/ClawPuter",
+      "description": "@bryant24hao 给 ★154"
+     },
+     {
+      "name": "tgterm",
+      "url": "https://github.com/antirez/tgterm",
+      "description": "@antirez 用Telegram遥控你的 ★226"
+     },
+     {
+      "name": "openmicrokbd",
+      "url": "https://github.com/conol-ai/openmicrokbd",
+      "description": "@conol-ai 开源复刻 ★134"
+     },
+     {
+      "name": "CHC5_Open_Camera",
+      "url": "https://github.com/circuitvalley/CHC5_Open_Camera",
+      "description": "@circuitvalley 号称全球首款开放 ★109"
+     }
+    ]
+   },
+   {
+    "name": "趣味网页与玩具",
+    "enName": "Fun Web & Toys",
+    "links": [
+     {
+      "name": "手机史莱姆模拟",
+      "url": "https://www.bilibili.com/video/BV1d6hB67Ern/",
+      "description": "无心芭比 手机史莱姆模拟 43.1万播放"
+     },
+     {
+      "name": "网页像素版使命召唤",
+      "url": "https://www.bilibili.com/video/BV1yP4y1x7dn/",
+      "description": "著名神经哥 网页像素版使命召唤 57.6万播放"
+     },
+     {
+      "name": "自制桌面小电视",
+      "url": "https://www.bilibili.com/video/BV1zr42187av/",
+      "description": "长惜夜 可能是最最好用的桌面小电视 5.8万播放"
+     },
+     {
+      "name": "免费鸣潮表情包站",
+      "url": "https://emoji.wuwa.games/",
+      "description": "飞行雪绒-通宵版 历时两个月做的完全免费鸣潮表情包网站呜"
+     },
+     {
+      "name": "复联5前情自检网站",
+      "url": "https://avengers-avengers-d8g0v4cpw54955f63.webapps.tcloudbase.com/",
+      "description": "You_fenga 做了个漫威观影前情自检网站"
+     },
+     {
+      "name": "临时邮箱网站",
+      "url": "https://www.bilibili.com/video/BV11A54zKEmj/",
+      "description": "SkylerJot +Nuxtjs一天做出临 772播放"
+     },
+     {
+      "name": "AI 赛博算命（六爻×紫微斗数）",
+      "url": "http://aitjg.com/",
+      "description": "V2EX@qbqbq 做的AI六爻与紫微斗数在线算命站"
+     },
+     {
+      "name": "qqdeni.com：捡完即消失的 AI 漂流瓶",
+      "url": "https://qqdeni.com/",
+      "description": "V2EX@rocyhua AI+Cloudflare全家"
+     },
+     {
+      "name": "Everything：可缩放的 400 万维基百科事件时间线",
+      "url": "https://app.everything.diena.co/",
+      "description": "HN@lortex 118分/43评"
+     },
+     {
+      "name": "What if the speed of light was 5 km/h?",
+      "url": "https://rivendell.dmitrybrant.com/relativity/",
+      "description": "HN@dmitrybrant 把光速调成5km"
+     },
+     {
+      "name": "Hacker News on a train-station flip board",
+      "url": "https://popflame.quickish.space/hn-flipboard/",
+      "description": "HN@PaybackTony 把HN热榜做成火车站翻牌时"
+     },
+     {
+      "name": "开源全网爆火手势表情包引擎gesto-engine",
+      "url": "https://github.com/jiaxiwangau-star/gesto-engine",
+      "description": "hi.jessie手势表情包识别引擎开源"
+     },
+     {
+      "name": "JobFunnel",
+      "url": "https://github.com/PaulMcInnis/JobFunnel",
+      "description": "@PaulMcInnis 把多个招聘网站的职 ★2.2k"
+     },
+     {
+      "name": "stickerbaker",
+      "url": "https://github.com/cbh123/stickerbaker",
+      "description": "@cbh123 用AI烘焙个性化贴纸 ★1.1k"
+     },
+     {
+      "name": "kage",
+      "url": "https://github.com/MengTo/kage",
+      "description": "@MengTo 在浏览器里实机渲染的京都山寺 ★1689"
+     },
+     {
+      "name": "shiyun",
+      "url": "https://github.com/Cohenjikan/shiyun",
+      "description": "@Cohenjikan 把中国三千年诗放进可漫 ★264"
+     },
+     {
+      "name": "playcaptcha",
+      "url": "https://github.com/mortspace/playcaptcha",
+      "description": "@mortspace 抓娃娃机式人机验证 ★527"
+     },
+     {
+      "name": "tiny-terminal",
+      "url": "https://github.com/madebydia/tiny-terminal",
+      "description": "@madebydia 给孩子玩的假终端 ★238"
+     },
+     {
+      "name": "bloub",
+      "url": "https://github.com/jeremy-prt/bloub",
+      "description": "@jeremy-prt 用SVG逐帧还原x. ★1672"
+     },
+     {
+      "name": "Third-Person-MC",
+      "url": "https://github.com/hexianWeb/Third-Person-MC",
+      "description": "@hexianWeb 写的网页版第三人称 ★194"
+     },
+     {
+      "name": "hyprdvd",
+      "url": "https://github.com/nevimmu/hyprdvd",
+      "description": "@nevimmu 让你的终端像DVD屏保那样 ★115"
+     }
+    ]
+   },
+   {
+    "name": "学习与生活",
+    "enName": "Study & Life",
+    "links": [
+     {
+      "name": "角端·AI全文翻译阅读",
+      "url": "https://www.bilibili.com/video/BV1po8A6dEtk/",
+      "description": "边境小屋 上传外文书就能一键全文翻译的AI阅读网站"
+     },
+     {
+      "name": "学英语的galgame",
+      "url": "https://www.bilibili.com/video/BV114uS6gEQ3/",
+      "description": "滚雪球日记 TRAE大赛作品"
+     },
+     {
+      "name": "第一个VibeCoding宠物软件",
+      "url": "https://www.bilibili.com/video/BV1JhVS6GEqm/",
+      "description": "GiorgioHan 第一次 21659播放"
+     },
+     {
+      "name": "soul-blog-theme 开源博客主题",
+      "url": "https://github.com/callmesoul/soul-blog-theme",
+      "description": "V2EX@CallMeSoul 开源的个人博客主题"
+     },
+     {
+      "name": "LLM Attention Visualization",
+      "url": "https://ishamf.dev/p/llm-attention-visualizer/",
+      "description": "HN@ifz 把大模型注意力权重画出来的交互式可视化学习"
+     },
+     {
+      "name": "Turn native-language audio into flashcards",
+      "url": "https://lingochunk.com/try",
+      "description": "HN@alder 把外语原声自动做成闪卡和影子跟练材料的"
+     },
+     {
+      "name": "home-automation",
+      "url": "https://github.com/deepsyx/home-automation",
+      "description": "@deepsyx 基于树莓派的NodeJS智 ★3.4k"
+     },
+     {
+      "name": "dijo",
+      "url": "https://github.com/oppiliappan/dijo",
+      "description": "@oppiliappan 脚本化 ★2.9k"
+     },
+     {
+      "name": "homebridge-config-ui-x",
+      "url": "https://github.com/homebridge/homebridge-config-ui-x",
+      "description": "@homebridge 的Web管理界面 ★2.8k"
+     },
+     {
+      "name": "Feeder",
+      "url": "https://github.com/spacecowboy/Feeder",
+      "description": "@spacecowboy 端简洁RSS阅读器 ★3.1k"
+     },
+     {
+      "name": "LibreLingo",
+      "url": "https://github.com/kantord/LibreLingo",
+      "description": "@kantord 社区共建开源语言学习平台 ★2.6k"
+     },
+     {
+      "name": "oh-my-ppt",
+      "url": "https://github.com/arcsin1/oh-my-ppt",
+      "description": "@arcsin1 口述想要的演示、课程或故事 ★2094"
+     },
+     {
+      "name": "meikipop",
+      "url": "https://github.com/rtr46/meikipop",
+      "description": "@rtr46 跨平台日语OCR弹窗词典 ★676"
+     },
+     {
+      "name": "how-llms-work",
+      "url": "https://github.com/w3cj/how-llms-work",
+      "description": "@w3cj 交互式App ★617"
+     },
+     {
+      "name": "StudyFlow",
+      "url": "https://github.com/KuanKongy/StudyFlow",
+      "description": "@KuanKongy 带AI总结与闪卡的协作学 ★139"
+     },
+     {
+      "name": "streak",
+      "url": "https://github.com/InlitX/streak",
+      "description": "@InlitX 最小、隐私、无广告的习惯打卡 ★670"
+     },
+     {
+      "name": "wardrowbe",
+      "url": "https://github.com/Anyesh/wardrowbe",
+      "description": "@Anyesh 把你的衣柜排成行 ★746"
+     },
+     {
+      "name": "Bloom",
+      "url": "https://github.com/Li-Evan/Bloom",
+      "description": "@Li-Evan 私人家教式AI ★278"
+     },
+     {
+      "name": "tapword-translator",
+      "url": "https://github.com/hongyuan007/tapword-translator",
+      "description": "@hongyuan007 触词翻译 ★271"
+     },
+     {
+      "name": "fud-ai",
+      "url": "https://github.com/apoorvdarshan/fud-ai",
+      "description": "@apoorvdarshan 免费开源的AI卡 ★452"
+     },
+     {
+      "name": "liftcut-tracker",
+      "url": "https://github.com/Townzc/liftcut-tracker",
+      "description": "@Townzc 新手友好的开源训练/营养 ★103"
+     }
+    ]
+   }
+  ]
+ }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑽𝑖𝑏𝑒 𝑪𝑜𝑑𝑖𝑛𝑔 𝑰𝑰';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

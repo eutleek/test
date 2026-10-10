@@ -1,0 +1,1269 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="独立开发者、设计师个人站与 Digital Garden 灵感导航">
+<title>独立开发者个人站 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑙 𝑆𝑖𝑡𝑒𝑠</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>独立开发者个人站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">独立开发者个人站 · 开发者、设计师与数字花园灵感</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "独立开发者个人站",
+    "icon": "🚀",
+    "color": "linear-gradient(135deg, #0ea5e9, #6366f1)",
+    "subcategories": [
+      {
+        "name": "个人站精选",
+        "links": [
+          {
+            "name": "Bruno Simon",
+            "url": "https://bruno-simon.com",
+            "description": "3D交互式个人网站代表作，可驾驶的互动世界。"
+          },
+          {
+            "name": "Rauno",
+            "url": "https://rauno.me",
+            "description": "极简、现代、细节精致的设计工程师个人站"
+          },
+          {
+            "name": "Lynn Fisher",
+            "url": "https://lynnandtonic.com",
+            "description": "每年重新设计自己的个人网站，个人网站设计文化中的经典案例"
+          },
+          {
+            "name": "Hakim El Hattab",
+            "url": "https://hakim.se",
+            "description": "WebGL、交互、视觉实验与前端作品集中展示"
+          },
+          {
+            "name": "Sindre Sorhus",
+            "url": "https://sindresorhus.com",
+            "description": "极简开发者首页，聚合大量开源项目和个人生态"
+          },
+          {
+            "name": "Evan You",
+            "url": "https://evanyou.me",
+            "description": "Vue.js 作者个人站，极简个人品牌路线"
+          },
+          {
+            "name": "Julia Evans",
+            "url": "https://jvns.ca",
+            "description": "极有个人风格的技术博客，漫画式技术内容非常独特"
+          },
+          {
+            "name": "Maggie Appleton",
+            "url": "https://maggieappleton.com",
+            "description": "数字花园、插画、设计、开发与视觉解释融合"
+          },
+          {
+            "name": "Andy Matuschak",
+            "url": "https://notes.andymatuschak.org",
+            "description": "数字花园代表作，连续笔记、双向链接、原子化知识"
+          },
+          {
+            "name": "Gwern",
+            "url": "https://www.gwern.net",
+            "description": "极高密度个人知识库，研究、实验、笔记、长文和超链接体系"
+          },
+          {
+            "name": "Nikita Voloboev",
+            "url": "https://wiki.nikiv.dev",
+            "description": "极具个人味道的Wiki与数字花园。"
+          },
+          {
+            "name": "Gordon Brander",
+            "url": "https://gordonbrander.com",
+            "description": "设计模式、叙事与系统思考。"
+          },
+          {
+            "name": "Buster Benson",
+            "url": "https://busterbenson.com",
+            "description": "个人知识、行为、系统和工具思考"
+          },
+          {
+            "name": "Tom Critchlow",
+            "url": "https://tomcritchlow.com",
+            "description": "独立咨询与数字花园。"
+          },
+          {
+            "name": "Joel Hooks",
+            "url": "https://joelhooks.com",
+            "description": "独立开发、教育、社区、Web开发和数字花园"
+          },
+          {
+            "name": "Shawn Wang / swyx",
+            "url": "https://www.swyx.io",
+            "description": "开发者、技术写作者与独立互联网人格站点"
+          },
+          {
+            "name": "Devine Lu Linvega",
+            "url": "https://wiki.xxiivv.com",
+            "description": "先锋感十足的个人Wiki与数字生活空间。"
+          },
+          {
+            "name": "Hundred Rabbits",
+            "url": "https://100r.co",
+            "description": "独立创作者/软件/艺术/生活实验，网站本身就是作品"
+          },
+          {
+            "name": "Feross Aboukhadijeh",
+            "url": "https://feross.org",
+            "description": "极简、技术味强、开源项目密集"
+          },
+          {
+            "name": "Sarah Drasner",
+            "url": "https://sarahdrasnerdesign.com",
+            "description": "设计、前端、动画、视觉与技术结合"
+          },
+          {
+            "name": "Una Kravets",
+            "url": "https://una.im",
+            "description": "CSS、设计工程、Web实验，个人品牌完整"
+          },
+          {
+            "name": "Zeno Rocha",
+            "url": "https://zenorocha.com",
+            "description": "开源、Web开发、创业、个人项目"
+          },
+          {
+            "name": "Robby Leonardi",
+            "url": "https://www.rleonardi.com",
+            "description": "互动式个人履历/作品集经典案例"
+          },
+          {
+            "name": "Timothée Roussilhe",
+            "url": "https://timroussilhe.com",
+            "description": "数字产品、网页实验和视觉设计"
+          },
+          {
+            "name": "Daniel Strong",
+            "url": "https://danielstrong.io",
+            "description": "极具视觉设计感的个人作品站"
+          },
+          {
+            "name": "Brent Jackson",
+            "url": "https://jxnblk.com",
+            "description": "前端设计系统、CSS、排版与个人实验"
+          },
+          {
+            "name": "Sean Halpin",
+            "url": "https://seanhalpin.io",
+            "description": "插画、设计、前端与个性化个人品牌"
+          },
+          {
+            "name": "Ash Kyd",
+            "url": "https://ash.ms",
+            "description": "极简个人互联网空间，开发者与设计感并存"
+          },
+          {
+            "name": "Patrick Kage",
+            "url": "https://patrickkage.com",
+            "description": "创意开发和个人作品展示"
+          },
+          {
+            "name": "Jet Holt",
+            "url": "https://jet.holt.dev",
+            "description": "设计与开发结合的个人空间"
+          }
+        ]
+      },
+      {
+        "name": "设计感创意站",
+        "links": [
+          {
+            "name": "Vic",
+            "url": "https://vicflix.me",
+            "description": "创意开发者个人站，设计、交互与个人表达结合"
+          },
+          {
+            "name": "Andy Patrick",
+            "url": "https://www.andypatrickdesign.com",
+            "description": "设计师个人主页与视觉作品"
+          },
+          {
+            "name": "Gilles Vermeulen",
+            "url": "https://gillesvermeulen.be",
+            "description": "开发者与视觉设计结合"
+          },
+          {
+            "name": "Vivek Patel",
+            "url": "https://vivek9patel.github.io",
+            "description": "开发者作品与实验"
+          },
+          {
+            "name": "CJ Gammon",
+            "url": "https://www.cjgammon.com",
+            "description": "Creative Coding与WebGL创意实验。"
+          },
+          {
+            "name": "Daniel X Moore",
+            "url": "https://whimsy.space",
+            "description": "极具个人趣味和实验性的互联网空间"
+          },
+          {
+            "name": "Eduardo San Martin Morote",
+            "url": "https://posva.net",
+            "description": "Vue生态开发者个人站"
+          },
+          {
+            "name": "Houssein Djirdeh",
+            "url": "https://houssein.me",
+            "description": "Web开发博客与个人作品"
+          },
+          {
+            "name": "Jeremy Thomas",
+            "url": "https://jgthms.com",
+            "description": "CSS/网页设计与开发个人站"
+          },
+          {
+            "name": "Jessica Lord",
+            "url": "https://jlord.us",
+            "description": "开源、数据可视化和个人博客"
+          },
+          {
+            "name": "Kenji Saito",
+            "url": "https://kenji-special.info",
+            "description": "强个人风格的创意开发主页"
+          },
+          {
+            "name": "Sittiphol Phanvilai",
+            "url": "https://nuuneoi.com",
+            "description": "设计、开发与个人内容"
+          },
+          {
+            "name": "Adam Hartwig",
+            "url": "https://www.adamhartwig.co.uk",
+            "description": "视觉作品与开发"
+          },
+          {
+            "name": "Alain Tai",
+            "url": "https://www.alain-tai.com",
+            "description": "个人设计/开发作品"
+          },
+          {
+            "name": "Dennis Snellenberg",
+            "url": "https://dennissnellenberg.com",
+            "description": "Web设计、Agency级视觉效果"
+          },
+          {
+            "name": "Stefan Poulos",
+            "url": "https://stefanpoulos.com",
+            "description": "设计与交互作品"
+          },
+          {
+            "name": "Wisnu Wicaksono",
+            "url": "https://wisnuwicaksono.com",
+            "description": "设计师/创意开发者个人站"
+          },
+          {
+            "name": "Raqib Nur",
+            "url": "https://raqibnur.com",
+            "description": "设计与开发个人作品"
+          },
+          {
+            "name": "Parish Khan",
+            "url": "https://parishkhan.com",
+            "description": "视觉设计、交互、个人作品"
+          },
+          {
+            "name": "Nooc",
+            "url": "https://nooc.ink",
+            "description": "独特创意互联网个人主页"
+          }
+        ]
+      },
+      {
+        "name": "开发者与独立开发者",
+        "links": [
+          {
+            "name": "idoubi",
+            "url": "https://idoubi.ai",
+            "description": "独立开发，聚焦AI、产品与开源项目。"
+          },
+          {
+            "name": "Abdallah Othman",
+            "url": "https://abdallahaho.com",
+            "description": "Product Engineer与个人互联网空间。"
+          },
+          {
+            "name": "Odhy Pradhana",
+            "url": "https://odhyp.com",
+            "description": "项目、写作、笔记与Now的多面个人站。"
+          },
+          {
+            "name": "James Long",
+            "url": "https://jlongster.com",
+            "description": "JavaScript、Web开发、工具和个人实验"
+          },
+          {
+            "name": "Max Stoiber",
+            "url": "https://mxstbr.com",
+            "description": "React、Web开发、产品和个人笔记"
+          },
+          {
+            "name": "Christopher Biscardi",
+            "url": "https://www.christopherbiscardi.com",
+            "description": "Web开发、MDX、Gatsby、个人知识"
+          },
+          {
+            "name": "Kevin Cunningham",
+            "url": "https://kevincunningham.co.uk",
+            "description": "React、AWS、Web开发与个人花园"
+          },
+          {
+            "name": "Waylon Walker",
+            "url": "https://waylonwalker.com",
+            "description": "Python与数据工程学习笔记花园。"
+          },
+          {
+            "name": "Scott Spence",
+            "url": "https://scottspence.com",
+            "description": "Web开发、MDX、GraphQL"
+          },
+          {
+            "name": "Daniel Chapman",
+            "url": "https://www.dschapman.com",
+            "description": "书籍、写作、诗歌与开发者空间"
+          },
+          {
+            "name": "Salman Ansari",
+            "url": "https://notes.salman.io",
+            "description": "工程、创业、Startup Notes"
+          },
+          {
+            "name": "Fabien Benetou",
+            "url": "https://fabien.benetou.fr",
+            "description": "WebXR、JavaScript、工具和知识花园"
+          },
+          {
+            "name": "Aengus McMillin",
+            "url": "https://aengusmcmillin.com",
+            "description": "编程、Stoicism、个人笔记"
+          },
+          {
+            "name": "Markus",
+            "url": "https://re1.dev",
+            "description": "Linux、隐私、设计、开发"
+          },
+          {
+            "name": "Ian Jones",
+            "url": "https://garden.ianjones.us",
+            "description": "Web开发、Emacs和数字花园"
+          },
+          {
+            "name": "Wayan Jimmy",
+            "url": "https://notebook.wayanjimmy.xyz",
+            "description": "Coding、Learning Notes"
+          },
+          {
+            "name": "Cristian Rojas",
+            "url": "https://notes.crisrojas.com",
+            "description": "编码、绘画与生物学思考的个人空间。"
+          },
+          {
+            "name": "Neil Mather",
+            "url": "https://commonplace.doubleloop.net",
+            "description": "Programming、思想笔记、Wiki风格"
+          },
+          {
+            "name": "Wess Daniels",
+            "url": "https://nurselog.online",
+            "description": "系统、文化、技术和个人知识"
+          },
+          {
+            "name": "Lucas Ou-Yang",
+            "url": "https://codelucas.com",
+            "description": "独立开发/个人项目"
+          },
+          {
+            "name": "Philip Walton",
+            "url": "https://philipwalton.com",
+            "description": "Web平台、CSS、前端工程"
+          },
+          {
+            "name": "Tristan Hume",
+            "url": "https://thume.ca",
+            "description": "编程、系统、编译器、个人技术站"
+          },
+          {
+            "name": "Nayuki",
+            "url": "https://www.nayuki.io",
+            "description": "开源程序员、算法、工具和个人项目"
+          },
+          {
+            "name": "André Staltz",
+            "url": "https://staltz.com",
+            "description": "JavaScript、Web与开源个人互联网空间。"
+          },
+          {
+            "name": "Kenneth Reitz",
+            "url": "https://www.kennethreitz.org",
+            "description": "Python、开源、软件工程与个人品牌"
+          },
+          {
+            "name": "Laurence Tratt",
+            "url": "https://tratt.net",
+            "description": "编程语言、软件、研究与技术文章"
+          },
+          {
+            "name": "Stefan Marr",
+            "url": "https://stefan-marr.de",
+            "description": "虚拟机、语言实现、系统研究"
+          },
+          {
+            "name": "Max Bernstein",
+            "url": "https://bernsteinbear.com",
+            "description": "编译器、低级系统、技术博客"
+          }
+        ]
+      },
+      {
+        "name": "数字花园笔记",
+        "links": [
+          {
+            "name": "Azlen Elza",
+            "url": "https://notes.azlen.me",
+            "description": "设计、对话界面与思维工具探索。"
+          },
+          {
+            "name": "Chris Aldrich",
+            "url": "https://tw.boffosocko.com",
+            "description": "TiddlyWiki、IndieWeb、知识管理"
+          },
+          {
+            "name": "Alex Komoroske",
+            "url": "https://thecompendium.cards",
+            "description": "卡片式知识系统、复杂性、设计"
+          },
+          {
+            "name": "Bill Seitz",
+            "url": "https://webseitz.fluxent.com",
+            "description": "Wiki、产品与工程实践探索。"
+          },
+          {
+            "name": "Anne-Laure Le Cunff",
+            "url": "https://www.mentalnodes.com",
+            "description": "Networked Thinking、学习与知识管理"
+          },
+          {
+            "name": "Will Stedden",
+            "url": "https://bonkerfield.org",
+            "description": "ML、量子艺术、自动化语言、个人研究"
+          },
+          {
+            "name": "Max Stoiber",
+            "url": "https://notes.mxstbr.com",
+            "description": "React与Web开发笔记"
+          },
+          {
+            "name": "Steve Dondley",
+            "url": "https://steve.dondley.com",
+            "description": "Vimwiki、Jekyll、自动化"
+          }
+        ]
+      },
+      {
+        "name": "技术博客与AI",
+        "links": [
+          {
+            "name": "Simon Willison",
+            "url": "https://simonwillison.net",
+            "description": "AI、Python与技术实验，内容密度极高。"
+          },
+          {
+            "name": "Andrej Karpathy",
+            "url": "https://karpathy.ai",
+            "description": "AI、深度学习、技术文章与个人主页"
+          },
+          {
+            "name": "Lilian Weng",
+            "url": "https://lilianweng.github.io",
+            "description": "深度学习、LLM、强化学习技术文章"
+          },
+          {
+            "name": "Jay Alammar",
+            "url": "https://jalammar.github.io",
+            "description": "以图解方式讲解机器学习/Transformer"
+          },
+          {
+            "name": "Eugene Yan",
+            "url": "https://eugeneyan.com",
+            "description": "AI、推荐系统、工程、学习"
+          },
+          {
+            "name": "Chip Huyen",
+            "url": "https://huyenchip.com",
+            "description": "ML系统、AI、工程与创业"
+          },
+          {
+            "name": "Hamel Husain",
+            "url": "https://hamel.dev",
+            "description": "AI工程、开发、实验与个人项目"
+          },
+          {
+            "name": "François Chollet",
+            "url": "https://fchollet.com",
+            "description": "AI、程序、研究与个人观点"
+          },
+          {
+            "name": "Daniel Bourke",
+            "url": "https://www.mrdbourke.com",
+            "description": "AI/ML教程、课程和个人项目"
+          },
+          {
+            "name": "Justin Pinkney",
+            "url": "https://www.justinpinkney.com",
+            "description": "AI、创意编程、生成艺术"
+          },
+          {
+            "name": "Mithi",
+            "url": "https://mithi.github.io",
+            "description": "工程、数据、可视化"
+          },
+          {
+            "name": "Robert Hodgin",
+            "url": "https://roberthodgin.com",
+            "description": "Creative Coding、生成艺术、互动实验"
+          },
+          {
+            "name": "Michael Nielsen",
+            "url": "https://michaelnielsen.org",
+            "description": "科学、技术、知识体系"
+          },
+          {
+            "name": "Terence Parr",
+            "url": "https://explained.ai",
+            "description": "AI / Machine Learning解释型内容"
+          },
+          {
+            "name": "Yihui Xie",
+            "url": "https://yihui.org",
+            "description": "R、统计、软件开发、开源"
+          },
+          {
+            "name": "Sam Tobin-Hochstadt",
+            "url": "https://samth.github.io",
+            "description": "Racket、编程语言和研究"
+          },
+          {
+            "name": "Simon Hørup Eskildsen",
+            "url": "https://sirupsen.com",
+            "description": "Rails、工程、性能和技术写作"
+          },
+          {
+            "name": "Jacky",
+            "url": "https://jzhao.xyz",
+            "description": "技术、设计、知识系统、个人网站实验"
+          },
+          {
+            "name": "Nanda Syahrasyad",
+            "url": "https://www.nan.fyi",
+            "description": "开发、设计与个人互联网空间"
+          },
+          {
+            "name": "Shu Ding",
+            "url": "https://shud.in",
+            "description": "Creative Coding、Web、开源"
+          },
+          {
+            "name": "Slim",
+            "url": "https://slim.computer",
+            "description": "计算机、工具和个人互联网实验"
+          },
+          {
+            "name": "Pine",
+            "url": "https://blog.matsu.io",
+            "description": "软件工程与个人博客"
+          },
+          {
+            "name": "Filippo Valsorda",
+            "url": "https://words.filippo.io",
+            "description": "密码学、Go、软件工程"
+          },
+          {
+            "name": "Rui Costi",
+            "url": "https://r.conti.sh",
+            "description": "编程、互联网、个人项目"
+          },
+          {
+            "name": "Ajay Brahmakshatriya",
+            "url": "https://intimeand.space",
+            "description": "系统、编程、个人实验"
+          },
+          {
+            "name": "Patricia Mou",
+            "url": "https://www.patriciamou.com",
+            "description": "数据、软件、个人博客"
+          },
+          {
+            "name": "Jean Fan",
+            "url": "https://jean.fan",
+            "description": "AI、可视化、科学计算"
+          },
+          {
+            "name": "Pranav Rajpurkar",
+            "url": "https://pranavrajpurkar.com",
+            "description": "AI/医学AI与研究个人站"
+          },
+          {
+            "name": "Kevin Liu",
+            "url": "https://kevinliu.me",
+            "description": "开发、研究和个人项目"
+          }
+        ]
+      },
+      {
+        "name": "更多个人站与冷门宝藏",
+        "links": [
+          {
+            "name": "Patrick Collison",
+            "url": "https://patrickcollison.com",
+            "description": "极简个人首页，Startup、阅读、研究与个人收藏"
+          },
+          {
+            "name": "TK",
+            "url": "https://www.iamtk.co",
+            "description": "极简个人互联网空间"
+          },
+          {
+            "name": "Vaclav Smil",
+            "url": "https://vaclavsmil.com",
+            "description": "作者、研究者、个人内容空间"
+          },
+          {
+            "name": "Park Jihyeok",
+            "url": "https://park.jihyeok.site",
+            "description": "个人博客与设计感主页"
+          },
+          {
+            "name": "Sihui Huang",
+            "url": "https://www.sihui.io",
+            "description": "设计、技术与个人作品"
+          },
+          {
+            "name": "Ines Montani",
+            "url": "https://ines.io",
+            "description": "开源、NLP、设计与个人项目"
+          },
+          {
+            "name": "Jill Wetzler",
+            "url": "https://www.jillwetzler.com",
+            "description": "视觉设计和个人项目"
+          },
+          {
+            "name": "Sara Soueidan",
+            "url": "https://www.sarasoueidan.com",
+            "description": "前端无障碍、设计系统和Web开发"
+          },
+          {
+            "name": "Mary Rose Cook",
+            "url": "https://maryrosecook.com",
+            "description": "编程、艺术、互动实验"
+          },
+          {
+            "name": "Phil Freeman",
+            "url": "https://blog.functorial.com",
+            "description": "编程语言、函数式编程和个人博客"
+          },
+          {
+            "name": "Kipply",
+            "url": "https://kipp.ly",
+            "description": "编程、互联网和个人项目"
+          },
+          {
+            "name": "Gabi",
+            "url": "https://gabx.io",
+            "description": "开发者/创意个人站"
+          },
+          {
+            "name": "Algebraic",
+            "url": "https://algebraic.dev",
+            "description": "编程、开发、个人笔记"
+          },
+          {
+            "name": "Huy",
+            "url": "https://www.huy.rocks",
+            "description": "开发与设计个人网站"
+          },
+          {
+            "name": "Andreas Rossberg",
+            "url": "https://people.mpi-sws.org/~rossberg",
+            "description": "WebAssembly、语言、系统"
+          },
+          {
+            "name": "Guilherme Kunigami",
+            "url": "https://www.kuniga.me",
+            "description": "软件工程和个人项目"
+          },
+          {
+            "name": "Sophia Sun",
+            "url": "https://huiwenn.github.io",
+            "description": "设计、学习、技术"
+          },
+          {
+            "name": "Fernando Borretti",
+            "url": "https://borretti.me",
+            "description": "编程语言、软件、个人思想"
+          },
+          {
+            "name": "Irene Chen",
+            "url": "https://irenechen.net",
+            "description": "软件、研究、个人内容"
+          },
+          {
+            "name": "Udara Jay",
+            "url": "https://udara.io",
+            "description": "开发、创业、个人项目"
+          },
+          {
+            "name": "Claromes",
+            "url": "https://claromes.com",
+            "description": "编程、开发和个人作品"
+          },
+          {
+            "name": "Tina Mai",
+            "url": "https://tinabmai.com",
+            "description": "设计、技术、个人内容"
+          },
+          {
+            "name": "Samson Zhang",
+            "url": "https://samsonzhang.com",
+            "description": "开发、个人项目"
+          },
+          {
+            "name": "Railly Hugo",
+            "url": "https://www.railly.dev",
+            "description": "软件开发与个人项目"
+          },
+          {
+            "name": "Erika",
+            "url": "https://erika.florist",
+            "description": "强个人风格、艺术化个人主页"
+          },
+          {
+            "name": "Sukka",
+            "url": "https://skk.moe",
+            "description": "中文开发者个人站，博客、技术、网络"
+          },
+          {
+            "name": "Satomi Tokida",
+            "url": "https://imsatomi.github.io",
+            "description": "Web、学习、项目"
+          },
+          {
+            "name": "Michael Chang",
+            "url": "https://mbchang.github.io",
+            "description": "编程、研究与个人项目"
+          },
+          {
+            "name": "Jan Leike",
+            "url": "https://jan.leike.name",
+            "description": "AI、研究、个人主页"
+          },
+          {
+            "name": "Xiao Ma",
+            "url": "https://maxiao.info",
+            "description": "AI、机器学习和个人研究"
+          }
+        ]
+      },
+      {
+        "name": "灵感库与深度挖掘",
+        "links": [
+          {
+            "name": "Hattie Zhou",
+            "url": "https://hattiezhou.com",
+            "description": "AI/机器学习与个人研究"
+          },
+          {
+            "name": "Nicholas Frosst",
+            "url": "https://www.nickfrosst.com",
+            "description": "ML/研究个人主页"
+          },
+          {
+            "name": "Paul Copplestone",
+            "url": "https://paul.copplest.one",
+            "description": "软件、开发与个人内容"
+          },
+          {
+            "name": "Phil Tabor",
+            "url": "https://www.neuralnet.ai",
+            "description": "神经网络/AI个人项目"
+          },
+          {
+            "name": "Pratik Bhavsar",
+            "url": "https://www.pratik.ai",
+            "description": "AI、开发、个人项目"
+          },
+          {
+            "name": "Prithviraj Ammanabrolu",
+            "url": "https://prithvirajva.com",
+            "description": "AI/研究/开发"
+          },
+          {
+            "name": "Rachael Tatman",
+            "url": "https://www.rctatman.com",
+            "description": "NLP、研究、技术内容"
+          },
+          {
+            "name": "Randall Kanna",
+            "url": "https://randallkanna.com",
+            "description": "开发、写作、个人项目"
+          },
+          {
+            "name": "Roman Ring",
+            "url": "https://inoryy.com",
+            "description": "软件工程、研究与个人站"
+          },
+          {
+            "name": "Sabrina J. Mielke",
+            "url": "https://sjmielke.com",
+            "description": "软件、开发和个人博客"
+          },
+          {
+            "name": "Sanyam Bhutani",
+            "url": "https://sanyambhutani.com",
+            "description": "AI、开发、内容"
+          },
+          {
+            "name": "Shanqing Cai",
+            "url": "https://caisq.github.io",
+            "description": "AI/研究"
+          },
+          {
+            "name": "Simone Keelah",
+            "url": "https://www.simonekeelah.com",
+            "description": "创意设计与个人项目"
+          },
+          {
+            "name": "Soumith Chintala",
+            "url": "https://soumith.ch",
+            "description": "PyTorch、AI、个人主页"
+          },
+          {
+            "name": "Susan Shu Chang",
+            "url": "https://www.susanshu.com",
+            "description": "AI、研究、个人作品"
+          },
+          {
+            "name": "Sylvain Gugger",
+            "url": "https://sgugger.github.io",
+            "description": "NLP、Transformers、AI开发"
+          },
+          {
+            "name": "Taehoon Kim",
+            "url": "https://carpedm20.github.io",
+            "description": "AI、深度学习、实验"
+          },
+          {
+            "name": "Tianqi Chen",
+            "url": "https://tqchen.com",
+            "description": "编译器、机器学习、技术研究"
+          },
+          {
+            "name": "Timilehin Adeniran",
+            "url": "https://timilearning.com",
+            "description": "开发、AI、学习"
+          },
+          {
+            "name": "Vibert Thio",
+            "url": "https://vibertthio.com",
+            "description": "软件、AI与个人项目"
+          },
+          {
+            "name": "Vineet Tiruvadi",
+            "url": "https://vineet.tiruvadi.com",
+            "description": "AI、工程与个人主页"
+          },
+          {
+            "name": "Vivek Panyam",
+            "url": "https://www.vivekpanyam.com",
+            "description": "AI、研究、软件"
+          },
+          {
+            "name": "WBlut",
+            "url": "https://wblut.com",
+            "description": "软件、开发与个人内容"
+          },
+          {
+            "name": "Wayde",
+            "url": "https://ohmeow.com",
+            "description": "Python、数据、软件"
+          },
+          {
+            "name": "Xiaoji Chen",
+            "url": "https://www.xiaoji-chen.com",
+            "description": "AI、研究、个人站"
+          },
+          {
+            "name": "Yining Shi",
+            "url": "https://1023.io",
+            "description": "AI、技术、个人空间"
+          },
+          {
+            "name": "Yue Li",
+            "url": "https://www.yueli.art",
+            "description": "艺术、AI、创意作品"
+          },
+          {
+            "name": "Zichen Wang",
+            "url": "https://wangz10.github.io",
+            "description": "软件、研究、个人项目"
+          },
+          {
+            "name": "Amit Chaudhary",
+            "url": "https://amitness.com",
+            "description": "AI、软件工程、文章"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑃𝑒𝑟𝑠𝑜𝑛𝑎𝑙 𝑆𝑖𝑡𝑒𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

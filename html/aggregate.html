@@ -1,0 +1,1630 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="聚合 - 精选推荐与AI导航">
+<title>聚合 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>书影音</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">聚合 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "聚合",
+    "icon": "🧭",
+    "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
+    "subcategories": [
+      {
+        "name": "精选推荐",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "龙轩导航",
+            "url": "http://ilxdh.com/cat/171",
+            "description": "龙轩导航 - 发现精彩网络世界"
+          },
+          {
+            "name": "iMyShare",
+            "url": "https://imyshare.com/",
+            "description": "分享各种令人惊艳的软件工具神器"
+          },
+          {
+            "name": "果汁导航",
+            "url": "http://guozhivip.com/",
+            "description": "果汁导航 - 你的上网首页"
+          },
+          {
+            "name": "龙喵导航",
+            "url": "http://ailongmiao.com/",
+            "description": "龙喵导航 - 简洁好用的网址导航"
+          },
+          {
+            "name": "TOP123导航",
+            "url": "https://123.topstip.com/",
+            "description": "TOP123导航 - 网址导航"
+          },
+          {
+            "name": "终极导航",
+            "url": "https://www.zjnav.com/",
+            "description": "终极导航 - 优质网站导航"
+          },
+          {
+            "name": "凌凌柒啦导航",
+            "url": "https://www.007la.com/",
+            "description": "凌凌柒啦导航 - 网址导航"
+          },
+          {
+            "name": "冷猫导航站",
+            "url": "https://www.lengcat.cn/",
+            "description": "冷猫导航站 - 网址导航"
+          },
+          {
+            "name": "青禾导航",
+            "url": "https://www.qinghedaohang.com/",
+            "description": "青禾导航 - 简洁导航"
+          },
+          {
+            "name": "小爆虾",
+            "url": "https://xiaobaoxia.com/",
+            "description": "小爆虾 - 动漫导航"
+          },
+          {
+            "name": "搜奇AI导航",
+            "url": "https://www.sjsdh.cn/",
+            "description": "搜奇AI导航 - 精选优质网站"
+          },
+          {
+            "name": "ACGN导航",
+            "url": "https://acgn.cn/",
+            "description": "ACGN导航 - ACG资源导航"
+          },
+          {
+            "name": "ACG导航网",
+            "url": "https://www.iseacg.com/",
+            "description": "ACG导航网 - ACG资源导航"
+          },
+          {
+            "name": "ACG导航",
+            "url": "https://acgtop.net/",
+            "description": "ACG导航 - 动漫游戏导航"
+          },
+          {
+            "name": "硬核影视指南",
+            "url": "https://yingheapp.com/",
+            "description": ""
+          },
+          {
+            "name": "好狗电影导航",
+            "url": "https://www.howgo.cc/",
+            "description": "好狗电影导航 - 影视资源"
+          },
+          {
+            "name": "摸鱼导航",
+            "url": "https://moyu.games/",
+            "description": "摸鱼导航 - 游戏娱乐导航"
+          },
+          {
+            "name": "Windows XP 专业版",
+            "url": "https://win32.run/",
+            "description": "Windows XP 网页模拟器"
+          },
+          {
+            "name": "NSFW",
+            "url": "https://quenq.com/nsfw/",
+            "description": "不适合在工作场所打开/观看"
+          }
+        ]
+      },
+      {
+        "name": "工具集合",
+        "enName": "Collections",
+        "links": [
+          {
+            "name": "skill工具集",
+            "url": "https://hub.cocoloop.cn/",
+            "description": "Cocoloop技能工具集合"
+          }
+        ]
+      },
+      {
+        "name": "AI导航",
+        "enName": "AI Navigation",
+        "links": [
+          {
+            "name": "AI工具集",
+            "url": "https://ai-bot.cn",
+            "description": "国内外全品类AI工具综合聚合"
+          },
+          {
+            "name": "AMZ123跨境AI导航",
+            "url": "https://www.amz123.com/ai",
+            "description": "专注电商、跨境卖家与文案运营"
+          },
+          {
+            "name": "鱼皮AI导航",
+            "url": "https://ai.codefather.cn",
+            "description": "包含提示词、课程与全套项目教程"
+          },
+          {
+            "name": "xx025/carrot",
+            "url": "https://cc.ai55.cc/",
+            "description": "GitHub开源项目，主打免费模型镜像与实用工具"
+          },
+          {
+            "name": "发现AI",
+            "url": "https://www.faxianai.com",
+            "description": "一站式涵盖办公、设计、编程与对话产品"
+          },
+          {
+            "name": "优设AI工具导航",
+            "url": "https://ai.uisdc.com",
+            "description": "优设网旗下，侧重设计、创作应用与趋势教程"
+          },
+          {
+            "name": "AIGC工具导航",
+            "url": "https://www.aigc.cn",
+            "description": "全品类生成式AI公共服务与应用商店"
+          },
+          {
+            "name": "360AI导航",
+            "url": "https://ai.hao.360.com",
+            "description": "360旗下，包含趣站、开放平台与开源项目"
+          },
+          {
+            "name": "AI导航网",
+            "url": "https://www.ai-dh.com",
+            "description": "精选前沿生产力与效率工具"
+          },
+          {
+            "name": "霖明导航",
+            "url": "https://n.mumingfang.com/ai",
+            "description": "分类清晰，涵盖写作、绘图与音频工具"
+          },
+          {
+            "name": "Toolify.ai",
+            "url": "https://www.toolify.ai",
+            "description": "检索海量工具与GPTs，AI自动更新趋势"
+          },
+          {
+            "name": "UIED AI工具导航",
+            "url": "https://hao.uied.cn",
+            "description": "面向设计师、开发者与视觉创作者"
+          },
+          {
+            "name": "考拉AI导航",
+            "url": "https://ai.kaolamedia.com",
+            "description": "专为新媒体运营与自媒体打造"
+          },
+          {
+            "name": "ailetsgo",
+            "url": "https://ailetsgo.cn",
+            "description": "超过6500+AI网站与模型的超大索引库"
+          },
+          {
+            "name": "66ai导航",
+            "url": "https://66aidh.com",
+            "description": "特色主打AI配音、声音转换与音频生成"
+          },
+          {
+            "name": "aigcbb",
+            "url": "https://www.aigcbb.com",
+            "description": "适合AI学习者与从业者的实用网址集"
+          },
+          {
+            "name": "Aibase",
+            "url": "https://top.aibase.com/topic/导航",
+            "description": "收录7000+AI产品与智能助手推荐"
+          },
+          {
+            "name": "defagi",
+            "url": "https://nav.defagi.com",
+            "description": "侧重开发者、深度学习框架、数据集与开源模型"
+          },
+          {
+            "name": "M123跨境工具导航",
+            "url": "https://ai.m123.com",
+            "description": "跨境工具与免费对话模型全套指南"
+          },
+          {
+            "name": "AIHub",
+            "url": "https://www.aihub.cn",
+            "description": "高质量中文化AI工具与应用导航"
+          },
+          {
+            "name": "墨路遥AIGC导航",
+            "url": "https://ai.moluyao.wang",
+            "description": "汇总1000+营销、搜索与智能体工具"
+          },
+          {
+            "name": "ai135精选导航",
+            "url": "https://ai135.cn",
+            "description": "全球精品AI软件快速筛选"
+          },
+          {
+            "name": "AI之家",
+            "url": "https://aiones.cn",
+            "description": "支持新品发现、设计办公与一键写论文"
+          },
+          {
+            "name": "深度导航",
+            "url": "https://www.deepdh.com/ai",
+            "description": "结合聊天、绘画、游戏与教程的二级导航"
+          },
+          {
+            "name": "AI之旅导航",
+            "url": "https://www.aijourney.vip",
+            "description": "一站式AI工具集与技术内容平台"
+          },
+          {
+            "name": "CG导航",
+            "url": "https://hao.shenyecg.com/Ai",
+            "description": "专为CG艺术制作与视觉创作者服务"
+          },
+          {
+            "name": "Doingfb AI导航",
+            "url": "https://tools.doingfb.com",
+            "description": "1000+国内外优质效率工具推荐"
+          },
+          {
+            "name": "Navtools.ai",
+            "url": "https://navtools.ai",
+            "description": "人工智能工具发现与检索"
+          },
+          {
+            "name": "曼巴比特",
+            "url": "https://mambabit.com",
+            "description": "匹配各类工作任务的AI工具"
+          },
+          {
+            "name": "Gpt Demo",
+            "url": "https://gptdemo.net",
+            "description": "生成式AI与GPTs应用示范集合"
+          },
+          {
+            "name": "Toolkitly",
+            "url": "https://toolkitly.com",
+            "description": "个人与团队生产力AI工具库"
+          },
+          {
+            "name": "Startup Ai Tools",
+            "url": "https://startupaitools.com",
+            "description": "初创AI产品与独立开发者项目目录"
+          },
+          {
+            "name": "TheBestTools.ai",
+            "url": "https://thebesttools.ai",
+            "description": "优质AI工具筛选与发现"
+          },
+          {
+            "name": "AI TOP100",
+            "url": "https://aitop100.cn",
+            "description": "国内AI资讯、工具及AIGC大赛平台"
+          },
+          {
+            "name": "比特智能AI导航",
+            "url": "https://www.bitaigpt.com/",
+            "description": "智能对话与实用工具集成"
+          },
+          {
+            "name": "MeoAI",
+            "url": "https://meoai.net",
+            "description": "17000+全球AI工具集合"
+          },
+          {
+            "name": "好导航94c",
+            "url": "https://ai.94c.cn",
+            "description": "包含免费镜像站与绘画工具"
+          },
+          {
+            "name": "Tool List Ai",
+            "url": "https://toollist.ai",
+            "description": "实用AI工具分类检索"
+          },
+          {
+            "name": "未来百科",
+            "url": "https://www.weilaibaike.com",
+            "description": "发现全球优质AI产品的百科型导航"
+          },
+          {
+            "name": "AI Valley",
+            "url": "https://aivalley.ai",
+            "description": "深度AI资源与前沿产品库"
+          },
+          {
+            "name": "图钉AI导航网",
+            "url": "https://tudingai.com",
+            "description": "轻量实用工具导航"
+          },
+          {
+            "name": "AI研究所",
+            "url": "https://aiyanjiusuo.com",
+            "description": "AI行业工具、资讯与趋势聚合"
+          },
+          {
+            "name": "AI导航",
+            "url": "https://www.ainav.cn",
+            "description": "前沿AI产品直达"
+          },
+          {
+            "name": "AI工具导航",
+            "url": "https://aigc.nav.cn",
+            "description": "实用分类AI资源"
+          },
+          {
+            "name": "图翼AI导航",
+            "url": "https://www.tuyuai.com",
+            "description": "综合性AIGC工具集合"
+          },
+          {
+            "name": "AI Depot",
+            "url": "https://aidepot.co",
+            "description": "新潮AI工具每日发现"
+          },
+          {
+            "name": "AI Tool Hunt",
+            "url": "https://www.aitoolhunt.com",
+            "description": "全网AI软件索引清单"
+          },
+          {
+            "name": "AI Tool Navigation",
+            "url": "https://aitoolnavigation.com",
+            "description": "分类AI工具推荐"
+          },
+          {
+            "name": "ExplainThis",
+            "url": "https://explainthis.io",
+            "description": "AI开发与效能工具"
+          },
+          {
+            "name": "TopAI Tools",
+            "url": "https://topai.tools",
+            "description": "热门AI工具排行榜与索引"
+          },
+          {
+            "name": "爱潮流AI",
+            "url": "https://aichaodian.com",
+            "description": "潮流与综合AI网站导航"
+          },
+          {
+            "name": "飞客AI",
+            "url": "https://feizhuke.com",
+            "description": "实用AI应用分享平台"
+          },
+          {
+            "name": "iForAI",
+            "url": "https://iforai.com",
+            "description": "精选AI导航平台"
+          },
+          {
+            "name": "0mo AI导航",
+            "url": "https://0mo.com",
+            "description": "综合网址大全"
+          },
+          {
+            "name": "Cool Tools",
+            "url": "https://cooltools.top",
+            "description": "实用网页工具与AI推荐"
+          },
+          {
+            "name": "SaaS AI Tools",
+            "url": "https://saasaitools.com",
+            "description": "SaaS模式AI应用集合"
+          },
+          {
+            "name": "AI导航星",
+            "url": "https://ainavstar.com",
+            "description": "⚠️需特殊网络 | 1万+海外AI工具，200+细分领域"
+          },
+          {
+            "name": "Creaitives",
+            "url": "https://creaitives.com",
+            "description": "⚠️需特殊网络 | 海外大型AI工具与创意数据库"
+          },
+          {
+            "name": "Futurepedia",
+            "url": "https://www.futurepedia.io",
+            "description": "⚠️需特殊网络 | 全球知名且更新极快的AI发现平台"
+          },
+          {
+            "name": "AIAGC",
+            "url": "https://aiagc.com",
+            "description": "⚠️需特殊网络 | 海外综合AIGC资源导航"
+          },
+          {
+            "name": "TopTools",
+            "url": "https://toptools.ai",
+            "description": "⚠️需特殊网络 | 海外AI目录与工具探索"
+          },
+          {
+            "name": "Future Tools",
+            "url": "https://www.futuretools.io",
+            "description": "⚠️需特殊网络 | 知名海外AI筛选平台，支持按功能精准搜寻"
+          },
+          {
+            "name": "EasyWithAI",
+            "url": "https://easywithai.com",
+            "description": "⚠️需特殊网络 | 主打零门槛易用的海外AI工具集合"
+          },
+          {
+            "name": "AllThingsAI",
+            "url": "https://allthingsai.com",
+            "description": "⚠️需特殊网络 | 全球AI软件测评与分类导航"
+          },
+          {
+            "name": "AI Tools Directory",
+            "url": "https://aitoolsdirectory.com",
+            "description": "⚠️需特殊网络 | 全球AI软件及工具索引库"
+          }
+        ]
+      },
+      {
+        "name": "软件工具",
+        "enName": "Software",
+        "links": [
+          {
+            "name": "优软汇",
+            "url": "https://www.youruanhui.com/",
+            "description": "优软汇 - 软件资源分享"
+          },
+          {
+            "name": "爱资料工具",
+            "url": "https://www.toolnb.com/",
+            "description": "在线工具大全"
+          },
+          {
+            "name": "飞鱼盘搜",
+            "url": "http://feiyu100.cn/",
+            "description": "飞鱼盘搜 - 网盘搜索利器"
+          },
+          {
+            "name": "阿酷杂货铺",
+            "url": "https://www.coolexe.com/",
+            "description": "阿酷杂货铺 - 软件分享"
+          },
+          {
+            "name": "枫音应用",
+            "url": "https://www.fy6b.com/",
+            "description": "枫音应用 - 软件推荐"
+          },
+          {
+            "name": "爱达杂货铺",
+            "url": "https://zypuu.com/",
+            "description": "收集那些有用的东西"
+          },
+          {
+            "name": "刘在野工具箱",
+            "url": "https://tool.liumingye.cn/",
+            "description": "刘在野工具箱 - 在线工具集合"
+          },
+          {
+            "name": "实用工具分享达人",
+            "url": "https://dartools.com/",
+            "description": "实用工具分享达人 - 网站资源导航"
+          },
+          {
+            "name": "马小帮",
+            "url": "https://www.maxiaobang.com/",
+            "description": "马小帮 - 实用工具导航"
+          },
+          {
+            "name": "聚神铺导航",
+            "url": "https://www.jspoo.com/",
+            "description": "聚神铺导航 - 聚合型导航网站"
+          },
+          {
+            "name": "蓝点网导航",
+            "url": "https://landian.vip/",
+            "description": "蓝点网导航 - 科技资讯"
+          },
+          {
+            "name": "老D导航",
+            "url": "https://laod.cn/",
+            "description": "老D导航 - 实用工具"
+          },
+          {
+            "name": "工具箱网址导航",
+            "url": "https://tools.voidke.com/book",
+            "description": ""
+          },
+          {
+            "name": "开源资源档案库",
+            "url": "https://fmhy.net/",
+            "description": ""
+          },
+          {
+            "name": "423软件下载",
+            "url": "https://www.423down.com/",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "学习设计",
+        "enName": "Learning & Design",
+        "links": [
+          {
+            "name": "图欧学习资源导航",
+            "url": "http://tuostudy.upnb.top/",
+            "description": "上万款学习生活办公娱乐资源免费无偿分享"
+          },
+          {
+            "name": "精选设计导航",
+            "url": "https://hao.58pic.com/",
+            "description": "设计师必备网址导航"
+          },
+          {
+            "name": "AboutPPT导航",
+            "url": "https://www.aboutppt.com/",
+            "description": "PPT演示设计网址导航"
+          },
+          {
+            "name": "完美网址导航",
+            "url": "https://www.9eip.com/",
+            "description": "好用好玩的网站推荐"
+          },
+          {
+            "name": "集知盒子",
+            "url": "https://www.jizhihezi.com/",
+            "description": "集知盒子 - 资源导航"
+          }
+        ]
+      },
+      {
+        "name": "资源社区",
+        "enName": "Resources & Community",
+        "links": [
+          {
+            "name": "宝儿盒",
+            "url": "https://baoerhe.cn/",
+            "description": "想你所想 及你所及"
+          },
+          {
+            "name": "迷鹿导航",
+            "url": "http://www.hifawn.com/",
+            "description": "迷鹿导航 - 发现更多精彩"
+          },
+          {
+            "name": "硬核指南",
+            "url": "https://yinghezhinan.com/",
+            "description": "硬核指南 - 资源导航"
+          },
+          {
+            "name": "乐享软件",
+            "url": "https://www.lxapk.com/apk/media",
+            "description": "乐享软件 - APK应用下载"
+          }
+        ]
+      },
+      {
+        "name": "极客发现",
+        "enName": "Geek Discovery",
+        "links": [
+          {
+            "name": "Product Hunt",
+            "url": "https://www.producthunt.com/",
+            "description": "全球新产品首发社区"
+          },
+          {
+            "name": "Uneed",
+            "url": "https://uneed.best/",
+            "description": "每日精选小众工具站"
+          },
+          {
+            "name": "MicroLaunch",
+            "url": "https://microlaunch.net/",
+            "description": "独立开发者产品首发榜"
+          },
+          {
+            "name": "BetaList",
+            "url": "https://betalist.com/",
+            "description": "初创产品早鸟站"
+          },
+          {
+            "name": "SideProjectors",
+            "url": "https://sideprojectors.com/",
+            "description": "副业项目买卖导航"
+          },
+          {
+            "name": "Makerlog",
+            "url": "https://getmakerlog.com/",
+            "description": "极客日常打卡社区"
+          },
+          {
+            "name": "Peerlist",
+            "url": "https://peerlist.io/",
+            "description": "设计师开发者作品集"
+          },
+          {
+            "name": "SaaS Wheel",
+            "url": "https://saaswheel.com/",
+            "description": "独立SaaS工具跟踪"
+          },
+          {
+            "name": "Hacker News",
+            "url": "https://news.ycombinator.com/",
+            "description": "全球最高含金量极客社区"
+          },
+          {
+            "name": "DevHunt",
+            "url": "https://devhunt.org/",
+            "description": "开发者工具首发平台"
+          },
+          {
+            "name": "SaaSHub",
+            "url": "https://saashub.com/",
+            "description": "独立软件客观对比导航"
+          },
+          {
+            "name": "DEV Community",
+            "url": "https://dev.to/",
+            "description": "全球最大开发者博客社区"
+          },
+          {
+            "name": "There's An AI For That",
+            "url": "https://theresanaiforthat.com/",
+            "description": "全球最全AI工具编年史"
+          },
+          {
+            "name": "Futurepedia",
+            "url": "https://futurepedia.io/",
+            "description": "AI工具分类大百科"
+          },
+          {
+            "name": "Dang AI",
+            "url": "https://dang.ai/",
+            "description": "高实用性AI项目聚合"
+          },
+          {
+            "name": "TopAI.tools",
+            "url": "https://topai.tools/",
+            "description": "AI生产力工具探索"
+          },
+          {
+            "name": "Awwwards",
+            "url": "https://www.awwwards.com/",
+            "description": "全球网页设计金奖殿堂"
+          },
+          {
+            "name": "CSS Design Awards",
+            "url": "https://www.cssdesignawards.com/",
+            "description": "前沿动效与CSS艺术"
+          },
+          {
+            "name": "Land-book",
+            "url": "https://land-book.com/",
+            "description": "全球最佳落地页灵感"
+          },
+          {
+            "name": "Godly",
+            "url": "https://godly.website/",
+            "description": "创意拉满的极客风格网站"
+          }
+        ]
+      },
+      {
+        "name": "资源导航",
+        "enName": "Resource Nav",
+        "links": [
+          {
+            "name": "异次元软件",
+            "url": "https://iplaysoft.com/",
+            "description": "异次元软件世界"
+          },
+          {
+            "name": "书签地球",
+            "url": "https://bookmarkearth.cn/",
+            "description": ""
+          },
+          {
+            "name": "开发者武器库",
+            "url": "https://devtool.tech/",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "网络计算",
+        "enName": "Network & Calc",
+        "links": [
+          {
+            "name": "WolframAlpha",
+            "url": "https://www.wolframalpha.com/",
+            "description": "计算型知识引擎，推导计算科学问题"
+          },
+          {
+            "name": "Speedtest",
+            "url": "https://www.speedtest.net/",
+            "description": "检查网速"
+          },
+          {
+            "name": "Down For Everyone",
+            "url": "https://downforeveryoneorjustme.com/",
+            "description": "检查任何网站是否停机"
+          },
+          {
+            "name": "Flightradar24",
+            "url": "https://www.flightradar24.com/",
+            "description": "实时追踪任何航班"
+          },
+          {
+            "name": "CamelCamelCamel",
+            "url": "https://camelcamelcamel.com/",
+            "description": "追踪亚马逊价格历史"
+          },
+          {
+            "name": "热门网站排名",
+            "url": "https://www.similarweb.com/top-websites/",
+            "description": "SimilarWeb - 热门网站排名"
+          },
+          {
+            "name": "Google地图",
+            "url": "https://www.earthol.com/g/",
+            "description": ""
+          },
+          {
+            "name": "战争局势地图",
+            "url": "https://liveuamap.com/",
+            "description": "LiveUAMap - 战争局势地图"
+          }
+        ]
+      },
+      {
+        "name": "学术科研",
+        "enName": "Academic",
+        "links": [
+          {
+            "name": "Semantic Scholar",
+            "url": "https://www.semanticscholar.org/",
+            "description": "AI驱动的免费学术搜索引擎"
+          },
+          {
+            "name": "Consensus",
+            "url": "https://consensus.app/",
+            "description": "基于科学研究提炼科学共识"
+          },
+          {
+            "name": "Elicit",
+            "url": "https://elicit.org/",
+            "description": "AI学术论文助手，快速梳理文献"
+          },
+          {
+            "name": "SciSpace",
+            "url": "https://scispace.com/",
+            "description": "AI辅助阅读，快速理解论文"
+          },
+          {
+            "name": "Connected Papers",
+            "url": "https://www.connectedpapers.com/",
+            "description": "论文引用关系可视化知识图谱"
+          },
+          {
+            "name": "Google Scholar",
+            "url": "https://scholar.google.com/",
+            "description": "免费学术搜索引擎"
+          },
+          {
+            "name": "ChatPDF",
+            "url": "https://www.chatpdf.com/",
+            "description": "AI理解任何研究论文"
+          }
+        ]
+      },
+      {
+        "name": "图像设计",
+        "enName": "Image & Design",
+        "links": [
+          {
+            "name": "Photopea",
+            "url": "https://www.photopea.com/",
+            "description": "浏览器里的免费网页版Photoshop"
+          },
+          {
+            "name": "Squoosh",
+            "url": "https://squoosh.app/",
+            "description": "谷歌出品无损高效图像压缩工具"
+          },
+          {
+            "name": "remove.bg",
+            "url": "https://www.remove.bg/",
+            "description": "一键免费移除图片背景"
+          },
+          {
+            "name": "Unscreen",
+            "url": "https://www.unscreen.com/",
+            "description": "智能移除视频背景"
+          },
+          {
+            "name": "Cleanup.pictures",
+            "url": "https://cleanup.pictures/",
+            "description": "擦除照片中多余的物体或路人"
+          },
+          {
+            "name": "Shots.so",
+            "url": "https://shots.so/",
+            "description": "快速制作精美的产品套壳截图"
+          },
+          {
+            "name": "Smartmockups",
+            "url": "https://smartmockups.com/",
+            "description": "一键将设计图应用到实物模型"
+          },
+          {
+            "name": "TinEye",
+            "url": "https://tineye.com/",
+            "description": "专业的图片反向搜索工具"
+          },
+          {
+            "name": "Playground AI",
+            "url": "https://playground.com/",
+            "description": "免费无限生图，质量能打Midjourney"
+          },
+          {
+            "name": "Krea AI",
+            "url": "https://krea.ai/",
+            "description": "实时出图，边想边生成"
+          },
+          {
+            "name": "Bigjpg",
+            "url": "https://bigjpg.com/",
+            "description": "图片无损放大，细节自动补充"
+          },
+          {
+            "name": "Photoroom",
+            "url": "https://photoroom.com/",
+            "description": "一键抠图、补光、去物体"
+          },
+          {
+            "name": "Clipdrop",
+            "url": "https://clipdrop.co/",
+            "description": "一键抠图，瞬间出效果"
+          },
+          {
+            "name": "Remaker AI",
+            "url": "https://remaker.ai/",
+            "description": "AI换脸，分钟级快速"
+          },
+          {
+            "name": "Canva 可画",
+            "url": "https://www.canva.cn/",
+            "description": "在线平面设计工具"
+          },
+          {
+            "name": "在线PS",
+            "url": "https://www.gaoding.com/",
+            "description": "稿定设计-在线图片编辑"
+          },
+          {
+            "name": "TinyPNG",
+            "url": "https://tinypng.com/",
+            "description": "智能PNG图片压缩"
+          },
+          {
+            "name": "图好快",
+            "url": "https://www.tuhaokuai.com/",
+            "description": "图片在线压缩工具"
+          }
+        ]
+      },
+      {
+        "name": "程序开发",
+        "enName": "Developer",
+        "links": [
+          {
+            "name": "Phind",
+            "url": "https://phind.com/",
+            "description": "专为开发者量身定制的AI搜索引擎"
+          },
+          {
+            "name": "Explainshell",
+            "url": "https://explainshell.com/",
+            "description": "拆解并解释复杂的Linux终端命令"
+          },
+          {
+            "name": "Regex101",
+            "url": "https://regex101.com/",
+            "description": "实时测试调试并解释正则表达式"
+          },
+          {
+            "name": "Carbon",
+            "url": "https://carbon.now.sh/",
+            "description": "将代码变成高颜值的艺术截图"
+          },
+          {
+            "name": "Ray.so",
+            "url": "https://ray.so/",
+            "description": "极简时尚的代码高亮截图工具"
+          },
+          {
+            "name": "CodeBeautify",
+            "url": "https://codebeautify.org/",
+            "description": "一键美化格式化混乱代码"
+          },
+          {
+            "name": "JSON Formatter",
+            "url": "https://jsonformatter.org/",
+            "description": "JSON数据格式化与解析工具"
+          },
+          {
+            "name": "Cursor",
+            "url": "https://cursor.sh/",
+            "description": "AI编程，免费额度够用"
+          },
+          {
+            "name": "V0 by Vercel",
+            "url": "https://v0.dev/",
+            "description": "Vercel前端生成器，描述成页面"
+          },
+          {
+            "name": "Framer",
+            "url": "https://framer.com/",
+            "description": "说话建网站，无需代码基础"
+          },
+          {
+            "name": "Replit",
+            "url": "https://replit.com/",
+            "description": "浏览器编码、AI助手、秒部署"
+          },
+          {
+            "name": "MakeReal",
+            "url": "https://makereal.tldraw.com/",
+            "description": "草图变网页，秒成现实"
+          },
+          {
+            "name": "Prettier",
+            "url": "https://prettier.io/",
+            "description": "清晰格式化任何代码"
+          },
+          {
+            "name": "在线工具",
+            "url": "https://tool.lu/",
+            "description": "程序员的在线工具箱"
+          },
+          {
+            "name": "菜鸟工具",
+            "url": "https://c.runoob.com/",
+            "description": "菜鸟教程在线工具"
+          }
+        ]
+      },
+      {
+        "name": "安全隐私",
+        "enName": "Security & Privacy",
+        "links": [
+          {
+            "name": "Have I Been Pwned",
+            "url": "https://haveibeenpwned.com/",
+            "description": "检查邮箱密码是否在泄露中被公开"
+          },
+          {
+            "name": "VirusTotal",
+            "url": "https://www.virustotal.com/",
+            "description": "聚合多款杀毒引擎在线扫描"
+          },
+          {
+            "name": "Privnote",
+            "url": "https://privnote.com/",
+            "description": "发送阅后即焚的加密自毁消息"
+          },
+          {
+            "name": "Temp Mail",
+            "url": "https://temp-mail.org/",
+            "description": "快速生成临时一次性匿名邮箱"
+          },
+          {
+            "name": "10MinuteMail",
+            "url": "https://10minutemail.com/",
+            "description": "经典的10分钟临时邮箱"
+          },
+          {
+            "name": "File.io",
+            "url": "https://file.io/",
+            "description": "下载一次后自动永久删除的文件分享"
+          },
+          {
+            "name": "Wormhole",
+            "url": "https://wormhole.app/",
+            "description": "分享自动删除的文件"
+          },
+          {
+            "name": "SayMine",
+            "url": "https://www.saymine.com/",
+            "description": "从任何网站删除自己的数据"
+          }
+        ]
+      },
+      {
+        "name": "效率资源",
+        "enName": "Productivity",
+        "links": [
+          {
+            "name": "12ft.io",
+            "url": "https://12ft.io/",
+            "description": "绕过各种新闻博客网站的付费墙"
+          },
+          {
+            "name": "Archive.today",
+            "url": "https://archive.ph/",
+            "description": "永久网页快照存档，突破内容限制"
+          },
+          {
+            "name": "Archive.org",
+            "url": "https://archive.org/",
+            "description": "互联网档案馆，访问网站旧版本"
+          },
+          {
+            "name": "AlternativeTo",
+            "url": "https://alternativeto.net/",
+            "description": "输入任意软件找出免费平替"
+          },
+          {
+            "name": "SimilarSites",
+            "url": "https://similarsites.com/",
+            "description": "推荐同类型体验相似的网站"
+          },
+          {
+            "name": "Raindrop.io",
+            "url": "https://raindrop.io/",
+            "description": "全平台高颜值书签与知识管理器"
+          },
+          {
+            "name": "Open Culture",
+            "url": "https://openculture.com/",
+            "description": "汇集全球顶尖大学免费课程"
+          },
+          {
+            "name": "Coursera",
+            "url": "https://www.coursera.org/",
+            "description": "顶级大学免费在线课程"
+          },
+          {
+            "name": "Summarize.tech",
+            "url": "https://www.summarize.tech/",
+            "description": "AI一键提取总结长视频核心摘要"
+          },
+          {
+            "name": "Smallpdf",
+            "url": "https://smallpdf.com/",
+            "description": "极简的在线PDF编辑转换压缩工具"
+          },
+          {
+            "name": "iLovePDF",
+            "url": "https://www.ilovepdf.com/",
+            "description": "免费的PDF合并拆分加解密工具"
+          },
+          {
+            "name": "Sejda",
+            "url": "https://www.sejda.com/",
+            "description": "免费在线编辑PDF"
+          },
+          {
+            "name": "TinyWow",
+            "url": "https://tinywow.com/",
+            "description": "单个网站100+免费工具"
+          },
+          {
+            "name": "SnapSave",
+            "url": "https://snapsave.app/",
+            "description": "下载社交媒体任何视频"
+          },
+          {
+            "name": "Excalidraw",
+            "url": "https://excalidraw.com/",
+            "description": "免费手绘图表"
+          },
+          {
+            "name": "tldraw",
+            "url": "https://www.tldraw.com/",
+            "description": "浏览器中无限白板"
+          },
+          {
+            "name": "Convertio",
+            "url": "https://convertio.co/zh/",
+            "description": "在线文件格式转换"
+          },
+          {
+            "name": "爱资料工具",
+            "url": "https://www.toolnb.com/",
+            "description": "在线工具大全"
+          },
+          {
+            "name": "装机猫纯净系统",
+            "url": "https://zhuangjimao.com/system",
+            "description": ""
+          },
+          {
+            "name": "萌娘百科",
+            "url": "https://zh.moegirl.org.cn/#/flow",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "音乐娱乐",
+        "enName": "Music & Fun",
+        "links": [
+          {
+            "name": "JustWatch",
+            "url": "https://www.justwatch.com/",
+            "description": "全网搜索电影美剧在哪个流媒体上线"
+          },
+          {
+            "name": "Tunefind",
+            "url": "https://www.tunefind.com/",
+            "description": "找出电影美剧里的背景音乐"
+          },
+          {
+            "name": "Radio Garden",
+            "url": "https://radio.garden/",
+            "description": "3D地球仪收听全球实时广播电台"
+          },
+          {
+            "name": "Every Noise",
+            "url": "https://everynoise.com/",
+            "description": "探索世界上已知的每种音乐流派"
+          },
+          {
+            "name": "Music for Programming",
+            "url": "https://musicforprogramming.net/",
+            "description": "专为写代码设计的极简背景音乐"
+          },
+          {
+            "name": "myNoise",
+            "url": "https://mynoise.net/",
+            "description": "强大的自定义白噪音生成器"
+          },
+          {
+            "name": "Coffitivity",
+            "url": "https://coffitivity.com/",
+            "description": "模拟咖啡馆环境音提升创造力"
+          },
+          {
+            "name": "Brain.fm",
+            "url": "https://www.brain.fm/",
+            "description": "专注音乐"
+          },
+          {
+            "name": "Noisli",
+            "url": "https://www.noisli.com/",
+            "description": "自定义专注声景"
+          },
+          {
+            "name": "Mojito MV",
+            "url": "https://www.mojidict.com/",
+            "description": "音乐MV在线观看"
+          }
+        ]
+      },
+      {
+        "name": "AI工具",
+        "enName": "AI Tools",
+        "links": [
+          {
+            "name": "Perplexity",
+            "url": "https://perplexity.ai/",
+            "description": "AI搜索，问题秒答+来源标注"
+          },
+          {
+            "name": "Poe",
+            "url": "https://poe.com/",
+            "description": "一站用GPT-4o、Claude、Gemini"
+          },
+          {
+            "name": "Claude",
+            "url": "https://claude.ai/",
+            "description": "Anthropic官方助手，长文处理顶级"
+          },
+          {
+            "name": "Hugging Face",
+            "url": "https://huggingface.co/spaces",
+            "description": "开源模型试玩基地"
+          },
+          {
+            "name": "ElevenLabs",
+            "url": "https://elevenlabs.io/",
+            "description": "5秒复制任何人声线"
+          },
+          {
+            "name": "Suno",
+            "url": "https://suno.com/",
+            "description": "歌词转完整歌曲"
+          },
+          {
+            "name": "Runway Gen-3",
+            "url": "https://runwayml.com/",
+            "description": "文生视频天花板，Gen-3免费"
+          },
+          {
+            "name": "快手可灵",
+            "url": "https://klingai.kuaishou.com/",
+            "description": "中文视频最流畅"
+          },
+          {
+            "name": "HeyGen",
+            "url": "https://heygen.com/",
+            "description": "照片加语音变数字人"
+          },
+          {
+            "name": "D-ID",
+            "url": "https://d-id.com/",
+            "description": "静图变说话视频"
+          },
+          {
+            "name": "Opus Clip",
+            "url": "https://opus.pro/",
+            "description": "自动剪短视频，秒找爆点"
+          },
+          {
+            "name": "Napkin AI",
+            "url": "https://napkin.ai/",
+            "description": "文本转信息图表"
+          },
+          {
+            "name": "Gamma App",
+            "url": "https://gamma.app/",
+            "description": "一键生成PPT"
+          },
+          {
+            "name": "Notion AI",
+            "url": "https://notion.so/",
+            "description": "Notion AI的写改译能力"
+          },
+          {
+            "name": "DeepL Write",
+            "url": "https://deepl.com/write",
+            "description": "写作神器，免费版日常够用"
+          },
+          {
+            "name": "Fathom",
+            "url": "https://fathom.video/",
+            "description": "会议边开边录，免费月300分钟"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑨𝑔𝑔𝑟𝑒𝑔𝑎𝑡𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

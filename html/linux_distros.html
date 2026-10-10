@@ -1,0 +1,1377 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球 Linux 发行版档案馆导航">
+<title>Linux 发行版档案馆 | Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑊𝑎𝑙𝑙𝑝𝑎𝑝𝑒𝑟𝑠 𝐶𝑜𝑙𝑙𝑒𝑐𝑡𝑖𝑜𝑛</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>全球高清壁纸站</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">复活老游戏 · 让经典游戏在现代浏览器与设备上重获新生</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "Linux 发行版档案馆",
+    "icon": "🐧",
+    "subcategories": [
+      {
+        "name": "Debian 系",
+        "links": [
+          {
+            "name": "MX Linux",
+            "url": "https://mxlinux.org",
+            "description": "antiX 衍生轻量桌面，长期人气第一"
+          },
+          {
+            "name": "Linux Mint",
+            "url": "https://linuxmint.com",
+            "description": "开箱即用的 Ubuntu 衍生，主打 Cinnamon"
+          },
+          {
+            "name": "Pop!_OS",
+            "url": "https://pop.system76.com",
+            "description": "System76 面向开发者与创作者的衍生版"
+          },
+          {
+            "name": "Ubuntu",
+            "url": "https://ubuntu.com",
+            "description": "最流行的桌面与云端 Linux，每两年一个 LTS"
+          },
+          {
+            "name": "Debian",
+            "url": "https://www.debian.org",
+            "description": "社区驱动的通用系统，Ubuntu 生态的根基"
+          },
+          {
+            "name": "Zorin OS",
+            "url": "https://zorin.com",
+            "description": "面向 Win/mac 用户迁移的 Ubuntu 衍生系统"
+          },
+          {
+            "name": "Kali Linux",
+            "url": "https://www.kali.org",
+            "description": "渗透测试专用发行版，BackTrack 继任者"
+          },
+          {
+            "name": "Raspberry Pi OS",
+            "url": "https://www.raspberrypi.com/software",
+            "description": "树莓派官方系统，基于 Debian，原 Raspbian"
+          },
+          {
+            "name": "elementary OS",
+            "url": "https://elementary.io",
+            "description": "Ubuntu 衍生，macOS 风格桌面"
+          },
+          {
+            "name": "antiX",
+            "url": "https://antixlinux.com",
+            "description": "无 systemd 的 Debian 轻量版，MX 根基"
+          },
+          {
+            "name": "Tails",
+            "url": "https://tails.net",
+            "description": "经 Tor 的匿名隐私系统，不留痕实时启动"
+          },
+          {
+            "name": "Linux Lite",
+            "url": "https://www.linuxliteos.com",
+            "description": "面向 Win 升级用户的轻量 Xfce 发行版"
+          },
+          {
+            "name": "KDE neon",
+            "url": "https://neon.kde.org",
+            "description": "Ubuntu LTS 基底与最新 KDE Plasma"
+          },
+          {
+            "name": "Nitrux",
+            "url": "https://nxos.org",
+            "description": "Ubuntu 衍生版，主打 AppImage 应用"
+          },
+          {
+            "name": "Armbian",
+            "url": "https://www.armbian.com",
+            "description": "针对 ARM 单板电脑优化的 Debian 系系统"
+          },
+          {
+            "name": "Q4OS",
+            "url": "https://www.q4os.org",
+            "description": "Trinity 桌面的 Debian 系统，硬件要求极低"
+          },
+          {
+            "name": "DietPi",
+            "url": "https://dietpi.com",
+            "description": "为树莓派等 SBC 优化的极轻量 Debian 系统"
+          },
+          {
+            "name": "Kubuntu",
+            "url": "https://kubuntu.org",
+            "description": "Ubuntu 官方 KDE Plasma 桌面版本"
+          },
+          {
+            "name": "Parrot OS",
+            "url": "https://www.parrotsec.org",
+            "description": "安全取证向的 Debian 衍生发行版"
+          },
+          {
+            "name": "Ubuntu MATE",
+            "url": "https://ubuntu-mate.org",
+            "description": "Ubuntu 官方传统 MATE 桌面版本"
+          },
+          {
+            "name": "Devuan",
+            "url": "https://www.devuan.org",
+            "description": "无 systemd 的 Debian 分支，多种启动器"
+          },
+          {
+            "name": "Xubuntu",
+            "url": "https://xubuntu.org",
+            "description": "Ubuntu 官方轻量 Xfce 桌面版本"
+          },
+          {
+            "name": "postmarketOS",
+            "url": "https://postmarketos.org",
+            "description": "基于 Alpine 的智能手机 Linux，追求十年寿命"
+          },
+          {
+            "name": "Lubuntu",
+            "url": "https://lubuntu.me",
+            "description": "Ubuntu 官方低配机型版本，LXQt 桌面"
+          },
+          {
+            "name": "BunsenLabs",
+            "url": "https://www.bunsenlabs.org",
+            "description": "CrunchBang 继任者，Openbox 轻量桌面"
+          },
+          {
+            "name": "Bodhi Linux",
+            "url": "https://www.bodhilinux.com",
+            "description": "Moksha 桌面的轻量 Ubuntu 衍生版"
+          },
+          {
+            "name": "SparkyLinux",
+            "url": "https://sparkylinux.org",
+            "description": "面向新旧电脑的 Debian 滚动/稳定双版本"
+          },
+          {
+            "name": "OpenMediaVault",
+            "url": "https://www.openmediavault.org",
+            "description": "带 Web 管理的 Debian 系 NAS 系统"
+          },
+          {
+            "name": "Trisquel",
+            "url": "https://trisquel.info",
+            "description": "完全自由的 Ubuntu 衍生，FSF 认可"
+          },
+          {
+            "name": "Ubuntu Budgie",
+            "url": "https://ubuntubudgie.org",
+            "description": "Ubuntu 官方 Budgie 桌面版本"
+          },
+          {
+            "name": "Ubuntu Studio",
+            "url": "https://ubuntustudio.org",
+            "description": "Ubuntu 官方多媒体创作版本"
+          },
+          {
+            "name": "PureOS",
+            "url": "https://pureos.net",
+            "description": "Purism 硬件搭载的完全自由 Debian 系统"
+          },
+          {
+            "name": "Ubuntu Touch",
+            "url": "https://ubuntu-touch.io",
+            "description": "Canonical 停产后由社区维护的手机系统"
+          },
+          {
+            "name": "Ubuntu Kylin",
+            "url": "https://www.ubuntukylin.com",
+            "description": "面向中国市场的官方 Ubuntu 版，UKUI 桌面"
+          },
+          {
+            "name": "Mobian",
+            "url": "https://mobian.org",
+            "description": "PinePhone 等设备的 Debian 系统"
+          },
+          {
+            "name": "Knoppix",
+            "url": "https://www.knopper.net/knoppix",
+            "description": "首款大型可启动 Debian 实时 CD，先驱"
+          },
+          {
+            "name": "Whonix",
+            "url": "https://www.whonix.org",
+            "description": "Tor 网关隔离的匿名桌面系统"
+          },
+          {
+            "name": "Edubuntu",
+            "url": "https://edubuntu.org",
+            "description": "面向教室的 Ubuntu 教育版本"
+          },
+          {
+            "name": "Ubuntu Cinnamon",
+            "url": "https://ubuntucinnamon.org",
+            "description": "Ubuntu 官方 Cinnamon 桌面版本"
+          },
+          {
+            "name": "Ubuntu Unity",
+            "url": "https://ubuntuunity.org",
+            "description": "社区恢复 Unity 7 桌面的 Ubuntu 版本"
+          },
+          {
+            "name": "LMDE",
+            "url": "https://linuxmint.com/download_lmde.php",
+            "description": "Mint 基于 Debian，少依赖 Ubuntu"
+          },
+          {
+            "name": "LXLE",
+            "url": "https://en.wikipedia.org/wiki/LXLE",
+            "description": "面向旧硬件的轻量 Lubuntu 衍生版"
+          },
+          {
+            "name": "Peppermint OS",
+            "url": "https://itstechbased.com",
+            "description": "云端轻量发行版，约 2024 年停止"
+          },
+          {
+            "name": "gNewSense",
+            "url": "https://en.wikipedia.org/wiki/gNewSense",
+            "description": "FSF 认可的早期完全自由 Debian 衍生版"
+          },
+          {
+            "name": "BackTrack",
+            "url": "https://en.wikipedia.org/wiki/BackTrack",
+            "description": "渗透测试实时系统，2013 年被 Kali 取代"
+          },
+          {
+            "name": "BackBox",
+            "url": "https://www.backbox.org",
+            "description": "Ubuntu 系渗透测试与取证实时系统"
+          },
+          {
+            "name": "Security Onion",
+            "url": "https://securityonion.net",
+            "description": "Suricata/Zeek 网络监控发行版"
+          },
+          {
+            "name": "CAINE",
+            "url": "https://www.caine.live",
+            "description": "计算机取证调查环境，Ubuntu 系实时系统"
+          },
+          {
+            "name": "CrunchBang Linux",
+            "url": "https://en.wikipedia.org/wiki/CrunchBang_Linux",
+            "description": "极简 Openbox Ubuntu 系统，2013 停止"
+          },
+          {
+            "name": "Linspire",
+            "url": "https://en.wikipedia.org/wiki/Linspire",
+            "description": "带应用商店的 Debian 商业版，原 Lindows"
+          },
+          {
+            "name": "Elive",
+            "url": "https://www.elivecd.org",
+            "description": "Enlightenment 桌面的 Debian 系统"
+          },
+          {
+            "name": "EmmabuntÃÂus",
+            "url": "https://emmabuntus.sourceforge.io",
+            "description": "面向翻新与公益电脑的 Ubuntu 衍生版"
+          },
+          {
+            "name": "FydeOS",
+            "url": "https://fydeos.com",
+            "description": "国产 Chromium 系系统，支持安卓容器"
+          },
+          {
+            "name": "Vanilla OS",
+            "url": "https://vanillaos.org/",
+            "description": "不可变 Debian 衍生版，事务式更新"
+          },
+          {
+            "name": "Tanglu",
+            "url": "https://en.wikipedia.org/wiki/Tanglu_Linux",
+            "description": "Debian 系桌面发行版，2013-2020"
+          },
+          {
+            "name": "Deepin",
+            "url": "https://www.deepin.org/",
+            "description": "国产知名桌面系统，深度桌面美观"
+          },
+          {
+            "name": "统信 UOS",
+            "url": "https://www.uniontech.com/",
+            "description": "国产商业桌面系统，政企信创常用"
+          },
+          {
+            "name": "PikaOS",
+            "url": "https://pika-os.com/",
+            "description": "Debian Sid 滚动版，主打游戏创作"
+          },
+          {
+            "name": "AV Linux",
+            "url": "https://www.bandshed.net/avlinux/",
+            "description": "MX 定制音频制作，Enlightenment 桌面"
+          },
+          {
+            "name": "Proxmox VE",
+            "url": "https://www.proxmox.com/",
+            "description": "基于 Debian 的开源虚拟化平台"
+          },
+          {
+            "name": "TUXEDO OS",
+            "url": "https://www.tuxedocomputers.com/",
+            "description": "TUXEDO 电脑官方系统，Ubuntu 基底"
+          }
+        ]
+      },
+      {
+        "name": "Red Hat 系",
+        "links": [
+          {
+            "name": "Fedora",
+            "url": "https://fedoraproject.org",
+            "description": "Red Hat 赞助的社区发行版，RHEL 上游试验场"
+          },
+          {
+            "name": "AlmaLinux",
+            "url": "https://almalinux.org",
+            "description": "社区拥有的 RHEL 兼容重建版"
+          },
+          {
+            "name": "Rocky Linux",
+            "url": "https://rockylinux.org",
+            "description": "CentOS 继任者，社区 RHEL 兼容重建版"
+          },
+          {
+            "name": "Nobara Project",
+            "url": "https://nobaraproject.org",
+            "description": "面向游戏与生产的 Fedora 衍生版，预配解码器"
+          },
+          {
+            "name": "Red Hat Enterprise Linux",
+            "url": "https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux",
+            "description": "商业企业级 Linux，十年支持周期"
+          },
+          {
+            "name": "Fedora Silverblue",
+            "url": "https://docs.fedoraproject.org/en-US/fedora-silverblue",
+            "description": "不可变原子化 Fedora 工作站，OSTree 更新"
+          },
+          {
+            "name": "CentOS Stream",
+            "url": "https://www.centos.org/stream",
+            "description": "Fedora 与 RHEL 之间的滚动中间版本"
+          },
+          {
+            "name": "Bazzite",
+            "url": "https://bazzite.gg",
+            "description": "面向游戏的不可变 Fedora 系统"
+          },
+          {
+            "name": "Qubes OS",
+            "url": "https://www.qubes-os.org",
+            "description": "虚拟机隔离的安全桌面系统"
+          },
+          {
+            "name": "Oracle Linux",
+            "url": "https://www.oracle.com/linux",
+            "description": "免费 RHEL 兼容重建版，可选 UEK 内核"
+          },
+          {
+            "name": "openEuler",
+            "url": "https://www.openeuler.org",
+            "description": "华为 EulerOS 开源的社区服务器系统"
+          },
+          {
+            "name": "Anolis OS",
+            "url": "https://openanolis.cn",
+            "description": "阿里主导的 RHEL 兼容社区系统"
+          },
+          {
+            "name": "Red Hat Linux",
+            "url": "https://www.redhat.com",
+            "description": "Red Hat 早期消费版，2004 年停止"
+          },
+          {
+            "name": "CentOS Linux",
+            "url": "https://www.centos.org",
+            "description": "免费 RHEL 重建版，2021 年转向 Stream"
+          },
+          {
+            "name": "Scientific Linux",
+            "url": "https://en.wikipedia.org/wiki/Scientific_Linux",
+            "description": "费米实验室/CERN 的 RHEL 重建版"
+          },
+          {
+            "name": "Korora",
+            "url": "https://en.wikipedia.org/wiki/Korora",
+            "description": "新手友好的 Fedora 衍生，2017 停止"
+          },
+          {
+            "name": "Yellow Dog Linux",
+            "url": "https://en.wikipedia.org/wiki/Yellow_Dog_Linux",
+            "description": "PowerPC 平台的 RHEL 系发行版"
+          },
+          {
+            "name": "EulerOS",
+            "url": "https://en.wikipedia.org/wiki/EulerOS",
+            "description": "华为商业 RHEL 兼容服务器系统"
+          },
+          {
+            "name": "Alibaba Cloud Linux",
+            "url": "https://www.aliyun.com/product/alinux",
+            "description": "阿里云 ECS 的 RHEL 兼容客机系统"
+          },
+          {
+            "name": "Miracle Linux",
+            "url": "https://www.cybertrust.co.jp/miraclelinux",
+            "description": "日本企业级 RHEL 兼容发行版"
+          },
+          {
+            "name": "ClearOS",
+            "url": "https://www.clearos.com",
+            "description": "面向小企业的 RHEL 系网关/服务器系统"
+          },
+          {
+            "name": "SME Server",
+            "url": "https://wiki.koozali.org",
+            "description": "e-Smith 传承的企业级服务器发行版"
+          },
+          {
+            "name": "Ultramarine Linux",
+            "url": "https://ultramarine-linux.org",
+            "description": "追求开箱体验的 Fedora 衍生版"
+          },
+          {
+            "name": "Fedora Kinoite",
+            "url": "https://docs.fedoraproject.org/en-US/fedora-kinoite",
+            "description": "不可变 Fedora 版，KDE Plasma 桌面"
+          },
+          {
+            "name": "Fedora Sericea",
+            "url": "https://docs.fedoraproject.org/en-US/sericea",
+            "description": "不可变 Fedora 版，Sway 平铺桌面"
+          },
+          {
+            "name": "Fedora CoreOS",
+            "url": "https://fedoraproject.org/coreos",
+            "description": "运行容器负载的极简不可变 Fedora"
+          },
+          {
+            "name": "Fedora IoT",
+            "url": "https://docs.fedoraproject.org/en-US/iot",
+            "description": "面向边缘与物联网的不可变 Fedora 版"
+          },
+          {
+            "name": "Universal Blue Bluefin",
+            "url": "https://projectbluefin.io",
+            "description": "面向开发者日常使用的原子化 Fedora 桌面"
+          },
+          {
+            "name": "secureblue",
+            "url": "https://github.com/secureblue/secureblue",
+            "description": "强化安全的不可变 Fedora 镜像"
+          },
+          {
+            "name": "Bottlerocket",
+            "url": "https://aws.amazon.com/bottlerocket",
+            "description": "AWS 专为容器打造的极简不可变系统"
+          },
+          {
+            "name": "Flatcar Linux",
+            "url": "https://www.flatcar.org",
+            "description": "CoreOS 社区继任者的容器系统"
+          },
+          {
+            "name": "Container Linux by CoreOS",
+            "url": "https://en.wikipedia.org/wiki/Container_Linux_by_CoreOS",
+            "description": "早期不可变容器系统，2020 停止"
+          },
+          {
+            "name": "Talos Linux",
+            "url": "https://www.talos.dev",
+            "description": "专为 Kubernetes 设计的无 shell 系统"
+          },
+          {
+            "name": "RancherOS",
+            "url": "https://en.wikipedia.org/wiki/RancherOS",
+            "description": "一切皆容器的 Docker 系统，2022 年退役"
+          },
+          {
+            "name": "VMware Photon OS",
+            "url": "https://vmware.github.io/photon",
+            "description": "VMware 面向 vSphere 的极简容器宿主"
+          }
+        ]
+      },
+      {
+        "name": "Arch 系",
+        "links": [
+          {
+            "name": "EndeavourOS",
+            "url": "https://endeavouros.com",
+            "description": "Antergos 继任者，极简滚动 Arch 发行版"
+          },
+          {
+            "name": "Manjaro",
+            "url": "https://manjaro.org",
+            "description": "易上手的 Arch 系发行版，自带稳定仓库与安装器"
+          },
+          {
+            "name": "Arch Linux",
+            "url": "https://archlinux.org",
+            "description": "KISS 原则滚动发行版，AUR 软件仓库闻名"
+          },
+          {
+            "name": "CachyOS",
+            "url": "https://cachyos.org",
+            "description": "性能优化 Arch 发行版，自建 v3 仓库"
+          },
+          {
+            "name": "Garuda Linux",
+            "url": "https://garudalinux.org",
+            "description": "华丽 Arch 衍生版，主打 KDE 与开箱体验"
+          },
+          {
+            "name": "SteamOS",
+            "url": "https://store.steampowered.com/steamos",
+            "description": "Valve Steam Deck 系统，基于 Arch"
+          },
+          {
+            "name": "ArcoLinux",
+            "url": "https://arcolinux.com",
+            "description": "面向教学的 Arch 衍生版，多 ISO 与构建脚本"
+          },
+          {
+            "name": "Xero Linux",
+            "url": "https://xerolinux.xyz",
+            "description": "注重隐私与调优的 KDE Arch 衍生版"
+          },
+          {
+            "name": "BlackArch",
+            "url": "https://www.blackarch.org",
+            "description": "Arch 系渗透测试仓库与实时 ISO，3000+ 工具"
+          },
+          {
+            "name": "Artix Linux",
+            "url": "https://artixlinux.org",
+            "description": "无 systemd 的 Arch 分支，多种启动器"
+          },
+          {
+            "name": "Parabola GNU/Linux-libre",
+            "url": "https://www.parabola.nu",
+            "description": "完全自由软件的 Arch 衍生，FSF 认可"
+          },
+          {
+            "name": "Antergos",
+            "url": "https://en.wikipedia.org/wiki/Antergos",
+            "description": "Arch 桌面发行版，2019 停止"
+          },
+          {
+            "name": "Hyperbola GNU/Linux-libre",
+            "url": "https://en.wikipedia.org/wiki/Hyperbola_GNU/Linux-libre",
+            "description": "完全自由的 Arch 衍生版，约 2022 年停滞"
+          },
+          {
+            "name": "Chakra GNU/Linux",
+            "url": "https://en.wikipedia.org/wiki/Chakra_GNU/Linux",
+            "description": "KDE 向 Arch 衍生版，2021 年停止"
+          },
+          {
+            "name": "ArchBang",
+            "url": "https://en.wikipedia.org/wiki/ArchBang",
+            "description": "CrunchBang 风格的轻量 Arch 衍生版"
+          },
+          {
+            "name": "Netrunner",
+            "url": "https://www.netrunner.com",
+            "description": "KDE 向发行版，滚动版基于 Manjaro"
+          },
+          {
+            "name": "BlendOS",
+            "url": "https://blendos.co/",
+            "description": "声明式原子化 Arch 衍生版"
+          },
+          {
+            "name": "Omarchy",
+            "url": "https://omarchy.org/",
+            "description": "DHH 出品，可玩性强的 Arch 桌面"
+          },
+          {
+            "name": "ChimeraOS",
+            "url": "https://chimeraos.org/",
+            "description": "客厅游戏系统，PC 秒变游戏主机"
+          },
+          {
+            "name": "RebornOS",
+            "url": "https://rebornos.org/",
+            "description": "可高度定制的 Arch 系滚动发行版"
+          }
+        ]
+      },
+      {
+        "name": "独立发行版",
+        "links": [
+          {
+            "name": "Alpine Linux",
+            "url": "https://www.alpinelinux.org",
+            "description": "musl + BusyBox 极简系统，容器镜像首选"
+          },
+          {
+            "name": "ChromeOS",
+            "url": "https://www.google.com/chromeos/",
+            "description": "谷歌网页优先系统，底层基于 Gentoo 与容器"
+          },
+          {
+            "name": "NixOS",
+            "url": "https://nixos.org",
+            "description": "声明式可复现系统，Nix 包管理原子升级"
+          },
+          {
+            "name": "Void Linux",
+            "url": "https://voidlinux.org",
+            "description": "独立滚动发行版，XBPS 包管理，runit 启动"
+          },
+          {
+            "name": "Solus",
+            "url": "https://getsol.us",
+            "description": "独立桌面发行版，自有 eopkg 包管理"
+          },
+          {
+            "name": "Puppy Linux",
+            "url": "https://puppylinux-woof-ce.github.io",
+            "description": "常驻内存的迷你实时发行版"
+          },
+          {
+            "name": "CRUX",
+            "url": "https://crux.nu",
+            "description": "面向老手的轻量源码包发行版，启发 Arch"
+          },
+          {
+            "name": "Tiny Core Linux",
+            "url": "http://tinycorelinux.net",
+            "description": "核心约 11MB 的极简扩展式系统"
+          },
+          {
+            "name": "GNU Guix System",
+            "url": "https://guix.gnu.org",
+            "description": "受 Nix 启发的函数式包管理发行版"
+          },
+          {
+            "name": "SliTaz GNU/Linux",
+            "url": "https://www.slitaz.org",
+            "description": "约 50MB 的 BusyBox 可启动实时系统"
+          },
+          {
+            "name": "Chimera Linux",
+            "url": "https://chimera-linux.org",
+            "description": "musl + LLVM 的独立发行版"
+          },
+          {
+            "name": "Clear Linux OS",
+            "url": "https://clearlinux.org",
+            "description": "Intel 性能优化滚动系统，约 2024 年停止"
+          },
+          {
+            "name": "EasyOS",
+            "url": "http://easyos.org",
+            "description": "Puppy 家族实验系统，容器化设计"
+          },
+          {
+            "name": "Damn Small Linux",
+            "url": "https://en.wikipedia.org/wiki/Damn_Small_Linux",
+            "description": "50MB 名片型实时发行版"
+          },
+          {
+            "name": "GoboLinux",
+            "url": "https://gobolinux.org",
+            "description": "按程序目录重组 FHS 的独特发行版"
+          },
+          {
+            "name": "Linux From Scratch",
+            "url": "https://www.linuxfromscratch.org",
+            "description": "手把手从源码构建 Linux 的教程书"
+          },
+          {
+            "name": "KaOS",
+            "url": "https://kaosx.us/",
+            "description": "独立 Qt 发行版，Dinit 启动器"
+          },
+          {
+            "name": "4MLinux",
+            "url": "https://4mlinux.com/",
+            "description": "多功能迷你发行版，运维救援向"
+          },
+          {
+            "name": "银河麒麟",
+            "url": "https://www.kylinos.cn/",
+            "description": "国产银河麒麟，军政信创领域常用"
+          },
+          {
+            "name": "openKylin",
+            "url": "https://www.openkylin.top/",
+            "description": "国产开源桌面，openKylin 社区维护"
+          }
+        ]
+      },
+      {
+        "name": "嵌入式",
+        "links": [
+          {
+            "name": "OpenWrt",
+            "url": "https://openwrt.org",
+            "description": "路由器嵌入式 Linux 框架，开源固件首选"
+          },
+          {
+            "name": "DD-WRT",
+            "url": "https://dd-wrt.com",
+            "description": "基于 OpenWrt 的第三方路由器固件"
+          },
+          {
+            "name": "LEDE Project",
+            "url": "https://en.wikipedia.org/wiki/LEDE_Project",
+            "description": "OpenWrt 社区分支，2018 年回归合并"
+          },
+          {
+            "name": "Tomato Firmware",
+            "url": "https://en.wikipedia.org/wiki/Tomato_Firmware",
+            "description": "Broadcom 路由器固件，社区 MOD 众多"
+          },
+          {
+            "name": "OpenELEC",
+            "url": "https://en.wikipedia.org/wiki/OpenELEC",
+            "description": "Kodi 嵌入式系统，分支为 LibreELEC"
+          },
+          {
+            "name": "LibreELEC",
+            "url": "https://libreelec.tv",
+            "description": "只为 Kodi 而生的嵌入式系统"
+          },
+          {
+            "name": "CoreELEC",
+            "url": "https://coreelec.org",
+            "description": "针对 Amlogic 电视盒优化的 LibreELEC"
+          },
+          {
+            "name": "OSMC",
+            "url": "https://osmc.tv",
+            "description": "面向树莓派与 Vero 的 Kodi 系统"
+          },
+          {
+            "name": "Lakka",
+            "url": "https://www.lakka.tv",
+            "description": "基于 RetroArch 的复古游戏 Linux"
+          },
+          {
+            "name": "Batocera.linux",
+            "url": "https://batocera.org",
+            "description": "Buildroot 构建的即插即用复古游戏系统"
+          },
+          {
+            "name": "Twister OS",
+            "url": "https://twisteros.com",
+            "description": "树莓派复古主题系统，已停止"
+          },
+          {
+            "name": "Recalbox",
+            "url": "https://www.recalbox.com/",
+            "description": "复古游戏整合系统，即插即用"
+          },
+          {
+            "name": "RetroPie",
+            "url": "https://retropie.org.uk/",
+            "description": "树莓派复古游戏，RetroArch 驱动"
+          }
+        ]
+      },
+      {
+        "name": "Gentoo 系",
+        "links": [
+          {
+            "name": "Gentoo Linux",
+            "url": "https://www.gentoo.org",
+            "description": "源码编译型发行版，USE 标志按需定制"
+          },
+          {
+            "name": "Funtoo Linux",
+            "url": "https://www.funtoo.org",
+            "description": "Gentoo 作者创立的 Gentoo 分支"
+          },
+          {
+            "name": "Calculate Linux",
+            "url": "https://www.calculate-linux.org",
+            "description": "面向企业的 Gentoo 衍生版"
+          },
+          {
+            "name": "Sabayon Linux",
+            "url": "https://en.wikipedia.org/wiki/Sabayon_Linux",
+            "description": "二进制友好 Gentoo 衍生，2020 年停止"
+          },
+          {
+            "name": "MocaccinoOS",
+            "url": "https://en.wikipedia.org/wiki/MocaccinoOS",
+            "description": "Sabayon 社区继任者，Luet 容器，已归档"
+          },
+          {
+            "name": "Pentoo",
+            "url": "https://www.pentoo.ch",
+            "description": "基于 Gentoo 的渗透测试实时系统"
+          },
+          {
+            "name": "Redcore Linux",
+            "url": "https://en.wikipedia.org/wiki/Redcore_Linux",
+            "description": "面向易用的 Gentoo 系发行版，已归档"
+          },
+          {
+            "name": "Exherbo Linux",
+            "url": "https://www.exherbo.org",
+            "description": "前 Gentoo 开发者创建的源码发行版，已归档"
+          },
+          {
+            "name": "SystemRescue",
+            "url": "https://www.system-rescue.org",
+            "description": "系统救援实时镜像，现基于 Arch"
+          }
+        ]
+      },
+      {
+        "name": "Mandriva 系",
+        "links": [
+          {
+            "name": "PCLinuxOS",
+            "url": "https://www.pclinuxos.com",
+            "description": "前 Mandrake 分支，现独立滚动 RPM 发行版"
+          },
+          {
+            "name": "Mageia",
+            "url": "https://www.mageia.org",
+            "description": "前 Mandriva 员工发起的社区分支"
+          },
+          {
+            "name": "OpenMandriva Lx",
+            "url": "https://www.openmandriva.org",
+            "description": "Mandriva 社区继任者"
+          },
+          {
+            "name": "Mandrake Linux",
+            "url": "https://en.wikipedia.org/wiki/Mandrake_Linux",
+            "description": "从 Red Hat 分支的 KDE 桌面发行版"
+          },
+          {
+            "name": "Mandriva Linux",
+            "url": "https://www.mandriva.com",
+            "description": "Mandrake 并 Conectiva，2015 终止"
+          },
+          {
+            "name": "Conectiva Linux",
+            "url": "https://en.wikipedia.org/wiki/Conectiva_Linux",
+            "description": "巴西葡语 RPM 发行版，并入 Mandriva"
+          },
+          {
+            "name": "ROSA Linux",
+            "url": "https://www.rosalinux.com",
+            "description": "俄罗斯 Mandriva 系 KDE 发行版"
+          },
+          {
+            "name": "ALT Linux",
+            "url": "https://www.altlinux.org",
+            "description": "俄罗斯独立 RPM-apt 发行版"
+          },
+          {
+            "name": "PLD Linux",
+            "url": "https://www.pld-linux.org",
+            "description": "波兰独立 RPM 发行版，面向高级用户"
+          }
+        ]
+      },
+      {
+        "name": "Slackware 系",
+        "links": [
+          {
+            "name": "Slackware",
+            "url": "https://www.slackware.com",
+            "description": "现存最老的 Linux，保守 Unix 风格"
+          },
+          {
+            "name": "Slax",
+            "url": "https://www.slax.org",
+            "description": "小巧模块化实时发行版，现基于 Debian"
+          },
+          {
+            "name": "Porteus",
+            "url": "https://www.porteus.org",
+            "description": "Slackware 衍生的小型模块化实时系统"
+          },
+          {
+            "name": "Salix OS",
+            "url": "https://salixos.org",
+            "description": "带依赖解析的 Slackware 兼容发行版"
+          },
+          {
+            "name": "VectorLinux",
+            "url": "https://en.wikipedia.org/wiki/VectorLinux",
+            "description": "Slackware 系轻量桌面，约 2022 年退役"
+          },
+          {
+            "name": "Frugalware",
+            "url": "https://frugalware.org",
+            "description": "Slackware 启发的 Pacman 系发行版"
+          }
+        ]
+      },
+      {
+        "name": "移动端",
+        "links": [
+          {
+            "name": "Tizen",
+            "url": "https://www.tizen.org",
+            "description": "三星电视/手表广泛采用的 Linux 移动系统"
+          },
+          {
+            "name": "Sailfish OS",
+            "url": "https://sailfishos.org",
+            "description": "延续 MeeGo 血统的独立移动系统"
+          },
+          {
+            "name": "Firefox OS",
+            "url": "https://en.wikipedia.org/wiki/Firefox_OS",
+            "description": "Mozilla 开放网页移动系统，2016 年停止"
+          },
+          {
+            "name": "Maemo",
+            "url": "https://en.wikipedia.org/wiki/Maemo",
+            "description": "诺基亚 Debian 系平板平台，并入 MeeGo"
+          },
+          {
+            "name": "MeeGo",
+            "url": "https://en.wikipedia.org/wiki/MeeGo",
+            "description": "Maemo 与 Moblin 合并，2011 年被弃"
+          },
+          {
+            "name": "webOS",
+            "url": "https://www.webosose.org",
+            "description": "Palm 的 Linux 内核系统，现为 LG 电视系统"
+          }
+        ]
+      },
+      {
+        "name": "SUSE 系",
+        "links": [
+          {
+            "name": "openSUSE",
+            "url": "https://www.opensuse.org",
+            "description": "社区 RPM 发行版，稳定与滚动双版本"
+          },
+          {
+            "name": "openSUSE Tumbleweed",
+            "url": "https://get.opensuse.org/tumbleweed",
+            "description": "openSUSE 滚动版，Leap 的上游"
+          },
+          {
+            "name": "openSUSE Leap",
+            "url": "https://get.opensuse.org/leap",
+            "description": "Tumbleweed 稳定版，与 SLE 共享二进制"
+          },
+          {
+            "name": "SUSE Linux Enterprise",
+            "url": "https://www.suse.com",
+            "description": "SUSE 商业企业版，openSUSE Leap 的基底"
+          },
+          {
+            "name": "SUSE Linux",
+            "url": "https://en.wikipedia.org/wiki/SUSE_Linux",
+            "description": "原 Slackware 基底的 SUSE 早期版本"
+          }
+        ]
+      },
+      {
+        "name": "网络设备",
+        "links": [
+          {
+            "name": "VyOS",
+            "url": "https://vyos.io",
+            "description": "开源网络路由系统，Vyatta 社区分支"
+          },
+          {
+            "name": "IPFire",
+            "url": "https://www.ipfire.org",
+            "description": "带 Web 管理与 IDS 的 Linux 防火墙"
+          },
+          {
+            "name": "SmoothWall",
+            "url": "https://en.wikipedia.org/wiki/SmoothWall",
+            "description": "早期 Linux 防火墙发行版，基本停止"
+          }
+        ]
+      },
+      {
+        "name": "Android 生态",
+        "links": [
+          {
+            "name": "Android",
+            "url": "https://www.android.com",
+            "description": "全球主导的 Linux 内核移动操作系统"
+          },
+          {
+            "name": "Fire OS",
+            "url": "https://developer.amazon.com/fire-tv",
+            "description": "亚马逊 Fire TV/平板的 Android 分支"
+          },
+          {
+            "name": "LineageOS",
+            "url": "https://lineageos.org/",
+            "description": "最流行的开源 Android 替代系统"
+          },
+          {
+            "name": "GrapheneOS",
+            "url": "https://grapheneos.org/",
+            "description": "注重隐私与安全的 Android 系统"
+          },
+          {
+            "name": "CalyxOS",
+            "url": "https://calyxos.org/",
+            "description": "隐私向 Android 系统，Calyx 维护"
+          },
+          {
+            "name": "/e/OS",
+            "url": "https://e.foundation/",
+            "description": "去谷歌化的开源 Android 系统"
+          }
+        ]
+      }
+    ]
+  }
+];;;
+
+const literaryQuotes = [
+  '壁纸是数字时代的心灵挂毯，把远方搬进眼前。——本站',
+  '一张好壁纸，能让一整天都明亮起来。——本站',
+  '高清不只是分辨率，更是对美的坚持。——本站',
+  '让每一次解锁，都遇见一片新的风景。——本站'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝐿𝑖𝑛𝑢𝑥 𝐷𝑖𝑠𝑡𝑟𝑜 𝐴𝑟𝑐ℎ𝑖𝑣𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

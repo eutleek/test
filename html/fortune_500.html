@@ -1,0 +1,2855 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球五百强企业官网与行业巨头入口">
+<title>世界五百强 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>世界五百强</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">世界五百强 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "世界五百强",
+    "icon": "🏢",
+    "color": "linear-gradient(135deg, #2d3436, #0984e3)",
+    "subcategories": [
+      {
+        "name": "1-50",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Amazon",
+            "url": "https://www.amazon.com/",
+            "description": "全球电商与云计算巨头，业务涵盖云计算"
+          },
+          {
+            "name": "Walmart",
+            "url": "https://www.walmart.com/",
+            "description": "全球最大的零售连锁企业，提供全渠道零售与电商服务。"
+          },
+          {
+            "name": "State Grid (国家电网)",
+            "url": "http://www.sgcc.com.cn/",
+            "description": "中国特大型能源供应央企，全球最大的电力输送与分销企"
+          },
+          {
+            "name": "UnitedHealth Group",
+            "url": "https://www.unitedhealthgroup.com/",
+            "description": "全球领先的健康保险与医疗健康服务综合巨头。"
+          },
+          {
+            "name": "Saudi Aramco (沙特阿美)",
+            "url": "https://www.aramco.com/",
+            "description": "全球最大的综合石油与天然气勘探、生产与炼化企业。"
+          },
+          {
+            "name": "China National Petroleum (中国石油)",
+            "url": "http://www.cnpc.com.cn/",
+            "description": "中国综合性能源巨头，涵盖油气勘探、炼化与零售业务。"
+          },
+          {
+            "name": "Sinopec Group (中国石化)",
+            "url": "http://www.sinopecgroup.com/",
+            "description": "全球主要的炼油、石油化工与能源零售企业集团。"
+          },
+          {
+            "name": "Apple",
+            "url": "https://www.apple.com/",
+            "description": "全球高科技巨头，专注于智能手机、个人电脑"
+          },
+          {
+            "name": "CVS Health",
+            "url": "https://www.cvshealth.com/",
+            "description": "美国领先的综合医疗保健公司"
+          },
+          {
+            "name": "Berkshire Hathaway",
+            "url": "https://www.berkshirehathaway.com/",
+            "description": "沃伦·巴菲特领导的跨国多元化投资控股集团。"
+          },
+          {
+            "name": "McKesson",
+            "url": "https://www.mckesson.com/",
+            "description": "全球主要的医药分销、医疗信息技术与医疗供应链企业。"
+          },
+          {
+            "name": "Volkswagen Group (大众汽车)",
+            "url": "https://www.volkswagen-group.com/",
+            "description": "德国跨国汽车制造巨头，旗下拥有多个知名汽车品牌。"
+          },
+          {
+            "name": "Alphabet (Google)",
+            "url": "https://abc.xyz/",
+            "description": "Google母公司，专注于互联网搜索、云计算"
+          },
+          {
+            "name": "ExxonMobil (埃克森美孚)",
+            "url": "https://corporate.exxonmobil.com/",
+            "description": "全球主要的跨国石油、天然气与能源化工企业。"
+          },
+          {
+            "name": "Toyota Motor (丰田汽车)",
+            "url": "https://global.toyota/",
+            "description": "全球销量领先的日本汽车制造巨头"
+          },
+          {
+            "name": "Shell (壳牌)",
+            "url": "https://www.shell.com/",
+            "description": "全球能源与石油化工跨国集团"
+          },
+          {
+            "name": "Cencora",
+            "url": "https://www.cencora.com/",
+            "description": "全球医药供应链与健康解决方案提供商(前身"
+          },
+          {
+            "name": "JPMorgan Chase (摩根大通)",
+            "url": "https://www.jpmorganchase.com/",
+            "description": "全球最大的金融服务与投资银行机构之一。"
+          },
+          {
+            "name": "Costco Wholesale",
+            "url": "https://www.costco.com/",
+            "description": "全球著名的仓储会员制连锁超市与全渠道零售商。"
+          },
+          {
+            "name": "Cigna Group",
+            "url": "https://www.thecignagroup.com/",
+            "description": "全球化健康服务与医疗保险企业。"
+          },
+          {
+            "name": "Microsoft (微软)",
+            "url": "https://www.microsoft.com/",
+            "description": "全球软件与云计算巨头，生产Windows"
+          },
+          {
+            "name": "Trafigura Group (托克集团)",
+            "url": "https://www.trafigura.com/",
+            "description": "全球顶尖的大宗商品独立贸易与物流供应链集团。"
+          },
+          {
+            "name": "Glencore (嘉能可)",
+            "url": "https://www.glencore.com/",
+            "description": "全球主要的自然资源与金属、矿产大宗商品贸易巨头。"
+          },
+          {
+            "name": "Cardinal Health",
+            "url": "https://www.cardinalhealth.com/",
+            "description": "美国跨国医疗保健与医药分销服务企业。"
+          },
+          {
+            "name": "Samsung Electronics (三星电子)",
+            "url": "https://www.samsung.com/",
+            "description": "全球科技巨头，涵盖半导体、智能手机"
+          },
+          {
+            "name": "Hon Hai Precision (鸿海精密/富士康)",
+            "url": "https://www.honhai.com/",
+            "description": "全球最大的电子代工制造与先进智造服务企业。"
+          },
+          {
+            "name": "Chevron (雪佛龙)",
+            "url": "https://www.chevron.com/",
+            "description": "全球大型跨国能源公司，从事石油天然气勘探"
+          },
+          {
+            "name": "Agricultural Bank of China (中国农业银行)",
+            "url": "https://www.abchina.com/",
+            "description": "中国大型国有商业银行，提供全方位综合金融服务。"
+          },
+          {
+            "name": "China Construction Bank (中国建设银行)",
+            "url": "https://www.ccb.com/",
+            "description": "中国四大国有商业银行之一"
+          },
+          {
+            "name": "TotalEnergies (道达尔能源)",
+            "url": "https://totalenergies.com/",
+            "description": "法国多元化跨国能源公司，涵盖石油"
+          },
+          {
+            "name": "BP (毕辟)",
+            "url": "https://www.bp.com/",
+            "description": "英国跨国石油与天然气巨头"
+          },
+          {
+            "name": "Bank of America (美国银行)",
+            "url": "https://www.bankofamerica.com/",
+            "description": "美国主要的多元化零售银行与投资银行机构。"
+          },
+          {
+            "name": "General Motors (通用汽车)",
+            "url": "https://www.gm.com/",
+            "description": "美国跨国汽车制造巨头，拥有雪佛兰、别克"
+          },
+          {
+            "name": "Ford Motor (福特汽车)",
+            "url": "https://www.ford.com/",
+            "description": "美国知名百年汽车制造商，深耕商用车与电动汽车研发。"
+          },
+          {
+            "name": "Elevance Health",
+            "url": "https://www.elevancehealth.com/",
+            "description": "美国大型健康保险与医疗解决方案提供商(原"
+          },
+          {
+            "name": "Bank of China (中国银行)",
+            "url": "https://www.boc.cn/",
+            "description": "中国国际化程度极高的国有商业银行"
+          },
+          {
+            "name": "Citigroup (花旗集团)",
+            "url": "https://www.citigroup.com/",
+            "description": "全球领先的跨国金融服务公司与投资银行。"
+          },
+          {
+            "name": "Stellantis",
+            "url": "https://www.stellantis.com/",
+            "description": "全球跨国汽车集团，拥有标致、雪铁龙、吉普"
+          },
+          {
+            "name": "Meta Platforms",
+            "url": "https://about.meta.com/",
+            "description": "全球社交网络与元宇宙技术巨头"
+          },
+          {
+            "name": "Centene",
+            "url": "https://www.centene.com/",
+            "description": "美国大型健康护理企业，专注于政府资助的医疗保障计划"
+          },
+          {
+            "name": "Home Depot",
+            "url": "https://www.homedepot.com/",
+            "description": "全球最大的家居建材与建材零售建材超市连锁。"
+          },
+          {
+            "name": "Industrial and Commercial Bank of China (中国工商银行)",
+            "url": "https://www.icbc.com.cn/",
+            "description": "全球资产规模巨大的国有商业银行。"
+          },
+          {
+            "name": "China State Construction (中国建筑)",
+            "url": "http://www.cscec.com/",
+            "description": "全球投资建设集团巨头，承建大量重大基础设施与房屋建"
+          },
+          {
+            "name": "BMW Group (宝马集团)",
+            "url": "https://www.bmwgroup.com/",
+            "description": "德国豪华汽车与摩托车制造商，旗下拥有BMW"
+          },
+          {
+            "name": "Mercedes-Benz Group (梅赛德斯-奔驰)",
+            "url": "https://group.mercedes-benz.com/",
+            "description": "德国顶级豪华汽车与商用车制造巨头。"
+          },
+          {
+            "name": "Marathon Petroleum",
+            "url": "https://www.marathonpetroleum.com/",
+            "description": "美国大型炼油、营销及中游能源管道运输企业。"
+          },
+          {
+            "name": "Kroger",
+            "url": "https://www.kroger.com/",
+            "description": "美国大型连锁超市企业，提供食品与零售服务。"
+          },
+          {
+            "name": "E.ON",
+            "url": "https://www.eon.com/",
+            "description": "欧洲大型能源网络与客户解决方案提供商。"
+          },
+          {
+            "name": "AXA (安盛)",
+            "url": "https://www.axa.com/",
+            "description": "法国跨国保险与资产管理巨头。"
+          },
+          {
+            "name": "Allianz (安联)",
+            "url": "https://www.allianz.com/",
+            "description": "德国全球金融服务巨头，主营保险与资产管理。"
+          }
+        ]
+      },
+      {
+        "name": "51-100",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "SAIC Motor (上汽集团)",
+            "url": "https://www.saicmotor.com/",
+            "description": "中国大型汽车制造企业集团"
+          },
+          {
+            "name": "Stellantis / Peugeot / Renault",
+            "url": "https://www.renaultgroup.com/",
+            "description": "雷诺集团，法国传统汽车制造与出行方案服务商。"
+          },
+          {
+            "name": "Honda Motor (本田)",
+            "url": "https://global.honda/",
+            "description": "日本跨国汽车、摩托车与动力产品制造企业。"
+          },
+          {
+            "name": "Hyundai Motor (现代汽车)",
+            "url": "https://www.hyundai.com/",
+            "description": "韩国大型汽车制造集团，业务涵盖新能源与智能出行。"
+          },
+          {
+            "name": "Ping An Insurance (中国平安)",
+            "url": "https://www.pingan.cn/",
+            "description": "中国综合金融服务集团，涵盖保险、银行、资产管理。"
+          },
+          {
+            "name": "China Mobile (中国移动)",
+            "url": "http://www.chinamobileltd.com/",
+            "description": "中国电信运营商巨头，提供移动通信、宽带与算力网络。"
+          },
+          {
+            "name": "Comcast",
+            "url": "https://corporate.comcast.com/",
+            "description": "美国跨国媒体与电信巨头，拥有"
+          },
+          {
+            "name": "Target",
+            "url": "https://www.target.com/",
+            "description": "美国知名百货零售商，提供多元化消费品与流行百货。"
+          },
+          {
+            "name": "Lowe's",
+            "url": "https://www.lowes.com/",
+            "description": "美国大型家居装饰与建材零售商。"
+          },
+          {
+            "name": "Sony Group (索尼)",
+            "url": "https://www.sony.com/",
+            "description": "日本跨国电子、游戏、娱乐、影视与金融综合集团。"
+          },
+          {
+            "name": "Siemens (西门子)",
+            "url": "https://www.siemens.com/",
+            "description": "德国工业自动化、电气化、数字化与医疗诊断基础设施巨"
+          },
+          {
+            "name": "Nestlé (雀巢)",
+            "url": "https://www.nestle.com/",
+            "description": "全球食品与饮料制造巨头，拥有丰富的知名消费品品牌。"
+          },
+          {
+            "name": "Procter & Gamble (宝洁)",
+            "url": "https://pg.com/",
+            "description": "全球日用消费品与个人护理巨头，拥有帮宝适"
+          },
+          {
+            "name": "Tencent (腾讯)",
+            "url": "https://www.tencent.com/",
+            "description": "中国互联网与科技巨头，主营社交、游戏"
+          },
+          {
+            "name": "Alibaba Group (阿里巴巴)",
+            "url": "https://www.alibabagroup.com/",
+            "description": "全球电商与科技公司，业务涵盖淘天、阿里云、菜鸟等。"
+          },
+          {
+            "name": "Nissan Motor (日产汽车)",
+            "url": "https://www.nissan-global.com/",
+            "description": "日本跨国汽车制造商，提供全球整车研发与销售。"
+          },
+          {
+            "name": "Panasonic (松下)",
+            "url": "https://holdings.panasonic/",
+            "description": "日本跨国电子企业，涵盖车载电池、家电与工业系统。"
+          },
+          {
+            "name": "BASF (巴斯夫)",
+            "url": "https://www.basf.com/",
+            "description": "德国全球化学品制造巨头，产品覆盖材料"
+          },
+          {
+            "name": "Airbus (空中客车)",
+            "url": "https://www.airbus.com/",
+            "description": "欧洲跨国航空航天制造巨头，主营民用飞机"
+          },
+          {
+            "name": "Boeing (波音)",
+            "url": "https://www.boeing.com/",
+            "description": "美国航空航天制造商，生产民用飞机"
+          },
+          {
+            "name": "Pfizer (辉瑞)",
+            "url": "https://www.pfizer.com/",
+            "description": "全球生物制药巨头，专注于疫苗、肿瘤与重症药物研发。"
+          },
+          {
+            "name": "Johnson & Johnson (强生)",
+            "url": "https://www.jnj.com/",
+            "description": "全球医疗科技与生物制药综合健康巨头。"
+          },
+          {
+            "name": "Roche Group (罗氏)",
+            "url": "https://www.roche.com/",
+            "description": "瑞士生物科技与医疗诊断巨头"
+          },
+          {
+            "name": "Novartis (诺华)",
+            "url": "https://www.novartis.com/",
+            "description": "瑞士跨国制药企业，专注于创新药物与基因疗法。"
+          },
+          {
+            "name": "AstraZeneca (阿斯利康)",
+            "url": "https://www.astrazeneca.com/",
+            "description": "英苏跨国生物制药公司，专注于心血管"
+          },
+          {
+            "name": "Sanofi (赛诺菲)",
+            "url": "https://www.sanofi.com/",
+            "description": "法国跨国医疗保健与制药巨头，主营疫苗与免疫诊疗。"
+          },
+          {
+            "name": "Bayer (拜耳)",
+            "url": "https://www.bayer.com/",
+            "description": "德国生命科学巨头，涵盖作物科学"
+          },
+          {
+            "name": "Nvidia (英伟达)",
+            "url": "https://www.nvidia.com/",
+            "description": "全球图形计算、AI芯片与算力加速技术领军企业。"
+          },
+          {
+            "name": "Intel (英特尔)",
+            "url": "https://www.intel.com/",
+            "description": "全球半导体设计与芯片制造巨头"
+          },
+          {
+            "name": "TSMC (台积电)",
+            "url": "https://www.tsmc.com/",
+            "description": "全球最大的半导体专营代工制造企业。"
+          },
+          {
+            "name": "ASML",
+            "url": "https://www.asml.com/",
+            "description": "荷兰半导体设备巨头，全球高阶光刻机核心供应商。"
+          },
+          {
+            "name": "Cisco Systems (思科)",
+            "url": "https://www.cisco.com/",
+            "description": "全球网络连接设备、安全与云计算基础设施龙头。"
+          },
+          {
+            "name": "Oracle (甲骨文)",
+            "url": "https://www.oracle.com/",
+            "description": "全球企业级软件、数据库与云基础设施服务商。"
+          },
+          {
+            "name": "IBM",
+            "url": "https://www.ibm.com/",
+            "description": "全球信息技术与混合云、人工智能解决方案提供商。"
+          },
+          {
+            "name": "Dell Technologies (戴尔)",
+            "url": "https://www.dell.com/",
+            "description": "全球个人电脑、服务器、数据存储与IT解决方案提供商"
+          },
+          {
+            "name": "HP Inc. (惠普)",
+            "url": "https://www.hp.com/",
+            "description": "全球个人电脑与打印成像设备制造商。"
+          },
+          {
+            "name": "Qualcomm (高通)",
+            "url": "https://www.qualcomm.com/",
+            "description": "全球无线通信与移动芯片技术研发巨头。"
+          },
+          {
+            "name": "Broadcom (博通)",
+            "url": "https://www.broadcom.com/",
+            "description": "全球半导体与基础设施软件设计龙头。"
+          },
+          {
+            "name": "Schneider Electric (施耐德电气)",
+            "url": "https://www.se.com/",
+            "description": "法国能源管理与自动化数字化转型巨头。"
+          },
+          {
+            "name": "ABB",
+            "url": "https://global.abb/",
+            "description": "瑞典-瑞士电气产品、机器人与工业自动化技术巨头。"
+          },
+          {
+            "name": "Honeywell (霍尼韦尔)",
+            "url": "https://www.honeywell.com/",
+            "description": "美国高科技制造企业，涉及航空航天"
+          },
+          {
+            "name": "General Electric (GE Aerospace)",
+            "url": "https://www.geaerospace.com/",
+            "description": "全球航空发动机与航空动力技术巨头。"
+          },
+          {
+            "name": "Caterpillar (卡特彼勒)",
+            "url": "https://www.caterpillar.com/",
+            "description": "全球工程机械、矿山设备与柴油发动机制造巨头。"
+          },
+          {
+            "name": "Deere & Company (约翰迪尔)",
+            "url": "https://www.deere.com/",
+            "description": "全球农业机械、工程机械与林业设备龙头。"
+          },
+          {
+            "name": "Lockheed Martin (洛克希德·马丁)",
+            "url": "https://www.lockheedmartin.com/",
+            "description": "美国航空航天与国防安全科技巨头。"
+          },
+          {
+            "name": "Volvo Group (沃尔沃集团)",
+            "url": "https://www.volvogroup.com/",
+            "description": "瑞典商用车辆、卡车、客车与建筑设备制造集团。"
+          },
+          {
+            "name": "Michelin (米其林)",
+            "url": "https://www.michelin.com/",
+            "description": "法国全球轮胎制造与出行生活服务企业。"
+          },
+          {
+            "name": "Continental (大陆集团)",
+            "url": "https://www.continental.com/",
+            "description": "德国汽车底盘、轮胎与车载电子系统供应商。"
+          },
+          {
+            "name": "Denso (电装)",
+            "url": "https://www.denso.com/",
+            "description": "日本主要的汽车核心零部件与系统供应商。"
+          },
+          {
+            "name": "Hitachi (日立)",
+            "url": "https://www.hitachi.com/",
+            "description": "日本社会创新事业巨头，涵盖电力、IT与铁路系统。"
+          }
+        ]
+      },
+      {
+        "name": "101-150",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Mitsubishi Heavy Industries (三菱重工)",
+            "url": "https://www.mhi.com/",
+            "description": "日本重型工业、能源装备与国防机械制造集团。"
+          },
+          {
+            "name": "Sumitomo Corporation (住友商事)",
+            "url": "https://www.sumitomocorp.com/",
+            "description": "日本大型综合商社，业务覆盖贸易、矿业与基础设施。"
+          },
+          {
+            "name": "Mitsui & Co. (三井物产)",
+            "url": "https://www.mitsui.com/",
+            "description": "日本大型综合商社，投资全球能源、金属"
+          },
+          {
+            "name": "Mitsubishi Corporation (三菱商事)",
+            "url": "https://www.mitsubishicorp.com/",
+            "description": "日本规模顶尖的综合商社，涵盖能源、食品与科技金融。"
+          },
+          {
+            "name": "Itochu (伊藤忠商事)",
+            "url": "https://www.itochu.co.jp/",
+            "description": "日本大型综合商社，在纺织、机械"
+          },
+          {
+            "name": "Marubeni (丸红)",
+            "url": "https://www.marubeni.com/",
+            "description": "日本综合商社，专注于粮食、电力、能源与化学品贸易。"
+          },
+          {
+            "name": "LG Electronics (LG电子)",
+            "url": "https://www.lg.com/",
+            "description": "韩国消费电子、家电与车用电子解决方案巨头。"
+          },
+          {
+            "name": "SK Hynix (SK海力士)",
+            "url": "https://www.skhynix.com/",
+            "description": "韩国半导体巨头，全球存储芯片(DRAM与NAND)"
+          },
+          {
+            "name": "POSCO Holdings (浦项制铁)",
+            "url": "https://www.posco.com/",
+            "description": "韩国钢材与二次电池材料制造巨头。"
+          },
+          {
+            "name": "Tata Group (塔塔集团)",
+            "url": "https://www.tata.com/",
+            "description": "印度大型跨国综合企业，业务涵盖汽车、钢铁"
+          },
+          {
+            "name": "Reliance Industries (信实工业)",
+            "url": "https://www.ril.com/",
+            "description": "印度大型综合能源、石化、电信与零售巨头。"
+          },
+          {
+            "name": "State Bank of India (印度州立银行)",
+            "url": "https://sbi.co.in/",
+            "description": "印度最大的国有商业金融服务机构。"
+          },
+          {
+            "name": "BHP",
+            "url": "https://www.bhp.com/",
+            "description": "澳大利亚全球多元化矿业与资源巨头，开采铁矿石"
+          },
+          {
+            "name": "Rio Tinto (力拓)",
+            "url": "https://www.riotinto.com/",
+            "description": "英澳跨国矿业与金属巨头，主营铁矿石、铝与铜。"
+          },
+          {
+            "name": "Anglo American (英美资源)",
+            "url": "https://www.angloamerican.com/",
+            "description": "全球自然资源与矿业集团，涵盖贵金属与铜。"
+          },
+          {
+            "name": "GlaxoSmithKline (GSK / 葛兰素史克)",
+            "url": "https://www.gsk.com/",
+            "description": "英国跨国生物制药与疫苗研发企业。"
+          },
+          {
+            "name": "Danone (达能)",
+            "url": "https://www.danone.com/",
+            "description": "法国跨国食品巨头，主营基础乳制品"
+          },
+          {
+            "name": "Unilever (联合利华)",
+            "url": "https://www.unilever.com/",
+            "description": "全球消费品巨头，涵盖个人护理、家庭护理与食品。"
+          },
+          {
+            "name": "L'Oréal (欧莱雅)",
+            "url": "https://www.loreal.com/",
+            "description": "全球美妆与美发护肤品巨头。"
+          },
+          {
+            "name": "LVMH",
+            "url": "https://www.lvmh.com/",
+            "description": "全球奢侈品集团，旗下拥有时尚皮具、香水珠宝与名酒。"
+          },
+          {
+            "name": "Kering (开云集团)",
+            "url": "https://www.kering.com/",
+            "description": "法国国际高端时尚与奢侈品集团。"
+          },
+          {
+            "name": "Hermes International (爱马仕)",
+            "url": "https://www.hermes.com/",
+            "description": "法国传统高定皮革与奢华生活方式品牌。"
+          },
+          {
+            "name": "Richemont (历峰集团)",
+            "url": "https://www.richemont.com/",
+            "description": "瑞士高级珠宝与名表制造集团。"
+          },
+          {
+            "name": "Compass Group",
+            "url": "https://www.compass-group.com/",
+            "description": "英国全球餐饮与综合设施管理服务提供商。"
+          },
+          {
+            "name": "Sodexo (索迪斯)",
+            "url": "https://www.sodexo.com/",
+            "description": "法国餐饮服务与综合设施管理企业。"
+          },
+          {
+            "name": "McDonald's (麦当劳)",
+            "url": "https://corporate.mcdonalds.com/",
+            "description": "全球连锁快餐餐饮服务巨头。"
+          },
+          {
+            "name": "Starbucks (星巴克)",
+            "url": "https://www.starbucks.com/",
+            "description": "全球连锁专业咖啡与烘焙饮品品牌。"
+          },
+          {
+            "name": "Yum! Brands",
+            "url": "https://www.yum.com/",
+            "description": "肯德基、必胜客与塔可钟的母公司。"
+          },
+          {
+            "name": "Coca-Cola Company (可口可乐)",
+            "url": "https://www.coca-colacompany.com/",
+            "description": "全球非酒精饮料制造与营销巨头。"
+          },
+          {
+            "name": "PepsiCo (百事公司)",
+            "url": "https://www.pepsico.com/",
+            "description": "全球食品与饮料巨头，拥有百事可乐、乐事等品牌。"
+          },
+          {
+            "name": "Anheuser-Busch InBev (百威英博)",
+            "url": "https://www.ab-inbev.com/",
+            "description": "全球大型酿酒集团与啤酒生产商。"
+          },
+          {
+            "name": "Heineken (喜力)",
+            "url": "https://www.theheinekencompany.com/",
+            "description": "荷兰跨国啤酒酿造与分销集团。"
+          },
+          {
+            "name": "Diageo (帝亚吉欧)",
+            "url": "https://www.diageo.com/",
+            "description": "全球洋酒与高级烈酒制造营销企业。"
+          },
+          {
+            "name": "Mondelēz International (亿滋国际)",
+            "url": "https://www.mondelezinternational.com/",
+            "description": "全球零食、饼干与巧克力制造巨头。"
+          },
+          {
+            "name": "Mars, Incorporated (玛氏)",
+            "url": "https://www.mars.com/",
+            "description": "美国食品、巧克力与宠物护理综合家族企业。"
+          },
+          {
+            "name": "Kraft Heinz (卡夫亨氏)",
+            "url": "https://www.kraftheinzcompany.com/",
+            "description": "全球知名调味品与酱料食品制造集团。"
+          },
+          {
+            "name": "General Mills (通用磨坊)",
+            "url": "https://www.generalmills.com/",
+            "description": "美国消费食品制造商，拥有哈根达斯、湾仔码头等品牌。"
+          },
+          {
+            "name": "Colgate-Palmolive (高露洁-棕榄)",
+            "url": "https://www.colgatepalmolive.com/",
+            "description": "全球口腔护理与家庭护理消费品巨头。"
+          },
+          {
+            "name": "Kimberly-Clark (金佰利)",
+            "url": "https://www.kimberly-clark.com/",
+            "description": "全球个人护理与卫生用纸制造企业。"
+          },
+          {
+            "name": "Reckitt (利洁时)",
+            "url": "https://www.reckitt.com/",
+            "description": "英国健康与卫生护理消费品巨头(滴露、杜蕾斯等)。"
+          },
+          {
+            "name": "FedEx (联邦快递)",
+            "url": "https://www.fedex.com/",
+            "description": "全球速递、物流与国际贸易运输服务商。"
+          },
+          {
+            "name": "UPS (优派斯)",
+            "url": "https://www.ups.com/",
+            "description": "全球物流与包裹递送服务供应商。"
+          },
+          {
+            "name": "DHL Group",
+            "url": "https://group.dhl.com/",
+            "description": "德国物流与国际快递服务巨头。"
+          },
+          {
+            "name": "A.P. Moller - Maersk (马士基)",
+            "url": "https://www.maersk.com/",
+            "description": "丹麦航运与综合集装箱物流服务巨头。"
+          },
+          {
+            "name": "COSCO Shipping (中远海运)",
+            "url": "https://www.coscoshipping.com/",
+            "description": "中国航运与港口综合物流服务巨头。"
+          },
+          {
+            "name": "Kuehne+Nagel (德迅)",
+            "url": "https://www.kuehne-nagel.com/",
+            "description": "瑞士海运与空运货代物流服务提供商。"
+          },
+          {
+            "name": "Hapag-Lloyd (赫伯罗特)",
+            "url": "https://www.hapag-lloyd.com/",
+            "description": "德国班轮集装箱航运公司。"
+          },
+          {
+            "name": "Union Pacific (联合太平洋)",
+            "url": "https://www.up.com/",
+            "description": "北美大型铁路货运网络运营商。"
+          },
+          {
+            "name": "Delta Air Lines (达美航空)",
+            "url": "https://www.delta.com/",
+            "description": "美国大型全球客运航空公司。"
+          },
+          {
+            "name": "United Airlines (美国联合航空)",
+            "url": "https://www.united.com/",
+            "description": "美国大型跨国航空运输企业。"
+          }
+        ]
+      },
+      {
+        "name": "151-200",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "American Airlines (美国航空)",
+            "url": "https://www.aa.com/",
+            "description": "全球客运量领先的航空公司之一。"
+          },
+          {
+            "name": "Lufthansa Group (汉莎航空)",
+            "url": "https://www.lufthansagroup.com/",
+            "description": "欧洲航空运输与航空维修服务集团。"
+          },
+          {
+            "name": "Air France-KLM (法航荷航)",
+            "url": "https://www.airfranceklm.com/",
+            "description": "法国与荷兰联合航空公司集团。"
+          },
+          {
+            "name": "Emirates Group (阿联酋航空)",
+            "url": "https://www.emirates.com/",
+            "description": "阿联酋国际航空与机场地勤服务公司。"
+          },
+          {
+            "name": "Singapore Airlines (新加坡航空)",
+            "url": "https://www.singaporeair.com/",
+            "description": "国际高品质航空客运服务商。"
+          },
+          {
+            "name": "Deutsche Post (德国邮政)",
+            "url": "https://www.dpdhl.com/",
+            "description": "欧洲邮政与快递物流集团。"
+          },
+          {
+            "name": "Nippon Telegraph and Telephone (NTT)",
+            "url": "https://group.ntt/",
+            "description": "日本综合电信与信息技术服务巨头。"
+          },
+          {
+            "name": "SoftBank Group (软银集团)",
+            "url": "https://group.softbank/",
+            "description": "日本科技投资与电信通信集团，运营愿景基金。"
+          },
+          {
+            "name": "KDDI",
+            "url": "https://www.kddi.com/",
+            "description": "日本大型综合电信与数字解决方案运营商。"
+          },
+          {
+            "name": "Deutsche Telekom (德国电信)",
+            "url": "https://www.telekom.com/",
+            "description": "欧洲大型电信运营商，旗下拥有T-Mobile。"
+          },
+          {
+            "name": "Vodafone Group (沃达丰)",
+            "url": "https://www.vodafone.com/",
+            "description": "英国跨国移动通信运营商。"
+          },
+          {
+            "name": "Telefónica (西班牙电信)",
+            "url": "https://www.telefonica.com/",
+            "description": "西班牙与拉丁美洲大型电信运营商。"
+          },
+          {
+            "name": "Orange",
+            "url": "https://www.orange.com/",
+            "description": "法国跨国电信与数字服务运营商。"
+          },
+          {
+            "name": "AT&T",
+            "url": "https://www.att.com/",
+            "description": "美国电信与宽带网络服务龙头。"
+          },
+          {
+            "name": "Verizon Communications",
+            "url": "https://www.verizon.com/",
+            "description": "美国移动网络与通信基础设施提供商。"
+          },
+          {
+            "name": "China Telecom (中国电信)",
+            "url": "https://www.chinatelecom-h.com/",
+            "description": "中国综合智能信息服务运营商。"
+          },
+          {
+            "name": "China Unicom (中国联通)",
+            "url": "http://www.chinaunicom.com.cn/",
+            "description": "中国数字基础设施与通信服务商。"
+          },
+          {
+            "name": "SK Telecom",
+            "url": "https://www.sktelecom.com/",
+            "description": "韩国电信与5G通信服务运营商。"
+          },
+          {
+            "name": "KT Corporation",
+            "url": "https://www.kt.com/",
+            "description": "韩国电信与综合通信基础设施提供商。"
+          },
+          {
+            "name": "Prudential Financial (普洛斯/保德信)",
+            "url": "https://www.prudential.com/",
+            "description": "美国人寿保险与资产管理金融机构。"
+          },
+          {
+            "name": "MetLife (大都会人寿)",
+            "url": "https://www.metlife.com/",
+            "description": "全球人寿保险、年金与员工福利服务商。"
+          },
+          {
+            "name": "American International Group (AIG)",
+            "url": "https://www.aig.com/",
+            "description": "全球财产与保险金融服务公司。"
+          },
+          {
+            "name": "China Life (中国人寿)",
+            "url": "https://www.chinalife.com.cn/",
+            "description": "中国大型国有人寿保险与资产管理机构。"
+          },
+          {
+            "name": "Tokio Marine (东京海上)",
+            "url": "https://www.tokiomarinehd.com/",
+            "description": "日本财产与责任保险跨国集团。"
+          },
+          {
+            "name": "SOMPO Holdings",
+            "url": "https://www.sompo-hd.com/",
+            "description": "日本保险与养老健康服务集团。"
+          },
+          {
+            "name": "MS&AD Insurance",
+            "url": "https://www.ms-ad-hd.com/",
+            "description": "日本非寿险与金融保险控股集团。"
+          },
+          {
+            "name": "HSBC Holdings (汇丰集团)",
+            "url": "https://www.hsbc.com/",
+            "description": "英资全球跨国银行与金融服务机构。"
+          },
+          {
+            "name": "BNP Paribas (法国巴黎银行)",
+            "url": "https://group.bnpparibas/",
+            "description": "欧洲大型综合银行与金融机构。"
+          },
+          {
+            "name": "Crédit Agricole (法国农业信贷银行)",
+            "url": "https://www.credit-agricole.com/",
+            "description": "法国合作制零售银行与资产管理巨头。"
+          },
+          {
+            "name": "Banco Santander (桑坦德银行)",
+            "url": "https://www.santander.com/",
+            "description": "西班牙与拉丁美洲大型跨国银行。"
+          },
+          {
+            "name": "UBS Group (瑞银集团)",
+            "url": "https://www.ubs.com/",
+            "description": "瑞士全球财富管理与投资银行巨头。"
+          },
+          {
+            "name": "Morgan Stanley (摩根士丹利)",
+            "url": "https://www.morganstanley.com/",
+            "description": "全球投资银行与机构证券服务商。"
+          },
+          {
+            "name": "Goldman Sachs (高盛)",
+            "url": "https://www.goldmansachs.com/",
+            "description": "全球高管财富管理与投资银行业务机构。"
+          },
+          {
+            "name": "Charles Schwab (嘉信理财)",
+            "url": "https://www.schwab.com/",
+            "description": "美国财富管理与个人经纪交易服务巨头。"
+          },
+          {
+            "name": "BlackRock (贝莱德)",
+            "url": "https://www.blackrock.com/",
+            "description": "全球规模顶尖的资产管理与风险控制平台("
+          },
+          {
+            "name": "Vanguard (先锋领航)",
+            "url": "https://corporate.vanguard.com/",
+            "description": "全球指数基金与ETF投资管理巨头。"
+          },
+          {
+            "name": "Fidelity Investments (富达投资)",
+            "url": "https://www.fidelity.com/",
+            "description": "全球金融服务与退休金理财提供商。"
+          },
+          {
+            "name": "American Express (美国运通)",
+            "url": "https://www.americanexpress.com/",
+            "description": "全球信用卡、支付与商务出行服务商。"
+          },
+          {
+            "name": "Visa",
+            "url": "https://www.visa.com/",
+            "description": "全球数字支付网络与电子支付卡服务机构。"
+          },
+          {
+            "name": "Mastercard (万事达卡)",
+            "url": "https://www.mastercard.com/",
+            "description": "全球支付技术与清算网络提供商。"
+          },
+          {
+            "name": "PayPal",
+            "url": "https://www.paypal.com/",
+            "description": "全球在线支付与数字钱包技术服务商。"
+          },
+          {
+            "name": "Block (Square)",
+            "url": "https://block.xyz/",
+            "description": "专注于小微企业支付与数字金融的科技公司。"
+          },
+          {
+            "name": "Airbnb",
+            "url": "https://www.airbnb.com/",
+            "description": "全球共享住宿与旅游体验在线平台。"
+          },
+          {
+            "name": "Booking Holdings",
+            "url": "https://www.bookingholdings.com/",
+            "description": "全球在线旅游预订与酒店机票平台(Booking."
+          },
+          {
+            "name": "Uber Technologies",
+            "url": "https://www.uber.com/",
+            "description": "全球移动出行、网约车与外卖送餐科技巨头。"
+          },
+          {
+            "name": "AMD (超威半导体)",
+            "url": "https://www.amd.com/",
+            "description": "全球高性能与自适应计算领军企业"
+          },
+          {
+            "name": "Texas Instruments (德州仪器)",
+            "url": "https://www.ti.com/",
+            "description": "全球模拟芯片与嵌入式处理器设计制造巨头。"
+          },
+          {
+            "name": "Applied Materials (应用材料)",
+            "url": "https://www.appliedmaterials.com/",
+            "description": "全球半导体制造设备与材料工程解决方案龙头。"
+          },
+          {
+            "name": "Lam Research (泛林集团)",
+            "url": "https://www.lamresearch.com/",
+            "description": "全球刻蚀与薄膜沉积半导体设备核心供应商。"
+          },
+          {
+            "name": "KLA Corporation (科磊)",
+            "url": "https://www.kla.com/",
+            "description": "全球半导体工艺检测与良率管理设备巨头。"
+          }
+        ]
+      },
+      {
+        "name": "201-250",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Tokyo Electron (东京电子)",
+            "url": "https://www.tel.com/",
+            "description": "日本最大的半导体制造与涂布显影设备企业。"
+          },
+          {
+            "name": "Micron Technology (美光)",
+            "url": "https://www.micron.com/",
+            "description": "美国主要的存储半导体与数据存储技术企业。"
+          },
+          {
+            "name": "ARM Holdings",
+            "url": "https://www.arm.com/",
+            "description": "全球芯片架构设计龙头，其架构被广泛应用于移动设备。"
+          },
+          {
+            "name": "Analog Devices (ADI)",
+            "url": "https://www.analog.com/",
+            "description": "全球高性能模拟、混合信号与数字信号处理芯片龙头。"
+          },
+          {
+            "name": "NXP Semiconductors (恩智浦)",
+            "url": "https://www.nxp.com/",
+            "description": "荷兰汽车半导体、物联网与安全连接芯片领军企业。"
+          },
+          {
+            "name": "Infineon Technologies (英飞凌)",
+            "url": "https://www.infineon.com/",
+            "description": "德国功率半导体与汽车芯片全球龙头。"
+          },
+          {
+            "name": "STMicroelectronics (意法半导体)",
+            "url": "https://www.st.com/",
+            "description": "欧洲半导体巨头，主营微控制器、传感器与功率器件。"
+          },
+          {
+            "name": "Microchip Technology",
+            "url": "https://www.microchip.com/",
+            "description": "全球微控制器(MCU)与混合信号半导体供应商。"
+          },
+          {
+            "name": "MediaTek (联发科)",
+            "url": "https://www.mediatek.com/",
+            "description": "全球智能手机芯片与智能家居半导体龙头。"
+          },
+          {
+            "name": "Synopsys (新思科技)",
+            "url": "https://www.synopsys.com/",
+            "description": "全球电子设计自动化(EDA)软件与芯片IP巨头。"
+          },
+          {
+            "name": "Cadence Design Systems",
+            "url": "https://www.cadence.com/",
+            "description": "全球芯片设计与电子系统设计自动化(EDA)供应商。"
+          },
+          {
+            "name": "Western Digital (西部数据)",
+            "url": "https://www.westerndigital.com/",
+            "description": "全球数据存储解决方案与硬盘、闪存制造企业。"
+          },
+          {
+            "name": "Seagate Technology (希捷)",
+            "url": "https://www.seagate.com/",
+            "description": "全球机械硬盘(HDD)与数据存储技术龙头。"
+          },
+          {
+            "name": "ASML Holding NV",
+            "url": "https://www.asml.com/en",
+            "description": "荷兰先进微米/纳米级光刻系统与半导体装备供应商。"
+          },
+          {
+            "name": "Salesforce",
+            "url": "https://www.salesforce.com/",
+            "description": "全球CRM客户关系管理软件与云端企业服务龙头。"
+          },
+          {
+            "name": "ServiceNow",
+            "url": "https://www.servicenow.com/",
+            "description": "全球企业级数字工作流自动化与ITSM云服务巨头。"
+          },
+          {
+            "name": "Workday",
+            "url": "https://www.workday.com/",
+            "description": "全球企业云端财务与人力资源管理(HCM)软件供应商"
+          },
+          {
+            "name": "Intuit",
+            "url": "https://www.intuit.com/",
+            "description": "全球个人与中小企业财税软件巨头(TurboTax"
+          },
+          {
+            "name": "Adobe",
+            "url": "https://www.adobe.com/",
+            "description": "全球数字媒体制作、创意软件与数字体验解决方案巨头。"
+          },
+          {
+            "name": "SAP",
+            "url": "https://www.sap.com/",
+            "description": "德国企业级ERP系统、供应链管理与软件服务巨头。"
+          },
+          {
+            "name": "VMware",
+            "url": "https://www.vmware.com/",
+            "description": "全球云基础设施与云端虚拟化技术领军企业。"
+          },
+          {
+            "name": "Snowflake",
+            "url": "https://www.snowflake.com/",
+            "description": "全球基于云端的数据仓库与数据云分析平台。"
+          },
+          {
+            "name": "Datadog",
+            "url": "https://www.datadoghq.com/",
+            "description": "全球现代云端应用监控、日志管理与云安全服务商。"
+          },
+          {
+            "name": "Palo Alto Networks",
+            "url": "https://www.paloaltonetworks.com/",
+            "description": "全球网络安全、防火墙与云端安全解决方案龙头。"
+          },
+          {
+            "name": "CrowdStrike",
+            "url": "https://www.crowdstrike.com/",
+            "description": "全球端点安全、云安全与威胁情报技术服务商。"
+          },
+          {
+            "name": "Fortinet (飞塔)",
+            "url": "https://www.fortinet.com/",
+            "description": "全球高质效网络安全设备与安全网关供应商。"
+          },
+          {
+            "name": "Cloudflare",
+            "url": "https://www.cloudflare.com/",
+            "description": "全球网络安全、内容分发(CDN)与边缘计算服务商。"
+          },
+          {
+            "name": "Akamai Technologies",
+            "url": "https://www.akamai.com/",
+            "description": "全球早期的CDN内容分发与网络安全服务巨头。"
+          },
+          {
+            "name": "MongoDB",
+            "url": "https://www.mongodb.com/",
+            "description": "全球最流行的文档型NoSQL开源数据库与云数据库平"
+          },
+          {
+            "name": "Atlassian",
+            "url": "https://www.atlassian.com/",
+            "description": "软件协同研发与团队协作平台(Jira"
+          },
+          {
+            "name": "Zoom Video Communications",
+            "url": "https://zoom.us/",
+            "description": "全球音视频会议、云端通信与协作办公服务提供商。"
+          },
+          {
+            "name": "Slack (Salesforce)",
+            "url": "https://slack.com/",
+            "description": "全球著名的企业级即时通讯与工作流协作平台。"
+          },
+          {
+            "name": "Spotify",
+            "url": "https://www.spotify.com/",
+            "description": "全球流媒体音乐服务平台与播客内容巨头。"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.netflix.com/",
+            "description": "全球订阅制流媒体影视娱乐与原创内容巨头。"
+          },
+          {
+            "name": "Electronic Arts (EA)",
+            "url": "https://www.ea.com/",
+            "description": "美国互动娱乐游戏巨头(《FIFA》"
+          },
+          {
+            "name": "Take-Two Interactive",
+            "url": "https://www.take2games.com/",
+            "description": "知名游戏发行商(《GTA》、《NBA 2K》等)。"
+          },
+          {
+            "name": "Ubisoft (育碧)",
+            "url": "https://www.ubisoft.com/",
+            "description": "法国跨国游戏开发与发行巨头(《刺客信条》等)。"
+          },
+          {
+            "name": "Nintendo (任天堂)",
+            "url": "https://www.nintendo.com/",
+            "description": "日本主机游戏与游戏IP开发巨头(Switch"
+          },
+          {
+            "name": "Bandai Namco (万代南梦宫)",
+            "url": "https://www.bandainamco.co.jp/",
+            "description": "日本动漫IP衍生品、街机与游戏开发综合企业。"
+          },
+          {
+            "name": "Square Enix",
+            "url": "https://www.square-enix.com/",
+            "description": "日本知名游戏企业(《最终幻想》、《勇者斗恶龙》)。"
+          },
+          {
+            "name": "Capcom (卡普空)",
+            "url": "https://www.capcom.com/",
+            "description": "日本动作游戏开发巨头(《生化危机》"
+          },
+          {
+            "name": "Epic Games",
+            "url": "https://store.epicgames.com/",
+            "description": "虚幻引擎(Unreal Engine)开发者与《堡"
+          },
+          {
+            "name": "Roblox",
+            "url": "https://www.roblox.com/",
+            "description": "全球UGC互动社区、沙盒游戏与元宇宙平台。"
+          },
+          {
+            "name": "Expedia Group",
+            "url": "https://www.expediagroup.com/",
+            "description": "全球旅行预订平台，包含Expedia与"
+          },
+          {
+            "name": "TripAdvisor",
+            "url": "https://www.tripadvisor.com/",
+            "description": "全球旅游点评、饭店评估与目的地旅行规划社区。"
+          },
+          {
+            "name": "DoorDash",
+            "url": "https://www.doordash.com/",
+            "description": "北美市占率领先的在线外卖与本地即时配送平台。"
+          },
+          {
+            "name": "Meituan (美团)",
+            "url": "https://www.meituan.com/",
+            "description": "中国本地生活服务平台，涵盖外卖、到店与酒旅。"
+          },
+          {
+            "name": "JD.com (京东)",
+            "url": "https://www.jd.com/",
+            "description": "中国自营电商与供应链基础设施服务巨头。"
+          },
+          {
+            "name": "Pinduoduo / TEMU (拼多多)",
+            "url": "https://www.pinduoduo.com/",
+            "description": "社交电商与跨境电商TEMU母公司。"
+          },
+          {
+            "name": "Rakuten (乐天)",
+            "url": "https://www.rakuten.co.jp/",
+            "description": "日本综合电商、金融科技与移动通信集团。"
+          }
+        ]
+      },
+      {
+        "name": "251-300",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "MercadoLibre",
+            "url": "https://www.mercadolibre.com/",
+            "description": "拉丁美洲最大的生态级电商与金融科技平台。"
+          },
+          {
+            "name": "Coupang",
+            "url": "https://www.coupang.com/",
+            "description": "韩国自建高效物流网络的大型电商平台。"
+          },
+          {
+            "name": "Shopee (Sea Limited)",
+            "url": "https://www.shopee.com/",
+            "description": "东南亚与拉美主流的综合移动电商平台。"
+          },
+          {
+            "name": "Grab",
+            "url": "https://www.grab.com/",
+            "description": "东南亚出行、外卖配送与数字金融超级应用("
+          },
+          {
+            "name": "GoTo (Gojek / Tokopedia)",
+            "url": "https://www.goto-group.com/",
+            "description": "印尼科技集团，结合网约车、外卖与电子商务。"
+          },
+          {
+            "name": "Shopify",
+            "url": "https://www.shopify.com/",
+            "description": "全球独立站建站与DTC电子商务基础设施服务商。"
+          },
+          {
+            "name": "Stripe",
+            "url": "https://stripe.com/",
+            "description": "全球在线支付接口与互联网经济金融基础设施平台。"
+          },
+          {
+            "name": "Adyen",
+            "url": "https://www.adyen.com/",
+            "description": "荷兰全球化端到端支付与跨境结算平台。"
+          },
+          {
+            "name": "Coinbase",
+            "url": "https://www.coinbase.com/",
+            "description": "美国合规加密货币交易平台与数字资产基础设施。"
+          },
+          {
+            "name": "Robinhood",
+            "url": "https://robinhood.com/",
+            "description": "美国免佣金证券交易与零碎股投资移动平台。"
+          },
+          {
+            "name": "S&P Global (标普全球)",
+            "url": "https://www.spglobal.com/",
+            "description": "全球金融市场评级、指数、基准与数据分析供应商。"
+          },
+          {
+            "name": "Moody's (摩根信用/信用评级)",
+            "url": "https://www.moodys.com/",
+            "description": "全球信用评级、风险评估与研究服务机构。"
+          },
+          {
+            "name": "Fitch Ratings (惠誉评级)",
+            "url": "https://www.fitchratings.com/",
+            "description": "国际三大信用评级机构之一。"
+          },
+          {
+            "name": "MSCI (明晟)",
+            "url": "https://www.msci.com/",
+            "description": "全球投资决策支持工具、ESG评级与MSCI指数提供"
+          },
+          {
+            "name": "FactSet",
+            "url": "https://www.factset.com/",
+            "description": "全球金融投资机构数据分析与分析师终端服务商。"
+          },
+          {
+            "name": "Bloomberg",
+            "url": "https://www.bloomberg.com/",
+            "description": "全球商业、金融信息、彭博终端与新闻资讯机构。"
+          },
+          {
+            "name": "Thomson Reuters (汤森路透)",
+            "url": "https://www.thomsonreuters.com/",
+            "description": "全球法律、财税与商业专业信息与新闻供应商。"
+          },
+          {
+            "name": "RELX (励讯集团)",
+            "url": "https://www.relx.com/",
+            "description": "全球学术出版(Elsevier)与专业风险分析集团"
+          },
+          {
+            "name": "Wolters Kluwer (威科集团)",
+            "url": "https://www.wolterskluwer.com/",
+            "description": "荷兰财税、法律与医疗健康信息服务巨头。"
+          },
+          {
+            "name": "Pearson (培生)",
+            "url": "https://www.pearson.com/",
+            "description": "英国跨国教育出版与测评数字化服务集团。"
+          },
+          {
+            "name": "McGraw Hill",
+            "url": "https://www.mheducation.com/",
+            "description": "北美知名教育出版与数字化学习解决方案供应商。"
+          },
+          {
+            "name": "Wiley",
+            "url": "https://www.wiley.com/",
+            "description": "全球学术研究、期刊出版与知识服务巨头。"
+          },
+          {
+            "name": "Springer Nature",
+            "url": "https://www.springernature.com/",
+            "description": "全球科研与学术出版集团(出版《Nature》等)。"
+          },
+          {
+            "name": "Informa",
+            "url": "https://www.informa.com/",
+            "description": "英国国际展会、B2B情报与学术出版服务集团。"
+          },
+          {
+            "name": "Compass",
+            "url": "https://www.compass.com/",
+            "description": "美国科技驱动型高档房地产经纪服务平台。"
+          },
+          {
+            "name": "CoStar Group",
+            "url": "https://www.costargroup.com/",
+            "description": "全球商业地产数据、分析与在线市场(LoopNet)"
+          },
+          {
+            "name": "Zillow",
+            "url": "https://www.zillow.com/",
+            "description": "美国房产买卖、租赁与估价(Zestimate)平台"
+          },
+          {
+            "name": "Prologis (安博)",
+            "url": "https://www.prologis.com/",
+            "description": "全球物流基础设施与现代仓储地产REITs巨头。"
+          },
+          {
+            "name": "Simon Property Group",
+            "url": "https://www.simon.com/",
+            "description": "美国商业地产与购物中心开发与运营REITs巨头。"
+          },
+          {
+            "name": "Crown Castle",
+            "url": "https://www.crowncastle.com/",
+            "description": "北美通信塔、小型基站与光纤基础设施REITs。"
+          },
+          {
+            "name": "American Tower",
+            "url": "https://www.americantower.com/",
+            "description": "全球无线通信基础设施与通信塔运营REITs。"
+          },
+          {
+            "name": "Equinix",
+            "url": "https://www.equinix.com/",
+            "description": "全球数据中心、云互联与网络中立机房基础设施巨头。"
+          },
+          {
+            "name": "Digital Realty",
+            "url": "https://www.digitalrealty.com/",
+            "description": "全球数据中心、主机托管与云解决方案REITs。"
+          },
+          {
+            "name": "Realty Income",
+            "url": "https://www.realtyincome.com/",
+            "description": "著名单租户商业地产与按月分红REITs。"
+          },
+          {
+            "name": "Vici Properties",
+            "url": "https://viciproperties.com/",
+            "description": "北美博彩、娱乐与体验型地产REITs巨头。"
+          },
+          {
+            "name": "Welltower",
+            "url": "https://welltower.com/",
+            "description": "北美医疗保健、养老地产与基础设施REITs。"
+          },
+          {
+            "name": "AvalonBay Communities",
+            "url": "https://www.avalonbay.com/",
+            "description": "北美高品质公寓住宅地产开发与管理REITs。"
+          },
+          {
+            "name": "Eli Lilly (礼来)",
+            "url": "https://www.lilly.com/",
+            "description": "全球糖尿病、GLP-1减肥药与肿瘤创新药巨头。"
+          },
+          {
+            "name": "Novo Nordisk (诺和诺德)",
+            "url": "https://www.novonordisk.com/",
+            "description": "丹麦胰岛素与减肥药(司美格鲁肽)领军企业。"
+          },
+          {
+            "name": "Merck & Co. (默沙东)",
+            "url": "https://www.merck.com/",
+            "description": "全球创新药与疫苗巨头(Keytruda肿瘤免疫疗法"
+          },
+          {
+            "name": "AbbVie (艾伯维)",
+            "url": "https://www.abbvie.com/",
+            "description": "美国生物制药巨头，主营免疫学"
+          },
+          {
+            "name": "BMS (百时美施贵宝)",
+            "url": "https://www.bms.com/",
+            "description": "全球肿瘤学、心血管与免疫学药物研发巨头。"
+          },
+          {
+            "name": "Gilead Sciences (吉利德)",
+            "url": "https://www.gilead.com/",
+            "description": "专注于抗病毒(HIV、乙肝/丙肝)与肿瘤"
+          },
+          {
+            "name": "Amgen (安进)",
+            "url": "https://www.amgen.com/",
+            "description": "全球生物科技先驱，专注于严重疾病的生物疗法。"
+          },
+          {
+            "name": "Regeneron (再生元)",
+            "url": "https://www.regeneron.com/",
+            "description": "美国创新抗体药物与眼科、免疫用药研发企业。"
+          },
+          {
+            "name": "Vertex Pharmaceuticals",
+            "url": "https://www.vrtx.com/",
+            "description": "囊性纤维化与小分子基因疗法研发领军企业。"
+          },
+          {
+            "name": "Moderna",
+            "url": "https://www.modernatx.com/",
+            "description": "专注于mRNA疫苗与mRNA精准治疗药物研发。"
+          },
+          {
+            "name": "BioNTech",
+            "url": "https://biontech.de/",
+            "description": "德国mRNA技术与个性化癌症免疫疗法先驱。"
+          },
+          {
+            "name": "Stryker (史赛克)",
+            "url": "https://www.stryker.com/",
+            "description": "全球骨科植入物、手术机器人与医疗设备巨头。"
+          },
+          {
+            "name": "Intuitive Surgical",
+            "url": "https://www.intuitive.com/",
+            "description": "达芬奇(da Vinci)手术机器人研发制造绝对巨"
+          }
+        ]
+      },
+      {
+        "name": "301-350",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Medtronic (美敦力)",
+            "url": "https://www.medtronic.com/",
+            "description": "全球医疗器械巨头，主营心脏起搏器、脊柱与微创外科。"
+          },
+          {
+            "name": "Boston Scientific (波士顿科学)",
+            "url": "https://www.bostonscientific.com/",
+            "description": "心血管介入、神经调控与微创医疗器械巨头。"
+          },
+          {
+            "name": "Edwards Lifesciences",
+            "url": "https://www.edwards.com/",
+            "description": "经导管心脏瓣膜(TAVR)与血流动力学监测领军企业"
+          },
+          {
+            "name": "Zimmer Biomet",
+            "url": "https://www.zimmerbiomet.com/",
+            "description": "全球关节置换与骨科重建医疗器械巨头。"
+          },
+          {
+            "name": "Becton, Dickinson (BD)",
+            "url": "https://www.bd.com/",
+            "description": "全球医疗用品、给药系统与实验室设备供应商。"
+          },
+          {
+            "name": "Thermo Fisher Scientific (赛默飞)",
+            "url": "https://www.thermofisher.com/",
+            "description": "全球科学服务与生命科学分析仪器巨头。"
+          },
+          {
+            "name": "Danaher (丹纳赫)",
+            "url": "https://www.danaher.com/",
+            "description": "生命科学、医学诊断与水质测试工具平台巨头。"
+          },
+          {
+            "name": "Agilent Technologies (安捷伦)",
+            "url": "https://www.agilent.com/",
+            "description": "全球分析化学仪器、测试与生命科学诊断公司。"
+          },
+          {
+            "name": "Waters Corporation",
+            "url": "https://www.waters.com/",
+            "description": "液相色谱(LC)与质谱(MS)分析仪器龙头。"
+          },
+          {
+            "name": "Illumina (因美纳)",
+            "url": "https://www.illumina.com/",
+            "description": "全球基因测序仪与NGS测序技术绝对龙头。"
+          },
+          {
+            "name": "Charles River Laboratories",
+            "url": "https://www.criver.com/",
+            "description": "全球药物临床前研发与CRO合同研究服务机构。"
+          },
+          {
+            "name": "Lonza (龙沙)",
+            "url": "https://www.lonza.com/",
+            "description": "瑞士生物药CDMO合同定制研发与生产服务巨头。"
+          },
+          {
+            "name": "WuXi AppTec (药明康德)",
+            "url": "https://www.wuxiapptec.com/",
+            "description": "全球小分子与生物医药研发服务(CRO/CDMO)巨"
+          },
+          {
+            "name": "IQVIA (艾昆纬)",
+            "url": "https://www.iqvia.com/",
+            "description": "全球临床试验CRO与医疗健康数据分析服务商。"
+          },
+          {
+            "name": "Catalent",
+            "url": "https://www.catalent.com/",
+            "description": "全球先进给药技术、药物制剂与基因疗法CDMO。"
+          },
+          {
+            "name": "HCA Healthcare",
+            "url": "https://hcahealthcare.com/",
+            "description": "美国大型私立医院与医疗护理设施运营集团。"
+          },
+          {
+            "name": "NextEra Energy",
+            "url": "https://www.nexteraenergy.com/",
+            "description": "全球规模顶尖的可再生能源(风能、太阳能)发电企业。"
+          },
+          {
+            "name": "Duke Energy",
+            "url": "https://www.duke-energy.com/",
+            "description": "美国大型电力与天然气基础设施服务公司。"
+          },
+          {
+            "name": "Southern Company",
+            "url": "https://www.southerncompany.com/",
+            "description": "美国能源巨头，为数百万客户提供电力与天然气。"
+          },
+          {
+            "name": "Dominion Energy",
+            "url": "https://www.dominionenergy.com/",
+            "description": "美国区域性电力与清洁能源基础设施运营商。"
+          },
+          {
+            "name": "Constellation Energy",
+            "url": "https://www.constellationenergy.com/",
+            "description": "美国无碳能源与核能发电无碳电力供应商。"
+          },
+          {
+            "name": "Iberdrola",
+            "url": "https://www.iberdrola.com/",
+            "description": "西班牙跨国清洁能源与电网设施龙头。"
+          },
+          {
+            "name": "Enel",
+            "url": "https://www.enel.com/",
+            "description": "意大利跨国电力与可再生能源运营巨头。"
+          },
+          {
+            "name": "ENGIE",
+            "url": "https://www.engie.com/",
+            "description": "法国低碳能源、天然气与低碳服务巨头。"
+          },
+          {
+            "name": "National Grid",
+            "url": "https://www.nationalgrid.com/",
+            "description": "英国与美东输电、天然气网络基础运载商。"
+          },
+          {
+            "name": "Orsted (奥斯特)",
+            "url": "https://orsted.com/",
+            "description": "丹麦全球海上风电开发与绿色能源转型领军企业。"
+          },
+          {
+            "name": "Vestas",
+            "url": "https://www.vestas.com/",
+            "description": "丹麦全球风力发电机组设计、制造与服务巨头。"
+          },
+          {
+            "name": "Enphase Energy",
+            "url": "https://enphase.com/",
+            "description": "全球微型逆变器与家用储能系统领军企业。"
+          },
+          {
+            "name": "SolarEdge Technologies",
+            "url": "https://www.solaredge.com/",
+            "description": "全球光伏优化器与逆变器技术解决方案商。"
+          },
+          {
+            "name": "First Solar",
+            "url": "https://www.firstsolar.com/",
+            "description": "美国薄膜光伏组件制造与大型地面电站服务商。"
+          },
+          {
+            "name": "Canadian Solar (阿特斯)",
+            "url": "https://www.canadiansolar.com/",
+            "description": "全球光伏组件与光伏储能系统供应商。"
+          },
+          {
+            "name": "LONGi Green Energy (隆基绿能)",
+            "url": "https://www.longi.com/",
+            "description": "全球单晶硅片与高效光伏组件制造巨头。"
+          },
+          {
+            "name": "JinkoSolar (晶科能源)",
+            "url": "https://www.jinkosolar.com/",
+            "description": "全球出货量领先的光伏组件研发制造商。"
+          },
+          {
+            "name": "Trina Solar (天合光能)",
+            "url": "https://www.trinasolar.com/",
+            "description": "全球光伏智慧能源与储能整体解决方案商。"
+          },
+          {
+            "name": "Contemporary Amperex Technology (CATL/宁德时代)",
+            "url": "https://www.catl.com/",
+            "description": "全球动力电池与储能电池制造巨头。"
+          },
+          {
+            "name": "LG Energy Solution",
+            "url": "https://www.lgensol.com/",
+            "description": "韩国动力电池巨头，为全球主流车企提供电池。"
+          },
+          {
+            "name": "Panasonic Energy",
+            "url": "https://www.panasonic.com/global/energy",
+            "description": "松下旗下动力电池与锂电池制造业务。"
+          },
+          {
+            "name": "BYD (比亚迪)",
+            "url": "https://www.bydglobal.com/",
+            "description": "全球新能源汽车与刀片电池制造巨头。"
+          },
+          {
+            "name": "Tesla",
+            "url": "https://www.tesla.com/",
+            "description": "全球电动汽车、太阳能与家用/商用储能系统领头羊。"
+          },
+          {
+            "name": "Rivian",
+            "url": "https://rivian.com/",
+            "description": "美国纯电动皮卡与SUV研发制造企业。"
+          },
+          {
+            "name": "Lucid Motors",
+            "url": "https://lucidmotors.com/",
+            "description": "美国豪华纯电动轿车研发制造企业。"
+          },
+          {
+            "name": "Li Auto (理想汽车)",
+            "url": "https://www.lixiang.com/",
+            "description": "中国增程式与纯电动豪华智能SUV制造企业。"
+          },
+          {
+            "name": "NIO (蔚来)",
+            "url": "https://www.nio.com/",
+            "description": "中国高端智能电动汽车与换电网络运营商。"
+          },
+          {
+            "name": "XPeng (小鹏汽车)",
+            "url": "https://www.xpeng.com/",
+            "description": "中国智能电动汽车与自动驾驶技术研发企业。"
+          },
+          {
+            "name": "Xiaomi (小米)",
+            "url": "https://www.mi.com/",
+            "description": "中国消费电子、智能家居与智能电动汽车集团。"
+          },
+          {
+            "name": "Geely Holdings (吉利控股)",
+            "url": "https://www.zgh.com/",
+            "description": "中国大型汽车集团，拥有沃尔沃、极氪、领克等品牌。"
+          },
+          {
+            "name": "Great Wall Motor (长城汽车)",
+            "url": "https://www.gwm.cn/",
+            "description": "中国SUV与皮卡研发制造企业(哈弗、坦克)。"
+          },
+          {
+            "name": "Chery Automobile (奇瑞)",
+            "url": "https://www.chery.cn/",
+            "description": "中国自主品牌汽车制造与出口巨头。"
+          },
+          {
+            "name": "Tata Motors",
+            "url": "https://www.tatamotors.com/",
+            "description": "印度商用车与乘用车制造商，捷豹路虎母公司。"
+          },
+          {
+            "name": "Suzuki Motor (铃木)",
+            "url": "https://www.globalsuzuki.com/",
+            "description": "日本小型汽车与小型SUV制造企业。"
+          }
+        ]
+      },
+      {
+        "name": "351-400",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Subaru",
+            "url": "https://www.subaru-global.com/",
+            "description": "日本汽车制造企业，以水平对置发动机与全时四驱著称。"
+          },
+          {
+            "name": "Mazda",
+            "url": "https://www.mazda.com/",
+            "description": "日本汽车制造企业，以创驰蓝天技术与魂动设计闻名。"
+          },
+          {
+            "name": "Isuzu Motors (五十铃)",
+            "url": "https://www.isuzu.co.jp/",
+            "description": "日本轻型/重型卡车与柴油发动机制造巨头。"
+          },
+          {
+            "name": "Volvo Trucks",
+            "url": "https://www.volvotrucks.com/",
+            "description": "瑞典重型卡车与运输解决方案供应商。"
+          },
+          {
+            "name": "Daimler Truck",
+            "url": "https://www.daimlertruck.com/",
+            "description": "全球规模顶尖的商用车与重卡制造集团。"
+          },
+          {
+            "name": "PACCAR (佩卡)",
+            "url": "https://www.paccar.com/",
+            "description": "北美重型卡车制造巨头(肯沃斯Kenworth"
+          },
+          {
+            "name": "Cummins (康明斯)",
+            "url": "https://www.cummins.com/",
+            "description": "全球柴油/天然气发动机与动力系统制造巨头。"
+          },
+          {
+            "name": "Komatsu (小松)",
+            "url": "https://www.komatsu.jp/",
+            "description": "日本工程机械、矿山机械与工业设备制造巨头。"
+          },
+          {
+            "name": "Hitachi Construction Machinery (日立建机)",
+            "url": "https://www.hitachicm.com/",
+            "description": "日本大型液压挖掘机与工程机械企业。"
+          },
+          {
+            "name": "Kubota (久保田)",
+            "url": "https://www.kubota.com/",
+            "description": "日本农业机械、引擎与小型工程机械领军企业。"
+          },
+          {
+            "name": "SANY Group (三一重工)",
+            "url": "https://www.sanygroup.com/",
+            "description": "中国装备制造企业，主营混凝土机械与挖掘机。"
+          },
+          {
+            "name": "XCMG (徐工集团)",
+            "url": "http://www.xcmg.com/",
+            "description": "中国工程机械巨头，主营起重机械与土方机械。"
+          },
+          {
+            "name": "Zoomlion (中联重科)",
+            "url": "https://www.zoomlion.com/",
+            "description": "中国高端装备制造企业，主营工程机械与农业机械。"
+          },
+          {
+            "name": "Fanuc (发那科)",
+            "url": "https://www.fanuc.co.jp/",
+            "description": "日本工业机器人与数控(CNC)系统绝对龙头。"
+          },
+          {
+            "name": "Yaskawa Electric (安川电机)",
+            "url": "https://www.yaskawa.co.jp/",
+            "description": "日本伺服电机、变频器与工业机器人巨头。"
+          },
+          {
+            "name": "KUKA (库卡)",
+            "url": "https://www.kuka.com/",
+            "description": "德国工业自动化与工业机器人制造巨头。"
+          },
+          {
+            "name": "Keyence (基恩士)",
+            "url": "https://www.keyence.com/",
+            "description": "日本工业自动化传感器、测量系统与显微镜巨头。"
+          },
+          {
+            "name": "Omron (欧姆龙)",
+            "url": "https://www.omron.com/",
+            "description": "日本自动化控制、电子元器件与健康医疗设备企业。"
+          },
+          {
+            "name": "SMC Corporation",
+            "url": "https://www.smcworld.com/",
+            "description": "日本气动控制元件与工业自动化组件供应商。"
+          },
+          {
+            "name": "Parker Hannifin (派克汉尼汾)",
+            "url": "https://www.parker.com/",
+            "description": "全球运动与控制技术、液压气动组件龙头。"
+          },
+          {
+            "name": "Eaton (伊顿)",
+            "url": "https://www.eaton.com/",
+            "description": "全球电气产品、电气系统与动力管理公司。"
+          },
+          {
+            "name": "Emerson Electric (艾默生)",
+            "url": "https://www.emerson.com/",
+            "description": "全球过程自动化、工业软件与测试测量巨头。"
+          },
+          {
+            "name": "Rockwell Automation (罗克韦尔)",
+            "url": "https://www.rockwellautomation.com/",
+            "description": "美国工业自动化与数字化转型解决方案商。"
+          },
+          {
+            "name": "Johnson Controls (江森自控)",
+            "url": "https://www.johnsoncontrols.com/",
+            "description": "全球智慧建筑、HVAC暖通与安防控制巨头。"
+          },
+          {
+            "name": "Carrier Global (开利)",
+            "url": "https://www.carrier.com/",
+            "description": "全球暖通空调(HVAC)"
+          },
+          {
+            "name": "Trane Technologies (特灵)",
+            "url": "https://www.tranetechnologies.com/",
+            "description": "温控系统与绿色建筑温控解决方案巨头。"
+          },
+          {
+            "name": "Daikin Industries (大金)",
+            "url": "https://www.daikin.com/",
+            "description": "日本全球跨国空调、制冷剂与空气滤清巨头。"
+          },
+          {
+            "name": "Lennox International",
+            "url": "https://www.lennoxinternational.com/",
+            "description": "北美住宅与商业暖通空调及制冷设备供应商。"
+          },
+          {
+            "name": "Otis Worldwide (奥的斯)",
+            "url": "https://www.otis.com/",
+            "description": "全球电梯、自动扶梯与人行道制造维修巨头。"
+          },
+          {
+            "name": "Schindler Group (迅达)",
+            "url": "https://www.schindler.com/",
+            "description": "瑞士全球电梯、自动扶梯与相关服务供应商。"
+          },
+          {
+            "name": "Kone (通力)",
+            "url": "https://www.kone.com/",
+            "description": "芬兰电梯与自动扶梯创新企业，主领无机房技术。"
+          },
+          {
+            "name": "3M",
+            "url": "https://www.3m.com/",
+            "description": "美国多元化科技制造巨头，涵盖工业、消费品与医疗。"
+          },
+          {
+            "name": "DuPont (杜邦)",
+            "url": "https://www.dupont.com/",
+            "description": "美国特种材料、电子材料与防护方案创新巨头。"
+          },
+          {
+            "name": "Dow (陶氏)",
+            "url": "https://www.dow.com/",
+            "description": "全球包装材料、基础设施与消费护理化学品巨头。"
+          },
+          {
+            "name": "LyondellBasell (利安德巴塞尔)",
+            "url": "https://www.lyondellbasell.com/",
+            "description": "全球塑料、化工与聚烯烃技术许可巨头。"
+          },
+          {
+            "name": "Air Liquide (液空集团)",
+            "url": "https://www.airliquide.com/",
+            "description": "法国工业与医疗气体供应全球龙头。"
+          },
+          {
+            "name": "Linde (林德)",
+            "url": "https://www.linde.com/",
+            "description": "全球规模顶尖的工业气体与工程技术跨国公司。"
+          },
+          {
+            "name": "Air Products",
+            "url": "https://www.airproducts.com/",
+            "description": "美国工业气体、氢能与大型气化设备供应商。"
+          },
+          {
+            "name": "Shin-Etsu Chemical (信越化学)",
+            "url": "https://www.shinetsu.co.jp/",
+            "description": "日本半导体硅片与有机硅材料绝对龙头。"
+          },
+          {
+            "name": "Toray Industries (东丽)",
+            "url": "https://www.toray.com/",
+            "description": "日本高分子化学、碳纤维与合成纤维材料巨头。"
+          },
+          {
+            "name": "Asahi Kasei (旭化成)",
+            "url": "https://www.asahi-kasei.com/",
+            "description": "日本化学、湿法隔离膜与医疗住房综合材料企业。"
+          },
+          {
+            "name": "Sumitomo Chemical (住友化学)",
+            "url": "https://www.sumitomo-chem.co.jp/",
+            "description": "日本综合化学巨头，涵盖农药、石化与电子材料。"
+          },
+          {
+            "name": "Mitsubishi Chemical (三菱化学)",
+            "url": "https://www.mitchm.jp/",
+            "description": "日本大型综合化学企业，主营功能材料与特种气体。"
+          },
+          {
+            "name": "Evonik Industries (赢创)",
+            "url": "https://corporate.evonik.com/",
+            "description": "德国特种化工巨头，专注于高品质特种化学品。"
+          },
+          {
+            "name": "Covestro (科思创)",
+            "url": "https://www.covestro.com/",
+            "description": "德国聚氨酯与聚碳酸酯高分子材料领军企业。"
+          },
+          {
+            "name": "Solvay (索尔维)",
+            "url": "https://www.solvay.com/",
+            "description": "比利时特种化学品与高级材料制造商。"
+          },
+          {
+            "name": "Arkema (阿科玛)",
+            "url": "https://www.arkema.com/",
+            "description": "法国特种化学品与高功能材料设计者。"
+          },
+          {
+            "name": "AkzoNobel (阿克苏诺贝尔)",
+            "url": "https://www.akzonobel.com/",
+            "description": "荷兰油漆与涂料制造巨头(多乐士母公司)。"
+          },
+          {
+            "name": "PPG Industries",
+            "url": "https://www.ppg.com/",
+            "description": "美国涂料、特种材料与玻璃制造巨头。"
+          },
+          {
+            "name": "Sherwin-Williams (宣伟)",
+            "url": "https://www.sherwin-williams.com/",
+            "description": "美国建筑涂料与工业漆制造销售巨头。"
+          }
+        ]
+      },
+      {
+        "name": "401-450",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Ecolab (艺康)",
+            "url": "https://www.ecolab.com/",
+            "description": "全球水处理、卫生清洗与感染预防技术服务商。"
+          },
+          {
+            "name": "Nutrien",
+            "url": "https://www.nutrien.com/",
+            "description": "加拿大全球农业作物营养素(钾肥、氮肥)制造巨头。"
+          },
+          {
+            "name": "Mosaic Company",
+            "url": "https://www.mosaicco.com/",
+            "description": "美国浓缩磷酸盐与钾肥作物营养素生产商。"
+          },
+          {
+            "name": "CF Industries",
+            "url": "https://www.cfindustries.com/",
+            "description": "北美大型氮肥与氢/氨清洁能源制造企业。"
+          },
+          {
+            "name": "Yara International",
+            "url": "https://www.yara.com/",
+            "description": "挪威农用氮肥与作物营养解决方案跨国公司。"
+          },
+          {
+            "name": "Corteva Agriscience",
+            "url": "https://www.corteva.com/",
+            "description": "美国纯农业科技巨头，专注于种子与作物保护。"
+          },
+          {
+            "name": "Syngenta (先正达)",
+            "url": "https://www.syngenta.com/",
+            "description": "全球植保产品与高品质种子研发制造巨头。"
+          },
+          {
+            "name": "Archer-Daniels-Midland (ADM)",
+            "url": "https://www.adm.com/",
+            "description": "全球四大粮商(ABCD)之一"
+          },
+          {
+            "name": "Bunge (邦吉)",
+            "url": "https://www.bunge.com/",
+            "description": "全球四大粮商之一，专注于油籽加工与大宗农产品。"
+          },
+          {
+            "name": "Cargill (嘉吉)",
+            "url": "https://www.cargill.com/",
+            "description": "美国非上市农业与食品大宗商品贸易巨头(ABCD之一"
+          },
+          {
+            "name": "Louis Dreyfus Company (路易达孚)",
+            "url": "https://www.ldc.com/",
+            "description": "法国农产品贸易与加工巨头(ABCD之一)。"
+          },
+          {
+            "name": "Wilmar International (丰益国际)",
+            "url": "https://www.wilmar-international.com/",
+            "description": "综合型农业集团，益海嘉里(金龙鱼)母公司。"
+          },
+          {
+            "name": "Tyson Foods (泰森食品)",
+            "url": "https://www.tysonfoods.com/",
+            "description": "美国肉类加工与蛋白质食品供应巨头。"
+          },
+          {
+            "name": "JBS S.A.",
+            "url": "https://www.jbs.com.br/",
+            "description": "巴西跨国肉类加工巨头，全球最大的牛肉与猪肉加工商。"
+          },
+          {
+            "name": "WH Group (万洲国际/双汇)",
+            "url": "https://www.wh-group.com/",
+            "description": "全球规模顶尖的猪肉食品精深加工与肉制品集团。"
+          },
+          {
+            "name": "Marfrig Global Foods",
+            "url": "https://www.marfrig.com.br/",
+            "description": "巴西牛肉加工与汉堡肉饼制造跨国企业。"
+          },
+          {
+            "name": "NH Foods (日本火腿)",
+            "url": "https://www.nhfoods.co.jp/",
+            "description": "日本肉类加工、水产与方便食品制造企业。"
+          },
+          {
+            "name": "Charoen Pokphand Group (正大集团/卜蜂)",
+            "url": "https://www.cpthailand.com/",
+            "description": "泰国家族式农牧食品、零售与电信综合集团。"
+          },
+          {
+            "name": "Associated British Foods (ABF)",
+            "url": "https://www.abf.co.uk/",
+            "description": "英国食品加工与零售集团(旗下含Primark)。"
+          },
+          {
+            "name": "Kerry Group",
+            "url": "https://www.kerry.com/",
+            "description": "爱尔兰风味与营养配料研发制造巨头。"
+          },
+          {
+            "name": "Givaudan (奇华顿)",
+            "url": "https://www.givaudan.com/",
+            "description": "瑞士日用香精与食用香料研发制造绝对龙头。"
+          },
+          {
+            "name": "Firmenich (芬美意)",
+            "url": "https://www.dsm-firmenich.com/",
+            "description": "瑞士香精香料与营养配料巨头(现与DSM合并)。"
+          },
+          {
+            "name": "Symrise (德之馨)",
+            "url": "https://www.symrise.com/",
+            "description": "德国香精、香料、化妆品原料与营养配料供应商。"
+          },
+          {
+            "name": "IFF (国际香精香料)",
+            "url": "https://www.iff.com/",
+            "description": "美国香料、食品配料与生物科学解决方案商。"
+          },
+          {
+            "name": "Tate & Lyle (泰莱)",
+            "url": "https://www.tateandlyle.com/",
+            "description": "英国食品配料、甜味剂与膳食纤维技术提供商。"
+          },
+          {
+            "name": "Barry Callebaut (百乐嘉利宝)",
+            "url": "https://www.barry-callebaut.com/",
+            "description": "全球巧克力与可可制品B2B制造龙头。"
+          },
+          {
+            "name": "Lindt & Sprüngli (瑞士莲)",
+            "url": "https://www.lindt-spruengli.com/",
+            "description": "瑞士高端巧克力研发与零售企业。"
+          },
+          {
+            "name": "Ferrero (费列罗)",
+            "url": "https://www.ferrero.com/",
+            "description": "意大利家族式甜品与巧克力制造巨头。"
+          },
+          {
+            "name": "Hershey's (好时)",
+            "url": "https://www.thehersheycompany.com/",
+            "description": "北美知名巧克力与糖果休闲食品制造企业。"
+          },
+          {
+            "name": "Haribo",
+            "url": "https://www.haribo.com/",
+            "description": "德国知名凝胶糖果与软糖制造品牌。"
+          },
+          {
+            "name": "Perfetti Van Melle (不二家/不凡帝范梅勒)",
+            "url": "https://www.perfettivanmelle.com/",
+            "description": "意大利糖果巨头(阿尔卑斯、曼妥思)。"
+          },
+          {
+            "name": "Keurig Dr Pepper",
+            "url": "https://www.keurigdrpepper.com/",
+            "description": "北美知名饮料与胶囊咖啡机制造企业。"
+          },
+          {
+            "name": "Monster Beverage",
+            "url": "https://www.monsterenergy.com/",
+            "description": "北美能量饮料品牌(魔爪)制造销售商。"
+          },
+          {
+            "name": "Red Bull (红牛)",
+            "url": "https://www.redbull.com/",
+            "description": "奥地利功能性能量饮料品牌与体育营销巨头。"
+          },
+          {
+            "name": "Suntory (三得利)",
+            "url": "https://www.suntory.com/",
+            "description": "日本综合饮料、威士忌与软饮制造集团。"
+          },
+          {
+            "name": "Asahi Group (朝日)",
+            "url": "https://www.asahigroup-holdings.com/",
+            "description": "日本啤酒、软饮料与食品制造集团。"
+          },
+          {
+            "name": "Kirin Holdings (麒麟)",
+            "url": "https://www.kirinholdings.com/",
+            "description": "日本酒精饮料、饮料与健康科学综合集团。"
+          },
+          {
+            "name": "Sapporo Holdings",
+            "url": "https://www.sapporoholdings.jp/",
+            "description": "日本历史悠久的啤酒酿造与地产综合企业。"
+          },
+          {
+            "name": "Pernod Ricard (保乐力加)",
+            "url": "https://www.pernod-ricard.com/",
+            "description": "法国洋酒巨头(芝华士、马爹利)。"
+          },
+          {
+            "name": "Bacardi (百加得)",
+            "url": "https://www.bacardilimited.com/",
+            "description": "全球家族式烈酒公司，主营朗姆酒与金酒。"
+          },
+          {
+            "name": "Campari Group (金巴利)",
+            "url": "https://www.camparigroup.com/",
+            "description": "意大利烈酒集团，主营开胃酒与烈酒。"
+          },
+          {
+            "name": "Brown-Forman (百富门)",
+            "url": "https://www.brown-forman.com/",
+            "description": "美国烈酒巨头，旗下拥有杰克丹尼威士忌。"
+          },
+          {
+            "name": "Molson Coors",
+            "url": "https://www.molsoncoors.com/",
+            "description": "美加跨国啤酒酿造与饮料制造集团。"
+          },
+          {
+            "name": "Constellation Brands",
+            "url": "https://www.cbrands.com/",
+            "description": "美国啤酒、葡萄酒与烈酒进口营销巨头(科罗娜)。"
+          },
+          {
+            "name": "Imperial Brands",
+            "url": "https://www.imperialbrandsplc.com/",
+            "description": "英国国际烟草与烟草替代品制造集团。"
+          },
+          {
+            "name": "British American Tobacco (BAT/英美烟草)",
+            "url": "https://www.bat.com/",
+            "description": "跨国烟草与新型新型烟草产品制造巨头。"
+          },
+          {
+            "name": "Philip Morris International (PMI/菲利普莫里斯)",
+            "url": "https://www.pmi.com/",
+            "description": "全球无烟无灰替代品与烟草巨头(IQOS)。"
+          },
+          {
+            "name": "Japan Tobacco (JT/日本烟草)",
+            "url": "https://www.jt.com/",
+            "description": "日本烟草与制药、食品综合跨国集团。"
+          },
+          {
+            "name": "Altria Group (奥驰亚)",
+            "url": "https://www.altria.com/",
+            "description": "美国大型烟草与卷烟制造企业(万宝路北美)。"
+          },
+          {
+            "name": "Swatch Group (斯沃琪)",
+            "url": "https://www.swatchgroup.com/",
+            "description": "瑞士钟表制造集团(欧米茄、浪琴、宝玑)。"
+          }
+        ]
+      },
+      {
+        "name": "451-484",
+        "enName": "Featured",
+        "hideTitle": true,
+        "links": [
+          {
+            "name": "Pandora",
+            "url": "https://corporate.pandora.net/",
+            "description": "丹麦快时尚定制珠宝设计制造与零售商。"
+          },
+          {
+            "name": "Chow Tai Fook (周大福)",
+            "url": "https://www.ctf.com.hk/",
+            "description": "中国知名珠宝首饰研发、制造与零售集团。"
+          },
+          {
+            "name": "Signet Jewelers",
+            "url": "https://www.signetjewelers.com/",
+            "description": "全球钻石珠宝零售巨头(Kay、Zales)。"
+          },
+          {
+            "name": "Samsonite (新秀丽)",
+            "url": "https://www.samsonite.com/",
+            "description": "全球箱包、旅行袋与出行配件设计制造巨头。"
+          },
+          {
+            "name": "VF Corporation",
+            "url": "https://www.vfc.com/",
+            "description": "美国户外与休闲服饰集团(The North"
+          },
+          {
+            "name": "Hanesbrands",
+            "url": "https://www.hanes.com/",
+            "description": "美国基础内衣与运动服饰制造零售商。"
+          },
+          {
+            "name": "PVH Corp.",
+            "url": "https://www.pvh.com/",
+            "description": "美国服装巨头，旗下拥有Tommy"
+          },
+          {
+            "name": "Capri Holdings",
+            "url": "https://www.capriholdings.com/",
+            "description": "时尚奢侈品集团(Versace"
+          },
+          {
+            "name": "Tapestry",
+            "url": "https://www.tapestry.com/",
+            "description": "纽约现代奢华配饰与生活方式集团(Coach"
+          },
+          {
+            "name": "Ralph Lauren",
+            "url": "https://corporate.ralphlauren.com/",
+            "description": "美国高端休闲美式风尚服装与生活方式品牌。"
+          },
+          {
+            "name": "Levi Strauss & Co. (李维斯)",
+            "url": "https://www.levistrauss.com/",
+            "description": "经典牛仔裤与休闲服饰设计制造品牌。"
+          },
+          {
+            "name": "Gap Inc.",
+            "url": "https://www.gapinc.com/",
+            "description": "北美休闲服饰零售集团(Gap、Old Navy"
+          },
+          {
+            "name": "Fast Retailing (迅销/优衣库)",
+            "url": "https://www.fastretailing.com/",
+            "description": "日本快时尚巨头，优衣库(Uniqlo)母公司。"
+          },
+          {
+            "name": "Inditex (Zara母公司)",
+            "url": "https://www.inditex.com/",
+            "description": "西班牙全球快时尚服饰设计与零售巨头。"
+          },
+          {
+            "name": "H&M Group",
+            "url": "https://hmgroup.com/",
+            "description": "瑞典时尚服饰零售集团，旗下含H&M、COS等。"
+          },
+          {
+            "name": "Zalando",
+            "url": "https://corporate.zalando.com/",
+            "description": "欧洲大型时尚与生活方式在线电商平台。"
+          },
+          {
+            "name": "ASOS",
+            "url": "https://www.asos.com/",
+            "description": "英国面向年轻人群的时尚与化妆品在线零售商。"
+          },
+          {
+            "name": "Boohoo Group",
+            "url": "https://www.boohooplc.com/",
+            "description": "英国超快时尚(Ultra-fast"
+          },
+          {
+            "name": "Shein",
+            "url": "https://www.sheingroup.com/",
+            "description": "实时按需供应链驱动的跨国快时尚电商平台。"
+          },
+          {
+            "name": "Nike",
+            "url": "https://www.nike.com/",
+            "description": "全球体育用品、运动鞋与运动装备绝对龙头。"
+          },
+          {
+            "name": "Adidas",
+            "url": "https://www.adidas-group.com/",
+            "description": "德国跨国运动鞋服与体育用品设计制造巨头。"
+          },
+          {
+            "name": "Puma",
+            "url": "https://about.puma.com/",
+            "description": "德国运动鞋服与专业体育用品制造品牌。"
+          },
+          {
+            "name": "Under Armour",
+            "url": "https://about.underarmour.com/",
+            "description": "美国专业功能性运动鞋服与装备品牌。"
+          },
+          {
+            "name": "Lululemon Athletica",
+            "url": "https://corporate.lululemon.com/",
+            "description": "加拿大高端瑜伽服饰与运动生活方式品牌。"
+          },
+          {
+            "name": "Anta Sports (安踏)",
+            "url": "https://www.anta-pro.com/",
+            "description": "中国体育用品集团，旗下含安踏、斐乐(FILA)"
+          },
+          {
+            "name": "Li-Ning (李宁)",
+            "url": "https://www.lining.com/",
+            "description": "中国专业运动品牌，融汇国潮与专业体育装备。"
+          },
+          {
+            "name": "ASICS (亚瑟士)",
+            "url": "https://corp.asics.com/",
+            "description": "日本专业跑鞋与体育用品制造品牌。"
+          },
+          {
+            "name": "Mizuno (美津浓)",
+            "url": "https://mizunomfg.com/",
+            "description": "日本综合性体育用品与高尔夫、跑步装备制造企业。"
+          },
+          {
+            "name": "Decathlon (迪卡侬)",
+            "url": "https://www.decathlon.com/",
+            "description": "法国全产业链体育用品研发与连锁零售巨头。"
+          },
+          {
+            "name": "Foot Locker",
+            "url": "https://www.footlocker-inc.com/",
+            "description": "全球运动鞋服连锁零售巨头。"
+          },
+          {
+            "name": "Dick's Sporting Goods",
+            "url": "https://www.dicks-sporting-goods.com/",
+            "description": "北美大型全品类户外与体育用品零售商。"
+          },
+          {
+            "name": "Shimano (禧玛诺)",
+            "url": "https://www.shimano.com/",
+            "description": "日本自行车变速器零件与钓具制造绝对龙头。"
+          },
+          {
+            "name": "Giant Bicycles (巨大机械/捷安特)",
+            "url": "https://www.giant-bicycles.com/",
+            "description": "台湾自行车与电动辅助自行车制造巨头。"
+          },
+          {
+            "name": "Merida Bikes (美利达)",
+            "url": "https://www.merida-bikes.com/",
+            "description": "知名自行车研发设计与高阶制造企业。"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑭𝑜𝑟𝑡𝑢𝑛𝑒 500';
+var __KISSTR_RANKED__ = true;
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

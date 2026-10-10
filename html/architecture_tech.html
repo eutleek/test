@@ -1,0 +1,1424 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="建筑图纸、材料、古建与数字技术资源导航">
+<title>建筑图纸 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>建筑图纸</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">建筑图纸 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "建筑图纸",
+    "icon": "📐",
+    "color": "linear-gradient(135deg, #0984e3, #6c5ce7)",
+    "subcategories": [
+      {
+        "name": "建筑图纸设计",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Thinking Process",
+            "url": "https://www.thinkingprocess.it",
+            "description": "汇集全球顶级建筑师的纯手绘草图、分析图与轴测图。"
+          },
+          {
+            "name": "Visualizing Architecture",
+            "url": "https://visualizingarchitecture.com",
+            "description": "建筑渲染与 Photoshop 后期教程圣地"
+          },
+          {
+            "name": "KooZA/arch",
+            "url": "https://www.koozarch.com",
+            "description": "极具艺术色彩的建筑表现网，收录大量的拼贴画"
+          },
+          {
+            "name": "Non-Architecture (NonA)",
+            "url": "https://www.nonarchitecture.eu",
+            "description": "颠覆传统的建筑竞赛平台，鼓励非传统形态的图纸与设计"
+          },
+          {
+            "name": "Fascinating Maps & Architecture",
+            "url": "https://www.archdaily.com/category/architectural-drawings",
+            "description": "以分析性图表、剖面图和轴测图为特色的图册。"
+          },
+          {
+            "name": "Ronen Bekerman ArchViz Blog",
+            "url": "https://www.ronenbekerman.com",
+            "description": "全球建筑渲染、三维建模与 3D 视觉大师交流论坛。"
+          },
+          {
+            "name": "Arch-Graphic",
+            "url": "https://arch-graphic.com",
+            "description": "专注于建筑图表、流线分析图与分析图分析。"
+          },
+          {
+            "name": "Afasia Archzine",
+            "url": "https://www.afasiaarchzine.com",
+            "description": "极简风博客，每日无冗长文字"
+          },
+          {
+            "name": "Beta Architecture",
+            "url": "https://www.beta-architecture.com",
+            "description": "专注建筑竞赛方案展示与概念图纸。"
+          },
+          {
+            "name": "Atlas of Places",
+            "url": "https://www.atlasofplaces.com",
+            "description": "学术向建筑与地理空间摄影数据库，关注地形"
+          },
+          {
+            "name": "Scale Models Collection",
+            "url": "https://www.archdaily.com/tag/architectural-models",
+            "description": "聚焦建筑实体模型、木质模型与手工制作摄影。"
+          },
+          {
+            "name": "BAM (Best Architecture Masters)",
+            "url": "https://www.bestarchitecturemasters.com",
+            "description": "全球最佳建筑学硕士项目及顶尖院校学生设计作品展示。"
+          },
+          {
+            "name": "Metalocus",
+            "url": "https://www.metalocus.es/en",
+            "description": "西班牙中英双语建筑网，关注建筑与艺术"
+          },
+          {
+            "name": "Architectural Review Drawings",
+            "url": "https://www.architectural-review.com/drawings",
+            "description": "AR 杂志的精选图纸库，收录名家经典立面图与剖面。"
+          },
+          {
+            "name": "CGArchitect",
+            "url": "https://www.cgarchitect.com",
+            "description": "全球三维建筑渲染与 CG 艺术从业者最大社区。"
+          },
+          {
+            "name": "Drawing Matter",
+            "url": "https://drawingmatter.org",
+            "description": "收集历史上大建筑师原始手稿"
+          },
+          {
+            "name": "Illustrarch",
+            "url": "https://illustrarch.com",
+            "description": "专注于建筑插画、分析图绘制与视觉表达技巧分享。"
+          },
+          {
+            "name": "Landarchs",
+            "url": "https://landarchs.com",
+            "description": "景观设计师的图纸表达、植被配置图与方案视觉库。"
+          },
+          {
+            "name": "Competitionline",
+            "url": "https://www.competitionline.com/en",
+            "description": "德国最大的建筑设计竞赛与中标方案数据库。"
+          },
+          {
+            "name": "Arch2O",
+            "url": "https://www.arch2o.com",
+            "description": "提供大量建筑设计渲染图、参数化建筑设计与结构灵感。"
+          }
+        ]
+      },
+      {
+        "name": "材料、构造与施工工艺",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Materiagrid",
+            "url": "https://www.materiagrid.com",
+            "description": "创新建筑材料、环保基材与未来空间触感样板库。"
+          },
+          {
+            "name": "Materia (MaterialDistrict)",
+            "url": "https://materialdistrict.com",
+            "description": "全球最大的创新建筑材料与结构解决方案探索平台。"
+          },
+          {
+            "name": "Transmaterial",
+            "url": "https://transmaterial.net",
+            "description": "建筑师 Blaine Brownell"
+          },
+          {
+            "name": "Architectural Ceramics Collection",
+            "url": "https://www.architecturalceramics.com",
+            "description": "专注于建筑面砖、陶板、石材与外立面表皮肌理。"
+          },
+          {
+            "name": "Facade Tectonics Institute",
+            "url": "https://www.facadetectonics.org",
+            "description": "建筑幕墙技术、表皮设计与高效节能外立面学术论坛。"
+          },
+          {
+            "name": "Wood Design & Building",
+            "url": "https://www.wooddesignandbuilding.com",
+            "description": "木结构建筑、胶合木工程与可持续木艺空间的权威网。"
+          },
+          {
+            "name": "Concrete Architecture World",
+            "url": "https://www.concreteconstruction.net",
+            "description": "专注于清水混凝土、预制构件与现代混凝土美学。"
+          },
+          {
+            "name": "Steel Construction Architecture",
+            "url": "https://www.aisc.org",
+            "description": "钢结构建筑、大跨度空间与工业重型构架灵感。"
+          },
+          {
+            "name": "Glass Construction World",
+            "url": "https://www.glassmagazine.com",
+            "description": "建筑玻璃、采光顶、曲面玻璃与透明结构施工案例。"
+          },
+          {
+            "name": "Textile Architecture (IFAI)",
+            "url": "https://textiles.org",
+            "description": "膜结构建筑、张拉膜外立面与织物建筑艺术。"
+          },
+          {
+            "name": "Building Enclosure Online",
+            "url": "https://www.buildingenclosureonline.com",
+            "description": "聚焦建筑围护结构、防水、保温与建筑物理性能。"
+          },
+          {
+            "name": "Circular Construction Tech",
+            "url": "https://www.circulararchitecture.org",
+            "description": "循环建筑、废料再利用与可拆解装配式建筑库。"
+          },
+          {
+            "name": "Stone World",
+            "url": "https://www.stoneworld.com",
+            "description": "全球天然石材、大理石切割工艺与奢石室内应用数据库。"
+          },
+          {
+            "name": "Green Roofs & Walls",
+            "url": "https://www.greenroofs.com",
+            "description": "立体绿化、屋顶花园施工结构与植物外墙系统。"
+          },
+          {
+            "name": "Acoustic Design in Architecture",
+            "url": "https://www.architecturalacoustics.org",
+            "description": "建筑声学设计、吸音材料与音乐厅/影院构造。"
+          },
+          {
+            "name": "Lighting Design Architecture (LD+A)",
+            "url": "https://www.ies.org/lda",
+            "description": "建筑照明设计、光环境营造与暗空间美学。"
+          },
+          {
+            "name": "Copper in Architecture",
+            "url": "https://www.copper.org/applications/architecture",
+            "description": "铜质幕墙、金属屋面氧化质感与古今结合建筑案例。"
+          },
+          {
+            "name": "3D Printed Architecture Lab",
+            "url": "https://3dprintedhouse.com",
+            "description": "3D 打印建筑、泥土打印与数字建造工程案例。"
+          },
+          {
+            "name": "Detail Inspiration",
+            "url": "https://www.detail-inspiration.com",
+            "description": "Detail 杂志旗下的在线结构图纸与材料节点搜索"
+          },
+          {
+            "name": "Bamboo Architecture Institute",
+            "url": "https://www.bambooarchitecture.org",
+            "description": "原生竹材、重竹工程与竹结构公共建筑灵感库。"
+          }
+        ]
+      },
+      {
+        "name": "古建修缮活化",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "ICOMOS International",
+            "url": "https://www.icomos.org",
+            "description": "国际古迹遗址理事会，全球文化遗产保护与修缮标准。"
+          },
+          {
+            "name": "National Trust for Historic Preservation",
+            "url": "https://savingplaces.org",
+            "description": "美国历史保护基金会，历史建筑活化案例。"
+          },
+          {
+            "name": "Historic England Architecture",
+            "url": "https://historicengland.org.uk",
+            "description": "英国遗产局，英伦古建筑保护、改造与细部档案馆。"
+          },
+          {
+            "name": "Architectural Heritage Society",
+            "url": "https://www.architectural-heritage.org",
+            "description": "聚焦欧洲古典主义、哥特式与巴洛克建筑细部。"
+          },
+          {
+            "name": "Old House Journal",
+            "url": "https://www.oldhouseonline.com",
+            "description": "百年老宅修缮、古典线条还原与复古结构加固指南。"
+          },
+          {
+            "name": "Traditional Building",
+            "url": "https://www.traditionalbuilding.com",
+            "description": "专注于传统建筑工艺、经典比例重现与传统建材应用。"
+          },
+          {
+            "name": "UNESCO Cultural Landscapes",
+            "url": "https://whc.unesco.org/en/culturallandscapes",
+            "description": "联合国教科文组织世界文化景观与古城规划数据库。"
+          },
+          {
+            "name": "APT International",
+            "url": "https://www.apti.org",
+            "description": "保存技术协会，专注于古建筑材料检测"
+          },
+          {
+            "name": "Vernacular Architecture Forum",
+            "url": "https://www.vernaculararchitectureforum.org",
+            "description": "全球乡土建筑、民居结构与无名大师建筑研究。"
+          },
+          {
+            "name": "Society of Architectural Historians (SAH)",
+            "url": "https://www.sah.org",
+            "description": "建筑史学家协会，收录数万个历史建筑全景。"
+          },
+          {
+            "name": "Castles & Fortified Architecture",
+            "url": "https://www.castlearchitecture.com",
+            "description": "全球中世纪城堡、要塞与防御性建筑平面图库。"
+          },
+          {
+            "name": "Sacred Spaces Restoration",
+            "url": "https://www.sacredrestoration.org",
+            "description": "全球古老教堂、清真寺与寺庙建筑的修复与修缮记录。"
+          },
+          {
+            "name": "Industrial Heritage Architecture (TICCIH)",
+            "url": "https://ticcih.org",
+            "description": "工业遗产保护、旧工厂改造为创意园案例库。"
+          },
+          {
+            "name": "Adaptive Reuse Architecture",
+            "url": "https://www.adaptivereuse.info",
+            "description": "专注于改建与活化的现代建筑网站。"
+          },
+          {
+            "name": "Restoration & Renovation",
+            "url": "https://www.renovationpro.com",
+            "description": "全球老旧建筑物改造、结构加固与新老建筑交融。"
+          },
+          {
+            "name": "European Heritage Awards",
+            "url": "https://www.europeanheritageawards.eu",
+            "description": "欧洲文化遗产大奖官方库，收录顶尖老建筑焕新项目。"
+          },
+          {
+            "name": "Traditional Carpentry Archives",
+            "url": "https://www.timberframersguild.org",
+            "description": "传统榫卯结构、木造古建与大木作工艺数字化。"
+          },
+          {
+            "name": "Earth Architecture",
+            "url": "http://www.eartharchitecture.org",
+            "description": "生土建筑、夯土墙与古老泥砖建筑的现代演变。"
+          },
+          {
+            "name": "Asian Heritage Architecture",
+            "url": "https://www.asianheritage.org",
+            "description": "亚洲古建筑修缮、日式古民家移筑改造。"
+          },
+          {
+            "name": "Modern Heritage Conservation (DOCOMOMO)",
+            "url": "https://docomomo.com",
+            "description": "现代主义建筑遗迹保护与 20 世纪地标修缮。"
+          }
+        ]
+      },
+      {
+        "name": "数字化建筑",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Parametric House",
+            "url": "https://parametrichouse.com",
+            "description": "专注于 Grasshopper"
+          },
+          {
+            "name": "Generative Design Network",
+            "url": "https://www.generativedesign.org",
+            "description": "生成式设计、算法建筑与 AI 辅助空间布局探索。"
+          },
+          {
+            "name": "Computational Design Arch",
+            "url": "https://www.computationaldesign.org",
+            "description": "算法建筑、计算设计与机器人建造前沿学术成果。"
+          },
+          {
+            "name": "Designalyze",
+            "url": "https://designalyze.com",
+            "description": "建筑编码、Python 在建筑中的应用与计算几何案"
+          },
+          {
+            "name": "Rhino3D Architecture Gallery",
+            "url": "https://www.rhino3d.com/gallery",
+            "description": "犀牛软件官方精选的复杂异形建筑与工业设计库。"
+          },
+          {
+            "name": "Midjourney Architecture Prompts Lab",
+            "url": "https://www.aiarchitecture.org",
+            "description": "AI 生成建筑、概念效果图与提示词美学探索。"
+          },
+          {
+            "name": "BIMobject",
+            "url": "https://www.bimobject.com",
+            "description": "全球最大的 BIM 构件与三维材质库。"
+          },
+          {
+            "name": "Dynamo BIM Community",
+            "url": "https://dynamobim.org",
+            "description": "Revit 参数化插件 Dynamo"
+          },
+          {
+            "name": "Space Syntax Archive",
+            "url": "https://www.spacesyntax.net",
+            "description": "空间句法学官方网，基于数据分析的人行流线与城市空间"
+          },
+          {
+            "name": "Architecture AI Research (AAIR)",
+            "url": "https://www.architectureai.org",
+            "description": "神经网络、深度学习在建筑图纸生成中的前沿应用。"
+          },
+          {
+            "name": "Morphocode",
+            "url": "https://morphocode.com",
+            "description": "数据可视化、城市信息学与数字建筑学的交汇站点。"
+          },
+          {
+            "name": "Nervous System Design Lab",
+            "url": "https://n-e-r-v-o-u-s.com",
+            "description": "基于自然界生长算法的生成式建筑与产品。"
+          },
+          {
+            "name": "DigitalFUTURES",
+            "url": "https://www.digitalfutures.world",
+            "description": "全球顶尖数字建筑学术平台"
+          },
+          {
+            "name": "Robotic Fabrication in Architecture (Rob|Arch)",
+            "url": "https://www.robarch.org",
+            "description": "工业机器人臂在建筑制造与建造中的应用。"
+          },
+          {
+            "name": "Smartgeometry",
+            "url": "https://www.smartgeometry.org",
+            "description": "探索高难度几何结构、先进计算与响应式建筑表皮。"
+          },
+          {
+            "name": "Form3D Architecture",
+            "url": "https://www.form3d.org",
+            "description": "3D 复杂曲面渲染、数控机床加工(CNC)与结构设"
+          },
+          {
+            "name": "Grasshopper Docs",
+            "url": "https://matsys.design",
+            "description": "参数化建筑师必查的视觉化编程组件与运算逻辑大全。"
+          },
+          {
+            "name": "Spatial Data Science for Architecture",
+            "url": "https://www.spatialdatascience.org",
+            "description": "利用大数据、热力图指导城市与建筑设计。"
+          },
+          {
+            "name": "Metaverse Architecture Index",
+            "url": "https://www.virtualarchitecture.org",
+            "description": "虚拟建筑、数字孪生与 Web3 空间设计案例。"
+          },
+          {
+            "name": "Autodesk University Architecture",
+            "url": "https://www.autodesk.com/autodesk-university",
+            "description": "欧特克官方年度顶尖数字建造与科技建筑案例展。"
+          }
+        ]
+      },
+      {
+        "name": "建筑摄影美学",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Architectural Photography Almanac",
+            "url": "https://apalmanac.com",
+            "description": "建筑摄影师的圣地，分享全球顶尖建筑摄影作品与拍摄技"
+          },
+          {
+            "name": "Ofhouses",
+            "url": "https://ofhouses.com",
+            "description": "专注于 20 世纪中叶至今的独立住宅设计"
+          },
+          {
+            "name": "Brutalist Architecture Archive",
+            "url": "https://www.brutalistarchitecture.com",
+            "description": "粗野主义建筑爱好者数据库，满满的混凝土重工业美学。"
+          },
+          {
+            "name": "SOSBrutalism",
+            "url": "https://www.sosbrutalism.org",
+            "description": "苏联及全球粗野主义建筑、巨型混凝土建筑保护与视觉档"
+          },
+          {
+            "name": "Fernando Guerra Photography (FG+SG)",
+            "url": "https://ultimasreportagens.com",
+            "description": "葡萄牙知名建筑摄影师 FG+SG 的个人作品集"
+          },
+          {
+            "name": "Iwan Baan Work",
+            "url": "https://iwan.com",
+            "description": "全球顶尖建筑摄影师 Iwan Baan 官方网"
+          },
+          {
+            "name": "Hufton+Crow",
+            "url": "https://www.huftonandcrow.com",
+            "description": "英国顶尖摄影组合，拍摄了大量扎哈·哈迪德等巨匠的流"
+          },
+          {
+            "name": "Uncube Magazine",
+            "url": "https://www.uncubemagazine.com",
+            "description": "德国数字建筑杂志，兼具互动性排版与小众建筑探索。"
+          },
+          {
+            "name": "BauNetz",
+            "url": "https://www.baunetz.de",
+            "description": "德国最大的建筑门户，涵盖中欧极简风格建筑与严谨工程"
+          },
+          {
+            "name": "Socio Design / Spatial",
+            "url": "https://sociodesign.co.uk",
+            "description": "品牌形象与物理空间(店铺/展厅)完美结合的视觉集锦"
+          },
+          {
+            "name": "Open House Worldwide",
+            "url": "https://www.openhouseww.org",
+            "description": "全球开放房屋组织，展示伦敦、纽约"
+          },
+          {
+            "name": "Cabin Porn",
+            "url": "https://cabinporn.com",
+            "description": "全球野外小屋、树屋、山间木屋与极简避世建筑图片典藏"
+          },
+          {
+            "name": "Subterranea Britannica",
+            "url": "https://www.subbrit.org.uk",
+            "description": "地下建筑、废弃掩体、隧道与地下人造空间的考古级图库"
+          },
+          {
+            "name": "Brutalist Paris",
+            "url": "https://www.bluecrowmedia.com",
+            "description": "巴黎粗野主义建筑与混凝土结构视觉地图。"
+          },
+          {
+            "name": "The Modern House",
+            "url": "https://www.themodernhouse.com",
+            "description": "英国顶级现代主义与设计感住宅不动产网"
+          },
+          {
+            "name": "Invisibly (Interiors Journal)",
+            "url": "https://www.interiorsjournal.com",
+            "description": "电影中的建筑与空间美学，分析名导演电影里的布景。"
+          },
+          {
+            "name": "Mid-Century Modern Architecture",
+            "url": "https://midcenturymodernist.com",
+            "description": "20 世纪中叶现代主义建筑与家具复古库。"
+          },
+          {
+            "name": "Sacred Architecture",
+            "url": "https://www.sacredarchitecture.org",
+            "description": "全球宗教建筑、教堂、寺庙与禅意空间美学。"
+          },
+          {
+            "name": "Tiny House Blog",
+            "url": "https://tinyhouseblog.com",
+            "description": "微型建筑、移动小屋与极简空间利用灵感。"
+          },
+          {
+            "name": "Atlas Obscura (Architecture)",
+            "url": "https://www.atlasobscura.com/things-to-do/architecture",
+            "description": "全球奇特、神秘与冷门建筑地标的地理档案馆。"
+          }
+        ]
+      },
+      {
+        "name": "建筑图纸表达",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Section Diagram Gallery",
+            "url": "https://www.archdaily.com/tag/sections",
+            "description": "全球精彩建筑剖面图、透视剖面图("
+          },
+          {
+            "name": "Axonometric Drawing World",
+            "url": "https://www.archdaily.com/tag/axonometric",
+            "description": "轴测图表达大师库，展示复杂空间的爆炸轴测与功能分析"
+          },
+          {
+            "name": "Architecture Competition Drawings",
+            "url": "https://www.competitions.org",
+            "description": "全球顶尖建筑竞赛的获奖图纸板面"
+          },
+          {
+            "name": "Hand Drawn Architecture",
+            "url": "https://www.handdrawnarchitecture.com",
+            "description": "专注于建筑师手绘线条图、草图大师手稿与艺术钢笔画。"
+          },
+          {
+            "name": "Architectural Graphics Guide",
+            "url": "https://www.archgraphicguide.com",
+            "description": "建筑图纸线宽规范、图例标注与高质量图面排版参考。"
+          },
+          {
+            "name": "Poured Concrete Drawings",
+            "url": "https://www.concrete-drawings.org",
+            "description": "混凝土构造节点图、配筋剖面图与模板施工图纸。"
+          },
+          {
+            "name": "Modern Architectural Plans",
+            "url": "https://www.modernplans.org",
+            "description": "20 世纪现代主义大师(如柯布西耶"
+          },
+          {
+            "name": "Detail Drawing Vault",
+            "url": "https://www.detailvault.com",
+            "description": "按建筑部位(屋顶、幕墙、地面"
+          },
+          {
+            "name": "Parametric Drawing Index",
+            "url": "https://www.parametricdrawings.com",
+            "description": "利用算法生成的复杂流线、生成式平面图与算法图表。"
+          },
+          {
+            "name": "Site Plan Analysis",
+            "url": "https://www.archdaily.com/tag/site-plans",
+            "description": "建筑总平面图、周边环境分析图与场地交通流线图。"
+          },
+          {
+            "name": "Exploded Views Gallery",
+            "url": "https://www.explodedviews.org",
+            "description": "建筑拆解图、构造爆炸图与产品结构解构视觉。"
+          },
+          {
+            "name": "Structural Isometric Diagrams",
+            "url": "https://www.structural-iso.com",
+            "description": "结构力学分析图、荷载传递图与受力轴测图灵感。"
+          },
+          {
+            "name": "Collage Architecture Visuals",
+            "url": "https://www.archcollage.com",
+            "description": "复古艺术拼贴风(Collage)建筑渲染图与人像配"
+          },
+          {
+            "name": "Architectural Diagramming (ArchDiagram)",
+            "url": "https://www.archdiagram.com",
+            "description": "专注于用最简洁的几何图表阐述复杂建筑概念。"
+          },
+          {
+            "name": "Minimalist Elevation Gallery",
+            "url": "https://www.elevationsgallery.com",
+            "description": "极简二维建筑立面图、材质拼贴立面与光影立面图。"
+          },
+          {
+            "name": "Urban Masterplan Drawings",
+            "url": "https://www.masterplandrawings.com",
+            "description": "城市设计总平面图、功能分区图与城市天际线图纸。"
+          },
+          {
+            "name": "Landscape Detail Diagrams",
+            "url": "https://www.landscapedetails.org",
+            "description": "景观铺装节点、铺地拼接剖面图与水景施工图。"
+          },
+          {
+            "name": "Interior Construction Drawings",
+            "url": "https://www.interiordrawings.org",
+            "description": "室内装修施工图、吊顶剖面图、节点大样图与家具立面。"
+          },
+          {
+            "name": "BIM Model Views",
+            "url": "https://www.bimviews.com",
+            "description": "基于 Revit 与 ArchiCAD"
+          },
+          {
+            "name": "Historic Blueprint Gallery",
+            "url": "https://www.historicblueprints.com",
+            "description": "19 世纪工业革命时期的古老建筑蓝图"
+          }
+        ]
+      },
+      {
+        "name": "创新材料CMF",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Material Bank",
+            "url": "https://www.materialbank.com",
+            "description": "全球最大的建筑与室内材料实物样板搜索与采购平台。"
+          },
+          {
+            "name": "Material ConneXion",
+            "url": "https://www.materialconnexion.com",
+            "description": "全球创新材料咨询机构，收录数万种高科技与可替代建材"
+          },
+          {
+            "name": "Material Source UK",
+            "url": "https://www.materialsource.co.uk",
+            "description": "英国建筑材料网，报道最新可持续表面材质"
+          },
+          {
+            "name": "Circular Materials Lab",
+            "url": "https://www.circularmaterials.org",
+            "description": "专注于可回收利用、蘑菇菌丝体、生物塑料等循环建材。"
+          },
+          {
+            "name": "Recycled Plastic Architecture",
+            "url": "https://www.recycledplasticdesign.com",
+            "description": "利用回收海洋塑料、再生亚克力制作的高颜值装饰板材。"
+          },
+          {
+            "name": "Cross-Laminated Timber (CLT) Hub",
+            "url": "https://www.clthub.com",
+            "description": "正交胶合木(CLT)工程案例"
+          },
+          {
+            "name": "Bio-Based Materials Index",
+            "url": "https://www.biobasedmaterials.org",
+            "description": "植物纤维、秸秆板、竹复合材料与生物基建材库。"
+          },
+          {
+            "name": "Kinetic Facades Lab",
+            "url": "https://www.kineticfacades.com",
+            "description": "机械感应外立面、随光照开合的动态建筑遮阳遮光表皮。"
+          },
+          {
+            "name": "Ultra-High Performance Concrete (UHPC)",
+            "url": "https://www.uhpcdesign.com",
+            "description": "超高性能混凝土(UHPC)异形外立面"
+          },
+          {
+            "name": "Translucent Materials Archive",
+            "url": "https://www.translucentdesign.com",
+            "description": "聚碳酸酯阳光板、U 型玻璃"
+          },
+          {
+            "name": "Terrazzo Design World",
+            "url": "https://www.terrazzodesign.org",
+            "description": "水磨石、无缝高弹骨料地面与异形切片材质灵感库。"
+          },
+          {
+            "name": "Acoustic Panel Materials",
+            "url": "https://www.acousticmaterials.org",
+            "description": "艺术吸音板、聚酯纤维板、木丝吸音板与声学墙面材料。"
+          },
+          {
+            "name": "RAMMED EARTH Architecture",
+            "url": "https://www.rammedearthdesign.com",
+            "description": "现代夯土墙工程、夯土饰面板与夯土建筑力学参数。"
+          },
+          {
+            "name": "Architectural Zinc & Titanium",
+            "url": "https://www.architecturalzinc.com",
+            "description": "钛锌板、钛合金面板、钛金氧化与金属屋面表皮。"
+          },
+          {
+            "name": "Smart Glass Technologies",
+            "url": "https://www.smartglasstech.com",
+            "description": "电致变色玻璃、调光玻璃与太阳能光伏一体化玻璃("
+          },
+          {
+            "name": "Self-Healing Concrete Tech",
+            "url": "https://www.selfhealingconcrete.org",
+            "description": "利用细菌自动修复裂缝的生物自愈合混凝土前沿研究。"
+          },
+          {
+            "name": "Carbon Fiber Architecture",
+            "url": "https://www.carbonfiberdesign.org",
+            "description": "碳纤维编织建筑、轻量化张拉结构与前沿建造。"
+          },
+          {
+            "name": "Corten Steel Applications",
+            "url": "https://www.cortensteeldesign.com",
+            "description": "耐候钢板(锈蚀钢板)、工业风外立面与景观雕塑材质。"
+          },
+          {
+            "name": "Recycled Brick Design",
+            "url": "https://www.recycledbricks.org",
+            "description": "拆房老旧砖块回收、再生黏土砖与砌筑艺术。"
+          },
+          {
+            "name": "Aerogel Insulation Building",
+            "url": "https://www.aerogeldesign.com",
+            "description": "气凝胶超薄保温材料、高效绝热外墙系统库。"
+          }
+        ]
+      },
+      {
+        "name": "古建修缮保护",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Getty Conservation Institute (GCI)",
+            "url": "https://www.getty.edu/conservation",
+            "description": "盖蒂保护研究所，全球顶尖的文物"
+          },
+          {
+            "name": "UNESCO World Heritage Centre",
+            "url": "https://whc.unesco.org",
+            "description": "联合国教科文组织世界遗产名录、保护报告与测绘图库。"
+          },
+          {
+            "name": "International Heritage Conservation",
+            "url": "https://www.heritageconservation.org",
+            "description": "国际文物古迹保护技术、古砖石病害治理与木结构防腐。"
+          },
+          {
+            "name": "Historic Scotland Archives",
+            "url": "https://www.historicenvironment.scot",
+            "description": "苏格兰历史环境局，古堡、石砌建筑测绘与修缮工程。"
+          },
+          {
+            "name": "Society for the Protection of Ancient Buildings (SPAB)",
+            "url": "https://www.spab.org.uk",
+            "description": "英国古建筑保护协会，倡导修旧如旧与传统灰泥工艺。"
+          },
+          {
+            "name": "Timber Frame Conservators",
+            "url": "https://www.timberframeconservation.org",
+            "description": "古代木结构榫卯加固、木材探伤与古建大木作修缮。"
+          },
+          {
+            "name": "Stone Conservation Network",
+            "url": "https://www.stoneconservation.org",
+            "description": "古石雕、石窟风化防护、石质建筑清洗与补强技术。"
+          },
+          {
+            "name": "Architectural Antiquities Archive",
+            "url": "https://www.architecturalantiquities.org",
+            "description": "收藏 17–19 世纪欧洲雕花构件"
+          },
+          {
+            "name": "Vernacular Earth Architecture",
+            "url": "https://www.earthenarchitecture.org",
+            "description": "全球乡土生土建筑、窑洞、福建土楼等古老智慧。"
+          },
+          {
+            "name": "Industrial Archaeology Review",
+            "url": "https://www.industrialarchaeology.org",
+            "description": "工业考古学，记录蒸汽时代旧厂房、铁道与码头遗产。"
+          },
+          {
+            "name": "Byzantine Architecture Index",
+            "url": "https://www.byzantinearchitecture.org",
+            "description": "拜占庭式穹顶、马赛克镶嵌画与古老教堂结构。"
+          },
+          {
+            "name": "Classical Orders Archive",
+            "url": "https://www.classicalorders.com",
+            "description": "多立克、爱奥尼、科林斯等古典柱式比例与细部大样。"
+          },
+          {
+            "name": "Islamic Architecture Heritage",
+            "url": "https://www.islamicheritage.org",
+            "description": "伊斯兰古建筑、钟乳体(Muqarnas)穹顶与几何"
+          },
+          {
+            "name": "Gothic Cathedral Engineering",
+            "url": "https://www.gothiccathedrals.org",
+            "description": "哥特式教堂飞扶壁、尖拱结构与彩色花窗受力分析。"
+          },
+          {
+            "name": "Japanese Machiya Preservation",
+            "url": "https://www.machiya-preservation.org",
+            "description": "京都传统町家老宅保护、格子户与日式中庭修复。"
+          },
+          {
+            "name": "Mayan & Mesoamerican Architecture",
+            "url": "https://www.mesoamericanarch.org",
+            "description": "玛雅金字塔、阿兹特克遗址测绘与石雕符号解构。"
+          },
+          {
+            "name": "Ancient Roman Concrete Research",
+            "url": "https://www.romanconcrete.com",
+            "description": "古罗马火山灰混凝土配方、万神殿穹顶结构解密。"
+          },
+          {
+            "name": "Historic Lime Mortar Preservation",
+            "url": "https://www.limemortar.org",
+            "description": "传统石灰浆(Lime Mortar)配制"
+          },
+          {
+            "name": "Modernist Heritage Conservation",
+            "url": "https://www.modernheritage.org",
+            "description": "20 世纪包豪斯、野兽派混凝土建筑的翻新与保护。"
+          },
+          {
+            "name": "Heritage Documentation Programs (HABS/HAER)",
+            "url": "https://www.loc.gov/pictures/collection/hh",
+            "description": "美国历史建筑调查局，包含海量极高精度的历史测绘图纸"
+          }
+        ]
+      },
+      {
+        "name": "参数化AI建筑",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Grasshopper3D Official Forum",
+            "url": "https://discourse.mcneel.com/c/grasshopper",
+            "description": "全球最大的 Grasshopper"
+          },
+          {
+            "name": "Computational Design Institute",
+            "url": "https://www.computationaldesign.inst",
+            "description": "算法建筑、拓扑优化与力学寻形("
+          },
+          {
+            "name": "Generative Architecture Lab",
+            "url": "https://www.generativearch.org",
+            "description": "利用遗传算法、蜂群算法自动优化建筑采光与空间布局。"
+          },
+          {
+            "name": "Midjourney Architecture Collective",
+            "url": "https://www.midjourneyarchitecture.com",
+            "description": "AI 建筑设计生成的Prompt词典"
+          },
+          {
+            "name": "Stable Diffusion Architectural LoRA",
+            "url": "https://www.civitai.com/tag/architecture",
+            "description": "建筑效果图 AI 模型、草图转渲染"
+          },
+          {
+            "name": "LookX AI Architecture",
+            "url": "https://www.lookx.ai",
+            "description": "专为建筑师打造的 AI 垂直生成平台"
+          },
+          {
+            "name": "Rhino.Inside.Revit",
+            "url": "https://www.rhino3d.com/inside/revit",
+            "description": "无缝连接犀牛自由曲面与 Revit 工程 BIM"
+          },
+          {
+            "name": "Topological Architecture",
+            "url": "https://www.topologicalarchitecture.org",
+            "description": "拓扑几何学、连续曲面与非欧几里得空间建筑学研究。"
+          },
+          {
+            "name": "Robotic Timber Fabrication",
+            "url": "https://www.robotic-timber.org",
+            "description": "机械臂六轴联动切割胶合木、复杂榫卯自动化加工。"
+          },
+          {
+            "name": "3D Concrete Printing Network",
+            "url": "https://www.3dconcreteprinting.org",
+            "description": "混凝土 3D 打印喷嘴轨迹算法"
+          },
+          {
+            "name": "Agent-Based Spatial Design",
+            "url": "https://www.agentbaseddesign.org",
+            "description": "基于多智能体系统(Agent-Based)模拟人群"
+          },
+          {
+            "name": "Evolutionary Architecture",
+            "url": "https://www.evolutionaryarchitecture.com",
+            "description": "模拟生物进化演变算法的生成式结构与空间布局。"
+          },
+          {
+            "name": "Structural Topology Optimization",
+            "url": "https://www.topopt.org",
+            "description": "结构拓扑优化算法，用最少的材料实现最大的结构强度。"
+          },
+          {
+            "name": "Interactive Architecture Lab",
+            "url": "https://www.interactivearchitecture.org",
+            "description": "伦敦大学学院(UCL)交互建筑实验室"
+          },
+          {
+            "name": "Digital Bamboo Fabrication",
+            "url": "https://www.digitalbamboo.org",
+            "description": "原竹数字化三维扫描、机械臂弯曲与定制化竹结构。"
+          },
+          {
+            "name": "Space Syntax Studio",
+            "url": "https://www.spacesyntax.com",
+            "description": "空间句法定量分析软件，预测视线可见度("
+          },
+          {
+            "name": "V-Ray Architectural Rendering",
+            "url": "https://www.chaos.com/vray/architecture",
+            "description": "Chaos Group 官方精选的 V-Ray"
+          },
+          {
+            "name": "Unreal Engine Architecture (Twinmotion)",
+            "url": "https://www.unrealengine.com/solutions/architecture",
+            "description": "虚幻引擎 实时渲染、VR 漫游与数字孪生建筑。"
+          },
+          {
+            "name": "AI Structural Engineering",
+            "url": "https://www.aistruct.org",
+            "description": "AI 辅助计算荷载、风洞模拟分析与抗震结构自动规划"
+          },
+          {
+            "name": "Algorithmic Facade Design",
+            "url": "https://www.algorithmicfacades.com",
+            "description": "通过参数化控制渐变穿孔板、折纸结构与三维肌理幕墙。"
+          }
+        ]
+      },
+      {
+        "name": "建筑摄影研究",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Architaly Photography",
+            "url": "https://www.architaly.com",
+            "description": "专注于意大利古典与现代建筑的光影摄影与细节微距。"
+          },
+          {
+            "name": "Soviet Modernism Architecture",
+            "url": "https://www.sovietmod.com",
+            "description": "苏联时期野兽派、马赛克面与纪念碑建筑摄影档案。"
+          },
+          {
+            "name": "Concrete Brutalism Photography",
+            "url": "https://www.brutalconcrete.com",
+            "description": "极具视觉压迫感与诗意光影的混凝土建筑摄影特写。"
+          },
+          {
+            "name": "Architectural Lighting Photography",
+            "url": "https://www.archlightingphoto.com",
+            "description": "专注于建筑夜景、室内灯光漫反射与光影艺术摄影。"
+          },
+          {
+            "name": "Japanese Minimalist Architecture Photo",
+            "url": "https://www.japanarchphoto.com",
+            "description": "记录日本当代极简住宅、禅意中庭与光影对比的摄影网。"
+          },
+          {
+            "name": "High-Density Housing Architecture",
+            "url": "https://www.densityatlas.org",
+            "description": "麻省理工学院(MIT)密度地图"
+          },
+          {
+            "name": "Abandoned Architecture Photography",
+            "url": "https://www.urbanexploration.org",
+            "description": "废弃剧院、废弃宫殿与废弃工厂的都市探险("
+          },
+          {
+            "name": "Architectural Facade Closeups",
+            "url": "https://www.facadecloseups.com",
+            "description": "专注于建筑幕墙接缝、材质交接与金属扣件的微距摄影。"
+          },
+          {
+            "name": "Shadow & Light Architectural Studies",
+            "url": "https://www.architecturalshadows.com",
+            "description": "研究日照阴影、百叶窗光斑与建筑光影艺术摄影。"
+          },
+          {
+            "name": "Aerial Architecture Photography",
+            "url": "https://www.aerialarch.com",
+            "description": "无人机俯瞰视角下的几何建筑、城市街区与景观图案。"
+          },
+          {
+            "name": "Brutalist Eastern Europe",
+            "url": "https://www.easterneuropebrutalism.com",
+            "description": "东欧巨型住宅小区、雕塑感纪念碑与前苏联建造摄影。"
+          },
+          {
+            "name": "Architectural Geometry Photos",
+            "url": "https://www.archgeometry.com",
+            "description": "纯粹几何线条、对称美学与重复韵律的建筑摄影。"
+          },
+          {
+            "name": "Monochrome Architecture Photo",
+            "url": "https://www.monochromearch.com",
+            "description": "黑白高反差建筑摄影，凸显建筑的质感、体积与明暗。"
+          },
+          {
+            "name": "Infra-Red Architectural Photography",
+            "url": "https://www.irarchitecture.com",
+            "description": "红外线摄影镜头下的建筑与植被，呈现梦幻超现实色彩。"
+          },
+          {
+            "name": "High-Tech Architecture Photography",
+            "url": "https://www.hightecharch.com",
+            "description": "蓬皮杜中心风格、钢结构外露与管道美学建筑摄影。"
+          },
+          {
+            "name": "Modernist Churches Photo Vault",
+            "url": "https://www.modernchurches.com",
+            "description": "20 世纪中叶先锋派现代教堂"
+          },
+          {
+            "name": "Glass Reflection Architecture",
+            "url": "https://www.glassreflections.com",
+            "description": "玻璃幕墙镜面反射、城市倒影与虚实结合的视觉研究。"
+          },
+          {
+            "name": "Asian Timber Architecture Photos",
+            "url": "https://www.asiantimberarch.com",
+            "description": "东亚与东南亚木造大殿、凉亭与榫卯结构摄影。"
+          },
+          {
+            "name": "Architectural Perspective Visuals",
+            "url": "https://www.archperspective.com",
+            "description": "极致一点透视、两点透视与仰视角度下的建筑摄影。"
+          },
+          {
+            "name": "Urban Decay & Adaptive Reuse Photos",
+            "url": "https://www.adaptivereusephoto.com",
+            "description": "记录破败旧建筑改造为现代艺术中心的新旧交融摄影。"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑨𝑟𝑐𝑕𝑖𝑡𝑒𝑐𝑡𝑢𝑟𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

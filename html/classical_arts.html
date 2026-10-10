@@ -1,0 +1,1388 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="古典艺术、文学、博物馆、典籍与人文资源导航">
+<title>古典艺文 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>古典艺文</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">古典艺文 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "古典艺文",
+    "icon": "🏺",
+    "color": "linear-gradient(135deg, #6c5ce7, #b2bec3)",
+    "subcategories": [
+      {
+        "name": "精选资源 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "中国哲学书电子化计划",
+            "url": "https://ctext.org/zh",
+            "description": "收录大量中国古代先秦至汉代及以后经典文献的电子文本"
+          },
+          {
+            "name": "汉典",
+            "url": "https://www.zdic.net/",
+            "description": "权威的大型在线汉语字典、词典"
+          },
+          {
+            "name": "国学网",
+            "url": "http://www.guoxue.com/",
+            "description": "涵盖历代经史子集、传统文化研究与文献检索的国学综合"
+          },
+          {
+            "name": "古诗文网",
+            "url": "https://www.gushiwen.cn/",
+            "description": "提供历代古诗词、文言文全文、翻译"
+          },
+          {
+            "name": "诗词吾爱",
+            "url": "https://www.gushiwen.org/",
+            "description": "专注于古典诗词创作、平仄格律检测及诗友交流的专业网"
+          },
+          {
+            "name": "全唐诗数据库",
+            "url": "http://www.tangpoetry.com/",
+            "description": "专注于唐代诗歌检索、作者考证及作品分类的专题数据库"
+          },
+          {
+            "name": "中华诗词网",
+            "url": "http://www.zhsc.net/",
+            "description": "推动古典诗词创作、研究、学术交流与典籍整理的全国性"
+          },
+          {
+            "name": "故宫博物院",
+            "url": "https://www.dpm.org.cn/",
+            "description": "展出故宫藏品、文物高清图录及皇家历史艺术研究的官方"
+          },
+          {
+            "name": "数字故宫",
+            "url": "https://www.dpm.org.cn/digital.html",
+            "description": "汇集高精度文物3D建模、全景数字展览与历代名画高质"
+          },
+          {
+            "name": "中国国家博物馆",
+            "url": "http://www.chnmuseum.cn/",
+            "description": "展出中华文明历史文物、艺术珍品及重大历史文化展览。"
+          },
+          {
+            "name": "台北故宫博物院 Open Data",
+            "url": "https://theme.npm.edu.tw/opendata/",
+            "description": "提供大量馆藏书画、器物的高清大图免费下载与公共授权"
+          },
+          {
+            "name": "典藏台湾",
+            "url": "https://catalog.digitalarchives.tw/",
+            "description": "整合台湾各大机构典藏之历史文献"
+          },
+          {
+            "name": "国家图书馆中国古籍保护网",
+            "url": "http://www.nlc.cn/pcbo/",
+            "description": "全国古籍普查成果、国家珍贵古籍名录及古籍保护资讯平"
+          },
+          {
+            "name": "中华古籍资源库",
+            "url": "http://read.nlc.cn/gajib/",
+            "description": "国家图书馆数字化的历代善本古籍"
+          },
+          {
+            "name": "台湾大学文史哲学报",
+            "url": "https://www.ora.ntu.edu.tw/",
+            "description": "刊载文史哲学术研究论文，涵盖中国古典文学与思想史研"
+          },
+          {
+            "name": "中研院史语所傅斯年图书馆",
+            "url": "https://fsn.ihp.sinica.edu.tw/",
+            "description": "藏有丰富汉籍善本、明清档案"
+          },
+          {
+            "name": "搜韵",
+            "url": "https://sou-yun.cn/",
+            "description": "强大的古典诗词辅助工具，集格律校验、诗词检索"
+          },
+          {
+            "name": "韵网",
+            "url": "https://www.yunwang.net/",
+            "description": "专注于汉语韵书、声韵学及古典诗词押韵查考的专业工具"
+          },
+          {
+            "name": "识典古籍",
+            "url": "https://www.shidian.cn/",
+            "description": "字节跳动与北大联合打造的免费AI古籍数字化阅读与检"
+          },
+          {
+            "name": "书格",
+            "url": "https://shuge.org/",
+            "description": "自由开放的在线古籍图书馆"
+          },
+          {
+            "name": "艺术中国",
+            "url": "http://art.china.cn/",
+            "description": "涵盖中国传统书画、非遗文化"
+          },
+          {
+            "name": "中国书法家网",
+            "url": "http://www.shufajia.com/",
+            "description": "展示历代名家书法作品、书法理论"
+          },
+          {
+            "name": "中国书法网",
+            "url": "http://www.freehead.com/",
+            "description": "专注于书法艺术交流、碑帖赏析"
+          },
+          {
+            "name": "书法空间",
+            "url": "http://www.shufa.org/",
+            "description": "汇集历代名家碑帖高清图像、字典查字及书法理论文献。"
+          },
+          {
+            "name": "中国篆刻网",
+            "url": "http://www.zhzk.org/",
+            "description": "提供历代印谱、印人考证、篆刻艺术赏析及古玺印研究。"
+          },
+          {
+            "name": "西泠印社",
+            "url": "http://www.xilingin.com/",
+            "description": "金石篆刻学术团体官网，展示印学研究、书画篆刻珍品。"
+          },
+          {
+            "name": "中国戏曲网",
+            "url": "http://www.xiqu.org/",
+            "description": "涵盖京剧、昆曲等各类中国传统戏曲剧目"
+          },
+          {
+            "name": "中国昆曲网",
+            "url": "http://www.kunqu.net/",
+            "description": "专注于联合国“人类口头和非物质遗产代表作”昆曲艺术"
+          },
+          {
+            "name": "中华传统文化网",
+            "url": "http://www.ctwh.org/",
+            "description": "宣传中国传统节日、民俗文化"
+          },
+          {
+            "name": "中国名画网",
+            "url": "http://www.minghuagong.com/",
+            "description": "汇集中国历代山水、花鸟、人物名画赏析与画家生平介绍"
+          },
+          {
+            "name": "中华民俗网",
+            "url": "http://www.chinesefolklore.org.cn/",
+            "description": "专注于民俗学研究、民间文艺"
+          },
+          {
+            "name": "经典之门",
+            "url": "http://www.jdzm.org/",
+            "description": "专注于中国古代经典文学、史书、哲学论著阅读与导读。"
+          },
+          {
+            "name": "读书网古籍频道",
+            "url": "https://www.dushu.com/guji/",
+            "description": "提供在线古籍翻阅、经史子集分类检索及注解阅读。"
+          },
+          {
+            "name": "中国历史网",
+            "url": "http://www.lishi.net/",
+            "description": "梳理中国历朝历代历史事件、历史人物"
+          },
+          {
+            "name": "史记在线",
+            "url": "http://www.shiji.org/",
+            "description": "司马迁《史记》全文阅读、注解"
+          },
+          {
+            "name": "资治通鉴网",
+            "url": "http://www.zizhitongjian.com/",
+            "description": "《资治通鉴》原文、胡三省注"
+          },
+          {
+            "name": "红楼梦网络资源库",
+            "url": "http://www.hongloumeng.org/",
+            "description": "汇集《红楼梦》版本研究、脂评本对照"
+          },
+          {
+            "name": "中国红楼梦学会",
+            "url": "http://www.hongloumeng.cn/",
+            "description": "国家级红学研究机构官网，发布红学学术前沿与研讨成果"
+          },
+          {
+            "name": "儒家网",
+            "url": "http://www.rujiazg.com/",
+            "description": "致力于儒家思想、儒家经典"
+          },
+          {
+            "name": "道教文化网",
+            "url": "http://www.daochina.org/",
+            "description": "弘扬中国传统道教文化、道家哲学"
+          },
+          {
+            "name": "中华佛典宝库",
+            "url": "http://www.fodian.net/",
+            "description": "搜集并整理大藏经、历代高僧大德著作及佛教文学文献。"
+          },
+          {
+            "name": "电子大藏经(CBETA)",
+            "url": "https://www.cbeta.org/",
+            "description": "全球最权威的汉文大藏经电子化全文检索与研究数据库。"
+          },
+          {
+            "name": "中国音乐家协会古琴学会",
+            "url": "http://www.guqin.org.cn/",
+            "description": "古琴艺术传承、古琴名曲赏析、减字谱查阅与琴人资讯。"
+          },
+          {
+            "name": "琴之界",
+            "url": "https://www.qinzhijie.org/",
+            "description": "专注于古琴文化、古琴琴谱"
+          },
+          {
+            "name": "中国陶瓷网",
+            "url": "http://www.taoci.com/",
+            "description": "展示中国历代官窑、民窑陶瓷艺术"
+          },
+          {
+            "name": "中国茶文化网",
+            "url": "http://www.chawenhua.com/",
+            "description": "弘扬中国茶道、历代茶书(如《茶经》)"
+          },
+          {
+            "name": "中国园林网",
+            "url": "http://www.yuanlin.com/",
+            "description": "探索中国古典园林艺术、苏州园林造园思想与景观美学。"
+          },
+          {
+            "name": "中国传统建筑网",
+            "url": "http://www.ctjz.org/",
+            "description": "研究中国古代木结构建筑、营造法式、古建保护与审美。"
+          },
+          {
+            "name": "营造学社纪念馆",
+            "url": "http://www.yingzaoxueshe.com/",
+            "description": "纪念梁思成、林徽因等老一辈建筑学者"
+          },
+          {
+            "name": "中国非物质文化遗产网",
+            "url": "http://www.ihchina.cn/",
+            "description": "国家级非遗名录、传承人展示及传统手工艺、戏曲保护。"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "故宫名画记",
+            "url": "https://minghuaji.dpm.org.cn/",
+            "description": "故宫博物院出品，极高像素超高清赏析历代传世名画。"
+          },
+          {
+            "name": "数字敦煌",
+            "url": "https://www.e-dunhuang.org.cn/",
+            "description": "莫高窟壁画与石窟的高清3D数字化展示"
+          },
+          {
+            "name": "敦煌研究院",
+            "url": "https://www.dha.ac.cn/",
+            "description": "敦煌石窟考古、藏经洞文献研究及敦煌艺术保护官方网站"
+          },
+          {
+            "name": "陕西历史博物馆",
+            "url": "https://www.sxhm.com/",
+            "description": "展现周秦汉唐历史文物、金银器、壁画及关中文明。"
+          },
+          {
+            "name": "上海博物馆",
+            "url": "https://www.shanghaimuseum.net/",
+            "description": "以江南青铜器、历代书法、绘画及陶瓷典藏见长的顶级博"
+          },
+          {
+            "name": "南京博物院",
+            "url": "https://www.njmuseum.com/",
+            "description": "展现六朝古都文化、江苏历史文物及江南民间传统艺术。"
+          },
+          {
+            "name": "浙江省博物馆",
+            "url": "https://www.zjmuseum.com.cn/",
+            "description": "藏有良渚文化文物、越窑青瓷及富春山居图(剩山图)等"
+          },
+          {
+            "name": "湖南博物院",
+            "url": "https://www.hnmuseum.com/",
+            "description": "以马王堆汉墓出土文物、商周青铜器及楚文化为核心特色"
+          },
+          {
+            "name": "河南博物院",
+            "url": "https://www.chnmus.net/",
+            "description": "呈现中原文明起源、贾湖骨笛"
+          },
+          {
+            "name": "三星堆博物馆",
+            "url": "https://www.sxd.cn/",
+            "description": "展示古蜀文明古城遗址、青铜神树"
+          },
+          {
+            "name": "中国考古网",
+            "url": "http://www.kaogu.cn/",
+            "description": "中国社会科学院考古研究所官网"
+          },
+          {
+            "name": "文物出版社",
+            "url": "http://www.wenwu.com/",
+            "description": "专业出版考古报告、博物馆藏品图录及文史典籍的官方机"
+          },
+          {
+            "name": "中华书局",
+            "url": "http://www.zhbook.com.cn/",
+            "description": "中国最权威的古籍整理、整理本二十四史及文史专业出版"
+          },
+          {
+            "name": "上海古籍出版社",
+            "url": "http://www.shanghaiguji.com/",
+            "description": "致力于古典文学、文史典籍、学术著作与古籍整理出版。"
+          },
+          {
+            "name": "文津阁",
+            "url": "http://www.wenjinge.com/",
+            "description": "关注四库全书文化、清代藏书楼历史与典籍影印出版。"
+          },
+          {
+            "name": "国家古籍保护中心",
+            "url": "http://www.guji.org.cn/",
+            "description": "推进全国古籍修复、古籍数字化及古籍人才培养的权威平"
+          },
+          {
+            "name": "中国古籍网",
+            "url": "http://www.chinaguji.org/",
+            "description": "提供各类电子版古籍下载、版本鉴赏与古籍买卖资讯。"
+          },
+          {
+            "name": "汉学研究中心",
+            "url": "https://ccs.ncl.edu.tw/",
+            "description": "促进国际汉学交流、提供国际汉学研究资源与学者数据库"
+          },
+          {
+            "name": "欧洲汉学学会(EACS)",
+            "url": "https://chinesestudies.eu/",
+            "description": "促进欧洲各国中国古典文化、文史哲研究的学术组织。"
+          },
+          {
+            "name": "美国亚洲研究学会(AAS)",
+            "url": "https://www.asianstudies.org/",
+            "description": "全球最大的亚洲研究(含中国古典艺文研究)学术机构。"
+          },
+          {
+            "name": "普林斯顿大学东亚图书馆",
+            "url": "https://eastasianlib.princeton.edu/",
+            "description": "拥有丰富的中文古籍善本、明清小说及艺术史藏书。"
+          },
+          {
+            "name": "哈佛燕京图书馆",
+            "url": "https://library.harvard.edu/libraries/harvard-yenching",
+            "description": "海外藏有最多中国古籍善本与珍贵文献的顶级学术图书馆"
+          },
+          {
+            "name": "哈佛燕京学社",
+            "url": "https://harvard-yenching.org/",
+            "description": "资助东亚人文社会科学研究"
+          },
+          {
+            "name": "大英图书馆中文馆藏",
+            "url": "https://www.bl.uk/",
+            "description": "藏有大量敦煌遗书、永乐大典残本及中国早期印本古籍。"
+          },
+          {
+            "name": "法国国家图书馆数字古籍(Gallica)",
+            "url": "https://gallica.bnf.fr/",
+            "description": "含有大量法国收藏的敦煌写本"
+          },
+          {
+            "name": "日本东京大学东洋文化研究所",
+            "url": "http://www.ioc.u-tokyo.ac.jp/",
+            "description": "海外汉学研究重镇，藏有大量中国稀见古籍与汉学资料。"
+          },
+          {
+            "name": "京都大学人文科学研究所",
+            "url": "https://www.zinbun.kyoto-u.ac.jp/",
+            "description": "日本汉学研究发源地之一，专注于中国古代史与古典文献"
+          },
+          {
+            "name": "汉籍经典综合数据库(JAIRO)",
+            "url": "https://jairo.nii.ac.jp/",
+            "description": "整合日本各大大学图书馆收藏的中文古典汉籍检索系统。"
+          },
+          {
+            "name": "国际 Dunhuang Project (IDP)",
+            "url": "http://idp.bl.uk/",
+            "description": "国际敦煌项目，将全球散落的敦煌遗书数字化高清呈现。"
+          },
+          {
+            "name": "维基文库(中文)",
+            "url": "https://zh.wikisource.org/",
+            "description": "开放的自由文献库，包含海量无版权的中国古典文史著作"
+          },
+          {
+            "name": "开放文学网",
+            "url": "http://open-lit.com/",
+            "description": "提供中国古代历代名著、古典小说"
+          },
+          {
+            "name": "诗词大全",
+            "url": "https://www.shicidaquan.com/",
+            "description": "分门别类整理自先秦至明清的数万首诗、词、曲作品。"
+          },
+          {
+            "name": "古今图书集成数据库",
+            "url": "http://www.gurong.com/",
+            "description": "中国古代规模最大、用处最广的官方类书在线查阅系统。"
+          },
+          {
+            "name": "四库全书网络版",
+            "url": "http://www.sikuquanshu.com/",
+            "description": "提供清代《四库全书》全文检索、文津阁/文渊阁对照。"
+          },
+          {
+            "name": "先秦城邦与学术网",
+            "url": "http://www.xianqin.org/",
+            "description": "关注先秦历史、甲骨文、金文、出土简帛与早期文明。"
+          },
+          {
+            "name": "中国简帛网",
+            "url": "http://www.jianbo.org/",
+            "description": "武汉大学简帛研究中心主办"
+          },
+          {
+            "name": "复旦大学出土文献与古文字研究中心",
+            "url": "http://www.gwz.fudan.edu.cn/",
+            "description": "国内顶尖的甲骨文、金文、战国竹简考释学术平台。"
+          },
+          {
+            "name": "汉语大字典电子版",
+            "url": "https://www.hydzd.org/",
+            "description": "专业集字、古字形、字源演变与字义考证的权威工具。"
+          },
+          {
+            "name": "小学堂",
+            "url": "https://xiaoxue.iis.sinica.edu.tw/",
+            "description": "台湾中研院开发，集甲骨文、金文、简帛"
+          },
+          {
+            "name": "常用国字标准字体笔顺网",
+            "url": "https://strokedb.e-nanmai.com/",
+            "description": "查询汉字标准笔顺、字形演变与楷书结构的教学网站。"
+          },
+          {
+            "name": "中国音韵学网",
+            "url": "http://www.yinyun.cn/",
+            "description": "探讨广韵、切韵、古音学及汉语历代声韵演变规律。"
+          },
+          {
+            "name": "训诂学研究网",
+            "url": "http://www.xungu.org/",
+            "description": "专注于古典文献字词释义、古汉语词汇学与训诂方法。"
+          },
+          {
+            "name": "墨子沙龙/墨学网",
+            "url": "http://www.mozi.org/",
+            "description": "研究先秦墨家思想、科技史、逻辑学及墨子著作。"
+          },
+          {
+            "name": "庄子研究网",
+            "url": "http://www.zhuangzi.org/",
+            "description": "研究《庄子》哲学、道家美学、逍遥游思想及历代注疏。"
+          },
+          {
+            "name": "荀子研究网",
+            "url": "http://www.xunzi.org/",
+            "description": "关注荀子礼法思想、儒学演变及先秦诸子百家争鸣。"
+          },
+          {
+            "name": "孙子兵法网",
+            "url": "http://www.sunzi.org/",
+            "description": "《孙子兵法》十三篇全文、古代兵法策略与历代军事思想"
+          },
+          {
+            "name": "易经网",
+            "url": "http://www.yijing.org.cn/",
+            "description": "《周易》卦象、爻辞、易传分析及历代易学哲学研究。"
+          },
+          {
+            "name": "王阳明心学网",
+            "url": "http://www.wangyangming.org/",
+            "description": "研究明代阳明心学、“知行合一”及致良知哲学。"
+          },
+          {
+            "name": "朱子学研究网",
+            "url": "http://www.zhuzi.org/",
+            "description": "专注于宋代理学集大成者朱熹的思想、四书章句集注。"
+          },
+          {
+            "name": "戴震与乾嘉学派网",
+            "url": "http://www.daizhen.org/",
+            "description": "探讨清代乾嘉考据学、朴学方法及清代学术思想史。"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "古典音乐与戏剧网",
+            "url": "http://www.classicart.cn/",
+            "description": "展示中国传统戏曲、古典乐曲历史、工尺谱与传统乐器。"
+          },
+          {
+            "name": "中国古琴网",
+            "url": "http://www.guqin.com/",
+            "description": "古琴爱好者社区，提供琴曲试听"
+          },
+          {
+            "name": "琵琶艺术网",
+            "url": "http://www.pipa.org/",
+            "description": "展示中国传统弦乐琵琶的曲谱、演奏技巧与历史演变。"
+          },
+          {
+            "name": "埙乐文化网",
+            "url": "http://www.xunyue.com/",
+            "description": "介绍中国最古老的吹奏乐器“埙”的历史、制作与吹奏。"
+          },
+          {
+            "name": "民族乐器网",
+            "url": "http://www.minzuyueqi.com/",
+            "description": "汇总笙箫管笛、琴瑟琵琶等各类中华传统乐器的图文资料"
+          },
+          {
+            "name": "中国剪纸网",
+            "url": "http://www.jianzhi.com/",
+            "description": "展示中国传统民间剪纸艺术、民俗图案及其文化内涵。"
+          },
+          {
+            "name": "中国皮影戏网",
+            "url": "http://www.piying.org/",
+            "description": "介绍中国传统阴影艺术皮影戏的雕刻、剧本与表演技术。"
+          },
+          {
+            "name": "中国泥人张彩塑网",
+            "url": "http://www.nirinzhang.com/",
+            "description": "展示民间传统手工艺泥人张的彩塑艺术与历代作品。"
+          },
+          {
+            "name": "中国景泰蓝网",
+            "url": "http://www.jingtailan.com/",
+            "description": "介绍掐丝珐琅(景泰蓝)传统宫廷手工艺历史与精美艺术"
+          },
+          {
+            "name": "中国紫砂艺术网",
+            "url": "http://www.zisha.com/",
+            "description": "探索宜兴紫砂壶造艺、茶具文化、历代名家与鉴赏知识。"
+          },
+          {
+            "name": "中国刺绣网",
+            "url": "http://www.cixiu.com/",
+            "description": "涵盖苏绣、蜀绣、粤绣、湘绣四大名绣及传统针法艺术。"
+          },
+          {
+            "name": "中国缂丝艺术网",
+            "url": "http://www.kesi.org/",
+            "description": "介绍“一寸缂丝一寸金”的传统皇家丝织工艺与历代精品"
+          },
+          {
+            "name": "中国古典家具网",
+            "url": "http://www.jiaju.com/gudian/",
+            "description": "展示明清家具结构、榫卯工艺、黄花梨紫檀艺术赏析。"
+          },
+          {
+            "name": "榫卯结构网",
+            "url": "http://www.sunmao.org/",
+            "description": "专研中国古代木建筑与家具中无钉无胶的榫卯智慧。"
+          },
+          {
+            "name": "中国瓦当艺术网",
+            "url": "http://www.wadang.org/",
+            "description": "搜集汉代“长乐未央”等历代秦砖汉瓦、图像及拓片。"
+          },
+          {
+            "name": "中国金石学网",
+            "url": "http://www.jinshi.org/",
+            "description": "研究青铜器铭文、石刻碑葛"
+          },
+          {
+            "name": "碑帖爱好者网",
+            "url": "http://www.beitie.org/",
+            "description": "汇集汉碑、魏碑、唐碑高清晰拓本"
+          },
+          {
+            "name": "甲骨文研究网",
+            "url": "http://www.jiaguwen.org/",
+            "description": "殷墟甲骨卜辞考释、文字演变及商代历史文化专题。"
+          },
+          {
+            "name": "上海书画网",
+            "url": "http://www.shanghaishuhua.com/",
+            "description": "展示海派书画艺术、传统中国画鉴赏与当代国画名家。"
+          },
+          {
+            "name": "岭南画派网",
+            "url": "http://www.lingnanart.com/",
+            "description": "介绍折衷中西、融汇古今的岭南画派发展史及代表艺术家"
+          },
+          {
+            "name": "金陵八家研究网",
+            "url": "http://www.jinlingbajia.com/",
+            "description": "研究明末清初金陵画派(龚贤等)的艺术风格与历史背景"
+          },
+          {
+            "name": "扬州八怪网",
+            "url": "http://www.yangzhoubaguai.com/",
+            "description": "展示清代扬州画派(郑板桥等)革新画风与诗书画印艺术"
+          },
+          {
+            "name": "浙派篆刻网",
+            "url": "http://www.zhepai.org/",
+            "description": "介绍清代丁敬等西泠八家创立的浙派篆刻艺术风格。"
+          },
+          {
+            "name": "徽派文化网",
+            "url": "http://www.huipai.org/",
+            "description": "包含徽派建筑、徽墨歙砚、徽剧及徽州版画等古典文化。"
+          },
+          {
+            "name": "湖湘文化网",
+            "url": "http://www.huxiang.org/",
+            "description": "探讨岳麓书院、湖湘学派及宋明理学在湖南的继承演变。"
+          },
+          {
+            "name": "蜀道文化网",
+            "url": "http://www.shudao.org/",
+            "description": "关注四川古代蜀道遗址、三国文化"
+          },
+          {
+            "name": "齐鲁文化网",
+            "url": "http://www.qilu.org/",
+            "description": "研究孔孟之乡的儒家文化、山东汉画像石及齐鲁历史。"
+          },
+          {
+            "name": "吴文化网",
+            "url": "http://www.wuculture.com/",
+            "description": "展示苏州江南水乡文化、昆曲"
+          },
+          {
+            "name": "闽南文化网",
+            "url": "http://www.minnan.org/",
+            "description": "介绍闽南红砖建筑、南音古乐"
+          },
+          {
+            "name": "客家文化网",
+            "url": "http://www.hakka.org/",
+            "description": "探索客家土楼建筑、客家古方言、中原文化南迁历史。"
+          },
+          {
+            "name": "藏学研究网",
+            "url": "http://www.tibetology.ac.jp/",
+            "description": "介绍西藏传统唐卡艺术、藏传佛教藏经及高原古典艺文。"
+          },
+          {
+            "name": "中国敦煌吐鲁番学会",
+            "url": "http://www.dh-tlf.org/",
+            "description": "关注丝绸之路沿线敦煌学、吐鲁番文书及西域文明交流。"
+          },
+          {
+            "name": "丝绸之路历史文化网",
+            "url": "http://www.silkroad.org/",
+            "description": "展示古代丝绸之路贸易、艺术融合"
+          },
+          {
+            "name": "大运河文化网",
+            "url": "http://www.dayunhe.org/",
+            "description": "介绍中国大运河沿线历史名城"
+          },
+          {
+            "name": "长城文化网",
+            "url": "http://www.greatwall.org/",
+            "description": "关注万里长城军事建筑、古代边塞诗词与边疆文化史。"
+          },
+          {
+            "name": "古代文人墨客网",
+            "url": "http://www.wenren.org/",
+            "description": "介绍屈原、李白、苏轼、辛弃疾等历代文人墨客生平与作"
+          },
+          {
+            "name": "苏轼研究网",
+            "url": "http://www.sushi.org.cn/",
+            "description": "专研苏东坡诗词、书法、文章、哲学及生活美学。"
+          },
+          {
+            "name": "杜甫研究网",
+            "url": "http://www.dufu.org.cn/",
+            "description": "研究“诗圣”杜甫诗歌创作"
+          },
+          {
+            "name": "曹雪芹研究网",
+            "url": "http://www.caoxueqin.org/",
+            "description": "研究曹雪芹生平、家族背景、《红楼梦》艺术造诣。"
+          },
+          {
+            "name": "陶渊明研究网",
+            "url": "http://www.taoyuanming.org/",
+            "description": "探讨田园诗派鼻祖陶渊明诗文"
+          },
+          {
+            "name": "李白研究网",
+            "url": "http://www.libai.org.cn/",
+            "description": "研究“诗仙”李白浪漫主义诗歌、道家思想及盛唐气象。"
+          },
+          {
+            "name": "白居易研究网",
+            "url": "http://www.baijuyi.org/",
+            "description": "关注新乐府运动、白居易通俗诗风及中唐社会艺术。"
+          },
+          {
+            "name": "陆游研究网",
+            "url": "http://www.luyou.org/",
+            "description": "专研南宋爱国诗人陆游诗词"
+          },
+          {
+            "name": "辛弃疾研究网",
+            "url": "http://www.xinqiji.org/",
+            "description": "研究豪放派词人辛弃疾英雄词作、南宋军事史与词学。"
+          },
+          {
+            "name": "李清照研究网",
+            "url": "http://www.liqingzhao.org/",
+            "description": "研究易安体婉约词、宋代金石学及李清照词论。"
+          },
+          {
+            "name": "屈原与楚辞网",
+            "url": "http://www.quyuan.org/",
+            "description": "《离骚》《九歌》楚辞研究"
+          },
+          {
+            "name": "汉赋研究网",
+            "url": "http://www.hanfu.org/",
+            "description": "专研司马相如、班固等汉代大赋艺术风格与宫廷文学。"
+          },
+          {
+            "name": "建安文学网",
+            "url": "http://www.jianan.org/",
+            "description": "研究三曹(曹操、曹丕、曹植)七子建安风骨与魏晋文学"
+          },
+          {
+            "name": "魏晋风度与玄学网",
+            "url": "http://www.weijin.org/",
+            "description": "探讨竹林七贤、世说新语、魏晋清谈与玄学哲学。"
+          },
+          {
+            "name": "唐宋八大家网",
+            "url": "http://www.tangsongbadajia.com/",
+            "description": "研究韩愈、柳宗元、欧阳修等唐宋古文运动领袖著作。"
+          }
+        ]
+      },
+      {
+        "name": "精选资源 151-200",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "宋词研究网",
+            "url": "https://www.songci.org/",
+            "description": "汇总宋代婉约与豪放派词作、词牌名演变及词律格律。"
+          },
+          {
+            "name": "元曲与杂剧网",
+            "url": "http://www.yuanqu.org/",
+            "description": "展示关汉卿、王实甫等元代杂剧、散曲作品及戏曲史。"
+          },
+          {
+            "name": "明清小说网",
+            "url": "http://www.mingqingxiaoshuo.com/",
+            "description": "提供四大名著、“三言二拍”等古典长篇与短篇白话小说"
+          },
+          {
+            "name": "中国古典美学网",
+            "url": "http://www.gudianmeixue.org/",
+            "description": "探讨中国古代“意境”、“气韵”"
+          },
+          {
+            "name": "中国神话传说网",
+            "url": "http://www.shenhua.org/",
+            "description": "整理《山海经》《淮南子》等古代神话故事与上古宇宙观"
+          },
+          {
+            "name": "山海经图鉴网",
+            "url": "http://www.shanhaijing.org/",
+            "description": "搜集历代《山海经》异兽图谱、地理志与图考文献。"
+          },
+          {
+            "name": "中国古代天文与历法网",
+            "url": "http://www.gudaitianwen.org/",
+            "description": "研究古代二十四节气、浑天仪、星宿分类与历法推算。"
+          },
+          {
+            "name": "中医药古籍文献网",
+            "url": "http://www.tcmdoc.org/",
+            "description": "提供《黄帝内经》《本草纲目》《伤寒论》等中医经典全"
+          },
+          {
+            "name": "中国算学史网",
+            "url": "http://www.suanxue.org/",
+            "description": "研究《九章算术》《周髀算经》等中国古代数学成就。"
+          },
+          {
+            "name": "中国古代农学网",
+            "url": "http://www.nongxue.org/",
+            "description": "研究《齐民要术》《农政全书》等传统农业科技与农耕文"
+          },
+          {
+            "name": "中国香道网",
+            "url": "http://www.xiangdao.org/",
+            "description": "弘扬中国古代香文化、历代香谱、合香配方与熏香器具。"
+          },
+          {
+            "name": "中国花道/插花艺术网",
+            "url": "http://www.chahua.org/",
+            "description": "探讨中国古典插花艺术(瓶花、盘花)"
+          },
+          {
+            "name": "中国传统服饰/汉服网",
+            "url": "http://www.hanfu.cn/",
+            "description": "考证汉唐明等历代汉族传统服饰形制、纹样与织造工艺。"
+          },
+          {
+            "name": "中国古典武术与气功网",
+            "url": "http://www.wushu.org/",
+            "description": "研究太极拳、少林武术、古代兵器及气功养生理论。"
+          },
+          {
+            "name": "中国饮食文化史网",
+            "url": "http://www.yinshi.org/",
+            "description": "探索《随园食单》《饮膳正要》等古代食谱与餐饮美学。"
+          },
+          {
+            "name": "中国古代文房四宝网",
+            "url": "http://www.wenfangsibao.org/",
+            "description": "介绍湖笔、徽墨、宣纸、端砚的历史、制作与鉴赏。"
+          },
+          {
+            "name": "中国善本碑帖拓片网",
+            "url": "http://www.tuopian.org/",
+            "description": "展示国家图书馆及各博物馆藏珍贵石刻拓片影像。"
+          },
+          {
+            "name": "汉代画像砖石网",
+            "url": "http://www.huaxiangzhuan.org/",
+            "description": "研究汉代墓葬艺术、画像砖石上的社会生活与神话图景。"
+          },
+          {
+            "name": "中国民间吉祥图案网",
+            "url": "http://www.jixiang.org/",
+            "description": "解读“福禄寿喜”、“连年有余”等传统民俗吉祥纹样。"
+          },
+          {
+            "name": "中国历代帝王陵寝网",
+            "url": "http://www.lingqin.org/",
+            "description": "介绍秦始皇陵、明十三陵、清东陵等陵寝建筑与考古。"
+          },
+          {
+            "name": "中国百家姓与姓氏文化网",
+            "url": "http://www.xingshi.org/",
+            "description": "查考中华姓氏起源、家谱族谱整理及堂号迁徙历史。"
+          },
+          {
+            "name": "寻根网/中国家谱库",
+            "url": "http://www.jiapu.org/",
+            "description": "提供历代姓氏家谱电子化检索、族谱查询与宗族文化。"
+          },
+          {
+            "name": "中国古代名胜志网",
+            "url": "http://www.mingsheng.org/",
+            "description": "收集古代山水游记、地方志中的名胜古迹与文人题咏。"
+          },
+          {
+            "name": "泰山文化网",
+            "url": "http://www.taishan.org/",
+            "description": "研究封禅文化、泰山石刻、道教圣地与历代文人登临诗篇"
+          },
+          {
+            "name": "黄山画派网",
+            "url": "http://www.huangshanart.com/",
+            "description": "研究渐江、梅清、石涛等清初黄山画派的山水画艺术。"
+          },
+          {
+            "name": "西湖文学与美学网",
+            "url": "http://www.xihu.org/",
+            "description": "汇集关于杭州西湖的历代诗词"
+          },
+          {
+            "name": "庐山文化网",
+            "url": "http://www.lushan.org/",
+            "description": "介绍庐山慧远白莲社、陶渊明隐居、白鹿洞书院与诗词。"
+          },
+          {
+            "name": "中国古代书院网",
+            "url": "http://www.shuyuan.org/",
+            "description": "研究岳麓、白鹿洞、嵩阳、应天等古代四大书院与教育史"
+          },
+          {
+            "name": "中国科举制度网",
+            "url": "http://www.keju.org/",
+            "description": "研究隋唐至清末的科举考试制度"
+          },
+          {
+            "name": "中国古代官制网",
+            "url": "http://www.guanzhi.org/",
+            "description": "查询三省六部、九品中正、御史台等古代政治制度与官衔"
+          },
+          {
+            "name": "中国古代邮驿与交通网",
+            "url": "http://www.youyi.org/",
+            "description": "探讨古代邮驿系统、驿站文化、丝路交通与水路漕运。"
+          },
+          {
+            "name": "中国古代货币/古钱币网",
+            "url": "http://www.qianbi.org/",
+            "description": "汇集贝币、刀布币、通宝方孔钱及历代金银锭鉴赏。"
+          },
+          {
+            "name": "中国度量衡历史网",
+            "url": "http://www.duliangheng.org/",
+            "description": "考证中国古代尺、升、斤等度量衡单位演变与考古实物。"
+          },
+          {
+            "name": "诸子百家学术网",
+            "url": "http://www.zhuzibaijia.com/",
+            "description": "整合儒、道、法、墨、名、阴阳"
+          },
+          {
+            "name": "法家哲学网",
+            "url": "http://www.fajia.org/",
+            "description": "研究管仲、商鞅、韩非子法家思想与古代政治治理策略。"
+          },
+          {
+            "name": "纵横家与鬼谷子网",
+            "url": "http://www.guiguzi.org/",
+            "description": "专研《鬼谷子》外交谋略、战国游说之士与纵横捭阖艺术"
+          },
+          {
+            "name": "名家与逻辑学网",
+            "url": "http://www.mingjia.org/",
+            "description": "探讨公孙龙“白马非马”等先秦逻辑学、名实之辩。"
+          },
+          {
+            "name": "阴阳五行学网",
+            "url": "http://www.wuxing.org/",
+            "description": "研究邹衍阴阳五行说、干支历法与古代宇宙论哲学。"
+          },
+          {
+            "name": "古典禅宗文化网",
+            "url": "http://www.chanzong.org/",
+            "description": "汇集《六祖坛经》、公案禅语、菩提达摩与禅宗祖庭。"
+          },
+          {
+            "name": "宋明理学网",
+            "url": "http://www.lixue.org/",
+            "description": "研究程朱理学、陆王心学、“格物致知”与天理人欲之辨"
+          },
+          {
+            "name": "清代考据学网",
+            "url": "http://www.kaoju.org/",
+            "description": "研究朴学、训诂、音韵、目录学等清代学者严谨治学方法"
+          },
+          {
+            "name": "近代国学复兴网",
+            "url": "http://www.guoxuefuxing.org/",
+            "description": "探索章太炎、王国维、梁启超等近代大师对古典艺文的重"
+          },
+          {
+            "name": "经典诵读网",
+            "url": "https://www.songdu.org/",
+            "description": "推广《三字经》《千字文》《声律启蒙》等传统启蒙读物"
+          },
+          {
+            "name": "对联与楹联网",
+            "url": "http://www.yinglian.org/",
+            "description": "收集历代名胜楹联、春联、对仗格律与名家撰联赏析。"
+          },
+          {
+            "name": "灯谜与字谜网",
+            "url": "http://www.dengmi.org/",
+            "description": "弘扬中国传统灯谜文化、射覆、字谜隐语与民俗游艺。"
+          },
+          {
+            "name": "古代文言文学习网",
+            "url": "https://www.wenyanwen.com/",
+            "description": "提供高中/初中文言文虚词、实词"
+          },
+          {
+            "name": "中华诗词学会",
+            "url": "http://www.zhscxh.com/",
+            "description": "全国性诗词社团官网，发布诗词创作、评论与学术活动。"
+          },
+          {
+            "name": "中国楹联学会",
+            "url": "http://www.yinglian.org.cn/",
+            "description": "国家级楹联文化机构，传承楹联艺术与楹联考评。"
+          },
+          {
+            "name": "国家语言文字工作委员会",
+            "url": "http://www.ywgc.edu.cn/",
+            "description": "规范汉字使用、推广普通话及汉字文化传承官方平台。"
+          },
+          {
+            "name": "数字汉字博物馆",
+            "url": "http://www.hanzi.org/",
+            "description": "运用数字技术展示汉字从甲骨文到现代简化字的演变全貌"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑪𝑙𝑎𝑠𝑠𝑖𝑐𝑎𝑙 𝑨𝑟𝑡𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

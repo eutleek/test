@@ -1,0 +1,1389 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="白噪音、声音档案馆与小众音乐站">
+<title>白噪音乐 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>白噪音乐</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">白噪音乐 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "白噪音乐",
+    "icon": "🎧",
+    "color": "linear-gradient(135deg, #74b9ff, #a29bfe)",
+    "subcategories": [
+      {
+        "name": "疗愈白噪 (1-40)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "myNoise",
+            "url": "https://mynoise.net",
+            "description": "全球顶级的环境音效与白噪音生成器"
+          },
+          {
+            "name": "Noisli",
+            "url": "https://www.noisli.com",
+            "description": "极简风格的环境音混合器，可自由搭配雨声、风声"
+          },
+          {
+            "name": "A Soft Murmur",
+            "url": "https://asoftmurmur.com",
+            "description": "清爽无广告的自然音效生成网，支持雨声、雷鸣"
+          },
+          {
+            "name": "Defonic",
+            "url": "https://defonic.com",
+            "description": "拟物化视觉的环境音效拟真站，包含森林、夜晚"
+          },
+          {
+            "name": "Rainy Mood",
+            "url": "https://rainymood.com",
+            "description": "经典老牌雨声模拟网站，提供高品质的真实下雨与雷鸣背"
+          },
+          {
+            "name": "Calmsound",
+            "url": "https://www.calmsound.com",
+            "description": "提供高清大自然实景原声(如瀑布、海浪"
+          },
+          {
+            "name": "Moodil",
+            "url": "https://www.moodil.com",
+            "description": "支持多种环境元素自由组合的放松音效与专注白噪音平台"
+          },
+          {
+            "name": "Ambient-Mixer",
+            "url": "https://www.ambient-mixer.com",
+            "description": "开放式环境音社区，可播放或创作如霍格沃茨图书馆等特"
+          },
+          {
+            "name": "Tabletop Audio",
+            "url": "https://tabletopaudio.com",
+            "description": "专为桌面游戏(TRPG)与奇幻写作设计的专业背景音"
+          },
+          {
+            "name": "Soundrown",
+            "url": "https://soundrown.com",
+            "description": "简易好用的多轨道环境音效播放器，涵盖咖啡馆"
+          },
+          {
+            "name": "Coffitivity",
+            "url": "https://coffitivity.com",
+            "description": "还原真实咖啡馆背景人声与环境音"
+          },
+          {
+            "name": "Hipster Sound",
+            "url": "https://hipstersound.com",
+            "description": "主打各类精致咖啡馆、酒吧与室内工作区氛围音效的生成"
+          },
+          {
+            "name": "Purrli",
+            "url": "https://purrli.com",
+            "description": "专门模拟猫咪噜噜声(猫喘息)的音效生成器"
+          },
+          {
+            "name": "Noisetherapist",
+            "url": "https://noisetherapist.com",
+            "description": "结合声音疗法与频率调节的专业白噪音与粉红噪音生成站"
+          },
+          {
+            "name": "Free Sound Analyzer & White Noise",
+            "url": "https://www.soundclear.com",
+            "description": "提供纯净粉红噪音、棕色噪音与白噪音的专业高保真播放"
+          },
+          {
+            "name": "Snowfall Sound",
+            "url": "https://www.snowfallsound.com",
+            "description": "专注于冬日落雪、寒风与冰雪环境氛围音效的疗愈网。"
+          },
+          {
+            "name": "Lava Lamp Chill",
+            "url": "https://lavalampchill.com",
+            "description": "配合动态熔岩灯视觉的低调环境音与 Lofi"
+          },
+          {
+            "name": "Virtual Cottage",
+            "url": "https://duelingducks.itch.io/virtual-cottage",
+            "description": "小屋氛围音效与计时器，提供舒适的书房背景声与放松音"
+          },
+          {
+            "name": "Softly.c",
+            "url": "https://softly.c",
+            "description": "极简设计的静心雨声与微风模拟，适合睡前与冥想使用。"
+          },
+          {
+            "name": "Brain.fm",
+            "url": "https://www.brain.fm",
+            "description": "结合功能性音乐与神经科学打造的专注"
+          },
+          {
+            "name": "Endel",
+            "url": "https://endel.io",
+            "description": "AI 驱动的个性化声学环境网，根据天气"
+          },
+          {
+            "name": "Focus at Will",
+            "url": "https://www.focusatwill.com",
+            "description": "根据神经类型定制后台背景音乐"
+          },
+          {
+            "name": "Portal",
+            "url": "https://portal.app",
+            "description": "将全球顶级的自然原声与高画质实景结合的沉浸式空间声"
+          },
+          {
+            "name": "Calm",
+            "url": "https://www.calm.com",
+            "description": "全球知名冥想与睡眠网站，提供睡前故事"
+          },
+          {
+            "name": "Headspace",
+            "url": "https://www.headspace.com",
+            "description": "专业冥想与正念引导网，包含大量工作专注与情绪安抚音"
+          },
+          {
+            "name": "Insight Timer",
+            "url": "https://insighttimer.com",
+            "description": "庞大的免费冥想音乐与颂钵疗愈声音社区。"
+          },
+          {
+            "name": "Tide (潮汐)",
+            "url": "https://tide.fm",
+            "description": "结合自然声响与番茄钟的大自然时空音频网。"
+          },
+          {
+            "name": "Relaxing White Noise",
+            "url": "https://relaxingwhitenoise.com",
+            "description": "收录长达数小时的高清天然雨声、河流声与睡眠白噪音。"
+          },
+          {
+            "name": "Generative.fm",
+            "url": "https://generative.fm",
+            "description": "生成式无限环境音乐库，由代码实时渲染出永不重复的无"
+          },
+          {
+            "name": "City Soundscapes",
+            "url": "https://citysoundscapes.com",
+            "description": "收集全球各大都市(东京、巴黎"
+          },
+          {
+            "name": "Night Cafe Sound",
+            "url": "https://nightcafesound.com",
+            "description": "专门呈现深夜咖啡馆、雨夜街道与酒吧背景音的放松站。"
+          },
+          {
+            "name": "Bird Song generator",
+            "url": "https://birdsong.org.uk",
+            "description": "英国自然保护协会打造的各种鸟类清脆鸣叫声播放网。"
+          },
+          {
+            "name": "Thunderstorm.fm",
+            "url": "https://thunderstorm.fm",
+            "description": "专注于极致逼真雷雨天气与远方雷鸣的白噪音网。"
+          },
+          {
+            "name": "Ocean Waves Chill",
+            "url": "https://oceanwaveschill.com",
+            "description": "海浪翻涌与海岸微风的高清自然原声流媒体。"
+          },
+          {
+            "name": "Space Engine Ambient",
+            "url": "https://spaceengineambient.com",
+            "description": "深空深邃氛围、宇宙低频与科幻飞船舱内环境音效。"
+          },
+          {
+            "name": "Zen Mix",
+            "url": "https://zenmix.io",
+            "description": "融合禅宗颂钵、木鱼与竹林风声的东方意境白噪音网。"
+          },
+          {
+            "name": "Treehugger Nature Sounds",
+            "url": "https://www.treehugger.com/nature-sounds",
+            "description": "环保视角下的荒野自然原声与森林生态背景声。"
+          },
+          {
+            "name": "Ambient Sleeping Pill",
+            "url": "https://ambientsleepingpill.com",
+            "description": "24小时不间断播放无节奏"
+          },
+          {
+            "name": "Sleep Jar",
+            "url": "https://sleepjar.com",
+            "description": "专门提供各类定制白噪音(风扇声、洗衣机声"
+          },
+          {
+            "name": "Blank Wave",
+            "url": "https://blankwave.com",
+            "description": "极简工业感白噪音与黑客帝国风格电子低频背景音。"
+          }
+        ]
+      },
+      {
+        "name": "声音地图 (41-80)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Radio Garden",
+            "url": "https://radio.garden",
+            "description": "互动式三维地球声景地图，拖动地球即可实时收听全球数"
+          },
+          {
+            "name": "Cities and Memory",
+            "url": "https://citiesandmemory.com",
+            "description": "全球最大的声音艺术项目之一"
+          },
+          {
+            "name": "Aporee Soundmaps",
+            "url": "https://aporee.org/maps",
+            "description": "开放式环境音地理地图，收录全球用户录制的自然与人文"
+          },
+          {
+            "name": "British Library Sounds",
+            "url": "https://sounds.bl.uk",
+            "description": "大英图书馆官方声音档案馆，藏有数十万份历史口述"
+          },
+          {
+            "name": "Library of Congress Audio Recordings",
+            "url": "https://www.loc.gov/audio",
+            "description": "美国国会图书馆音频档案，收录早期民谣"
+          },
+          {
+            "name": "Earth.fm",
+            "url": "https://earth.fm",
+            "description": "大自然版 Spotify"
+          },
+          {
+            "name": "Sounds of New York City (SONYC)",
+            "url": "https://sonyc.nyu.edu",
+            "description": "纽约大学打造的城市声学环境与声音污染研究数据库。"
+          },
+          {
+            "name": "Locus Sonus Soundmap",
+            "url": "https://locusonus.org/soundmap",
+            "description": "实时流媒体声音地图，传输全球各地安装的流媒体麦克风"
+          },
+          {
+            "name": "Museum of Endangered Sounds",
+            "url": "https://savethesounds.info",
+            "description": "濒危声音博物馆，收集了旧式拨号上网、卡带机"
+          },
+          {
+            "name": "The World Soundscape Project",
+            "url": "https://www.sfu.ca/communication/wsp",
+            "description": "声音生态学先驱 Murray Schafer"
+          },
+          {
+            "name": "BBC Sound Effects",
+            "url": "https://sound-effects.bbcrewind.co.uk",
+            "description": "BBC 开放的巨型音效库，包含数万个历史事件"
+          },
+          {
+            "name": "Europeana Audio",
+            "url": "https://www.europeana.eu/en/collections/topic/18-audio",
+            "description": "欧洲数字图书馆音频专区，藏有欧洲百年来民间音乐与自"
+          },
+          {
+            "name": "UNESCO Intangible Cultural Heritage Audio",
+            "url": "https://ich.unesco.org",
+            "description": "联合国教科文组织非物质文化遗产音频"
+          },
+          {
+            "name": "Wild Sanctuary",
+            "url": "https://www.wildsanctuary.com",
+            "description": "声学生态学家 Bernie Krause 创办"
+          },
+          {
+            "name": "Nature Soundmap",
+            "url": "https://www.naturesoundmap.com",
+            "description": "由全球数十位顶级声音专业人士联合制作的高清自然生态"
+          },
+          {
+            "name": "Ambient Weather Sound Map",
+            "url": "https://ambientweather.net",
+            "description": "结合全球气象站数据展示的气候与环境音效地图。"
+          },
+          {
+            "name": "Sounding Jerusalem",
+            "url": "https://soundingjerusalem.com",
+            "description": "记录古城耶路撒冷宗教唱腔"
+          },
+          {
+            "name": "Listening to the Deep Ocean",
+            "url": "https://www.listentothedeep.com",
+            "description": "收录全球大洋底水下麦克风捕捉到的鲸鱼歌声"
+          },
+          {
+            "name": "Underwater Sound Archive (NOAA)",
+            "url": "https://www.pmel.noaa.gov/audio",
+            "description": "美国国家海洋和大气局水下音频档案"
+          },
+          {
+            "name": "Macaulay Library (Cornell Lab)",
+            "url": "https://www.macaulaylibrary.org",
+            "description": "康奈尔大学鸟类学实验室，全球最大的动物声音与鸟鸣科"
+          },
+          {
+            "name": "Xeno-canto",
+            "url": "https://xeno-canto.org",
+            "description": "全球野生鸟类声音共享社区"
+          },
+          {
+            "name": "Frogwatch Sound Library",
+            "url": "https://www.aza.org/frogwatch",
+            "description": "专门收集北美及全球各类蛙类与两栖动物鸣叫声的数据库"
+          },
+          {
+            "name": "Insect Sounds Database",
+            "url": "https://www.discoverlife.org",
+            "description": "收集昆虫振翅、鸣叫与微观生物运动声音的科学音频网。"
+          },
+          {
+            "name": "Forest Soundmap (Timber Festival)",
+            "url": "https://timberfestival.org.uk/sound-of-the-forest",
+            "description": "全球森林声音地图，采集世界各地森林中的树叶沙沙声与"
+          },
+          {
+            "name": "Chatty Maps",
+            "url": "http://goodcitylife.org/chattymaps",
+            "description": "分析城市街道声音(音乐、机械、自然"
+          },
+          {
+            "name": "London Sound Survey",
+            "url": "https://www.soundsoflondon.co.uk",
+            "description": "记录伦敦近百年来街道、工业"
+          },
+          {
+            "name": "Paris Soundscapes Archive",
+            "url": "https://parissoundscapes.com",
+            "description": "记录巴黎市集、塞纳河畔与地铁站特色人声与氛围音的沉"
+          },
+          {
+            "name": "Venice Soundmap",
+            "url": "https://www.venicesoundmap.eu",
+            "description": "威尼斯水城声音地图，记录划桨声"
+          },
+          {
+            "name": "Tokyo Sound Project",
+            "url": "https://tokyosoundproject.com",
+            "description": "采集东京电车提示音、繁华街区与神巷静谧环境音的声音"
+          },
+          {
+            "name": "Berlin Sound Map",
+            "url": "https://berlinsoundmap.com",
+            "description": "记录柏林墙遗址、地下俱乐部门口与公园环境音的城市声"
+          },
+          {
+            "name": "Hong Kong Audio Archive",
+            "url": "https://hkaudioarchive.org",
+            "description": "记录香港小贩呼喊、双层巴士与老旧街区烟火气的声音地"
+          },
+          {
+            "name": "Icelandic Soundscapes",
+            "url": "https://icelandicsoundscapes.com",
+            "description": "收集冰岛瀑布、地热喷泉、冰川融化与极地强风的极端自"
+          },
+          {
+            "name": "Rainforest Sound Archive",
+            "url": "https://rainforestsounds.org",
+            "description": "亚马逊及东南亚热带雨林原生态声音档案。"
+          },
+          {
+            "name": "Volcano Sound Archive",
+            "url": "https://volcanosounds.org",
+            "description": "收集全球活火山喷发、岩浆咕嘟声与地壳变动低频声音的"
+          },
+          {
+            "name": "Train Sound Archive",
+            "url": "https://trainsoundarchive.com",
+            "description": "收录全球经典蒸汽火车、高铁与老旧铁路行驶交响曲的声"
+          },
+          {
+            "name": "Airport Ambient Archive",
+            "url": "https://airportambience.com",
+            "description": "专门采集全球各大机场候机楼"
+          },
+          {
+            "name": "Harbor & Maritime Sounds",
+            "url": "https://maritimesounds.net",
+            "description": "海港汽笛、水波拍击船体与码头吊车等海洋工业声音集锦"
+          },
+          {
+            "name": "Old Radio Programs Archive",
+            "url": "https://www.oldradioworld.com",
+            "description": "20世纪 30-50 年代老无线电广播剧"
+          },
+          {
+            "name": "NASA Audio Archive",
+            "url": "https://images.nasa.gov",
+            "description": "NASA 官方公开的太空探索原声、火箭发射"
+          },
+          {
+            "name": "Internet Archive Audio",
+            "url": "https://archive.org/details/audio",
+            "description": "互联网档案馆音频区，拥有数百万个免费历史音乐"
+          }
+        ]
+      },
+      {
+        "name": "先锋音乐 (81-120)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Bandcamp",
+            "url": "https://bandcamp.com",
+            "description": "全球最大的独立音乐人直接售卖数字唱片"
+          },
+          {
+            "name": "NTS Radio",
+            "url": "https://www.nts.live",
+            "description": "伦敦先锋地下网络电台，汇聚全球极具探索精神的"
+          },
+          {
+            "name": "Resident Advisor (RA)",
+            "url": "https://ra.co",
+            "description": "全球电子音乐、地下俱乐部文化与先锋 DJ"
+          },
+          {
+            "name": "Discogs",
+            "url": "https://www.discogs.com",
+            "description": "全球最大的实体唱片(黑胶、CD、磁带)数据库"
+          },
+          {
+            "name": "Bleep",
+            "url": "https://bleep.com",
+            "description": "Warp Records 旗下知名独立数字唱片店"
+          },
+          {
+            "name": "Boomkat",
+            "url": "https://boomkat.com",
+            "description": "英国顶级小众与先锋音乐唱片店，精选暗黑电子"
+          },
+          {
+            "name": "Forced Exposure",
+            "url": "https://www.forcedexposure.com",
+            "description": "老牌小众音乐分销商，涵盖海量地下摇滚、爵士"
+          },
+          {
+            "name": "Norman Records",
+            "url": "https://www.normanrecords.com",
+            "description": "英国知名独立唱片店，以极其幽默专业的唱片评价与小众"
+          },
+          {
+            "name": "Juno Records",
+            "url": "https://www.juno.co.uk",
+            "description": "英国大型电子乐、黑胶唱片与 DJ 设备供应商"
+          },
+          {
+            "name": "Hardwax",
+            "url": "https://hardwax.com",
+            "description": "柏林传奇黑胶唱片店，Techno 与"
+          },
+          {
+            "name": "Phonica Records",
+            "url": "https://www.phonicarecords.com",
+            "description": "伦敦 Soho 区核心黑胶唱片店"
+          },
+          {
+            "name": "Dublab",
+            "url": "https://www.dublab.com",
+            "description": "洛杉矶非营利先锋网络电台"
+          },
+          {
+            "name": "Worldwide FM",
+            "url": "https://worldwidefm.net",
+            "description": "Gilles Peterson"
+          },
+          {
+            "name": "Rinse FM",
+            "url": "https://rinse.fm",
+            "description": "伦敦传奇地下海盗电台演变而来的 Grime,"
+          },
+          {
+            "name": "The Lot Radio",
+            "url": "https://www.thelotradio.com",
+            "description": "纽约布鲁克林集装箱场地发起的24小时独立 DJ"
+          },
+          {
+            "name": "KEXP Radio",
+            "url": "https://www.kexp.org",
+            "description": "西雅图知名公共电台，以顶级的独立摇滚与现场不插电"
+          },
+          {
+            "name": "NPR Tiny Desk Concerts",
+            "url": "https://www.npr.org/series/tiny-desk-concerts",
+            "description": "美国国家公共电台标志性的办公室办公桌现场音乐表演视"
+          },
+          {
+            "name": "Boiler Room",
+            "url": "https://boilerroom.tv",
+            "description": "全球知名的地下电子音乐与俱乐部现场直播平台。"
+          },
+          {
+            "name": "HÖR BERLIN",
+            "url": "https://hor.berlin",
+            "description": "柏林标志性浴室风格瓷砖直播间"
+          },
+          {
+            "name": "CDandLP",
+            "url": "https://www.cdandlp.com",
+            "description": "法国老牌二手黑胶与稀有唱片国际交易平台。"
+          },
+          {
+            "name": "Rush Hour",
+            "url": "https://www.rushhour.nl",
+            "description": "阿姆斯特丹著名唱片店与厂牌"
+          },
+          {
+            "name": "Clone.nl",
+            "url": "https://clone.nl",
+            "description": "荷兰鹿特丹知名电子乐黑胶网"
+          },
+          {
+            "name": "Honest Jon's",
+            "url": "https://www.honestjons.com",
+            "description": "伦敦独立唱片店，专营稀有雷鬼、爵士"
+          },
+          {
+            "name": "Sounds of the Universe",
+            "url": "https://soundsoftheuniverse.com",
+            "description": "Soul Jazz Records 旗下唱片店"
+          },
+          {
+            "name": "Amoeba Music",
+            "url": "https://www.amoeba.com",
+            "description": "美国大型独立唱片店，其“What's in My"
+          },
+          {
+            "name": "Rough Trade",
+            "url": "https://www.roughtrade.com",
+            "description": "英国传奇独立唱片店与厂牌"
+          },
+          {
+            "name": "Piccadilly Records",
+            "url": "https://www.piccadillyrecords.com",
+            "description": "曼彻斯特著名独立唱片店，提供优质的独立流行"
+          },
+          {
+            "name": "Water Tower Music",
+            "url": "https://www.watertower-music.com",
+            "description": "专注原声带(OST)、电影配乐与戏剧氛围音乐的唱片"
+          },
+          {
+            "name": "Milan Records",
+            "url": "https://milanrecords.com",
+            "description": "知名电影配乐与动漫原声带(如《阿基拉》等)发行厂牌"
+          },
+          {
+            "name": "Mondo / Death Waltz",
+            "url": "https://mondoshop.com/collections/music",
+            "description": "以精美绝伦的黑胶封面设计与稀有电影原声带复刻闻名的"
+          },
+          {
+            "name": "Waxwork Records",
+            "url": "https://waxworkrecords.com",
+            "description": "专注于恐怖电影、科幻电影黑胶原声带极致复刻的唱片公"
+          },
+          {
+            "name": "Invada Records",
+            "url": "https://invada.bandcamp.com",
+            "description": "由 Portishead 成员创办"
+          },
+          {
+            "name": "Erased Tapes",
+            "url": "https://www.erasedtapes.com",
+            "description": "英国知名新古典与环境音厂牌(Olafur"
+          },
+          {
+            "name": "Warp Records",
+            "url": "https://warp.net",
+            "description": "先锋电子乐传奇厂牌，汇聚 Aphex Twin,"
+          },
+          {
+            "name": "Ninja Tune",
+            "url": "https://ninjatune.net",
+            "description": "英国老牌独立电子厂牌，涵括 Trip-Hop,"
+          },
+          {
+            "name": "Ghostly International",
+            "url": "https://ghostly.com",
+            "description": "跨越音乐与视觉艺术的先锋厂牌"
+          },
+          {
+            "name": "Kranky",
+            "url": "https://www.kranky.net",
+            "description": "专注 Ambient, Post-Rock(后摇)"
+          },
+          {
+            "name": "Type Records",
+            "url": "https://typerecords.com",
+            "description": "专注暗黑环境音、新古典与电影感实验音乐的小众厂牌。"
+          },
+          {
+            "name": "4AD",
+            "url": "https://4ad.com",
+            "description": "哥特摇滚、仙音派(Dream"
+          },
+          {
+            "name": "Sub Pop",
+            "url": "https://www.subpop.com",
+            "description": "发掘 Nirvana 的西雅图传奇厂牌"
+          }
+        ]
+      },
+      {
+        "name": "音乐资源 (121-160)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "UbuWeb",
+            "url": "https://www.ubuweb.com",
+            "description": "全球顶级的先锋派艺术、具体音乐(Musique"
+          },
+          {
+            "name": "AllMusic",
+            "url": "https://www.allmusic.com",
+            "description": "庞大的音乐百科与唱片数据库，提供深度乐评"
+          },
+          {
+            "name": "Rate Your Music (RYM)",
+            "url": "https://rateyourmusic.com",
+            "description": "全球极具影响力的音乐评分与乐迷自建排行榜数据库。"
+          },
+          {
+            "name": "WhoSampled",
+            "url": "https://www.whosampled.com",
+            "description": "探索音乐采样、翻唱与混音来源的庞大对比数据库。"
+          },
+          {
+            "name": "Musicmap",
+            "url": "https://musicmap.info",
+            "description": "交互式近现代大众音乐流派演变图谱"
+          },
+          {
+            "name": "Every Single Song (Every Noise at Once)",
+            "url": "https://everynoise.com",
+            "description": "由算法生成的巨型音乐流派声学地图"
+          },
+          {
+            "name": "IMSLP (Petrucci Music Library)",
+            "url": "https://imslp.org",
+            "description": "国际乐谱库，收录数十万份公有领域古典乐谱与公有领域"
+          },
+          {
+            "name": "Classical Archives",
+            "url": "https://www.classicalarchives.com",
+            "description": "全球庞大的古典音乐数字档案与 MIDI"
+          },
+          {
+            "name": "Choral Public Domain Library (CPDL)",
+            "url": "https://www.cpdl.org",
+            "description": "合唱乐与声乐公有领域乐谱与音频档案馆。"
+          },
+          {
+            "name": "Free Music Archive (FMA)",
+            "url": "https://freemusicarchive.org",
+            "description": "高品质公有领域与 CC 协议免费音乐库"
+          },
+          {
+            "name": "CCMixter",
+            "url": "https://ccmixter.org",
+            "description": "基于知识共享协议的音乐采样"
+          },
+          {
+            "name": "Freesound",
+            "url": "https://freesound.org",
+            "description": "全球最大的音频采样、环境音效与音效素材开源合作数据"
+          },
+          {
+            "name": "SoundBible",
+            "url": "https://soundbible.com",
+            "description": "提供免费版权的 sound effects"
+          },
+          {
+            "name": "Sample Focus",
+            "url": "https://samplefocus.com",
+            "description": "分类极其精准的免费音乐采样、乐器单音与音色库。"
+          },
+          {
+            "name": "Looperman",
+            "url": "https://www.looperman.com",
+            "description": "免费 Loop 循环音效、音乐采样与干音共享社区。"
+          },
+          {
+            "name": "Cymatics Free Media",
+            "url": "https://cymatics.fm/pages/free-download-vault",
+            "description": "专业音乐制作人喜爱的免费音频采样包与 Synth"
+          },
+          {
+            "name": "SoundCollector",
+            "url": "https://soundcollector.org",
+            "description": "专注于搜集和保存古老乐器、民俗打击乐器音色的项目。"
+          },
+          {
+            "name": "Electroacoustic Music Archive",
+            "url": "https://www.ems-stockholm.se",
+            "description": "斯德哥尔摩电子声学音乐中心"
+          },
+          {
+            "name": "IRCAM Centre Pompidou",
+            "url": "https://www.ircam.fr",
+            "description": "法国蓬皮杜中心声学/音乐研究协调研究所"
+          },
+          {
+            "name": "GRM (Groupe de Recherches Musicales)",
+            "url": "https://inagrm.com",
+            "description": "法国 INA 旗下具体音乐与电子声学音乐发源地与研"
+          },
+          {
+            "name": "Computer Music Journal",
+            "url": "https://direct.mit.edu/comj",
+            "description": "MIT 出版的计算机音乐"
+          },
+          {
+            "name": "Society for Electro-Acoustic Music (SEAMUS)",
+            "url": "https://seamusonline.org",
+            "description": "美国电子声学音乐协会，展示前卫声音工程与实验音乐。"
+          },
+          {
+            "name": "Audium",
+            "url": "https://www.audium.org",
+            "description": "旧金山空间音效剧场，探索声学空间感与三维声音雕塑。"
+          },
+          {
+            "name": "Sounding the Body Archive",
+            "url": "https://soundingthebody.com",
+            "description": "将生物电信号、心率与人体运动转化为声音艺术的实验库"
+          },
+          {
+            "name": "Acoustic Ecology Institute",
+            "url": "https://www.acousticecology.org",
+            "description": "声学生态学研究所，探讨噪音污染"
+          },
+          {
+            "name": "World Forum for Acoustic Ecology (WFAE)",
+            "url": "https://www.wfae.net",
+            "description": "世界声学生态论坛，联合全球研究者探讨人与声音环境的"
+          },
+          {
+            "name": "Sonemic",
+            "url": "https://sonemic.com",
+            "description": "RYM 团队打造的下一代音乐"
+          },
+          {
+            "name": "Last.fm",
+            "url": "https://www.last.fm",
+            "description": "老牌音乐记录与听歌习惯分析平台"
+          },
+          {
+            "name": "Hype Machine",
+            "url": "https://hypem.com",
+            "description": "聚合全球音乐博客最新推荐小众单曲的音乐追踪平台。"
+          },
+          {
+            "name": "Hypnagogic Pop Archive",
+            "url": "https://hypnagogicarchive.com",
+            "description": "专注 80 年代复古卡带记忆"
+          },
+          {
+            "name": "Vaporwave Archive",
+            "url": "https://vaporwavearchive.org",
+            "description": "蒸汽波(Vaporwave)音乐"
+          },
+          {
+            "name": "Minimal Wave",
+            "url": "https://minimalwave.com",
+            "description": "专门复刻 80 年代小众合成器流行乐("
+          },
+          {
+            "name": "Continuum Encyclopedia of Popular Music",
+            "url": "https://www.bloomsbury.com",
+            "description": "巨型流行音乐百科，涵盖全球各地区民族流行音乐历史。"
+          },
+          {
+            "name": "Vocaloid Archive",
+            "url": "https://vocadb.net",
+            "description": "全球 Vocaloid (初音未来等)"
+          },
+          {
+            "name": "Video Game Music Archive (VGMRips)",
+            "url": "https://vgmrips.net",
+            "description": "收录 8 位、16 位复古电子游戏芯片音乐("
+          },
+          {
+            "name": "Zophar's Domain",
+            "url": "https://www.zophar.net/music",
+            "description": "老牌复古游戏原声(NSF, SPC, GYM"
+          },
+          {
+            "name": "OverClocked ReMix (OCR)",
+            "url": "https://ocremix.org",
+            "description": "致力于将电子游戏音乐进行艺术再创作与同人改编的非营"
+          },
+          {
+            "name": "Classical Net",
+            "url": "https://www.classical.net",
+            "description": "老牌古典音乐导读网，包含大量唱片版本比较与作曲家生"
+          },
+          {
+            "name": "Gramophone",
+            "url": "https://www.gramophone.co.uk",
+            "description": "英国《留声机》杂志官网，全球古典音乐评论与唱片大奖"
+          }
+        ]
+      },
+      {
+        "name": "互动声音 (161-200)",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Incredibox",
+            "url": "https://www.incredibox.com",
+            "description": "拖拽不同服饰口技小人即可轻松编排嘻哈"
+          },
+          {
+            "name": "Chrome Music Lab",
+            "url": "https://musiclab.chromeexperiments.com",
+            "description": "谷歌音乐实验室，通过趣味互动体验声学、波形"
+          },
+          {
+            "name": "Blob Opera",
+            "url": "https://artsandculture.google.com/experiment/blob-opera",
+            "description": "Google 打造的机器学习歌剧实验"
+          },
+          {
+            "name": "Patatap",
+            "url": "https://patatap.com",
+            "description": "按下键盘字母即可发出不同音效并触发绚丽视觉动画的声"
+          },
+          {
+            "name": "Typatone",
+            "url": "https://typatone.com",
+            "description": "将输入的文本与字母实时转化为悦耳音乐旋律的文本音效"
+          },
+          {
+            "name": "ToneMatrix",
+            "url": "https://tonematrix.audiotool.com",
+            "description": "极简 16x16 格子五声音阶点阵正弦波正方形音乐"
+          },
+          {
+            "name": "Audiotool",
+            "url": "https://www.audiotool.com",
+            "description": "基于浏览器的巨型线上音乐制作软件，内置合成器"
+          },
+          {
+            "name": "BandLab",
+            "url": "https://www.bandlab.com",
+            "description": "免费的跨平台云端音乐创作与云端协作云端工作站("
+          },
+          {
+            "name": "Soundtrap (by Spotify)",
+            "url": "https://www.soundtrap.com",
+            "description": "基于浏览器的在线音乐制作与播客录制平台。"
+          },
+          {
+            "name": "BeepBox",
+            "url": "https://beepbox.co",
+            "description": "专门用于创作 8-bit"
+          },
+          {
+            "name": "Online Sequencer",
+            "url": "https://onlinesequencer.net",
+            "description": "简单直观的网页版 MIDI 音乐编排器"
+          },
+          {
+            "name": "Acid Machine",
+            "url": "https://acidmachine.net",
+            "description": "模拟 303 酸性电子乐(Acid"
+          },
+          {
+            "name": "Virtual Piano",
+            "url": "https://virtualpiano.net",
+            "description": "用电脑键盘弹奏高保真钢琴的网页版虚拟钢琴平台。"
+          },
+          {
+            "name": "Soundscape Generator (Broomstick)",
+            "url": "https://soundscape.glitch.me",
+            "description": "基于 Web Audio API"
+          },
+          {
+            "name": "Pulselt",
+            "url": "https://pulse.loopcraft.io",
+            "description": "通过几何图形碰撞生成律动节奏与声音的互动音效网。"
+          },
+          {
+            "name": "Mikutap",
+            "url": "https://aidn.jp/mikutap",
+            "description": "点击或滑动屏幕即可触发初音未来声音片段与炫彩动画的"
+          },
+          {
+            "name": "Daniel Fisher's Sound Toys",
+            "url": "https://danielfisher.com/soundtoys",
+            "description": "各种有趣的音频物理模拟与声音合成器互动小实验。"
+          },
+          {
+            "name": "WebFM Synthesizer",
+            "url": "https://webfm.glitch.me",
+            "description": "在网页端直观进行调频(FM)声音合成与波形绘制的工"
+          },
+          {
+            "name": "Soundation",
+            "url": "https://soundation.com",
+            "description": "功能强大的网页版 DAW"
+          },
+          {
+            "name": "Melozing",
+            "url": "https://melozing.com",
+            "description": "利用人工智能将简谱或旋律转化为多声部和声的生成网。"
+          },
+          {
+            "name": "Sampulator",
+            "url": "https://sampulator.com",
+            "description": "利用电脑键盘快速切片并打出采样 Drum"
+          },
+          {
+            "name": "DJ3D / WebDJ",
+            "url": "https://webdj.dev",
+            "description": "基于 WebGL 的 3D 模拟双盘位 DJ"
+          },
+          {
+            "name": "Plink",
+            "url": "https://dinahmoelabs.com/plink",
+            "description": "多人在线实时合作弹奏音乐的互动网页游戏与音效实验。"
+          },
+          {
+            "name": "SuperLooper",
+            "url": "https://superlooper.co",
+            "description": "循环乐段构建器，可叠加各种乐器构建自己的小段音乐。"
+          },
+          {
+            "name": "Endlesss",
+            "url": "https://endlesss.fm",
+            "description": "专注于实时多人多人音乐 Jam"
+          },
+          {
+            "name": "Rhythmlab",
+            "url": "https://rhythmlab.com",
+            "description": "探索复杂节奏、复合节奏(Polyrhythm)与打"
+          },
+          {
+            "name": "GridSound",
+            "url": "https://gridsound.github.io",
+            "description": "开源的 HTML5 网页版 DAW 音乐制作项目。"
+          },
+          {
+            "name": "Cardboard Synth",
+            "url": "https://cardboardsynth.com",
+            "description": "复古纸板风格的在线合成器与低特质音效发生器。"
+          },
+          {
+            "name": "Brainturk Audio Focus",
+            "url": "https://brainturk.com/audio",
+            "description": "结合声音频率与听觉训练的智力与注意力提升音效网。"
+          },
+          {
+            "name": "Seaquence",
+            "url": "http://seaquence.org",
+            "description": "将声音节点化身海中微生物"
+          },
+          {
+            "name": "Musical Mind",
+            "url": "https://musicalmind.org",
+            "description": "探索听觉错觉(如 Shepard Tone"
+          },
+          {
+            "name": "Node Audio Generator",
+            "url": "https://nodeaudio.com",
+            "description": "通过连接点与线构建信号流来生成声音的节点式音频生成"
+          },
+          {
+            "name": "Playtronica",
+            "url": "https://playtronica.com",
+            "description": "探索触觉与声音结合，将日常生活物品转化为触控乐器的"
+          },
+          {
+            "name": "Solfeggio Frequencies Generator",
+            "url": "https://solfeggio.frequencygenerator.com",
+            "description": "专门生成 432Hz, 528Hz"
+          },
+          {
+            "name": "Binaural Beats Generator",
+            "url": "https://mynoise.net/NoiseMachines/binauralBeatGenerator.php",
+            "description": "生成双耳差频(Binaural"
+          },
+          {
+            "name": "White Noise Lite Web",
+            "url": "https://whitenoise.com",
+            "description": "专业白噪音品牌的 Web 端"
+          },
+          {
+            "name": "Noise Generator (Online Tone Generator)",
+            "url": "https://szynalski.com/tone-generator",
+            "description": "精度极高的在线正弦波、方波、纯音与噪音频率发生器。"
+          },
+          {
+            "name": "Crossfade.io",
+            "url": "https://crossfade.io",
+            "description": "轻松将音频与动态背景视频混合并分享的音画创作工具。"
+          },
+          {
+            "name": "Lofi Cafe",
+            "url": "https://loficafe.app",
+            "description": "极简怀旧像素风 Lofi 电台"
+          },
+          {
+            "name": "Lofi Girl Official",
+            "url": "https://lofigirl.com",
+            "description": "全球知名 Lofi 音乐品牌"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑾𝑕𝑖𝑡𝑒 𝑵𝑜𝑖𝑠𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

@@ -1,0 +1,2124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="全球数据可视化、图表工具、可视化作品与开源资源导航">
+<title>全球数据可视化 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑫𝑎𝑡𝑎 𝑉𝑖𝑠𝑢𝑎𝑙𝑖𝑧𝑎𝑡𝑖𝑜𝑛</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>全球数据可视化</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">全球数据可视化 · 信息图与互动地图导航</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "全球数据可视化",
+    "icon": "📊",
+    "color": "linear-gradient(135deg, #11998e, #38ef7d)",
+    "subcategories": [
+      {
+        "name": "综合数据可视化",
+        "links": [
+          {
+            "name": "Our World in Data",
+            "url": "https://ourworldindata.org",
+            "description": "全球人口、GDP、气候、能源、健康等超大型开放数据平台"
+          },
+          {
+            "name": "Information Is Beautiful",
+            "url": "https://informationisbeautiful.net",
+            "description": "世界级信息图、数据故事、交互图形"
+          },
+          {
+            "name": "Visual Capitalist",
+            "url": "https://www.visualcapitalist.com",
+            "description": "全球经济、财富、人口、能源、市场信息图"
+          },
+          {
+            "name": "Data Is Beautiful",
+            "url": "https://www.reddit.com/r/dataisbeautiful/",
+            "description": "数据可视化社区，图表、动画、地图作品非常丰富"
+          },
+          {
+            "name": "Gapminder",
+            "url": "https://www.gapminder.org/tools/",
+            "description": "GDP、人口、预期寿命等随时间动态变化的经典气泡动画"
+          },
+          {
+            "name": "World Bank DataBank",
+            "url": "https://databank.worldbank.org",
+            "description": "世界银行全球经济与社会数据，可生成图表和地图"
+          },
+          {
+            "name": "World Bank Data",
+            "url": "https://data.worldbank.org",
+            "description": "世界各国GDP、人口、教育、贫困、健康等"
+          },
+          {
+            "name": "UN Data",
+            "url": "https://data.un.org",
+            "description": "联合国全球统计数据"
+          },
+          {
+            "name": "UN SDG Data",
+            "url": "https://unstats.un.org/sdgs/dataportal",
+            "description": "联合国可持续发展目标数据门户"
+          },
+          {
+            "name": "OECD Data Explorer",
+            "url": "https://data-explorer.oecd.org",
+            "description": "OECD 国家经济、人口、贸易、社会数据"
+          },
+          {
+            "name": "IMF Data",
+            "url": "https://data.imf.org",
+            "description": "GDP、通胀、债务、汇率、国际金融"
+          },
+          {
+            "name": "IMF DataMapper",
+            "url": "https://www.imf.org/external/datamapper/",
+            "description": "IMF互动全球经济地图"
+          },
+          {
+            "name": "UNCTAD Data Hub",
+            "url": "https://unctadstat.unctad.org",
+            "description": "全球贸易、投资、经济数据"
+          },
+          {
+            "name": "WHO Data",
+            "url": "https://data.who.int",
+            "description": "全球健康和疾病统计"
+          },
+          {
+            "name": "WHO Global Health Observatory",
+            "url": "https://www.who.int/data/gho",
+            "description": "世界卫生数据与互动图表"
+          },
+          {
+            "name": "UNHCR Refugee Data Finder",
+            "url": "https://www.unhcr.org/refugee-statistics/",
+            "description": "难民、被迫流离失所人口与全球流动可视化"
+          },
+          {
+            "name": "IOM Migration Data Portal",
+            "url": "https://www.migrationdataportal.org",
+            "description": "全球国际迁移、人口流动和迁移数据可视化"
+          },
+          {
+            "name": "IOM DTM",
+            "url": "https://dtm.iom.int",
+            "description": "全球流离失所和人口流动互动地图"
+          },
+          {
+            "name": "Eurostat Data Browser",
+            "url": "https://ec.europa.eu/eurostat/databrowser/",
+            "description": "欧洲统计数据和交互图表"
+          },
+          {
+            "name": "Statista",
+            "url": "https://www.statista.com",
+            "description": "全球经济、人口、市场统计图表"
+          },
+          {
+            "name": "Macrotrends",
+            "url": "https://www.macrotrends.net",
+            "description": "GDP、人口、经济指标长期历史图表"
+          },
+          {
+            "name": "World Population Review",
+            "url": "https://worldpopulationreview.com",
+            "description": "全球人口、城市、国家经济与社会统计"
+          },
+          {
+            "name": "World Statistics",
+            "url": "https://worldstatistics.net",
+            "description": "世界国家统计数据"
+          },
+          {
+            "name": "NationMaster",
+            "url": "https://www.nationmaster.com",
+            "description": "国家比较与可视化统计"
+          },
+          {
+            "name": "IndexMundi",
+            "url": "https://www.indexmundi.com",
+            "description": "国家人口、经济、商品和社会数据"
+          },
+          {
+            "name": "Knoema",
+            "url": "https://knoema.com",
+            "description": "全球经济和社会数据平台"
+          },
+          {
+            "name": "CEIC",
+            "url": "https://www.ceicdata.com",
+            "description": "宏观经济数据可视化"
+          },
+          {
+            "name": "Trading Economics",
+            "url": "https://tradingeconomics.com",
+            "description": "全球经济、市场、通胀、GDP、就业数据"
+          },
+          {
+            "name": "FRED",
+            "url": "https://fred.stlouisfed.org",
+            "description": "美国及国际经济时间序列"
+          },
+          {
+            "name": "Data Commons",
+            "url": "https://datacommons.org",
+            "description": "Google支持的全球统计数据和地图"
+          },
+          {
+            "name": "Google Public Data",
+            "url": "https://www.google.com/publicdata",
+            "description": "公共数据可视化工具"
+          },
+          {
+            "name": "Harvard Atlas of Economic Complexity",
+            "url": "https://atlas.hks.harvard.edu",
+            "description": "全球贸易、产品复杂度、经济结构动态图"
+          },
+          {
+            "name": "Observatory of Economic Complexity",
+            "url": "https://oec.world",
+            "description": "全球贸易流向、产品、国家经济结构可视化"
+          },
+          {
+            "name": "The World in Data",
+            "url": "https://ourworldindata.org/grapher",
+            "description": "Our World in Data 图表数据库"
+          },
+          {
+            "name": "Knoema World Data Atlas",
+            "url": "https://knoema.com/atlas",
+            "description": "世界国家数据地图"
+          },
+          {
+            "name": "IndexBox",
+            "url": "https://www.indexbox.io",
+            "description": "市场、贸易和商品数据图表"
+          },
+          {
+            "name": "Numbeo",
+            "url": "https://www.numbeo.com",
+            "description": "全球生活成本、房价、交通和生活质量数据"
+          },
+          {
+            "name": "GlobalEconomy",
+            "url": "https://www.theglobaleconomy.com",
+            "description": "国家经济、人口、金融指标"
+          },
+          {
+            "name": "World Economics",
+            "url": "https://www.worldeconomics.com",
+            "description": "全球GDP、债务、经济数据"
+          },
+          {
+            "name": "Our World in AI",
+            "url": "https://ourworldindata.org/artificial-intelligence",
+            "description": "AI发展与全球数据可视化"
+          }
+        ]
+      },
+      {
+        "name": "GDP",
+        "links": [
+          {
+            "name": "World Population Prospects",
+            "url": "https://population.un.org/wpp/",
+            "description": "联合国全球人口预测互动数据"
+          },
+          {
+            "name": "World Population Clock",
+            "url": "https://www.worldometers.info/world-population/",
+            "description": "全球人口实时估计与人口统计"
+          },
+          {
+            "name": "Worldometers",
+            "url": "https://www.worldometers.info",
+            "description": "人口、经济、环境、健康等实时统计"
+          },
+          {
+            "name": "PopulationPyramid.net",
+            "url": "https://www.populationpyramid.net",
+            "description": "全球人口年龄结构动态人口金字塔"
+          },
+          {
+            "name": "Population.io",
+            "url": "https://population.io",
+            "description": "人口年龄、出生、死亡和人口结构探索"
+          },
+          {
+            "name": "GeoHive",
+            "url": "http://www.geohive.com",
+            "description": "全球人口与国家统计"
+          },
+          {
+            "name": "City Population",
+            "url": "https://www.citypopulation.de",
+            "description": "全球城市人口和行政区人口"
+          },
+          {
+            "name": "World Population History",
+            "url": "https://www.worldpopulacehistory.com",
+            "description": "历史人口数据"
+          },
+          {
+            "name": "Gapminder Dollar Street",
+            "url": "https://www.gapminder.org/dollar-street/",
+            "description": "按收入查看全球家庭生活方式的视觉数据库"
+          },
+          {
+            "name": "Global Rich List",
+            "url": "https://www.givingwhatwecan.org/how-rich-am-i",
+            "description": "全球收入位置可视化"
+          },
+          {
+            "name": "World Inequality Database",
+            "url": "https://wid.world",
+            "description": "全球收入与财富不平等数据库"
+          },
+          {
+            "name": "World Inequality Report",
+            "url": "https://wir2026.wid.world",
+            "description": "全球财富和收入不平等互动展示"
+          },
+          {
+            "name": "Our World in Data Poverty",
+            "url": "https://ourworldindata.org/poverty",
+            "description": "全球贫困与生活水平可视化"
+          },
+          {
+            "name": "Our World in Data GDP",
+            "url": "https://ourworldindata.org/grapher/gdp",
+            "description": "全球GDP历史变化"
+          },
+          {
+            "name": "Our World in Data Income",
+            "url": "https://ourworldindata.org/grapher/income",
+            "description": "人均收入与国家比较"
+          },
+          {
+            "name": "World Bank Poverty",
+            "url": "https://pip.worldbank.org",
+            "description": "全球贫困统计和分布"
+          },
+          {
+            "name": "Global Health Data Exchange",
+            "url": "https://ghdx.healthdata.org",
+            "description": "全球健康数据"
+          },
+          {
+            "name": "IHME",
+            "url": "https://www.healthdata.org",
+            "description": "全球疾病、寿命和健康指标可视化"
+          },
+          {
+            "name": "UN Population Division",
+            "url": "https://www.un.org/development/desa/pd/",
+            "description": "联合国人口数据"
+          }
+        ]
+      },
+      {
+        "name": "人口流动",
+        "links": [
+          {
+            "name": "Our World in Data Migration",
+            "url": "https://ourworldindata.org/where-do-migrants-live-and-where-were-they-born",
+            "description": "国家间人口迁移互动图"
+          },
+          {
+            "name": "IOM Global Migration Routes",
+            "url": "https://dtm.iom.int/global-overview-of-migration-routes-portal",
+            "description": "全球主要迁移路线互动地图"
+          },
+          {
+            "name": "UNHCR Global Trends Visualisation",
+            "url": "https://www.unhcr.org/refugee-statistics/insights/forcibly-displaced-and-stateless-persons/visualisation-world.html",
+            "description": "全球被迫流离失所人口地图和流向图"
+          },
+          {
+            "name": "World Migration Report",
+            "url": "https://worldmigrationreport.iom.int",
+            "description": "世界移民报告互动数据"
+          },
+          {
+            "name": "Global Migration Data Portal",
+            "url": "https://www.migrationdataportal.org/international-data",
+            "description": "国际移民数据"
+          },
+          {
+            "name": "Migration Policy Institute Data Hub",
+            "url": "https://www.migrationpolicy.org/programs/data-hub",
+            "description": "美国与国际迁移数据"
+          },
+          {
+            "name": "Pew Global Migration",
+            "url": "https://www.pewresearch.org/global/tag/migration/",
+            "description": "国际迁移趋势可视化"
+          },
+          {
+            "name": "OECD Migration",
+            "url": "https://www.oecd.org/migration/",
+            "description": "OECD国际迁移数据"
+          },
+          {
+            "name": "World Migration Matrix",
+            "url": "https://www.migrationpolicy.org/programs/data-hub/charts/foreign-born-population",
+            "description": "全球出生地/居住地数据"
+          },
+          {
+            "name": "World Migration Flows",
+            "url": "https://code-4you.github.io/world-migration-flows/",
+            "description": "1960-2024全球移民流动动画地图"
+          },
+          {
+            "name": "Metrocosm Migration Map",
+            "url": "https://metrocosm.com/global-migration-map.html",
+            "description": "经典全球移民流向可视化"
+          },
+          {
+            "name": "World Bank Migration & Remittances",
+            "url": "https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues",
+            "description": "移民与汇款数据"
+          },
+          {
+            "name": "Missing Migrants Project",
+            "url": "https://missingmigrants.iom.int",
+            "description": "迁移途中失踪/死亡数据地图"
+          }
+        ]
+      },
+      {
+        "name": "全球航班",
+        "links": [
+          {
+            "name": "Flightradar24",
+            "url": "https://www.flightradar24.com",
+            "description": "全球实时航班地图"
+          },
+          {
+            "name": "FlightAware",
+            "url": "https://www.flightaware.com/live/",
+            "description": "全球航班跟踪、机场活动"
+          },
+          {
+            "name": "FlightStats",
+            "url": "https://www.flightstats.com",
+            "description": "航班状态、机场活动"
+          },
+          {
+            "name": "ADS-B Exchange",
+            "url": "https://globe.adsbexchange.com",
+            "description": "全球实时ADS-B航迹地图"
+          },
+          {
+            "name": "OpenSky Network",
+            "url": "https://opensky-network.org",
+            "description": "开放航空数据、实时飞机轨迹"
+          },
+          {
+            "name": "OpenSky Explorer",
+            "url": "https://map.opensky-network.org",
+            "description": "全球航空实时数据可视化"
+          },
+          {
+            "name": "ADS-B.lol",
+            "url": "https://adsb.lol",
+            "description": "免费开放ADS-B实时地图"
+          },
+          {
+            "name": "AirNav RadarBox",
+            "url": "https://www.radarbox.com",
+            "description": "全球飞机实时跟踪"
+          },
+          {
+            "name": "Plane Finder",
+            "url": "https://planefinder.net",
+            "description": "全球飞机雷达地图"
+          },
+          {
+            "name": "Airportia",
+            "url": "https://www.airportia.com",
+            "description": "航班、机场、航线和实时状态"
+          },
+          {
+            "name": "FlightConnections",
+            "url": "https://www.flightconnections.com",
+            "description": "全球航空公司航线地图"
+          },
+          {
+            "name": "FlightRoutes",
+            "url": "https://www.flightroutes.com",
+            "description": "全球机场与航空路线"
+          },
+          {
+            "name": "OpenFlights",
+            "url": "https://openflights.org",
+            "description": "全球机场和航空公司数据库/航线图"
+          },
+          {
+            "name": "AirlineRoute",
+            "url": "https://www.airlineroute.net",
+            "description": "航空公司航线变化"
+          },
+          {
+            "name": "Great Circle Mapper",
+            "url": "https://www.greatcirclemapper.net",
+            "description": "全球航线距离和大圆航线可视化"
+          },
+          {
+            "name": "Airport Map",
+            "url": "https://airportmap.de",
+            "description": "全球机场地图"
+          },
+          {
+            "name": "OurAirports",
+            "url": "https://ourairports.com",
+            "description": "全球机场开放数据库"
+          }
+        ]
+      },
+      {
+        "name": "全球船舶",
+        "links": [
+          {
+            "name": "MarineTraffic",
+            "url": "https://www.marinetraffic.com",
+            "description": "全球实时船舶地图与AIS"
+          },
+          {
+            "name": "VesselFinder",
+            "url": "https://www.vesselfinder.com",
+            "description": "全球船舶跟踪地图"
+          },
+          {
+            "name": "MyShipTracking",
+            "url": "https://www.myshiptracking.com",
+            "description": "全球船舶实时地图、航迹、港口"
+          },
+          {
+            "name": "FleetMon",
+            "url": "https://www.fleetmon.com",
+            "description": "全球AIS船舶跟踪"
+          },
+          {
+            "name": "ShipXplorer",
+            "url": "https://www.shipxplorer.com",
+            "description": "全球船舶跟踪"
+          },
+          {
+            "name": "VesselTracker",
+            "url": "https://www.vesseltracker.com",
+            "description": "船舶与港口数据"
+          },
+          {
+            "name": "ShipInfo",
+            "url": "https://www.shipinfo.net",
+            "description": "船舶数据库与信息"
+          },
+          {
+            "name": "Equasis",
+            "url": "https://www.equasis.org",
+            "description": "全球商船信息数据库"
+          },
+          {
+            "name": "AIS Hub",
+            "url": "https://www.aishub.net",
+            "description": "AIS开放数据平台"
+          },
+          {
+            "name": "MarineTraffic Port Map",
+            "url": "https://www.marinetraffic.com/en/ais/home/ports",
+            "description": "全球港口和船舶活动"
+          },
+          {
+            "name": "SeaRates",
+            "url": "https://www.searates.com",
+            "description": "全球航运路线和海运地图"
+          },
+          {
+            "name": "PortCalls",
+            "url": "https://www.portcalls.com",
+            "description": "港口和船舶活动数据"
+          },
+          {
+            "name": "World Shipping Council",
+            "url": "https://www.worldshipping.org",
+            "description": "全球集装箱航运行业数据"
+          },
+          {
+            "name": "Searoutes",
+            "url": "https://www.searoutes.com",
+            "description": "海运路线距离和物流可视化"
+          }
+        ]
+      },
+      {
+        "name": "天气",
+        "links": [
+          {
+            "name": "Earth Nullschool",
+            "url": "https://earth.nullschool.net",
+            "description": "全球风场、海流、温度、气压、空气污染实时动画"
+          },
+          {
+            "name": "Windy",
+            "url": "https://www.windy.com",
+            "description": "全球实时天气、风场、云、降雨、气压"
+          },
+          {
+            "name": "Ventusky",
+            "url": "https://www.ventusky.com",
+            "description": "全球天气动画地图"
+          },
+          {
+            "name": "Zoom Earth",
+            "url": "https://zoom.earth",
+            "description": "实时卫星、风暴、飓风、天气地图"
+          },
+          {
+            "name": "Meteoblue Maps",
+            "url": "https://www.meteoblue.com",
+            "description": "全球天气可视化"
+          },
+          {
+            "name": "Meteologix",
+            "url": "https://meteologix.com",
+            "description": "气象雷达和模型地图"
+          },
+          {
+            "name": "Wetterzentrale",
+            "url": "https://www.wetterzentrale.de",
+            "description": "全球天气模型图"
+          },
+          {
+            "name": "Tropical Tidbits",
+            "url": "https://www.tropicaltidbits.com",
+            "description": "热带气旋、模型、天气图"
+          },
+          {
+            "name": "NOAA Earth System Research",
+            "url": "https://www.noaa.gov",
+            "description": "NOAA全球天气与气候数据"
+          },
+          {
+            "name": "NOAA nowCOAST",
+            "url": "https://nowcoast.noaa.gov",
+            "description": "实时海洋、天气、气象地图"
+          },
+          {
+            "name": "NOAA Global Forecast System",
+            "url": "https://www.ncei.noaa.gov",
+            "description": "全球天气模型"
+          },
+          {
+            "name": "ECMWF Charts",
+            "url": "https://charts.ecmwf.int",
+            "description": "欧洲中期天气预报中心可视化"
+          },
+          {
+            "name": "MeteoSwiss",
+            "url": "https://www.meteoswiss.admin.ch",
+            "description": "瑞士气象可视化"
+          },
+          {
+            "name": "JMA",
+            "url": "https://www.jma.go.jp",
+            "description": "日本气象厅天气与台风地图"
+          },
+          {
+            "name": "JMA Typhoon",
+            "url": "https://www.jma.go.jp/jma/indexe.html",
+            "description": "西北太平洋台风监测"
+          },
+          {
+            "name": "EUMETSAT",
+            "url": "https://www.eumetsat.int",
+            "description": "欧洲气象卫星图像"
+          },
+          {
+            "name": "RAMMB Slider",
+            "url": "https://rammb-slider.cira.colostate.edu",
+            "description": "全球气象卫星动画和比较工具"
+          }
+        ]
+      },
+      {
+        "name": "飓风",
+        "links": [
+          {
+            "name": "NOAA National Hurricane Center",
+            "url": "https://www.nhc.noaa.gov",
+            "description": "飓风实时路径、风圈和预报锥"
+          },
+          {
+            "name": "NOAA Historical Hurricane Tracks",
+            "url": "https://coast.noaa.gov/hurricanes/",
+            "description": "全球历史飓风轨迹互动地图"
+          },
+          {
+            "name": "Weathernerds Tropical",
+            "url": "https://www.weathernerds.org",
+            "description": "飓风和天气模型"
+          },
+          {
+            "name": "Cyclocane",
+            "url": "https://www.cyclocane.com",
+            "description": "全球飓风/台风信息和轨迹"
+          },
+          {
+            "name": "Cyclonic Storms",
+            "url": "https://cyclonicstorms.com",
+            "description": "全球热带气旋数据"
+          },
+          {
+            "name": "JTWC",
+            "url": "https://www.metoc.navy.mil/jtwc/jtwc.html",
+            "description": "美国联合台风预警中心"
+          },
+          {
+            "name": "PAGASA",
+            "url": "https://www.pagasa.dost.gov.ph",
+            "description": "菲律宾台风和天气地图"
+          },
+          {
+            "name": "HKO Tropical Cyclone",
+            "url": "https://www.hko.gov.hk/en/wxinfo/currwx/tc_gis.htm",
+            "description": "香港天文台热带气旋GIS"
+          },
+          {
+            "name": "IMD Cyclone",
+            "url": "https://mausam.imd.gov.in",
+            "description": "印度气旋监测"
+          },
+          {
+            "name": "NOAA HURDAT2",
+            "url": "https://www.nhc.noaa.gov/data/",
+            "description": "历史飓风数据和轨迹"
+          }
+        ]
+      },
+      {
+        "name": "地震",
+        "links": [
+          {
+            "name": "USGS Latest Earthquakes",
+            "url": "https://earthquake.usgs.gov/earthquakes/map/",
+            "description": "全球实时地震地图"
+          },
+          {
+            "name": "Earthquake Track",
+            "url": "https://earthquaketrack.com",
+            "description": "全球实时地震可视化"
+          },
+          {
+            "name": "Volcano Discovery",
+            "url": "https://www.volcanodiscovery.com",
+            "description": "地震和全球火山实时地图"
+          },
+          {
+            "name": "EMSC",
+            "url": "https://www.emsc-csem.org",
+            "description": "全球地震实时监测"
+          },
+          {
+            "name": "IRIS Seismic Monitor",
+            "url": "https://ds.iris.edu/seismon/",
+            "description": "全球地震活动可视化"
+          },
+          {
+            "name": "USGS Volcano Hazards",
+            "url": "https://www.usgs.gov/programs/VHP",
+            "description": "美国火山监测"
+          },
+          {
+            "name": "Smithsonian GVP",
+            "url": "https://volcano.si.edu",
+            "description": "全球火山数据库"
+          },
+          {
+            "name": "Volcano Discovery Live",
+            "url": "https://www.volcanodiscovery.com/earthquakes/",
+            "description": "全球地震实时地图"
+          },
+          {
+            "name": "Volcanoes of the World",
+            "url": "https://volcano.si.edu/gvp_votw.cfm",
+            "description": "全球火山数据"
+          },
+          {
+            "name": "NOAA Tsunami",
+            "url": "https://www.tsunami.gov",
+            "description": "海啸监测"
+          },
+          {
+            "name": "USGS ShakeMap",
+            "url": "https://earthquake.usgs.gov/data/shakemap/",
+            "description": "地震烈度地图"
+          },
+          {
+            "name": "EarthScope",
+            "url": "https://www.earthscope.org",
+            "description": "地球科学数据和地震可视化"
+          },
+          {
+            "name": "Blitzortung",
+            "url": "https://www.blitzortung.org",
+            "description": "全球雷电实时地图"
+          },
+          {
+            "name": "LightningMaps",
+            "url": "https://www.lightningmaps.org",
+            "description": "全球实时闪电地图"
+          },
+          {
+            "name": "MyLightningMap",
+            "url": "https://www.mylightningmap.com",
+            "description": "雷电地图"
+          }
+        ]
+      },
+      {
+        "name": "空气质量",
+        "links": [
+          {
+            "name": "IQAir World Air Quality",
+            "url": "https://www.iqair.com/world-air-quality",
+            "description": "全球空气质量实时地图"
+          },
+          {
+            "name": "OpenAQ",
+            "url": "https://openaq.org",
+            "description": "开放空气质量数据平台"
+          },
+          {
+            "name": "WAQI",
+            "url": "https://waqi.info",
+            "description": "全球实时空气质量地图"
+          },
+          {
+            "name": "World Air Quality Index",
+            "url": "https://aqicn.org/map/world/",
+            "description": "全球AQI地图"
+          },
+          {
+            "name": "PurpleAir Map",
+            "url": "https://map.purpleair.com",
+            "description": "全球空气传感器地图"
+          },
+          {
+            "name": "AirNow",
+            "url": "https://www.airnow.gov",
+            "description": "美国空气质量地图"
+          },
+          {
+            "name": "Copernicus Atmosphere",
+            "url": "https://atmosphere.copernicus.eu",
+            "description": "全球大气污染和空气质量"
+          },
+          {
+            "name": "Global Forest Watch",
+            "url": "https://www.globalforestwatch.org",
+            "description": "全球森林、砍伐、火灾和土地变化"
+          },
+          {
+            "name": "Global Fishing Watch",
+            "url": "https://globalfishingwatch.org",
+            "description": "全球海洋活动和渔业可视化"
+          },
+          {
+            "name": "World Resources Institute",
+            "url": "https://www.wri.org",
+            "description": "环境、土地、水、气候数据"
+          },
+          {
+            "name": "Climate Trace",
+            "url": "https://climatetrace.org",
+            "description": "全球温室气体排放可视化"
+          },
+          {
+            "name": "Carbon Mapper",
+            "url": "https://carbonmapper.org",
+            "description": "甲烷/碳排放源地图"
+          },
+          {
+            "name": "Global Carbon Atlas",
+            "url": "https://globalcarbonatlas.org",
+            "description": "全球碳排放数据"
+          },
+          {
+            "name": "Climate Watch",
+            "url": "https://www.climatewatchdata.org",
+            "description": "全球气候和排放数据"
+          },
+          {
+            "name": "Our World in Data CO2",
+            "url": "https://ourworldindata.org/co2",
+            "description": "全球CO2排放历史图表"
+          }
+        ]
+      },
+      {
+        "name": "野火",
+        "links": [
+          {
+            "name": "NASA FIRMS",
+            "url": "https://firms.modaps.eosdis.nasa.gov",
+            "description": "全球卫星主动火灾实时地图"
+          },
+          {
+            "name": "NASA Worldview",
+            "url": "https://worldview.earthdata.nasa.gov",
+            "description": "全球卫星地球数据和自然灾害可视化"
+          },
+          {
+            "name": "Global Wildfire Information System",
+            "url": "https://gwis.jrc.ec.europa.eu",
+            "description": "全球野火监测"
+          },
+          {
+            "name": "Copernicus Emergency",
+            "url": "https://emergency.copernicus.eu",
+            "description": "洪水、火灾、灾害地图"
+          },
+          {
+            "name": "GDACS",
+            "url": "https://www.gdacs.org",
+            "description": "全球灾害警报和事件地图"
+          },
+          {
+            "name": "ReliefWeb Maps",
+            "url": "https://reliefweb.int",
+            "description": "全球灾害和人道主义数据"
+          },
+          {
+            "name": "Global Flood Awareness System",
+            "url": "https://www.globalfloods.eu",
+            "description": "全球洪水预警与地图"
+          },
+          {
+            "name": "FloodMap",
+            "url": "https://www.floodmap.net",
+            "description": "洪水风险地图"
+          },
+          {
+            "name": "Aqueduct Water Risk Atlas",
+            "url": "https://www.wri.org/aqueduct",
+            "description": "全球水风险地图"
+          },
+          {
+            "name": "Global Surface Water Explorer",
+            "url": "https://global-surface-water.appspot.com",
+            "description": "全球地表水变化动画"
+          }
+        ]
+      },
+      {
+        "name": "卫星",
+        "links": [
+          {
+            "name": "NASA Eyes",
+            "url": "https://eyes.nasa.gov",
+            "description": "NASA实时3D太阳系、地球、小行星、太空任务"
+          },
+          {
+            "name": "NASA Eyes on Exoplanets",
+            "url": "https://science.nasa.gov/exoplanets/eyes-on-exoplanets-web/",
+            "description": "3D系外行星探索"
+          },
+          {
+            "name": "ExoAtlas",
+            "url": "https://www.exoatlas.com",
+            "description": "真实天文数据的3D太阳系/轨道可视化"
+          },
+          {
+            "name": "Cosmoscope",
+            "url": "https://cosmoscope.space",
+            "description": "3D宇宙地图"
+          },
+          {
+            "name": "CosmoLapse",
+            "url": "https://cosmolapse.com",
+            "description": "从星系到行星/月球的3D宇宙可视化"
+          },
+          {
+            "name": "Solar System Scope",
+            "url": "https://www.solarsystemscope.com",
+            "description": "3D太阳系"
+          },
+          {
+            "name": "The Sky Live",
+            "url": "https://theskylive.com",
+            "description": "实时行星、彗星、天空地图"
+          },
+          {
+            "name": "Heavens-Above",
+            "url": "https://www.heavens-above.com",
+            "description": "卫星、ISS、星图和轨道"
+          },
+          {
+            "name": "N2YO",
+            "url": "https://www.n2yo.com",
+            "description": "全球卫星实时跟踪"
+          },
+          {
+            "name": "Satflare",
+            "url": "https://www.satflare.com",
+            "description": "卫星轨迹和地球地图"
+          },
+          {
+            "name": "SatNOGS",
+            "url": "https://satnogs.org",
+            "description": "卫星地面站与开源空间数据"
+          },
+          {
+            "name": "CelesTrak",
+            "url": "https://celestrak.org",
+            "description": "卫星轨道数据"
+          },
+          {
+            "name": "Stuff in Space",
+            "url": "https://stuffin.space",
+            "description": "3D实时地球卫星可视化"
+          },
+          {
+            "name": "SpaceX Tracker",
+            "url": "https://www.spacex.com",
+            "description": "SpaceX任务与发射"
+          },
+          {
+            "name": "RocketLaunch.Live",
+            "url": "https://www.rocketlaunch.live",
+            "description": "全球火箭发射日历/地图"
+          },
+          {
+            "name": "Flight Club",
+            "url": "https://www.flightclub.io",
+            "description": "轨道和火箭发射可视化"
+          },
+          {
+            "name": "Jonathan's Space Report",
+            "url": "https://planet4589.org/space/",
+            "description": "航天任务数据"
+          },
+          {
+            "name": "Minor Planet Center",
+            "url": "https://minorplanetcenter.net",
+            "description": "小行星和天体数据库"
+          },
+          {
+            "name": "Solar System Simulator",
+            "url": "https://tycho.io",
+            "description": "JPL数据驱动的实时3D太阳系"
+          }
+        ]
+      },
+      {
+        "name": "互联网",
+        "links": [
+          {
+            "name": "Submarine Cable Map",
+            "url": "https://www.submarinecablemap.com",
+            "description": "全球海底互联网电缆互动地图"
+          },
+          {
+            "name": "CableGraph",
+            "url": "https://cablegraph.com",
+            "description": "全球海底光缆网络可视化"
+          },
+          {
+            "name": "GeoDataViewer Cable Map",
+            "url": "https://geodataviewer.com/live/submarine-cables/",
+            "description": "海底光缆路线地图"
+          },
+          {
+            "name": "TeleGeography",
+            "url": "https://www.telegeography.com",
+            "description": "海底电缆、互联网骨干网和通信地图"
+          },
+          {
+            "name": "Internet Atlas",
+            "url": "https://internetatlas.net",
+            "description": "全球互联网基础设施可视化"
+          },
+          {
+            "name": "Cloudflare Radar",
+            "url": "https://radar.cloudflare.com",
+            "description": "全球互联网流量、攻击、DNS和网络趋势"
+          },
+          {
+            "name": "ThousandEyes Internet Outages",
+            "url": "https://www.thousandeyes.com/outages/",
+            "description": "全球互联网中断地图"
+          },
+          {
+            "name": "Internet Health Report",
+            "url": "https://internethalthreport.com",
+            "description": "全球互联网健康可视化"
+          },
+          {
+            "name": "Google Transparency Report",
+            "url": "https://transparencyreport.google.com",
+            "description": "Google服务、流量和政策数据"
+          },
+          {
+            "name": "Akamai Internet Observatory",
+            "url": "https://www.akamai.com/internet-observatory",
+            "description": "全球互联网趋势和网络数据"
+          },
+          {
+            "name": "RIPE Atlas",
+            "url": "https://atlas.ripe.net",
+            "description": "全球互联网测量节点地图"
+          },
+          {
+            "name": "RIPEstat",
+            "url": "https://stat.ripe.net",
+            "description": "IP、ASN、互联网基础设施"
+          },
+          {
+            "name": "BGPStream",
+            "url": "https://bgpstream.caida.org",
+            "description": "BGP全球路由数据"
+          },
+          {
+            "name": "CAIDA",
+            "url": "https://www.caida.org",
+            "description": "全球互联网拓扑和网络研究"
+          },
+          {
+            "name": "PeeringDB",
+            "url": "https://www.peeringdb.com",
+            "description": "全球互联网互联和网络节点"
+          },
+          {
+            "name": "Internet2 Network Visualization",
+            "url": "https://internet2.edu",
+            "description": "全球研究网络"
+          },
+          {
+            "name": "NetBlocks",
+            "url": "https://netblocks.org",
+            "description": "全球互联网连接状态与中断可视化"
+          }
+        ]
+      },
+      {
+        "name": "能源",
+        "links": [
+          {
+            "name": "Electricity Maps",
+            "url": "https://app.electricitymaps.com/map",
+            "description": "全球电力来源、碳强度和跨国电网"
+          },
+          {
+            "name": "Ember Energy",
+            "url": "https://ember-energy.org/data/",
+            "description": "全球电力、能源转型可视化"
+          },
+          {
+            "name": "Energy Institute Statistical Review",
+            "url": "https://www.energyinst.org/statistical-review",
+            "description": "全球能源生产与消费"
+          },
+          {
+            "name": "Our World in Data Energy",
+            "url": "https://ourworldindata.org/energy",
+            "description": "全球能源生产、消费、可再生能源"
+          },
+          {
+            "name": "EIA International",
+            "url": "https://www.eia.gov/international/",
+            "description": "全球能源统计"
+          },
+          {
+            "name": "IEA Data",
+            "url": "https://www.iea.org/data-and-statistics",
+            "description": "国际能源数据"
+          },
+          {
+            "name": "Global Energy Monitor",
+            "url": "https://globalenergymonitor.org",
+            "description": "全球电厂、煤矿、太阳能、风电等地图"
+          },
+          {
+            "name": "GEM Wiki",
+            "url": "https://www.gem.wiki",
+            "description": "全球能源基础设施数据库"
+          },
+          {
+            "name": "Open Infrastructure Map",
+            "url": "https://openinframap.org",
+            "description": "全球能源基础设施地图"
+          },
+          {
+            "name": "ENTSO-E Transparency",
+            "url": "https://transparency.entsoe.eu",
+            "description": "欧洲电力实时数据"
+          },
+          {
+            "name": "Grid Status",
+            "url": "https://www.gridstatus.io",
+            "description": "美国电网数据"
+          },
+          {
+            "name": "ELEXON",
+            "url": "https://www.elexon.co.uk",
+            "description": "英国电力市场数据"
+          },
+          {
+            "name": "Gridradar",
+            "url": "https://gridradar.net",
+            "description": "电网可视化"
+          },
+          {
+            "name": "Global Solar Atlas",
+            "url": "https://globalsolaratlas.info",
+            "description": "全球太阳能资源地图"
+          },
+          {
+            "name": "Global Wind Atlas",
+            "url": "https://globalwindatlas.info",
+            "description": "全球风资源地图"
+          }
+        ]
+      },
+      {
+        "name": "铁路",
+        "links": [
+          {
+            "name": "OpenRailwayMap",
+            "url": "https://www.openrailwaymap.org",
+            "description": "全球铁路网络互动地图"
+          },
+          {
+            "name": "Transitous",
+            "url": "https://transitous.org",
+            "description": "全球公共交通路线和实时信息"
+          },
+          {
+            "name": "OpenStreetMap",
+            "url": "https://www.openstreetmap.org",
+            "description": "全球开放地图和地理数据"
+          },
+          {
+            "name": "OpenMetroMaps",
+            "url": "https://www.openmetromap.org",
+            "description": "全球地铁网络"
+          },
+          {
+            "name": "Transitland",
+            "url": "https://www.transit.land",
+            "description": "全球公共交通开放数据"
+          },
+          {
+            "name": "GTFS",
+            "url": "https://gtfs.org",
+            "description": "全球公交/铁路开放标准和数据"
+          },
+          {
+            "name": "Mapnificent",
+            "url": "https://www.mapnificent.net",
+            "description": "全球公共交通可达性地图"
+          },
+          {
+            "name": "Wikiroutes",
+            "url": "https://wikiroutes.info",
+            "description": "城市公共交通路线数据库"
+          },
+          {
+            "name": "Traffic Index",
+            "url": "https://www.tomtom.com/traffic-index/",
+            "description": "全球城市交通拥堵指数"
+          },
+          {
+            "name": "HERE Traffic",
+            "url": "https://www.here.com",
+            "description": "全球交通和道路地图"
+          },
+          {
+            "name": "Google Traffic",
+            "url": "https://maps.google.com",
+            "description": "全球交通状况"
+          },
+          {
+            "name": "Waze Live Map",
+            "url": "https://www.waze.com/live-map",
+            "description": "实时道路交通和事件"
+          }
+        ]
+      },
+      {
+        "name": "城市",
+        "links": [
+          {
+            "name": "Google Earth Web",
+            "url": "https://earth.google.com",
+            "description": "全球3D地球、城市、地形和卫星"
+          },
+          {
+            "name": "ArcGIS Living Atlas",
+            "url": "https://livingatlas.arcgis.com",
+            "description": "全球地图和海量专题数据"
+          },
+          {
+            "name": "Mapbox",
+            "url": "https://www.mapbox.com",
+            "description": "全球交互地图与地理可视化"
+          },
+          {
+            "name": "Felt",
+            "url": "https://felt.com",
+            "description": "现代互动地图平台"
+          },
+          {
+            "name": "Kepler.gl",
+            "url": "https://kepler.gl",
+            "description": "超大地理数据可视化"
+          },
+          {
+            "name": "Datawrapper Maps",
+            "url": "https://www.datawrapper.de",
+            "description": "地图数据可视化"
+          },
+          {
+            "name": "Flourish",
+            "url": "https://flourish.studio",
+            "description": "交互图表、地图、动画数据可视化"
+          },
+          {
+            "name": "Observable",
+            "url": "https://observablehq.com",
+            "description": "数据可视化、地图和交互实验"
+          },
+          {
+            "name": "Tableau Public",
+            "url": "https://public.tableau.com",
+            "description": "全球数据可视化社区"
+          },
+          {
+            "name": "Power BI Gallery",
+            "url": "https://community.fabric.microsoft.com",
+            "description": "数据仪表盘和商业数据图表"
+          },
+          {
+            "name": "Datawrapper Gallery",
+            "url": "https://www.datawrapper.de/gallery/",
+            "description": "数据新闻图表和地图"
+          },
+          {
+            "name": "Flourish Examples",
+            "url": "https://app.flourish.studio/gallery",
+            "description": "大量交互图表和数据动画案例"
+          },
+          {
+            "name": "Observable Gallery",
+            "url": "https://observablehq.com/explore",
+            "description": "数据交互实验和可视化"
+          },
+          {
+            "name": "MapChart",
+            "url": "https://www.mapchart.net",
+            "description": "世界地图、国家地图、历史地图制作"
+          },
+          {
+            "name": "SimpleMaps",
+            "url": "https://simplemaps.com",
+            "description": "世界地图与地理数据"
+          },
+          {
+            "name": "DataMaps",
+            "url": "https://datamaps.github.io",
+            "description": "地理数据可视化"
+          },
+          {
+            "name": "Natural Earth",
+            "url": "https://www.naturalearthdata.com",
+            "description": "全球地理数据"
+          },
+          {
+            "name": "Natural Earth Map",
+            "url": "https://www.naturalearthdata.com/downloads/",
+            "description": "全球地图数据"
+          }
+        ]
+      },
+      {
+        "name": "数据新闻",
+        "links": [
+          {
+            "name": "New York Times Graphics",
+            "url": "https://www.nytimes.com/interactive/",
+            "description": "代表性数据新闻与交互图形"
+          },
+          {
+            "name": "Bloomberg Graphics",
+            "url": "https://www.bloomberg.com/graphics/",
+            "description": "财经、经济、人口、全球事件可视化"
+          },
+          {
+            "name": "Reuters Graphics",
+            "url": "https://www.reuters.com/graphics/",
+            "description": "新闻数据图形和互动地图"
+          },
+          {
+            "name": "Financial Times Visual & Data",
+            "url": "https://www.ft.com/visual-and-data-journalism",
+            "description": "全球经济与商业可视化"
+          },
+          {
+            "name": "The Pudding",
+            "url": "https://pudding.cool",
+            "description": "极具创意的数据故事与互动新闻"
+          },
+          {
+            "name": "FiveThirtyEight",
+            "url": "https://fivethirtyeight.com",
+            "description": "数据新闻、统计和互动图表"
+          },
+          {
+            "name": "FlowingData",
+            "url": "https://flowingdata.com",
+            "description": "数据可视化博客与优秀案例"
+          },
+          {
+            "name": "Datawrapper Blog",
+            "url": "https://blog.datawrapper.de",
+            "description": "数据新闻图表案例和教程"
+          },
+          {
+            "name": "BBC Visual Journalism",
+            "url": "https://www.bbc.com/news/bbcinstud",
+            "description": "BBC互动视觉报道"
+          },
+          {
+            "name": "Guardian Data",
+            "url": "https://www.theguardian.com/data",
+            "description": "数据新闻和互动图表"
+          },
+          {
+            "name": "Washington Post Graphics",
+            "url": "https://www.washingtonpost.com/graphics/",
+            "description": "互动数据新闻"
+          },
+          {
+            "name": "Vox Data",
+            "url": "https://www.vox.com",
+            "description": "数据故事和信息图"
+          },
+          {
+            "name": "Axios Visuals",
+            "url": "https://www.axios.com",
+            "description": "数据驱动新闻图表"
+          },
+          {
+            "name": "The Markup",
+            "url": "https://themarkup.org",
+            "description": "科技、互联网和数据调查可视化"
+          },
+          {
+            "name": "ProPublica Data",
+            "url": "https://www.propublica.org/data",
+            "description": "公共数据新闻"
+          },
+          {
+            "name": "Pew Research Graphics",
+            "url": "https://www.pewresearch.org",
+            "description": "社会、人口、政治、科技数据图表"
+          },
+          {
+            "name": "Data Journalism Handbook",
+            "url": "https://datajournalism.com",
+            "description": "数据新闻案例和方法"
+          }
+        ]
+      },
+      {
+        "name": "数据艺术",
+        "links": [
+          {
+            "name": "Visual Cinnamon",
+            "url": "https://www.visualcinnamon.com",
+            "description": "高质量数据可视化与交互作品"
+          },
+          {
+            "name": "Moritz Stefaner",
+            "url": "https://truth-and-beauty.net",
+            "description": "数据艺术、信息设计"
+          },
+          {
+            "name": "Giorgia Lupi",
+            "url": "https://giorgialupi.com",
+            "description": "数据绘画、信息设计"
+          },
+          {
+            "name": "Accurat Studio",
+            "url": "https://www.accurat.it",
+            "description": "数据艺术和信息设计工作室"
+          },
+          {
+            "name": "DensityDesign",
+            "url": "https://densitydesign.org",
+            "description": "数据可视化、网络地图、信息设计"
+          },
+          {
+            "name": "Periscopic",
+            "url": "https://periscopic.com",
+            "description": "社会数据可视化"
+          },
+          {
+            "name": "Studio Moniker",
+            "url": "https://studiomoniker.com",
+            "description": "互动艺术、数据和Web实验"
+          },
+          {
+            "name": "Stamen Design",
+            "url": "https://stamen.com",
+            "description": "地图、数据视觉和交互设计"
+          },
+          {
+            "name": "Kiln",
+            "url": "https://www.kiln.digital",
+            "description": "数据新闻和互动可视化"
+          },
+          {
+            "name": "DensityDesign Lab",
+            "url": "https://densitydesign.github.io",
+            "description": "网络、媒体、数据和视觉实验"
+          },
+          {
+            "name": "Google Experiments",
+            "url": "https://experiments.withgoogle.com",
+            "description": "创意可视化与实验"
+          },
+          {
+            "name": "Chrome Experiments",
+            "url": "https://experiments.withgoogle.com/chrome",
+            "description": "WebGL、数据和交互作品"
+          },
+          {
+            "name": "Codrops",
+            "url": "https://tympanus.net/codrops",
+            "description": "创意Web、数据和交互实验"
+          }
+        ]
+      },
+      {
+        "name": "科学",
+        "links": [
+          {
+            "name": "Our World in Data Health",
+            "url": "https://ourworldindata.org/health-meta",
+            "description": "全球健康与医学数据"
+          },
+          {
+            "name": "IHME Viz Hub",
+            "url": "https://vizhub.healthdata.org",
+            "description": "全球疾病、死亡和健康地图"
+          },
+          {
+            "name": "CDC Data",
+            "url": "https://data.cdc.gov",
+            "description": "美国公共卫生数据"
+          },
+          {
+            "name": "Our World in Data COVID",
+            "url": "https://ourworldindata.org/coronavirus",
+            "description": "COVID历史全球数据可视化"
+          },
+          {
+            "name": "Johns Hopkins COVID Map",
+            "url": "https://systems.jhu.edu/research/public-health/ncov/",
+            "description": "COVID历史实时地图项目"
+          },
+          {
+            "name": "GISAID",
+            "url": "https://gisaid.org",
+            "description": "病毒基因和流行病数据"
+          },
+          {
+            "name": "Nextstrain",
+            "url": "https://nextstrain.org",
+            "description": "病毒进化与传播树互动可视化"
+          },
+          {
+            "name": "Human Protein Atlas",
+            "url": "https://www.proteinatlas.org",
+            "description": "人类蛋白质、组织和细胞图谱"
+          },
+          {
+            "name": "Ensembl Genome Browser",
+            "url": "https://www.ensembl.org",
+            "description": "基因组互动浏览器"
+          },
+          {
+            "name": "UCSC Genome Browser",
+            "url": "https://genome.ucsc.edu",
+            "description": "基因组可视化和数据分析"
+          },
+          {
+            "name": "NCBI Genome",
+            "url": "https://www.ncbi.nlm.nih.gov/genome/",
+            "description": "基因组数据库"
+          },
+          {
+            "name": "BioRender Gallery",
+            "url": "https://www.biorender.com",
+            "description": "生物医学视觉图形"
+          }
+        ]
+      },
+      {
+        "name": "气候",
+        "links": [
+          {
+            "name": "Climate Reanalyzer",
+            "url": "https://climatereanalyzer.org",
+            "description": "全球气候、温度、海冰、海洋和异常数据"
+          },
+          {
+            "name": "NASA Climate",
+            "url": "https://climate.nasa.gov",
+            "description": "全球气候变化可视化"
+          },
+          {
+            "name": "NOAA Climate.gov",
+            "url": "https://www.climate.gov",
+            "description": "气候数据和动态图表"
+          },
+          {
+            "name": "Copernicus Climate Change Service",
+            "url": "https://climate.copernicus.eu",
+            "description": "全球气候监测"
+          },
+          {
+            "name": "Climate Central",
+            "url": "https://www.climatecentral.org",
+            "description": "海平面、气候和城市风险地图"
+          },
+          {
+            "name": "Climate Action Tracker",
+            "url": "https://climateactiontracker.org",
+            "description": "全球气候政策与排放数据"
+          },
+          {
+            "name": "Berkeley Earth",
+            "url": "https://berkeleyearth.org",
+            "description": "全球温度数据"
+          },
+          {
+            "name": "Global Temperature",
+            "url": "https://data.giss.nasa.gov/gistemp/",
+            "description": "全球温度变化"
+          },
+          {
+            "name": "NSIDC",
+            "url": "https://nsidc.org",
+            "description": "全球冰雪、海冰数据"
+          },
+          {
+            "name": "Arctic Sea Ice",
+            "url": "https://nsidc.org/arcticseaicenews/",
+            "description": "北极海冰变化"
+          },
+          {
+            "name": "Antarctic Ice",
+            "url": "https://climate.nasa.gov/vital-signs/ice-sheets/",
+            "description": "南极冰盖"
+          },
+          {
+            "name": "Ocean Data View",
+            "url": "https://odv.awi.de",
+            "description": "海洋数据可视化"
+          },
+          {
+            "name": "NOAA Ocean Service",
+            "url": "https://oceanservice.noaa.gov",
+            "description": "海洋和沿海数据"
+          },
+          {
+            "name": "Ocean Tracking Network",
+            "url": "https://oceantrackingnetwork.org",
+            "description": "海洋生物追踪"
+          },
+          {
+            "name": "Global Ocean Observing System",
+            "url": "https://goosocean.org",
+            "description": "全球海洋观测"
+          },
+          {
+            "name": "Marine Regions",
+            "url": "https://www.marineregions.org",
+            "description": "全球海洋区域地图"
+          }
+        ]
+      },
+      {
+        "name": "奇奇怪怪数据",
+        "links": [
+          {
+            "name": "World Language Map",
+            "url": "https://www.mapmaker.nationalgeographic.org",
+            "description": "世界地理与文化可视化"
+          },
+          {
+            "name": "Ethnologue",
+            "url": "https://www.ethnologue.com",
+            "description": "全球语言分布数据"
+          },
+          {
+            "name": "Glottolog",
+            "url": "https://glottolog.org",
+            "description": "全球语言分类和语言地图"
+          },
+          {
+            "name": "Pantheon",
+            "url": "https://pantheon.world",
+            "description": "历史人物全球影响力和时间线数据"
+          },
+          {
+            "name": "Mapping Wikipedia",
+            "url": "https://wikimap.wiki",
+            "description": "Wikipedia地理和内容可视化"
+          },
+          {
+            "name": "Wikipedia Pageviews",
+            "url": "https://pageviews.wmcloud.org",
+            "description": "Wikipedia页面访问量数据"
+          },
+          {
+            "name": "Wikimedia Analytics",
+            "url": "https://analytics.wmflabs.org",
+            "description": "Wikimedia访问和内容数据"
+          },
+          {
+            "name": "Internet Live Stats",
+            "url": "https://www.internetlivestats.com",
+            "description": "全球互联网实时统计动画"
+          },
+          {
+            "name": "World Internet Users",
+            "url": "https://www.internetlivestats.com/internet-users/",
+            "description": "全球互联网用户数量"
+          },
+          {
+            "name": "SocialCounts",
+            "url": "https://socialcounts.org",
+            "description": "社交媒体频道和内容统计"
+          },
+          {
+            "name": "YouTube Live Subscriber Count",
+            "url": "https://socialcounts.org/youtube-live-subscriber-count",
+            "description": "YouTube实时订阅数据"
+          },
+          {
+            "name": "Radio Garden",
+            "url": "https://radio.garden",
+            "description": "全球广播电台地球交互地图"
+          },
+          {
+            "name": "MapCrunch",
+            "url": "https://www.mapcrunch.com",
+            "description": "全球随机街景探索"
+          },
+          {
+            "name": "GeoGuessr",
+            "url": "https://www.geoguessr.com",
+            "description": "全球地图和地理探索游戏化平台"
+          },
+          {
+            "name": "Geotastic",
+            "url": "https://geotastic.net",
+            "description": "全球地理探索地图"
+          },
+          {
+            "name": "Mapillary",
+            "url": "https://www.mapillary.com",
+            "description": "全球众包街景和道路图像"
+          },
+          {
+            "name": "KartaView",
+            "url": "https://kartaview.org",
+            "description": "全球开源街景"
+          },
+          {
+            "name": "OpenWeatherMap",
+            "url": "https://openweathermap.org",
+            "description": "全球天气地图/API"
+          },
+          {
+            "name": "Meteostat",
+            "url": "https://meteostat.net",
+            "description": "历史天气和气候可视化"
+          },
+          {
+            "name": "ClimateCharts",
+            "url": "https://climatecharts.net",
+            "description": "全球城市气候图"
+          },
+          {
+            "name": "Windfinder",
+            "url": "https://www.windfinder.com",
+            "description": "全球风、浪和天气"
+          },
+          {
+            "name": "Surfline",
+            "url": "https://www.surfline.com",
+            "description": "全球海浪、海洋和天气"
+          },
+          {
+            "name": "Marine Weather",
+            "url": "https://www.weather.gov/marine/",
+            "description": "海洋天气"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑫𝑎𝑡𝑎 𝑉𝑖𝑠𝑢𝑎𝑙𝑖𝑧𝑎𝑡𝑖𝑜𝑛';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

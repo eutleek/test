@@ -1,0 +1,1424 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="设计、建筑权威媒体与商业空间灵感导航">
+<title>设计建筑 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>设计建筑</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">设计建筑 · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "设计建筑",
+    "icon": "🏛️",
+    "color": "linear-gradient(135deg, #6c5ce7, #00cec9)",
+    "subcategories": [
+      {
+        "name": "全球建筑媒体",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "ArchDaily",
+            "url": "https://www.archdaily.com",
+            "description": "全球访问量最大的建筑门户"
+          },
+          {
+            "name": "Dezeen",
+            "url": "https://www.dezeen.com",
+            "description": "英国著名设计与建筑杂志，涵盖先锋室内、建筑"
+          },
+          {
+            "name": "Designboom",
+            "url": "https://www.designboom.com",
+            "description": "全球首家在线设计杂志，侧重建筑、工业设计"
+          },
+          {
+            "name": "Architizer",
+            "url": "https://architizer.com",
+            "description": "连接建筑师与品牌的开放平台"
+          },
+          {
+            "name": "Architectural Digest (AD)",
+            "url": "https://www.architecturaldigest.com",
+            "description": "知名《建筑摘要》，聚焦全球名流豪宅"
+          },
+          {
+            "name": "Frame Magazine",
+            "url": "https://frameweb.com",
+            "description": "荷兰国际室内设计权威，主打商业空间、品牌展厅"
+          },
+          {
+            "name": "Wallpaper*",
+            "url": "https://www.wallpaper.com",
+            "description": "英国极具影响力的生活方式与设计杂志，报道高端建筑"
+          },
+          {
+            "name": "Detail Magazine",
+            "url": "https://www.detail-online.com",
+            "description": "德国专业建筑细节杂志，以提供极其精准规范的建筑结构"
+          },
+          {
+            "name": "Architectural Review (AR)",
+            "url": "https://www.architectural-review.com",
+            "description": "英国百年建筑评论杂志，侧重批判性建筑思考"
+          },
+          {
+            "name": "The Architect’s Newspaper (AN)",
+            "url": "https://www.archpaper.com",
+            "description": "北美权威建筑新闻源，追踪报道建筑设计"
+          },
+          {
+            "name": "Domus Web",
+            "url": "https://www.domusweb.it/en.html",
+            "description": "意大利传奇建筑与设计杂志 Domus 官方网"
+          },
+          {
+            "name": "Casabella",
+            "url": "https://casabellaweb.eu",
+            "description": "意大利历史悠久的建筑杂志"
+          },
+          {
+            "name": "Metropolis Magazine",
+            "url": "https://metropolismag.com",
+            "description": "关注可持续建筑、城市规划"
+          },
+          {
+            "name": "Yellowtrace",
+            "url": "https://www.yellowtrace.com.au",
+            "description": "澳大利亚顶尖室内设计博客"
+          },
+          {
+            "name": "Divisare",
+            "url": "https://divisare.com",
+            "description": "极简主义建筑数据库，纯粹以高质量图片和图纸展示世界"
+          },
+          {
+            "name": "Architectural Record",
+            "url": "https://www.architecturalrecord.com",
+            "description": "美国建筑师协会(AIA)指定合作杂志"
+          },
+          {
+            "name": "A+U (Architecture and Urbanism)",
+            "url": "https://au-magazine.com",
+            "description": "日本知名中英双语杂志，每期深度剖析全球顶尖建筑师作"
+          },
+          {
+            "name": "Gooood (谷德设计网)",
+            "url": "https://www.gooood.cn",
+            "description": "亚洲极具影响力的建筑与景观设计网"
+          },
+          {
+            "name": "Design Anthology",
+            "url": "https://design-anthology.com",
+            "description": "聚焦亚洲及欧洲高端住宅、精品酒店与室内设计的生活方"
+          },
+          {
+            "name": "Archello",
+            "url": "https://archello.com",
+            "description": "连接建筑师、室内设计师与建材产品的开放式案例展示平"
+          }
+        ]
+      },
+      {
+        "name": "室内设计软装",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Architonic",
+            "url": "https://www.architonic.com",
+            "description": "全球最大的高端家具、建材与室内设计案例数据库。"
+          },
+          {
+            "name": "Remodelista",
+            "url": "https://www.remodelista.com",
+            "description": "注重极简、复古与自然质感的室内装潢与家居改造指南。"
+          },
+          {
+            "name": "Est Living",
+            "url": "https://www.estliving.com",
+            "description": "澳大利亚高端住宅设计媒体"
+          },
+          {
+            "name": "Sight Unseen",
+            "url": "https://www.sightunseen.com",
+            "description": "专注先锋室内设计、小众独立家具与艺术设计的在线杂志"
+          },
+          {
+            "name": "Minimalissimo",
+            "url": "https://minimalissimo.com",
+            "description": "极简主义设计圣地，涵盖极简建筑、室内"
+          },
+          {
+            "name": "Nonagon Style",
+            "url": "https://nonagon.style",
+            "description": "汇集全球新锐室内设计师的灵感集锦与空间配色案例。"
+          },
+          {
+            "name": "Leibal",
+            "url": "https://leibal.com",
+            "description": "专注于极简主义的建筑、室内与家具产品设计博客。"
+          },
+          {
+            "name": "Interior Design Magazine",
+            "url": "https://interiordesign.net",
+            "description": "美国《室内设计》官方网，商业空间"
+          },
+          {
+            "name": "Design Milk",
+            "url": "https://design-milk.com",
+            "description": "流行设计博客，涵盖现代室内设计、建筑"
+          },
+          {
+            "name": "Apartment Therapy",
+            "url": "https://www.apartmenttherapy.com",
+            "description": "全球知名的真实住宅改造、小户型空间利用与家居灵感社"
+          },
+          {
+            "name": "Vogue Living",
+            "url": "https://www.vogue.com.au/vogue-living",
+            "description": "时尚巨头旗下生活方式网，报道全球高端住宅"
+          },
+          {
+            "name": "Dwell",
+            "url": "https://www.dwell.com",
+            "description": "现代住宅建筑与小屋设计圣地，倡导优雅"
+          },
+          {
+            "name": "IGNANT",
+            "url": "https://www.ignant.com",
+            "description": "德国跨界设计网，遴选极其唯美"
+          },
+          {
+            "name": "Contemporist",
+            "url": "https://www.contemporist.com",
+            "description": "关注现代建筑、室内设计、景观与艺术灵感图库。"
+          },
+          {
+            "name": "Office Snapshots",
+            "url": "https://officesnapshots.com",
+            "description": "全球最大的办公空间设计数据库，收录 Google"
+          },
+          {
+            "name": "Hospitality Design (HD)",
+            "url": "https://hospitalitydesign.com",
+            "description": "全球酒店、餐厅、酒吧与度假村设计的专业行业洞察。"
+          },
+          {
+            "name": "Retail Design Blog",
+            "url": "https://retaildesignblog.net",
+            "description": "专注全球商业零售店面、橱窗设计、品牌快闪店与展厅。"
+          },
+          {
+            "name": "Restless Living",
+            "url": "https://restless.co.uk",
+            "description": "专注于豪华住宅、现代别墅与高空公寓室内视觉体验。"
+          },
+          {
+            "name": "Milk Decoration",
+            "url": "https://www.milkdecoration.com",
+            "description": "法国高端家居装饰杂志 Milk"
+          },
+          {
+            "name": "Houzz",
+            "url": "https://www.houzz.com",
+            "description": "全球最大的家居改造、室内设计图片与业主交流社区。"
+          }
+        ]
+      },
+      {
+        "name": "品牌商业零售",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Superflux",
+            "url": "https://superflux.in",
+            "description": "专注于未来场景、沉浸式展陈与艺术装置设计的先锋工作"
+          },
+          {
+            "name": "Retail Trends",
+            "url": "https://www.retailtrends.nl",
+            "description": "专注于全球顶级时尚品牌快闪店"
+          },
+          {
+            "name": "Spatial Design / Brand Spaces",
+            "url": "https://www.spatialdesign.info",
+            "description": "探索品牌形象如何完美转化为线下物理空间的视觉灵感站"
+          },
+          {
+            "name": "VMSD",
+            "url": "https://www.vmsd.com",
+            "description": "全球视觉陈列与商店零售空间设计的权威行业杂志。"
+          },
+          {
+            "name": "Exhibition Design Awards",
+            "url": "https://www.exhibitoronline.com",
+            "description": "全球各大博览会、展馆与品牌展位设计获奖案例库。"
+          },
+          {
+            "name": "Gensler Research Institute",
+            "url": "https://www.gensler.com/research-insight",
+            "description": "建筑巨头 Gensler 发布的关于商业"
+          },
+          {
+            "name": "Shopcore Architecture",
+            "url": "https://www.shopcore.com",
+            "description": "专注于商场、商业综合体与社区零售空间规划。"
+          },
+          {
+            "name": "Store age",
+            "url": "https://www.store-age.com",
+            "description": "聚焦零售体验创新、数字互动空间与商业美学。"
+          },
+          {
+            "name": "Pop Up City",
+            "url": "https://popupcity.net",
+            "description": "专注于城市临时建筑、快闪空间与灵活商业业态创意。"
+          },
+          {
+            "name": "Event Design Style",
+            "url": "https://www.eventdesign.com",
+            "description": "展示舞美、品牌发布会、时装周秀场及大型活动空间设计"
+          },
+          {
+            "name": "Interior Design Show (IDS)",
+            "url": "https://toronto.interiordesignshow.com",
+            "description": "加拿大国际室内设计展，展示当代顶尖商业与住宅软装。"
+          },
+          {
+            "name": "Storefront for Art and Architecture",
+            "url": "https://storefrontnews.org",
+            "description": "纽约著名的前沿建筑展厅，聚焦艺术与建筑交汇的装置。"
+          },
+          {
+            "name": "Shop Design Magazine",
+            "url": "https://shotenkenchiku.com",
+            "description": "日本专业商店设计杂志《商店建筑》关联国际案例库。"
+          },
+          {
+            "name": "Design Diffusion (DDN)",
+            "url": "https://www.designdiffusion.com",
+            "description": "意大利知名设计网，主打米兰设计周"
+          },
+          {
+            "name": "Frame Store Index",
+            "url": "https://frameweb.com/stores",
+            "description": "Frame 杂志旗下精选的全球百大概念零售店与旗舰"
+          },
+          {
+            "name": "Trendland Architecture",
+            "url": "https://trendland.com/category/architecture",
+            "description": "涵盖时尚、室内、建筑与艺术跨界的高调性灵感站。"
+          },
+          {
+            "name": "Space Matrix",
+            "url": "https://www.spacematrix.com",
+            "description": "专注于现代数字化办公空间与灵活工位规划的设计案例库"
+          },
+          {
+            "name": "Luxe Interiors + Design",
+            "url": "https://luxesource.com",
+            "description": "北美高端住宅与商业豪宅领域的室内设计杂志。"
+          },
+          {
+            "name": "Creative Retail Architecture",
+            "url": "https://www.creativeretail.co.uk",
+            "description": "聚集独立买手店、精品咖啡馆与小众展厅设计。"
+          },
+          {
+            "name": "Commercial Interior Design (CID)",
+            "url": "https://www.commercialinteriordesign.com",
+            "description": "中东及全球中空商业、奢华酒店与餐饮空间标杆。"
+          }
+        ]
+      },
+      {
+        "name": "景观建筑规划",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Landezine",
+            "url": "https://landezine.com",
+            "description": "全球权威的景观建筑网，展示公园、广场"
+          },
+          {
+            "name": "Landscape Architecture Magazine (LAM)",
+            "url": "https://landscapearchitecturemagazine.org",
+            "description": "美国景观建筑师协会官方杂志，报道生态与城市设计。"
+          },
+          {
+            "name": "World Landscape Architecture (WLA)",
+            "url": "https://worldlandscapearchitect.com",
+            "description": "全球景观设计竞赛、行业新闻与顶尖景观项目。"
+          },
+          {
+            "name": "Urban Land Institute (ULI)",
+            "url": "https://uli.org",
+            "description": "专注于城市规划、可持续房地产开发与城市更新。"
+          },
+          {
+            "name": "Curbed",
+            "url": "https://www.curbed.com",
+            "description": "Vox 旗下网站，报道城市建筑、社区发展"
+          },
+          {
+            "name": "Bloomberg CityLab",
+            "url": "https://www.bloomberg.com/citylab",
+            "description": "彭博旗下的城市未来设计、公共交通"
+          },
+          {
+            "name": "ASLA",
+            "url": "https://www.asla.org",
+            "description": "美国景观设计大奖与生态设计数据库。"
+          },
+          {
+            "name": "Rethinking The Future (RTF)",
+            "url": "https://www.re-thinkingthefuture.com",
+            "description": "致力于探讨建筑未来形态、城市可持续性与全球建筑奖项"
+          },
+          {
+            "name": "E-architect",
+            "url": "https://www.e-architect.com",
+            "description": "涵盖全球主要城市(伦敦、纽约"
+          },
+          {
+            "name": "European Prize for Urban Public Space",
+            "url": "https://www.publicspace.org",
+            "description": "欧洲城市公共空间奖官方数据库，关注社区与广场。"
+          },
+          {
+            "name": "Inhabitat",
+            "url": "https://inhabitat.com",
+            "description": "专注于绿色环保建筑、太阳能建筑与可持续空间解决方案"
+          },
+          {
+            "name": "Archiposition (有方)",
+            "url": "https://www.archiposition.com",
+            "description": "中国建筑文化与学术传播机构"
+          },
+          {
+            "name": "SuperArchitects",
+            "url": "https://www.super-architects.com",
+            "description": "聚焦先锋概念建筑、学生毕业设计与未来的实验性结构。"
+          },
+          {
+            "name": "Architecture Hunter",
+            "url": "https://architecturehunter.com",
+            "description": "拥有数百万粉丝的视觉媒体"
+          },
+          {
+            "name": "World Architecture Community (WAC)",
+            "url": "https://worldarchitecture.org",
+            "description": "全球建筑师互联网络，收录大量发展中国家及独立建筑师"
+          },
+          {
+            "name": "Phaidon Architecture",
+            "url": "https://www.phaidon.com/store/architecture",
+            "description": "顶尖艺术出版商 Phaidon"
+          },
+          {
+            "name": "Tactical Urbanism Materials",
+            "url": "https://tacticalurbanismguide.com",
+            "description": "战术性城市主义与社区小微空间改造方案库。"
+          },
+          {
+            "name": "Archiscene",
+            "url": "https://www.archiscene.net",
+            "description": "涵盖时尚、艺术与现代建筑空间结合的跨界视觉网。"
+          },
+          {
+            "name": "Concept Architecture",
+            "url": "https://www.conceptarchitecture.com",
+            "description": "专注建筑概念渲染图、未实现的设计构想与科幻建筑风格"
+          },
+          {
+            "name": "CTBUH",
+            "url": "https://www.ctbuh.org",
+            "description": "世界高层建筑与都市人居学会"
+          }
+        ]
+      },
+      {
+        "name": "极简野奢空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Uncrate Shelter",
+            "url": "https://uncrate.com/shelter",
+            "description": "男士高端生活方式网 Uncrate"
+          },
+          {
+            "name": "Treehugger Architecture",
+            "url": "https://www.treehugger.com/design-architecture-4846011",
+            "description": "极简木屋、离网住宅与超低能耗被动房。"
+          },
+          {
+            "name": "A-Frame House Archives",
+            "url": "https://aframehouse.com",
+            "description": "三角木屋爱好者大本营，充满复古与山野灵感。"
+          },
+          {
+            "name": "The Off-Grid Cabin",
+            "url": "https://www.offgridcabin.com",
+            "description": "远离尘嚣的自给自足式小型住宅与太阳能住宅实践。"
+          },
+          {
+            "name": "Container Home Plans",
+            "url": "https://www.containerhomeplans.org",
+            "description": "全球集装箱建筑改造、模块化住宅与创意空间。"
+          },
+          {
+            "name": "Minimalist Architecture World",
+            "url": "https://www.minimalistarchitecture.org",
+            "description": "纯粹极简主义、白色系与包豪斯线条住宅图库。"
+          },
+          {
+            "name": "Desert Architecture Journal",
+            "url": "https://www.desertarchitecture.com",
+            "description": "荒漠建筑、极简黏土住宅与耐旱地景结合的宅邸。"
+          },
+          {
+            "name": "Floating Homes Architecture",
+            "url": "https://www.floatinghomes.org",
+            "description": "水上住宅、浮动社区与应对海平面上升的建筑。"
+          },
+          {
+            "name": "Prefab Housing World",
+            "url": "https://www.prefabhousing.com",
+            "description": "高端预制装配式住宅、工厂化建房与快速组装别墅。"
+          },
+          {
+            "name": "Glamping Architecture Index",
+            "url": "https://www.glampingarchitecture.com",
+            "description": "野奢帐篷、野外星空房与高海拔度假小木屋设计。"
+          },
+          {
+            "name": "Cave Homes & Underground Houses",
+            "url": "https://www.undergroundhomes.com",
+            "description": "洞穴住宅、覆土建筑与地下自然调温空间。"
+          },
+          {
+            "name": "Glass House Collection",
+            "url": "https://theglasshouse.org",
+            "description": "全通透玻璃房、阳光房与自然无缝融合的先锋住宅。"
+          },
+          {
+            "name": "Japanese House Design",
+            "url": "https://japanhousedesign.com",
+            "description": "专注日本狭小住宅、极窄面宽住宅与神奇收纳建筑。"
+          },
+          {
+            "name": "Courtyard Homes Index",
+            "url": "https://www.courtyardhomes.org",
+            "description": "进深天井、中庭合院与东方内向型住宅空间灵感。"
+          },
+          {
+            "name": "Hillside House Engineering",
+            "url": "https://www.hillsidehomes.com",
+            "description": "陡峭山坡住宅、悬崖悬挑别墅与工程奇迹。"
+          },
+          {
+            "name": "Boathouse Architecture",
+            "url": "https://www.boathousejournal.com",
+            "description": "船屋、码头建筑与亲水休闲空间摄影网。"
+          },
+          {
+            "name": "Passive House Institute (PHI)",
+            "url": "https://passivehouse.com",
+            "description": "德国被动房研究所，全球极高保温性能住宅权威。"
+          },
+          {
+            "name": "Serpentine Pavilion Archives",
+            "url": "https://www.serpentinegalleries.org/whats-on/architecture",
+            "description": "伦敦蛇形画廊历年夏季展亭(由顶尖大师设计)大全。"
+          },
+          {
+            "name": "Pritzker Architecture Prize Official",
+            "url": "https://www.pritzkerprize.com",
+            "description": "普利兹克建筑奖(建筑界诺贝尔)历届获奖者作品集。"
+          },
+          {
+            "name": "The Architectural League of New York",
+            "url": "https://archleague.org",
+            "description": "纽约建筑联盟，展示年轻建筑师与新兴先锋事物。"
+          }
+        ]
+      },
+      {
+        "name": "国际先锋建筑",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Architectural Digest Italy",
+            "url": "https://www.ad-italia.it",
+            "description": "AD 杂志意大利版，专注于地中海高端豪宅"
+          },
+          {
+            "name": "Architectural Digest France",
+            "url": "https://www.admagazine.fr",
+            "description": "AD 杂志法国版，聚焦法式古典与现代折衷主义结合的"
+          },
+          {
+            "name": "Baunetz Interior|Design",
+            "url": "https://www.baunetz-id.de",
+            "description": "德国权威建筑网旗下的室内设计专刊"
+          },
+          {
+            "name": "Design Diffusion News (DDN)",
+            "url": "https://www.designdiffusion.com/en",
+            "description": "欧洲高端室内与家具设计网"
+          },
+          {
+            "name": "Surface Magazine",
+            "url": "https://www.surfacemag.com",
+            "description": "美国当代设计与建筑杂志，涵盖先锋商业空间"
+          },
+          {
+            "name": "Habitus Living",
+            "url": "https://www.habitusliving.com",
+            "description": "专注于亚太地区(澳大利亚"
+          },
+          {
+            "name": "Metropolis Japan",
+            "url": "https://metropolisjapan.com",
+            "description": "记录日本本土最新商业地标"
+          },
+          {
+            "name": "Architect Magazine",
+            "url": "https://www.architectmagazine.com",
+            "description": "美国建筑师学会(AIA)官方期刊，涵盖工程技术"
+          },
+          {
+            "name": "Architecture AU",
+            "url": "https://architectureau.com",
+            "description": "澳大利亚权威建筑门户，涵盖澳洲现代住宅"
+          },
+          {
+            "name": "Indesignlive",
+            "url": "https://www.indesignlive.com",
+            "description": "聚焦亚太地区商业办公、零售及高端酒店室内设计的专业"
+          },
+          {
+            "name": "Interior Design India",
+            "url": "https://www.architecturaldigest.in",
+            "description": "AD 印度版，展示南亚浓郁色彩"
+          },
+          {
+            "name": "Arquitectura Viva (AV)",
+            "url": "https://arquitecturaviva.com",
+            "description": "西班牙著名建筑杂志，以精美的摄影"
+          },
+          {
+            "name": "Plot Magazine",
+            "url": "https://www.revistaplot.com",
+            "description": "阿根廷先锋建筑杂志，关注拉丁美洲及全球的实验性建筑"
+          },
+          {
+            "name": "Curbed New York",
+            "url": "https://ny.curbed.com",
+            "description": "深度报道纽约顶级天际线、地标大楼与历史公寓改建的建"
+          },
+          {
+            "name": "Architectural Design (AD Journal)",
+            "url": "https://www.wiley.com/en-us/Architectural+Design-c-3810",
+            "description": "英国 Wiley 出版的学术型建筑期刊"
+          },
+          {
+            "name": "Metropolis Magazine Design Index",
+            "url": "https://metropolismag.com/projects",
+            "description": "Metropolis 旗下的精选项目库"
+          },
+          {
+            "name": "Architect's Newspaper Specsheet",
+            "url": "https://www.archpaper.com/category/projects",
+            "description": "北美建筑师报项目专栏，聚焦前沿外立面与建筑工程落地"
+          },
+          {
+            "name": "Archiseek",
+            "url": "https://www.archiseek.com",
+            "description": "关注爱尔兰与欧洲建筑历史"
+          },
+          {
+            "name": "Livingedge Projects",
+            "url": "https://livingedge.com.au/projects",
+            "description": "澳洲高端商业与住宅空间展示"
+          },
+          {
+            "name": "Enki Magazine",
+            "url": "https://enkimagazine.com",
+            "description": "英国专注于可持续建筑、极简生态木屋与环境友好型住宅"
+          }
+        ]
+      },
+      {
+        "name": "住宅公寓空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Spatial Magazine",
+            "url": "https://www.spatialmagazine.com",
+            "description": "专注于极简公寓、水泥工业风住宅与纯粹几何空间排布的"
+          },
+          {
+            "name": "Hunting for George",
+            "url": "https://www.huntingforgeorge.com",
+            "description": "澳大利亚住宅改造与室内设计博客"
+          },
+          {
+            "name": "The Design Files",
+            "url": "https://thedesignfiles.net",
+            "description": "澳洲极具影响力的住宅设计博客"
+          },
+          {
+            "name": "The Nordroom",
+            "url": "https://www.thenordroom.com",
+            "description": "专注于北欧风(Nordic)"
+          },
+          {
+            "name": "Coco Kelley",
+            "url": "https://www.cocokelley.com",
+            "description": "专注于美式现代、古典拉丝与优雅精致软装搭配的住宅设"
+          },
+          {
+            "name": "Style by Emily Henderson",
+            "url": "https://stylebyemilyhenderson.com",
+            "description": "知名室内设计师 Emily 的住宅改造指南"
+          },
+          {
+            "name": "Desire to Inspire",
+            "url": "https://www.desiretoinspire.net",
+            "description": "由加拿大与澳大利亚两位博主联合打造"
+          },
+          {
+            "name": "SF Girl By Bay",
+            "url": "https://www.sfgirlbybay.com",
+            "description": "旧金山波西米亚与复古现代风室内美学博客"
+          },
+          {
+            "name": "Domino Magazine",
+            "url": "https://www.domino.com",
+            "description": "流行家居杂志，主打小户型改造"
+          },
+          {
+            "name": "Design Hunter",
+            "url": "https://www.designhunter.co.uk",
+            "description": "英国极简主义与现代奢华住宅设计博客"
+          },
+          {
+            "name": "Mad About The House",
+            "url": "https://www.madaboutthehouse.com",
+            "description": "英国知名室内设计记者 Kate Watson"
+          },
+          {
+            "name": "Italian Bark",
+            "url": "https://www.italianbark.com",
+            "description": "由意大利建筑师主导，预测欧洲室内设计配色"
+          },
+          {
+            "name": "Cate St Hill",
+            "url": "https://catesthill.com",
+            "description": "伦敦极简主义住宅博客，专注于营造安静"
+          },
+          {
+            "name": "These Four Walls",
+            "url": "https://thesefourwallsblog.com",
+            "description": "专注于日式北欧风(Japandi)"
+          },
+          {
+            "name": "Vosgesparis",
+            "url": "https://www.vosgesparis.com",
+            "description": "荷兰暗黑极简主义与黑白灰色调室内空间博客"
+          },
+          {
+            "name": "Mysa Scandinavian Homes",
+            "url": "https://mysascandinavianhomes.com",
+            "description": "专注于纯正北欧原木风、大白墙与极简采光住宅空间展示"
+          },
+          {
+            "name": "Coffeeklatch",
+            "url": "https://coffeeklatch.be",
+            "description": "比利时慢生活室内杂志，以随性真实的镜头记录艺术家与"
+          },
+          {
+            "name": "House & Garden UK",
+            "url": "https://www.houseandgarden.co.uk",
+            "description": "英国老牌庄园、乡村别墅与经典英伦风格室内设计的集大"
+          },
+          {
+            "name": "Modern Luxury Interiors",
+            "url": "https://modernluxuryinteriors.com",
+            "description": "北美高端奢华大宅、海景别墅与私人庄园室内设计与景观"
+          },
+          {
+            "name": "Australian Design Review Interiors",
+            "url": "https://www.australiandesignreview.com/interiors",
+            "description": "澳洲室内设计界前沿案例，主打通透自然光与开放式客餐"
+          }
+        ]
+      },
+      {
+        "name": "商业空间酒店",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Hospitality Interiors",
+            "url": "https://www.hospitality-interiors.net",
+            "description": "国际奢华酒店、度假村、高级会所与水疗中心室内设计的"
+          },
+          {
+            "name": "Sleeper Magazine",
+            "url": "https://www.sleepermagazine.com",
+            "description": "全球跨国酒店体验与酒店建筑设计杂志"
+          },
+          {
+            "name": "Supper Magazine",
+            "url": "https://www.suppermagazine.co.uk",
+            "description": "专注于全球顶级餐厅、高端酒吧与餐饮空间室内美学与照"
+          },
+          {
+            "name": "Retail Focus",
+            "url": "https://www.retail-focus.co.uk",
+            "description": "英国零售空间设计媒体，展示概念旗舰店"
+          },
+          {
+            "name": "Store Layout Gallery",
+            "url": "https://www.architecturalrecord.com/topics/266-retail-interiors",
+            "description": "专注于商业动线排布、陈列货架设计与品牌空间转化的工"
+          },
+          {
+            "name": "Hotel Designs",
+            "url": "https://hoteldesigns.net",
+            "description": "国际酒店设计师与建筑师必备网"
+          },
+          {
+            "name": "Boutique Hotelier",
+            "url": "https://www.boutiquehotelier.com",
+            "description": "专注于独立精品酒店、历史老建筑改建酒店与野奢度假空"
+          },
+          {
+            "name": "Fast Company Design Spaces",
+            "url": "https://www.fastcompany.com/co-design",
+            "description": "专注于科技公司创新办公室"
+          },
+          {
+            "name": "Workplace Insight",
+            "url": "https://workplaceinsight.net",
+            "description": "英国办公空间体验杂志，关注人性化办公"
+          },
+          {
+            "name": "MIX Interiors",
+            "url": "https://www.mixinteriors.com",
+            "description": "商业办公、公共教育空间与大型商业综合体室内设计网。"
+          },
+          {
+            "name": "Commercial Design India",
+            "url": "https://www.commercialdesignindia.com",
+            "description": "关注南亚与中东地区大型商业写字楼"
+          },
+          {
+            "name": "World Interiors News (WIN)",
+            "url": "https://www.worldinteriorsnews.com",
+            "description": "全球室内设计大奖平台，展示顶尖商业空间与文化场馆。"
+          },
+          {
+            "name": "Retail Environment",
+            "url": "https://www.shopassociation.org",
+            "description": "美国零售设计协会网，主打商场中庭"
+          },
+          {
+            "name": "Restaurant & Bar Design Awards Official",
+            "url": "https://restaurantandbardesignawards.com",
+            "description": "全球顶尖餐厅与酒吧设计大奖"
+          },
+          {
+            "name": "Luxury Retail Spaces",
+            "url": "https://www.dezeen.com/tag/luxury-retail",
+            "description": "Dezeen 精选的高奢品牌(如香奈儿"
+          },
+          {
+            "name": "Pop-up Store Index",
+            "url": "https://www.insider-trends.com/category/retail-trends",
+            "description": "专注报道全球各大品牌最前沿的快闪店"
+          },
+          {
+            "name": "Coffee Shop Interior Gallery",
+            "url": "https://www.archdaily.com/tag/coffee-shop",
+            "description": "ArchDaily 汇总的全球极简"
+          },
+          {
+            "name": "Showroom Design Collection",
+            "url": "https://frameweb.com/work/showrooms",
+            "description": "Frame 挑选的全球顶级家具"
+          },
+          {
+            "name": "Coworking Space Architecture",
+            "url": "https://officesnapshots.com/tag/coworking",
+            "description": "全球知名联合办公空间(如 WeWork"
+          },
+          {
+            "name": "Exhibition Design International",
+            "url": "https://www.designboom.com/design/exhibition-design",
+            "description": "设计邦精选的博物馆展厅、艺术博览会展位与交互空间装"
+          }
+        ]
+      },
+      {
+        "name": "景观生态设计",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Land8: Landscape Architects Network",
+            "url": "https://land8.com",
+            "description": "景观设计师最大网络社区，分享项目案例"
+          },
+          {
+            "name": "Landscape Architecture Today",
+            "url": "https://www.landscape-today.com",
+            "description": "欧洲景观设计动态，关注公园、广场"
+          },
+          {
+            "name": "Terrain.org",
+            "url": "https://www.terrain.org",
+            "description": "关注文理交融的景观生态、乡村地景与人与自然关系的空"
+          },
+          {
+            "name": "Landscape Institute UK",
+            "url": "https://www.landscapeinstitute.org",
+            "description": "英国景观学会官方网，发布英国国家公园"
+          },
+          {
+            "name": "Public Space Architecture",
+            "url": "https://www.publicspace.org/works",
+            "description": "欧洲城市公共空间大奖案例库，关注社区广场"
+          },
+          {
+            "name": "Waterfront Architecture Index",
+            "url": "https://www.archdaily.com/tag/waterfront",
+            "description": "全球滨水公园、码头改造与海岸线生态景观案例库。"
+          },
+          {
+            "name": "Urban Design Group (UDG)",
+            "url": "https://www.udg.org.uk",
+            "description": "英国城市设计学会，关注慢行系统"
+          },
+          {
+            "name": "Green Infrastructure Resource",
+            "url": "https://www.asla.org/greeninfrastructure.aspx",
+            "description": "海绵城市、绿化屋顶与生态滤水景观设计技术库。"
+          },
+          {
+            "name": "Playground Architecture Index",
+            "url": "https://www.archdaily.com/tag/playground",
+            "description": "全球充满创意、安全性与无障碍设计的儿童公园与游乐场"
+          },
+          {
+            "name": "Rooftop Garden Architecture",
+            "url": "https://www.landscapearchitecture.org.cn",
+            "description": "高空屋顶花园、高空观景台与空中绿廊空间案例。"
+          },
+          {
+            "name": "Botanical Garden Design Archives",
+            "url": "https://www.bgci.org",
+            "description": "国际植物园保护联盟，汇集全球大温室"
+          },
+          {
+            "name": "Cemetery & Memorial Architecture",
+            "url": "https://www.archdaily.com/tag/memorial",
+            "description": "专注于纪念性建筑、纪念公园与沉思空间的静谧美学设计"
+          },
+          {
+            "name": "Urban Plaza Gallery",
+            "url": "https://www.landezine.com/category/typology/plaza",
+            "description": "Landezine 挑选的全球经典硬质景观"
+          },
+          {
+            "name": "Vertical Forest Architecture",
+            "url": "https://www.stefanoboeriarchitetti.net",
+            "description": "垂直森林缔造者博埃里建筑事务所"
+          },
+          {
+            "name": "Pocket Park Architecture",
+            "url": "https://www.planning.org/greatplaces",
+            "description": "美国规划协会遴选的街角口袋公园、社区微型绿地案例。"
+          },
+          {
+            "name": "Campus Landscape Architecture",
+            "url": "https://www.archdaily.com/tag/campus-landscape",
+            "description": "全球知名大学校园、科技园区景观规划与中庭绿化案例。"
+          },
+          {
+            "name": "Resort Landscape Collection",
+            "url": "https://www.worldlandscapearchitect.com/category/resort",
+            "description": "全球度假酒店、海岛庄园与热带雨林度假村景观设计。"
+          },
+          {
+            "name": "Bridge & Pedestrian Architecture",
+            "url": "https://www.bridgearchitecture.com",
+            "description": "景观人行桥、跨河景观构筑物与城市连廊设计。"
+          },
+          {
+            "name": "Lighting Landscape Index",
+            "url": "https://www.arc-magazine.com",
+            "description": "专注于户外夜景照明、建筑外立面泛光与景观灯光艺术。"
+          },
+          {
+            "name": "Ecological Restoration Architecture",
+            "url": "https://www.ser.org",
+            "description": "生态复垦、废弃矿山改造公园与湿地公园设计案例。"
+          }
+        ]
+      },
+      {
+        "name": "极简避世空间",
+        "enName": "Collection",
+        "links": [
+          {
+            "name": "Cabin Anthologies",
+            "url": "https://www.cabinanthologies.com",
+            "description": "汇集全球极简避世木屋、高山庇护所与森林宿营空间。"
+          },
+          {
+            "name": "Micro Apartment Architecture",
+            "url": "https://www.nevertoosmall.com",
+            "description": "著名的 Never Too Small 团队"
+          },
+          {
+            "name": "Small House Bliss",
+            "url": "https://smallhousebliss.com",
+            "description": "专注于 100 平方米以下精致小住宅"
+          },
+          {
+            "name": "Desert Homes Architecture",
+            "url": "https://www.desert-homes.com",
+            "description": "加州棕榈泉、泥土色调与荒漠极简主义别墅建筑案例。"
+          },
+          {
+            "name": "Floating Architecture Network",
+            "url": "https://www.floatingarchitecture.com",
+            "description": "荷兰及全球浮动住宅、水上社区与应对海平面上升的设计"
+          },
+          {
+            "name": "Modular House Index",
+            "url": "https://www.modularhomeowners.com",
+            "description": "模块化集成房屋、预制钢结构小屋与工厂定制化空间。"
+          },
+          {
+            "name": "Alpine Architecture",
+            "url": "https://www.archdaily.com/tag/alpine-architecture",
+            "description": "阿尔卑斯山脉极简雪山木屋、滑雪度假村与高空观景台。"
+          },
+          {
+            "name": "Treehouse Guides",
+            "url": "https://www.treehouseguides.com",
+            "description": "全球树屋建筑、高空悬挂小屋与森林避世体验空间。"
+          },
+          {
+            "name": "Cliffhouse Architecture",
+            "url": "https://www.archdaily.com/tag/cliff-house",
+            "description": "建造在悬崖边缘、拥有无敌海景的极致工程住宅。"
+          },
+          {
+            "name": "Minimalist Concrete Homes",
+            "url": "https://www.minimalistconcretenetwork.com",
+            "description": "纯粹灰色清水混凝土、极简线条与光影交织的住宅集锦。"
+          },
+          {
+            "name": "Bamboo Houses International",
+            "url": "https://www.bamboohouse.org",
+            "description": "东南亚及南美原生态竹造住宅"
+          },
+          {
+            "name": "Earthship Eco Architecture",
+            "url": "https://www.earthshipbiotecture.com",
+            "description": "自给自足式生态地球船住宅"
+          },
+          {
+            "name": "Minimalist Glass Pavilions",
+            "url": "https://www.glasspavilions.com",
+            "description": "全透明玻璃亭、庭院茶室与消隐于自然中的建筑设计。"
+          },
+          {
+            "name": "Cave Architecture Collection",
+            "url": "https://www.archdaily.com/tag/cave",
+            "description": "地下洞穴住宅、天然岩洞酒店与地中海天然石窟空间。"
+          },
+          {
+            "name": "Off-Grid Tiny Houses",
+            "url": "https://tinyliving.com",
+            "description": "离网太阳能微型移动房屋、车轮上的小屋与房车空间改造"
+          },
+          {
+            "name": "Courtyard Villa Index",
+            "url": "https://www.courtyardvillas.org",
+            "description": "专注于新中式合院、日式枯山水庭院与地中海中庭住宅。"
+          },
+          {
+            "name": "Brutalist Residential Gallery",
+            "url": "https://www.brutalistresidential.com",
+            "description": "野兽派风格私人住宅、雕塑感强烈的混凝土生活空间。"
+          },
+          {
+            "name": "Sustainable Cabins",
+            "url": "https://www.sustainablecabins.com",
+            "description": "采用低碳排木材、雨水收集与零碳排放的野外庇护所。"
+          },
+          {
+            "name": "Prefabricated Luxury",
+            "url": "https://www.luxuryprefab.com",
+            "description": "奢华预制胶合木住宅、高科技智能定制模块化空间。"
+          },
+          {
+            "name": "Architectural Sanctuary",
+            "url": "https://www.architecturalsanctuary.com",
+            "description": "专注于冥想室、修道院、水疗静室与心灵避难所建筑。"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑫𝑒𝑠𝑖𝑔𝑛 𝑨𝑟𝑐𝑕𝑖𝑡𝑒𝑐𝑡𝑢𝑟𝑒';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

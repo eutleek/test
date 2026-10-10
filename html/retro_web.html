@@ -1,0 +1,1299 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="复古终端、复古网络文化、老网页美学与线上怀旧体验导航">
+<title>在线复古终端 - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝑅𝑒𝑡𝑟𝑜 𝑊𝑒𝑏</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>在线复古终端</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">在线复古终端 · 老系统、复古桌面与浏览器模拟器</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "在线复古终端",
+    "icon": "🕹️",
+    "color": "linear-gradient(135deg, #42275a, #734b6d)",
+    "subcategories": [
+      {
+        "name": "精选推荐",
+        "links": [
+          {
+            "name": "PCjs",
+            "url": "https://www.pcjs.org",
+            "description": "经典IBM PC模拟器，可运行DOS与早期系统"
+          },
+          {
+            "name": "v86 / copy.sh",
+            "url": "https://copy.sh/v86/",
+            "description": "浏览器内x86模拟器，支持DOS、Windows"
+          },
+          {
+            "name": "WebVM",
+            "url": "https://webvm.io",
+            "description": "完全在浏览器运行 Linux 虚拟机，支持终端和图形环境"
+          },
+          {
+            "name": "LinuxOnTab",
+            "url": "https://linuxontab.com",
+            "description": "浏览器运行真实Linux内核与Alpine系统"
+          },
+          {
+            "name": "js-dos",
+            "url": "https://js-dos.com",
+            "description": "浏览器运行DOS/Windows 9x程序与游戏"
+          },
+          {
+            "name": "DOS.Zone",
+            "url": "https://dos.zone",
+            "description": "超大在线 DOS 游戏体验入口"
+          },
+          {
+            "name": "Infinite Mac",
+            "url": "https://infinitemac.org",
+            "description": "System 1到Mac OS 9等经典Mac系统模拟"
+          },
+          {
+            "name": "macemu",
+            "url": "https://macemu.com",
+            "description": "经典 Macintosh 软件和游戏直接在浏览器运行"
+          },
+          {
+            "name": "WebMSX",
+            "url": "https://webmsx.org",
+            "description": "功能完整的 MSX 浏览器模拟器"
+          },
+          {
+            "name": "Internet Arcade",
+            "url": "https://archive.org/details/internetarcade",
+            "description": "Internet Archive 经典街机浏览器模拟"
+          },
+          {
+            "name": "Console Living Room",
+            "url": "https://archive.org/details/consolelivingroom",
+            "description": "经典家用主机在线模拟档案"
+          },
+          {
+            "name": "DOS Games",
+            "url": "https://dos.games",
+            "description": "专门保存和在线运行经典 DOS 游戏"
+          },
+          {
+            "name": "Desktop98",
+            "url": "https://desktop98.com",
+            "description": "沉浸式Windows 98网页复刻体验"
+          },
+          {
+            "name": "Windows93",
+            "url": "https://www.windows93.net",
+            "description": "极具代表性的复古 Windows 网页操作系统"
+          },
+          {
+            "name": "Windows96",
+            "url": "https://windows96.net",
+            "description": "浏览器中的 Windows 95/98 风格虚拟桌面"
+          },
+          {
+            "name": "WebTerm",
+            "url": "https://webterm.onrender.com",
+            "description": "v86与WebAssembly结合的在线终端"
+          },
+          {
+            "name": "Linux terminal lab",
+            "url": "https://krunalkumar.dpdns.org/labs/linux",
+            "description": "真 Linux 内核在浏览器中启动的极简终端"
+          },
+          {
+            "name": "WebLinux",
+            "url": "https://alizafar780.github.io/WebLinux/",
+            "description": "浏览器运行Linux、Windows 2000等系统"
+          },
+          {
+            "name": "Retro Virtual Machine Player",
+            "url": "https://retrovirtualmachine.org/rvmplayer/",
+            "description": "WebAssembly复古电脑模拟器"
+          },
+          {
+            "name": "C64 READY",
+            "url": "https://c64ready.com",
+            "description": "完整 Commodore 64 浏览器模拟体验"
+          }
+        ]
+      },
+      {
+        "name": "DOS",
+        "links": [
+          {
+            "name": "DOSBox Online",
+            "url": "https://joeheyming.github.io/dos/",
+            "description": "DOSBox + js-dos 浏览器体验"
+          },
+          {
+            "name": "Internet Archive MS-DOS Games",
+            "url": "https://archive.org/details/softwarelibrary_msdos_games",
+            "description": "大规模 MS-DOS 软件/游戏浏览器模拟"
+          },
+          {
+            "name": "Internet Archive Software Library",
+            "url": "https://archive.org/details/softwarelibrary",
+            "description": "历史软件在线保存与模拟"
+          },
+          {
+            "name": "js-dos v8",
+            "url": "https://js-dos.com/",
+            "description": "新版 DOS/Win9x 浏览器模拟基础设施"
+          },
+          {
+            "name": "js-dos v7",
+            "url": "https://js-dos.com/v7/build/",
+            "description": "经典版本 DOS 游戏 Web Runtime"
+          },
+          {
+            "name": "em-dosbox",
+            "url": "https://github.com/dreamlayers/em-dosbox",
+            "description": "DOSBox的Emscripten浏览器移植版"
+          },
+          {
+            "name": "PCjs DOS Machines",
+            "url": "https://www.pcjs.org/machines/pcx86/",
+            "description": "PCjs 中大量 IBM PC/DOS 机器和软件镜像"
+          },
+          {
+            "name": "PCjs Software",
+            "url": "https://www.pcjs.org/software/",
+            "description": "PCjs 历史 DOS 软件在线体验"
+          },
+          {
+            "name": "PCjs Windows",
+            "url": "https://www.pcjs.org/software/pcx86/win/",
+            "description": "早期 Windows 浏览器模拟"
+          },
+          {
+            "name": "PCjs IBM PC XT",
+            "url": "https://www.pcjs.org/machines/pcx86/machine/5150/",
+            "description": "IBM PC 5150/XT等经典机器"
+          }
+        ]
+      },
+      {
+        "name": "Linux",
+        "links": [
+          {
+            "name": "WebVM Alpine",
+            "url": "https://webvm.io/alpine.html",
+            "description": "Alpine + Xorg + i3 浏览器环境"
+          },
+          {
+            "name": "LinuxOnTab Shell",
+            "url": "https://linuxontab.com/shell/",
+            "description": "独立浏览器 Linux Shell"
+          },
+          {
+            "name": "LinuxOnTab 2.0",
+            "url": "https://linuxontab.com/2.0/",
+            "description": "Linux内核编译为WebAssembly运行"
+          },
+          {
+            "name": "JSLinux",
+            "url": "https://bellard.org/jslinux/",
+            "description": "Bellard的JavaScript版Linux模拟器"
+          },
+          {
+            "name": "jor1k",
+            "url": "https://s-macke.github.io/jor1k/",
+            "description": "OpenRISC 1000 Linux 浏览器模拟器"
+          },
+          {
+            "name": "v86",
+            "url": "https://github.com/copy/v86",
+            "description": "x86 PC 模拟器和 x86→WASM JIT"
+          },
+          {
+            "name": "WebVM GitHub",
+            "url": "https://github.com/leaningtech/webvm",
+            "description": "WebAssembly/Linux 浏览器虚拟机源码"
+          },
+          {
+            "name": "CheerpX",
+            "url": "https://cheerpx.io",
+            "description": "浏览器客户端 x86 虚拟化技术"
+          },
+          {
+            "name": "WebTerm",
+            "url": "https://github.com/minie4/WebTerm",
+            "description": "浏览器 Linux Terminal"
+          },
+          {
+            "name": "WebLinux",
+            "url": "https://github.com/alizafarbati/WebLinux",
+            "description": "多 Linux 系统浏览器启动器"
+          },
+          {
+            "name": "TinyEMU",
+            "url": "https://bellard.org/tinyemu/",
+            "description": "Fabrice Bellard 的轻量机器虚拟化基础"
+          },
+          {
+            "name": "WebRISC-V",
+            "url": "https://github.com/loverajs/webriscv",
+            "description": "浏览器中运行 RISC-V"
+          },
+          {
+            "name": "Jor1k",
+            "url": "https://github.com/s-macke/jor1k",
+            "description": "OpenRISC Linux 浏览器模拟"
+          },
+          {
+            "name": "yetty",
+            "url": "https://yetty.dev",
+            "description": "WebGPU终端与浏览器内复古Unix体验"
+          }
+        ]
+      },
+      {
+        "name": "经典 Mac",
+        "links": [
+          {
+            "name": "Infinite Mac System 7",
+            "url": "https://infinitemac.org/collection/system-7/",
+            "description": "System 7浏览器体验"
+          },
+          {
+            "name": "macemu System 7",
+            "url": "https://macemu.com/classic-mac-emulator-online/",
+            "description": "System 7 浏览器模拟"
+          },
+          {
+            "name": "Macintosh Repository Emulator",
+            "url": "https://emulate-in-browser.macintoshrepository.org",
+            "description": "Classic Mac 软件网页模拟"
+          },
+          {
+            "name": "Systemless",
+            "url": "https://github.com/benletchford/systemless",
+            "description": "免完整Mac OS的Classic Mac模拟器"
+          },
+          {
+            "name": "Systemless Browser",
+            "url": "https://systemless.org",
+            "description": "经典 Macintosh 游戏浏览器运行"
+          },
+          {
+            "name": "DingusPPC",
+            "url": "https://github.com/dingusdev/dingusppc",
+            "description": "Power Macintosh/PowerPC实验模拟器"
+          },
+          {
+            "name": "ClassicMac",
+            "url": "https://github.com/amcchord/ClassicMac",
+            "description": "Apple Silicon 原生复活经典 Mac OS"
+          },
+          {
+            "name": "Infinite Mac GitHub",
+            "url": "https://github.com/mihaip/infinite-mac",
+            "description": "浏览器 Classic Mac 生态源码"
+          },
+          {
+            "name": "Basilisk II",
+            "url": "https://basilisk.cebix.net",
+            "description": "68k Macintosh 模拟器"
+          },
+          {
+            "name": "SheepShaver",
+            "url": "https://sheepshaver.cebix.net",
+            "description": "PowerPC Macintosh 模拟器"
+          },
+          {
+            "name": "Mini vMac",
+            "url": "https://www.gryphel.com/c/minivmac/",
+            "description": "早期 Compact Macintosh 模拟"
+          },
+          {
+            "name": "macintosh.js",
+            "url": "https://github.com/felixrieseberg/macintosh.js",
+            "description": "Electron 版经典 Macintosh 体验"
+          },
+          {
+            "name": "Classic Mac OS 7",
+            "url": "https://macemu.com/collection/system-7/",
+            "description": "System 7 软件合集"
+          }
+        ]
+      },
+      {
+        "name": "Windows 95",
+        "links": [
+          {
+            "name": "98.css",
+            "url": "https://jdan.github.io/98.css/",
+            "description": "Windows 98 UI 网页复刻组件"
+          },
+          {
+            "name": "98.css GitHub",
+            "url": "https://github.com/jdan/98.css",
+            "description": "Windows 98 Web UI 开源设计系统"
+          },
+          {
+            "name": "XP.css",
+            "url": "https://botoxparty.github.io/XP.css/",
+            "description": "Windows XP经典界面"
+          },
+          {
+            "name": "XP.css GitHub",
+            "url": "https://github.com/botoxparty/XP.css",
+            "description": "XP UI Web组件"
+          },
+          {
+            "name": "7.css",
+            "url": "https://khang-nd.github.io/7.css/",
+            "description": "Windows 7 Aero 风格 Web UI"
+          },
+          {
+            "name": "7.css GitHub",
+            "url": "https://github.com/khang-nd/7.css",
+            "description": "Windows 7 UI组件"
+          },
+          {
+            "name": "React95",
+            "url": "https://github.com/React95/React95",
+            "description": "React中的Windows 95 UI"
+          },
+          {
+            "name": "Platinum",
+            "url": "https://github.com/eyaltoledano/platinum",
+            "description": "Mac OS 8 Platinum UI Web复刻"
+          },
+          {
+            "name": "OS.js",
+            "url": "https://github.com/os-js/OS.js",
+            "description": "浏览器里的完整桌面环境框架"
+          },
+          {
+            "name": "OS.js Demo",
+            "url": "https://os-js.org",
+            "description": "Web Desktop体验"
+          },
+          {
+            "name": "98.js",
+            "url": "https://98.js.org",
+            "description": "Windows 98式Web桌面系统"
+          },
+          {
+            "name": "Windows 98 JS",
+            "url": "https://github.com/1j01/98",
+            "description": "浏览器Windows 98模拟项目"
+          },
+          {
+            "name": "Windows 2000 Web",
+            "url": "https://github.com/ducbao09/Windows-2000",
+            "description": "Windows 2000 Web桌面复刻"
+          },
+          {
+            "name": "Windows XP Web",
+            "url": "https://github.com/AngryCarrot789/windows-xp",
+            "description": "Windows XP浏览器复刻"
+          },
+          {
+            "name": "ReactOS WebUI",
+            "url": "https://www.reactos.org",
+            "description": "Windows兼容开源系统相关Web项目"
+          },
+          {
+            "name": "Old Windows UI",
+            "url": "https://github.com/topics/windows-95",
+            "description": "GitHub Windows 95 Web复刻项目集合"
+          },
+          {
+            "name": "Retro Windows Projects",
+            "url": "https://github.com/topics/windows-98",
+            "description": "Windows 98相关开源网页项目集合"
+          }
+        ]
+      },
+      {
+        "name": "Macintosh",
+        "links": [
+          {
+            "name": "System 7 CSS",
+            "url": "https://github.com/ticky/system-7.css",
+            "description": "System 7 UI CSS复刻"
+          },
+          {
+            "name": "MacWeb UI",
+            "url": "https://github.com/topics/mac-os-8",
+            "description": "Mac OS 8 Web复刻项目集合"
+          },
+          {
+            "name": "System 6 UI",
+            "url": "https://github.com/topics/system-6",
+            "description": "System 6 Web复刻"
+          },
+          {
+            "name": "Classic Mac UI",
+            "url": "https://github.com/topics/classic-mac",
+            "description": "Classic Mac Web项目合集"
+          },
+          {
+            "name": "OldSchool Mac",
+            "url": "https://github.com/topics/macos-classic",
+            "description": "Mac OS Classic开源项目集合"
+          }
+        ]
+      },
+      {
+        "name": "MSX",
+        "links": [
+          {
+            "name": "WebMSX GitHub",
+            "url": "https://github.com/ppeccin/WebMSX",
+            "description": "开源MSX浏览器模拟器"
+          },
+          {
+            "name": "C64 READY GitHub",
+            "url": "https://github.com/mortyeriksen/c64ready",
+            "description": "JavaScript/WASM C64模拟"
+          },
+          {
+            "name": "zxplay",
+            "url": "https://zxplay.org",
+            "description": "ZX Spectrum各型号音频与模拟播放"
+          },
+          {
+            "name": "JSSpeccy 3",
+            "url": "https://github.com/dcrespo3d/jsspeccy3",
+            "description": "ZX Spectrum的JavaScript模拟器"
+          },
+          {
+            "name": "zxplay GitHub",
+            "url": "https://github.com/stever/zxplay",
+            "description": "移动友好的ZX Spectrum浏览器模拟器"
+          },
+          {
+            "name": "1984 Amstrad CPC",
+            "url": "https://github.com/salvogendut/1984",
+            "description": "Amstrad CPC各型号网页模拟器"
+          },
+          {
+            "name": "zxgo-wasm",
+            "url": "https://github.com/omiq/zxgo-wasm",
+            "description": "ZX Spectrum Next 浏览器WASM模拟器"
+          },
+          {
+            "name": "JNEXT",
+            "url": "https://www.jnext.es",
+            "description": "ZX Spectrum Next开发者模拟器"
+          },
+          {
+            "name": "Commodore BASIC JS",
+            "url": "https://cursorkeysretrogames.itch.io/commodore64-basic-js",
+            "description": "浏览器复刻 C64 BASIC"
+          },
+          {
+            "name": "Atari800",
+            "url": "https://github.com/atari800/atari800",
+            "description": "Atari 8-bit与5200主机模拟器"
+          }
+        ]
+      },
+      {
+        "name": "Apple II",
+        "links": [
+          {
+            "name": "Web Apple //e",
+            "url": "https://github.com/mikedaley/web-a2e",
+            "description": "精确周期级Apple IIe模拟器"
+          },
+          {
+            "name": "Apple II Browser Emulator",
+            "url": "https://www.scullinsteel.com/apple2/",
+            "description": "Apple II网页模拟体验"
+          },
+          {
+            "name": "Copperline",
+            "url": "https://copperline.dev",
+            "description": "Rust与WASM编写的Amiga模拟器"
+          },
+          {
+            "name": "Scripted Amiga Emulator",
+            "url": "https://scriptedamigaemulator.net",
+            "description": "JS/WebAssembly版Amiga模拟器"
+          },
+          {
+            "name": "SAE GitHub",
+            "url": "https://github.com/EmulatorArchive/SAE",
+            "description": "Scripted Amiga Emulator项目"
+          },
+          {
+            "name": "WinUAE",
+            "url": "https://www.winuae.net",
+            "description": "Amiga经典软件模拟器生态"
+          },
+          {
+            "name": "vAmiga",
+            "url": "https://github.com/felixf4xu/vAmiga",
+            "description": "现代Amiga模拟器"
+          },
+          {
+            "name": "Atari800Web",
+            "url": "https://github.com/topics/atari800",
+            "description": "Atari800 Web/WASM项目集合"
+          },
+          {
+            "name": "Apple2JS",
+            "url": "https://github.com/topics/apple-ii-emulator",
+            "description": "Apple II JavaScript模拟项目集合"
+          }
+        ]
+      },
+      {
+        "name": "浏览器复古游戏机",
+        "links": [
+          {
+            "name": "EmulatorJS",
+            "url": "https://emulatorjs.org",
+            "description": "多平台浏览器模拟器前端"
+          },
+          {
+            "name": "EmulatorJS GitHub",
+            "url": "https://github.com/EmulatorJS/EmulatorJS",
+            "description": "RetroArch核心Web前端"
+          },
+          {
+            "name": "Emularity",
+            "url": "https://github.com/internetarchive/emularity-engine",
+            "description": "Internet Archive软件浏览器模拟基础设施"
+          },
+          {
+            "name": "Emularity Config",
+            "url": "https://github.com/internetarchive/emularity-config",
+            "description": "Emularity配置和系统定义"
+          },
+          {
+            "name": "Browser Retro Game Emulator",
+            "url": "https://browser-tools.net/tools/emulator",
+            "description": "EmulatorJS驱动的浏览器主机模拟"
+          },
+          {
+            "name": "WebRetro",
+            "url": "https://github.com/BinBashBanana/webretro",
+            "description": "RetroArch Web前端"
+          },
+          {
+            "name": "RetroArch",
+            "url": "https://www.retroarch.com",
+            "description": "多平台模拟器生态和Libretro"
+          },
+          {
+            "name": "Libretro",
+            "url": "https://www.libretro.com",
+            "description": "多平台模拟核心生态"
+          },
+          {
+            "name": "JSNES",
+            "url": "https://jsnes.dev",
+            "description": "NES浏览器模拟器"
+          },
+          {
+            "name": "JSNES GitHub",
+            "url": "https://github.com/bfirsh/jsnes",
+            "description": "JavaScript NES Emulator"
+          },
+          {
+            "name": "Gameboy.js",
+            "url": "https://github.com/juchi/gameboy.js",
+            "description": "JavaScript Game Boy模拟器"
+          },
+          {
+            "name": "GBA.js",
+            "url": "https://endrift.github.io/gbajs/",
+            "description": "浏览器 Game Boy Advance 模拟器"
+          },
+          {
+            "name": "GBA.js 3",
+            "url": "https://gba.nicholas-vancise.dev",
+            "description": "新版浏览器GBA模拟器"
+          },
+          {
+            "name": "GBA.js 3 GitHub",
+            "url": "https://github.com/thenick775/gbajs3",
+            "description": "mGBA WASM + GBA.js浏览器模拟器"
+          },
+          {
+            "name": "JS-Boy",
+            "url": "https://github.com/Streetblock/JS-Boy",
+            "description": "Game Boy 浏览器模拟器"
+          },
+          {
+            "name": "GameBoy Emulator",
+            "url": "https://github.com/Jabolol/gameboy",
+            "description": "从零实现的Game Boy浏览器模拟器"
+          },
+          {
+            "name": "Gameboy.js",
+            "url": "https://github.com/DaRotomMachine/gameboy-emu",
+            "description": "JavaScript Game Boy模拟器"
+          },
+          {
+            "name": "WebNES",
+            "url": "https://github.com/Hexorod/WebNES-famidash",
+            "description": "JavaScript NES浏览器模拟器"
+          },
+          {
+            "name": "WebNes Emulator",
+            "url": "https://github.com/srijenjgupta/WebNes-emulator",
+            "description": "新型NES浏览器模拟器"
+          },
+          {
+            "name": "Pico-8 Web",
+            "url": "https://www.lexaloffle.com/pico-8.php",
+            "description": "PICO-8复古Fantasy Console生态"
+          },
+          {
+            "name": "TIC-80",
+            "url": "https://tic80.com",
+            "description": "复古Fantasy Console，网页制作小游戏"
+          }
+        ]
+      },
+      {
+        "name": "在线终端",
+        "links": [
+          {
+            "name": "AnsiDraw",
+            "url": "https://ansidraw.com",
+            "description": "1990年代BBS ANSI Art风格在线工具"
+          },
+          {
+            "name": "Compunet Reborn",
+            "url": "https://connect.compunet.live",
+            "description": "Commodore 64时代Compunet在线服务复刻"
+          },
+          {
+            "name": "Compunet Reborn",
+            "url": "https://github.com/tgreaves/compunet-reborn",
+            "description": "C64/Amiga经典在线服务重建"
+          },
+          {
+            "name": "xterm.js",
+            "url": "https://xtermjs.org",
+            "description": "浏览器终端渲染器，很多Web Terminal的基础"
+          },
+          {
+            "name": "xterm.js GitHub",
+            "url": "https://github.com/xtermjs/xterm.js",
+            "description": "经典终端体验Web实现"
+          },
+          {
+            "name": "SyncTerm",
+            "url": "https://github.com/lynnxorg/syncterm",
+            "description": "现代BBS/ANSI终端客户端"
+          },
+          {
+            "name": "TELNET BBS",
+            "url": "https://www.telnetbbsguide.com",
+            "description": "全球BBS/Telnet站点资料入口"
+          },
+          {
+            "name": "Telnet BBS Guide",
+            "url": "https://www.telnetbbsguide.com/bbs/list",
+            "description": "传统BBS和Telnet目录"
+          },
+          {
+            "name": "The Old Net",
+            "url": "https://theoldnet.com",
+            "description": "老互联网网页浏览体验与历史网站风格"
+          },
+          {
+            "name": "OldWeb.today",
+            "url": "https://oldweb.today",
+            "description": "使用历史浏览器查看旧时代网页"
+          },
+          {
+            "name": "Web Design Museum",
+            "url": "https://www.webdesignmuseum.org",
+            "description": "1990s/2000s网站设计历史档案"
+          },
+          {
+            "name": "Wayback Machine",
+            "url": "https://web.archive.org",
+            "description": "历史网页时间机器"
+          },
+          {
+            "name": "GeoCities Archive",
+            "url": "https://www.oocities.org",
+            "description": "GeoCities时代网页档案"
+          },
+          {
+            "name": "68k News",
+            "url": "https://68k.news",
+            "description": "复古Mac新闻/网页体验"
+          },
+          {
+            "name": "Radio Garden",
+            "url": "https://radio.garden",
+            "description": "地球仪形式探索全球广播，带明显早期互联网探索感"
+          },
+          {
+            "name": "ASCII.live",
+            "url": "https://ascii.live",
+            "description": "实时ANSI/ASCII终端动画"
+          },
+          {
+            "name": "ASCII Art Archive",
+            "url": "https://www.asciiart.eu",
+            "description": "大型ASCII艺术收藏"
+          }
+        ]
+      },
+      {
+        "name": "网页桌面",
+        "links": [
+          {
+            "name": "XP.css",
+            "url": "https://botoxparty.github.io/XP.css",
+            "description": "Windows XP UI"
+          },
+          {
+            "name": "7.css",
+            "url": "https://khang-nd.github.io/7.css",
+            "description": "Windows 7 UI"
+          }
+        ]
+      },
+      {
+        "name": "复古软件",
+        "links": [
+          {
+            "name": "Webamp",
+            "url": "https://webamp.org",
+            "description": "Winamp播放器浏览器复刻"
+          },
+          {
+            "name": "Webamp GitHub",
+            "url": "https://github.com/captbaritone/webamp",
+            "description": "Winamp经典界面和播放功能Web重制"
+          },
+          {
+            "name": "Photopea",
+            "url": "https://www.photopea.com",
+            "description": "Photoshop式传统桌面风格在线图像编辑器"
+          },
+          {
+            "name": "AudioMass",
+            "url": "https://audiomass.co",
+            "description": "经典音频编辑器桌面风格的浏览器重现"
+          },
+          {
+            "name": "Retro Paint",
+            "url": "https://github.com/topics/paint-clone",
+            "description": "Windows Paint风格网页项目集合"
+          },
+          {
+            "name": "Winamp UI Projects",
+            "url": "https://github.com/topics/winamp",
+            "description": "Winamp网页复刻生态"
+          },
+          {
+            "name": "Retro Desktop Apps",
+            "url": "https://github.com/topics/retro-ui",
+            "description": "复古桌面应用Web项目"
+          }
+        ]
+      },
+      {
+        "name": "幻想电脑",
+        "links": [
+          {
+            "name": "TIC-80 GitHub",
+            "url": "https://github.com/nesbox/TIC-80",
+            "description": "开源Fantasy Console"
+          },
+          {
+            "name": "WASM-4",
+            "url": "https://wasm4.org",
+            "description": "浏览器友好的Fantasy Console"
+          },
+          {
+            "name": "WASM-4 GitHub",
+            "url": "https://github.com/aduros/wasm4",
+            "description": "WebAssembly复古游戏主机"
+          },
+          {
+            "name": "LÖVE Retro Projects",
+            "url": "https://github.com/topics/retro-game-engine",
+            "description": "复古游戏/小型游戏引擎集合"
+          },
+          {
+            "name": "Fantasy Console",
+            "url": "https://thelsgames.itch.io/fantasy-console",
+            "description": "浏览器中的自制复古Fantasy Console"
+          },
+          {
+            "name": "JS80P",
+            "url": "https://github.com/DrMrCap/JS80P",
+            "description": "浏览器/JavaScript复古合成器生态"
+          },
+          {
+            "name": "Beepola Web",
+            "url": "https://www.simonjudge.com/beepola/",
+            "description": "复古计算机音乐/音频创作"
+          }
+        ]
+      },
+      {
+        "name": "互联网档案馆",
+        "links": [
+          {
+            "name": "MS-DOS Software",
+            "url": "https://archive.org/details/softwarelibrary_msdos",
+            "description": "MS-DOS软件"
+          },
+          {
+            "name": "Emularity BIOS",
+            "url": "https://github.com/internetarchive/emularity-bios",
+            "description": "模拟器BIOS资源"
+          },
+          {
+            "name": "Flashpoint",
+            "url": "https://flashpointarchive.org",
+            "description": "Flash、Shockwave等历史网页游戏保存项目"
+          },
+          {
+            "name": "Ruffle",
+            "url": "https://ruffle.rs",
+            "description": "Flash Player开源重实现"
+          },
+          {
+            "name": "Lightspark",
+            "url": "https://lightspark.github.io",
+            "description": "Flash Player开源实现"
+          },
+          {
+            "name": "Flash Museum",
+            "url": "https://flashmuseum.org",
+            "description": "Flash游戏、动画和互动内容档案"
+          },
+          {
+            "name": "Ruffle Demo",
+            "url": "https://ruffle.rs/demo/",
+            "description": "在线测试旧Flash内容"
+          },
+          {
+            "name": "Macintosh Repository",
+            "url": "https://www.macintoshrepository.org",
+            "description": "Classic Mac 软件档案"
+          },
+          {
+            "name": "WinWorld",
+            "url": "https://winworldpc.com",
+            "description": "历史操作系统、软件和开发工具档案"
+          },
+          {
+            "name": "OldVersion",
+            "url": "https://www.oldversion.com",
+            "description": "老版本Windows、Mac、Linux软件"
+          },
+          {
+            "name": "OldApps",
+            "url": "https://www.oldapps.com",
+            "description": "老版本软件收藏"
+          },
+          {
+            "name": "MyAbandonware",
+            "url": "https://www.myabandonware.com",
+            "description": "历史PC游戏数据库与保存资料"
+          },
+          {
+            "name": "MobyGames",
+            "url": "https://www.mobygames.com",
+            "description": "历史游戏软件数据库"
+          },
+          {
+            "name": "WinWorld Museum",
+            "url": "https://winworldpc.com/library",
+            "description": "历史系统/软件资料"
+          }
+        ]
+      },
+      {
+        "name": "复古网页",
+        "links": [
+          {
+            "name": "Internet Archive",
+            "url": "https://archive.org",
+            "description": "大型数字历史档案"
+          },
+          {
+            "name": "1MB Club",
+            "url": "https://1mb.club",
+            "description": "现代个人网站的复古Web精神"
+          },
+          {
+            "name": "Neocities",
+            "url": "https://neocities.org",
+            "description": "独立个人网页社区"
+          },
+          {
+            "name": "Nekoweb",
+            "url": "https://nekoweb.org",
+            "description": "个人小网页和复古互联网风格社区"
+          },
+          {
+            "name": "32-Bit Café",
+            "url": "https://32bit.cafe",
+            "description": "复古互联网/小网页文化"
+          },
+          {
+            "name": "Small Web",
+            "url": "https://smallweb.gemlog.ca",
+            "description": "独立个人互联网资源入口"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝑅𝑒𝑡𝑟𝑜 𝑊𝑒𝑏';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>

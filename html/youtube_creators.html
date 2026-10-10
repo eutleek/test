@@ -1,0 +1,1383 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2e77a380-3ab4-4cc2-ab63-aac249ee26ef"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="YouTube 热门创作者与频道导航">
+<title>YouTube - Kisstr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<script>
+(function initColors() {
+  const layoutDefaultVersion = 'v143-magazine-default';
+  if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
+    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
+  }
+
+  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
+  let savedBackgroundOption = null;
+  let isSavedImageBackground = false;
+  let shouldUseImageBackground = false;
+try {
+    const savedBackground = localStorage.getItem(backgroundStorageKey);
+    savedBackgroundOption = savedBackground ? JSON.parse(savedBackground) : null;
+    isSavedImageBackground = !!(savedBackgroundOption && savedBackgroundOption.type === 'image' && savedBackgroundOption.url);
+    shouldUseImageBackground = isSavedImageBackground || !savedBackgroundOption;
+} catch (err) {
+    savedBackgroundOption = null;
+    isSavedImageBackground = false;
+    shouldUseImageBackground = false;
+  }
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  if (shouldUseImageBackground) {
+    let bgImageValue = '';
+    if (isSavedImageBackground) {
+      const bgUrl = String(savedBackgroundOption.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+      const overlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    }
+
+    document.documentElement.classList.add('background-image-mode');
+    document.documentElement.classList.add('cards-stabilizing');
+    setTimeout(() => document.documentElement.classList.remove('cards-stabilizing'), 1400);
+    document.documentElement.style.backgroundColor = '#121224';
+    if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#121224');
+    return;
+  }
+
+  const savedTheme = localStorage.getItem('theme_' + savedLayout) || 'white';
+  const themeColors = {
+    'white': '#f5f5f7',
+    'dawn': '#fff5f5',
+    'mint': '#f0fff5',
+    'ocean': '#f0f8ff',
+    'twilight': '#f5f0ff',
+    'midnight': '#000212',
+    'starry': '#0c0c1d',
+    'sunset': '#2d1b0e',
+    'aurora': '#1a2a3a',
+    'dream': '#667eea',
+    'forest': '#2d5f4e',
+    'deepsea': '#1a4a6e',
+    'clay': '#6b4a35'
+  };
+
+  if (savedLayout === 'minimal') {
+    document.documentElement.style.backgroundColor = '#ffffff';
+  } else if (themeColors[savedTheme]) {
+    document.documentElement.style.backgroundColor = themeColors[savedTheme];
+  }
+
+  if (metaThemeColor) {
+    if (savedLayout === 'minimal') {
+      metaThemeColor.setAttribute('content', '#ffffff');
+    } else if (themeColors[savedTheme]) {
+      metaThemeColor.setAttribute('content', themeColors[savedTheme]);
+    }
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/common.css">
+</head>
+<body class="layout-minimal">
+<script>
+  (function() {
+    var saved = localStorage.getItem('layout') || 'minimal';
+    if (saved === 'clear') {
+      document.body.classList.add('layout-minimal', 'layout-clear');
+    } else {
+      document.body.classList.add('layout-' + saved);
+    }
+
+    try {
+      var savedBackground = localStorage.getItem('kisstr_background_picker_selection_v1');
+      var option = savedBackground ? JSON.parse(savedBackground) : null;
+      if (!option || (option && option.type === 'image' && option.url)) {
+        var bgImageValue = '';
+        if (option && option.url) {
+          var bgUrl = String(option.url).replace('anime_wallpapers/', 'wallpapers/').replace('.jpg', '.webp');
+          var overlay = saved === 'grid'
+            ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+            : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+          bgImageValue = "linear-gradient(to bottom, " + overlay[0] + ", " + overlay[1] + "), url('" + new URL(bgUrl, document.baseURI).href + "')";
+        }
+        document.body.classList.add('background-image-mode');
+        if (bgImageValue) document.body.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.classList.add('background-image-mode');
+        if (bgImageValue) document.documentElement.style.setProperty('--bg-image', bgImageValue);
+        document.documentElement.style.backgroundColor = '#121224';
+      }
+    } catch (err) {}
+  })();
+</script>
+<div class="bg-layer"></div>
+<div class="bg-gradient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo" draggable="false">
+        <div class="logo-icon"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg></div>
+        <span id="logoText" style="pointer-events:none">𝐵𝑜𝑜𝑘 𝑀𝑜𝑣𝑖𝑒𝑠 𝑀𝑢𝑠𝑖𝑐</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <!-- 内嵌音乐播放器 -->
+      <div class="music-player" id="musicPlayer">
+        <span class="music-name" id="musicName" title="Chillhop慵懒">Chillhop慵懒</span>
+        <button class="music-btn music-prev" id="musicPrev" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-play" id="musicPlay" title="播放/暂停">
+          <svg viewBox="0 0 24 24" fill="currentColor" id="musicPlayIcon">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-next" id="musicNext" title="切换电台">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"></path>
+          </svg>
+        </button>
+        <button class="music-btn music-list" id="musicList" title="电台列表">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"></path>
+          </svg>
+        </button>
+        <input type="range" class="music-volume" id="musicVolume" min="0" max="100" value="50" title="音量调节">
+      </div>
+      <!-- 电台快速选择列表 -->
+      <div class="station-list-panel" id="stationListPanel">
+        <div class="station-list-header">
+          <span>电台列表</span>
+          <button class="station-list-close" id="stationListClose">×</button>
+        </div>
+        <div class="station-list-content" id="stationListContent"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <svg id="sunIcon" viewBox="0 0 24 24" style="display:none;">
+          <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+        </svg>
+        <svg id="moonIcon" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+        </svg>
+      </button>
+      <div class="layout-toggle" id="layoutToggle">
+        <button class="layout-btn" data-layout="clear" title="切换布局（清晰/杂志）">
+          <svg class="layout-icon-grid" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-6 4v8h8v-8h-8zm6 6h-4v-4h4v4z"/></svg>
+          <svg class="layout-icon-minimal" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7h18v4H3zM3 13h18v4H3z"/></svg>
+        </button>
+      </div>
+      <button class="hide-toggle" id="hideToggle" title="显示/隐藏描述">
+        <svg class="hide-icon-eye hide-icon-show" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <svg class="hide-icon-eye hide-icon-hide" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.54-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.54.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>YouTube</h1>
+  <p class="quote-text" id="quoteText"></p>
+</section>
+
+  <div class="category-tabs" id="categoryTabs"></div>
+<div class="music-bar-bottom-container">
+  <canvas class="music-bar-bottom" id="musicBarBottom"></canvas>
+  <button class="music-fx-btn" id="musicFxBtn" title="切换律动效果">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h3l3-8 4 16 3-8h5"/>
+    </svg>
+  </button>
+  <button class="music-fx-btn music-fx-close" id="musicFxClose" title="关闭律动栏">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+</div>
+
+<main id="mainContent"></main>
+
+<button class="back-to-top" id="backToTop">
+  <svg viewBox="0 0 24 24">
+    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
+
+<footer class="site-footer">
+  <div class="footer-badges">
+    <span class="badge">✨ 无广告</span>
+    <span class="badge">✨ 无弹窗</span>
+    <span class="badge">✨ 无盈利</span>
+  </div>
+  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
+  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+  <p class="footer-copy">YouTube · 优质网站收藏</p>
+</footer>
+
+<script>
+
+// 为主页面标签页命名，便于子页面通过 window.open 跳转回来
+window.name = 'kisstr_home';
+
+var linksData = [
+  {
+    "name": "YouTube",
+    "icon": "▶️",
+    "color": "linear-gradient(135deg, #ff0000, #ff7675)",
+    "subcategories": [
+      {
+        "name": "热门账号 1-50",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "MrBeast",
+            "url": "https://www.youtube.com/@MrBeast",
+            "description": "全球订阅量第一的个人创作者，以巨额奖金挑战"
+          },
+          {
+            "name": "T-Series",
+            "url": "https://www.youtube.com/@tseries",
+            "description": "印度最大的音乐唱片和电影公司频道"
+          },
+          {
+            "name": "Cocomelon - Nursery Rhymes",
+            "url": "https://www.youtube.com/@Cocomelon",
+            "description": "全球顶级的儿童启蒙、儿歌与3D动画频道"
+          },
+          {
+            "name": "SET India",
+            "url": "https://www.youtube.com/@SETIndia",
+            "description": "索尼娱乐电视印度分公司频道"
+          },
+          {
+            "name": "Vlad and Niki",
+            "url": "https://www.youtube.com/@VladandNiki",
+            "description": "兄弟俩主演的充满想象力的儿童创意与玩具冒险情景剧频"
+          },
+          {
+            "name": "Stokes Twins",
+            "url": "https://www.youtube.com/@StokesTwins",
+            "description": "美国高人气双胞胎兄弟档，以趣味挑战"
+          },
+          {
+            "name": "Kids Diana Show",
+            "url": "https://www.youtube.com/@KidsDianaShow",
+            "description": "全球最受欢迎的儿童真人秀与玩具开箱"
+          },
+          {
+            "name": "김프로 KIMPRO",
+            "url": "https://www.youtube.com/@kimpro_",
+            "description": "韩国超高人气的短视频创意"
+          },
+          {
+            "name": "Like Nastya",
+            "url": "https://www.youtube.com/@LikeNastya",
+            "description": "拥有极高观看量的儿童及家庭生活日常、益智短剧频道。"
+          },
+          {
+            "name": "Zee Music Company",
+            "url": "https://www.youtube.com/@zeemusiccompany",
+            "description": "印度宝莱坞核心音乐发行频道"
+          },
+          {
+            "name": "Alejo Igoa",
+            "url": "https://www.youtube.com/@AlejoIgoa",
+            "description": "拉丁美洲顶流西班牙语趣味挑战"
+          },
+          {
+            "name": "WWE",
+            "url": "https://www.youtube.com/@wwe",
+            "description": "美国职业摔角联盟(WWE)官方频道"
+          },
+          {
+            "name": "PewDiePie",
+            "url": "https://www.youtube.com/@PewDiePie",
+            "description": "YouTube 传奇级游戏与生活Vlog博主"
+          },
+          {
+            "name": "Goldmines",
+            "url": "https://www.youtube.com/@GoldminesTelefilms",
+            "description": "印度知名宝莱坞电影发行与高清大片点播频道。"
+          },
+          {
+            "name": "Sony SAB",
+            "url": "https://www.youtube.com/@SonySAB",
+            "description": "印度高人气综合娱乐与喜剧电视剧集点播频道。"
+          },
+          {
+            "name": "BLACKPINK",
+            "url": "https://www.youtube.com/@BLACKPINK",
+            "description": "韩国顶级女子音乐组合官方频道"
+          },
+          {
+            "name": "Alan's Universe",
+            "url": "https://www.youtube.com/@AlansUniverse",
+            "description": "国际化高人气视觉特效、创意短剧与视觉艺术娱乐频道。"
+          },
+          {
+            "name": "Zee TV",
+            "url": "https://www.youtube.com/@zeetv",
+            "description": "印度老牌全国性综合娱乐电视台官方数字频道。"
+          },
+          {
+            "name": "ChuChu TV Nursery Rhymes & Kids Songs",
+            "url": "https://www.youtube.com/@chuctu",
+            "description": "全球知名的儿童早教儿歌、经典童谣与道德动画短片频道"
+          },
+          {
+            "name": "Topper Guild",
+            "url": "https://www.youtube.com/@TopperGuild",
+            "description": "美国极具号召力的趣味生活实验"
+          },
+          {
+            "name": "A4",
+            "url": "https://www.youtube.com/@A4a4a4a4",
+            "description": "白俄罗斯及东欧地区顶流搞笑整活"
+          },
+          {
+            "name": "KL BRO Biju Rithvik",
+            "url": "https://www.youtube.com/@KLBROBijuRithvik",
+            "description": "印度马拉雅拉姆语高人气生活日常Vlog与家庭纪实频"
+          },
+          {
+            "name": "BANGTANTV",
+            "url": "https://www.youtube.com/@BANGTANTV",
+            "description": "韩国防弹少年团(BTS)官方频道，发布幕后花絮"
+          },
+          {
+            "name": "ZAMZAM BROTHERS OFFICIAL",
+            "url": "https://www.youtube.com/@ZamzamBrothers",
+            "description": "中东地区高人气兄弟档趣味整活与创意挑战娱乐频道。"
+          },
+          {
+            "name": "Baby Shark - Pinkfong Kids' Songs & Stories",
+            "url": "https://www.youtube.com/@Pinkfong",
+            "description": "凭借现象级神曲《Baby"
+          },
+          {
+            "name": "UR · Cristiano",
+            "url": "https://www.youtube.com/@cristiano",
+            "description": "足球巨星克里斯蒂亚诺·罗纳尔多(C罗)的官方个人生"
+          },
+          {
+            "name": "Toys and Colors",
+            "url": "https://www.youtube.com/@ToysandColors",
+            "description": "通过色彩斑斓的玩具开箱和教育小故事吸引全球儿童的高"
+          },
+          {
+            "name": "T-Series Bhakti Sagar",
+            "url": "https://www.youtube.com/@tseriesbhaktisagar",
+            "description": "T-Series 旗下专注印度传统宗教音乐与灵修内"
+          },
+          {
+            "name": "Colors TV",
+            "url": "https://www.youtube.com/@colorstv",
+            "description": "印度知名娱乐电视台官方频道"
+          },
+          {
+            "name": "Hybe Labels",
+            "url": "https://www.youtube.com/@HYBELABELS",
+            "description": "韩国超级娱乐巨头 Hybe"
+          },
+          {
+            "name": "Tips Official",
+            "url": "https://www.youtube.com/@TipsOfficial",
+            "description": "印度宝莱坞资深音乐与电影预告片发布频道。"
+          },
+          {
+            "name": "Mark Rober",
+            "url": "https://www.youtube.com/@MarkRober",
+            "description": "前NASA航天工程师与苹果公司设计师"
+          },
+          {
+            "name": "5-Minute Crafts",
+            "url": "https://www.youtube.com/@5MinuteCraftsYouTube",
+            "description": "全球知名的快节奏生活小妙招"
+          },
+          {
+            "name": "Zhong",
+            "url": "https://www.youtube.com/@Zhong",
+            "description": "以无厘头面部表情、搞笑哑剧和快节奏创意短视频风靡全"
+          },
+          {
+            "name": "Justin Bieber",
+            "url": "https://www.youtube.com/@justinbieber",
+            "description": "加拿大流行音乐天王贾斯汀·比伯的官方音乐与MV发布"
+          },
+          {
+            "name": "Fede Vigevani",
+            "url": "https://www.youtube.com/@FedeVigevani",
+            "description": "拉丁美洲顶流西班牙语惊悚探秘"
+          },
+          {
+            "name": "Bispo Bruno Leonardo",
+            "url": "https://www.youtube.com/@BishopBrunoLeonardo",
+            "description": "巴西极具影响力的宗教领袖与精神分享"
+          },
+          {
+            "name": "ISSEI / いっせい",
+            "url": "https://www.youtube.com/@issei_0806",
+            "description": "日本高人气搞笑、夸张表情反应与微型短剧整活创作者。"
+          },
+          {
+            "name": "Aaj Tak",
+            "url": "https://www.youtube.com/@aajtak",
+            "description": "印度最具影响力的24小时新闻直播与时政资讯频道。"
+          },
+          {
+            "name": "Shemaroo Filmi Gaane",
+            "url": "https://www.youtube.com/@FilmiGaane",
+            "description": "汇集印度宝莱坞数十年经典老歌与热门金曲的音乐频道。"
+          },
+          {
+            "name": "Anaya Kandhal",
+            "url": "https://www.youtube.com/@AnayaKandhal",
+            "description": "美国新兴高人气生活方式、创意短视频与儿童娱乐博主。"
+          },
+          {
+            "name": "HAR PAL GEO",
+            "url": "https://www.youtube.com/@HarPalGeo",
+            "description": "巴基斯坦顶流娱乐频道，热播电视剧集与黄金档综艺汇聚"
+          },
+          {
+            "name": "Infobells - Hindi",
+            "url": "https://www.youtube.com/@InfobellsHindi",
+            "description": "用生动印地语动画呈现儿童寓言故事与早教数字字母的频"
+          },
+          {
+            "name": "YRF",
+            "url": "https://www.youtube.com/@yrf",
+            "description": "印度巨头 Yash Raj Films"
+          },
+          {
+            "name": "Sony Music India",
+            "url": "https://www.youtube.com/@sonymusicindia",
+            "description": "索尼音乐印度分公司官方音乐、流行单曲MV发布频道。"
+          },
+          {
+            "name": "El Reino Infantil",
+            "url": "https://www.youtube.com/@elreinoinfantil",
+            "description": "拉丁美洲最大的西班牙语儿童儿歌与经典动画视听频道。"
+          },
+          {
+            "name": "Wave Music",
+            "url": "https://www.youtube.com/@WaveMusic",
+            "description": "印度地方法曲(Bhojpuri)与流行民间音乐的重"
+          },
+          {
+            "name": "YOLO AVENTURAS",
+            "url": "https://www.youtube.com/@YoloAventuras",
+            "description": "拉丁美洲极具人气的年轻团队冒险挑战与趣味短剧频道。"
+          },
+          {
+            "name": "Canal KondZilla",
+            "url": "https://www.youtube.com/@KondZilla",
+            "description": "巴西及拉丁美洲首屈一指的放克音乐(Funk)与流行"
+          },
+          {
+            "name": "ARY Digital HD",
+            "url": "https://www.youtube.com/@ARYDigitalasia",
+            "description": "巴基斯坦高人气综合娱乐、卫视黄金档剧集官方频道。"
+          }
+        ]
+      },
+      {
+        "name": "热门账号 51-100",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Eminem Music",
+            "url": "https://www.youtube.com/@Eminem",
+            "description": "说唱界传奇人物埃姆纳姆(Eminem)官方音乐与"
+          },
+          {
+            "name": "Movieclips",
+            "url": "https://www.youtube.com/@movieclips",
+            "description": "全球好莱坞经典电影片段、原声台词与高清混剪集锦资料"
+          },
+          {
+            "name": "Celine Dept",
+            "url": "https://www.youtube.com/@celinedept",
+            "description": "比利时高人气足球炫技、情侣日常与短视频整活顶流创作"
+          },
+          {
+            "name": "Dangal TV Channel",
+            "url": "https://www.youtube.com/@DangalTVChannel",
+            "description": "印度高收视率家庭情感剧与传统文化电视剧点播频道。"
+          },
+          {
+            "name": "Saregama Music",
+            "url": "https://www.youtube.com/@saregama",
+            "description": "印度历史悠久的宝莱坞黄金时代经典音乐与老歌版权库。"
+          },
+          {
+            "name": "Taylor Swift",
+            "url": "https://www.youtube.com/@TaylorSwift",
+            "description": "流行天后泰勒·斯威夫特官方音乐及MV频道。"
+          },
+          {
+            "name": "Ed Sheeran",
+            "url": "https://www.youtube.com/@EdSheeran",
+            "description": "英国创作型流行歌手艾德·希兰官方频道。"
+          },
+          {
+            "name": "Ariana Grande",
+            "url": "https://www.youtube.com/@arianagrande",
+            "description": "美国流行天后爱莉安娜·格兰德官方音乐频道。"
+          },
+          {
+            "name": "Billie Eilish",
+            "url": "https://www.youtube.com/@BillieEilish",
+            "description": "国际流行乐坛个性巨星碧梨(Billie"
+          },
+          {
+            "name": "BTS",
+            "url": "https://www.youtube.com/@BTS",
+            "description": "韩国天团防弹少年团官方全球音乐发布频道。"
+          },
+          {
+            "name": "Marshmello",
+            "url": "https://www.youtube.com/@marshmello",
+            "description": "知名电音DJ棉花糖(Marshmello)的音乐及"
+          },
+          {
+            "name": "Katy Perry",
+            "url": "https://www.youtube.com/@katyperry",
+            "description": "美国流行乐坛天后“水果姐”凯蒂·佩里官方频道。"
+          },
+          {
+            "name": "Rihanna",
+            "url": "https://www.youtube.com/@rihanna",
+            "description": "国际流行与商业天后蕾哈娜官方音乐及时尚MV频道。"
+          },
+          {
+            "name": "Bad Bunny",
+            "url": "https://www.youtube.com/@badbunny",
+            "description": "全球流媒体播放量名列前茅的拉丁说唱与雷鬼音乐天王。"
+          },
+          {
+            "name": "Shakira",
+            "url": "https://www.youtube.com/@shakira",
+            "description": "拉丁音乐天后夏奇拉官方经典MV与热辣金曲频道。"
+          },
+          {
+            "name": "Bruno Mars",
+            "url": "https://www.youtube.com/@brunomars",
+            "description": "“火星哥”布鲁诺·马尔斯官方复古流行与灵魂乐频道。"
+          },
+          {
+            "name": "Shawn Mendes",
+            "url": "https://www.youtube.com/@shawnmendes",
+            "description": "加拿大创作型流行男歌手肖恩·蒙德兹官方音乐频道。"
+          },
+          {
+            "name": "Selena Gomez",
+            "url": "https://www.youtube.com/@selenagomez",
+            "description": "国际知名演员、歌手赛琳娜·戈麦斯官方频道。"
+          },
+          {
+            "name": "Lil Nas X",
+            "url": "https://www.youtube.com/@lilnasx",
+            "description": "极具话题度与视觉创造力的说唱界新锐音乐人频道。"
+          },
+          {
+            "name": "Black Eyed Peas",
+            "url": "https://www.youtube.com/@blackeyedpeas",
+            "description": "美国传奇嘻哈电音组合黑眼豆豆官方频道。"
+          },
+          {
+            "name": "Maroon 5",
+            "url": "https://www.youtube.com/@maroon5",
+            "description": "知名流行摇滚乐队魔力红(Maroon"
+          },
+          {
+            "name": "Imagine Dragons",
+            "url": "https://www.youtube.com/@imaginedragons",
+            "description": "全球顶流摇滚乐队“梦龙”官方高燃MV与现场演唱频道"
+          },
+          {
+            "name": "Coldplay",
+            "url": "https://www.youtube.com/@coldplay",
+            "description": "英国殿堂级摇滚乐队酷玩乐队(Coldplay)官方"
+          },
+          {
+            "name": "One Direction",
+            "url": "https://www.youtube.com/@onedirection",
+            "description": "传奇流行男团单向乐队官方经典MV音乐库。"
+          },
+          {
+            "name": "Dua Lipa",
+            "url": "https://www.youtube.com/@dualipa",
+            "description": "英国摩登流行电音天后杜阿·利帕官方频道。"
+          },
+          {
+            "name": "David Guetta",
+            "url": "https://www.youtube.com/@davidguetta",
+            "description": "全球电音教父大卫·库塔官方电音派对与单曲发布频道。"
+          },
+          {
+            "name": "Alan Walker",
+            "url": "https://www.youtube.com/@AlanWalker",
+            "description": "凭借电音神曲《Faded》火遍全球的挪威DJ阿兰·"
+          },
+          {
+            "name": "The Weeknd",
+            "url": "https://www.youtube.com/@theweeknd",
+            "description": "顶级流行巨星威肯(The"
+          },
+          {
+            "name": "Rosalia",
+            "url": "https://www.youtube.com/@rosalia",
+            "description": "西班牙先锋流行与弗拉门戈跨界天后罗莎莉亚频道。"
+          },
+          {
+            "name": "Karol G",
+            "url": "https://www.youtube.com/@karolg",
+            "description": "拉丁音乐界极具统治力的女歌手卡罗尔·G官方频道。"
+          },
+          {
+            "name": "J Balvin",
+            "url": "https://www.youtube.com/@jbalvin",
+            "description": "拉丁雷鬼音乐领军人物 J Balvin"
+          },
+          {
+            "name": "Ozuna",
+            "url": "https://www.youtube.com/@ozuna",
+            "description": "拉丁美洲高人气歌手奥祖纳官方频道。"
+          },
+          {
+            "name": "Daddy Yankee",
+            "url": "https://www.youtube.com/@daddyyankee",
+            "description": "雷鬼乐开山鼻祖级人物洋基老爹官方频道。"
+          },
+          {
+            "name": "Wiz Khalifa",
+            "url": "https://www.youtube.com/@wizkhalifa",
+            "description": "美国说唱巨星维兹·卡利法(《See You"
+          },
+          {
+            "name": "Snoop Dogg",
+            "url": "https://www.youtube.com/@snoopdogg",
+            "description": "西海岸说唱教父史努比狗狗官方生活、音乐与搞怪频道。"
+          },
+          {
+            "name": "Nicki Minaj",
+            "url": "https://www.youtube.com/@nickiminaj",
+            "description": "说唱界“麻辣鸡”尼基·米娜官方音乐与MV发布频道。"
+          },
+          {
+            "name": "Cardi B",
+            "url": "https://www.youtube.com/@cardib",
+            "description": "美国个性直爽、说唱风格犀利的顶级女歌手卡迪·B频道"
+          },
+          {
+            "name": "Travis Scott",
+            "url": "https://www.youtube.com/@travisscott",
+            "description": "潮流说唱与跨界时尚顶流特拉维斯·斯科特官方视听频道"
+          },
+          {
+            "name": "Drake",
+            "url": "https://www.youtube.com/@drake",
+            "description": "加拿大流媒体霸主级说唱天王德雷克官方频道。"
+          },
+          {
+            "name": "Kanye West (Ye)",
+            "url": "https://www.youtube.com/@kanyewest",
+            "description": "音乐与时尚界鬼才坎耶·韦斯特官方音乐艺术频道。"
+          },
+          {
+            "name": "Post Malone",
+            "url": "https://www.youtube.com/@postmalone",
+            "description": "独具个人特色的跨界流行说唱巨星波兹·马龙频道。"
+          },
+          {
+            "name": "Juice WRLD",
+            "url": "https://www.youtube.com/@juicewrld",
+            "description": "传奇已故说唱音乐人 Juice WRLD"
+          },
+          {
+            "name": "XXXTENTACION",
+            "url": "https://www.youtube.com/@xxxtentacion",
+            "description": "另类说唱标杆人物官方音乐作品发布与纪念频道。"
+          },
+          {
+            "name": "Billie Eilish (VEVO)",
+            "url": "https://www.youtube.com/@BillieEilishVEVO",
+            "description": "碧梨官方高品质音视频及现场直击分频道。"
+          },
+          {
+            "name": "Halsey",
+            "url": "https://www.youtube.com/@halsey",
+            "description": "美国独立流行女歌手海尔希官方频道。"
+          },
+          {
+            "name": "Shawn Mendes (VEVO)",
+            "url": "https://www.youtube.com/@ShawnMendesVEVO",
+            "description": "肖恩·蒙德兹官方MV及专属视觉内容频道。"
+          },
+          {
+            "name": "Charlie Puth",
+            "url": "https://www.youtube.com/@charlieputh",
+            "description": "拥有绝对音感的人气流行创作才子“断眉”查理·普斯频"
+          },
+          {
+            "name": "Lewis Capaldi",
+            "url": "https://www.youtube.com/@lewiscapaldi",
+            "description": "苏格兰灵魂深处的情歌王子路易斯·卡帕尔迪频道。"
+          },
+          {
+            "name": "Sam Smith",
+            "url": "https://www.youtube.com/@samsmith",
+            "description": "英国天籁之音灵魂唱将萨姆·史密斯官方频道。"
+          },
+          {
+            "name": "Adele",
+            "url": "https://www.youtube.com/@adele",
+            "description": "英国殿堂级实力派天后阿黛尔官方音乐发布频道。"
+          }
+        ]
+      },
+      {
+        "name": "热门账号 101-150",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Marques Brownlee (MKBHD)",
+            "url": "https://www.youtube.com/@MKBHD",
+            "description": "全球数码科技与智能手机评测界标杆"
+          },
+          {
+            "name": "Unbox Therapy",
+            "url": "https://www.youtube.com/@unboxtherapy",
+            "description": "专注全球新奇酷电子产品、数码开箱与黑科技展示的老牌"
+          },
+          {
+            "name": "Mrwhosetheboss",
+            "url": "https://www.youtube.com/@Mrwhosetheboss",
+            "description": "英国顶流科技数码博主，以趣味实验"
+          },
+          {
+            "name": "iJustine",
+            "url": "https://www.youtube.com/@ijustine",
+            "description": "科技数码、苹果产品及日常生活极具亲和力的女性科技创"
+          },
+          {
+            "name": "Dave2D",
+            "url": "https://www.youtube.com/@Dave2D",
+            "description": "以极简美学、沉稳声线和深度笔记本/显示器评测著称的"
+          },
+          {
+            "name": "Austin Evans",
+            "url": "https://www.youtube.com/@austinevans",
+            "description": "专注组装电脑、游戏硬件测评与奇特科技产品开箱的科技"
+          },
+          {
+            "name": "Linus Tech Tips (LTT)",
+            "url": "https://www.youtube.com/@LinusTechTips",
+            "description": "全球规模最大、极具极客精神的电脑硬件"
+          },
+          {
+            "name": "JerryRigEverything",
+            "url": "https://www.youtube.com/@JerryRigEverything",
+            "description": "以暴力拆解、手机划痕和耐用度测试(刀割、火烧"
+          },
+          {
+            "name": "iFixit",
+            "url": "https://www.youtube.com/@iFixit",
+            "description": "拆解全球最新电子产品并评测其可修度"
+          },
+          {
+            "name": "The Verge",
+            "url": "https://www.youtube.com/@theverge",
+            "description": "国际顶尖科技媒体 The Verge 官方评测"
+          },
+          {
+            "name": "CNET",
+            "url": "https://www.youtube.com/@CNET",
+            "description": "美国老牌科技产品导购、数码评测与科技前沿新闻频道。"
+          },
+          {
+            "name": "Engadget",
+            "url": "https://www.youtube.com/@engadget",
+            "description": "专注全球消费电子展、前沿科技硬件上手的专业科技媒体"
+          },
+          {
+            "name": "Wired",
+            "url": "https://www.youtube.com/@WIRED",
+            "description": "《连线》杂志官方频道，涵盖科技如何改变人类未来"
+          },
+          {
+            "name": "TechCrunch",
+            "url": "https://www.youtube.com/@TechCrunch",
+            "description": "聚焦硅谷创业公司、风险投资与科技商业创新的官方频道"
+          },
+          {
+            "name": "PBKreviews",
+            "url": "https://www.youtube.com/@PBKreviews",
+            "description": "专注手机、平板内部构造拆解"
+          },
+          {
+            "name": "TechLead",
+            "url": "https://www.youtube.com/@TechLead",
+            "description": "前谷歌/前Meta硅谷高级软件工程师分享程序员职场"
+          },
+          {
+            "name": "Fireship",
+            "url": "https://www.youtube.com/@Fireship",
+            "description": "用高密度、幽默且极具节奏感的动画代码演示帮助开发者"
+          },
+          {
+            "name": "programming with Mosh",
+            "url": "https://www.youtube.com/@programmingwithmosh",
+            "description": "为全球初学者及进阶程序员提供系统化"
+          },
+          {
+            "name": "freeCodeCamp.org",
+            "url": "https://www.youtube.com/@freecodecamp",
+            "description": "提供免费且完整的计算机科学"
+          },
+          {
+            "name": "Lex Fridman",
+            "url": "https://www.youtube.com/@lexfridman",
+            "description": "麻省理工学院研究员亚历克斯·弗里德曼的深度长访谈播"
+          },
+          {
+            "name": "Joe Rogan Experience (JRE Clips)",
+            "url": "https://www.youtube.com/@joerogan",
+            "description": "全球最具影响力的播客主乔·罗根精选访谈片段频道。"
+          },
+          {
+            "name": "Huberman Lab",
+            "url": "https://www.youtube.com/@hubermanlab",
+            "description": "斯坦福大学神经生物学教授安德鲁·休伯曼主讲的硬核健"
+          },
+          {
+            "name": "TED",
+            "url": "https://www.youtube.com/@TED",
+            "description": "全球知名演讲汇集地，汇聚各界思想领袖与科学家的启发"
+          },
+          {
+            "name": "Veritasium",
+            "url": "https://www.youtube.com/@veritasium",
+            "description": "科学与物理科普顶流频道，用严谨且震撼的实验打破认知"
+          },
+          {
+            "name": "SmarterEveryDay",
+            "url": "https://www.youtube.com/@SmarterEveryDay",
+            "description": "由航天工程师 Destin"
+          },
+          {
+            "name": "Vsauce",
+            "url": "https://www.youtube.com/@Vsauce",
+            "description": "哲学、心理学与冷门科学交织的硬核高智商科普频道。"
+          },
+          {
+            "name": "Kurzgesagt – In a Nutshell",
+            "url": "https://www.youtube.com/@kurzgesagt",
+            "description": "拥有精美独特的扁平化动画风格"
+          },
+          {
+            "name": "AsapSCIENCE",
+            "url": "https://www.youtube.com/@AsapSCIENCE",
+            "description": "用手绘白板和趣味科学合理解答人类身体与生活怪现象的"
+          },
+          {
+            "name": "The Infographics Show",
+            "url": "https://www.youtube.com/@TheInfographicsShow",
+            "description": "用数据可视化图表与趣味动画解析历史"
+          },
+          {
+            "name": "3Blue1Brown",
+            "url": "https://www.youtube.com/@3blue1brown",
+            "description": "用极其优雅、直观的数学动画让高等数学"
+          },
+          {
+            "name": "Numberphile",
+            "url": "https://www.youtube.com/@numberphile",
+            "description": "英国数学科普频道，邀请全球顶尖数学家剖析数字背后的"
+          },
+          {
+            "name": "Computerphile",
+            "url": "https://www.youtube.com/@Computerphile",
+            "description": "聚焦计算机科学底层原理、密码学"
+          },
+          {
+            "name": "Big Think",
+            "url": "https://www.youtube.com/@bigthink",
+            "description": "汇聚全球顶尖学者、哲学家与思想家对人类命运与未来认"
+          },
+          {
+            "name": "National Geographic",
+            "url": "https://www.youtube.com/@NatGeo",
+            "description": "国家地理官方频道，带来顶级野生动物"
+          },
+          {
+            "name": "BBC Earth",
+            "url": "https://www.youtube.com/@bbcearth",
+            "description": "英国广播公司(BBC)自然生态频道的官方精选"
+          },
+          {
+            "name": "NASA",
+            "url": "https://www.youtube.com/@NASA",
+            "description": "美国国家航空航天局官方频道，直播火箭发射"
+          },
+          {
+            "name": "SpaceX",
+            "url": "https://www.youtube.com/@SpaceX",
+            "description": "马斯克的太空探索技术公司官方火箭发射与星舰测试实况"
+          },
+          {
+            "name": "Gordon Ramsay",
+            "url": "https://www.youtube.com/@GordonRamsay",
+            "description": "“地狱厨神”戈登·拉姆齐的烹饪教学"
+          },
+          {
+            "name": "Binging with Babish",
+            "url": "https://www.youtube.com/@BabishCulinaryUniverse",
+            "description": "完美复刻影视剧、动漫中经典美食的高人气治愈系厨艺频"
+          },
+          {
+            "name": "Jamie Oliver",
+            "url": "https://www.youtube.com/@jamieoliver",
+            "description": "英国名厨杰米·奥利弗的健康快手菜教学与美食生活态度"
+          },
+          {
+            "name": "Tasty",
+            "url": "https://www.youtube.com/@tasty",
+            "description": "全球顶流俯拍风快手美食菜谱"
+          },
+          {
+            "name": "HowToBasic",
+            "url": "https://www.youtube.com/@HowToBasic",
+            "description": "以疯狂、无厘头、狂砸鸡蛋和毁坏物品为标志的解压搞笑"
+          },
+          {
+            "name": "Markiplier",
+            "url": "https://www.youtube.com/@markiplier",
+            "description": "顶流游戏解说、恐怖游戏试玩与脑洞创意大片制作人。"
+          },
+          {
+            "name": "Jacksepticeye",
+            "url": "https://www.youtube.com/@jacksepticeye",
+            "description": "极具感染力的爱尔兰游戏实况主"
+          },
+          {
+            "name": "DanTDM",
+            "url": "https://www.youtube.com/@DanTDM",
+            "description": "英国资深我的世界(Minecraft)与合家欢游戏"
+          },
+          {
+            "name": "Dream",
+            "url": "https://www.youtube.com/@Dream",
+            "description": "曾经轰动全球的《我的世界》极限速通与高智商猎杀游戏"
+          },
+          {
+            "name": "MrBeast Gaming",
+            "url": "https://www.youtube.com/@MrBeastGaming",
+            "description": "MrBeast 旗下的高人气游戏挑战与整活副频道。"
+          },
+          {
+            "name": "IGN",
+            "url": "https://www.youtube.com/@IGN",
+            "description": "全球最大游戏与娱乐媒体之一，发布最新游戏预告"
+          },
+          {
+            "name": "GameSpot",
+            "url": "https://www.youtube.com/@GameSpot",
+            "description": "深度游戏资讯、行业评论与游戏开发者幕后访谈专业频道"
+          },
+          {
+            "name": "PlayStation",
+            "url": "https://www.youtube.com/@PlayStation",
+            "description": "索尼互动娱乐官方游戏机发布会"
+          }
+        ]
+      },
+      {
+        "name": "热门账号 151-199",
+        "enName": "Featured",
+        "links": [
+          {
+            "name": "Xbox",
+            "url": "https://www.youtube.com/@Xbox",
+            "description": "微软 Xbox 官方游戏阵容发布"
+          },
+          {
+            "name": "Nintendo of America",
+            "url": "https://www.youtube.com/@Nintendo",
+            "description": "日本任天堂北美官方频道，发布最新Switch游戏直"
+          },
+          {
+            "name": "Airrack",
+            "url": "https://www.youtube.com/@Airrack",
+            "description": "以疯狂的极限生存挑战、环球冒险与大规模整活闻名的头"
+          },
+          {
+            "name": "Ryan Trahan",
+            "url": "https://www.youtube.com/@ryantrahan",
+            "description": "凭借“1美分跨越美国”、“环球穷游”等沉浸式真人挑"
+          },
+          {
+            "name": "Jimmy Fallon (The Tonight Show)",
+            "url": "https://www.youtube.com/@FallonTonight",
+            "description": "美国深夜脱口秀王牌节目，汇聚好莱坞巨星访谈与爆笑互"
+          },
+          {
+            "name": "The Ellen Show",
+            "url": "https://www.youtube.com/@TheEllenShow",
+            "description": "艾伦秀经典搞笑片段、温情采访与素人绝活展示。"
+          },
+          {
+            "name": "Jimmy Kimmel Live",
+            "url": "https://www.youtube.com/@JimmyKimmelLive",
+            "description": "美国热门深夜脱口秀，以恶作剧挑战和明星访谈闻名。"
+          },
+          {
+            "name": "The Late Show with Stephen Colbert",
+            "url": "https://www.youtube.com/@colbertlateshow",
+            "description": "斯蒂芬·科尔伯特深夜秀，聚焦时政幽默讽刺与名人深度"
+          },
+          {
+            "name": "Saturday Night Live (SNL)",
+            "url": "https://www.youtube.com/@snl",
+            "description": "美国长寿王牌喜剧小品节目周六夜现场官方官方精选频道"
+          },
+          {
+            "name": "First We Feast",
+            "url": "https://www.youtube.com/@FirstWeFeast",
+            "description": "凭招牌王牌节目《Hot Ones》(辣翅访谈)火遍"
+          },
+          {
+            "name": "Architectural Digest (AD)",
+            "url": "https://www.youtube.com/@ArchitecturalDigest",
+            "description": "探访全球顶流好莱坞巨星、富豪奢华豪宅与顶级室内设计"
+          },
+          {
+            "name": "Vogue",
+            "url": "https://www.youtube.com/@Vogue",
+            "description": "时尚圣经《Vogue》官方频道"
+          },
+          {
+            "name": "GQ",
+            "url": "https://www.youtube.com/@GQ",
+            "description": "聚焦男性时尚、潮流穿搭、生活态度及名人日常问答的顶"
+          },
+          {
+            "name": "Vanity Fair",
+            "url": "https://www.youtube.com/@VanityFair",
+            "description": "《名利场》杂志官方频道，以明星谎言测试"
+          },
+          {
+            "name": "Netflix",
+            "url": "https://www.youtube.com/@Netflix",
+            "description": "全球流媒体巨头奈飞官方电影"
+          },
+          {
+            "name": "HBO Max / Max",
+            "url": "https://www.youtube.com/@StreamOnMax",
+            "description": "华纳旗下流媒体平台官方顶级剧集(如权游宇宙"
+          },
+          {
+            "name": "Disney Plus",
+            "url": "https://www.youtube.com/@DisneyPlus",
+            "description": "迪士尼官方流媒体平台，汇聚漫威"
+          },
+          {
+            "name": "Prime Video",
+            "url": "https://www.youtube.com/@PrimeVideo",
+            "description": "亚马逊旗下影视流媒体官方大片及独家剧集预告发布频道"
+          },
+          {
+            "name": "Rotten Tomatoes Trailers",
+            "url": "https://www.youtube.com/@rottentomatoes",
+            "description": "烂番茄官方影视预告片集成频道"
+          },
+          {
+            "name": "Jimmy Donaldson / Beast Reacts",
+            "url": "https://www.youtube.com/@BeastReacts",
+            "description": "MrBeast 团队专门做各种趣味反应视频和对比评"
+          },
+          {
+            "name": "Dude Perfect",
+            "url": "https://www.youtube.com/@DudePerfect",
+            "description": "由五位好友组成的极限运动"
+          },
+          {
+            "name": "Dude Perfect 2",
+            "url": "https://www.youtube.com/@DudePerfect2",
+            "description": "Dude Perfect"
+          },
+          {
+            "name": "Good Mythical Morning (GMM)",
+            "url": "https://www.youtube.com/@rhettandlink",
+            "description": "由 Rhett & Link 主持的美国超长寿"
+          },
+          {
+            "name": "Jubilee",
+            "url": "https://www.youtube.com/@Jubilee",
+            "description": "聚焦社会议题、观点碰撞、跨代际/跨政治立场辩论的高"
+          },
+          {
+            "name": "Cut",
+            "url": "https://www.youtube.com/@Cut",
+            "description": "制作“100个人对视”、“多对一盲选对决”等人性与"
+          },
+          {
+            "name": "Jubilee / Middle Ground",
+            "url": "https://www.youtube.com/@MiddleGround",
+            "description": "探寻不同文化、对立立场人群之间共同点与理解的深度对"
+          },
+          {
+            "name": "Yes Theory",
+            "url": "https://www.youtube.com/@YesTheory",
+            "description": "秉持“Say Yes to"
+          },
+          {
+            "name": "Peter McKinnon",
+            "url": "https://www.youtube.com/@PeterMcKinnon",
+            "description": "加拿大顶流摄影师、电影制作人，分享摄影技巧"
+          },
+          {
+            "name": "Matti Haapoja",
+            "url": "https://www.youtube.com/@mattihaapoja",
+            "description": "国际顶尖影视Vlogger"
+          },
+          {
+            "name": "Devin Supertramp",
+            "url": "https://www.youtube.com/@devinsupertramp",
+            "description": "用专业电影级 RED 摄影机拍摄极限运动、滑雪"
+          },
+          {
+            "name": "Casey Neistat",
+            "url": "https://www.youtube.com/@caseyneistat",
+            "description": "YouTube 传奇级Vlog鼻祖"
+          },
+          {
+            "name": "FunForLouis",
+            "url": "https://www.youtube.com/@LouisCole",
+            "description": "英国知名环球飞行、极限运动与传递正能量的资深环球"
+          },
+          {
+            "name": "Sam Kolder",
+            "url": "https://www.youtube.com/@samkolder",
+            "description": "凭借史诗级转场剪辑、海洋环保和极致旅行短片惊艳全球"
+          },
+          {
+            "name": "Drew Binsky",
+            "url": "https://www.youtube.com/@drewbinsky",
+            "description": "目标走遍全世界每一个国家(包括最冷门战乱地区)的顶"
+          },
+          {
+            "name": "Bald and Bankrupt",
+            "url": "https://www.youtube.com/@baldandbankrupt",
+            "description": "深入前苏联国家边缘小镇、体验最接地气当地生活的传奇"
+          },
+          {
+            "name": "Harald Baldr",
+            "url": "https://www.youtube.com/@HaraldBaldr",
+            "description": "挪威籍独立旅行家，以深入印度"
+          },
+          {
+            "name": "Yes Theory / Seek Discomfort",
+            "url": "https://www.youtube.com/@SeekDiscomfort",
+            "description": "鼓励年轻人打破心灵桎梏、勇敢探索未知世界的独立精神"
+          },
+          {
+            "name": "Tom Scott",
+            "url": "https://www.youtube.com/@TomScottGo",
+            "description": "英国知名硬核人文、地理、冷门科技探索极客博主(传奇"
+          },
+          {
+            "name": "Real Engineering",
+            "url": "https://www.youtube.com/@RealEngineering",
+            "description": "用严谨三维动画和工程学原理解析飞机"
+          },
+          {
+            "name": "Real Lore / Real History",
+            "url": "https://www.youtube.com/@RealLifeLore",
+            "description": "用数据图表解答地球上冷门地理"
+          },
+          {
+            "name": "Wendover Productions",
+            "url": "https://www.youtube.com/@WendoverProductions",
+            "description": "深度剖析物流、航空运作逻辑"
+          },
+          {
+            "name": "Polymatter",
+            "url": "https://www.youtube.com/@Polymatter",
+            "description": "专注分析大企业运作垄断逻辑"
+          },
+          {
+            "name": "Johnny Harris",
+            "url": "https://www.youtube.com/@johnnyharris",
+            "description": "前《纽约时报》记者、顶尖视觉地理故事讲述者"
+          },
+          {
+            "name": "Vox",
+            "url": "https://www.youtube.com/@Vox",
+            "description": "美国新闻网 Vox 官方频道"
+          },
+          {
+            "name": "The Economist",
+            "url": "https://www.youtube.com/@theeconomist",
+            "description": "《经济学人》官方频道，提供全球经济"
+          },
+          {
+            "name": "Financial Times",
+            "url": "https://www.youtube.com/@FinancialTimes",
+            "description": "英国《金融时报》官方频道，聚焦全球资本市场"
+          },
+          {
+            "name": "Bloomberg Technology",
+            "url": "https://www.youtube.com/@BloombergTechnology",
+            "description": "彭博社旗下专注于科技商业"
+          },
+          {
+            "name": "Wall Street Journal (WSJ)",
+            "url": "https://www.youtube.com/@WSJ",
+            "description": "《华尔街日报》官方频道，通过深度纪实视频剖析全球商"
+          },
+          {
+            "name": "CNBC",
+            "url": "https://www.youtube.com/@CNBC",
+            "description": "美国消费者新闻与商业频道，全方位追踪全球股市"
+          }
+        ]
+      }
+    ]
+}
+];
+
+const literaryQuotes = [
+  '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
+  '我们所嘲笑的往往是我们最不了解的。——《了不起的盖茨比》',
+  '人是为了活着本身而活着，而不是为了活着之外的任何事物而活着。——余华《活着》',
+  '所有的大人都曾经是小孩，虽然，只有少数人记得。——《小王子》',
+  '世界以痛吻我，要我报之以歌。——泰戈尔《飞鸟集》',
+  '我假装无情，其实是痛恨自己深情。——《百年孤独》',
+  '勇气不是没有恐惧，而是带着恐惧依然前行。——纳尔逊·曼德拉',
+  '在最黑暗的那段人生，是我自己把自己拉出深渊的。——《如果有一天我变得很有钱》',
+  '你要做一个不动声色的大人了。不准情绪化，不准偷偷想念。——村上春树',
+  '人这一生，自私很容易，爱自己却很难。——杨绛',
+  '你顺手挽住火焰，化作漫天大雪。——《饮下整个秋天》',
+  '一切都明明白白，但我们仍匆匆错过。——顾城《错过》',
+  '如果你认识从前的我，那么你就会原谅现在的我。——张爱玲《倾城之恋》',
+  '我想要两颗西柚——I want to see you。——《我想要两颗西柚》',
+  '我从没被谁知道，所以也没被谁忘记。——《从百草园到三味书屋》'
+];
+
+const pureBackgrounds = [
+    { id: 'theme-white', type: 'theme', theme: 'white', name: '经典白', preview: '#f5f5f7' },
+    { id: 'theme-dawn', type: 'theme', theme: 'dawn', name: '晨曦粉', preview: 'linear-gradient(135deg, #fff5f5, #ffe8e8)' },
+    { id: 'theme-mint', type: 'theme', theme: 'mint', name: '薄荷青', preview: 'linear-gradient(135deg, #f0fff5, #dff7ec)' },
+    { id: 'theme-ocean', type: 'theme', theme: 'ocean', name: '海洋蓝', preview: 'linear-gradient(135deg, #f0f8ff, #d7ecff)' },
+    { id: 'theme-twilight', type: 'theme', theme: 'twilight', name: '晨曦紫', preview: 'linear-gradient(135deg, #f5f0ff, #e9dcff)' },
+    { id: 'theme-midnight', type: 'theme', theme: 'midnight', name: '深夜黑', preview: 'linear-gradient(135deg, #000212, #0c0c1d)' },
+    { id: 'theme-ink', type: 'theme', theme: 'ink', name: 'Linear 黑', preview: 'linear-gradient(135deg, #08090a, #1c1d22)' },
+    { id: 'theme-starry', type: 'theme', theme: 'starry', name: '星空蓝', preview: 'linear-gradient(135deg, #0c0c1d, #1b2b5f)' },
+    { id: 'theme-sunset', type: 'theme', theme: 'sunset', name: '暮光橙', preview: 'linear-gradient(135deg, #2d1b0e, #7a3b1e)' },
+    { id: 'theme-aurora', type: 'theme', theme: 'aurora', name: '极光青', preview: 'linear-gradient(135deg, #1a2a3a, #3db8a8)' },
+    { id: 'theme-dream', type: 'theme', theme: 'dream', name: '梦幻粉', preview: 'linear-gradient(135deg, #667eea, #764ba2)' },
+    { id: 'theme-forest', type: 'theme', theme: 'forest', name: '森林绿', preview: 'linear-gradient(135deg, #2d5f4e, #4cb88a)' },
+    { id: 'theme-deepsea', type: 'theme', theme: 'deepsea', name: '深海蓝', preview: 'linear-gradient(135deg, #1a4a6e, #5099d4)' },
+    { id: 'theme-clay', type: 'theme', theme: 'clay', name: '暖陶土', preview: 'linear-gradient(135deg, #4a3326, #8a6a4f)' }
+  ];
+
+const imageBackgrounds = [
+    { id: '星', name: '星', url: '../wallpapers/01_星.webp', thumb: '../thumbs/01_星.webp' },
+    { id: '雨', name: '雨', url: '../wallpapers/02_雨.webp', thumb: '../thumbs/02_雨.webp' },
+    { id: '林', name: '林', url: '../wallpapers/03_林.webp', thumb: '../thumbs/03_林.webp' },
+    { id: '竹', name: '竹', url: '../wallpapers/04_竹.webp', thumb: '../thumbs/04_竹.webp' },
+    { id: '荷', name: '荷', url: '../wallpapers/05_荷.webp', thumb: '../thumbs/05_荷.webp' },
+    { id: '墨', name: '墨', url: '../wallpapers/06_墨.webp', thumb: '../thumbs/06_墨.webp' },
+    { id: '锦', name: '锦', url: '../wallpapers/07_锦.webp', thumb: '../thumbs/07_锦.webp' },
+    { id: '庭', name: '庭', url: '../wallpapers/08_庭.webp', thumb: '../thumbs/08_庭.webp' },
+    { id: '契', name: '契', url: '../wallpapers/09_契.webp', thumb: '../thumbs/09_契.webp' },
+    { id: '玉', name: '玉', url: '../wallpapers/10_玉.webp', thumb: '../thumbs/10_玉.webp' },
+    { id: '蓝', name: '蓝', url: '../wallpapers/11_蓝.webp', thumb: '../thumbs/11_蓝.webp' },
+    { id: '夜', name: '夜', url: '../wallpapers/12_夜.webp', thumb: '../thumbs/12_夜.webp' },
+    { id: '环', name: '环', url: '../wallpapers/13_环.webp', thumb: '../thumbs/13_环.webp' },
+    { id: '枪', name: '枪', url: '../wallpapers/14_枪.webp', thumb: '../thumbs/14_枪.webp' },
+    { id: '彼', name: '彼', url: '../wallpapers/15_彼.webp', thumb: '../thumbs/15_彼.webp' },
+    { id: '琴', name: '琴', url: '../wallpapers/16_琴.webp', thumb: '../thumbs/16_琴.webp' },
+    { id: '澜', name: '澜', url: '../wallpapers/17_澜.webp', thumb: '../thumbs/17_澜.webp' },
+    { id: '霓', name: '霓', url: '../wallpapers/18_霓.webp', thumb: '../thumbs/18_霓.webp' },
+    { id: '灯', name: '灯', url: '../wallpapers/19_灯.webp', thumb: '../thumbs/19_灯.webp' },
+    { id: '港', name: '港', url: '../wallpapers/20_港.webp', thumb: '../thumbs/20_港.webp' },
+    { id: '轮', name: '轮', url: '../wallpapers/21_轮.webp', thumb: '../thumbs/21_轮.webp' },
+    { id: '朱', name: '朱', url: '../wallpapers/22_朱.webp', thumb: '../thumbs/22_朱.webp' },
+    { id: '赤', name: '赤', url: '../wallpapers/23_赤.webp', thumb: '../thumbs/23_赤.webp' },
+    { id: '藤', name: '藤', url: '../wallpapers/24_藤.webp', thumb: '../thumbs/24_藤.webp' },
+    { id: '樱', name: '樱', url: '../wallpapers/25_樱.webp', thumb: '../thumbs/25_樱.webp' },
+    { id: '王', name: '王', url: '../wallpapers/26_王.webp', thumb: '../thumbs/26_王.webp' },
+    { id: '风', name: '风', url: '../wallpapers/27_风.webp', thumb: '../thumbs/27_风.webp' },
+    { id: '荒', name: '荒', url: '../wallpapers/28_荒.webp', thumb: '../thumbs/28_荒.webp' },
+    { id: '晴', name: '晴', url: '../wallpapers/29_晴.webp', thumb: '../thumbs/29_晴.webp' },
+    { id: '紫', name: '紫', url: '../wallpapers/30_紫.webp', thumb: '../thumbs/30_紫.webp' },
+    { id: '橙', name: '橙', url: '../wallpapers/31_橙.webp', thumb: '../thumbs/31_橙.webp' },
+    { id: '青', name: '青', url: '../wallpapers/32_青.webp', thumb: '../thumbs/32_青.webp' },
+    { id: '莲', name: '莲', url: '../wallpapers/33_莲.webp', thumb: '../thumbs/33_莲.webp' },
+    { id: '校', name: '校', url: '../wallpapers/34_校.webp', thumb: '../thumbs/34_校.webp' },
+    { id: '泳', name: '泳', url: '../wallpapers/35_泳.webp', thumb: '../thumbs/35_泳.webp' },
+    { id: '楼', name: '楼', url: '../wallpapers/36_楼.webp', thumb: '../thumbs/36_楼.webp' },
+    { id: '城', name: '城', url: '../wallpapers/37_城.webp', thumb: '../thumbs/37_城.webp' },
+    { id: '鱼', name: '鱼', url: '../wallpapers/38_鱼.webp', thumb: '../thumbs/38_鱼.webp' },
+    { id: '窗', name: '窗', url: '../wallpapers/39_窗.webp', thumb: '../thumbs/39_窗.webp' },
+    { id: '云', name: '云', url: '../wallpapers/40_云.webp', thumb: '../thumbs/40_云.webp' },
+    { id: '宇', name: '宇', url: '../wallpapers/41_宇.webp', thumb: '../thumbs/41_宇.webp' },
+    { id: '雪', name: '雪', url: '../wallpapers/42_雪.webp', thumb: '../thumbs/42_雪.webp' },
+    { id: '晶', name: '晶', url: '../wallpapers/43_晶.webp', thumb: '../thumbs/43_晶.webp' },
+    { id: '街', name: '街', url: '../wallpapers/44_街.webp', thumb: '../thumbs/44_街.webp' },
+    { id: '驰', name: '驰', url: '../wallpapers/45_驰.webp', thumb: '../thumbs/45_驰.webp' },
+    { id: '堡', name: '堡', url: '../wallpapers/46_堡.webp', thumb: '../thumbs/46_堡.webp' },
+    { id: '巷', name: '巷', url: '../wallpapers/47_巷.webp', thumb: '../thumbs/47_巷.webp' },
+    { id: '粉', name: '粉', url: '../wallpapers/48_粉.webp', thumb: '../thumbs/48_粉.webp' },
+    { id: '轨', name: '轨', url: '../wallpapers/49_轨.webp', thumb: '../thumbs/49_轨.webp' },
+    { id: '岳', name: '岳', url: '../wallpapers/50_岳.webp', thumb: '../thumbs/50_岳.webp' },
+    { id: '依', name: '依', url: '../wallpapers/51_依.webp', thumb: '../thumbs/51_依.webp' },
+    { id: '阑', name: '阑', url: '../wallpapers/52_阑.webp', thumb: '../thumbs/52_阑.webp' },
+    { id: '汐', name: '汐', url: '../wallpapers/53_汐.webp', thumb: '../thumbs/53_汐.webp' },
+    { id: '黛', name: '黛', url: '../wallpapers/54_黛.webp', thumb: '../thumbs/54_黛.webp' }
+  ].map(item => ({ ...item, type: 'image' }));
+
+(function() {
+    var featuredIds = ['星'];
+    var sceneryIds = ['林','雨','竹'];
+    var featured = [], scenery = [], characters = [];
+    imageBackgrounds.forEach(function(o) {
+      if (featuredIds.indexOf(o.id) >= 0) featured.push(o);
+      else if (sceneryIds.indexOf(o.id) >= 0) scenery.push(o);
+      else characters.push(o);
+    });
+    imageBackgrounds.splice(0, imageBackgrounds.length);
+    featured.forEach(function(o) { imageBackgrounds.push(o); });
+    scenery.forEach(function(o) { imageBackgrounds.push(o); });
+    characters.forEach(function(o) { imageBackgrounds.push(o); });
+  })();
+
+var __KISSTR_LOGO__ = '𝒀𝑜𝑢𝑻𝑢𝑏𝑒 𝑪𝑟𝑒𝑎𝑡𝑜𝑟𝑠';
+</script>
+<script src="../assets/render.js"></script>
+<script src="../assets/spa.js"></script>
+</body>
+</html>
