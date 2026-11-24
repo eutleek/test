@@ -416,6 +416,11 @@ window.KISSTR_DATA = [
         "name": "音乐与电台",
         "links": [
           {
+            "name": "folia-major",
+            "url": "https://github.com/chthollyphile/folia-major",
+            "description": "绚丽歌词动画的开源音乐播放器"
+          },
+          {
             "name": "洛雪音乐",
             "url": "https://lxmusic.toside.cn/",
             "description": "洛雪音乐 - 聚合音乐播放器"
@@ -814,6 +819,31 @@ window.KISSTR_DATA = [
             "name": "HearThis",
             "url": "https://hearthis.at/",
             "description": "HearThis - 音乐分享"
+          },
+          {
+            "name": "Demucs",
+            "url": "https://github.com/facebookresearch/demucs",
+            "description": "开源音轨分离人声伴奏工具"
+          },
+          {
+            "name": "Ultimate Vocal Remover GUI",
+            "url": "https://github.com/Anjok07/ultimatevocalremovergui",
+            "description": "人声伴奏分离可视化工具"
+          },
+          {
+            "name": "GPT-SoVITS",
+            "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+            "description": "少样本语音合成与克隆"
+          },
+          {
+            "name": "Whisper",
+            "url": "https://github.com/openai/whisper",
+            "description": "开源语音识别转录模型"
+          },
+          {
+            "name": "faster-whisper",
+            "url": "https://github.com/SYSTRAN/faster-whisper",
+            "description": "Whisper 的高速推理版本"
           }
         ]
       }
@@ -1019,6 +1049,46 @@ window.KISSTR_DATA = [
             "name": "アニソン★歌詞検索",
             "url": "http://anison.kenichimaehashi.com/",
             "description": "动漫歌曲歌词免费搜索，含 VOCALOID"
+          }
+        ]
+      },
+      {
+        "name": "圣地巡礼",
+        "links": [
+          {
+            "name": "日本动漫旅游协会官方网",
+            "url": "https://animetourism88.com",
+            "description": "日本官方动漫圣地 88 选年度评选"
+          },
+          {
+            "name": "GO TOKYO 动漫圣地巡礼专页",
+            "url": "https://www.gotokyo.org",
+            "description": "东京观光官方网站的二次元巡礼专区"
+          },
+          {
+            "name": "Anime Pilgrimage Maps",
+            "url": "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html",
+            "description": "互动地图索引，整合动漫作品的真实取景坐标"
+          },
+          {
+            "name": "Holy Land Spot",
+            "url": "https://holyland.spot.com",
+            "description": "基于地图标记的日本动漫圣地坐标索引"
+          },
+          {
+            "name": "舞台探訪アーカイブ",
+            "url": "http://butaitambou.com",
+            "description": "舞台探访资料索引，收录考据者个人网站与作品目录"
+          },
+          {
+            "name": "聖地巡礼info",
+            "url": "https://seichi-junrei.info",
+            "description": "巡礼资讯与实地记录网站，提供场景对照图与交通路线"
+          },
+          {
+            "name": "Anitabi",
+            "url": "https://anitabi.net",
+            "description": "高精度定位与图文对照的舞台探访网站"
           }
         ]
       }
@@ -1250,45 +1320,1237 @@ window.KISSTR_DATA = [
     ]
   },
   {
-    "name": "动漫巡礼",
+    "name": "聚合索引",
+    "icon": "🧭",
+    "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
     "subcategories": [
       {
-        "name": "圣地巡礼",
+        "name": "精选推荐",
+        "enName": "Featured",
         "links": [
           {
-            "name": "日本动漫旅游协会官方网",
-            "url": "https://animetourism88.com",
-            "description": "日本官方动漫圣地 88 选年度评选"
+            "name": "FMHY 备份页",
+            "url": "https://fmhy.net/other/backups",
+            "description": "全球免费资源合集，官方备份镜像列表"
           },
           {
-            "name": "GO TOKYO 动漫圣地巡礼专页",
-            "url": "https://www.gotokyo.org",
-            "description": "东京观光官方网站的二次元巡礼专区"
+            "name": "龙轩导航",
+            "url": "http://ilxdh.com/cat/171",
+            "description": "龙轩导航 - 发现精彩网络世界"
           },
           {
-            "name": "Anime Pilgrimage Maps",
-            "url": "https://googlemapsmania.blogspot.com/2024/08/anime-pilgrimage-maps.html",
-            "description": "互动地图索引，整合动漫作品的真实取景坐标"
+            "name": "iMyShare",
+            "url": "https://imyshare.com/",
+            "description": "分享各种令人惊艳的软件工具神器"
           },
           {
-            "name": "Holy Land Spot",
-            "url": "https://holyland.spot.com",
-            "description": "基于地图标记的日本动漫圣地坐标索引"
+            "name": "果汁导航",
+            "url": "http://guozhivip.com/",
+            "description": "果汁导航 - 你的上网首页"
           },
           {
-            "name": "舞台探訪アーカイブ",
-            "url": "http://butaitambou.com",
-            "description": "舞台探访资料索引，收录考据者个人网站与作品目录"
+            "name": "龙喵导航",
+            "url": "http://ailongmiao.com/",
+            "description": "龙喵导航 - 简洁好用的网址导航"
           },
           {
-            "name": "聖地巡礼info",
-            "url": "https://seichi-junrei.info",
-            "description": "巡礼资讯与实地记录网站，提供场景对照图与交通路线"
+            "name": "TOP123导航",
+            "url": "https://123.topstip.com/",
+            "description": "TOP123导航 - 网址导航"
           },
           {
-            "name": "Anitabi",
-            "url": "https://anitabi.net",
-            "description": "高精度定位与图文对照的舞台探访网站"
+            "name": "终极导航",
+            "url": "https://www.zjnav.com/",
+            "description": "终极导航 - 优质网站导航"
+          },
+          {
+            "name": "凌凌柒啦导航",
+            "url": "https://www.007la.com/",
+            "description": "凌凌柒啦导航 - 网址导航"
+          },
+          {
+            "name": "冷猫导航站",
+            "url": "https://www.lengcat.cn/",
+            "description": "冷猫导航站 - 网址导航"
+          },
+          {
+            "name": "青禾导航",
+            "url": "https://www.qinghedaohang.com/",
+            "description": "青禾导航 - 简洁导航"
+          },
+          {
+            "name": "小爆虾",
+            "url": "https://xiaobaoxia.com/",
+            "description": "小爆虾 - 动漫导航"
+          },
+          {
+            "name": "搜奇AI导航",
+            "url": "https://www.sjsdh.cn/",
+            "description": "搜奇AI导航 - 精选优质网站"
+          },
+          {
+            "name": "ACGN导航",
+            "url": "https://acgn.cn/",
+            "description": "ACGN导航 - ACG资源导航"
+          },
+          {
+            "name": "ACG导航网",
+            "url": "https://www.iseacg.com/",
+            "description": "ACG导航网 - ACG资源导航"
+          },
+          {
+            "name": "ACG导航",
+            "url": "https://acgtop.net/",
+            "description": "ACG导航 - 动漫游戏导航"
+          },
+          {
+            "name": "硬核影视指南",
+            "url": "https://yingheapp.com/",
+            "description": ""
+          },
+          {
+            "name": "好狗电影导航",
+            "url": "https://www.howgo.cc/",
+            "description": "好狗电影导航 - 影视资源"
+          },
+          {
+            "name": "摸鱼导航",
+            "url": "https://moyu.games/",
+            "description": "摸鱼导航 - 游戏娱乐导航"
+          },
+          {
+            "name": "Windows XP 专业版",
+            "url": "https://win32.run/",
+            "description": "Windows XP 网页模拟器"
+          },
+          {
+            "name": "NSFW",
+            "url": "https://quenq.com/nsfw/",
+            "description": "不适合在工作场所打开/观看"
+          }
+        ]
+      },
+      {
+        "name": "工具集合",
+        "enName": "Collections",
+        "links": [
+          {
+            "name": "skill工具集",
+            "url": "https://hub.cocoloop.cn/",
+            "description": "Cocoloop技能工具集合"
+          }
+        ]
+      },
+      {
+        "name": "AI导航",
+        "enName": "AI Navigation",
+        "links": [
+          {
+            "name": "AI工具集",
+            "url": "https://ai-bot.cn",
+            "description": "国内外全品类AI工具综合聚合"
+          },
+          {
+            "name": "AMZ123跨境AI导航",
+            "url": "https://www.amz123.com/ai",
+            "description": "专注电商、跨境卖家与文案运营"
+          },
+          {
+            "name": "鱼皮AI导航",
+            "url": "https://ai.codefather.cn",
+            "description": "包含提示词、课程与全套项目教程"
+          },
+          {
+            "name": "xx025/carrot",
+            "url": "https://cc.ai55.cc/",
+            "description": "GitHub开源项目，主打免费模型镜像与实用工具"
+          },
+          {
+            "name": "发现AI",
+            "url": "https://www.faxianai.com",
+            "description": "一站式涵盖办公、设计、编程与对话产品"
+          },
+          {
+            "name": "优设AI工具导航",
+            "url": "https://ai.uisdc.com",
+            "description": "优设网旗下，侧重设计、创作应用与趋势教程"
+          },
+          {
+            "name": "AIGC工具导航",
+            "url": "https://www.aigc.cn",
+            "description": "全品类生成式AI公共服务与应用商店"
+          },
+          {
+            "name": "360AI导航",
+            "url": "https://ai.hao.360.com",
+            "description": "360旗下，包含趣站、开放平台与开源项目"
+          },
+          {
+            "name": "AI导航网",
+            "url": "https://www.ai-dh.com",
+            "description": "精选前沿生产力与效率工具"
+          },
+          {
+            "name": "霖明导航",
+            "url": "https://n.mumingfang.com/ai",
+            "description": "分类清晰，涵盖写作、绘图与音频工具"
+          },
+          {
+            "name": "Toolify.ai",
+            "url": "https://www.toolify.ai",
+            "description": "检索海量工具与GPTs，AI自动更新趋势"
+          },
+          {
+            "name": "UIED AI工具导航",
+            "url": "https://hao.uied.cn",
+            "description": "面向设计师、开发者与视觉创作者"
+          },
+          {
+            "name": "考拉AI导航",
+            "url": "https://ai.kaolamedia.com",
+            "description": "专为新媒体运营与自媒体打造"
+          },
+          {
+            "name": "ailetsgo",
+            "url": "https://ailetsgo.cn",
+            "description": "超过6500+AI网站与模型的超大索引库"
+          },
+          {
+            "name": "66ai导航",
+            "url": "https://66aidh.com",
+            "description": "特色主打AI配音、声音转换与音频生成"
+          },
+          {
+            "name": "aigcbb",
+            "url": "https://www.aigcbb.com",
+            "description": "适合AI学习者与从业者的实用网址集"
+          },
+          {
+            "name": "Aibase",
+            "url": "https://top.aibase.com/topic/导航",
+            "description": "收录7000+AI产品与智能助手推荐"
+          },
+          {
+            "name": "defagi",
+            "url": "https://nav.defagi.com",
+            "description": "侧重开发者、深度学习框架、数据集与开源模型"
+          },
+          {
+            "name": "M123跨境工具导航",
+            "url": "https://ai.m123.com",
+            "description": "跨境工具与免费对话模型全套指南"
+          },
+          {
+            "name": "AIHub",
+            "url": "https://www.aihub.cn",
+            "description": "高质量中文化AI工具与应用导航"
+          },
+          {
+            "name": "墨路遥AIGC导航",
+            "url": "https://ai.moluyao.wang",
+            "description": "汇总1000+营销、搜索与智能体工具"
+          },
+          {
+            "name": "ai135精选导航",
+            "url": "https://ai135.cn",
+            "description": "全球精品AI软件快速筛选"
+          },
+          {
+            "name": "AI之家",
+            "url": "https://aiones.cn",
+            "description": "支持新品发现、设计办公与一键写论文"
+          },
+          {
+            "name": "深度导航",
+            "url": "https://www.deepdh.com/ai",
+            "description": "结合聊天、绘画、游戏与教程的二级导航"
+          },
+          {
+            "name": "AI之旅导航",
+            "url": "https://www.aijourney.vip",
+            "description": "一站式AI工具集与技术内容平台"
+          },
+          {
+            "name": "CG导航",
+            "url": "https://hao.shenyecg.com/Ai",
+            "description": "专为CG艺术制作与视觉创作者服务"
+          },
+          {
+            "name": "Doingfb AI导航",
+            "url": "https://tools.doingfb.com",
+            "description": "1000+国内外优质效率工具推荐"
+          },
+          {
+            "name": "Navtools.ai",
+            "url": "https://navtools.ai",
+            "description": "人工智能工具发现与检索"
+          },
+          {
+            "name": "曼巴比特",
+            "url": "https://mambabit.com",
+            "description": "匹配各类工作任务的AI工具"
+          },
+          {
+            "name": "Gpt Demo",
+            "url": "https://gptdemo.net",
+            "description": "生成式AI与GPTs应用示范集合"
+          },
+          {
+            "name": "Toolkitly",
+            "url": "https://toolkitly.com",
+            "description": "个人与团队生产力AI工具库"
+          },
+          {
+            "name": "Startup Ai Tools",
+            "url": "https://startupaitools.com",
+            "description": "初创AI产品与独立开发者项目目录"
+          },
+          {
+            "name": "TheBestTools.ai",
+            "url": "https://thebesttools.ai",
+            "description": "优质AI工具筛选与发现"
+          },
+          {
+            "name": "AI TOP100",
+            "url": "https://aitop100.cn",
+            "description": "国内AI资讯、工具及AIGC大赛平台"
+          },
+          {
+            "name": "比特智能AI导航",
+            "url": "https://www.bitaigpt.com/",
+            "description": "智能对话与实用工具集成"
+          },
+          {
+            "name": "MeoAI",
+            "url": "https://meoai.net",
+            "description": "17000+全球AI工具集合"
+          },
+          {
+            "name": "好导航94c",
+            "url": "https://ai.94c.cn",
+            "description": "包含免费镜像站与绘画工具"
+          },
+          {
+            "name": "Tool List Ai",
+            "url": "https://toollist.ai",
+            "description": "实用AI工具分类检索"
+          },
+          {
+            "name": "未来百科",
+            "url": "https://www.weilaibaike.com",
+            "description": "发现全球优质AI产品的百科型导航"
+          },
+          {
+            "name": "AI Valley",
+            "url": "https://aivalley.ai",
+            "description": "深度AI资源与前沿产品库"
+          },
+          {
+            "name": "图钉AI导航网",
+            "url": "https://tudingai.com",
+            "description": "轻量实用工具导航"
+          },
+          {
+            "name": "AI研究所",
+            "url": "https://aiyanjiusuo.com",
+            "description": "AI行业工具、资讯与趋势聚合"
+          },
+          {
+            "name": "AI导航",
+            "url": "https://www.ainav.cn",
+            "description": "前沿AI产品直达"
+          },
+          {
+            "name": "AI工具导航",
+            "url": "https://aigc.nav.cn",
+            "description": "实用分类AI资源"
+          },
+          {
+            "name": "图翼AI导航",
+            "url": "https://www.tuyuai.com",
+            "description": "综合性AIGC工具集合"
+          },
+          {
+            "name": "AI Depot",
+            "url": "https://aidepot.co",
+            "description": "新潮AI工具每日发现"
+          },
+          {
+            "name": "AI Tool Hunt",
+            "url": "https://www.aitoolhunt.com",
+            "description": "全网AI软件索引清单"
+          },
+          {
+            "name": "AI Tool Navigation",
+            "url": "https://aitoolnavigation.com",
+            "description": "分类AI工具推荐"
+          },
+          {
+            "name": "ExplainThis",
+            "url": "https://explainthis.io",
+            "description": "AI开发与效能工具"
+          },
+          {
+            "name": "TopAI Tools",
+            "url": "https://topai.tools",
+            "description": "热门AI工具排行榜与索引"
+          },
+          {
+            "name": "爱潮流AI",
+            "url": "https://aichaodian.com",
+            "description": "潮流与综合AI网站导航"
+          },
+          {
+            "name": "飞客AI",
+            "url": "https://feizhuke.com",
+            "description": "实用AI应用分享平台"
+          },
+          {
+            "name": "iForAI",
+            "url": "https://iforai.com",
+            "description": "精选AI导航平台"
+          },
+          {
+            "name": "0mo AI导航",
+            "url": "https://0mo.com",
+            "description": "综合网址大全"
+          },
+          {
+            "name": "Cool Tools",
+            "url": "https://cooltools.top",
+            "description": "实用网页工具与AI推荐"
+          },
+          {
+            "name": "SaaS AI Tools",
+            "url": "https://saasaitools.com",
+            "description": "SaaS模式AI应用集合"
+          },
+          {
+            "name": "AI导航星",
+            "url": "https://ainavstar.com",
+            "description": "⚠️需特殊网络 | 1万+海外AI工具，200+细分领域"
+          },
+          {
+            "name": "Creaitives",
+            "url": "https://creaitives.com",
+            "description": "⚠️需特殊网络 | 海外大型AI工具与创意数据库"
+          },
+          {
+            "name": "Futurepedia",
+            "url": "https://www.futurepedia.io",
+            "description": "⚠️需特殊网络 | 全球知名且更新极快的AI发现平台"
+          },
+          {
+            "name": "AIAGC",
+            "url": "https://aiagc.com",
+            "description": "⚠️需特殊网络 | 海外综合AIGC资源导航"
+          },
+          {
+            "name": "TopTools",
+            "url": "https://toptools.ai",
+            "description": "⚠️需特殊网络 | 海外AI目录与工具探索"
+          },
+          {
+            "name": "Future Tools",
+            "url": "https://www.futuretools.io",
+            "description": "⚠️需特殊网络 | 知名海外AI筛选平台，支持按功能精准搜寻"
+          },
+          {
+            "name": "EasyWithAI",
+            "url": "https://easywithai.com",
+            "description": "⚠️需特殊网络 | 主打零门槛易用的海外AI工具集合"
+          },
+          {
+            "name": "AllThingsAI",
+            "url": "https://allthingsai.com",
+            "description": "⚠️需特殊网络 | 全球AI软件测评与分类导航"
+          },
+          {
+            "name": "AI Tools Directory",
+            "url": "https://aitoolsdirectory.com",
+            "description": "⚠️需特殊网络 | 全球AI软件及工具索引库"
+          }
+        ]
+      },
+      {
+        "name": "软件工具",
+        "enName": "Software",
+        "links": [
+          {
+            "name": "优软汇",
+            "url": "https://www.youruanhui.com/",
+            "description": "优软汇 - 软件资源分享"
+          },
+          {
+            "name": "爱资料工具",
+            "url": "https://www.toolnb.com/",
+            "description": "在线工具大全"
+          },
+          {
+            "name": "飞鱼盘搜",
+            "url": "http://feiyu100.cn/",
+            "description": "飞鱼盘搜 - 网盘搜索利器"
+          },
+          {
+            "name": "阿酷杂货铺",
+            "url": "https://www.coolexe.com/",
+            "description": "阿酷杂货铺 - 软件分享"
+          },
+          {
+            "name": "枫音应用",
+            "url": "https://www.fy6b.com/",
+            "description": "枫音应用 - 软件推荐"
+          },
+          {
+            "name": "爱达杂货铺",
+            "url": "https://zypuu.com/",
+            "description": "收集那些有用的东西"
+          },
+          {
+            "name": "刘在野工具箱",
+            "url": "https://tool.liumingye.cn/",
+            "description": "刘在野工具箱 - 在线工具集合"
+          },
+          {
+            "name": "实用工具分享达人",
+            "url": "https://dartools.com/",
+            "description": "实用工具分享达人 - 网站资源导航"
+          },
+          {
+            "name": "马小帮",
+            "url": "https://www.maxiaobang.com/",
+            "description": "马小帮 - 实用工具导航"
+          },
+          {
+            "name": "聚神铺导航",
+            "url": "https://www.jspoo.com/",
+            "description": "聚神铺导航 - 聚合型导航网站"
+          },
+          {
+            "name": "蓝点网导航",
+            "url": "https://landian.vip/",
+            "description": "蓝点网导航 - 科技资讯"
+          },
+          {
+            "name": "老D导航",
+            "url": "https://laod.cn/",
+            "description": "老D导航 - 实用工具"
+          },
+          {
+            "name": "工具箱网址导航",
+            "url": "https://tools.voidke.com/book",
+            "description": ""
+          },
+          {
+            "name": "开源资源档案库",
+            "url": "https://fmhy.net/",
+            "description": ""
+          },
+          {
+            "name": "423软件下载",
+            "url": "https://www.423down.com/",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "学习设计",
+        "enName": "Learning & Design",
+        "links": [
+          {
+            "name": "图欧学习资源导航",
+            "url": "http://tuostudy.upnb.top/",
+            "description": "上万款学习生活办公娱乐资源免费无偿分享"
+          },
+          {
+            "name": "精选设计导航",
+            "url": "https://hao.58pic.com/",
+            "description": "设计师必备网址导航"
+          },
+          {
+            "name": "AboutPPT导航",
+            "url": "https://www.aboutppt.com/",
+            "description": "PPT演示设计网址导航"
+          },
+          {
+            "name": "完美网址导航",
+            "url": "https://www.9eip.com/",
+            "description": "好用好玩的网站推荐"
+          },
+          {
+            "name": "集知盒子",
+            "url": "https://www.jizhihezi.com/",
+            "description": "集知盒子 - 资源导航"
+          }
+        ]
+      },
+      {
+        "name": "资源社区",
+        "enName": "Resources & Community",
+        "links": [
+          {
+            "name": "宝儿盒",
+            "url": "https://baoerhe.cn/",
+            "description": "想你所想 及你所及"
+          },
+          {
+            "name": "迷鹿导航",
+            "url": "http://www.hifawn.com/",
+            "description": "迷鹿导航 - 发现更多精彩"
+          },
+          {
+            "name": "硬核指南",
+            "url": "https://yinghezhinan.com/",
+            "description": "硬核指南 - 资源导航"
+          },
+          {
+            "name": "乐享软件",
+            "url": "https://www.lxapk.com/apk/media",
+            "description": "乐享软件 - APK应用下载"
+          }
+        ]
+      },
+      {
+        "name": "极客发现",
+        "enName": "Geek Discovery",
+        "links": [
+          {
+            "name": "Product Hunt",
+            "url": "https://www.producthunt.com/",
+            "description": "全球新产品首发社区"
+          },
+          {
+            "name": "Uneed",
+            "url": "https://uneed.best/",
+            "description": "每日精选小众工具站"
+          },
+          {
+            "name": "MicroLaunch",
+            "url": "https://microlaunch.net/",
+            "description": "独立开发者产品首发榜"
+          },
+          {
+            "name": "BetaList",
+            "url": "https://betalist.com/",
+            "description": "初创产品早鸟站"
+          },
+          {
+            "name": "SideProjectors",
+            "url": "https://sideprojectors.com/",
+            "description": "副业项目买卖导航"
+          },
+          {
+            "name": "Makerlog",
+            "url": "https://getmakerlog.com/",
+            "description": "极客日常打卡社区"
+          },
+          {
+            "name": "Peerlist",
+            "url": "https://peerlist.io/",
+            "description": "设计师开发者作品集"
+          },
+          {
+            "name": "SaaS Wheel",
+            "url": "https://saaswheel.com/",
+            "description": "独立SaaS工具跟踪"
+          },
+          {
+            "name": "Hacker News",
+            "url": "https://news.ycombinator.com/",
+            "description": "全球最高含金量极客社区"
+          },
+          {
+            "name": "DevHunt",
+            "url": "https://devhunt.org/",
+            "description": "开发者工具首发平台"
+          },
+          {
+            "name": "SaaSHub",
+            "url": "https://saashub.com/",
+            "description": "独立软件客观对比导航"
+          },
+          {
+            "name": "DEV Community",
+            "url": "https://dev.to/",
+            "description": "全球最大开发者博客社区"
+          },
+          {
+            "name": "There's An AI For That",
+            "url": "https://theresanaiforthat.com/",
+            "description": "全球最全AI工具编年史"
+          },
+          {
+            "name": "Futurepedia",
+            "url": "https://futurepedia.io/",
+            "description": "AI工具分类大百科"
+          },
+          {
+            "name": "Dang AI",
+            "url": "https://dang.ai/",
+            "description": "高实用性AI项目聚合"
+          },
+          {
+            "name": "TopAI.tools",
+            "url": "https://topai.tools/",
+            "description": "AI生产力工具探索"
+          },
+          {
+            "name": "Awwwards",
+            "url": "https://www.awwwards.com/",
+            "description": "全球网页设计金奖殿堂"
+          },
+          {
+            "name": "CSS Design Awards",
+            "url": "https://www.cssdesignawards.com/",
+            "description": "前沿动效与CSS艺术"
+          },
+          {
+            "name": "Land-book",
+            "url": "https://land-book.com/",
+            "description": "全球最佳落地页灵感"
+          },
+          {
+            "name": "Godly",
+            "url": "https://godly.website/",
+            "description": "创意拉满的极客风格网站"
+          }
+        ]
+      },
+      {
+        "name": "资源导航",
+        "enName": "Resource Nav",
+        "links": [
+          {
+            "name": "异次元软件",
+            "url": "https://iplaysoft.com/",
+            "description": "异次元软件世界"
+          },
+          {
+            "name": "书签地球",
+            "url": "https://bookmarkearth.cn/",
+            "description": ""
+          },
+          {
+            "name": "开发者武器库",
+            "url": "https://devtool.tech/",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "网络计算",
+        "enName": "Network & Calc",
+        "links": [
+          {
+            "name": "WolframAlpha",
+            "url": "https://www.wolframalpha.com/",
+            "description": "计算型知识引擎，推导计算科学问题"
+          },
+          {
+            "name": "Speedtest",
+            "url": "https://www.speedtest.net/",
+            "description": "检查网速"
+          },
+          {
+            "name": "Down For Everyone",
+            "url": "https://downforeveryoneorjustme.com/",
+            "description": "检查任何网站是否停机"
+          },
+          {
+            "name": "Flightradar24",
+            "url": "https://www.flightradar24.com/",
+            "description": "实时追踪任何航班"
+          },
+          {
+            "name": "CamelCamelCamel",
+            "url": "https://camelcamelcamel.com/",
+            "description": "追踪亚马逊价格历史"
+          },
+          {
+            "name": "热门网站排名",
+            "url": "https://www.similarweb.com/top-websites/",
+            "description": "SimilarWeb - 热门网站排名"
+          },
+          {
+            "name": "Google地图",
+            "url": "https://www.earthol.com/g/",
+            "description": ""
+          },
+          {
+            "name": "战争局势地图",
+            "url": "https://liveuamap.com/",
+            "description": "LiveUAMap - 战争局势地图"
+          }
+        ]
+      },
+      {
+        "name": "学术科研",
+        "enName": "Academic",
+        "links": [
+          {
+            "name": "Semantic Scholar",
+            "url": "https://www.semanticscholar.org/",
+            "description": "AI驱动的免费学术搜索引擎"
+          },
+          {
+            "name": "Consensus",
+            "url": "https://consensus.app/",
+            "description": "基于科学研究提炼科学共识"
+          },
+          {
+            "name": "Elicit",
+            "url": "https://elicit.org/",
+            "description": "AI学术论文助手，快速梳理文献"
+          },
+          {
+            "name": "SciSpace",
+            "url": "https://scispace.com/",
+            "description": "AI辅助阅读，快速理解论文"
+          },
+          {
+            "name": "Connected Papers",
+            "url": "https://www.connectedpapers.com/",
+            "description": "论文引用关系可视化知识图谱"
+          },
+          {
+            "name": "Google Scholar",
+            "url": "https://scholar.google.com/",
+            "description": "免费学术搜索引擎"
+          },
+          {
+            "name": "ChatPDF",
+            "url": "https://www.chatpdf.com/",
+            "description": "AI理解任何研究论文"
+          }
+        ]
+      },
+      {
+        "name": "图像设计",
+        "enName": "Image & Design",
+        "links": [
+          {
+            "name": "Photopea",
+            "url": "https://www.photopea.com/",
+            "description": "浏览器里的免费网页版Photoshop"
+          },
+          {
+            "name": "Squoosh",
+            "url": "https://squoosh.app/",
+            "description": "谷歌出品无损高效图像压缩工具"
+          },
+          {
+            "name": "remove.bg",
+            "url": "https://www.remove.bg/",
+            "description": "一键免费移除图片背景"
+          },
+          {
+            "name": "Unscreen",
+            "url": "https://www.unscreen.com/",
+            "description": "智能移除视频背景"
+          },
+          {
+            "name": "Cleanup.pictures",
+            "url": "https://cleanup.pictures/",
+            "description": "擦除照片中多余的物体或路人"
+          },
+          {
+            "name": "Shots.so",
+            "url": "https://shots.so/",
+            "description": "快速制作精美的产品套壳截图"
+          },
+          {
+            "name": "Smartmockups",
+            "url": "https://smartmockups.com/",
+            "description": "一键将设计图应用到实物模型"
+          },
+          {
+            "name": "TinEye",
+            "url": "https://tineye.com/",
+            "description": "专业的图片反向搜索工具"
+          },
+          {
+            "name": "Playground AI",
+            "url": "https://playground.com/",
+            "description": "免费无限生图，质量能打Midjourney"
+          },
+          {
+            "name": "Krea AI",
+            "url": "https://krea.ai/",
+            "description": "实时出图，边想边生成"
+          },
+          {
+            "name": "Bigjpg",
+            "url": "https://bigjpg.com/",
+            "description": "图片无损放大，细节自动补充"
+          },
+          {
+            "name": "Photoroom",
+            "url": "https://photoroom.com/",
+            "description": "一键抠图、补光、去物体"
+          },
+          {
+            "name": "Clipdrop",
+            "url": "https://clipdrop.co/",
+            "description": "一键抠图，瞬间出效果"
+          },
+          {
+            "name": "Remaker AI",
+            "url": "https://remaker.ai/",
+            "description": "AI换脸，分钟级快速"
+          },
+          {
+            "name": "Canva 可画",
+            "url": "https://www.canva.cn/",
+            "description": "在线平面设计工具"
+          },
+          {
+            "name": "在线PS",
+            "url": "https://www.gaoding.com/",
+            "description": "稿定设计-在线图片编辑"
+          },
+          {
+            "name": "TinyPNG",
+            "url": "https://tinypng.com/",
+            "description": "智能PNG图片压缩"
+          },
+          {
+            "name": "图好快",
+            "url": "https://www.tuhaokuai.com/",
+            "description": "图片在线压缩工具"
+          }
+        ]
+      },
+      {
+        "name": "程序开发",
+        "enName": "Developer",
+        "links": [
+          {
+            "name": "Phind",
+            "url": "https://phind.com/",
+            "description": "专为开发者量身定制的AI搜索引擎"
+          },
+          {
+            "name": "Explainshell",
+            "url": "https://explainshell.com/",
+            "description": "拆解并解释复杂的Linux终端命令"
+          },
+          {
+            "name": "Regex101",
+            "url": "https://regex101.com/",
+            "description": "实时测试调试并解释正则表达式"
+          },
+          {
+            "name": "Carbon",
+            "url": "https://carbon.now.sh/",
+            "description": "将代码变成高颜值的艺术截图"
+          },
+          {
+            "name": "Ray.so",
+            "url": "https://ray.so/",
+            "description": "极简时尚的代码高亮截图工具"
+          },
+          {
+            "name": "CodeBeautify",
+            "url": "https://codebeautify.org/",
+            "description": "一键美化格式化混乱代码"
+          },
+          {
+            "name": "JSON Formatter",
+            "url": "https://jsonformatter.org/",
+            "description": "JSON数据格式化与解析工具"
+          },
+          {
+            "name": "Cursor",
+            "url": "https://cursor.sh/",
+            "description": "AI编程，免费额度够用"
+          },
+          {
+            "name": "V0 by Vercel",
+            "url": "https://v0.dev/",
+            "description": "Vercel前端生成器，描述成页面"
+          },
+          {
+            "name": "Framer",
+            "url": "https://framer.com/",
+            "description": "说话建网站，无需代码基础"
+          },
+          {
+            "name": "Replit",
+            "url": "https://replit.com/",
+            "description": "浏览器编码、AI助手、秒部署"
+          },
+          {
+            "name": "MakeReal",
+            "url": "https://makereal.tldraw.com/",
+            "description": "草图变网页，秒成现实"
+          },
+          {
+            "name": "Prettier",
+            "url": "https://prettier.io/",
+            "description": "清晰格式化任何代码"
+          },
+          {
+            "name": "在线工具",
+            "url": "https://tool.lu/",
+            "description": "程序员的在线工具箱"
+          },
+          {
+            "name": "菜鸟工具",
+            "url": "https://c.runoob.com/",
+            "description": "菜鸟教程在线工具"
+          }
+        ]
+      },
+      {
+        "name": "效率资源",
+        "enName": "Productivity",
+        "links": [
+          {
+            "name": "12ft.io",
+            "url": "https://12ft.io/",
+            "description": "绕过各种新闻博客网站的付费墙"
+          },
+          {
+            "name": "Archive.today",
+            "url": "https://archive.ph/",
+            "description": "永久网页快照存档，突破内容限制"
+          },
+          {
+            "name": "Archive.org",
+            "url": "https://archive.org/",
+            "description": "互联网档案馆，访问网站旧版本"
+          },
+          {
+            "name": "AlternativeTo",
+            "url": "https://alternativeto.net/",
+            "description": "输入任意软件找出免费平替"
+          },
+          {
+            "name": "SimilarSites",
+            "url": "https://similarsites.com/",
+            "description": "推荐同类型体验相似的网站"
+          },
+          {
+            "name": "Raindrop.io",
+            "url": "https://raindrop.io/",
+            "description": "全平台高颜值书签与知识管理器"
+          },
+          {
+            "name": "Open Culture",
+            "url": "https://openculture.com/",
+            "description": "汇集全球顶尖大学免费课程"
+          },
+          {
+            "name": "Coursera",
+            "url": "https://www.coursera.org/",
+            "description": "顶级大学免费在线课程"
+          },
+          {
+            "name": "Summarize.tech",
+            "url": "https://www.summarize.tech/",
+            "description": "AI一键提取总结长视频核心摘要"
+          },
+          {
+            "name": "Smallpdf",
+            "url": "https://smallpdf.com/",
+            "description": "极简的在线PDF编辑转换压缩工具"
+          },
+          {
+            "name": "iLovePDF",
+            "url": "https://www.ilovepdf.com/",
+            "description": "免费的PDF合并拆分加解密工具"
+          },
+          {
+            "name": "Sejda",
+            "url": "https://www.sejda.com/",
+            "description": "免费在线编辑PDF"
+          },
+          {
+            "name": "TinyWow",
+            "url": "https://tinywow.com/",
+            "description": "单个网站100+免费工具"
+          },
+          {
+            "name": "SnapSave",
+            "url": "https://snapsave.app/",
+            "description": "下载社交媒体任何视频"
+          },
+          {
+            "name": "Excalidraw",
+            "url": "https://excalidraw.com/",
+            "description": "免费手绘图表"
+          },
+          {
+            "name": "tldraw",
+            "url": "https://www.tldraw.com/",
+            "description": "浏览器中无限白板"
+          },
+          {
+            "name": "Convertio",
+            "url": "https://convertio.co/zh/",
+            "description": "在线文件格式转换"
+          },
+          {
+            "name": "爱资料工具",
+            "url": "https://www.toolnb.com/",
+            "description": "在线工具大全"
+          },
+          {
+            "name": "装机猫纯净系统",
+            "url": "https://zhuangjimao.com/system",
+            "description": ""
+          },
+          {
+            "name": "萌娘百科",
+            "url": "https://zh.moegirl.org.cn/#/flow",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "音乐娱乐",
+        "enName": "Music & Fun",
+        "links": [
+          {
+            "name": "JustWatch",
+            "url": "https://www.justwatch.com/",
+            "description": "全网搜索电影美剧在哪个流媒体上线"
+          },
+          {
+            "name": "Tunefind",
+            "url": "https://www.tunefind.com/",
+            "description": "找出电影美剧里的背景音乐"
+          },
+          {
+            "name": "Radio Garden",
+            "url": "https://radio.garden/",
+            "description": "3D地球仪收听全球实时广播电台"
+          },
+          {
+            "name": "Every Noise",
+            "url": "https://everynoise.com/",
+            "description": "探索世界上已知的每种音乐流派"
+          },
+          {
+            "name": "Music for Programming",
+            "url": "https://musicforprogramming.net/",
+            "description": "专为写代码设计的极简背景音乐"
+          },
+          {
+            "name": "myNoise",
+            "url": "https://mynoise.net/",
+            "description": "强大的自定义白噪音生成器"
+          },
+          {
+            "name": "Coffitivity",
+            "url": "https://coffitivity.com/",
+            "description": "模拟咖啡馆环境音提升创造力"
+          },
+          {
+            "name": "Brain.fm",
+            "url": "https://www.brain.fm/",
+            "description": "专注音乐"
+          },
+          {
+            "name": "Noisli",
+            "url": "https://www.noisli.com/",
+            "description": "自定义专注声景"
+          },
+          {
+            "name": "Mojito MV",
+            "url": "https://www.mojidict.com/",
+            "description": "音乐MV在线观看"
+          },
+          {
+            "name": "音乐播放器星标排行",
+            "url": "https://git.hiwiki.org/zh-CN/rank/music-player",
+            "description": "167 款开源音乐播放器按星标排行"
+          }
+        ]
+      },
+      {
+        "name": "AI工具",
+        "enName": "AI Tools",
+        "links": [
+          {
+            "name": "Perplexity",
+            "url": "https://perplexity.ai/",
+            "description": "AI搜索，问题秒答+来源标注"
+          },
+          {
+            "name": "Poe",
+            "url": "https://poe.com/",
+            "description": "一站用GPT-4o、Claude、Gemini"
+          },
+          {
+            "name": "Claude",
+            "url": "https://claude.ai/",
+            "description": "Anthropic官方助手，长文处理顶级"
+          },
+          {
+            "name": "Hugging Face",
+            "url": "https://huggingface.co/spaces",
+            "description": "开源模型试玩基地"
+          },
+          {
+            "name": "ElevenLabs",
+            "url": "https://elevenlabs.io/",
+            "description": "5秒复制任何人声线"
+          },
+          {
+            "name": "Suno",
+            "url": "https://suno.com/",
+            "description": "歌词转完整歌曲"
+          },
+          {
+            "name": "Runway Gen-3",
+            "url": "https://runwayml.com/",
+            "description": "文生视频天花板，Gen-3免费"
+          },
+          {
+            "name": "快手可灵",
+            "url": "https://klingai.kuaishou.com/",
+            "description": "中文视频最流畅"
+          },
+          {
+            "name": "HeyGen",
+            "url": "https://heygen.com/",
+            "description": "照片加语音变数字人"
+          },
+          {
+            "name": "D-ID",
+            "url": "https://d-id.com/",
+            "description": "静图变说话视频"
+          },
+          {
+            "name": "Opus Clip",
+            "url": "https://opus.pro/",
+            "description": "自动剪短视频，秒找爆点"
+          },
+          {
+            "name": "Napkin AI",
+            "url": "https://napkin.ai/",
+            "description": "文本转信息图表"
+          },
+          {
+            "name": "Gamma App",
+            "url": "https://gamma.app/",
+            "description": "一键生成PPT"
+          },
+          {
+            "name": "Notion AI",
+            "url": "https://notion.so/",
+            "description": "Notion AI的写改译能力"
+          },
+          {
+            "name": "DeepL Write",
+            "url": "https://deepl.com/write",
+            "description": "写作神器，免费版日常够用"
+          },
+          {
+            "name": "Fathom",
+            "url": "https://fathom.video/",
+            "description": "会议边开边录，免费月300分钟"
           }
         ]
       }
@@ -1589,24 +2851,6 @@ window.KISSTR_DATA = [
             "name": "Charactour",
             "url": "https://www.charactour.com",
             "description": "匹配与你性格最像的虚构影视角色。"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "人文综合",
-    "icon": "🌐",
-    "color": "linear-gradient(135deg, #5099d4, #6fc3df)",
-    "subcategories": [
-      {
-        "name": "合集排行",
-        "enName": "Directories & Rankings",
-        "links": [
-          {
-            "name": "FMHY 备份页",
-            "url": "https://fmhy.net/other/backups",
-            "description": "全球免费资源合集，官方备份镜像列表"
           }
         ]
       }
@@ -19005,4596 +20249,6 @@ window.KISSTR_DATA = [
     ]
   },
   {
-    "name": "Vibe Coding",
-    "subcategories": [
-      {
-        "name": "浏览器起始页与导航",
-        "links": [
-          {
-            "name": "YUYI新标签页",
-            "url": "https://ytab.top",
-            "description": "YUYI- 自己开发的高颜值浏览器新标签页插 160播放"
-          },
-          {
-            "name": "StarterTab",
-            "url": "https://startertab.com/",
-            "description": "HN@allig256 自定义新标签页起始 HN332分"
-          },
-          {
-            "name": "Speed Dial 2",
-            "url": "https://speeddial2.com/",
-            "description": "HN@virae /Firefox新标签页快速拨号书签页"
-          },
-          {
-            "name": "Homepage",
-            "url": "https://github.com/gethomepage/homepage",
-            "description": "@gethomepage 自托管主页仪表盘 ★33k"
-          },
-          {
-            "name": "Flame",
-            "url": "https://github.com/pawelmalak/flame",
-            "description": "@pawelmalak 轻量自托管起始页 ★6.6k"
-          },
-          {
-            "name": "homer",
-            "url": "https://github.com/bastienwirtz/homer",
-            "description": "@bastienwirtz 极简静态服务器 ★11.6k"
-          },
-          {
-            "name": "sou",
-            "url": "https://github.com/5iux/sou",
-            "description": "@5iux 极简搜索起始页，告别广告资讯导航 ★928"
-          },
-          {
-            "name": "startpage",
-            "url": "https://github.com/deepjyoti30/startpage",
-            "description": "@deepjyoti30 面向Chrome ★666"
-          },
-          {
-            "name": "mtab",
-            "url": "https://github.com/tsxcw/mtab",
-            "description": "@tsxcw 免费无广告的书签导航，多端同步 ★769"
-          },
-          {
-            "name": "LiteMark",
-            "url": "https://github.com/topqaz/LiteMark",
-            "description": "@topqaz 集成AI与MCP接口的个人书签 ★313"
-          },
-          {
-            "name": "tabliss",
-            "url": "https://github.com/joelshepherd/tabliss",
-            "description": "@joelshepherd 美观可定制的新标 ★2.8k"
-          },
-          {
-            "name": "MaterialYouNewTab",
-            "url": "https://github.com/prem-k-r/MaterialYouNewTab",
-            "description": "@prem-k-r 灵感来自 ★733"
-          },
-          {
-            "name": "newtab-naivetab",
-            "url": "https://github.com/GXFG/newtab-naivetab",
-            "description": "@GXFG 带可视化键盘操作的浏览器新标签页扩 ★138"
-          },
-          {
-            "name": "Startboard",
-            "url": "https://startboard.so/",
-            "description": "HN@SunshineTheCat 简洁的浏览器起始页与"
-          },
-          {
-            "name": "Anori",
-            "url": "https://anori.sinja.io/",
-            "description": "HN@OlegWock 用小部件自由拼装自己的新标签页"
-          },
-          {
-            "name": "Dashy",
-            "url": "https://github.com/Lissy93/dashy",
-            "description": "@Lissy93 自托管仪表盘 ★26.6k"
-          },
-          {
-            "name": "Sun Panel 太阳面板",
-            "url": "https://github.com/hslr-s/sun-panel",
-            "description": "@hslr-s 国人开发的服务器 ★5.3k"
-          },
-          {
-            "name": "bento",
-            "url": "https://github.com/migueravila/bento",
-            "description": "@migueravila 极简优雅 ★2.2k"
-          },
-          {
-            "name": "tilde",
-            "url": "https://github.com/xvvvyz/tilde",
-            "description": "@xvvvyz 极简单行终端风浏览器起始页 ★873"
-          },
-          {
-            "name": "Card-Tab",
-            "url": "https://github.com/hmhm2022/Card-Tab",
-            "description": "@hmhm2022 部署在 ★538"
-          },
-          {
-            "name": "menav",
-            "url": "https://github.com/rbetree/menav",
-            "description": "@rbetree 一键部署的个人导航站生成器 ★308"
-          },
-          {
-            "name": "simptab",
-            "url": "https://github.com/Kenshin/simptab",
-            "description": "@Kenshin 极简Chrome新标签页 ★716"
-          },
-          {
-            "name": "markdown-new-tab",
-            "url": "https://github.com/plibither8/markdown-new-tab",
-            "description": "@plibither8 在新标签页里直接写 ★838"
-          },
-          {
-            "name": "NovelTab",
-            "url": "http://noveltab.com/",
-            "description": "HN@serzhb 面向开发者的Chrome新标签页"
-          },
-          {
-            "name": "Linkwarden",
-            "url": "https://github.com/linkwarden/linkwarden",
-            "description": "@linkwarden 自托管协作书签管理 ★19.9k"
-          },
-          {
-            "name": "Mafl",
-            "url": "https://github.com/hywax/mafl",
-            "description": "@hywax 极简灵活的自托管起始页 ★756"
-          },
-          {
-            "name": "Bonjourr",
-            "url": "https://github.com/victrme/Bonjourr",
-            "description": "@victrme 灵感来自iOS的轻量干净起 ★2.1k"
-          },
-          {
-            "name": "excalith-start-page",
-            "url": "https://github.com/excalith/excalith-start-page",
-            "description": "@excalith 终端风、干净且功能丰富的可 ★747"
-          },
-          {
-            "name": "WebStack",
-            "url": "https://github.com/owen0o0/WebStack",
-            "description": "@owen0o0 版WebStack导航主题 ★2.5k"
-          },
-          {
-            "name": "TwoNav",
-            "url": "https://github.com/tznb1/TwoNav",
-            "description": "@tznb1 第二代云导航与云书签管理系统 ★456"
-          },
-          {
-            "name": "CloudNav-",
-            "url": "https://github.com/sese972010/CloudNav-",
-            "description": "@sese972010 托管在 ★276"
-          },
-          {
-            "name": "mtab",
-            "url": "https://github.com/maxhu08/mtab",
-            "description": "@maxhu08 轻量新标签页扩展 ★574"
-          },
-          {
-            "name": "mue",
-            "url": "https://github.com/mue/mue",
-            "description": "@mue 快速、开源的现代浏览器新标签页 ★759"
-          },
-          {
-            "name": "用 Cursor 开发的网址导航站 nextnav",
-            "url": "https://github.com/ericxu9/next-nav-web",
-            "description": "V2EX@xumiao Next.js14+shadcn"
-          },
-          {
-            "name": "Tabbie",
-            "url": "https://tabbie.io/",
-            "description": "HN@jariz 高度可定制新标签页，内置HN"
-          },
-          {
-            "name": "Glance",
-            "url": "https://github.com/glanceapp/glance",
-            "description": "@glanceapp 自托管RSS/书签仪表盘 ★37k"
-          },
-          {
-            "name": "Linkding",
-            "url": "https://github.com/sissbruecker/linkding",
-            "description": "@sissbruecker 极简快速的自托 ★11.3k"
-          },
-          {
-            "name": "Jump",
-            "url": "https://github.com/daledavies/jump",
-            "description": "@daledavies 简洁快速的自托管起始页 ★605"
-          },
-          {
-            "name": "docker-flare",
-            "url": "https://github.com/soulteary/docker-flare",
-            "description": "@soulteary 高性能自托管导航页 ★2.1k"
-          },
-          {
-            "name": "re-start",
-            "url": "https://github.com/refact0r/re-start",
-            "description": "@refact0r 终端风格浏览器起始页 ★446"
-          },
-          {
-            "name": "sui",
-            "url": "https://github.com/jeroenpardon/sui",
-            "description": "@jeroenpardon 自托管服务器起始 ★1574"
-          },
-          {
-            "name": "PersonalHomepage",
-            "url": "https://github.com/NolanGit/PersonalHomepage",
-            "description": "@NolanGit 前后端分离的个人导航页 ★314"
-          },
-          {
-            "name": "nightTab",
-            "url": "https://github.com/zombieFox/nightTab",
-            "description": "@zombieFox 可自定义配色与布局的中 ★2.1k"
-          },
-          {
-            "name": "wai",
-            "url": "https://github.com/dukeluo/wai",
-            "description": "@dukeluo 提醒活动颈椎 ★869"
-          },
-          {
-            "name": "lemon-new-tab",
-            "url": "https://github.com/Redlnn/lemon-new-tab",
-            "description": "@Redlnn 简约的本地新标签页扩展 ★195"
-          },
-          {
-            "name": "FlatNas",
-            "url": "https://github.com/Garry-QD/FlatNas",
-            "description": "轻量级可定制个人导航页与仪表盘（Vue3+Express），演示站 flatnas.top ★583"
-          }
-        ]
-      },
-      {
-        "name": "音乐播放器",
-        "links": [
-          {
-            "name": "AI 音乐播放器开发",
-            "url": "https://github.com/all-in-aigc/melodisco",
-            "description": "舜岳同学 个人探索用AI开发音乐播放器的全过程"
-          },
-          {
-            "name": "Hyperchroma",
-            "url": "https://hyperchroma.app/",
-            "description": "HN@aeroheim 能实时生成音乐MV的 HN61分"
-          },
-          {
-            "name": "浏览器内免费 AI 音乐分轨",
-            "url": "https://sevag.xyz/free-music-demixer/",
-            "description": "HN@sevagh 纯浏览器端跑的免费AI人声"
-          },
-          {
-            "name": "洛雪音乐 lx-music-desktop",
-            "url": "https://github.com/lyswhut/lx-music-desktop",
-            "description": "@lyswhut 单人开发 ★54.1k"
-          },
-          {
-            "name": "muffon",
-            "url": "https://github.com/staniel359/muffon",
-            "description": "@staniel359 桌面端多源音乐串流与 ★2.2k"
-          },
-          {
-            "name": "AlgerMusicPlayer",
-            "url": "https://github.com/algerkong/AlgerMusicPlayer",
-            "description": "@algerkong 第三方音乐播放器 ★16.9k"
-          },
-          {
-            "name": "spotube",
-            "url": "https://github.com/team-spotube/spotube",
-            "description": "@team-spotube 开源跨端音乐流 ★49.6k"
-          },
-          {
-            "name": "musikcube",
-            "url": "https://github.com/clangen/musikcube",
-            "description": "@clangen 跨平台终端音频引擎与音乐播 ★4.9k"
-          },
-          {
-            "name": "rmpc",
-            "url": "https://github.com/mierak/rmpc",
-            "description": "@mierak 现代可配置 ★3.4k"
-          },
-          {
-            "name": "listen1_mobile",
-            "url": "https://github.com/listen1/listen1_mobile",
-            "description": "@listen1 手机版聚合免费音乐 ★3.1k"
-          },
-          {
-            "name": "Vue-mmPlayer",
-            "url": "https://github.com/maomao1996/Vue-mmPlayer",
-            "description": "@maomao1996 基于Vue的在线音乐 ★2.7k"
-          },
-          {
-            "name": "pear-desktop",
-            "url": "https://github.com/pear-devs/pear-desktop",
-            "description": "@pear-devs 桌面端音乐播放器扩展 ★33.6k"
-          },
-          {
-            "name": "mStream",
-            "url": "https://github.com/IrosTheBeggar/mStream",
-            "description": "@IrosTheBeggar 最易上手的音乐 ★2400"
-          },
-          {
-            "name": "musicat",
-            "url": "https://github.com/basharovV/musicat",
-            "description": "@basharovV 简洁的桌面离线音乐播放器 ★946"
-          },
-          {
-            "name": "TTS-WebUI",
-            "url": "https://github.com/rsxdalv/TTS-WebUI",
-            "description": "@rsxdalv 集成ACE-Step ★3.3k"
-          },
-          {
-            "name": "Meta 开源 AI 音乐生成工具",
-            "url": "https://github.com/facebookresearch/audiocraft",
-            "description": "AI百晓生 Meta开源AI音乐生成工具 3.0万播放"
-          },
-          {
-            "name": "Khua Player：专为 Apple 芯片优化的 macOS 多媒体播放器",
-            "url": "https://khua.app/",
-            "description": "V2EX@nake13 macOS播放器又慢又难用"
-          },
-          {
-            "name": "Radiccio",
-            "url": "https://radiccio.music/",
-            "description": "HN@dmdeller 音乐播放器，支持本地文件"
-          },
-          {
-            "name": "CLAVIER-36 生成音乐编程环境",
-            "url": "https://clavier36.com/p/LtZDdcRP3haTWHErgvdM",
-            "description": "HN@river_dillon 一台为生成音乐设计的编程"
-          },
-          {
-            "name": "YesPlayMusic",
-            "url": "https://github.com/qier222/YesPlayMusic",
-            "description": "@qier222 高颜值第三方网易云播放器 ★33.3k"
-          },
-          {
-            "name": "HyPlayer",
-            "url": "https://github.com/HyPlayer/HyPlayer",
-            "description": "@HyPlayer 第三方网易云音乐播放器 ★1.4k"
-          },
-          {
-            "name": "listen1_desktop",
-            "url": "https://github.com/listen1/listen1_desktop",
-            "description": "@listen1 桌面版，一个播放器聚合各 ★11.4k"
-          },
-          {
-            "name": "spotify-player",
-            "url": "https://github.com/aome510/spotify-player",
-            "description": "@aome510 终端里功能完整的 ★7.3k"
-          },
-          {
-            "name": "spotifast",
-            "url": "https://github.com/crmne/spotifast",
-            "description": "@crmne 写的轻快原生Spotify本地 ★4.8k"
-          },
-          {
-            "name": "EchoMusic",
-            "url": "https://github.com/hoowhoami/EchoMusic",
-            "description": "@hoowhoami 简约第三方酷狗概念版音 ★3.3k"
-          },
-          {
-            "name": "Tauon",
-            "url": "https://github.com/Taiko2k/Tauon",
-            "description": "@Taiko2k 现代感十足的桌面音乐播放器 ★2.9k"
-          },
-          {
-            "name": "BloomeeTunes",
-            "url": "https://github.com/HemantKArya/BloomeeTunes",
-            "description": "@HemantKArya 跨平台无广告音乐 ★2.2k"
-          },
-          {
-            "name": "blackcandy",
-            "url": "https://github.com/blackcandy-org/blackcandy",
-            "description": "@blackcandy-org 自托管音乐串 ★4422"
-          },
-          {
-            "name": "sonixd",
-            "url": "https://github.com/jeffvli/sonixd",
-            "description": "@jeffvli 功能完整的Subsonic ★1914"
-          },
-          {
-            "name": "audioling",
-            "url": "https://github.com/audioling/audioling",
-            "description": "@audioling 主打自托管音乐服务器的音 ★915"
-          },
-          {
-            "name": "铃音播放器 LyciaMusic",
-            "url": "https://lycia.prettyboy.fun",
-            "description": "纯黑灬Kurisu 个人结合AI开发的开源 1.7万播放"
-          },
-          {
-            "name": "Kitten TTS 25MB 纯 CPU 开源语音合成",
-            "url": "https://github.com/KittenML/KittenTTS",
-            "description": "HN@divamgupta 仅25MB"
-          },
-          {
-            "name": "Demon 开源实时音乐扩散引擎",
-            "url": "https://daydreamlive.github.io/DEMON/",
-            "description": "HN@ryanontheinside 可在本地GPU以"
-          },
-          {
-            "name": "MusicFree",
-            "url": "https://github.com/maotoumao/MusicFree",
-            "description": "@maotoumao 插件化/定制化 ★27.2k"
-          },
-          {
-            "name": "nuclear",
-            "url": "https://github.com/nukeop/nuclear",
-            "description": "@nukeop 聚合全网免费音源的桌面流媒 ★18.6k"
-          },
-          {
-            "name": "feishin",
-            "url": "https://github.com/jeffvli/feishin",
-            "description": "@jeffvli 现代化自托管音乐播放器 ★10.0k"
-          },
-          {
-            "name": "InnerTune",
-            "url": "https://github.com/z-huang/InnerTune",
-            "description": "@z-huang 3风格 ★6.1k"
-          },
-          {
-            "name": "Musify",
-            "url": "https://github.com/gokadzev/Musify",
-            "description": "@gokadzev 一站式流畅流媒体音乐 ★4.3k"
-          },
-          {
-            "name": "lrcget",
-            "url": "https://github.com/tranxuanthang/lrcget",
-            "description": "@tranxuanthang 批量为离线音乐 ★3.2k"
-          },
-          {
-            "name": "ponymusic",
-            "url": "https://github.com/wangchenyan/ponymusic",
-            "description": "@wangchenyan 仿网易云音乐的 ★2.9k"
-          },
-          {
-            "name": "museeks",
-            "url": "https://github.com/martpie/museeks",
-            "description": "@martpie 简洁干净的跨平台桌面音乐播 ★2.1k"
-          },
-          {
-            "name": "NeriPlayer",
-            "url": "https://github.com/cwuom/NeriPlayer",
-            "description": "@cwuom 聚合多源播放的原生安卓音频播放 ★3617"
-          },
-          {
-            "name": "swingmusic",
-            "url": "https://github.com/swingmx/swingmusic",
-            "description": "@swingmx 美观的自托管音乐播放器 ★2076"
-          },
-          {
-            "name": "airsonic",
-            "url": "https://github.com/airsonic/airsonic",
-            "description": "@airsonic 老牌自由开源音乐串流服务 ★2044"
-          },
-          {
-            "name": "audio.cpp",
-            "url": "https://github.com/0xShug0/audio.cpp",
-            "description": "@0xShug0 纯C++编写的音频模型统一 ★3.2k"
-          },
-          {
-            "name": "Folia 播放器 v0.6.0 发布",
-            "url": "https://github.com/chthollyphile/folia-major",
-            "description": "4mtx Folia播放器发布 ★3.2k"
-          },
-          {
-            "name": "QuickTunes",
-            "url": "https://furnacecreek.org/quicktunes/",
-            "description": "HN@albertru90 带iPod复古手 HN98分"
-          },
-          {
-            "name": "Sonauto 可控 AI 音乐创作",
-            "url": "https://sonauto.ai/",
-            "description": "HN@zaptrem 更可控、可按参数引导的AI音乐生成"
-          },
-          {
-            "name": "Mineradio 可视化音乐播放器",
-            "url": "https://github.com/XxHuberrr/Mineradio",
-            "description": "Mineradio沉浸式可视化音乐播放器"
-          },
-          {
-            "name": "Listen 1",
-            "url": "https://github.com/listen1/listen1_chrome_extension",
-            "description": "@listen1 一个插件聚合国内外主流音 ★12.1k"
-          },
-          {
-            "name": "lx-music-mobile",
-            "url": "https://github.com/lyswhut/lx-music-mobile",
-            "description": "@lyswhut 洛雪音乐手机版 ★18.5k"
-          },
-          {
-            "name": "MusicFreeDesktop",
-            "url": "https://github.com/maotoumao/MusicFreeDesktop",
-            "description": "@maotoumao 插件化、无广告免费音乐 ★8.9k"
-          },
-          {
-            "name": "ArchiveTune",
-            "url": "https://github.com/rukamori/ArchiveTune",
-            "description": "@rukamori 可爱风Android本地 ★6.7k"
-          },
-          {
-            "name": "Auxio",
-            "url": "https://github.com/OxygenCobalt/Auxio",
-            "description": "@OxygenCobalt 简约理性的 ★4.3k"
-          },
-          {
-            "name": "kew",
-            "url": "https://github.com/ravachol/kew",
-            "description": "@ravachol 里快速沉浸的终端音乐播放 ★3.1k"
-          },
-          {
-            "name": "biu",
-            "url": "https://github.com/wood3n/biu",
-            "description": "@wood3n B站视频/音频播放器 ★2.7k"
-          },
-          {
-            "name": "tsukimi",
-            "url": "https://github.com/tsukinaha/tsukimi",
-            "description": "@tsukinaha 简约第三方 ★3.1k"
-          },
-          {
-            "name": "gonic",
-            "url": "https://github.com/sentriz/gonic",
-            "description": "@sentriz 免费开源的 ★2557"
-          },
-          {
-            "name": "SPlayer-Next",
-            "url": "https://github.com/SPlayer-Dev/SPlayer-Next",
-            "description": "@SPlayer-Dev 支持丰富歌词的跨平 ★1286"
-          },
-          {
-            "name": "olivia",
-            "url": "https://github.com/olivia-ai/olivia",
-            "description": "@olivia-ai 基于神经网络的开源个人 ★3.7k"
-          }
-        ]
-      },
-      {
-        "name": "浏览器插件与扩展",
-        "links": [
-          {
-            "name": "Search Bookmarks History Tabs",
-            "url": "https://github.com/Fannon/search-bookmarks-history-and-tabs",
-            "description": "HN@Fannon 模糊搜索书签/历史/打开标签页的扩展"
-          },
-          {
-            "name": "沉浸式翻译",
-            "url": "https://github.com/immersive-translate/immersive-translate",
-            "description": "@immersive-translate ★19.1k"
-          },
-          {
-            "name": "HackBrowserData",
-            "url": "https://github.com/moonD4rk/HackBrowserData",
-            "description": "@moonD4rk 提取并解密浏览器里的密 ★14.6k"
-          },
-          {
-            "name": "undiscord",
-            "url": "https://github.com/victornpb/undiscord",
-            "description": "@victornpb 批量删除 ★6.7k"
-          },
-          {
-            "name": "I-Still-Dont-Care-About-Cookies",
-            "url": "https://github.com/OhMyGuus/I-Still-Dont-Care-About-Cookies",
-            "description": "@OhMyGuus 自动跳过Cookie同意 ★4.3k"
-          },
-          {
-            "name": "marinara",
-            "url": "https://github.com/schmich/marinara",
-            "description": "@schmich 上的番茄钟时间管理助手 ★2.5k"
-          },
-          {
-            "name": "cookie-editor",
-            "url": "https://github.com/Moustachauve/cookie-editor",
-            "description": "@Moustachauve 创建/编辑 ★1.7k"
-          },
-          {
-            "name": "UserAgent-Switcher",
-            "url": "https://github.com/ray-lothian/UserAgent-Switcher",
-            "description": "@ray-lothian 高度可配置的UA切 ★1.5k"
-          },
-          {
-            "name": "MouseTooltipTranslator",
-            "url": "https://github.com/ttop32/MouseTooltipTranslator",
-            "description": "@ttop32 鼠标悬停即翻译任意语言 ★1.3k"
-          },
-          {
-            "name": "gemma4-browser-extension",
-            "url": "https://github.com/nico-martin/gemma4-browser-extension",
-            "description": "@nico-martin 设备端本地运行的 ★1159"
-          },
-          {
-            "name": "Refined Hacker News",
-            "url": "https://github.com/plibither8/refined-hacker-news",
-            "description": "HN@plibither8 美化与增强 HN259分"
-          },
-          {
-            "name": "Nanobrowser",
-            "url": "https://github.com/nanobrowser/nanobrowser",
-            "description": "@nanobrowser 开源 ★13.9k"
-          },
-          {
-            "name": "read-frog",
-            "url": "https://github.com/mengxi-ream/read-frog",
-            "description": "@mengxi-ream 陪读蛙，边读边练的 ★9.9k"
-          },
-          {
-            "name": "ublacklist",
-            "url": "https://github.com/iorate/ublacklist",
-            "description": "@iorate 把指定站点从Google搜索 ★6.7k"
-          },
-          {
-            "name": "search-by-image",
-            "url": "https://github.com/dessant/search-by-image",
-            "description": "@dessant 一键以图搜图的浏览器扩展 ★3.8k"
-          },
-          {
-            "name": "HaramBlur",
-            "url": "https://github.com/alganzory/HaramBlur",
-            "description": "@alganzory 体面上网 ★2.1k"
-          },
-          {
-            "name": "markdown-viewer",
-            "url": "https://github.com/simov/markdown-viewer",
-            "description": "@simov 在浏览器里直接预览 ★1.7k"
-          },
-          {
-            "name": "news-feed-eradicator",
-            "url": "https://github.com/jordwest/news-feed-eradicator",
-            "description": "@jordwest 删掉社交首页信息流 ★1.5k"
-          },
-          {
-            "name": "cloud-document-converter",
-            "url": "https://github.com/whale4113/cloud-document-converter",
-            "description": "@whale4113 把飞书文档一键转成 ★1.3k"
-          },
-          {
-            "name": "hoverzoom",
-            "url": "https://github.com/extesy/hoverzoom",
-            "description": "@extesy 鼠标悬停即放大图片的 ★2061"
-          },
-          {
-            "name": "sokuji",
-            "url": "https://github.com/kizuna-ai-lab/sokuji",
-            "description": "@kizuna-ai-lab 双语会议实时双 ★1361"
-          },
-          {
-            "name": "fake-filler-extension",
-            "url": "https://github.com/FakeFiller/fake-filler-extension",
-            "description": "@FakeFiller 一键自动填充表单的跨浏 ★654"
-          },
-          {
-            "name": "TabFloater",
-            "url": "https://www.tabfloater.io/",
-            "description": "HN@ba32107 给任意网页开启画中画 HN103分"
-          },
-          {
-            "name": "LLMFeeder",
-            "url": "https://github.com/jatinkrmalik/LLMFeeder",
-            "description": "HN@jatinkrmalik 为LLM抓取干净网页正文"
-          },
-          {
-            "name": "沙拉查词 Saladict",
-            "url": "https://github.com/crimx/ext-saladict",
-            "description": "@crimx 单人维护，聚合词典划词翻译 ★13.4k"
-          },
-          {
-            "name": "buster",
-            "url": "https://github.com/dessant/buster",
-            "description": "@dessant 辅助人类完成图形验证码的扩 ★9.3k"
-          },
-          {
-            "name": "chatgpt-advanced",
-            "url": "https://github.com/interstellard/chatgpt-advanced",
-            "description": "@interstellard 给 ★6.4k"
-          },
-          {
-            "name": "GhostText",
-            "url": "https://github.com/fregante/GhostText",
-            "description": "@fregante 用你本机编辑器写浏览器里 ★3.6k"
-          },
-          {
-            "name": "notifier-for-github",
-            "url": "https://github.com/sindresorhus/notifier-for-github",
-            "description": "@sindresorhus 新通知桌面提醒扩 ★2.0k"
-          },
-          {
-            "name": "maxurl",
-            "url": "https://github.com/qsniyg/maxurl",
-            "description": "@qsniyg 找到图片 ★1.6k"
-          },
-          {
-            "name": "webscrapbook",
-            "url": "https://github.com/danny0838/webscrapbook",
-            "description": "@danny0838 把网页抓取保存到本地或 ★1.2k"
-          },
-          {
-            "name": "knockoff",
-            "url": "https://github.com/Shpigford/knockoff",
-            "description": "@Shpigford 扩展：过滤伪品牌垃圾 ★2.0k"
-          },
-          {
-            "name": "deepseek-pp",
-            "url": "https://github.com/zhu1090093659/deepseek-pp",
-            "description": "@zhu1090093659 带MCP的 ★1866"
-          },
-          {
-            "name": "web-activity-time-tracker",
-            "url": "https://github.com/Stigmatoz/web-activity-time-tracker",
-            "description": "@Stigmatoz 统计并限制网站使用时长的 ★859"
-          },
-          {
-            "name": "Gemini Voyager",
-            "url": "https://github.com/Nagi-ovo/gemini-voyager",
-            "description": "Gemini增强扩展：时间线提示词库聊天导出"
-          },
-          {
-            "name": "Mem0 Chrome Extension",
-            "url": "https://github.com/mem0ai/mem0-chrome-extension",
-            "description": "HN@staranjeet 在ChatGPT"
-          },
-          {
-            "name": "uBlock",
-            "url": "https://github.com/gorhill/uBlock",
-            "description": "@gorhill Origin ★68.3k"
-          },
-          {
-            "name": "RSSHub-Radar",
-            "url": "https://github.com/DIYgod/RSSHub-Radar",
-            "description": "@DIYgod 一键发现并订阅RSS ★7.4k"
-          },
-          {
-            "name": "BilibiliSponsorBlock",
-            "url": "https://github.com/hanydd/BilibiliSponsorBlock",
-            "description": "@hanydd 自动跳过B站视频恰饭片段的插 ★6.2k"
-          },
-          {
-            "name": "SmartProxy",
-            "url": "https://github.com/salarcode/SmartProxy",
-            "description": "@salarcode 自动按规则切换代理的 ★2.8k"
-          },
-          {
-            "name": "read-aloud",
-            "url": "https://github.com/ken107/read-aloud",
-            "description": "@ken107 一键把网页内容朗读出来的扩展 ★1.8k"
-          },
-          {
-            "name": "web-archives",
-            "url": "https://github.com/dessant/web-archives",
-            "description": "@dessant 查看网页存档 ★1.6k"
-          },
-          {
-            "name": "web-search-navigator",
-            "url": "https://github.com/infokiller/web-search-navigator",
-            "description": "@infokiller 给Google ★956"
-          },
-          {
-            "name": "RPA",
-            "url": "https://github.com/A9T9/RPA",
-            "description": "@A9T9 录制宏让AI助手通过MCP操作浏 ★2.1k"
-          },
-          {
-            "name": "MarvellousSuspender",
-            "url": "https://github.com/gioxx/MarvellousSuspender",
-            "description": "@gioxx 自动挂起后台标签页省内存的扩展 ★1399"
-          },
-          {
-            "name": "quick-prompt",
-            "url": "https://github.com/wenyuanw/quick-prompt",
-            "description": "@wenyuanw 提示词管理与快捷输入浏览器 ★854"
-          }
-        ]
-      },
-      {
-        "name": "系统清理与优化工具",
-        "links": [
-          {
-            "name": "C盘一键清理工具",
-            "url": "https://github.com/JIEKE66633/One-click-cleaning-of-C-drive",
-            "description": "杭州虫哥 真正免费的C盘一键清理工具，10万播放"
-          },
-          {
-            "name": "PasteClean",
-            "url": "https://iixotic.github.io/PasteClean/website/",
-            "description": "HN@Iblockedthem 自动剥离剪贴 HN20分"
-          },
-          {
-            "name": "dupeGuru",
-            "url": "https://github.com/arsenetar/dupeguru",
-            "description": "@arsenetar 跨平台重复文件查找工具 ★7.9k"
-          },
-          {
-            "name": "memreduct",
-            "url": "https://github.com/henrypp/memreduct",
-            "description": "@henrypp 轻量实时内存监控与释放工 ★10.7k"
-          },
-          {
-            "name": "burrow",
-            "url": "https://github.com/caezium/burrow",
-            "description": "@caezium 集清理、应用管理、维护 ★1.5k"
-          },
-          {
-            "name": "machkit",
-            "url": "https://github.com/rhevorn/machkit",
-            "description": "@rhevorn 原生隐私向macOS存储 ★290"
-          },
-          {
-            "name": "SpaceSniffer",
-            "url": "https://github.com/redtrillix/SpaceSniffer",
-            "description": "@redtrillix 磁盘空间可视化分析器 ★2041"
-          },
-          {
-            "name": "MangoDisk",
-            "url": "https://github.com/harry0703/MangoDisk",
-            "description": "资源汇社区 开源免费磁盘清理工具MangoDisk"
-          },
-          {
-            "name": "PDFMergely",
-            "url": "https://pdfmergely.com/",
-            "description": "HN@pdfmergely 纯浏览器端 HN18分"
-          },
-          {
-            "name": "BleachBit",
-            "url": "https://github.com/bleachbit/bleachbit",
-            "description": "@bleachbit Windows ★7.0k"
-          },
-          {
-            "name": "dua-cli",
-            "url": "https://github.com/Byron/dua-cli",
-            "description": "@Byron 快速可视化磁盘占用并删除垃圾数 ★6.3k"
-          },
-          {
-            "name": "WxCleaner",
-            "url": "https://github.com/yqxie1991/WxCleaner",
-            "description": "@yqxie1991 微信重复文件智能哈希识 ★1.1k"
-          },
-          {
-            "name": "czkawka-tauri",
-            "url": "https://github.com/shixinhuang99/czkawka-tauri",
-            "description": "@shixinhuang99 的Tauri跨平 ★231"
-          },
-          {
-            "name": "Radix",
-            "url": "https://github.com/colinvkim/Radix",
-            "description": "@colinvkim 极快的macOS磁盘空间 ★895"
-          },
-          {
-            "name": "cull",
-            "url": "https://github.com/legostin/cull",
-            "description": "@legostin 交互式TUI磁盘空间分析器 ★165"
-          },
-          {
-            "name": "开源C盘清理工具诈尸更新",
-            "url": "https://github.com/darkmatter2048/WindowsCleaner",
-            "description": "Mr_Jacek 个人维护的开源C盘清理工具停更一年后诈"
-          },
-          {
-            "name": "Skiff 磁盘清理",
-            "url": "https://github.com/DrizzleTime/Skiff",
-            "description": "V2EX@shiyu2001 跨平台磁盘清理工具"
-          },
-          {
-            "name": "PDFly",
-            "url": "https://pdfly.uk/",
-            "description": "HN@pagalannu01 个免费、全部在浏览器本地运"
-          },
-          {
-            "name": "rmlint",
-            "url": "https://github.com/sahib/rmlint",
-            "description": "@sahib 极快的命令行重复文件与文件系统 ★2.4k"
-          },
-          {
-            "name": "WinMemoryCleaner",
-            "url": "https://github.com/IgorMundstein/WinMemoryCleaner",
-            "description": "@IgorMundstein 调用 ★5.1k"
-          },
-          {
-            "name": "decluttarr",
-            "url": "https://github.com/ManiMatter/decluttarr",
-            "description": "@ManiMatter 自动清理Radarr ★886"
-          },
-          {
-            "name": "omni-search",
-            "url": "https://github.com/Eul45/omni-search",
-            "description": "@Eul45 高速文件搜索加重复文件查找 ★605"
-          },
-          {
-            "name": "Czkawka",
-            "url": "https://github.com/qarmin/czkawka",
-            "description": "@qarmin Rust重复文件清理器 ★33.9k"
-          },
-          {
-            "name": "Mole",
-            "url": "https://github.com/tw93/Mole",
-            "description": "@tw93 上清理、卸载、分析、优化 ★69.0k"
-          },
-          {
-            "name": "kondo",
-            "url": "https://github.com/tbillington/kondo",
-            "description": "@tbillington 清理各语言项目的依 ★2.4k"
-          },
-          {
-            "name": "AppDataCleaner",
-            "url": "https://github.com/TC999/AppDataCleaner",
-            "description": "@TC999 辅助清理AppData的小工具 ★370"
-          },
-          {
-            "name": "fclones",
-            "url": "https://github.com/pkolaczk/fclones",
-            "description": "@pkolaczk 高性能重复文件查找器 ★2955"
-          }
-        ]
-      },
-      {
-        "name": "第三方自制浏览器",
-        "links": [
-          {
-            "name": "moli 无头浏览器",
-            "url": "https://github.com/lexmount/moli",
-            "description": "V2EX@ldm0 Rust编写"
-          },
-          {
-            "name": "Floorp",
-            "url": "https://github.com/Floorp-Projects/Floorp",
-            "description": "@Floorp-Projects 日本小团队 ★8.4k"
-          },
-          {
-            "name": "从头写浏览器硬刚 Chrome",
-            "url": "https://github.com/openwebf/webf",
-            "description": "V2EX@coolwulf 有内核开发背景的作者基于"
-          },
-          {
-            "name": "Thorium",
-            "url": "https://github.com/Alex313031/thorium",
-            "description": "@Alex313031 基于 ★7.5k"
-          },
-          {
-            "name": "Zen Browser",
-            "url": "https://github.com/zen-browser/desktop",
-            "description": "@zen-browser Firefox分支 ★44k"
-          },
-          {
-            "name": "Mercury",
-            "url": "https://github.com/Alex313031/Mercury",
-            "description": "@Alex313031 基于Firefox的 ★1.5k"
-          },
-          {
-            "name": "冲浪喵 LinysBrowser",
-            "url": "https://github.com/awaLiny2333/LinysBrowser_NEXT",
-            "description": "awa_Liny 自己做的原生鸿蒙浏览器 2.6万播放"
-          },
-          {
-            "name": "Ungoogled Chromium",
-            "url": "https://github.com/ungoogled-software/ungoogled-chromium",
-            "description": "@ungoogled-software 剥 ★27.9k"
-          }
-        ]
-      },
-      {
-        "name": "桌面效率工具",
-        "links": [
-          {
-            "name": "OrbitStart 资源工作台",
-            "url": "https://github.com/xuxinxi14/OrbitStart",
-            "description": "1XxXxXxXxX 自己做的 5449播放"
-          },
-          {
-            "name": "OOMOL Studio 开源工作流 IDE",
-            "url": "https://oomol.com",
-            "description": "小众软件 OOMOLStudio全新工作流 3.0万播放"
-          },
-          {
-            "name": "DeepSeek Harness 皮肤",
-            "url": "https://github.com/zhu1090093659/dsh-web",
-            "description": "八弥咲太 用DeepSeek做了一个 1.1万播放"
-          },
-          {
-            "name": "WebToApp网页转App",
-            "url": "https://github.com/shiaho777/web-to-app",
-            "description": "shiaho 开源WebToApp"
-          },
-          {
-            "name": "Orbital自进化AI Agent",
-            "url": "https://github.com/zqiren/orbital",
-            "description": "10keane 手搓的AIAgent 11541播放"
-          },
-          {
-            "name": "整理照片网站",
-            "url": "https://organizephotos.app/",
-            "description": "V2EX@meetqyx 新上线的一个自动整理"
-          },
-          {
-            "name": "HTML to URL：AI 生成 HTML 一键托管成网址",
-            "url": "https://htmltourl.com/",
-            "description": "V2EX@1010115121 为解决老师朋友AI生成"
-          },
-          {
-            "name": "Kadō: open-source habit tracker",
-            "url": "https://github.com/scastiel/kado",
-            "description": "HN@scastiel 开源习惯打卡工具"
-          },
-          {
-            "name": "CC Connect 让 Agent 接入飞书",
-            "url": "https://github.com/chenhg5/cc-connect",
-            "description": "CC Connect 桥接Claude到飞书 3956赞"
-          },
-          {
-            "name": "nnn",
-            "url": "https://github.com/jarun/nnn",
-            "description": "@jarun 不走寻常路的极简终端文件管理 ★22.0k"
-          },
-          {
-            "name": "Mac-CLI",
-            "url": "https://github.com/guarinogabriel/Mac-CLI",
-            "description": "@guarinogabriel 开发者命令行 ★9.1k"
-          },
-          {
-            "name": "Dayflow",
-            "url": "https://github.com/JerryZLiu/Dayflow",
-            "description": "@JerryZLiu 自动工作日报/时间追踪 ★7.2k"
-          },
-          {
-            "name": "MeetingBar",
-            "url": "https://github.com/leits/MeetingBar",
-            "description": "@leits 菜单栏里的会议日程助手 ★5.4k"
-          },
-          {
-            "name": "ueli",
-            "url": "https://github.com/oliverschwendener/ueli",
-            "description": "@oliverschwendener 跨平台 ★4.6k"
-          },
-          {
-            "name": "yarr",
-            "url": "https://github.com/nkanaev/yarr",
-            "description": "@nkanaev 又一个RSS阅读器 ★4060"
-          },
-          {
-            "name": "KindleEar",
-            "url": "https://github.com/cdhigh/KindleEar",
-            "description": "@cdhigh 聚合RSS并推送到 ★2876"
-          },
-          {
-            "name": "MrRSS",
-            "url": "https://github.com/DevXDojo/MrRSS",
-            "description": "@DevXDojo 现代化跨平台AIRSS阅 ★2575"
-          },
-          {
-            "name": "eureka",
-            "url": "https://github.com/simeg/eureka",
-            "description": "@simeg 不离手快速记录灵感的CLI工具 ★885"
-          },
-          {
-            "name": "md2wechat-skill",
-            "url": "https://github.com/geekjourneyx/md2wechat-skill",
-            "description": "@geekjourneyx 微信公众号 ★3.7k"
-          },
-          {
-            "name": "xiaoyaosearch",
-            "url": "https://github.com/dtsola/xiaoyaosearch",
-            "description": "@dtsola 小遥搜索：听得懂人话、看得图 ★1038"
-          },
-          {
-            "name": "Screendrop",
-            "url": "https://github.com/fayazara/Screendrop",
-            "description": "@fayazara 原生截图+录屏+ ★2129"
-          },
-          {
-            "name": "ping-island",
-            "url": "https://github.com/erha19/ping-island",
-            "description": "@erha19 上管理所有AI编程 ★1124"
-          },
-          {
-            "name": "Piik",
-            "url": "https://github.com/TNTcraftHIM/Piik",
-            "description": "@TNTcraftHIM 开源免费的朋友间屏 ★1645"
-          },
-          {
-            "name": "beetroot-releases",
-            "url": "https://github.com/mnardit/beetroot-releases",
-            "description": "@mnardit 剪贴板管理器：AI改写 ★221"
-          },
-          {
-            "name": "appify",
-            "url": "https://github.com/mattrobenolt/appify",
-            "description": "@mattrobenolt 把TUI应用打包成 ★151"
-          },
-          {
-            "name": "protonsearch",
-            "url": "https://github.com/PranshulSoni/protonsearch",
-            "description": "@PranshulSoni 本地优先 ★149"
-          },
-          {
-            "name": "local_ai_ocr",
-            "url": "https://github.com/th1nhhdk/local_ai_ocr",
-            "description": "@th1nhhdk 本地离线便携OCR ★881"
-          },
-          {
-            "name": "SSH 终端 Devlog",
-            "url": "https://github.com/Solsynth/MaidKit",
-            "description": "LittleShee 因没有顺手的SSH终端而自研并开源"
-          },
-          {
-            "name": "DeskBox 桌面整理",
-            "url": "https://github.com/Tianyu199509/DeskBox",
-            "description": "大雨实验室 花了200亿 38万播放"
-          },
-          {
-            "name": "DeepSeek Harness 悬浮球插件",
-            "url": "https://github.com/mini-yifan/dsh-orb-cordis",
-            "description": "小凡师弟 DSH悬浮球插件 1.2万播放"
-          },
-          {
-            "name": "字幕工作室",
-            "url": "https://bibigpt.co/download/desktop",
-            "description": "吕立青_ 本地做的字幕工作室 3077播放"
-          },
-          {
-            "name": "Binglish：macOS 桌面英语角",
-            "url": "https://github.com/klemperer/binglish",
-            "description": "V2EX@v3v2k 必应每日美图叠加单词"
-          },
-          {
-            "name": "PicLite 图轻 开源图片压缩",
-            "url": "https://github.com/amiaoapp/PicLite",
-            "description": "V2EX@appmews 开源跨平台本地图片"
-          },
-          {
-            "name": "网易云音乐 ncm-cli",
-            "url": "https://github.com/YUCLing/open-orpheus",
-            "description": "V2EX@rome7054 命令行版网易云音乐工具"
-          },
-          {
-            "name": "Secret：开源阅后即焚临时分享小秘密工具",
-            "url": "https://secret.witt.im/",
-            "description": "V2EX@heywitt 开源的加密临时分享工具，发文本"
-          },
-          {
-            "name": "Reladraw: a diagram language where you place things",
-            "url": "https://github.com/reladraw/reladraw",
-            "description": "HN@jpwalsh234 一门「图的摆放由你决定」的画"
-          },
-          {
-            "name": "Snip：在屏幕上涂鸦就能指挥 Claude 编程的开源工具",
-            "url": "https://github.com/rixinhahaha/snip",
-            "description": "屏幕涂鸦指挥Claude编程的开源工具"
-          },
-          {
-            "name": "screenity",
-            "url": "https://github.com/alyssaxuu/screenity",
-            "description": "@alyssaxuu 免费无限制 ★18.7k"
-          },
-          {
-            "name": "ChatGPT-Shortcut",
-            "url": "https://github.com/rockbenben/ChatGPT-Shortcut",
-            "description": "@rockbenben 可搜索的提示词库 ★8.8k"
-          },
-          {
-            "name": "Clipboard",
-            "url": "https://github.com/Slackadays/Clipboard",
-            "description": "@Slackadays 魔性好用的跨平台剪贴 ★5.9k"
-          },
-          {
-            "name": "PasteMD",
-            "url": "https://github.com/RICHQAQ/PasteMD",
-            "description": "@RICHQAQ 一键把Markdown ★5.4k"
-          },
-          {
-            "name": "moodist",
-            "url": "https://github.com/remvze/moodist",
-            "description": "@remvze 帮你专注平静的环境白噪音 ★3.9k"
-          },
-          {
-            "name": "commafeed",
-            "url": "https://github.com/Athou/commafeed",
-            "description": "@Athou GoogleReader阅读器 ★3628"
-          },
-          {
-            "name": "rssguard",
-            "url": "https://github.com/martinrotter/rssguard",
-            "description": "@martinrotter 带播客的RSS阅 ★2784"
-          },
-          {
-            "name": "fusion",
-            "url": "https://github.com/0x2E/fusion",
-            "description": "@0x2E 轻量、自托管友好的RSS阅读器 ★2188"
-          },
-          {
-            "name": "LightC",
-            "url": "https://github.com/Chunyu33/light-c",
-            "description": "@Chunyu33 免费开源C盘清理工具 ★2.7k"
-          },
-          {
-            "name": "chat-ollama",
-            "url": "https://github.com/sugarforever/chat-ollama",
-            "description": "@sugarforever 本地跑 ★3.5k"
-          },
-          {
-            "name": "yt-short-clipper",
-            "url": "https://github.com/jipraks/yt-short-clipper",
-            "description": "@jipraks 把长YouTube视频一键 ★1021"
-          },
-          {
-            "name": "screenarc",
-            "url": "https://github.com/tamnguyenvan/screenarc",
-            "description": "@tamnguyenvan 跨屏录制与剪辑 ★728"
-          },
-          {
-            "name": "eIsland",
-            "url": "https://github.com/JNTMTMTM/eIsland",
-            "description": "@JNTMTMTM 上仿Apple灵动岛的悬浮 ★320"
-          },
-          {
-            "name": "simutil",
-            "url": "https://github.com/dungngminh/simutil",
-            "description": "@dungngminh 跨平台TUI小工具 ★1177"
-          },
-          {
-            "name": "Clipy",
-            "url": "https://github.com/JunWeiUp/Clipy",
-            "description": "@JunWeiUp 开源跨平台剪贴板管理 ★117"
-          },
-          {
-            "name": "sbb-tui",
-            "url": "https://github.com/Necrom4/sbb-tui",
-            "description": "@Necrom4 瑞士公共交通时刻表的TUI客 ★327"
-          },
-          {
-            "name": "MacMonitor",
-            "url": "https://github.com/ryyansafar/MacMonitor",
-            "description": "@ryyansafar 实时 ★100"
-          },
-          {
-            "name": "NBLM2PPTX",
-            "url": "https://github.com/laihenyi/NBLM2PPTX",
-            "description": "@laihenyi 用GeminiAI把 ★343"
-          },
-          {
-            "name": "资产管理软件",
-            "url": "https://github.com/dolag233/Serpent",
-            "description": "朵格子Dolag 烧了100亿+Token自研并开源的个"
-          },
-          {
-            "name": "轻签 LiteNote 便签",
-            "url": "https://github.com/SeaZhusp/LiteNote",
-            "description": "秋枫zsp 的极简桌面便签，Win 3704播放"
-          },
-          {
-            "name": "mark-shot Linux截图",
-            "url": "https://github.com/jswysnemc/mark-shot",
-            "description": "Snemc 自己在Linux上用的开源截图 1379播放"
-          },
-          {
-            "name": "开源安卓AI编程工具",
-            "url": "https://github.com/jieapi/aicode",
-            "description": "傻傻的小杰呀 一款开源的安卓端工具AiCode"
-          },
-          {
-            "name": "EasyEDA AI Skill",
-            "url": "https://github.com/zhoushoujianwork/easyeda-agent",
-            "description": "骑摩托的周先森 做EasyEDAAISkill幕后"
-          },
-          {
-            "name": "UnrealBridge虚幻引擎AI桥接",
-            "url": "https://github.com/tornlux/unrealbridge",
-            "description": "赛博旅鼠 开源的UE5编辑器桥接层 9470播放"
-          },
-          {
-            "name": "AI Agent 桌面工具 BitFun（Rust+Tauri）",
-            "url": "https://github.com/GCWing/BitFun",
-            "description": "V2EX@clearme 业余时间开源的AIAgent桌"
-          },
-          {
-            "name": "视频/图片/音频参考下载浏览器插件",
-            "url": "https://downloads.xyptkd.cn/",
-            "description": "V2EX@klos 自己搓的浏览器插件"
-          },
-          {
-            "name": "DutiGUI macOS 文件打开方式批量管理",
-            "url": "https://github.com/mooniitt/duti-macos-app",
-            "description": "V2EX@taobeer 纯Swift原生写的"
-          },
-          {
-            "name": "TabTab",
-            "url": "https://www.tabtab.xyz/",
-            "description": "HN@jackiefeng 键盘优先"
-          },
-          {
-            "name": "浮光 Mac 启动器",
-            "url": "https://vkr.me",
-            "description": "土豆浪浪Mac原生启动器 1.2万赞"
-          },
-          {
-            "name": "yazi",
-            "url": "https://github.com/sxyazi/yazi",
-            "description": "@sxyazi 写的极速终端文件管理器 ★42.6k"
-          },
-          {
-            "name": "shell_gpt",
-            "url": "https://github.com/TheR1D/shell_gpt",
-            "description": "@TheR1D 命令行里的AI大模型生产力 ★12.3k"
-          },
-          {
-            "name": "omni",
-            "url": "https://github.com/alyssaxuu/omni",
-            "description": "@alyssaxuu 一体化效率启动器 ★7.9k"
-          },
-          {
-            "name": "planify",
-            "url": "https://github.com/alainm23/planify",
-            "description": "@alainm23 任务管理器 ★5.7k"
-          },
-          {
-            "name": "finicky",
-            "url": "https://github.com/johnste/finicky",
-            "description": "@johnste 自定义不同链接用哪个浏览器 ★5.1k"
-          },
-          {
-            "name": "TomatoBar",
-            "url": "https://github.com/ivoronin/TomatoBar",
-            "description": "@ivoronin 菜单栏里极简番茄钟 ★3.6k"
-          },
-          {
-            "name": "stringer",
-            "url": "https://github.com/stringer-rss/stringer",
-            "description": "@stringer-rss 自托管反社交 ★4133"
-          },
-          {
-            "name": "twine",
-            "url": "https://github.com/msasikanth/twine",
-            "description": "@msasikanth 编写的跨平台RSS阅 ★2418"
-          },
-          {
-            "name": "selfoss",
-            "url": "https://github.com/fossar/selfoss",
-            "description": "@fossar 多用途RSS聚合阅读器 ★2474"
-          },
-          {
-            "name": "NonSteamLaunchers-On-Steam-Deck",
-            "url": "https://github.com/moraroy/NonSteamLaunchers-On-Steam-Deck",
-            "description": "@moraroy Deck一键安装非 ★4.4k"
-          },
-          {
-            "name": "weathr",
-            "url": "https://github.com/Veirt/weathr",
-            "description": "@Veirt 带ASCII动画的终端天气 ★3063"
-          },
-          {
-            "name": "Deck",
-            "url": "https://github.com/yuzeguitarist/Deck",
-            "description": "@yuzeguitarist 现代、原生 ★1447"
-          },
-          {
-            "name": "leaf",
-            "url": "https://github.com/RivoLink/leaf",
-            "description": "@RivoLink 终端里的 ★2088"
-          },
-          {
-            "name": "look",
-            "url": "https://github.com/kunkka19xx/look",
-            "description": "@kunkka19xx 跨系统、社区驱动的轻 ★1105"
-          },
-          {
-            "name": "KKTerm",
-            "url": "https://github.com/ryantsai/KKTerm",
-            "description": "@ryantsai coder和系统管理员的超 ★501"
-          },
-          {
-            "name": "clin-rs",
-            "url": "https://github.com/reekta92/clin-rs",
-            "description": "@reekta92 受Obsidian启发的功 ★559"
-          },
-          {
-            "name": "tuistore",
-            "url": "https://github.com/Gheat1/tuistore",
-            "description": "@Gheat1 应用商店：浏览、搜索 ★423"
-          },
-          {
-            "name": "CLI-WeChat-Bridge",
-            "url": "https://github.com/UNLINEARITY/CLI-WeChat-Bridge",
-            "description": "@UNLINEARITY 把Codex ★522"
-          },
-          {
-            "name": "SayIt AI 语音输入法",
-            "url": "https://github.com/crosswk/SayIt",
-            "description": "自刘地 个人开源的AI语音输入法SayIt"
-          },
-          {
-            "name": "VelaTerm AI编程IDE",
-            "url": "https://github.com/vlinx-io/velaterm",
-            "description": "vlinx2013 被称超越Orca与Paseo的开源终"
-          },
-          {
-            "name": "AI硬件开发助手",
-            "url": "https://github.com/ailyproject/aily-blockly",
-            "description": "奈何col 用AI让人人可做硬件开发 1736播放"
-          },
-          {
-            "name": "B 站观看历史永久持久化",
-            "url": "https://bilibilihistory.com/",
-            "description": "V2EX@ko20 写了两个程序把B站观看历史永久持久化"
-          },
-          {
-            "name": "无广告、布局清爽的 JSON 在线工具",
-            "url": "https://json.share888.top/",
-            "description": "V2EX@liuzhw JSON工具要么有广告要么难用"
-          },
-          {
-            "name": "灵动岛待办面板 TodoPanel",
-            "url": "https://github.com/xiaopu-ai/TO-DO-Panel",
-            "description": "小普灵动岛待办面板 1332赞"
-          },
-          {
-            "name": "it-tools",
-            "url": "https://github.com/CorentinTh/it-tools",
-            "description": "@CorentinTh 开发者常用在线小工 ★40.7k"
-          },
-          {
-            "name": "Loop",
-            "url": "https://github.com/mrkai77/Loop",
-            "description": "@mrkai77 优雅的窗口管理器 ★11.7k"
-          },
-          {
-            "name": "opencommit",
-            "url": "https://github.com/di-sukharev/opencommit",
-            "description": "@di-sukharev 自动生成规范 ★7.5k"
-          },
-          {
-            "name": "pomotroid",
-            "url": "https://github.com/Splode/pomotroid",
-            "description": "@Splode 颜值出色的桌面番茄钟 ★5.5k"
-          },
-          {
-            "name": "xplr",
-            "url": "https://github.com/sayanarijit/xplr",
-            "description": "@sayanarijit 可hack的极简快 ★4.8k"
-          },
-          {
-            "name": "jira-cli",
-            "url": "https://github.com/ankitpokhrel/jira-cli",
-            "description": "@ankitpokhrel 交互式Jira命 ★6.0k"
-          },
-          {
-            "name": "newsboat",
-            "url": "https://github.com/newsboat/newsboat",
-            "description": "@newsboat 终端里的RSS ★3917"
-          },
-          {
-            "name": "goread",
-            "url": "https://github.com/madelynnblue/goread",
-            "description": "@madelynnblue 编写的RSS阅读 ★2360"
-          },
-          {
-            "name": "matcha",
-            "url": "https://github.com/piqoni/matcha",
-            "description": "@piqoni /终端的每日摘要阅读器 ★752"
-          },
-          {
-            "name": "joshuto",
-            "url": "https://github.com/kamiyaa/joshuto",
-            "description": "@kamiyaa 编写的类ranger终端文 ★3.7k"
-          },
-          {
-            "name": "mouzi",
-            "url": "https://github.com/hsr88/mouzi",
-            "description": "@hsr88 免费隐私优先的自动文件整理器 ★1000"
-          },
-          {
-            "name": "markeron",
-            "url": "https://github.com/ifer47/markeron",
-            "description": "@ifer47 仅约1.5MB的开源屏幕标注 ★1075"
-          },
-          {
-            "name": "xleak",
-            "url": "https://github.com/bgreenwell/xleak",
-            "description": "@bgreenwell 飞快的终端 ★1503"
-          },
-          {
-            "name": "docky",
-            "url": "https://github.com/josejuanqm/docky",
-            "description": "@josejuanqm 优雅替换macOS系 ★1327"
-          },
-          {
-            "name": "OneClip",
-            "url": "https://github.com/One-Clip/OneClip",
-            "description": "@One-Clip 干净美观的macOS原生剪 ★477"
-          },
-          {
-            "name": "Toney",
-            "url": "https://github.com/SourcewareLab/Toney",
-            "description": "@SourcewareLab 轻快的终端笔记应 ★210"
-          },
-          {
-            "name": "termux-app-store",
-            "url": "https://github.com/djunekz/termux-app-store",
-            "description": "@djunekz Termux的TUI ★111"
-          },
-          {
-            "name": "OpenMicro",
-            "url": "https://github.com/stephenleo/OpenMicro",
-            "description": "@stephenleo 用任意游戏手柄实现 ★128"
-          }
-        ]
-      },
-      {
-        "name": "笔记与知识管理",
-        "links": [
-          {
-            "name": "Knowledge Base 本地知识库",
-            "url": "https://kb.ruoyi.plus/",
-            "description": "抓蛙师 用Tauri做的3MB国产本地 5.5万播放"
-          },
-          {
-            "name": "Kvak",
-            "url": "https://kvak.io/",
-            "description": "HN@levmiseri 极简笔记应用"
-          },
-          {
-            "name": "claude-obsidian",
-            "url": "https://github.com/AgriciDaniel/claude-obsidian",
-            "description": "@AgriciDaniel + ★15.3k"
-          },
-          {
-            "name": "takenote",
-            "url": "https://github.com/taniarascia/takenote",
-            "description": "@taniarascia 面向开发者的 ★7.1k"
-          },
-          {
-            "name": "notes",
-            "url": "https://github.com/nuttyartist/notes",
-            "description": "@nuttyartist ++写的快速美观本 ★4.3k"
-          },
-          {
-            "name": "Omni-Notes",
-            "url": "https://github.com/federicoiosue/Omni-Notes",
-            "description": "@federicoiosue 开源 ★2.8k"
-          },
-          {
-            "name": "gitnote",
-            "url": "https://github.com/mobailabs/gitnote",
-            "description": "@mobailabs 基于Git ★1.7k"
-          },
-          {
-            "name": "hubble.md",
-            "url": "https://github.com/bholmesdev/hubble.md",
-            "description": "@bholmesdev 给你和你的 ★1.5k"
-          },
-          {
-            "name": "inkstone",
-            "url": "https://github.com/shuaiplus/inkstone",
-            "description": "@shuaiplus 跑在 ★1.1k"
-          },
-          {
-            "name": "scratch",
-            "url": "https://github.com/erictli/scratch",
-            "description": "@erictli 极简离线优先 ★1587"
-          },
-          {
-            "name": "开源在线笔记软件",
-            "url": "https://github.com/redTreeOnWall/memorains",
-            "description": "红鳞绿羽 自己写了两年的在线笔记软件 1.6万播放"
-          },
-          {
-            "name": "Edna",
-            "url": "https://edna.arslexis.io/",
-            "description": "HN@kjksf 面向开发者的笔记应用 HN331分"
-          },
-          {
-            "name": "note-gen",
-            "url": "https://github.com/codexu/note-gen",
-            "description": "@codexu 本地优先Markdown笔 ★12.9k"
-          },
-          {
-            "name": "Lorien",
-            "url": "https://github.com/mbrlabs/Lorien",
-            "description": "@mbrlabs 无限画布灵感捕捉白板 ★6.8k"
-          },
-          {
-            "name": "flatnotes",
-            "url": "https://github.com/dullage/flatnotes",
-            "description": "@dullage 无数据库 ★3.2k"
-          },
-          {
-            "name": "Alexandrie",
-            "url": "https://github.com/Smaug6739/Alexandrie",
-            "description": "@Smaug6739 离线优先的Notion ★2.8k"
-          },
-          {
-            "name": "mdx-notes",
-            "url": "https://github.com/maqi1520/mdx-notes",
-            "description": "@maqi1520 跨平台笔记软件 ★1.6k"
-          },
-          {
-            "name": "notes",
-            "url": "https://github.com/pimterry/notes",
-            "description": "@pimterry 简单愉悦、Unix风 ★1.3k"
-          },
-          {
-            "name": "GitJournal",
-            "url": "https://github.com/GitJournal/GitJournal",
-            "description": "@GitJournal 集成Git的移动端优 ★4233"
-          },
-          {
-            "name": "Cloudflare 自托管开源笔记 EdgeEver",
-            "url": "https://github.com/msh01/edgeever",
-            "description": "V2EX@mayinshi 类印象笔记替代品，数据开放"
-          },
-          {
-            "name": "Moya Notes",
-            "url": "https://github.com/moyaproject/notes",
-            "description": "HN@billowycoat 在浏览器端加密的笔记应用"
-          },
-          {
-            "name": "joplin",
-            "url": "https://github.com/laurent22/joplin",
-            "description": "@laurent22 隐私优先 ★56.6k"
-          },
-          {
-            "name": "QOwnNotes",
-            "url": "https://github.com/pbek/QOwnNotes",
-            "description": "@pbek 纯文本Markdown笔记与待办 ★5.9k"
-          },
-          {
-            "name": "heynote",
-            "url": "https://github.com/heyman/heynote",
-            "description": "@heyman 为重度用户打造的专用草稿本 ★5.4k"
-          },
-          {
-            "name": "marksman",
-            "url": "https://github.com/artempyanykh/marksman",
-            "description": "@artempyanykh 在编辑器里给 ★3.4k"
-          },
-          {
-            "name": "PaperTodo",
-            "url": "https://github.com/snownico0722/PaperTodo",
-            "description": "@snownico0722 极简桌面便签待办 ★2.4k"
-          },
-          {
-            "name": "neuron",
-            "url": "https://github.com/srid/neuron",
-            "description": "@srid 基于Zettelkasten的未 ★1.6k"
-          },
-          {
-            "name": "notecalc3",
-            "url": "https://github.com/bbodi/notecalc3",
-            "description": "@bbodi 把Soulver式边写边算带到 ★1.2k"
-          },
-          {
-            "name": "batnoter",
-            "url": "https://github.com/batnoter/batnoter",
-            "description": "@batnoter 基于Markdown的自 ★2421"
-          },
-          {
-            "name": "Obsidian 视觉工坊",
-            "url": "https://github.com/Andrewshilexiaoxi/obsidian-gentle-theme-studio",
-            "description": "用Codex写的Obsidian主题风格插件"
-          },
-          {
-            "name": "Notepin",
-            "url": "https://notepin.co/",
-            "description": "HN@okozzie 简洁的笔记与博客工具"
-          },
-          {
-            "name": "open-notebook",
-            "url": "https://github.com/lfnovo/open-notebook",
-            "description": "@lfnovo 开源版NotebookLM ★39.7k"
-          },
-          {
-            "name": "fsnotes",
-            "url": "https://github.com/glushchenko/fsnotes",
-            "description": "@glushchenko /iPhone上极 ★7.5k"
-          },
-          {
-            "name": "floral-notepaper",
-            "url": "https://github.com/Achilng/floral-notepaper",
-            "description": "@Achilng 花笺，轻量优雅跨平台 ★5.4k"
-          },
-          {
-            "name": "NoteDiscovery",
-            "url": "https://github.com/gamosoft/NoteDiscovery",
-            "description": "@gamosoft 自托管知识库 ★2.8k"
-          },
-          {
-            "name": "yarle",
-            "url": "https://github.com/akosbalasko/yarle",
-            "description": "@akosbalasko 把印象笔记导出成 ★1.8k"
-          },
-          {
-            "name": "obsidian-execute-code",
-            "url": "https://github.com/twibiral/obsidian-execute-code",
-            "description": "@twibiral 插件：在笔记里直接跑代码 ★1.5k"
-          },
-          {
-            "name": "solomd",
-            "url": "https://github.com/zhitongblog/solomd",
-            "description": "@zhitongblog 本地优先 ★1.1k"
-          },
-          {
-            "name": "notea",
-            "url": "https://github.com/notea-org/notea",
-            "description": "@notea-org 数据存S3的自托管笔记 ★2147"
-          }
-        ]
-      },
-      {
-        "name": "网盘与下载工具",
-        "links": [
-          {
-            "name": "cloud-torrent",
-            "url": "https://github.com/jpillora/cloud-torrent",
-            "description": "@jpillora ☁️自托管远程 ★6.2k"
-          },
-          {
-            "name": "dashbeam",
-            "url": "https://github.com/tonyantony300/dashbeam",
-            "description": "@tonyantony300 近距离及跨网文 ★9.8k"
-          },
-          {
-            "name": "SCrawler",
-            "url": "https://github.com/AAndyProgram/SCrawler",
-            "description": "@AAndyProgram 多站点媒体下载器 ★2191"
-          },
-          {
-            "name": "Aria2App",
-            "url": "https://github.com/devgianlu/Aria2App",
-            "description": "@devgianlu 基于aria2的高级下 ★1559"
-          },
-          {
-            "name": "seanime",
-            "url": "https://github.com/5rahim/seanime",
-            "description": "@5rahim 开源动漫/媒体服务器 ★4.2k"
-          },
-          {
-            "name": "pyload",
-            "url": "https://github.com/pyload/pyload",
-            "description": "@pyload 写的免费开源下载管理器 ★3879"
-          },
-          {
-            "name": "motrix-webextension",
-            "url": "https://github.com/gautamkrishnar/motrix-webextension",
-            "description": "@gautamkrishnar 下载管理器的 ★2011"
-          },
-          {
-            "name": "YNOT",
-            "url": "https://james-see.github.io/ynot/",
-            "description": "HN@jamescampbell 免费开源的"
-          },
-          {
-            "name": "ConvertX",
-            "url": "https://github.com/C4illin/ConvertX",
-            "description": "@C4illin 自托管在线文件转换 ★19.1k"
-          },
-          {
-            "name": "Surge",
-            "url": "https://github.com/SurgeDM/Surge",
-            "description": "@SurgeDM 编写的极速TUI下载管理器 ★3574"
-          },
-          {
-            "name": "podgrab",
-            "url": "https://github.com/akhilrex/podgrab",
-            "description": "@akhilrex 自托管播客管理/下载 ★1989"
-          },
-          {
-            "name": "metube",
-            "url": "https://github.com/alexta69/metube",
-            "description": "@alexta69 的WebUI ★14.9k"
-          },
-          {
-            "name": "bentopdf",
-            "url": "https://github.com/alam00000/bentopdf",
-            "description": "@alam00000 隐私优先的在线 ★15.8k"
-          },
-          {
-            "name": "Cleanuparr",
-            "url": "https://github.com/Cleanuparr/Cleanuparr",
-            "description": "@Cleanuparr 生态的高级下载清理器 ★2592"
-          },
-          {
-            "name": "varia",
-            "url": "https://github.com/giantpinkrobots/varia",
-            "description": "@giantpinkrobots 支持BT的 ★1869"
-          }
-        ]
-      },
-      {
-        "name": "自托管服务与仪表盘",
-        "links": [
-          {
-            "name": "Buku",
-            "url": "https://github.com/jarun/Buku",
-            "description": "HN@apjana 命令行书签管理器 HN23分"
-          },
-          {
-            "name": "beszel",
-            "url": "https://github.com/henrygd/beszel",
-            "description": "@henrygd 轻量服务器监控 ★25.9k"
-          },
-          {
-            "name": "blocky",
-            "url": "https://github.com/0xERR0R/blocky",
-            "description": "@0xERR0R 轻量快速的DNS广告拦截代 ★7.0k"
-          },
-          {
-            "name": "wakapi",
-            "url": "https://github.com/muety/wakapi",
-            "description": "@muety 自托管WakaTime兼容编码 ★4.4k"
-          },
-          {
-            "name": "WatchYourLAN",
-            "url": "https://github.com/aceberg/WatchYourLAN",
-            "description": "@aceberg 写的轻量局域网IP扫描器 ★7.6k"
-          },
-          {
-            "name": "hestia-core",
-            "url": "https://github.com/mult1v4c/hestia-core",
-            "description": "@mult1v4c 纯HTML/CSS ★683"
-          },
-          {
-            "name": "espial",
-            "url": "https://github.com/jonschoning/espial",
-            "description": "@jonschoning 开源Web书签服务器 ★919"
-          },
-          {
-            "name": "ArchiveBox",
-            "url": "https://github.com/ArchiveBox/ArchiveBox",
-            "description": "@ArchiveBox 自托管Web归档 ★28.7k"
-          },
-          {
-            "name": "gosuki",
-            "url": "https://github.com/blob42/gosuki",
-            "description": "@blob42 单文件零扩展 ★554"
-          },
-          {
-            "name": "自托管朋友圈 Ech0",
-            "url": "https://github.com/lin-snow/Ech0",
-            "description": "V2EX@L1nSn0w 类朋友圈的自托管社交应用"
-          },
-          {
-            "name": "Dreeve",
-            "url": "https://github.com/dreeveapp/dreeve",
-            "description": "HN@frogfuhrer 自托管的运动健身数据仪表盘"
-          },
-          {
-            "name": "LXI.ai Bookmarks",
-            "url": "https://lxi.ai/",
-            "description": "HN@devinhn 用TF-IDF向量自动聚合相似书签"
-          },
-          {
-            "name": "gatus",
-            "url": "https://github.com/TwiN/gatus",
-            "description": "@TwiN 面向开发者的自动化状态页与告警 ★12.2k"
-          },
-          {
-            "name": "Pulse",
-            "url": "https://github.com/rcourtman/Pulse",
-            "description": "@rcourtman Docker ★6.8k"
-          },
-          {
-            "name": "neko",
-            "url": "https://github.com/m1k1o/neko",
-            "description": "@m1k1o 里跑的自托管虚拟浏览器 ★22.4k"
-          },
-          {
-            "name": "zerobyte",
-            "url": "https://github.com/nicotsx/zerobyte",
-            "description": "@nicotsx 基于restic的自托管自 ★7.0k"
-          },
-          {
-            "name": "K7",
-            "url": "https://github.com/kaybi-gh/K7",
-            "description": "@kaybi-gh 面向家庭小圈子的自托管媒体 ★273"
-          },
-          {
-            "name": "omnom",
-            "url": "https://github.com/asciimoo/omnom",
-            "description": "@asciimoo 内容存档保留服务 ★666"
-          },
-          {
-            "name": "grimoire",
-            "url": "https://github.com/goniszewski/grimoire",
-            "description": "@goniszewski 面向极客的书签管理 ★2858"
-          },
-          {
-            "name": "Paperless AI",
-            "url": "https://github.com/clusterzx/paperless-ai",
-            "description": "Paperless文档库的AI自动分析打标"
-          },
-          {
-            "name": "Reminiscence",
-            "url": "https://github.com/kanishka-linux/reminiscence",
-            "description": "HN@kanishkalinux 自托管书 HN213分"
-          },
-          {
-            "name": "dockge",
-            "url": "https://github.com/louislam/dockge",
-            "description": "@louislam 易用的 ★24.5k"
-          },
-          {
-            "name": "Wallos",
-            "url": "https://github.com/ellite/Wallos",
-            "description": "@ellite 自托管个人订阅费用追踪器 ★8.6k"
-          },
-          {
-            "name": "uncloud",
-            "url": "https://github.com/psviderski/uncloud",
-            "description": "@psviderski 轻量多机容器部署与管 ★5.5k"
-          },
-          {
-            "name": "cloudflare-ddns",
-            "url": "https://github.com/timothymiller/cloudflare-ddns",
-            "description": "@timothymiller 写的 ★4.5k"
-          },
-          {
-            "name": "tab-stash",
-            "url": "https://github.com/josh-berry/tab-stash",
-            "description": "@josh-berry 插件：把标签页存成书 ★1.1k"
-          },
-          {
-            "name": "faved",
-            "url": "https://github.com/denho/faved",
-            "description": "@denho 支持自定义嵌套标签的免费书签管 ★1318"
-          },
-          {
-            "name": "Arcmark",
-            "url": "https://github.com/Geek-1001/arcmark",
-            "description": "HN@ahmed_sulajman 挂在浏览器侧边栏的"
-          },
-          {
-            "name": "uptime-kuma",
-            "url": "https://github.com/louislam/uptime-kuma",
-            "description": "@louislam 高颜值自托管服务状态监 ★92.0k"
-          },
-          {
-            "name": "nginx-ui",
-            "url": "https://github.com/0xJacky/nginx-ui",
-            "description": "@0xJacky 的又一个好用Web管理面 ★11.6k"
-          },
-          {
-            "name": "ezbookkeeping",
-            "url": "https://github.com/mayswind/ezbookkeeping",
-            "description": "@mayswind 自托管个人记账本 ★5.7k"
-          },
-          {
-            "name": "sidekick",
-            "url": "https://github.com/MightyMoud/sidekick",
-            "description": "@MightyMoud 上几分钟搭好的私有 ★7.6k"
-          },
-          {
-            "name": "lab-dash",
-            "url": "https://github.com/AnthonyGress/lab-dash",
-            "description": "@AnthonyGress 管理服务器 ★720"
-          },
-          {
-            "name": "onenav",
-            "url": "https://github.com/helloxz/onenav",
-            "description": "@helloxz +SQLite集中式书签 ★3.1k"
-          },
-          {
-            "name": "karakeep",
-            "url": "https://github.com/karakeep-app/karakeep",
-            "description": "@karakeep-app 自托管万物书签 ★29.4k"
-          },
-          {
-            "name": "tottem",
-            "url": "https://github.com/poulainv/tottem",
-            "description": "@poulainv /Next.js打造的书签 ★975"
-          }
-        ]
-      },
-      {
-        "name": "开发工具",
-        "links": [
-          {
-            "name": "godot-mcp",
-            "url": "https://github.com/DaxianLee/godot-mcp",
-            "description": "让AI助手直接操控Godot游戏引擎"
-          },
-          {
-            "name": "Superpowers",
-            "url": "https://github.com/obra/superpowers",
-            "description": "可组合的AI开发技能框架与完整方法论"
-          },
-          {
-            "name": "claude-mem",
-            "url": "https://github.com/thedotmack/claude-mem",
-            "description": "跨会话持久上下文，压缩并检索全部记录"
-          },
-          {
-            "name": "Claude Code 最佳实践",
-            "url": "https://github.com/shanraisshan/claude-code-best-practice",
-            "description": "Claude Code最佳实践合集 6.7万★"
-          },
-          {
-            "name": "T3 Code",
-            "url": "https://github.com/pingdotgg/t3code",
-            "description": "桌面端控制本地AI编程智能体"
-          },
-          {
-            "name": "Claude 插件官方目录",
-            "url": "https://github.com/anthropics/claude-plugins-official",
-            "description": "Anthropic官方Claude Code插件目录"
-          },
-          {
-            "name": "cybercode 自进化Claude",
-            "url": "https://github.com/wk42worldworld/cybercode",
-            "description": "AI别开枪是我 把ClaudeCode源码 2458播放"
-          },
-          {
-            "name": "团队多 Agent 协作平台 Chorus（开源）",
-            "url": "https://github.com/Chorus-AIDLC/chorus",
-            "description": "V2EX@autojunjie 共享看板+全链路追溯+像"
-          },
-          {
-            "name": "开源自托管制品仓库 kkRepo",
-            "url": "https://github.com/klboke/kkRepo",
-            "description": "V2EX@g632104866 平替"
-          },
-          {
-            "name": "Linggen",
-            "url": "https://github.com/linggen/linggen",
-            "description": "HN@linggen 给Cursor/Zed"
-          },
-          {
-            "name": "desktop-cc-gui",
-            "url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui",
-            "description": "@zhukunpenglinyutong 多 ★4.4k"
-          },
-          {
-            "name": "nezha",
-            "url": "https://github.com/hanshuaikang/nezha",
-            "description": "@hanshuaikang Agent时代的 ★1.9k"
-          },
-          {
-            "name": "gitreverse",
-            "url": "https://github.com/filiksyos/gitreverse",
-            "description": "@filiksyos 把任意仓库反推回它最初 ★1.9k"
-          },
-          {
-            "name": "atlas",
-            "url": "https://github.com/pacifio/atlas",
-            "description": "@pacifio 多编码Agent的源码管理 ★8.7k"
-          },
-          {
-            "name": "gitlogue",
-            "url": "https://github.com/unhappychoice/gitlogue",
-            "description": "@unhappychoice 电影感的 ★5065"
-          },
-          {
-            "name": "synth-shell",
-            "url": "https://github.com/andresgongora/synth-shell",
-            "description": "@andresgongora 逐步美化你的终 ★1135"
-          },
-          {
-            "name": "Multica",
-            "url": "https://github.com/multica-ai/multica",
-            "description": "把AI编程智能体变成可管理的队友"
-          },
-          {
-            "name": "Marketing Skills",
-            "url": "https://github.com/coreyhaines31/marketingskills",
-            "description": "47个营销技能库：SEO文案广告增长"
-          },
-          {
-            "name": "Awesome Claude Skills",
-            "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-            "description": "Claude Skills应用商店，3.2万已验证技能"
-          },
-          {
-            "name": "Cursor 官方插件",
-            "url": "https://github.com/cursor/plugins",
-            "description": "Cursor官方插件规范与插件目录"
-          },
-          {
-            "name": "Text-to-CAD",
-            "url": "https://github.com/earthtojake/text-to-cad",
-            "description": "给AI智能体CAD超能力"
-          },
-          {
-            "name": "本地 AI Agent Gateway PocketPilot",
-            "url": "https://pp.95ym.cn/",
-            "description": "V2EX@stoneTojing 让家里的Cursor"
-          },
-          {
-            "name": "本地脱敏还原网关 maskit 0.4",
-            "url": "https://github.com/xiaYuTian11/maskit",
-            "description": "V2EX@xiayutian11 支持内置模型和浏览器扩"
-          },
-          {
-            "name": "Void Editor",
-            "url": "https://voideditor.com/",
-            "description": "HN@andrewpareles 开源的Cursor风格"
-          },
-          {
-            "name": "codeg",
-            "url": "https://github.com/xintaofei/codeg",
-            "description": "@xintaofei 聚合多Claude ★3.8k"
-          },
-          {
-            "name": "agtx",
-            "url": "https://github.com/fynnfluegge/agtx",
-            "description": "@fynnfluegge 编码Agent的黑 ★1.7k"
-          },
-          {
-            "name": "aichat",
-            "url": "https://github.com/sigoden/aichat",
-            "description": "@sigoden 一体化LLMCLI ★10.5k"
-          },
-          {
-            "name": "tabularis",
-            "url": "https://github.com/TabularisDB/tabularis",
-            "description": "@TabularisDB 内置数据库驱动的桌 ★5097"
-          },
-          {
-            "name": "h-m-m",
-            "url": "https://github.com/nadrad/h-m-m",
-            "description": "@nadrad 键盘优先的黑客思维导图 ★2292"
-          },
-          {
-            "name": "ekphos",
-            "url": "https://github.com/nostacks/ekphos",
-            "description": "@nostacks 轻量终端 ★1066"
-          },
-          {
-            "name": "Trail of Bits Skills",
-            "url": "https://github.com/trailofbits/skills",
-            "description": "安全公司开源的AI安全编码技能库"
-          },
-          {
-            "name": "OpenRig",
-            "url": "https://github.com/mvschwarz/openrig",
-            "description": "多Agent团队：角色分工共享上下文"
-          },
-          {
-            "name": "ponytail",
-            "url": "https://github.com/DietrichGebert/ponytail",
-            "description": "让AI编码Agent少写代码的行为调优"
-          },
-          {
-            "name": "opencodex",
-            "url": "https://github.com/lidge-jun/opencodex",
-            "description": "给Codex/Claude Code换任意大模型"
-          },
-          {
-            "name": "ByteRover CLI",
-            "url": "https://github.com/campfirein/byterover-cli",
-            "description": "自主编码Agent的便携记忆层(原Cipher)"
-          },
-          {
-            "name": "REA",
-            "url": "https://github.com/morluto/rea",
-            "description": "逆向工程任何软件，接入AI编程智能体"
-          },
-          {
-            "name": "Diagram Design",
-            "url": "https://github.com/cathrynlavery/diagram-design",
-            "description": "44种图表类型，自包含HTML+SVG"
-          },
-          {
-            "name": "billion-context",
-            "url": "https://github.com/ranxianglei/billion-context",
-            "description": "小窗口上下文压缩，省5倍token"
-          },
-          {
-            "name": "AI自动剪视频Skill",
-            "url": "https://github.com/DayadaUP/claude-code-auto-video-edit",
-            "description": "大牙大- 让Claude根据语音指令自动剪 4.1万播放"
-          },
-          {
-            "name": "Claude Code 一句 /publish 上线静态站（MyVibe）",
-            "url": "https://www.myvibe.so/",
-            "description": "V2EX@zhuzhuyule 终端内一键发布HTML"
-          },
-          {
-            "name": "多项目 AI 终端 Codux",
-            "url": "https://github.com/duxweb/codux",
-            "description": "V2EX@349865361 Rust+GPUI原生终端"
-          },
-          {
-            "name": "Onlook",
-            "url": "https://github.com/onlook-dev/onlook",
-            "description": "HN@hoakiet98 开源、本地优先的 HN227分"
-          },
-          {
-            "name": "DesktopCommanderMCP",
-            "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
-            "description": "@wonderwhy-er 给Claude的 ★9.9k"
-          },
-          {
-            "name": "Chaterm",
-            "url": "https://github.com/chaterm/Chaterm",
-            "description": "@chaterm 开源AI终端 ★3.1k"
-          },
-          {
-            "name": "ccmanager",
-            "url": "https://github.com/kbwo/ccmanager",
-            "description": "@kbwo Code/Gemini ★1.3k"
-          },
-          {
-            "name": "bore",
-            "url": "https://github.com/ekzhang/bore",
-            "description": "@ekzhang 把本地端口暴露到公网的极 ★11.5k"
-          },
-          {
-            "name": "murex",
-            "url": "https://github.com/lmorg/murex",
-            "description": "@lmorg 更聪明的shell与脚本环境 ★1915"
-          },
-          {
-            "name": "gita",
-            "url": "https://github.com/nosarthur/gita",
-            "description": "@nosarthur 从容管理多个Git仓库 ★1944"
-          },
-          {
-            "name": "Claude Code 终极指南",
-            "url": "https://github.com/florianbruniaux/claude-code-ultimate-guide",
-            "description": "最全Claude Code指南：430K+行"
-          },
-          {
-            "name": "VibeSDK",
-            "url": "https://github.com/cloudflare/vibesdk",
-            "description": "Cloudflare开源的Vibe Coding平台"
-          },
-          {
-            "name": "MonkeyCode",
-            "url": "https://github.com/chaitin/monkeycode",
-            "description": "长亭开源的团队AI编程平台"
-          },
-          {
-            "name": "MemPalace",
-            "url": "https://github.com/milla-jovovich/mempalace",
-            "description": "本地AI记忆系统，LongMemEval第一"
-          },
-          {
-            "name": "Matt Pocock Skills",
-            "url": "https://github.com/mattpocock/skills",
-            "description": "真实工程师的AI编程Skills合集"
-          },
-          {
-            "name": "Context Mode",
-            "url": "https://github.com/mksglu/context-mode",
-            "description": "上下文优化，工具输出压缩98%"
-          },
-          {
-            "name": "Claude对话管理器",
-            "url": "https://github.com/f14XuanLv/Claude-Powerest-Manager_Enhancer",
-            "description": "野生红石菌 一个开源脚本高效管理 419播放"
-          },
-          {
-            "name": "Cursor.directory",
-            "url": "https://cursor.directory/",
-            "description": "HN@pontusabb 开源的 HN51分"
-          },
-          {
-            "name": "Kaku",
-            "url": "https://github.com/tw93/Kaku",
-            "description": "@tw93 为AI编码而生的极速macOS终 ★6.1k"
-          },
-          {
-            "name": "ruler",
-            "url": "https://github.com/intellectronica/ruler",
-            "description": "@intellectronica 给所有编码 ★2.9k"
-          },
-          {
-            "name": "claude-code-chat",
-            "url": "https://github.com/andrepimenta/claude-code-chat",
-            "description": "@andrepimenta Code里漂亮的 ★1.1k"
-          },
-          {
-            "name": "gdb-dashboard",
-            "url": "https://github.com/cyrus-and/gdb-dashboard",
-            "description": "@cyrus-and 的模块化可视化界面 ★12.3k"
-          },
-          {
-            "name": "unreal-mcp",
-            "url": "https://github.com/chongdashu/unreal-mcp",
-            "description": "@chongdashu 让Cursor ★2088"
-          },
-          {
-            "name": "tmux-fingers",
-            "url": "https://github.com/Morantron/tmux-fingers",
-            "description": "@Morantron 终端里用快捷键复制文本 ★1473"
-          },
-          {
-            "name": "plannotator",
-            "url": "https://github.com/backnotprop/plannotator",
-            "description": "@backnotprop Agent 协作的规划评审台 ★13.2k"
-          },
-          {
-            "name": "Claude-BugHunter",
-            "url": "https://github.com/elementalsouls/Claude-BugHunter",
-            "description": "@elementalsouls Claude Code 漏洞挖掘包 ★10.3k"
-          }
-        ]
-      },
-      {
-        "name": "AI 聊天与智能体",
-        "links": [
-          {
-            "name": "Agent-Reach",
-            "url": "https://github.com/Panniantong/Agent-Reach",
-            "description": "一个CLI让AI读全网，零API费用"
-          },
-          {
-            "name": "Claude app 复刻",
-            "url": "https://github.com/pretend1111/claude-desktop-app",
-            "description": "Yperm 个人复刻的Claude桌面客户端"
-          },
-          {
-            "name": "Botais：让各家 LLM 现场对决的贪吃蛇大赛",
-            "url": "https://botais.sello.dev/",
-            "description": "HN@giza182 3分/2评"
-          },
-          {
-            "name": "5ire",
-            "url": "https://github.com/nanbingxyz/5ire",
-            "description": "@nanbingxyz 跨平台桌面AI助手 ★5367"
-          },
-          {
-            "name": "py-gpt",
-            "url": "https://github.com/szczyglis-dev/py-gpt",
-            "description": "@szczyglis-dev 接入多家大模型 ★1964"
-          },
-          {
-            "name": "cultivation-world-simulator",
-            "url": "https://github.com/4thfever/cultivation-world-simulator",
-            "description": "@4thfever 基于AIAgent工作流 ★2104"
-          },
-          {
-            "name": "Odysseus",
-            "url": "https://github.com/pewdiepie-archdaemon/odysseus",
-            "description": "PewDiePie开源自托管AI工作台，本地优先"
-          },
-          {
-            "name": "枫云AI助手",
-            "url": "https://github.com/MewCo-AI/mewco_ai_assistant_comm",
-            "description": "枫影剑Maple 开源AI助手社区版开发教 1698播放"
-          },
-          {
-            "name": "Pac-Bench: how well can models one-shot Pac-Man?",
-            "url": "https://jonclegg.github.io/pacman-bakeoff/",
-            "description": "HN@thefourthchime 让各家大模型一次生成"
-          },
-          {
-            "name": "Open-Claude-Cowork",
-            "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-            "description": "@DevAgentForge 桌面端 ★3397"
-          },
-          {
-            "name": "olib-mobile",
-            "url": "https://github.com/shiyi-0x7f/olib-mobile",
-            "description": "@shiyi-0x7f 全程用AI助手写的开 ★1282"
-          },
-          {
-            "name": "Agentshire",
-            "url": "https://github.com/Agentshire/Agentshire",
-            "description": "@Agentshire 把AIagent可视 ★1297"
-          },
-          {
-            "name": "LANChat 局域网聊天",
-            "url": "https://github.com/cap153/LANChat",
-            "description": "夜未央-天将亮 自己开发的Tauri+ 1859播放"
-          },
-          {
-            "name": "DeepSeek Harness 桌面版（可微信远程派任务）",
-            "url": "https://github.com/flaqai/open-deepseek-harness-desktop",
-            "description": "V2EX@leoli2024 社区桌面发行版"
-          },
-          {
-            "name": "用 Jev 模型自动玩宝可梦并直播",
-            "url": "https://jev-plays-pokemon.standardagents.ai/",
-            "description": "V2EX@mqx Jev大模型自己玩宝可梦并开直播"
-          },
-          {
-            "name": "TaxHacker",
-            "url": "https://github.com/vas3k/TaxHacker",
-            "description": "@vas3k 自托管AI记账：LLM解析小票 ★6.7k"
-          },
-          {
-            "name": "agent-of-empires",
-            "url": "https://github.com/agent-of-empires/agent-of-empires",
-            "description": "@agent-of-empires 统一管理 ★3311"
-          },
-          {
-            "name": "vibekit",
-            "url": "https://github.com/superagent-ai/vibekit",
-            "description": "@superagent-ai 在干净隔离的界 ★1.9k"
-          },
-          {
-            "name": "xiaokeai",
-            "url": "https://github.com/liupig/xiaokeai",
-            "description": "@liupig 开源本地3D虚拟陪玩：语音聊天 ★105"
-          },
-          {
-            "name": "Waku Agent",
-            "url": "https://github.com/ShenSeanChen/waku-agent",
-            "description": "100%本地运行的开源AI个人助手"
-          },
-          {
-            "name": "LM Studio",
-            "url": "https://lmstudio.ai/",
-            "description": "HN@ybu 在桌面发现/下载/离线运行大模型的GUI"
-          },
-          {
-            "name": "vibe-kanban",
-            "url": "https://github.com/BloopAI/vibe-kanban",
-            "description": "@BloopAI 给ClaudeCode ★28.2k"
-          },
-          {
-            "name": "WritingTools",
-            "url": "https://github.com/theJayTea/WritingTools",
-            "description": "@theJayTea 系统级语法与写作助手 ★2463"
-          },
-          {
-            "name": "VibeSec-Skill",
-            "url": "https://github.com/BehiSecc/VibeSec-Skill",
-            "description": "@BehiSecc 帮Claude写出安全代 ★1.3k"
-          },
-          {
-            "name": "zhouli-translator",
-            "url": "https://github.com/Aspirin0000/zhouli-translator",
-            "description": "@Aspirin0000 用DeepSeek驱 ★319"
-          },
-          {
-            "name": "last30days-skill",
-            "url": "https://github.com/mvanhorn/last30days-skill",
-            "description": "@mvanhorn 跨平台话题调研 Agent 技能 ★69.5k"
-          }
-        ]
-      },
-      {
-        "name": "AI 创作与生成",
-        "links": [
-          {
-            "name": "AI 写小说工具",
-            "url": "https://xiezuo.91hub.vip",
-            "description": "Pony被占了 用AI三天自研并开源，2.68万播放"
-          },
-          {
-            "name": "PulseFeedback：只用浏览器摄像头视频就能读出你的脉搏",
-            "url": "https://pulsefeedback.io/",
-            "description": "HN@kilroy123 115分/54评"
-          },
-          {
-            "name": "ouroboros",
-            "url": "https://github.com/razzant/ouroboros",
-            "description": "@razzant 一个“自我生成”的 ★1399"
-          },
-          {
-            "name": "MaliangAINovalWriter",
-            "url": "https://github.com/deng-m1/MaliangAINovalWriter",
-            "description": "@deng-m1 「马良写作」网文AI小说平台 ★883"
-          },
-          {
-            "name": "InkOS",
-            "url": "https://github.com/Narcooo/inkos",
-            "description": "10个AI智能体协作写小说：写审改全程"
-          },
-          {
-            "name": "OCV 一键成片",
-            "url": "https://github.com/IFRIT-Zhou/One-Click-VidGen",
-            "description": "-IFRIT- 个人自研并开源的一键成片视频生成器"
-          },
-          {
-            "name": "AI互动故事引擎",
-            "url": "https://akasa.fun",
-            "description": "陌上尘少年人 做了个可玩的互动故事引擎akasa.fun"
-          },
-          {
-            "name": "DogLM：在一个 AI 生成的游戏里，你能摸到这只狗吗？",
-            "url": "https://mikeushakov.github.io/doglm/",
-            "description": "HN@mikeushakov 6分/1评"
-          },
-          {
-            "name": "WorldX",
-            "url": "https://github.com/YGYOOO/WorldX",
-            "description": "@YGYOOO 一句话生成一个AI自主驱动的 ★1511"
-          },
-          {
-            "name": "Huashu Design",
-            "url": "https://github.com/alchaincyf/huashu-design",
-            "description": "一句话生成设计成品：PPT原型动画"
-          },
-          {
-            "name": "m3e-canvas",
-            "url": "https://github.com/lnkiai/m3e-canvas",
-            "description": "@lnkiai 浏览器里拖拽生成 ★8555"
-          },
-          {
-            "name": "world-forge-ai",
-            "url": "https://github.com/gunawan1996/world-forge-ai",
-            "description": "@gunawan1996 世界生成器 ★125"
-          },
-          {
-            "name": "女娲.skill",
-            "url": "https://github.com/alchaincyf/nuwa-skill",
-            "description": "女娲.skill：创意生成设计技能 2.1万★"
-          },
-          {
-            "name": "开源复刻视频项目 Hypit 一周 1.3w star",
-            "url": "https://github.com/hypit-ai/hypit",
-            "description": "V2EX@Daniel6606 复盘爆红的复刻视频开源项"
-          },
-          {
-            "name": "comic-translate",
-            "url": "https://github.com/ogkalu2/comic-translate",
-            "description": "@ogkalu2 自动翻译漫画的应用 ★2963"
-          },
-          {
-            "name": "POV-AI-Storytelling",
-            "url": "https://github.com/5263jh/POV-AI-Storytelling",
-            "description": "@5263jh 一套创作第一人称AI视觉故事的 ★130"
-          }
-        ]
-      },
-      {
-        "name": "AI 绘画与艺术",
-        "links": [
-          {
-            "name": "油炸图片的网站",
-            "url": "https://www.zounoashi.com/#/game/karaage?card=square2",
-            "description": "䶱欎 一个可以把图片油炸的猎奇网站 2.7万播放"
-          },
-          {
-            "name": "水彩风格艺术生成器",
-            "url": "https://brushify.art/",
-            "description": "HN@nfriend 一个小手作项目：把照片"
-          },
-          {
-            "name": "Generative online drum machine (ClojureScript)",
-            "url": "https://dopeloop.ai/beat-maker/",
-            "description": "HN@chr15m 用ClojureScript写的在线"
-          },
-          {
-            "name": "OGAM",
-            "url": "https://github.com/off-grid-ai/OGAM",
-            "description": "@off-grid-ai 离线AI瑞士军刀 ★3.2k"
-          },
-          {
-            "name": "img2img-turbo",
-            "url": "https://github.com/GaParmar/img2img-turbo",
-            "description": "@GaParmar Diffusion一步图 ★2.5k"
-          },
-          {
-            "name": "Krbn",
-            "url": "https://github.com/vpalos/Krbn",
-            "description": "@vpalos 把3D场景画成铅笔 ★235"
-          },
-          {
-            "name": "clipsketch-ai",
-            "url": "https://github.com/RanFeng/clipsketch-ai",
-            "description": "@RanFeng 把视频瞬间一键转成手绘分镜 ★1857"
-          },
-          {
-            "name": "CozyClay",
-            "url": "https://github.com/NomaDamas/CozyClay",
-            "description": "@NomaDamas 浏览器里的预演软件 ★747"
-          },
-          {
-            "name": "genart-skill",
-            "url": "https://github.com/camilleroux/genart-skill",
-            "description": "@camilleroux 给 ★143"
-          },
-          {
-            "name": "用 Claude Code 生成的精美交互式科普解释页",
-            "url": "https://paraschopra.github.io/explainers/",
-            "description": "HN@paraschopra 43分/30评"
-          },
-          {
-            "name": "Artificial Ivy in the Browser",
-            "url": "https://da.nmcardle.com/grow",
-            "description": "HN@dnmc 浏览器里一片会自然生长摇曳的生成式常春藤"
-          },
-          {
-            "name": "Blotter",
-            "url": "https://github.com/bradley/Blotter",
-            "description": "@bradley 文字特效库 ★3.1k"
-          },
-          {
-            "name": "ooosplat",
-            "url": "https://github.com/ooolabdev/ooosplat",
-            "description": "@ooolabdev 本地一键把视频和图片变 ★1717"
-          },
-          {
-            "name": "minecraft-citygen",
-            "url": "https://github.com/chengmarc/minecraft-citygen",
-            "description": "@chengmarc 把你在 ★192"
-          },
-          {
-            "name": "inkloom",
-            "url": "https://github.com/Inkloom-art/inkloom",
-            "description": "@Inkloom-art 专门做logo设计的 ★665"
-          },
-          {
-            "name": "open-storyboard-canvas",
-            "url": "https://github.com/ganbo-gab/open-storyboard-canvas",
-            "description": "@ganbo-gab 开源AI分镜与导演台画布 ★362"
-          },
-          {
-            "name": "ai-subtitles",
-            "url": "https://github.com/Nutlope/ai-subtitles",
-            "description": "@Nutlope 用AI给任意视频生成字幕 ★462"
-          },
-          {
-            "name": "ArtCraft",
-            "url": "https://github.com/storytold/artcraft",
-            "description": "AI影像创作引擎：摆场景角色再生成"
-          },
-          {
-            "name": "AI 逐像素画的 32×32 宠物生成器（自动骨骼动画）",
-            "url": "https://github.com/systemchester/FrameRonin",
-            "description": "V2EX@royluo 一句话让LLM逐像素画出32×"
-          },
-          {
-            "name": "Interactive California Budget（Claude Code 生成的加州预算可视化）",
-            "url": "https://california-budget.com/",
-            "description": "HN@sberens 39分/20评"
-          },
-          {
-            "name": "mono-color-skill",
-            "url": "https://github.com/yanliudesign/mono-color-skill",
-            "description": "@yanliudesign 单色水墨版画风格 ★3.3k"
-          },
-          {
-            "name": "scroll-craft",
-            "url": "https://github.com/nateherkai/scroll-craft",
-            "description": "@nateherkai 构建高级沉浸式滚动网 ★2.9k"
-          },
-          {
-            "name": "texel-studio",
-            "url": "https://github.com/EYamanS/texel-studio",
-            "description": "@EYamanS 像真正画师一样用工具绘画的 ★202"
-          },
-          {
-            "name": "qiaomu-mondo-poster-design",
-            "url": "https://github.com/joeseesun/qiaomu-mondo-poster-design",
-            "description": "@joeseesun 一句话生成大师级海报 ★1239"
-          },
-          {
-            "name": "humation",
-            "url": "https://github.com/humation-labs/humation",
-            "description": "@humation-labs 手绘感 ★245"
-          },
-          {
-            "name": "Storyboard-Copilot",
-            "url": "https://github.com/henjicc/Storyboard-Copilot",
-            "description": "@henjicc 基于节点画布的AI分镜工作台 ★712"
-          },
-          {
-            "name": "AI 按文字指令直接改图",
-            "url": "https://github.com/brycedrennan/imaginAIry",
-            "description": "HN@bryced 新版AI可直接按自然语言指令编辑已有"
-          },
-          {
-            "name": "notion-avatar",
-            "url": "https://github.com/Mayandev/notion-avatar",
-            "description": "@Mayandev 在线制作Notion风格 ★3.2k"
-          },
-          {
-            "name": "MLE-Flashcards",
-            "url": "https://github.com/b7leung/MLE-Flashcards",
-            "description": "@b7leung +张机器学习复习闪卡 ★2.5k"
-          },
-          {
-            "name": "codebase-posters",
-            "url": "https://github.com/unable12/codebase-posters",
-            "description": "@unable12 把你的代码仓库本身变成生成 ★130"
-          },
-          {
-            "name": "ManimCat",
-            "url": "https://github.com/Wing900/ManimCat",
-            "description": "@Wing900 用自然语言描述即可生成高质量 ★463"
-          },
-          {
-            "name": "novella",
-            "url": "https://github.com/Agions/novella",
-            "description": "@Agions 端到端AI漫剧 ★116"
-          },
-          {
-            "name": "pixel-plugin",
-            "url": "https://github.com/willibrandon/pixel-plugin",
-            "description": "@willibrandon 用自然语言通过 ★336"
-          }
-        ]
-      },
-      {
-        "name": "AI 视频与剪辑",
-        "links": [
-          {
-            "name": "HyperFrames",
-            "url": "https://github.com/heygen-com/hyperframes",
-            "description": "写HTML渲染视频，专为AI智能体打造"
-          },
-          {
-            "name": "AI 一句话剪视频",
-            "url": "https://github.com/znyupup/ai-video-editing-skill",
-            "description": "nyx的研究所 让AI帮你剪视频 4.6万播放"
-          },
-          {
-            "name": "Palmier Pro 开源 macOS AI 视频编辑器",
-            "url": "https://github.com/palmier-io/palmier-pro",
-            "description": "HN@harrisontin 为AI工作流打造的开源"
-          },
-          {
-            "name": "drama-skills",
-            "url": "https://github.com/zenstory-ai/drama-skills",
-            "description": "@zenstory-ai 开源AI短剧 ★2.4k"
-          },
-          {
-            "name": "开源 AI 数字人直播系统",
-            "url": "https://github.com/lipku/livetalking",
-            "description": "屾哥ai说 开源免费AI数字人直播系统 2.4万播放"
-          },
-          {
-            "name": "dramaclaw",
-            "url": "https://github.com/dramaclaw/dramaclaw",
-            "description": "@dramaclaw 通用AIGC视频引擎 ★6.6k"
-          },
-          {
-            "name": "youtube-shorts-pipeline",
-            "url": "https://github.com/rushindrasinha/youtube-shorts-pipeline",
-            "description": "@rushindrasinha 自动化 ★2.3k"
-          },
-          {
-            "name": "AI Video Agent 网站",
-            "url": "https://fungen.ai/",
-            "description": "V2EX@muyifeng1988 分享的一个"
-          },
-          {
-            "name": "narrator-ai-cli-skill",
-            "url": "https://github.com/NarratorAI-Studio/narrator-ai-cli-skill",
-            "description": "@NarratorAI-Studio 解说大 ★3.0k"
-          },
-          {
-            "name": "BigBanana-AI-Director",
-            "url": "https://github.com/shuyu-labs/BigBanana-AI-Director",
-            "description": "@shuyu-labs 工业级一站式AI短剧 ★2.3k"
-          },
-          {
-            "name": "Tikdek 浏览器 AI 视频/图片创作",
-            "url": "https://tikdek.com/",
-            "description": "V2EX@jiames1969 浏览器内直接做AI视频与"
-          },
-          {
-            "name": "story-flicks",
-            "url": "https://github.com/alecm20/story-flicks",
-            "description": "@alecm20 用大模型一键生成高清故事短 ★2.5k"
-          }
-        ]
-      },
-      {
-        "name": "AI 应用与好玩项目",
-        "links": [
-          {
-            "name": "能复盘的 AI 口语陪练",
-            "url": "https://waiyuka.cc/",
-            "description": "V2EX@xibobo 聊完还能看复盘的AI英语口语练习"
-          },
-          {
-            "name": "SingOneSong：AI 听你的声音，推荐你该唱的歌和歌手",
-            "url": "https://coach.singonesong.com/",
-            "description": "HN@JacobSingh 46分/4评：录一段哼鸣"
-          },
-          {
-            "name": "Turn any book into a text adventure game",
-            "url": "https://www.kathaaverse.com/",
-            "description": "HN@rcrKnight 用AI把任意一本书自动改写成可"
-          },
-          {
-            "name": "modly",
-            "url": "https://github.com/lightningpixel/modly",
-            "description": "@lightningpixel 本地AI从图 ★7.9k"
-          },
-          {
-            "name": "demo2apk",
-            "url": "https://github.com/DeadWaveWave/demo2apk",
-            "description": "@DeadWaveWave 把你的 ★638"
-          },
-          {
-            "name": "ekko-studio",
-            "url": "https://github.com/EKKOLearnAI/ekko-studio",
-            "description": "@EKKOLearnAI 本地优先多 ★11.3k"
-          },
-          {
-            "name": "nopua",
-            "url": "https://github.com/wuji-labs/nopua",
-            "description": "@wuji-labs 用尊重与关怀和AI协作 ★1.4k"
-          },
-          {
-            "name": "hapi",
-            "url": "https://github.com/tiann/hapi",
-            "description": "@tiann 适配多家AI编程CLI的启动器 ★5158"
-          },
-          {
-            "name": "Fuxi",
-            "url": "https://github.com/fuxicodex/Fuxi",
-            "description": "@fuxicodex 自包含的快速AI编程 ★3350"
-          },
-          {
-            "name": "open-vibe-island",
-            "url": "https://github.com/Octane0411/open-vibe-island",
-            "description": "@Octane0411 原生监控AI编码 ★2038"
-          },
-          {
-            "name": "vibeyard",
-            "url": "https://github.com/elirantutia/vibeyard",
-            "description": "@elirantutia 为AI编程 ★1.4k"
-          },
-          {
-            "name": "jev-pokemon",
-            "url": "https://github.com/christianmat/jev-pokemon",
-            "description": "@christianmat 决策模型自己玩《宝 ★117"
-          },
-          {
-            "name": "Pensieve",
-            "url": "https://github.com/DrJonaC/Pensieve",
-            "description": "@DrJonaC 像邓布利多的冥想盆 ★1385"
-          },
-          {
-            "name": "AI-Novel-Writer",
-            "url": "https://github.com/EthanYoQ/AI-Novel-Writer",
-            "description": "@EthanYoQ 把灵感、角色、世界观 ★1247"
-          },
-          {
-            "name": "ai-moive-studio",
-            "url": "https://github.com/869413421/ai-moive-studio",
-            "description": "@869413421 自然语言驱动的无限画布 ★1603"
-          },
-          {
-            "name": "neowall",
-            "url": "https://github.com/1ay1/neowall",
-            "description": "@1ay1 用GLSLshader的GPU加速 ★269"
-          },
-          {
-            "name": "workshop-wallpaper-bridge",
-            "url": "https://github.com/3x-haust/workshop-wallpaper-bridge",
-            "description": "@3x-haust 纯本地macOS桥 ★237"
-          },
-          {
-            "name": "lg-webos-dashboard",
-            "url": "https://github.com/rorygallagher2024/lg-webos-dashboard",
-            "description": "@rorygallagher2024 给 ★227"
-          },
-          {
-            "name": "subwave",
-            "url": "https://github.com/perminder-klair/subwave",
-            "description": "@perminder-klair 私人互联网 ★1404"
-          },
-          {
-            "name": "Codex 额度重置查询工具",
-            "url": "https://codexreset.remit.ee/",
-            "description": "V2EX@awendujitang 自己做的查询"
-          },
-          {
-            "name": "开源项目推荐站（开发者自荐）",
-            "url": "https://zendot.org/",
-            "description": "V2EX@Hifone 做了个开源项目推荐站"
-          },
-          {
-            "name": "aidchot.com：AI 与数据中心热点聚合站",
-            "url": "https://aidchot.com/",
-            "description": "V2EX@qq723985066 自做的AI新闻聚合站"
-          },
-          {
-            "name": "k-synth：用 APL（或一个 dumb K 方言）驱动的合成器",
-            "url": "https://octetta.github.io/k-synth/",
-            "description": "HN@octetta 92分/33评"
-          },
-          {
-            "name": "korb：用逆向工程的 REWE API 在命令行下单 groceries",
-            "url": "https://github.com/yannick-cw/korb",
-            "description": "HN@wazHFsRy 205分/85评"
-          },
-          {
-            "name": "GDevelop",
-            "url": "https://github.com/4ian/GDevelop",
-            "description": "@4ian 🎮人人可用的开源跨平台2D ★27.1k"
-          },
-          {
-            "name": "AIHOT",
-            "url": "https://github.com/KKKKhazix/AIHOT",
-            "description": "@KKKKhazix 自己找热点 ★4.8k"
-          },
-          {
-            "name": "SurfSense",
-            "url": "https://github.com/MODSetter/SurfSense",
-            "description": "@MODSetter 离线、隐私优先的开源 ★16.3k"
-          },
-          {
-            "name": "metastream",
-            "url": "https://github.com/samuelmaddock/metastream",
-            "description": "@samuelmaddock 和朋友一起同步 ★2.6k"
-          },
-          {
-            "name": "cursor-effects",
-            "url": "https://github.com/tholman/cursor-effects",
-            "description": "@tholman 给浏览器加复古鼠标特效 ★4067"
-          },
-          {
-            "name": "twinny",
-            "url": "https://github.com/twinnydotdev/twinny",
-            "description": "@twinnydotdev Code开源 ★3663"
-          },
-          {
-            "name": "deepseek_ocr_app",
-            "url": "https://github.com/rdumasia303/deepseek_ocr_app",
-            "description": "@rdumasia303 用 ★1889"
-          },
-          {
-            "name": "drunk-claude",
-            "url": "https://github.com/KorroAi/drunk-claude",
-            "description": "@KorroAi 从“微醺”到“断片”的强度滑 ★197"
-          },
-          {
-            "name": "vibecoded-design-tells",
-            "url": "https://github.com/JCarterJohnson/vibecoded-design-tells",
-            "description": "@JCarterJohnson 扫了320万条 ★507"
-          },
-          {
-            "name": "director_ai",
-            "url": "https://github.com/freestylefly/director_ai",
-            "description": "@freestylefly 漫剧制作App ★1777"
-          },
-          {
-            "name": "holo-card-studio",
-            "url": "https://github.com/EverettFish/holo-card-studio",
-            "description": "@EverettFish 一句描述或上传参考 ★1856"
-          },
-          {
-            "name": "open-wallpaper-engine",
-            "url": "https://github.com/waywallen/open-wallpaper-engine",
-            "description": "@waywallen 主要面向Linux的开源 ★236"
-          },
-          {
-            "name": "vidwall",
-            "url": "https://github.com/jaywcjlove/vidwall",
-            "description": "@jaywcjlove 把4K视频设为 ★127"
-          },
-          {
-            "name": "RetroMac",
-            "url": "https://github.com/klotzbrocken/RetroMac",
-            "description": "@klotzbrocken 把你的Mac变成复 ★118"
-          },
-          {
-            "name": "writ-fm",
-            "url": "https://github.com/keltokhy/writ-fm",
-            "description": "@keltokhy /7不间断的AI网络电台 ★380"
-          },
-          {
-            "name": "IndexTTS-2.0 开源语音克隆",
-            "url": "https://github.com/iszhanjiawei/indextts2",
-            "description": "资源汇社区 B站AI语音克隆之王 39.7万播放"
-          },
-          {
-            "name": "AI 颜值打分网站",
-            "url": "https://faceanalysisai.com/",
-            "description": "V2EX@lanyi96 自己做的人脸颜值打分网页"
-          },
-          {
-            "name": "萤录 RayTally：每天更新的产品灵感站",
-            "url": "https://raytally.com/",
-            "description": "V2EX@kshift 每天扫GoogleTrends"
-          },
-          {
-            "name": "SpellScript：一门读起来像魔法书的晦涩编程语言",
-            "url": "https://github.com/sirbread/spellscript",
-            "description": "HN@sirbread 176分/59评"
-          },
-          {
-            "name": "A terminal glued to the macOS dock",
-            "url": "https://github.com/palamim/starboard",
-            "description": "HN@leopalamim 常驻在macOSDock里的"
-          },
-          {
-            "name": "next-ai-draw-io",
-            "url": "https://github.com/DayuanJiang/next-ai-draw-io",
-            "description": "@DayuanJiang 把AI能力和 ★36.1k"
-          },
-          {
-            "name": "WaifuX",
-            "url": "https://github.com/jipika/WaifuX",
-            "description": "@jipika 壁纸/动态壁纸/番剧美化工具 ★1.4k"
-          },
-          {
-            "name": "Yuxi",
-            "url": "https://github.com/xerrors/Yuxi",
-            "description": "@xerrors 可私有部署的多租户知识智能 ★7.3k"
-          },
-          {
-            "name": "local-deep-research",
-            "url": "https://github.com/LearningCircuit/local-deep-research",
-            "description": "@LearningCircuit 本地跑的深 ★9.1k"
-          },
-          {
-            "name": "eclaire",
-            "url": "https://github.com/eclaire-labs/eclaire",
-            "description": "@eclaire-labs 本地优先 ★922"
-          },
-          {
-            "name": "autoMate",
-            "url": "https://github.com/yuruotong1/autoMate",
-            "description": "@yuruotong1 类Manus的电脑操 ★3969"
-          },
-          {
-            "name": "vibeproxy",
-            "url": "https://github.com/automazeio/vibeproxy",
-            "description": "@automazeio 菜单栏调用 ★3363"
-          },
-          {
-            "name": "yu-ai-code-mother",
-            "url": "https://github.com/liyupi/yu-ai-code-mother",
-            "description": "@liyupi 编程导航AI+微服务全栈新项 ★2.0k"
-          },
-          {
-            "name": "gnhf",
-            "url": "https://github.com/kunchenguid/gnhf",
-            "description": "@kunchenguid 睡前对AI们说一句 ★4153"
-          },
-          {
-            "name": "infiplot",
-            "url": "https://github.com/zonghaoyuan/infiplot",
-            "description": "@zonghaoyuan 互动解谜小游戏 ★381"
-          },
-          {
-            "name": "TinyToolTown",
-            "url": "https://github.com/shanselman/TinyToolTown",
-            "description": "@shanselman Hanselman的网 ★269"
-          },
-          {
-            "name": "vela",
-            "url": "https://github.com/heider-x/vela",
-            "description": "@heider-x 为网文作者做的AI写作 ★575"
-          },
-          {
-            "name": "skwd-wall",
-            "url": "https://github.com/liixini/skwd-wall",
-            "description": "@liixini 美学优先 ★1021"
-          },
-          {
-            "name": "WallpaperMachine",
-            "url": "https://github.com/WallpaperMachine/WallpaperMachine",
-            "description": "@WallpaperMachine 原生动态壁 ★147"
-          },
-          {
-            "name": "LtvLauncher",
-            "url": "https://github.com/leanbitlab-org/LtvLauncher",
-            "description": "@leanbitlab-org 极简开源 ★355"
-          },
-          {
-            "name": "CyberArch-Shell",
-            "url": "https://github.com/ARCANGEL0/CyberArch-Shell",
-            "description": "@ARCANGEL0 为Hyprland定制的 ★446"
-          },
-          {
-            "name": "ai-influence-digest",
-            "url": "https://github.com/koffuxu/ai-influence-digest",
-            "description": "@koffuxu 把你刷X的过程变成AI周报 ★317"
-          },
-          {
-            "name": "开源 AI 听书角色读书",
-            "url": "https://github.com/x-t-e-r/tts-for-gpt-sovits",
-            "description": "箱庭XTer 开源免费AI听书 43.1万播放"
-          },
-          {
-            "name": "让AI自己打游戏的网站",
-            "url": "https://ai.quadwit.com",
-            "description": "怪兽 Quadwit：把游戏链接丢给AI"
-          },
-          {
-            "name": "3 天 Vibe Coding 的生产级 AI 工具 SnapVee",
-            "url": "https://snapvee.com/",
-            "description": "V2EX@jchencode 100%"
-          },
-          {
-            "name": "消失九个月，带着三个开源项目回归（OmniStudio 等）",
-            "url": "https://github.com/kunpengtalk/OmniStudio",
-            "description": "V2EX@KunpengTalk 首个"
-          },
-          {
-            "name": "Cursouls",
-            "url": "https://github.com/wunderlabs-dev/cursouls",
-            "description": "HN@balajmarius 给"
-          },
-          {
-            "name": "Dreamtap：让你的 AI 变得更有想象力",
-            "url": "https://dreamtap.xyz/",
-            "description": "HN@neural_thing 66分/12评"
-          },
-          {
-            "name": "A frontpage for personal blogs",
-            "url": "https://text.blogosphere.app/",
-            "description": "HN@ramkarthikk 为散落各处的个人博客聚合出"
-          },
-          {
-            "name": "frontend-slides",
-            "url": "https://github.com/zarazhangrui/frontend-slides",
-            "description": "@zarazhangrui 用编码 ★30.1k"
-          },
-          {
-            "name": "wesight",
-            "url": "https://github.com/freestylefly/wesight",
-            "description": "@freestylefly 一键接入 ★933"
-          },
-          {
-            "name": "SparkyFitness",
-            "url": "https://github.com/CodeWithCJ/SparkyFitness",
-            "description": "@CodeWithCJ 家庭向AI饮食/健身 ★6.2k"
-          },
-          {
-            "name": "OpenWA",
-            "url": "https://github.com/rmyndharis/OpenWA",
-            "description": "@rmyndharis 开源自托管 ★14.9k"
-          },
-          {
-            "name": "genoffice",
-            "url": "https://github.com/genspark-ai/genoffice",
-            "description": "@genspark-ai 开源AI办公套件 ★8362"
-          },
-          {
-            "name": "CodeGraphContext",
-            "url": "https://github.com/CodeGraphContext/CodeGraphContext",
-            "description": "@CodeGraphContext 把本地代 ★4242"
-          },
-          {
-            "name": "vibe-notch",
-            "url": "https://github.com/farouqaldori/vibe-notch",
-            "description": "@farouqaldori Code不切屏的 ★2512"
-          },
-          {
-            "name": "CS146S_CN",
-            "url": "https://github.com/ShouZhengAI/CS146S_CN",
-            "description": "@ShouZhengAI 动手学 ★1.6k"
-          },
-          {
-            "name": "wolfcha",
-            "url": "https://github.com/oil-oil/wolfcha",
-            "description": "@oil-oil 版狼人杀/阿瓦隆 ★723"
-          },
-          {
-            "name": "starnet",
-            "url": "https://github.com/androoAGI/starnet",
-            "description": "@androoAGI 一座活的像素艺术站 ★933"
-          },
-          {
-            "name": "Stevos-AI-Blocklist",
-            "url": "https://github.com/Stevoisiak/Stevos-AI-Blocklist",
-            "description": "@Stevoisiak 一个屏蔽列表 ★972"
-          },
-          {
-            "name": "denova",
-            "url": "https://github.com/alfredxw/denova",
-            "description": "@alfredxw 小说写作与生成式RPG的创 ★850"
-          },
-          {
-            "name": "MirageWallpaper",
-            "url": "https://github.com/laobamac/MirageWallpaper",
-            "description": "@laobamac 号称macOS最完美的动态 ★354"
-          },
-          {
-            "name": "wallpiper",
-            "url": "https://github.com/ejalxndr/wallpiper",
-            "description": "@ejalxndr Engine在x86_ ★183"
-          },
-          {
-            "name": "immortal",
-            "url": "https://github.com/starbrightlab/immortal",
-            "description": "@starbrightlab 让已停产的 ★191"
-          },
-          {
-            "name": "dhruva",
-            "url": "https://github.com/NarkAgni/dhruva",
-            "description": "@NarkAgni Shell上高度动画 ★191"
-          },
-          {
-            "name": "claude-trading-skills",
-            "url": "https://github.com/tradermonty/claude-trading-skills",
-            "description": "@tradermonty 股票投资分析的 Claude 技能集 ★7k"
-          },
-          {
-            "name": "daily_stock_analysis",
-            "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-            "description": "@ZhuLinsen LLM 多市场股票分析系统 ★73.2k"
-          }
-        ]
-      },
-      {
-        "name": "游戏与娱乐",
-        "links": [
-          {
-            "name": "12小时极速做网站",
-            "url": "https://zachji.com",
-            "description": "扎克鸡 游戏开发者12小时极速开发，做网页能有多离谱"
-          },
-          {
-            "name": "合成杰出女性小游戏",
-            "url": "https://sasajun2345.github.io/Goddess-Forge/",
-            "description": "SaSa_洒洒菌 类 7772播放"
-          },
-          {
-            "name": "MIYO 跨平台影视媒体中心",
-            "url": "https://www.miyotv.com/",
-            "description": "V2EX@ftwerain Windows+"
-          },
-          {
-            "name": "Detective.wiki：基于 Wikipedia 做的侦探推理游戏",
-            "url": "https://detective.wiki/",
-            "description": "HN@jasonsmiles 318分/43评"
-          },
-          {
-            "name": "用 Claude Code 做的 3D 网页多人 arena",
-            "url": "https://arena.ibuildstuff.eu/",
-            "description": "HN@tombuildsstuff 1分/1评"
-          },
-          {
-            "name": "kcc",
-            "url": "https://github.com/ciromattia/kcc",
-            "description": "@ciromattia 漫画转换器 ★5756"
-          },
-          {
-            "name": "LightNovelReader",
-            "url": "https://github.com/dmzz-yyhyy/LightNovelReader",
-            "description": "@dmzz-yyhyy 多数据源 ★2164"
-          },
-          {
-            "name": "Lector",
-            "url": "https://github.com/BasioMeusPuga/Lector",
-            "description": "@BasioMeusPuga 电子书阅读器 ★1554"
-          },
-          {
-            "name": "pixel-dungeon",
-            "url": "https://github.com/watabou/pixel-dungeon",
-            "description": "@watabou 传统像素风 ★4.0k"
-          },
-          {
-            "name": "ai-fishing-game",
-            "url": "https://github.com/tutusagi/ai-fishing-game",
-            "description": "@tutusagi 给AI玩的确定性文字钓鱼小 ★556"
-          },
-          {
-            "name": "DimensionsRecomp",
-            "url": "https://github.com/NeverCookFirst/DimensionsRecomp",
-            "description": "@NeverCookFirst 证明“玩具联动 ★145"
-          },
-          {
-            "name": "sts2-cli",
-            "url": "https://github.com/wuhao21/sts2-cli",
-            "description": "@wuhao21 无头版《杀戮尖塔2》命令行客 ★270"
-          },
-          {
-            "name": "open-dungeon",
-            "url": "https://github.com/newideas99/open-dungeon",
-            "description": "@newideas99 完全本地的AI角色扮演 ★232"
-          },
-          {
-            "name": "AI 修仙文字冒险仙途",
-            "url": "https://github.com/qianye60/xiantu",
-            "description": "千夜_qianye AI修仙文字冒险仙途 1.1万播放"
-          },
-          {
-            "name": "Encircle：极简手绘风烧脑网页小游戏",
-            "url": "https://mehuleo.github.io/encircle/",
-            "description": "HN@arttaboi 26分/14评"
-          },
-          {
-            "name": "Chess-Inspired Roguelike",
-            "url": "https://princechazz.com/",
-            "description": "HN@cowboy_henk 把国际象棋走子规则"
-          },
-          {
-            "name": "light-novel-library_Wenku8_Android",
-            "url": "https://github.com/MewX/light-novel-library_Wenku8_Android",
-            "description": "@MewX 轻小说文库Wenku8安卓第三方 ★3055"
-          },
-          {
-            "name": "NovelReader",
-            "url": "https://github.com/newbiechen1024/NovelReader",
-            "description": "@newbiechen1024 仿任阅的追书 ★1796"
-          },
-          {
-            "name": "Mango",
-            "url": "https://github.com/getmango/Mango",
-            "description": "@getmango 自托管漫画服务器与 ★1777"
-          },
-          {
-            "name": "Microverse",
-            "url": "https://github.com/KsanaDock/Microverse",
-            "description": "@KsanaDock 基于Godot4的上帝 ★2485"
-          },
-          {
-            "name": "spotatui",
-            "url": "https://github.com/LargeModGames/spotatui",
-            "description": "@LargeModGames 写的飞快终端音 ★1400"
-          },
-          {
-            "name": "Setrixtui",
-            "url": "https://github.com/Mjoyufull/Setrixtui",
-            "description": "@Mjoyufull 用Ratatui写的俄罗 ★151"
-          },
-          {
-            "name": "SafeLLMPlayground",
-            "url": "https://github.com/RUIYUN-ML/SafeLLMPlayground",
-            "description": "@RUIYUN-ML 用LLM做文字冒险游戏的 ★351"
-          },
-          {
-            "name": "Block Breaker：vibe 做的网页打砖块",
-            "url": "https://block-breaker-game.com/",
-            "description": "V2EX@yidabuilds 经典打砖块网页"
-          },
-          {
-            "name": "cooked.house：嫌娃沉迷 Roblox，干脆一起做了个自家 FPS",
-            "url": "https://cooked.house/",
-            "description": "HN@davitb 23分/7评"
-          },
-          {
-            "name": "Build your own theme park",
-            "url": "https://www.magicpatterns.com/theme-park",
-            "description": "HN@thealexanderlee 浏览器里自己搭主题"
-          },
-          {
-            "name": "Alexandria",
-            "url": "https://github.com/btpf/Alexandria",
-            "description": "@btpf 写的极简跨平台电子书阅读器 ★2722"
-          },
-          {
-            "name": "eso",
-            "url": "https://github.com/mabDc/eso",
-            "description": "@mabDc 亦搜：漫画小说音视频合一阅读器 ★1783"
-          },
-          {
-            "name": "book-story",
-            "url": "https://github.com/Acclorite/book-story",
-            "description": "@Acclorite You电子书阅读器 ★1405"
-          },
-          {
-            "name": "gittype",
-            "url": "https://github.com/unhappychoice/gittype",
-            "description": "@unhappychoice 把你的源代码变 ★1616"
-          },
-          {
-            "name": "golazo",
-            "url": "https://github.com/0xjuanma/golazo",
-            "description": "@0xjuanma 终端里的球赛 ★868"
-          },
-          {
-            "name": "Playable3DMaze",
-            "url": "https://github.com/x86matthew/Playable3DMaze",
-            "description": "@x86matthew 把Windows9x时 ★210"
-          },
-          {
-            "name": "Claude-of-Tanks",
-            "url": "https://github.com/Kevin-Liu-01/Claude-of-Tanks",
-            "description": "@Kevin-Liu-01 仿《坦克世界》的纯 ★447"
-          },
-          {
-            "name": "Client",
-            "url": "https://github.com/Rhythia/Client",
-            "description": "@Rhythia 用Godot4写的瞄准系节奏 ★141"
-          },
-          {
-            "name": "Claude Code Game Studios",
-            "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
-            "description": "49个Agent管住你的Vibe Coding游戏开发"
-          },
-          {
-            "name": "两小时写的Web版MC",
-            "url": "https://lans-web-mc.netlify.app",
-            "description": "LanS10t Fable5两小时做出的网 5195播放"
-          },
-          {
-            "name": "猜物品相对大小益智小游戏",
-            "url": "https://playsizeitup.com/",
-            "description": "V2EX@Ethan2026 免费在线益智小游戏"
-          },
-          {
-            "name": "Gaming Couch：一台手机当手柄的 8 人本地派对游戏平台",
-            "url": "https://gamingcouch.com/",
-            "description": "HN@ChaosOp 437分/121评"
-          },
-          {
-            "name": "epr",
-            "url": "https://github.com/wustho/epr",
-            "description": "@wustho 电子书阅读器 ★1412"
-          },
-          {
-            "name": "lnreader",
-            "url": "https://github.com/lnreader/lnreader",
-            "description": "@lnreader 安卓轻小说阅读器 ★2866"
-          },
-          {
-            "name": "wenku8reader",
-            "url": "https://github.com/15dd/wenku8reader",
-            "description": "@15dd 第三方轻小说文库App ★1695"
-          },
-          {
-            "name": "bookworm",
-            "url": "https://github.com/babluboy/bookworm",
-            "description": "@babluboy OS电子书阅读器 ★1386"
-          },
-          {
-            "name": "spicy-monopoly",
-            "url": "https://github.com/RennAkira/spicy-monopoly",
-            "description": "@RennAkira 和你的AI一起玩的双人骰 ★616"
-          },
-          {
-            "name": "late-sh",
-            "url": "https://github.com/mpiorowski/late-sh",
-            "description": "@mpiorowski 给“电脑人”的 ★1488"
-          },
-          {
-            "name": "Story-to-game",
-            "url": "https://github.com/Shanyin-ai/Story-to-game",
-            "description": "@Shanyin-ai 完整的分支叙事游戏创作 ★460"
-          },
-          {
-            "name": "heartmorrow",
-            "url": "https://github.com/HMDSimDev/heartmorrow",
-            "description": "@HMDSimDev 驱动的恋爱模拟器 ★184"
-          }
-        ]
-      },
-      {
-        "name": "桌面美化与宠物",
-        "links": [
-          {
-            "name": "猫娘计划PNGTuber桌宠",
-            "url": "https://github.com/project-n-e-k-o/n.e.k.o",
-            "description": "猫娘计划 猫娘计划推出可自定义角色的PNGTuber桌宠"
-          },
-          {
-            "name": "BongoCat 开源桌宠（C×SDL3×OpenGL）",
-            "url": "https://github.com/vladelaina/BongoCat",
-            "description": "V2EX@vladelaina 用纯C+SDL3+"
-          },
-          {
-            "name": "isometric.nyc 等距像素纽约大地图",
-            "url": "https://cannoneyed.com/isometric-nyc/",
-            "description": "HN@cannoneyed 用等距像素风手绘的巨型纽约市"
-          },
-          {
-            "name": "Pulsar 微型创意编程 playground",
-            "url": "https://muffinman.io/pulsar/",
-            "description": "HN@stankot 一个极简的微型创意编程"
-          },
-          {
-            "name": "Tama96：跑在桌面/终端/AI agent 里的虚拟宠物",
-            "url": "https://www.tama96.com/",
-            "description": "HN@siegers 5分/0评：96像素风拓麻歌子"
-          },
-          {
-            "name": "super-agent-party",
-            "url": "https://github.com/heshengtao/super-agent-party",
-            "description": "@heshengtao 一体化自托管AI陪伴 ★2.7k"
-          },
-          {
-            "name": "audio-reactive-led-strip",
-            "url": "https://github.com/scottlawsonbc/audio-reactive-led-strip",
-            "description": "@scottlawsonbc 实时音频驱动 ★3.0k"
-          },
-          {
-            "name": "MD3-Windows",
-            "url": "https://github.com/Runixe786/MD3-Windows",
-            "description": "@Runixe786 桌面 ★2.3k"
-          },
-          {
-            "name": "DeepSeek-Balance-Whale-Widget",
-            "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
-            "description": "@MeteorNOX 住在角落的Q弹小鲸鱼娘 ★3830"
-          },
-          {
-            "name": "mochi-desktop",
-            "url": "https://github.com/miflow13/mochi-desktop",
-            "description": "@miflow13 上软萌轻量的桌面伙伴：发呆 ★157"
-          },
-          {
-            "name": "Ambient",
-            "url": "https://github.com/Claude-Reverser/Ambient",
-            "description": "@Claude-Reverser 原生动态壁纸 ★234"
-          },
-          {
-            "name": "agentpet",
-            "url": "https://github.com/ntd4996/agentpet",
-            "description": "@ntd4996 /Windows桌宠实时监控 ★371"
-          },
-          {
-            "name": "Miru",
-            "url": "https://github.com/kiyotakali/Miru",
-            "description": "@kiyotakali 跑在自己Mac ★167"
-          },
-          {
-            "name": "mochi",
-            "url": "https://github.com/jieyefriic/mochi",
-            "description": "@jieyefriic 会吃你macOS废纸篓 ★112"
-          },
-          {
-            "name": "Mate-Engine-Linux-Port",
-            "url": "https://github.com/Marksonthegamer/Mate-Engine-Linux-Port",
-            "description": "@Marksonthegamer 桌宠软件 ★316"
-          },
-          {
-            "name": "DeepSeek×Live2D 情感桌宠",
-            "url": "https://github.com/phoiex/AAAAGENT",
-            "description": "冰魄柠檬 DeepSeek 2.4万播放"
-          },
-          {
-            "name": "大模型榜单可视化网站",
-            "url": "https://airace.lol/",
-            "description": "V2EX@mqx 做的一个把各家大模型榜单可视化呈现的网"
-          },
-          {
-            "name": "Pts.js 创意可视化编程库",
-            "url": "https://ptsjs.org/",
-            "description": "HN@wmnn 一个用于数据可视化与创意编程的JS库"
-          },
-          {
-            "name": "Tinkersynth 奇趣生成艺术机",
-            "url": "https://tinkersynth.com/slopes",
-            "description": "HN@joshwcomeau 一台whimsical风格"
-          },
-          {
-            "name": "linux-wallpaperengine",
-            "url": "https://github.com/Almamu/linux-wallpaperengine",
-            "description": "@Almamu 上运行 ★4.6k"
-          },
-          {
-            "name": "MusicDNA",
-            "url": "https://github.com/harjot-oberai/MusicDNA",
-            "description": "@harjot-oberai 端渲染DNA可 ★2.9k"
-          },
-          {
-            "name": "BetterLyrics",
-            "url": "https://github.com/jayfunc/BetterLyrics",
-            "description": "@jayfunc 优雅可深度定制的歌词可视化 ★2.2k"
-          },
-          {
-            "name": "coucou",
-            "url": "https://github.com/Louis-CFM/coucou",
-            "description": "@Louis-CFM 一只住在macOS刘海 ★2655"
-          },
-          {
-            "name": "kkclaw",
-            "url": "https://github.com/kk43994/kkclaw",
-            "description": "@kk43994 一只可爱的桌面龙虾AI助手 ★174"
-          },
-          {
-            "name": "ansi-saver",
-            "url": "https://github.com/lardissone/ansi-saver",
-            "description": "@lardissone ANSI艺术屏保 ★194"
-          },
-          {
-            "name": "oc-claw",
-            "url": "https://github.com/rainnoon/oc-claw",
-            "description": "@rainnoon 监控OpenClaw ★351"
-          },
-          {
-            "name": "warashi",
-            "url": "https://github.com/inni918/warashi",
-            "description": "@inni918 免费开源的桌面AI伴侣 ★117"
-          },
-          {
-            "name": "claude-usage-monitor",
-            "url": "https://github.com/renatoaug/claude-usage-monitor",
-            "description": "@renatoaug 上的可爱像素桌宠 ★103"
-          },
-          {
-            "name": "Artemis",
-            "url": "https://github.com/momori777/Artemis",
-            "description": "@momori777 本地AI女友后宫 ★372"
-          },
-          {
-            "name": "my-neuro 开源 AI 桌宠",
-            "url": "https://github.com/morettt/my-neuro",
-            "description": "自负的魔方 my-neuro开源AI桌宠本 4.4万播放"
-          },
-          {
-            "name": "尼古喵喵AI桌宠",
-            "url": "https://github.com/rachelforster/shinsekai",
-            "description": "不二咲爱笑 把《尼古喵喵》全员做成会干活的AI桌宠"
-          },
-          {
-            "name": "开源 macOS 熄屏待机 App",
-            "url": "https://xyz-ai.app/never-sleep/",
-            "description": "V2EX@XueSeason 开源的macOS熄屏"
-          },
-          {
-            "name": "用 Rust 写生成艺术",
-            "url": "https://paytonturnage.gitbook.io/valora/",
-            "description": "HN@roxven 用Rust创作生成艺术fineart"
-          },
-          {
-            "name": "Pet Reminder：带桌面宠物的 macOS 提醒事项",
-            "url": "https://reminder.w3cub.com/",
-            "description": "HN@terryXyz 14分/13评"
-          },
-          {
-            "name": "VPet",
-            "url": "https://github.com/LorisYounger/VPet",
-            "description": "@LorisYounger 开源虚拟桌宠模拟 ★6.9k"
-          },
-          {
-            "name": "terraink",
-            "url": "https://github.com/yousifamanuel/terraink",
-            "description": "@yousifamanuel 生成独特定制风 ★4.1k"
-          },
-          {
-            "name": "wallpaper-engine-kde-plugin",
-            "url": "https://github.com/catsout/wallpaper-engine-kde-plugin",
-            "description": "@catsout 桌面集成 ★2.7k"
-          },
-          {
-            "name": "simpleui.koplugin",
-            "url": "https://github.com/doctorhetfield-cmd/simpleui.koplugin",
-            "description": "@doctorhetfield-cmd 高度 ★1.8k"
-          },
-          {
-            "name": "Desktop_Gremlin",
-            "url": "https://github.com/Kritzkingvoid/Desktop_Gremlin",
-            "description": "@Kritzkingvoid #WPF写的桌面 ★562"
-          },
-          {
-            "name": "yoji",
-            "url": "https://github.com/wangxijie001/yoji",
-            "description": "@wangxijie001 有情绪的AI桌面伴 ★661"
-          },
-          {
-            "name": "macos-live-screensaver",
-            "url": "https://github.com/hauxir/macos-live-screensaver",
-            "description": "@hauxir 在macOS上用直播流做屏保 ★212"
-          },
-          {
-            "name": "AgentPet",
-            "url": "https://github.com/cqzaaa/AgentPet",
-            "description": "@cqzaaa +React做的Live2D动 ★262"
-          },
-          {
-            "name": "Desktop-Pixel-Pet",
-            "url": "https://github.com/CanFlyhang/Desktop-Pixel-Pet",
-            "description": "@CanFlyhang 轻量可扩展的桌面像素宠 ★145"
-          },
-          {
-            "name": "peon-pet",
-            "url": "https://github.com/PeonPing/peon-pet",
-            "description": "@PeonPing 上的兽人桌宠 ★103"
-          },
-          {
-            "name": "Companion-Space",
-            "url": "https://github.com/Johnson-Durui/Companion-Space",
-            "description": "@Johnson-Durui 本地优先的二次元 ★361"
-          },
-          {
-            "name": "全动态 Live2D 大肥鱼桌宠",
-            "url": "https://github.com/Pal-AI-Lab/Coopanion",
-            "description": "PalAILab 全动态Live2D大肥鱼 4.9万播放"
-          },
-          {
-            "name": "8×8×8 点阵 3D 创意编程玩具",
-            "url": "https://doersino.github.io/tixyz/",
-            "description": "HN@doersino 用JS控制一个8×8×8发光点阵"
-          },
-          {
-            "name": "Nomlings：一只吃掉你 Claude Code 会话 token 的虚拟宠物",
-            "url": "https://www.nomlings.cc/",
-            "description": "HN@franwbu 6分/1评"
-          },
-          {
-            "name": "clawd-on-desk",
-            "url": "https://github.com/rullerzhou-afk/clawd-on-desk",
-            "description": "@rullerzhou-afk 像素风桌宠 ★6.3k"
-          },
-          {
-            "name": "repkg",
-            "url": "https://github.com/notscuffed/repkg",
-            "description": "@notscuffed EnginePKG解 ★3.8k"
-          },
-          {
-            "name": "token-monitor",
-            "url": "https://github.com/Javis603/token-monitor",
-            "description": "@Javis603 本地优先的桌面小组件 ★2.6k"
-          },
-          {
-            "name": "RainEffect",
-            "url": "https://github.com/codrops/RainEffect",
-            "description": "@codrops 实验性雨滴水滴交互特效 ★1.8k"
-          },
-          {
-            "name": "bongo-cat-next",
-            "url": "https://github.com/liwenka1/bongo-cat-next",
-            "description": "@liwenka1 现代化桌面宠物App ★151"
-          },
-          {
-            "name": "myCat",
-            "url": "https://github.com/yumiaura/myCat",
-            "description": "@yumiaura 叠加层桌面猫，趴你屏幕上 ★296"
-          },
-          {
-            "name": "HermesPet",
-            "url": "https://github.com/basionwang-bot/HermesPet",
-            "description": "@basionwang-bot 让AI住在你 ★600"
-          },
-          {
-            "name": "dsh-pet",
-            "url": "https://github.com/PC2005-cloud/dsh-pet",
-            "description": "@PC2005-cloud 一行命令装好的透明 ★969"
-          },
-          {
-            "name": "MacArkPet",
-            "url": "https://github.com/Wanduforl/MacArkPet",
-            "description": "@Wanduforl 风的非官方原生 ★129"
-          },
-          {
-            "name": "desksaw",
-            "url": "https://github.com/dee-dee-catorce/desksaw",
-            "description": "@dee-dee-catorce 基于独立游戏 ★202"
-          },
-          {
-            "name": "AionsHome",
-            "url": "https://github.com/death34018-hue/AionsHome",
-            "description": "@death34018-hue 自托管AI伴侣 ★856"
-          }
-        ]
-      },
-      {
-        "name": "创意硬件与 DIY",
-        "links": [
-          {
-            "name": "钢铁侠迷你机械臂",
-            "url": "https://github.com/peng-zhihui/Dummy-Robot",
-            "description": "稚晖君 稚晖君自制钢铁侠迷你机械臂 767.2万播放"
-          },
-          {
-            "name": "memobase",
-            "url": "https://github.com/memodb-io/memobase",
-            "description": "@memodb-io 基于用户画像的AI聊天 ★2.9k"
-          },
-          {
-            "name": "companion",
-            "url": "https://github.com/The-Vibe-Company/companion",
-            "description": "@The-Vibe-Company 跑在树莓 ★2.4k"
-          },
-          {
-            "name": "SmallOLED-PCMonitor",
-            "url": "https://github.com/Keralots/SmallOLED-PCMonitor",
-            "description": "@Keralots +OLED桌面小监视器 ★254"
-          },
-          {
-            "name": "ai-desk-card",
-            "url": "https://github.com/op7418/ai-desk-card",
-            "description": "@op7418 墨水屏做的桌面AI副屏 ★150"
-          },
-          {
-            "name": "xgoduck_hardware",
-            "url": "https://github.com/LuwuDynamics/xgoduck_hardware",
-            "description": "@LuwuDynamics 自己3D打印一只机 ★447"
-          },
-          {
-            "name": "DS5_Bridge",
-            "url": "https://github.com/SundayMoments/DS5_Bridge",
-            "description": "@SundayMoments PiPico2W ★365"
-          },
-          {
-            "name": "蔚蓝档案 AI 聊天桃信",
-            "url": "https://www.momotalk.top",
-            "description": "卤v 全网最还原的蔚蓝档案学生AI聊天 32.6万播放"
-          },
-          {
-            "name": "Vibe Coding专用键盘",
-            "url": "https://github.com/wellswang/vckb",
-            "description": "GeekLogic 把网上流传的 603378播放"
-          },
-          {
-            "name": "60 块小米遥控器 = VibeCoding 神器",
-            "url": "https://github.com/HD838A/remote-mic-app",
-            "description": "V2EX@itgoyo 发现60块的小米遥控器竟是绝佳的"
-          },
-          {
-            "name": "amurex",
-            "url": "https://github.com/thepersonalaicompany/amurex",
-            "description": "@thepersonalaicompany ★2.9k"
-          },
-          {
-            "name": "VCPToolBox",
-            "url": "https://github.com/lioensky/VCPToolBox",
-            "description": "@lioensky 部署在AI模型API与前 ★2.3k"
-          },
-          {
-            "name": "ClawPuter",
-            "url": "https://github.com/bryant24hao/ClawPuter",
-            "description": "@bryant24hao 给 ★154"
-          },
-          {
-            "name": "tgterm",
-            "url": "https://github.com/antirez/tgterm",
-            "description": "@antirez 用Telegram遥控你的 ★226"
-          },
-          {
-            "name": "openmicrokbd",
-            "url": "https://github.com/conol-ai/openmicrokbd",
-            "description": "@conol-ai 开源复刻 ★134"
-          },
-          {
-            "name": "CHC5_Open_Camera",
-            "url": "https://github.com/circuitvalley/CHC5_Open_Camera",
-            "description": "@circuitvalley 号称全球首款开放 ★109"
-          },
-          {
-            "name": "小爱音箱接入 AI 大模型",
-            "url": "https://github.com/idootop/mi-gpt",
-            "description": "后厂村路灯 小爱音箱接入AI大模型 16.7万播放"
-          },
-          {
-            "name": "开源AI墨水屏",
-            "url": "https://www.inksight.site",
-            "description": "小王爱折腾2026 AI墨水屏InkSight更新三套硬"
-          },
-          {
-            "name": "PaperMono: e-ink fridge-magnet shopping list",
-            "url": "https://github.com/seamusc/papermono-shopping-list",
-            "description": "HN@seamus_c 自制电子墨水冰箱贴购物清单"
-          },
-          {
-            "name": "Memoh",
-            "url": "https://github.com/felinics/Memoh",
-            "description": "@felinics 开源多智能体平台 ★2.6k"
-          },
-          {
-            "name": "LingChat",
-            "url": "https://github.com/SlimeBoyOwO/LingChat",
-            "description": "@SlimeBoyOwO 沉浸式 ★2.3k"
-          },
-          {
-            "name": "vibewatch",
-            "url": "https://github.com/GOROman/vibewatch",
-            "description": "@GOROman 给AI编程用的 ★145"
-          },
-          {
-            "name": "hypervibe",
-            "url": "https://github.com/machinarii/hypervibe",
-            "description": "@machinarii 用AppleTV遥控器 ★223"
-          },
-          {
-            "name": "kensat",
-            "url": "https://github.com/kenchangh/kensat",
-            "description": "@kenchangh 在轨运行LLM的 ★113"
-          },
-          {
-            "name": "weatherstation",
-            "url": "https://github.com/byte4geek/weatherstation",
-            "description": "@byte4geek 高精度智能气象站 ★140"
-          },
-          {
-            "name": "Mate-Engine",
-            "url": "https://github.com/shinyflvre/Mate-Engine",
-            "description": "@shinyflvre 轻量免费的 ★3.7k"
-          },
-          {
-            "name": "CodeIsland",
-            "url": "https://github.com/wxtsky/CodeIsland",
-            "description": "@wxtsky 刘海屏实时显示AI编程 ★2.5k"
-          },
-          {
-            "name": "ScrollWheel",
-            "url": "https://github.com/torvalds/ScrollWheel",
-            "description": "@torvalds 一个RP2350磁编码滚轮 ★379"
-          },
-          {
-            "name": "OpenToys",
-            "url": "https://github.com/akdeb/OpenToys",
-            "description": "@akdeb 用MacBook+Arduino ★164"
-          },
-          {
-            "name": "rtl-ml",
-            "url": "https://github.com/TrevTron/rtl-ml",
-            "description": "@TrevTron 用RTL-SDR+ARM单 ★250"
-          },
-          {
-            "name": "tokpet",
-            "url": "https://github.com/grpcer/tokpet",
-            "description": "@grpcer 把你的AI用量/额度 ★105"
-          },
-          {
-            "name": "FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
-            "url": "https://github.com/IWIN-FINS/FinsROV-An-Underwater-Camera-Based-Multi-Robot-Platform",
-            "description": "@IWIN-FINS 低成本开源水下机器人平台 ★288"
-          }
-        ]
-      },
-      {
-        "name": "趣味网页与玩具",
-        "links": [
-          {
-            "name": "Ian Journey致敬页面",
-            "url": "https://ian-lance-taylor.pages.dev/",
-            "description": "MaiYangAI 致敬Ian页面 1257播放"
-          },
-          {
-            "name": "反应速度测试站：5 个工具 + 17 个小游戏",
-            "url": "https://checkreaction.com/",
-            "description": "V2EX@leolee829111 纯静态原生JS做的反"
-          },
-          {
-            "name": "Glitchy Camera：浏览器里的电路改装故障相机模拟器",
-            "url": "https://glitchycam.com/",
-            "description": "HN@elayabharath 173分/22评"
-          },
-          {
-            "name": "Microcosm Industries：一系列模拟玩具与软件小宇宙",
-            "url": "https://microcosm.industries/",
-            "description": "HN@arbesman 22分/4评：一个做微型世界"
-          },
-          {
-            "name": "HN.watch – Videos of all Hacker News posts",
-            "url": "https://hn.watch/",
-            "description": "HN@mrborgen 把每条HN帖子自动转成视频刷着看"
-          },
-          {
-            "name": "HN Match Maker – 匹配招聘与求职帖",
-            "url": "https://hnmatchmaker.com/",
-            "description": "HN@all2 把HN「"
-          },
-          {
-            "name": "Diagon",
-            "url": "https://github.com/ArthurSonzogni/Diagon",
-            "description": "@ArthurSonzogni 交互式 ★2.2k"
-          },
-          {
-            "name": "punch",
-            "url": "https://github.com/laktek/punch",
-            "description": "@laktek 简单好玩的现代网站搭建工具 ★1.2k"
-          },
-          {
-            "name": "anatomy",
-            "url": "https://github.com/thebuggeddev/anatomy",
-            "description": "@thebuggeddev 用Three. ★3357"
-          },
-          {
-            "name": "insect-world",
-            "url": "https://github.com/xr843/insect-world",
-            "description": "@xr843 交互式3D昆虫图鉴：14目63种 ★772"
-          },
-          {
-            "name": "rice-cooker",
-            "url": "https://github.com/amarsbar/rice-cooker",
-            "description": "@amarsbar 给Linux美化用的可视化 ★742"
-          },
-          {
-            "name": "lumenshaders",
-            "url": "https://github.com/Leonxlnx/lumenshaders",
-            "description": "@Leonxlnx 生成式着色器工作室 ★355"
-          },
-          {
-            "name": "heerich",
-            "url": "https://github.com/meodai/heerich",
-            "description": "@meodai 把3D体素场景渲染成SVG的小 ★617"
-          },
-          {
-            "name": "vimmaster",
-            "url": "https://github.com/renzorlive/vimmaster",
-            "description": "@renzorlive 浏览器小游戏 ★1712"
-          },
-          {
-            "name": "复联5前情自检网站",
-            "url": "https://avengers-avengers-d8g0v4cpw54955f63.webapps.tcloudbase.com/",
-            "description": "You_fenga 做了个漫威观影前情自检网站"
-          },
-          {
-            "name": "AI 赛博算命（六爻×紫微斗数）",
-            "url": "http://aitjg.com/",
-            "description": "V2EX@qbqbq 做的AI六爻与紫微斗数在线算命站"
-          },
-          {
-            "name": "qqdeni.com：捡完即消失的 AI 漂流瓶",
-            "url": "https://qqdeni.com/",
-            "description": "V2EX@rocyhua AI+Cloudflare全家"
-          },
-          {
-            "name": "What if the speed of light was 5 km/h?",
-            "url": "https://rivendell.dmitrybrant.com/relativity/",
-            "description": "HN@dmitrybrant 把光速调成5km"
-          },
-          {
-            "name": "Hacker News on a train-station flip board",
-            "url": "https://popflame.quickish.space/hn-flipboard/",
-            "description": "HN@PaybackTony 把HN热榜做成火车站翻牌时"
-          },
-          {
-            "name": "JobFunnel",
-            "url": "https://github.com/PaulMcInnis/JobFunnel",
-            "description": "@PaulMcInnis 把多个招聘网站的职 ★2.2k"
-          },
-          {
-            "name": "stickerbaker",
-            "url": "https://github.com/cbh123/stickerbaker",
-            "description": "@cbh123 用AI烘焙个性化贴纸 ★1.1k"
-          },
-          {
-            "name": "kage",
-            "url": "https://github.com/MengTo/kage",
-            "description": "@MengTo 在浏览器里实机渲染的京都山寺 ★1689"
-          },
-          {
-            "name": "shiyun",
-            "url": "https://github.com/Cohenjikan/shiyun",
-            "description": "@Cohenjikan 把中国三千年诗放进可漫 ★264"
-          },
-          {
-            "name": "playcaptcha",
-            "url": "https://github.com/mortspace/playcaptcha",
-            "description": "@mortspace 抓娃娃机式人机验证 ★527"
-          },
-          {
-            "name": "tiny-terminal",
-            "url": "https://github.com/madebydia/tiny-terminal",
-            "description": "@madebydia 给孩子玩的假终端 ★238"
-          },
-          {
-            "name": "bloub",
-            "url": "https://github.com/jeremy-prt/bloub",
-            "description": "@jeremy-prt 用SVG逐帧还原x. ★1672"
-          },
-          {
-            "name": "Third-Person-MC",
-            "url": "https://github.com/hexianWeb/Third-Person-MC",
-            "description": "@hexianWeb 写的网页版第三人称 ★194"
-          },
-          {
-            "name": "hyprdvd",
-            "url": "https://github.com/nevimmu/hyprdvd",
-            "description": "@nevimmu 让你的终端像DVD屏保那样 ★115"
-          },
-          {
-            "name": "30 天手搓开源电子书",
-            "url": "https://github.com/movecall/onepage-reader",
-            "description": "Movecall 30天手搓一台电子书 4.0万播放"
-          },
-          {
-            "name": "拯救作者与同人的网站",
-            "url": "https://www.authorhub.cn",
-            "description": "毕晟呢 一个帮作者和同人创作者整理灵感、写作的爱心网站"
-          },
-          {
-            "name": "网站加了个 AI 看手相",
-            "url": "https://tianjiyao.com/",
-            "description": "V2EX@tianjiyao 周末给自家网站随手加了个"
-          },
-          {
-            "name": "Middle-earth Interactive Map（中土世界交互地图）",
-            "url": "https://middle-earth-interactive-map.web.app/",
-            "description": "HN@frasermarlow 291分/70评"
-          },
-          {
-            "name": "ballin：终端里跑上千个球的交互物理沙盒",
-            "url": "https://github.com/minimaxir/ballin",
-            "description": "HN@minimaxir 75分/15评"
-          },
-          {
-            "name": "Reverse engineered Apple's live video wallpapers",
-            "url": "https://github.com/kageroumado/phosphene",
-            "description": "HN@kageroumado 逆向复刻出苹果桌面动态壁纸"
-          },
-          {
-            "name": "How far do I have to go to run into 100k people?",
-            "url": "https://imjasonh.github.io/playground/population-rays/",
-            "description": "HN@ImJasonH 在地图上可视化「要走多远才凑够"
-          },
-          {
-            "name": "潮汕人的 Vibe Coding 作品：赛博掷杯",
-            "url": "https://asklaoye.com",
-            "description": "罗林Rolin隔空掷筊互动网页"
-          },
-          {
-            "name": "EmojiIntelligence",
-            "url": "https://github.com/BilalReffas/EmojiIntelligence",
-            "description": "@BilalReffas 写的神经网络 ★1.4k"
-          },
-          {
-            "name": "LxgwZhenKai",
-            "url": "https://github.com/lxgw/LxgwZhenKai",
-            "description": "@lxgw 霞鹜文楷衍生粗体开源中文字体 ★899"
-          },
-          {
-            "name": "cell-architecture-studio",
-            "url": "https://github.com/cclank/cell-architecture-studio",
-            "description": "@cclank 可交互的3D细胞结构画廊 ★1719"
-          },
-          {
-            "name": "Meow-Generator",
-            "url": "https://github.com/ringhyacinth/Meow-Generator",
-            "description": "@ringhyacinth 用Three. ★119"
-          },
-          {
-            "name": "studio",
-            "url": "https://github.com/Shpigford/studio",
-            "description": "@Shpigford 一堆随机 ★164"
-          },
-          {
-            "name": "Oloraculo",
-            "url": "https://github.com/MarianoVilla/Oloraculo",
-            "description": "@MarianoVilla 一本正经预测 ★220"
-          },
-          {
-            "name": "bot-crossing",
-            "url": "https://github.com/Station-Sciences/bot-crossing",
-            "description": "@Station-Sciences 一款专门给 ★753"
-          },
-          {
-            "name": "voxel-musou",
-            "url": "https://github.com/mike007jd/voxel-musou",
-            "description": "@mike007jd 网页版割草游戏 ★109"
-          },
-          {
-            "name": "drift",
-            "url": "https://github.com/phlx0/drift",
-            "description": "@phlx0 终端屏保：空闲时自动浮现星座、雨 ★769"
-          },
-          {
-            "name": "将棋一番同人网页游戏",
-            "url": "https://shogi.makima.world",
-            "description": "屮凡蜘蛛侠 将棋一番同人网页小游戏 1.6万播放"
-          },
-          {
-            "name": "50块做的个人网站",
-            "url": "https://yayoi.cc",
-            "description": "花里夜宵 只花50块用AI搭的个人网站yayoi.cc"
-          },
-          {
-            "name": "有趣的二维码生成网站",
-            "url": "https://qacman.com/",
-            "description": "V2EX@mqx 在X上刷到的一个花活二维码生成站"
-          },
-          {
-            "name": "Gravity：从牛顿到爱因斯坦的交互式太阳系模拟器",
-            "url": "https://qunabu.github.io/Gravity/",
-            "description": "HN@qunabu 217分/56评"
-          },
-          {
-            "name": "Weird Clocks：一堆不正常的怪钟",
-            "url": "https://clocks.specr.net/",
-            "description": "HN@vunderba 53分/19评：作者收集"
-          },
-          {
-            "name": "Bash Screensavers",
-            "url": "https://github.com/attogram/bash-screensavers",
-            "description": "HN@attogram 跑在终端里的一堆复古风bash屏"
-          },
-          {
-            "name": "可以捏的小牛网页（lixiaoyi.cc）",
-            "url": "https://lixiaoyi.cc",
-            "description": "李小伊AI做的可捏小牛已上线"
-          },
-          {
-            "name": "Twocast",
-            "url": "https://github.com/panyanyany/Twocast",
-            "description": "@panyanyany 双语播客生成器 ★1.3k"
-          },
-          {
-            "name": "anidoodle",
-            "url": "https://github.com/alexgreensh/anidoodle",
-            "description": "@alexgreensh 用代码写艺术与动画 ★747"
-          },
-          {
-            "name": "Solar-Wanderer",
-            "url": "https://github.com/hyqzz/Solar-Wanderer",
-            "description": "@hyqzz 浏览器里1:1实时太阳系漫游 ★746"
-          },
-          {
-            "name": "sticker-forge",
-            "url": "https://github.com/CatsJuice/sticker-forge",
-            "description": "@CatsJuice 手感WebGL贴纸工坊 ★742"
-          },
-          {
-            "name": "inkField",
-            "url": "https://github.com/ileivoivm/inkField",
-            "description": "@ileivoivm +p5.js数字水墨画 ★162"
-          },
-          {
-            "name": "Rainform",
-            "url": "https://github.com/afterimage-lab/Rainform",
-            "description": "@afterimage-lab “数据成雨” ★136"
-          },
-          {
-            "name": "client",
-            "url": "https://github.com/corosolto/client",
-            "description": "@corosolto 浏览器里的讽刺向巴西 ★251"
-          },
-          {
-            "name": "openmw-web",
-            "url": "https://github.com/Virtastic/openmw-web",
-            "description": "@Virtastic 把OpenMW引擎编译成 ★100"
-          }
-        ]
-      },
-      {
-        "name": "学习与生活",
-        "links": [
-          {
-            "name": "ai-job-search",
-            "url": "https://github.com/MadsLorentzen/ai-job-search",
-            "description": "把编码Agent变成求职流水线：抓取打分写简历"
-          },
-          {
-            "name": "MathBank数学题库",
-            "url": "https://github.com/judgepeach/math-question-bank",
-            "description": "判桃 两个月的开源高中数学题库工作台MathBank"
-          },
-          {
-            "name": "自驾路书制作工具",
-            "url": "https://lushu.xyptkd.cn/",
-            "description": "V2EX@klos 因为一次自驾掉队"
-          },
-          {
-            "name": "Koi.rest：看两条锦鲤发呆回血",
-            "url": "https://koi.rest/",
-            "description": "HN@hxii 228分/65评：一个极简鱼塘网页"
-          },
-          {
-            "name": "Lathoa: math app where the AI is wrong on purpose",
-            "url": "https://lathoa.ai/en",
-            "description": "HN@thanouil1411 给孩子的数学App"
-          },
-          {
-            "name": "linux-android",
-            "url": "https://github.com/mayukh4/linux-android",
-            "description": "@mayukh4 把旧Android手机改装 ★3.6k"
-          },
-          {
-            "name": "esp-homekit-devices",
-            "url": "https://github.com/RavenSystem/esp-homekit-devices",
-            "description": "@RavenSystem 给ESP开发板添加 ★3.0k"
-          },
-          {
-            "name": "smart-mirror",
-            "url": "https://github.com/evancohen/smart-mirror",
-            "description": "@evancohen 语音控制智能魔镜 ★2.8k"
-          },
-          {
-            "name": "favorite-link",
-            "url": "https://github.com/guanguans/favorite-link",
-            "description": "@guanguans 每天收集喜欢的开源项目 ★3.3k"
-          },
-          {
-            "name": "obsidian-day-planner",
-            "url": "https://github.com/ivan-lednev/obsidian-day-planner",
-            "description": "@ivan-lednev 日程规划插件 ★2.7k"
-          },
-          {
-            "name": "macOS-cursors-for-Windows",
-            "url": "https://github.com/antiden/macOS-cursors-for-Windows",
-            "description": "@antiden 可用的4KmacOS鼠标指 ★2.3k"
-          },
-          {
-            "name": "Manatan",
-            "url": "https://github.com/KolbyML/Manatan",
-            "description": "@KolbyML 在动漫、漫画 ★602"
-          },
-          {
-            "name": "fishword",
-            "url": "https://github.com/Chenggou1/fishword",
-            "description": "@Chenggou1 给开发者的CLI单词 ★140"
-          },
-          {
-            "name": "open-yonsei-korean-vocabulary",
-            "url": "https://github.com/Amulopapa67/open-yonsei-korean-vocabulary",
-            "description": "@Amulopapa67 《延世韩国语》1– ★214"
-          },
-          {
-            "name": "Tomato",
-            "url": "https://github.com/nsh07/Tomato",
-            "description": "@nsh07 基于 ★1477"
-          },
-          {
-            "name": "Tracearr",
-            "url": "https://github.com/connorgallopo/Tracearr",
-            "description": "@connorgallopo / ★2681"
-          },
-          {
-            "name": "ChatTutor",
-            "url": "https://github.com/HugeCatLab/ChatTutor",
-            "description": "@HugeCatLab 可视化、可交互的 ★1316"
-          },
-          {
-            "name": "freelingo",
-            "url": "https://github.com/artcc/freelingo",
-            "description": "@artcc 开源自托管AI语言学平台 ★151"
-          },
-          {
-            "name": "pdf2zh-desktop",
-            "url": "https://github.com/AaronGIG/pdf2zh-desktop",
-            "description": "@AaronGIG 开箱即用的PDF学术翻译神 ★475"
-          },
-          {
-            "name": "HealthLog",
-            "url": "https://github.com/MBombeck/HealthLog",
-            "description": "@MBombeck 自托管隐私优先健康追踪 ★131"
-          },
-          {
-            "name": "AI 导航",
-            "url": "https://github.com/liyupi/ai-guide",
-            "description": "鱼皮AI资源导航：工具提示词技能教程"
-          },
-          {
-            "name": "LLM Attention Visualization",
-            "url": "https://ishamf.dev/p/llm-attention-visualizer/",
-            "description": "HN@ifz 把大模型注意力权重画出来的交互式可视化学习"
-          },
-          {
-            "name": "Turn native-language audio into flashcards",
-            "url": "https://lingochunk.com/try",
-            "description": "HN@alder 把外语原声自动做成闪卡和影子跟练材料的"
-          },
-          {
-            "name": "home-automation",
-            "url": "https://github.com/deepsyx/home-automation",
-            "description": "@deepsyx 基于树莓派的NodeJS智 ★3.4k"
-          },
-          {
-            "name": "dijo",
-            "url": "https://github.com/oppiliappan/dijo",
-            "description": "@oppiliappan 脚本化 ★2.9k"
-          },
-          {
-            "name": "homebridge-config-ui-x",
-            "url": "https://github.com/homebridge/homebridge-config-ui-x",
-            "description": "@homebridge 的Web管理界面 ★2.8k"
-          },
-          {
-            "name": "Feeder",
-            "url": "https://github.com/spacecowboy/Feeder",
-            "description": "@spacecowboy 端简洁RSS阅读器 ★3.1k"
-          },
-          {
-            "name": "LibreLingo",
-            "url": "https://github.com/kantord/LibreLingo",
-            "description": "@kantord 社区共建开源语言学习平台 ★2.6k"
-          },
-          {
-            "name": "oh-my-ppt",
-            "url": "https://github.com/arcsin1/oh-my-ppt",
-            "description": "@arcsin1 口述想要的演示、课程或故事 ★2094"
-          },
-          {
-            "name": "meikipop",
-            "url": "https://github.com/rtr46/meikipop",
-            "description": "@rtr46 跨平台日语OCR弹窗词典 ★676"
-          },
-          {
-            "name": "how-llms-work",
-            "url": "https://github.com/w3cj/how-llms-work",
-            "description": "@w3cj 交互式App ★617"
-          },
-          {
-            "name": "StudyFlow",
-            "url": "https://github.com/KuanKongy/StudyFlow",
-            "description": "@KuanKongy 带AI总结与闪卡的协作学 ★139"
-          },
-          {
-            "name": "streak",
-            "url": "https://github.com/InlitX/streak",
-            "description": "@InlitX 最小、隐私、无广告的习惯打卡 ★670"
-          },
-          {
-            "name": "wardrowbe",
-            "url": "https://github.com/Anyesh/wardrowbe",
-            "description": "@Anyesh 把你的衣柜排成行 ★746"
-          },
-          {
-            "name": "Bloom",
-            "url": "https://github.com/Li-Evan/Bloom",
-            "description": "@Li-Evan 私人家教式AI ★278"
-          },
-          {
-            "name": "tapword-translator",
-            "url": "https://github.com/hongyuan007/tapword-translator",
-            "description": "@hongyuan007 触词翻译 ★271"
-          },
-          {
-            "name": "fud-ai",
-            "url": "https://github.com/apoorvdarshan/fud-ai",
-            "description": "@apoorvdarshan 免费开源的AI卡 ★452"
-          },
-          {
-            "name": "vibe-vibe",
-            "url": "https://github.com/datawhalechina/vibe-vibe",
-            "description": "Datawhale首套系统化Vibe Coding教程"
-          },
-          {
-            "name": "TypeWords背单词",
-            "url": "https://github.com/zyronon/typewords",
-            "description": "薯条zyr 开源背单词网站TypeWords冲上"
-          },
-          {
-            "name": "SymKit MCP：给大模型装上 SymPy 计算机代数后端推公式",
-            "url": "https://github.com/LBurny/symkit-mcp",
-            "description": "V2EX@SiWXie MCP服务器"
-          },
-          {
-            "name": "I implemented a neural network in SQL",
-            "url": "https://github.com/xqlsystems/xarray-sql",
-            "description": "HN@alxmrs 纯用SQL写了一个能训练的神经网络的"
-          },
-          {
-            "name": "Mentally calculate the day of the week",
-            "url": "https://tinkerandsee.com/weekday/",
-            "description": "HN@yang140 教你心算任意日期星期几的教学互动站"
-          },
-          {
-            "name": "Gladys",
-            "url": "https://github.com/GladysAssistant/Gladys",
-            "description": "@GladysAssistant 隐私优先的 ★3.2k"
-          },
-          {
-            "name": "Bagels",
-            "url": "https://github.com/EnhancedJax/Bagels",
-            "description": "@EnhancedJax 住在终端里的记账工 ★2.9k"
-          },
-          {
-            "name": "button-card",
-            "url": "https://github.com/custom-cards/button-card",
-            "description": "@custom-cards Assistan ★2.5k"
-          },
-          {
-            "name": "anki-jlpt-decks",
-            "url": "https://github.com/5mdld/anki-jlpt-decks",
-            "description": "@5mdld N1-N5一万词Anki牌组 ★3.0k"
-          },
-          {
-            "name": "obsidian-spaced-repetition",
-            "url": "https://github.com/st3v3nmw/obsidian-spaced-repetition",
-            "description": "@st3v3nmw 间隔重复插件 ★2.6k"
-          },
-          {
-            "name": "Echo-Loop",
-            "url": "https://github.com/echo-loop/Echo-Loop",
-            "description": "@echo-loop 科学高效的AI英语听说 ★4065"
-          },
-          {
-            "name": "fudoki",
-            "url": "https://github.com/iamcheyan/fudoki",
-            "description": "@iamcheyan 交互式日语文本分析+语音 ★894"
-          },
-          {
-            "name": "system-design-visualizer",
-            "url": "https://github.com/mallahyari/system-design-visualizer",
-            "description": "@mallahyari 把静态系统设计图变成可 ★605"
-          },
-          {
-            "name": "bilibili-digest",
-            "url": "https://github.com/biuworks/bilibili-digest",
-            "description": "@biuworks 把B站视频变成学习资源的浏 ★167"
-          },
-          {
-            "name": "pomo",
-            "url": "https://github.com/Bahaaio/pomo",
-            "description": "@Bahaaio 可定制的TUI番茄钟 ★522"
-          },
-          {
-            "name": "mybibliotheca",
-            "url": "https://github.com/pickles4evaaaa/mybibliotheca",
-            "description": "@pickles4evaaaa 追踪阅读习惯 ★586"
-          },
-          {
-            "name": "algo-sensei",
-            "url": "https://github.com/karanb192/algo-sensei",
-            "description": "@karanb192 你的AILeetCode ★281"
-          },
-          {
-            "name": "epub-translator",
-            "url": "https://github.com/oomol-lab/epub-translator",
-            "description": "@oomol-lab 用LLM翻译EPUB并保 ★856"
-          },
-          {
-            "name": "GardenPulse",
-            "url": "https://github.com/AhmadHassan-BTed/GardenPulse",
-            "description": "@AhmadHassan-BTed 方法无关的 ★193"
-          },
-          {
-            "name": "GL-APP",
-            "url": "https://github.com/wua520/GL-APP",
-            "description": "@wua520 本地优先的健身追踪：训练、营养 ★107"
-          },
-          {
-            "name": "Prompt Engineering Guide",
-            "url": "https://github.com/dair-ai/Prompt-Engineering-Guide",
-            "description": "提示工程权威指南 7.9万★"
-          },
-          {
-            "name": "联机组队AI督学",
-            "url": "https://redwatch.top",
-            "description": "叛逆蓝牙 能叫上同桌一起学习"
-          },
-          {
-            "name": "周末自驾逃离计划网站",
-            "url": "https://github.com/qiaoshouqing/drive-escape",
-            "description": "萌威Wilson 输入城市自动按车程染色地 1347播放"
-          },
-          {
-            "name": "古韵书阁：免费的古书原文+译文在线站",
-            "url": "https://www.oldbook.space/",
-            "description": "V2EX@sunkangchina oldbook."
-          },
-          {
-            "name": "A working 3D model of an Enigma machine",
-            "url": "https://enigma.design/",
-            "description": "HN@primitivesuave 可交互、真实可用的"
-          },
-          {
-            "name": "LookAway: a Mac break reminder that knows when not to",
-            "url": "https://lookaway.com/",
-            "description": "HN@_kush 会判断你正忙"
-          },
-          {
-            "name": "willow",
-            "url": "https://github.com/HeyWillow/willow",
-            "description": "@HeyWillow 开源本地自托管的智能音 ★3.1k"
-          },
-          {
-            "name": "PJON",
-            "url": "https://github.com/gioblu/PJON",
-            "description": "@gioblu 实验性通信协议库 ★2.8k"
-          },
-          {
-            "name": "emacs-application-framework",
-            "url": "https://github.com/emacs-eaf/emacs-application-framework",
-            "description": "@emacs-eaf 把浏览器、PDF ★3.5k"
-          },
-          {
-            "name": "raven-reader",
-            "url": "https://github.com/hello-efficiency-inc/raven-reader",
-            "description": "@hello-efficiency-inc ★2.8k"
-          },
-          {
-            "name": "obsidian-style-settings",
-            "url": "https://github.com/community-archive/obsidian-style-settings",
-            "description": "@community-archive 主题 ★2.5k"
-          },
-          {
-            "name": "mural",
-            "url": "https://github.com/Chuloo/mural",
-            "description": "@Chuloo 一个“你最后会删掉的”语言 ★1561"
-          },
-          {
-            "name": "shiki",
-            "url": "https://github.com/sazardev/shiki",
-            "description": "@sazardev 写的TUI笔记应用 ★319"
-          },
-          {
-            "name": "pyre-code",
-            "url": "https://github.com/whwangovo/pyre-code",
-            "description": "@whwangovo 自托管的ML编程练习平 ★1291"
-          },
-          {
-            "name": "openGym",
-            "url": "https://github.com/DuarteSantos8/openGym",
-            "description": "@DuarteSantos8 自托管的健身房 ★1594"
-          },
-          {
-            "name": "chronoframe",
-            "url": "https://github.com/HoshinoSuzumi/chronoframe",
-            "description": "@HoshinoSuzumi 自托管个人画廊 ★1934"
-          },
-          {
-            "name": "BeeCount",
-            "url": "https://github.com/TNT-Likely/BeeCount",
-            "description": "@TNT-Likely 本地优先的记账App ★2468"
-          },
-          {
-            "name": "OpenTutor",
-            "url": "https://github.com/zijinz456/OpenTutor",
-            "description": "@zijinz456 首个本地运行的积木式自适 ★127"
-          },
-          {
-            "name": "lapian-notes",
-            "url": "https://github.com/bkingfilm/lapian-notes",
-            "description": "@bkingfilm 辅助电影拉片 ★713"
-          },
-          {
-            "name": "Smart-Plant-Doctor",
-            "url": "https://github.com/GitHpriyanshu23/Smart-Plant-Doctor",
-            "description": "@GitHpriyanshu23 +IoT植物 ★579"
-          },
-          {
-            "name": "mirrormate",
-            "url": "https://github.com/orangekame3/mirrormate",
-            "description": "@orangekame3 自托管的个性化AI魔 ★491"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "全球 AI",
     "icon": "🌐",
     "color": "linear-gradient(135deg, #00d4ff, #7b2ff7)",
@@ -23960,6 +20614,36 @@ window.KISSTR_DATA = [
             "name": "Open Notebook",
             "url": "https://github.com/lfnovo/open-notebook",
             "description": "开源NotebookLM实现，更灵活可定制"
+          },
+          {
+            "name": "LobeChat",
+            "url": "https://github.com/lobehub/lobe-chat",
+            "description": "开源现代化 AI 聊天框架"
+          },
+          {
+            "name": "LibreChat",
+            "url": "https://github.com/danny-avila/LibreChat",
+            "description": "自托管开源聊天界面"
+          },
+          {
+            "name": "Chatbox",
+            "url": "https://github.com/Bin-Huang/chatbox",
+            "description": "跨平台桌面 AI 聊天客户端"
+          },
+          {
+            "name": "NextChat",
+            "url": "https://github.com/ChatGPTNextWeb/NextChat",
+            "description": "开源 Web 对话界面"
+          },
+          {
+            "name": "Cherry Studio",
+            "url": "https://github.com/CherryHQ/cherry-studio",
+            "description": "开源桌面 AI 助手客户端"
+          },
+          {
+            "name": "SillyTavern",
+            "url": "https://github.com/SillyTavern/SillyTavern",
+            "description": "角色扮演向 AI 聊天前端"
           }
         ]
       },
@@ -24410,6 +21094,26 @@ window.KISSTR_DATA = [
               "多语种",
               "字节系"
             ]
+          },
+          {
+            "name": "DeepSeek-V3",
+            "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+            "description": "深度求索开源大语言模型"
+          },
+          {
+            "name": "Llama 3.1",
+            "url": "https://github.com/meta-llama/llama3",
+            "description": "Meta 开源大语言模型"
+          },
+          {
+            "name": "Mistral-7B",
+            "url": "https://github.com/mistralai",
+            "description": "欧洲 Mistral 开源 7B 模型"
+          },
+          {
+            "name": "Gemma 2",
+            "url": "https://github.com/google/gemma.cpp",
+            "description": "谷歌开源轻量大模型"
           }
         ]
       },
@@ -24788,6 +21492,36 @@ window.KISSTR_DATA = [
               "Super Agent",
               "自动化"
             ]
+          },
+          {
+            "name": "AutoGPT",
+            "url": "https://github.com/Significant-Gravitas/AutoGPT",
+            "description": "自主任务执行 AI 智能体"
+          },
+          {
+            "name": "CrewAI",
+            "url": "https://github.com/crewAIInc/crewAI",
+            "description": "多智能体协作编排框架"
+          },
+          {
+            "name": "AutoGen",
+            "url": "https://github.com/microsoft/autogen",
+            "description": "微软开源多智能体框架"
+          },
+          {
+            "name": "LangGraph",
+            "url": "https://github.com/langchain-ai/langgraph",
+            "description": "基于图的 LLM 智能体编排"
+          },
+          {
+            "name": "MetaGPT",
+            "url": "https://github.com/FoundationAgents/MetaGPT",
+            "description": "多角色协作软件智能体"
+          },
+          {
+            "name": "OpenHands",
+            "url": "https://github.com/OpenHands/OpenHands",
+            "description": "开源 AI 软件开发智能体"
           }
         ]
       }
@@ -26706,6 +23440,36 @@ window.KISSTR_DATA = [
             "name": "Hotpot AI",
             "url": "https://hotpot.ai",
             "description": "AI图片生成、设计辅助工具"
+          },
+          {
+            "name": "chrome-devtools-mcp",
+            "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+            "description": "Chrome 调试工具的 MCP 接口"
+          },
+          {
+            "name": "anthropics-skills",
+            "url": "https://github.com/anthropics/skills",
+            "description": "官方 Agent 技能样例仓库"
+          },
+          {
+            "name": "agent-browser",
+            "url": "https://github.com/vercel-labs/agent-browser",
+            "description": "AI Agent 浏览器自动化 CLI"
+          },
+          {
+            "name": "open-code-review",
+            "url": "https://github.com/alibaba/open-code-review",
+            "description": "阿里开源 LLM 代码审查工具"
+          },
+          {
+            "name": "univer",
+            "url": "https://github.com/dream-num/univer",
+            "description": "开源在线办公文档 SDK"
+          },
+          {
+            "name": "ag-ui",
+            "url": "https://github.com/ag-ui-protocol/ag-ui",
+            "description": "Agent 与前端交互开放协议"
           }
         ]
       },
@@ -28153,2014 +24917,264 @@ window.KISSTR_DATA = [
             "description": "通义6B S3-DiT，8步极速高质量出图"
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "开源AI项目百科",
-    "icon": "🔥",
-    "color": "linear-gradient(135deg,#ff6b35,#f7c948)",
-    "subcategories": [
-      {
-        "name": "最热门项目 TOP20 · 最热门项目 TOP20",
-        "enName": "",
-        "links": [
-          {
-            "name": "ComfyUI",
-            "url": "https://github.com/comfyanonymous/ComfyUI",
-            "description": "基于节点的开源扩散模型图形界面，支持文生图/图生图"
-          },
-          {
-            "name": "AUTOMATIC1111 stable-diffusion-webui",
-            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-            "description": "经典 SD 网页界面，功能全面、扩展生态丰富"
-          },
-          {
-            "name": "ControlNet",
-            "url": "https://github.com/lllyasviel/ControlNet",
-            "description": "条件控制网络，用边缘姿态等精确控制构图"
-          },
-          {
-            "name": "Segment Anything (SAM)",
-            "url": "https://github.com/facebookresearch/segment-anything",
-            "description": "Meta 可提示分割基础模型，点框文本分割任意物体"
-          },
-          {
-            "name": "Real-ESRGAN",
-            "url": "https://github.com/xinntao/Real-ESRGAN",
-            "description": "真实图像超分辨率修复，最流行的开源放大工具"
-          },
-          {
-            "name": "FaceFusion",
-            "url": "https://github.com/facefusion/facefusion",
-            "description": "开源人脸处理平台，支持图片视频换脸与人脸增强"
-          },
-          {
-            "name": "Whisper",
-            "url": "https://github.com/openai/whisper",
-            "description": "OpenAI 通用语音识别，支持 99 种语言"
-          },
-          {
-            "name": "GPT-SoVITS",
-            "url": "https://github.com/RVC-Boss/GPT-SoVITS",
-            "description": "少样本语音克隆，5 秒音频零样本克隆音色"
-          },
-          {
-            "name": "llama.cpp",
-            "url": "https://github.com/ggml-org/llama.cpp",
-            "description": "纯 C/C++ LLM 推理引擎，CPU 深度优化"
-          },
-          {
-            "name": "Ollama",
-            "url": "https://github.com/ollama/ollama",
-            "description": "一条命令本地运行开源大模型，API 兼容"
-          },
-          {
-            "name": "Transformers",
-            "url": "https://github.com/huggingface/transformers",
-            "description": "Hugging Face 主流预训练模型库"
-          },
-          {
-            "name": "Qwen2.5",
-            "url": "https://github.com/QwenLM/Qwen2.5",
-            "description": "阿里开源基础大模型，128K 上下文"
-          },
-          {
-            "name": "LangChain",
-            "url": "https://github.com/langchain-ai/langchain",
-            "description": "最广泛 LLM 应用开发框架"
-          },
-          {
-            "name": "AutoGPT",
-            "url": "https://github.com/Significant-Gravitas/AutoGPT",
-            "description": "自主智能体平台，自然语言定义目标执行"
-          },
-          {
-            "name": "Open WebUI",
-            "url": "https://github.com/open-webui/open-webui",
-            "description": "自托管 AI 对话界面，RAG 多用户"
-          },
-          {
-            "name": "Dify",
-            "url": "https://github.com/langgenius/dify",
-            "description": "开源 LLM 应用开发平台，可视化工作流"
-          },
-          {
-            "name": "RAGFlow",
-            "url": "https://github.com/infiniflow/ragflow",
-            "description": "深度文档理解 RAG 引擎"
-          },
-          {
-            "name": "Pinokio",
-            "url": "https://github.com/cocktailpeanut/pinokio",
-            "description": "本地 AI 应用一键安装运行平台"
-          },
-          {
-            "name": "Aider",
-            "url": "https://github.com/Aider-AI/aider",
-            "description": "终端 AI 结对编程，自动生成 Git 提交"
-          },
-          {
-            "name": "Cline",
-            "url": "https://github.com/cline/cline",
-            "description": "VS Code 热门编码智能体，Plan/Act 模式"
-          }
-        ]
       },
       {
-        "name": "图像生成 · 图像生成",
-        "enName": "",
+        "name": "AI 图像生成",
         "links": [
-          {
-            "name": "AI-Image-Workbench",
-            "url": "https://gitee.com/pangmin456/AI-Image-Workbench",
-            "description": "本地AI绘图工作台：ComfyUI/SD/云端API"
-          },
-          {
-            "name": "ComfyUI",
-            "url": "https://github.com/comfyanonymous/ComfyUI",
-            "description": "基于节点的开源扩散模型图形界面，支持文生图/图生图"
-          },
-          {
-            "name": "ComfyUI Desktop",
-            "url": "https://github.com/Comfy-Org/desktop",
-            "description": "ComfyUI 官方桌面一键安装版，内置环境与模型管理"
-          },
-          {
-            "name": "AUTOMATIC1111 stable-diffusion-webui",
-            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-            "description": "经典 SD 网页界面，功能全面、扩展生态丰富"
-          },
-          {
-            "name": "Stable Diffusion WebUI Forge",
-            "url": "https://github.com/lllyasviel/stable-diffusion-webui-forge",
-            "description": "A1111 高性能分支，低显存加速出图、兼容扩展"
-          },
-          {
-            "name": "SD.Next",
-            "url": "https://github.com/vladmandic/sdnext",
-            "description": "A1111 衍生的一体化图像视频生成服务，持续跟进新模型"
-          },
-          {
-            "name": "Fooocus",
-            "url": "https://github.com/lllyasviel/Fooocus",
-            "description": "开箱即用图像生成，免调参，默认 SDXL 模型"
-          },
           {
             "name": "InvokeAI",
             "url": "https://github.com/invoke-ai/InvokeAI",
-            "description": "面向创作者的开源 AI 生成平台，统一画布与模型管理"
-          },
-          {
-            "name": "SwarmUI",
-            "url": "https://github.com/mcmonkeyprojects/SwarmUI",
-            "description": "C# 开源多后端图像界面，支持多 GPU 与批量生成"
-          },
-          {
-            "name": "MFLUX-WEBUI",
-            "url": "https://github.com/pinokiofactory/MFLUX-WEBUI",
-            "description": "Pinokio 官方 FLUX 界面，苹果芯片本地运行"
-          },
-          {
-            "name": "flux-webui",
-            "url": "https://github.com/pinokiofactory/flux-webui",
-            "description": "Pinokio 最小化 FLUX 界面，跨平台一键安装"
-          },
-          {
-            "name": "Easy Diffusion",
-            "url": "https://github.com/easydiffusion/easydiffusion",
-            "description": "SD 一键发行版，自动装依赖、全平台"
-          },
-          {
-            "name": "Draw Things",
-            "url": "https://github.com/drawthingsai/draw-things-community",
-            "description": "Mac/iOS 原生离线 AI 生成，优化苹果芯片"
-          },
-          {
-            "name": "DiffusionBee",
-            "url": "https://github.com/divamgupta/diffusionbee-stable-diffusion-ui",
-            "description": "macOS 一键安装的 SD 出图界面，零配置支持文生图"
-          },
-          {
-            "name": "FluxGym",
-            "url": "https://github.com/cocktailpeanut/fluxgym",
-            "description": "FLUX LoRA 训练工具，12GB 显存可训"
-          },
-          {
-            "name": "PhotoMaker",
-            "url": "https://github.com/TencentARC/PhotoMaker",
-            "description": "腾讯人像生成模型，多参考图保持身份一致性"
+            "description": "模块化开源图像生成工作台"
           },
           {
             "name": "InstantID",
             "url": "https://github.com/InstantID/InstantID",
-            "description": "零样本身份保持生成，单张人脸图即可出多样化写真"
-          },
-          {
-            "name": "PuLID",
-            "url": "https://github.com/ToTheBeginning/PuLID",
-            "description": "快速高保真人脸定制模块，免训练保持面部一致"
-          },
-          {
-            "name": "IP-Adapter",
-            "url": "https://github.com/tencent-ailab/IP-Adapter",
-            "description": "图像提示适配器，以图生图/风格迁移，已被广泛集成"
-          },
-          {
-            "name": "ControlNet",
-            "url": "https://github.com/lllyasviel/ControlNet",
-            "description": "条件控制网络，用边缘姿态等精确控制构图"
-          },
-          {
-            "name": "GLIGEN",
-            "url": "https://github.com/gligen/GLIGEN",
-            "description": "开放词汇可控布局生成，边界框控制物体位置"
-          },
-          {
-            "name": "generative-models (SDXL)",
-            "url": "https://github.com/Stability-AI/generative-models",
-            "description": "Stability 官方模型代码库，含 SD 视频权重"
-          },
-          {
-            "name": "DeepFloyd IF",
-            "url": "https://github.com/deep-floyd/IF",
-            "description": "像素级级联文生图模型，擅长把文字渲染进图像"
-          },
-          {
-            "name": "Kandinsky 2.2",
-            "url": "https://github.com/ai-forever/Kandinsky-2",
-            "description": "多语言潜空间文生图模型，Apache 许可可商用"
-          },
-          {
-            "name": "HunyuanDiT",
-            "url": "https://github.com/Tencent/HunyuanDiT",
-            "description": "腾讯中文原生文生图模型，中文语义理解出色"
-          },
-          {
-            "name": "Kolors",
-            "url": "https://github.com/Kwai-Kolors/Kolors",
-            "description": "快手开源写实文生图，中英双语、图像内文字渲染"
-          },
-          {
-            "name": "Stable Diffusion 3.5",
-            "url": "https://github.com/Stability-AI/sd3.5",
-            "description": "Stability 新一代文生图，文字渲染与画质显著提升"
-          },
-          {
-            "name": "Stable Diffusion (CompVis)",
-            "url": "https://github.com/CompVis/stable-diffusion",
-            "description": "SD 原始官方代码库，本地文生图生态基石"
-          },
-          {
-            "name": "FLUX.1 (Black Forest Labs)",
-            "url": "https://github.com/black-forest-labs/flux",
-            "description": "顶级文生图系列，提示遵循与画质第一梯队"
-          },
-          {
-            "name": "Qwen-Image",
-            "url": "https://github.com/QwenLM/Qwen-Image",
-            "description": "阿里 200 亿参数图像基础模型，中英文字渲染出色"
-          },
-          {
-            "name": "PixArt-alpha",
-            "url": "https://github.com/PixArt-alpha/PixArt-alpha",
-            "description": "Transformer 高效文生图，低成本媲美 SDXL"
-          },
-          {
-            "name": "OneDiff",
-            "url": "https://github.com/siliconflow/onediff",
-            "description": "扩散模型推理加速库，面向图像视频生成优化"
-          },
-          {
-            "name": "IOPaint",
-            "url": "https://github.com/Sanster/IOPaint",
-            "description": "开源图像修复工具，擦除物体水印或扩散替换内容"
-          },
-          {
-            "name": "Inpaint Anything",
-            "url": "https://github.com/geekyutao/Inpaint-Anything",
-            "description": "点击任意物体即可分割并擦除或替换，覆盖图视频 3D"
-          },
-          {
-            "name": "BrushNet",
-            "url": "https://github.com/TencentARC/BrushNet",
-            "description": "即插即用图像修复模型，笔刷掩码精确控制编辑区域"
-          },
-          {
-            "name": "PowerPaint",
-            "url": "https://github.com/open-mmlab/PowerPaint",
-            "description": "多功能图像修复，单模型完成插入移除外扩等任务"
-          },
-          {
-            "name": "LaMa",
-            "url": "https://github.com/advimman/lama",
-            "description": "傅里叶卷积大掩码修复，大面积遮挡擦除补全经典"
-          },
-          {
-            "name": "Stable Diffusion Inpainting",
-            "url": "https://github.com/Stability-AI/stablediffusion",
-            "description": "SD 局部重绘专用模型，掩码区域内重绘内容"
+            "description": "免训练人脸身份保持生成"
           },
           {
             "name": "rembg",
             "url": "https://github.com/danielgatis/rembg",
-            "description": "开源抠图工具，一键移除背景输出透明 PNG"
-          },
-          {
-            "name": "Real-ESRGAN",
-            "url": "https://github.com/xinntao/Real-ESRGAN",
-            "description": "真实图像超分辨率修复，最流行的开源放大工具"
-          },
-          {
-            "name": "HAT",
-            "url": "https://github.com/XPixelGroup/HAT",
-            "description": "混合注意力图像修复，真实世界超分去噪达 SOTA"
-          },
-          {
-            "name": "SwinIR",
-            "url": "https://github.com/JingyunLiang/SwinIR",
-            "description": "Swin Transformer 通用修复，超分去噪"
+            "description": "一键抠图背景移除工具"
           },
           {
             "name": "Upscayl",
             "url": "https://github.com/upscayl/upscayl",
-            "description": "免费开源桌面 AI 放大应用，本地批量无水印"
+            "description": "开源 AI 图像放大工具"
           },
           {
-            "name": "DiffBIR",
-            "url": "https://github.com/XPixelGroup/DiffBIR",
-            "description": "扩散先验盲图像修复，超分/人脸/去噪生成自然纹理"
-          },
-          {
-            "name": "SUPIR",
-            "url": "https://github.com/Fanghua-Yu/SUPIR",
-            "description": "SDXL 扩散先验高保真修复，放大同时补全纹理细节"
-          },
-          {
-            "name": "SCUNet",
-            "url": "https://github.com/cszn/SCUNet",
-            "description": "真实世界盲超分网络，处理复杂未知退化组合"
-          },
-          {
-            "name": "Restormer",
-            "url": "https://github.com/syang-05/Restormer",
-            "description": "Transformer 图像修复，去噪去模糊超分"
-          },
-          {
-            "name": "GFPGAN",
-            "url": "https://github.com/TencentARC/GFPGAN",
-            "description": "腾讯人脸修复算法，老照片人脸还原高清"
-          },
-          {
-            "name": "CodeFormer",
-            "url": "https://github.com/sczhou/CodeFormer",
-            "description": "码本查找人脸修复模型，修复严重模糊低质人脸"
-          },
-          {
-            "name": "Bringing Old Photos Back to Life",
-            "url": "https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life",
-            "description": "微软老照片修复模型，处理划痕霉点等多种退化"
-          },
-          {
-            "name": "FaceFusion",
-            "url": "https://github.com/facefusion/facefusion",
-            "description": "开源人脸处理平台，支持图片视频换脸与人脸增强"
-          },
-          {
-            "name": "InstructPix2Pix",
-            "url": "https://github.com/timothybrooks/instruct-pix2pix",
-            "description": "指令式图像编辑，仅凭自然语言即可修改图片"
-          },
-          {
-            "name": "Segment Anything (SAM)",
-            "url": "https://github.com/facebookresearch/segment-anything",
-            "description": "Meta 可提示分割基础模型，点框文本分割任意物体"
-          },
-          {
-            "name": "Grounding DINO",
-            "url": "https://github.com/IDEA-Research/GroundingDINO",
-            "description": "开放词汇目标检测，文本提示即可检测任意物体"
-          },
-          {
-            "name": "Krita AI Diffusion",
-            "url": "https://github.com/Acly/krita-ai-diffusion",
-            "description": "Krita 绘画软件的 AI 插件，画布内文生图与重绘"
-          },
-          {
-            "name": "IC-Light",
-            "url": "https://github.com/lllyasviel/IC-Light",
-            "description": "图像重打光与背景合成，影棚级布光效果"
-          },
-          {
-            "name": "DeOldify",
-            "url": "https://github.com/jantic/DeOldify",
-            "description": "GAN 老照片上色修复，黑白照片视频自然上色"
+            "name": "Real-ESRGAN",
+            "url": "https://github.com/xinntao/Real-ESRGAN",
+            "description": "通用图像超分辨率修复模型"
           }
         ]
       },
       {
-        "name": "视频生成 · 视频生成",
-        "enName": "",
+        "name": "AI 视频生成",
         "links": [
-          {
-            "name": "Concat",
-            "url": "https://github.com/jub0t/Concat",
-            "description": "开源CapCut替代，本地视频剪辑无广告"
-          },
-          {
-            "name": "One-Click VidGen",
-            "url": "https://github.com/IFRIT-Zhou/One-Click-VidGen",
-            "description": "文案一键成片：配音字幕分镜渲染"
-          },
-          {
-            "name": "Stable Video Diffusion (generative-models)",
-            "url": "https://github.com/Stability-AI/generative-models",
-            "description": "Stability 图生视频，单图生成 14-25 帧"
-          },
-          {
-            "name": "DynamiCrafter",
-            "url": "https://github.com/Doubiiu/DynamiCrafter",
-            "description": "中港中文腾讯图生视频，静态图生成约 2 秒动画"
-          },
-          {
-            "name": "I2VGen-XL",
-            "url": "https://github.com/damo-vilab/i2vgen-xl",
-            "description": "阿里两阶段高清图生视频，720P 以上分辨率"
-          },
           {
             "name": "AnimateDiff",
             "url": "https://github.com/guoyww/AnimateDiff",
-            "description": "SD 加时序模块扩展为动画生成器，支持 LoRA"
+            "description": "文本生成动画扩散模型"
           },
           {
             "name": "CogVideo / CogVideoX",
             "url": "https://github.com/THUDM/CogVideo",
-            "description": "清华智谱文生视频系列，2B 版本 Apache 开源"
-          },
-          {
-            "name": "CogStudio",
-            "url": "https://github.com/pinokiofactory/cogstudio",
-            "description": "CogVideoX 高级 WebUI，10GB 显存可跑"
-          },
-          {
-            "name": "Mochi 1",
-            "url": "https://github.com/genmoai/mochi",
-            "description": "Genmo 10B 文生视频，运动物理感开源领先"
-          },
-          {
-            "name": "LTX-Video",
-            "url": "https://github.com/Lightricks/LTX-Video",
-            "description": "消费级 GPU 快速视频生成，24fps 推理快"
+            "description": "智谱开源视频生成模型"
           },
           {
             "name": "HunyuanVideo",
             "url": "https://github.com/Tencent/HunyuanVideo",
-            "description": "腾讯 13B 文生视频大模型，高分辨率长镜头"
+            "description": "腾讯开源视频生成大模型"
           },
           {
             "name": "Open-Sora",
             "url": "https://github.com/hpcaitech/Open-Sora",
-            "description": "潞晨开源类 Sora 视频生成，完整训练推理代码"
-          },
-          {
-            "name": "Wan 2.1",
-            "url": "https://github.com/Wan-Video/Wan2.1",
-            "description": "阿里万相视频模型，1.3B/14B 支持文生图生视频"
+            "description": "开放复现的视频生成模型"
           },
           {
             "name": "Wan 2.2",
             "url": "https://github.com/Wan-Video/Wan2.2",
-            "description": "首个开源 MoE 视频扩散模型，720P 电影感"
-          },
-          {
-            "name": "Allegro",
-            "url": "https://github.com/rhymes-ai/Allegro",
-            "description": "Rhymes AI 商业级文生视频，Apache 可商用"
-          },
-          {
-            "name": "AnimateLCM",
-            "url": "https://github.com/G-U-N/AnimateLCM",
-            "description": "动画生成加速，采样压缩到约 4 步"
-          },
-          {
-            "name": "VideoCrafter",
-            "url": "https://github.com/AILab-CVC/VideoCrafter",
-            "description": "腾讯视频生成工具箱，文生/图生视频两代模型"
-          },
-          {
-            "name": "Open-Sora-Plan",
-            "url": "https://github.com/PKU-YuanGroup/Open-Sora-Plan",
-            "description": "北大社区复现 Sora 计划，开放 VAE 与训练代码"
-          },
-          {
-            "name": "EasyAnimate",
-            "url": "https://github.com/aigc-apps/EasyAnimate",
-            "description": "阿里高分辨率长视频生成端到端方案"
-          },
-          {
-            "name": "Moore-AnimateAnyone",
-            "url": "https://github.com/MooreThreads/Moore-AnimateAnyone",
-            "description": "照片加姿态视频生成人物舞蹈动画，开源基线"
-          },
-          {
-            "name": "Moore-AnimateAnyone-Mini (Pinokio)",
-            "url": "https://github.com/cocktailpeanutlabs/moore-animateanyone-mini",
-            "description": "Pinokio 一键安装版，13GB 显存跑人物动画"
-          },
-          {
-            "name": "MagicAnimate",
-            "url": "https://github.com/magic-research/magic-animate",
-            "description": "新国大字节人物图像动画，时间一致性强调"
-          },
-          {
-            "name": "MimicMotion",
-            "url": "https://github.com/Tencent/MimicMotion",
-            "description": "高质量人体动作视频生成，长视频时序平滑"
-          },
-          {
-            "name": "MotionCtrl",
-            "url": "https://github.com/TencentARC/MotionCtrl",
-            "description": "统一视频运动控制，独立控制相机与物体运动"
+            "description": "万相开源视频生成模型"
           },
           {
             "name": "RIFE (Practical-RIFE)",
             "url": "https://github.com/hzwer/Practical-RIFE",
-            "description": "实时视频帧插值补帧，慢动作高帧率转换"
-          },
-          {
-            "name": "FILM",
-            "url": "https://github.com/google-research/frame-interpolation",
-            "description": "Google 大运动帧插值，时间连贯中间帧"
-          },
-          {
-            "name": "GMFSS Fortuna",
-            "url": "https://github.com/98mxr/GMFSS_Fortuna",
-            "description": "动漫视频专用帧插值，大运动线条优化"
-          },
-          {
-            "name": "VideoX-Fun",
-            "url": "https://github.com/aigc-apps/VideoX-Fun",
-            "description": "视频生成编辑统一框架，支持多底座与 LoRA 训练"
-          },
-          {
-            "name": "Deforum",
-            "url": "https://github.com/deforum-art/sd-webui-deforum",
-            "description": "SD 动画生成扩展，关键帧运动迷幻风格"
-          },
-          {
-            "name": "ToonCrafter",
-            "url": "https://github.com/Doubiiu/ToonCrafter",
-            "description": "卡通关键帧插值生成流畅中间动画"
-          },
-          {
-            "name": "FramePack",
-            "url": "https://github.com/lllyasviel/FramePack",
-            "description": "长视频生成，6GB 显卡可跑分钟级"
-          },
-          {
-            "name": "StreamingT2V",
-            "url": "https://github.com/Picsart-AI-Research/StreamingT2V",
-            "description": "自回归长文生视频，可生成约 1200 帧"
+            "description": "实用视频补帧插值模型"
           }
         ]
       },
       {
-        "name": "音频与语音 · 音频与语音",
-        "enName": "",
+        "name": "AI 数字人与口型",
         "links": [
-          {
-            "name": "VoiceStudio",
-            "url": "https://github.com/debpalash/VoiceStudio",
-            "description": "本地ElevenLabs替代：克隆配音646语言"
-          },
-          {
-            "name": "Retrieval-based-Voice-Conversion-WebUI",
-            "url": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
-            "description": "检索式歌声转换，十分钟素材即可训练音色模型"
-          },
-          {
-            "name": "Applio",
-            "url": "https://github.com/IAHispano/Applio",
-            "description": "RVC 改造变声工具，简易高性能多平台"
-          },
-          {
-            "name": "AudioCraft (MusicGen)",
-            "url": "https://github.com/facebookresearch/audiocraft",
-            "description": "Meta 音频生成研究库，文本作曲与音效生成"
-          },
-          {
-            "name": "Jukebox",
-            "url": "https://github.com/openai/jukebox",
-            "description": "OpenAI 神经音乐生成，历史研究参考"
-          },
-          {
-            "name": "ACE-Step",
-            "url": "https://github.com/ace-step/ACE-Step-1.5",
-            "description": "音乐生成基础模型，数秒生成带人声整曲"
-          },
-          {
-            "name": "YuE",
-            "url": "https://github.com/multimodal-art-projection/YuE",
-            "description": "长篇歌曲生成，歌词加风格生成完整歌曲"
-          },
-          {
-            "name": "DiffRhythm",
-            "url": "https://github.com/ASLP-lab/DiffRhythm",
-            "description": "端到端全曲生成，人声伴奏完整歌曲"
-          },
-          {
-            "name": "Stable Audio 3",
-            "url": "https://github.com/Stability-AI/stable-audio-3",
-            "description": "新一代音乐音效生成家族，授权曲库训练"
-          },
-          {
-            "name": "Demucs",
-            "url": "https://github.com/facebookresearch/demucs",
-            "description": "Meta 音乐音源分离，拆人声鼓贝斯伴奏四轨"
-          },
-          {
-            "name": "Ultimate Vocal Remover GUI",
-            "url": "https://github.com/Anjok07/ultimatevocalremovergui",
-            "description": "图形化人声乐器分离工具，内置多模型"
-          },
-          {
-            "name": "Spleeter",
-            "url": "https://github.com/deezer/spleeter",
-            "description": "Deezer 音乐分离库，TensorFlow 快速分离"
-          },
-          {
-            "name": "Open-Unmix",
-            "url": "https://github.com/sigsep/open-unmix-pytorch",
-            "description": "音乐音源分离参考实现，PyTorch 研究复现"
-          },
-          {
-            "name": "so-vits-svc",
-            "url": "https://github.com/svc-develop-team/so-vits-svc",
-            "description": "歌声转换项目，翻唱人声转换为指定歌手音色"
-          },
-          {
-            "name": "AudioLDM 2",
-            "url": "https://github.com/haoheliu/AudioLDM2",
-            "description": "通用音频生成潜扩散，文生音频/音乐/语音"
-          },
-          {
-            "name": "Tango",
-            "url": "https://github.com/declare-lab/tango",
-            "description": "文本到音频生成，描述生成环境音效"
-          },
-          {
-            "name": "Stable Audio Open 1.0",
-            "url": "https://github.com/Stability-AI/stable-audio-open",
-            "description": "Stability 开源文生音频，生成 47 秒音乐音效"
-          },
-          {
-            "name": "DiffSinger (OpenVPI)",
-            "url": "https://github.com/openvpi/DiffSinger",
-            "description": "高保真歌声合成，虚拟歌手声库制作"
-          },
-          {
-            "name": "Basic Pitch",
-            "url": "https://github.com/spotify/basic-pitch",
-            "description": "Spotify 轻量音频转 MIDI，CPU 实时运行"
-          },
-          {
-            "name": "AudioSep",
-            "url": "https://github.com/Audio-AGI/AudioSep",
-            "description": "开放域音源分离，语义提取目标声源"
-          },
-          {
-            "name": "Amphion",
-            "url": "https://github.com/open-mmlab/Amphion",
-            "description": "音频音乐语音生成统一工具箱"
-          },
-          {
-            "name": "GPT-SoVITS",
-            "url": "https://github.com/RVC-Boss/GPT-SoVITS",
-            "description": "少样本语音克隆，5 秒音频零样本克隆音色"
-          },
-          {
-            "name": "F5-TTS",
-            "url": "https://github.com/SWivid/F5-TTS",
-            "description": "流匹配零样本语音克隆，韵律自然推理快"
-          },
-          {
-            "name": "Fish Speech",
-            "url": "https://github.com/fishaudio/fish-speech",
-            "description": "高保真多语言 TTS 与语音克隆"
-          },
-          {
-            "name": "OpenVoice",
-            "url": "https://github.com/myshell-ai/OpenVoice",
-            "description": "即时语音克隆，情感口音语速独立控制"
-          },
-          {
-            "name": "Coqui TTS (XTTS v2)",
-            "url": "https://github.com/coqui-ai/TTS",
-            "description": "多语言 TTS 库，3 秒音频跨语言克隆"
-          },
-          {
-            "name": "ChatTTS",
-            "url": "https://github.com/2noise/ChatTTS",
-            "description": "对话场景 TTS，自然停顿语气词"
-          },
-          {
-            "name": "Whisper",
-            "url": "https://github.com/openai/whisper",
-            "description": "OpenAI 通用语音识别，支持 99 种语言"
-          },
-          {
-            "name": "faster-whisper",
-            "url": "https://github.com/SYSTRAN/faster-whisper",
-            "description": "Whisper 加速实现，高吞吐低显存"
-          },
-          {
-            "name": "whisper.cpp",
-            "url": "https://github.com/ggml-org/whisper.cpp",
-            "description": "纯 C/C++ Whisper，边缘设备离线运行"
-          },
-          {
-            "name": "WhisperX",
-            "url": "https://github.com/m-bain/whisperX",
-            "description": "词级时间戳转写，带说话人日志"
-          },
-          {
-            "name": "FunASR",
-            "url": "https://github.com/modelscope/FunASR",
-            "description": "阿里端到端语音识别，中文识别出色"
-          },
-          {
-            "name": "SenseVoice",
-            "url": "https://github.com/FunAudioLLM/SenseVoice",
-            "description": "多语言语音理解，情感与事件检测"
-          },
-          {
-            "name": "sherpa-onnx",
-            "url": "https://github.com/k2-fsa/sherpa-onnx",
-            "description": "跨平台语音推理引擎，端侧部署"
-          },
-          {
-            "name": "Piper",
-            "url": "https://github.com/rhasspy/piper",
-            "description": "轻量本地 TTS，树莓派实时合成"
-          },
-          {
-            "name": "Kokoro",
-            "url": "https://github.com/hexgrad/kokoro",
-            "description": "8200 万参数轻量 TTS，接近大模型质量"
-          },
-          {
-            "name": "CosyVoice",
-            "url": "https://github.com/FunAudioLLM/CosyVoice",
-            "description": "阿里语音生成，多语言方言音色克隆"
-          },
-          {
-            "name": "edge-tts",
-            "url": "https://github.com/rany2/edge-tts",
-            "description": "调用微软神经语音服务，免费多音色"
-          },
-          {
-            "name": "StyleTTS 2",
-            "url": "https://github.com/yl4579/StyleTTS2",
-            "description": "高表现力 TTS，风格扩散接近真人"
-          },
-          {
-            "name": "MeloTTS",
-            "url": "https://github.com/myshell-ai/MeloTTS",
-            "description": "多语 TTS 库，CPU 实时推理"
-          },
-          {
-            "name": "Bark",
-            "url": "https://github.com/suno-ai/bark",
-            "description": "Suno 文本到音频，语音音乐音效统一生成"
-          }
-        ]
-      },
-      {
-        "name": "数字人与口型 · 数字人与口型",
-        "enName": "",
-        "links": [
-          {
-            "name": "SadTalker",
-            "url": "https://github.com/OpenTalker/SadTalker",
-            "description": "音频驱动单图说话人脸，入门数字人方案"
-          },
-          {
-            "name": "V-Express",
-            "url": "https://github.com/tencent-ailab/V-Express",
-            "description": "腾讯肖像视频生成，口型同步自然"
-          },
-          {
-            "name": "SyncTalk",
-            "url": "https://github.com/ZiqiaoPeng/SyncTalk",
-            "description": "说话人头合成，唇部表情姿态同步"
-          },
           {
             "name": "Wav2Lip",
             "url": "https://github.com/Rudrabha/Wav2Lip",
-            "description": "高精度唇形同步，影视配音换口型"
+            "description": "音频驱动唇形同步模型"
           },
           {
-            "name": "LatentSync",
-            "url": "https://github.com/bytedance/LatentSync",
-            "description": "字节口型同步，潜空间建模替换嘴部"
+            "name": "SadTalker",
+            "url": "https://github.com/OpenTalker/SadTalker",
+            "description": "单张照片生成说话头像"
           },
           {
             "name": "LivePortrait",
             "url": "https://github.com/KwaiVGI/LivePortrait",
-            "description": "快手肖像动画，表情头部姿态迁移"
-          },
-          {
-            "name": "EchoMimic",
-            "url": "https://github.com/antgroup/echomimic",
-            "description": "蚂蚁音频驱动肖像动画，半身说话人像"
-          },
-          {
-            "name": "Hallo",
-            "url": "https://github.com/fudan-generative-vision/hallo",
-            "description": "复旦音频驱动肖像动画，高画质说话人像"
-          },
-          {
-            "name": "Hallo2",
-            "url": "https://github.com/fudan-generative-vision/hallo2",
-            "description": "长时高分辨率说话人像生成"
-          },
-          {
-            "name": "AniPortrait",
-            "url": "https://github.com/Zejun-Yang/AniPortrait",
-            "description": "两阶段音频驱动肖像动画，轻量可用"
+            "description": "人像表情动作迁移工具"
           },
           {
             "name": "MuseTalk",
             "url": "https://github.com/TMElyralab/MuseTalk",
-            "description": "腾讯实时唇形同步，30fps 以上速度"
+            "description": "实时唇形对齐数字人方案"
           },
           {
-            "name": "FacePoke",
-            "url": "https://github.com/jbilcke-hf/FacePoke",
-            "description": "浏览器互动肖像控制，拖动推表情"
+            "name": "Hallo",
+            "url": "https://github.com/fudan-generative-vision/hallo",
+            "description": "音频驱动人像动画生成"
           },
           {
-            "name": "Kalidokit",
-            "url": "https://github.com/yeemachine/kalidokit",
-            "description": "TypeScript 面部动捕库，网页 VTuber"
-          },
-          {
-            "name": "GeneFace",
-            "url": "https://github.com/yerfor/GeneFace",
-            "description": "NeRF 音频驱动 3D 说话人脸"
-          },
-          {
-            "name": "LiveTalking",
-            "url": "https://github.com/lipku/LiveTalking",
-            "description": "实时流式数字人框架，可切换后端"
+            "name": "LatentSync",
+            "url": "https://github.com/bytedance/LatentSync",
+            "description": "开源唇形同步修正工具"
           }
         ]
       },
       {
-        "name": "3D 与设计 · 3D 与设计",
-        "enName": "",
+        "name": "AI 3D 生成",
         "links": [
           {
-            "name": "anatomy",
-            "url": "https://github.com/wheresryan22/anatomy",
-            "description": "Claude技能：一句话生成交互等距示意图"
-          },
-          {
-            "name": "TripoSR",
-            "url": "https://github.com/VAST-AI-Research/TripoSR",
-            "description": "单图三维重建，0.5 秒输出 3D 网格"
-          },
-          {
-            "name": "InstantMesh",
-            "url": "https://github.com/TencentARC/InstantMesh",
-            "description": "腾讯单图 3D 网格，约 10 秒生成"
-          },
-          {
-            "name": "Wonder3D",
-            "url": "https://github.com/xxlong0/Wonder3D",
-            "description": "单图到三维纹理网格，2-3 分钟重建"
-          },
-          {
-            "name": "One-2-3-45",
-            "url": "https://github.com/One-2-3-45/One-2-3-45",
-            "description": "45 秒单图重建三维网格，免优化"
+            "name": "Hunyuan3D-2",
+            "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
+            "description": "腾讯开源 3D 资产生成模型"
           },
           {
             "name": "TRELLIS",
             "url": "https://github.com/microsoft/TRELLIS",
-            "description": "微软 3D 资产生成，支持多种输出表示"
-          },
-          {
-            "name": "Hunyuan3D-2",
-            "url": "https://github.com/Tencent-Hunyuan/Hunyuan3D-2",
-            "description": "腾讯高分辨率 3D 资产，PBR 纹理"
+            "description": "微软开源 3D 生成框架"
           },
           {
             "name": "threestudio",
             "url": "https://github.com/threestudio-project/threestudio",
-            "description": "统一 3D 生成研究框架，多方法复现"
+            "description": "通用 3D 生成研究平台"
           },
           {
             "name": "nerfstudio",
             "url": "https://github.com/nerfstudio-project/nerfstudio",
-            "description": "NeRF 开源框架，三维重建工具栈"
+            "description": "神经辐射场 3D 重建框架"
           },
           {
             "name": "3D Gaussian Splatting",
             "url": "https://github.com/graphdeco-inria/gaussian-splatting",
-            "description": "三维高斯泼溅官方实现，实时照片级渲染"
+            "description": "实时高保真 3D 重建方法"
           },
           {
-            "name": "Shap-E",
-            "url": "https://github.com/openai/shap-e",
-            "description": "OpenAI 条件式 3D 生成，快速原型"
-          },
-          {
-            "name": "Stable-DreamFusion",
-            "url": "https://github.com/ashawkey/stable-dreamfusion",
-            "description": "DreamFusion 复现，文本生成三维物体"
-          },
-          {
-            "name": "Point-E",
-            "url": "https://github.com/openai/point-e",
-            "description": "OpenAI 文本转 3D 点云，快速采样"
-          },
-          {
-            "name": "Zero-1-to-3",
-            "url": "https://github.com/cvlab-columbia/zero123",
-            "description": "零样本单图新视角合成，无需逐物优化"
-          },
-          {
-            "name": "Zero123++",
-            "url": "https://github.com/SUDO-AI-3D/zero123plus",
-            "description": "单图生成一致六视图，图生 3D 前端"
-          },
-          {
-            "name": "LGM",
-            "url": "https://github.com/3DTopia/LGM",
-            "description": "前馈式高分辨率三维生成，约 30 秒"
+            "name": "InstantMesh",
+            "url": "https://github.com/TencentARC/InstantMesh",
+            "description": "单图快速生成 3D 网格"
           }
         ]
       },
       {
-        "name": "大语言模型 · 大语言模型",
-        "enName": "",
+        "name": "模型运行环境",
         "links": [
-          {
-            "name": "Colibri",
-            "url": "https://github.com/JustVugg/colibri",
-            "description": "纯C MoE推理引擎，25G内存跑744B模型"
-          },
-          {
-            "name": "Strands Decider",
-            "url": "https://github.com/strands-labs/strands-decider",
-            "description": "2B决策模型：选项打分带置信度"
-          },
-          {
-            "name": "Index-Translate",
-            "url": "https://github.com/bilibili/index-translate",
-            "description": "B站开源翻译模型，150语言多模态"
-          },
-          {
-            "name": "llama.cpp",
-            "url": "https://github.com/ggml-org/llama.cpp",
-            "description": "纯 C/C++ LLM 推理引擎，CPU 深度优化"
-          },
-          {
-            "name": "KoboldCpp",
-            "url": "https://github.com/LostRuins/koboldcpp",
-            "description": "写作界面加推理一体，免安装"
-          },
-          {
-            "name": "CTranslate2",
-            "url": "https://github.com/OpenNMT/CTranslate2",
-            "description": "Transformer 高效推理库，多后端量化"
-          },
-          {
-            "name": "Ollama",
-            "url": "https://github.com/ollama/ollama",
-            "description": "一条命令本地运行开源大模型，API 兼容"
-          },
-          {
-            "name": "vLLM",
-            "url": "https://github.com/vllm-project/vllm",
-            "description": "高吞吐大模型推理服务，生产部署"
-          },
-          {
-            "name": "llama-cpp-python",
-            "url": "https://github.com/abetlen/llama-cpp-python",
-            "description": "llama.cpp 的 Python 绑定库"
-          },
-          {
-            "name": "ExLlamaV2",
-            "url": "https://github.com/turboderp-org/exllamav2",
-            "description": "消费级显卡高速推理，已归档迁移 V3"
-          },
           {
             "name": "GPT4All",
             "url": "https://github.com/nomic-ai/gpt4all",
-            "description": "本地大模型生态，普通 CPU 离线运行"
-          },
-          {
-            "name": "Text Generation WebUI",
-            "url": "https://github.com/oobabooga/textgen",
-            "description": "本地大模型多功能网页界面，多后端"
-          },
-          {
-            "name": "SGLang",
-            "url": "https://github.com/sgl-project/sglang",
-            "description": "高性能大模型服务框架，低延迟高吞吐"
-          },
-          {
-            "name": "MLX",
-            "url": "https://github.com/ml-explore/mlx",
-            "description": "Apple 芯片机器学习框架，统一内存优化"
-          },
-          {
-            "name": "MLC-LLM",
-            "url": "https://github.com/mlc-ai/mlc-llm",
-            "description": "大模型编译部署，手机浏览器端侧运行"
-          },
-          {
-            "name": "LocalAI",
-            "url": "https://github.com/mudler/LocalAI",
-            "description": "OpenAI 兼容本地 API 层，单二进制"
-          },
-          {
-            "name": "Jan",
-            "url": "https://github.com/janhq/jan",
-            "description": "离线桌面大模型助手，界面类 ChatGPT"
-          },
-          {
-            "name": "Transformers",
-            "url": "https://github.com/huggingface/transformers",
-            "description": "Hugging Face 主流预训练模型库"
-          },
-          {
-            "name": "LLaMA-Factory",
-            "url": "https://github.com/hiyouga/LLaMA-Factory",
-            "description": "一站式大模型微调框架，百种模型"
-          },
-          {
-            "name": "RWKV-LM",
-            "url": "https://github.com/BlinkDL/RWKV-LM",
-            "description": "线性复杂度语言模型，超长上下文"
-          },
-          {
-            "name": "Mamba",
-            "url": "https://github.com/state-spaces/mamba",
-            "description": "选择性状态空间模型，长序列替代架构"
-          },
-          {
-            "name": "Qwen2.5",
-            "url": "https://github.com/QwenLM/Qwen2.5",
-            "description": "阿里开源基础大模型，128K 上下文"
-          },
-          {
-            "name": "DeepSeek-V3",
-            "url": "https://github.com/deepseek-ai/DeepSeek-V3",
-            "description": "MoE 架构大模型，671B 参数"
-          },
-          {
-            "name": "Mistral-7B",
-            "url": "https://github.com/mistralai",
-            "description": "7B 稠密开源模型，早期本地流行"
-          },
-          {
-            "name": "Gemma 2",
-            "url": "https://github.com/google/gemma.cpp",
-            "description": "Google 轻量模型家族，本机部署"
-          },
-          {
-            "name": "Phi-3",
-            "url": "https://github.com/microsoft/Phi-3CookBook",
-            "description": "微软小参数模型，低显存强推理"
-          },
-          {
-            "name": "MiniCPM",
-            "url": "https://github.com/OpenBMB/MiniCPM",
-            "description": "面壁端侧小模型，手机笔记本运行"
-          },
-          {
-            "name": "GLM-4",
-            "url": "https://github.com/THUDM/GLM-4",
-            "description": "智谱开源基座模型，中英双语"
-          },
-          {
-            "name": "Yi-1.5",
-            "url": "https://github.com/01-ai/Yi-1.5",
-            "description": "零一万物双语大模型，Apache 可商用"
-          },
-          {
-            "name": "InternLM",
-            "url": "https://github.com/InternLM/InternLM",
-            "description": "上海 AI 实验室开源大模型，工具链全"
-          },
-          {
-            "name": "OLMo",
-            "url": "https://github.com/allenai/OLMo",
-            "description": "全栈开放语言模型，公开训练数据"
-          },
-          {
-            "name": "Llama 3.1",
-            "url": "https://github.com/meta-llama/llama3",
-            "description": "Meta 开源权重模型，8B-405B 多尺寸"
+            "description": "本地离线运行的开源 LLM 客户端"
           }
         ]
       },
       {
-        "name": "聊天界面 · 聊天界面",
-        "enName": "",
+        "name": "AI 编程工具",
         "links": [
-          {
-            "name": "Open WebUI",
-            "url": "https://github.com/open-webui/open-webui",
-            "description": "自托管 AI 对话界面，RAG 多用户"
-          },
-          {
-            "name": "LobeChat",
-            "url": "https://github.com/lobehub/lobe-chat",
-            "description": "现代化开源聊天框架，多模型接入"
-          },
-          {
-            "name": "LibreChat",
-            "url": "https://github.com/danny-avila/LibreChat",
-            "description": "增强版 ChatGPT 克隆，多供应商"
-          },
-          {
-            "name": "Chatbox",
-            "url": "https://github.com/Bin-Huang/chatbox",
-            "description": "跨平台桌面 AI 客户端，自带 Key 连接"
-          },
-          {
-            "name": "NextChat",
-            "url": "https://github.com/ChatGPTNextWeb/NextChat",
-            "description": "轻量 ChatGPT 风格界面，一键部署"
-          },
-          {
-            "name": "SillyTavern",
-            "url": "https://github.com/SillyTavern/SillyTavern",
-            "description": "角色扮演对话前端，卡片化叙事"
-          },
-          {
-            "name": "big-AGI",
-            "url": "https://github.com/enricoros/big-AGI",
-            "description": "多模型 AI 工作台，同提示词对比模型"
-          },
-          {
-            "name": "Cherry Studio",
-            "url": "https://github.com/CherryHQ/cherry-studio",
-            "description": "跨平台 AI 工作站，300 多模型商"
-          },
-          {
-            "name": "AnythingLLM",
-            "url": "https://github.com/Mintplex-Labs/anything-llm",
-            "description": "私有 AI 工作台，文档 RAG 对话"
-          },
-          {
-            "name": "Chatbot UI",
-            "url": "https://github.com/mckaywrigley/chatbot-ui",
-            "description": "ChatGPT 风格自托管界面，已停更"
-          },
-          {
-            "name": "ChuanhuChatGPT",
-            "url": "https://github.com/GaiZhenbiao/ChuanhuChatGPT",
-            "description": "Gradio 轻量中文聊天界面，多模型"
-          },
-          {
-            "name": "BetterChatGPT",
-            "url": "https://github.com/ztjhz/BetterChatGPT",
-            "description": "ChatGPT 网页增强界面，已停维护"
-          },
-          {
-            "name": "gpt4free",
-            "url": "https://github.com/xtekky/gpt4free",
-            "description": "免费聚合访问多模型库，注意合规"
-          },
-          {
-            "name": "PrivateGPT",
-            "url": "https://github.com/zylon-ai/private-gpt",
-            "description": "完全离线文档问答，私有知识库"
-          },
-          {
-            "name": "localGPT",
-            "url": "https://github.com/PromtEngineer/localGPT",
-            "description": "本地文档对话 RAG，数据不离开本机"
-          },
-          {
-            "name": "Khoj",
-            "url": "https://github.com/khoj-ai/khoj",
-            "description": "开源个人 AI 第二大脑，笔记 PDF 检索问答"
-          },
-          {
-            "name": "Chainlit",
-            "url": "https://github.com/Chainlit/chainlit",
-            "description": "快速构建对话式 AI 应用的 Python 框架"
-          },
-          {
-            "name": "KoboldAI-Client",
-            "url": "https://github.com/KoboldAI/KoboldAI-Client",
-            "description": "浏览器端创作写作界面，文字冒险"
-          },
-          {
-            "name": "Quivr",
-            "url": "https://github.com/QuivrHQ/quivr",
-            "description": "第二大脑 RAG 平台，文档接入任意 LLM"
-          },
-          {
-            "name": "chat-ui (HuggingChat)",
-            "url": "https://github.com/huggingface/chat-ui",
-            "description": "HF 开源聊天界面，多模型路由"
-          }
-        ]
-      },
-      {
-        "name": "AI 智能体 · AI 智能体",
-        "enName": "",
-        "links": [
-          {
-            "name": "deepseek-harness",
-            "url": "https://github.com/deepseek-ai/deepseek-harness",
-            "description": "DeepSeek插件化Agent框架，一切皆插件"
-          },
-          {
-            "name": "hermes-agent",
-            "url": "https://github.com/NousResearch/hermes-agent",
-            "description": "越用越聪明的持久AI智能体，会自学技能"
-          },
-          {
-            "name": "Hindsight",
-            "url": "https://github.com/vectorize-io/hindsight",
-            "description": "Agent记忆系统：存取反思三动作"
-          },
-          {
-            "name": "orca",
-            "url": "https://github.com/stablyai/orca",
-            "description": "并行编排AI编码Agent，各占git worktree"
-          },
-          {
-            "name": "Octop",
-            "url": "https://github.com/TencentCloud/Octop",
-            "description": "一家人共用的自托管AI助手"
-          },
-          {
-            "name": "InkOS",
-            "url": "https://github.com/Narcooo/inkos",
-            "description": "10个AI代理协作写小说的系统"
-          },
-          {
-            "name": "scientific-agent-skills",
-            "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-            "description": "177个科学技能：生物化学医药数据"
-          },
-          {
-            "name": "AutoGPT",
-            "url": "https://github.com/Significant-Gravitas/AutoGPT",
-            "description": "自主智能体平台，自然语言定义目标执行"
-          },
-          {
-            "name": "AgentGPT",
-            "url": "https://github.com/reworkd/AgentGPT",
-            "description": "浏览器端自主智能体演示，已归档"
-          },
-          {
-            "name": "BabyAGI",
-            "url": "https://github.com/yoheinakajima/babyagi",
-            "description": "极简自主任务循环原型脚本"
-          },
-          {
-            "name": "Ditto",
-            "url": "https://github.com/yoheinakajima/ditto",
-            "description": "500 行自构建智能体，生成完整应用"
-          },
-          {
-            "name": "CrewAI",
-            "url": "https://github.com/crewAIInc/crewAI",
-            "description": "角色扮演多智能体协作框架"
-          },
-          {
-            "name": "AutoGen",
-            "url": "https://github.com/microsoft/autogen",
-            "description": "微软可对话协作智能体框架"
-          },
-          {
-            "name": "LangGraph",
-            "url": "https://github.com/langchain-ai/langgraph",
-            "description": "图结构智能体编排，可控可恢复"
-          },
-          {
-            "name": "LangChain",
-            "url": "https://github.com/langchain-ai/langchain",
-            "description": "最广泛 LLM 应用开发框架"
-          },
-          {
-            "name": "Semantic Kernel",
-            "url": "https://github.com/microsoft/semantic-kernel",
-            "description": "微软企业智能体 SDK，深融 .NET"
-          },
-          {
-            "name": "MetaGPT",
-            "url": "https://github.com/FoundationAgents/MetaGPT",
-            "description": "多智能体模拟软件公司，需求生成代码"
-          },
-          {
-            "name": "CAMEL",
-            "url": "https://github.com/camel-ai/camel",
-            "description": "多智能体行为与规模定律研究框架"
-          },
-          {
-            "name": "OpenClaw",
-            "url": "https://github.com/openclaw/openclaw",
-            "description": "本地优先电脑操作智能体，浏览器自动化"
-          },
-          {
-            "name": "OpenHands",
-            "url": "https://github.com/OpenHands/OpenHands",
-            "description": "开源软件开发智能体，沙箱自主编程"
-          },
-          {
-            "name": "SWE-agent",
-            "url": "https://github.com/SWE-agent/SWE-agent",
-            "description": "自主软件工程智能体，SWE-bench 基线"
-          },
-          {
-            "name": "Claude Engineer",
-            "url": "https://github.com/Doriandarko/claude-engineer",
-            "description": "命令行交互开发助手，已停更"
-          },
-          {
-            "name": "Pydantic AI",
-            "url": "https://github.com/pydantic/pydantic-ai",
-            "description": "类型安全智能体框架，结构化输出"
-          },
-          {
-            "name": "Agent Zero",
-            "url": "https://github.com/frdel/agent-zero",
-            "description": "自包含 Docker 通用智能体，可自我成长"
-          },
-          {
-            "name": "smolagents",
-            "url": "https://github.com/huggingface/smolagents",
-            "description": "极简智能体库，代码即思考"
-          },
-          {
-            "name": "LlamaIndex",
-            "url": "https://github.com/run-llama/llama_index",
-            "description": "上下文感知应用框架，数据接入 LLM"
-          },
-          {
-            "name": "Letta",
-            "url": "https://github.com/letta-ai/letta",
-            "description": "有状态持久记忆智能体平台"
-          },
-          {
-            "name": "OpenAI Agents SDK",
-            "url": "https://github.com/openai/openai-agents-python",
-            "description": "OpenAI 官方轻量智能体开发包"
-          },
-          {
-            "name": "Google ADK",
-            "url": "https://github.com/google/adk-python",
-            "description": "Google 智能体开发工具包，代码优先"
-          },
-          {
-            "name": "Griptape",
-            "url": "https://github.com/griptape-ai/griptape",
-            "description": "模块化可预测 AI 应用框架"
-          },
-          {
-            "name": "Haystack",
-            "url": "https://github.com/deepset-ai/haystack",
-            "description": "生产级 LLM 应用编排框架"
-          },
-          {
-            "name": "Browser Use",
-            "url": "https://github.com/browser-use/browser-use",
-            "description": "让 LLM 直接操控浏览器的开源库"
-          }
-        ]
-      },
-      {
-        "name": "AI 编程 · AI 编程",
-        "enName": "",
-        "links": [
-          {
-            "name": "ECC",
-            "url": "https://github.com/affaan-m/ECC",
-            "description": "Agent性能优化系统：技能本能记忆安全"
-          },
-          {
-            "name": "andrej-karpathy-skills",
-            "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-            "description": "Karpathy四原则CLAUDE.md 22万★"
-          },
-          {
-            "name": "ponytail",
-            "url": "https://github.com/DietrichGebert/ponytail",
-            "description": "让AI智能体当最懒资深工程师"
-          },
-          {
-            "name": "claude-plugins-official",
-            "url": "https://github.com/anthropics/claude-plugins-official",
-            "description": "Claude Code官方插件目录"
-          },
-          {
-            "name": "financial-services",
-            "url": "https://github.com/anthropics/financial-services",
-            "description": "Anthropic金融行业Agent与Skill"
-          },
-          {
-            "name": "security-audit-skill",
-            "url": "https://github.com/cloudflare/security-audit-skill",
-            "description": "Cloudflare六阶段代码漏洞审计"
-          },
-          {
-            "name": "json-render",
-            "url": "https://github.com/vercel-labs/json-render",
-            "description": "AI只能用你定的组件生成界面"
-          },
-          {
-            "name": "Coder",
-            "url": "https://github.com/coder/coder",
-            "description": "自部署云端开发环境"
-          },
-          {
-            "name": "Agent-Native",
-            "url": "https://github.com/BuilderIO/agent-native",
-            "description": "功能写一次，Agent与界面共用"
-          },
-          {
-            "name": "Marketing Skills",
-            "url": "https://github.com/coreyhaines31/marketingskills",
-            "description": "50+营销技能：SEO文案转化优化"
-          },
-          {
-            "name": "REA",
-            "url": "https://github.com/morluto/rea",
-            "description": "AI逆向工程MCP：本地拆二进制应用"
-          },
-          {
-            "name": "Aider",
-            "url": "https://github.com/Aider-AI/aider",
-            "description": "终端 AI 结对编程，自动生成 Git 提交"
-          },
           {
             "name": "Continue",
             "url": "https://github.com/continuedev/continue",
-            "description": "VS Code/JetBrains AI 编码助手扩展"
+            "description": "开源 AI 编程助手插件"
           },
           {
             "name": "Tabby",
             "url": "https://github.com/TabbyML/tabby",
-            "description": "Rust 自托管 AI 编码助手，替代 Copilot"
-          },
-          {
-            "name": "Codex CLI",
-            "url": "https://github.com/openai/codex",
-            "description": "OpenAI 官方终端编码智能体"
-          },
-          {
-            "name": "Gemini CLI",
-            "url": "https://github.com/google-gemini/gemini-cli",
-            "description": "Google 官方终端 AI 智能体"
-          },
-          {
-            "name": "OpenCode",
-            "url": "https://github.com/anomalyco/opencode",
-            "description": "终端 AI 编码代理，TUI 桌面 IDE 多形态"
-          },
-          {
-            "name": "Cline",
-            "url": "https://github.com/cline/cline",
-            "description": "VS Code 热门编码智能体，Plan/Act 模式"
-          },
-          {
-            "name": "Roo Code",
-            "url": "https://github.com/RooCodeInc/Roo-Code",
-            "description": "Cline 分支，编辑器内 AI 开发团队"
-          },
-          {
-            "name": "Zed",
-            "url": "https://github.com/zed-industries/zed",
-            "description": "Rust 高性能协作编辑器，原生 AI"
-          },
-          {
-            "name": "StarCoder2",
-            "url": "https://github.com/bigcode-project/starcoder2",
-            "description": "HF 开源代码大模型，80 余种语言"
-          },
-          {
-            "name": "DeepSeek-Coder-V2",
-            "url": "https://github.com/deepseek-ai/DeepSeek-Coder-V2",
-            "description": "MoE 架构代码大模型"
-          },
-          {
-            "name": "Qwen2.5-Coder",
-            "url": "https://github.com/QwenLM/Qwen2.5-Coder",
-            "description": "阿里代码大模型，0.5B-32B 多规格"
-          },
-          {
-            "name": "CodeLlama",
-            "url": "https://github.com/meta-llama/codellama",
-            "description": "Meta 代码大模型家族，长上下文"
-          },
-          {
-            "name": "WizardCoder",
-            "url": "https://github.com/Nlpxucan/WizardLM",
-            "description": "进化指令训练的代码大模型"
-          },
-          {
-            "name": "RepoAgent",
-            "url": "https://github.com/OpenBMB/RepoAgent",
-            "description": "仓库级代码文档自动生成维护"
-          },
-          {
-            "name": "GPT Engineer",
-            "url": "https://github.com/gpt-engineer-org/gpt-engineer",
-            "description": "提示词生成整站先驱，已归档"
-          },
-          {
-            "name": "Sweep",
-            "url": "https://github.com/sweepai/sweep",
-            "description": "自动修 Issue 开 PR 的 AI 开发者"
-          },
-          {
-            "name": "Void",
-            "url": "https://github.com/voideditor/void",
-            "description": "基于 VS Code 开源 AI 编辑器，已归档"
+            "description": "自托管开源代码补全模型"
           },
           {
             "name": "PearAI",
             "url": "https://github.com/trypear/pearai-app",
-            "description": "基于 VS Code 的开源 AI 编辑器"
+            "description": "开源 AI 驱动代码编辑器"
+          },
+          {
+            "name": "StarCoder2",
+            "url": "https://github.com/bigcode-project/starcoder2",
+            "description": "开源代码大模型"
           }
         ]
       },
       {
-        "name": "工作流与平台 · 工作流与平台",
-        "enName": "",
+        "name": "AI 工作流平台",
         "links": [
-          {
-            "name": "OpenSEO",
-            "url": "https://github.com/every-app/open-seo",
-            "description": "开源自托管SEO平台，Semrush替代"
-          },
-          {
-            "name": "Dify",
-            "url": "https://github.com/langgenius/dify",
-            "description": "开源 LLM 应用开发平台，可视化工作流"
-          },
-          {
-            "name": "n8n",
-            "url": "https://github.com/n8n-io/n8n",
-            "description": "节点式开源工作流自动化，自托管 Zapier"
-          },
           {
             "name": "Flowise",
             "url": "https://github.com/FlowiseAI/Flowise",
-            "description": "拖拽式 LLM 应用搭建，基于 LangChain"
-          },
-          {
-            "name": "Langflow",
-            "url": "https://github.com/langflow-ai/langflow",
-            "description": "低代码 AI 应用构建，可视化画布"
+            "description": "可视化 LLM 应用编排工具"
           },
           {
             "name": "Node-RED",
             "url": "https://github.com/node-red/node-red",
-            "description": "IBM 低代码事件流编程，IoT 自动化"
+            "description": "流式可视化物联网自动化流"
           },
           {
             "name": "Activepieces",
             "url": "https://github.com/activepieces/activepieces",
-            "description": "开源业务自动化平台，760+ 连接器"
-          },
-          {
-            "name": "Kestra",
-            "url": "https://github.com/kestra-io/kestra",
-            "description": "声明式编排平台，YAML 定义工作流"
-          },
-          {
-            "name": "Prefect",
-            "url": "https://github.com/PrefectHQ/prefect",
-            "description": "Python 工作流编排框架，重试缓存"
-          },
-          {
-            "name": "Apache Airflow",
-            "url": "https://github.com/apache/airflow",
-            "description": "数据管道调度标准，DAG 定义监控"
-          },
-          {
-            "name": "Windmill",
-            "url": "https://github.com/windmill-labs/windmill",
-            "description": "脚本变应用平台，多语言自动生成 UI"
-          },
-          {
-            "name": "Agenta",
-            "url": "https://github.com/agenta-ai/agenta",
-            "description": "LLM 应用评估工作台，自动评测标注"
-          },
-          {
-            "name": "Prompt flow",
-            "url": "https://github.com/microsoft/promptflow",
-            "description": "微软 LLM 开发工具链，全周期覆盖"
+            "description": "开源自动化工作流平台"
           },
           {
             "name": "FastGPT",
             "url": "https://github.com/labring/FastGPT",
-            "description": "企业级知识库问答与 AI 工作流平台"
-          },
-          {
-            "name": "Bisheng",
-            "url": "https://github.com/dataelement/bisheng",
-            "description": "企业级 LLM 应用开发平台，可视化编排"
-          },
-          {
-            "name": "Dagster",
-            "url": "https://github.com/dagster-io/dagster",
-            "description": "数据资产编排平台，血缘可观测"
-          },
-          {
-            "name": "Temporal",
-            "url": "https://github.com/temporalio/temporal",
-            "description": "持久化执行平台，崩溃后精确恢复"
-          },
-          {
-            "name": "Mage",
-            "url": "https://github.com/mage-ai/mage-ai",
-            "description": "开源数据管道工具，现代 Airflow 替代"
+            "description": "开源知识库问答应用平台"
           },
           {
             "name": "MaxKB",
             "url": "https://github.com/1Panel-dev/MaxKB",
-            "description": "企业级知识库问答与 Agent 平台"
-          },
-          {
-            "name": "Coze Studio",
-            "url": "https://github.com/coze-dev/coze-studio",
-            "description": "字节开源 AI Agent 开发平台"
-          },
-          {
-            "name": "QAnything",
-            "url": "https://github.com/netease-youdao/QAnything",
-            "description": "网易本地知识库问答，两阶段检索"
-          },
-          {
-            "name": "Pinokio",
-            "url": "https://github.com/cocktailpeanut/pinokio",
-            "description": "本地 AI 应用一键安装运行平台"
-          },
-          {
-            "name": "Stability Matrix",
-            "url": "https://github.com/LykosAI/StabilityMatrix",
-            "description": "扩散模型 WebUI 包管理器"
-          },
-          {
-            "name": "ComfyUI-Manager",
-            "url": "https://github.com/ltdrdata/ComfyUI-Manager",
-            "description": "ComfyUI 节点包管理工具"
-          },
-          {
-            "name": "ModelScope",
-            "url": "https://github.com/modelscope/modelscope",
-            "description": "阿里魔搭模型社区与 SDK"
-          },
-          {
-            "name": "OpenVINO",
-            "url": "https://github.com/openvinotoolkit/openvino",
-            "description": "Intel 推理优化工具包，边缘部署"
-          },
-          {
-            "name": "ONNX Runtime",
-            "url": "https://github.com/microsoft/onnxruntime",
-            "description": "微软跨平台推理加速器"
-          },
-          {
-            "name": "TensorRT",
-            "url": "https://github.com/NVIDIA/TensorRT",
-            "description": "NVIDIA 推理优化器，GPU 高性能引擎"
-          },
-          {
-            "name": "one-api",
-            "url": "https://github.com/songquanpeng/one-api",
-            "description": "LLM API 统一管理与分发网关"
-          },
-          {
-            "name": "new-api",
-            "url": "https://github.com/QuantumNous/new-api",
-            "description": "新一代 LLM 网关，40+ 供应商路由"
-          },
-          {
-            "name": "LiteLLM",
-            "url": "https://github.com/BerriAI/litellm",
-            "description": "统一 LLM 代理网关，140+ 供应商"
-          },
-          {
-            "name": "Portkey Gateway",
-            "url": "https://github.com/Portkey-AI/gateway",
-            "description": "高性能 AI 网关，统一接入 160+ 模型"
-          },
-          {
-            "name": "Langfuse",
-            "url": "https://github.com/langfuse/langfuse",
-            "description": "开源 LLM 工程平台，追踪评估"
-          },
-          {
-            "name": "Arize Phoenix",
-            "url": "https://github.com/Arize-ai/phoenix",
-            "description": "AI 应用观测与评估平台"
-          },
-          {
-            "name": "Helicone",
-            "url": "https://github.com/Helicone/helicone",
-            "description": "代理式 LLM 可观测性与 AI 网关"
-          },
-          {
-            "name": "promptfoo",
-            "url": "https://github.com/promptfoo/promptfoo",
-            "description": "LLM 系统性评估与红队测试"
-          },
-          {
-            "name": "mlx-vlm",
-            "url": "https://github.com/Blaizzy/mlx-vlm",
-            "description": "Apple 芯片视觉语言模型推理微调"
-          },
-          {
-            "name": "Text Generation Inference",
-            "url": "https://github.com/huggingface/text-generation-inference",
-            "description": "HF 生产级 LLM 推理服务器"
-          },
-          {
-            "name": "Triton Inference Server",
-            "url": "https://github.com/triton-inference-server/server",
-            "description": "NVIDIA 统一推理服务框架"
-          },
-          {
-            "name": "MLflow",
-            "url": "https://github.com/mlflow/mlflow",
-            "description": "AI 工程平台，追踪评估部署"
-          },
-          {
-            "name": "lm-evaluation-harness",
-            "url": "https://github.com/EleutherAI/lm-evaluation-harness",
-            "description": "大模型评测框架，60+ 学术基准"
+            "description": "开源知识库与智能体平台"
           }
         ]
       },
       {
-        "name": "数据与文档 · 数据与文档",
-        "enName": "",
+        "name": "AI 数据与文档",
         "links": [
-          {
-            "name": "Univer",
-            "url": "https://github.com/dream-num/univer",
-            "description": "开源办公套件：人和Agent同文件协作"
-          },
-          {
-            "name": "OfficeCLI",
-            "url": "https://github.com/iOfficeAI/OfficeCLI",
-            "description": "单文件CLI读写Word/Excel/PPT"
-          },
-          {
-            "name": "PandasAI",
-            "url": "https://github.com/sinaptik-ai/pandas-ai",
-            "description": "对话式数据分析，自然语言转代码"
-          },
-          {
-            "name": "PyCaret",
-            "url": "https://github.com/pycaret/pycaret",
-            "description": "低代码 AutoML，几行完成建模"
-          },
-          {
-            "name": "AutoGluon",
-            "url": "https://github.com/autogluon/autogluon",
-            "description": "AWS 自动化机器学习，高精度基线"
-          },
-          {
-            "name": "H2O-3",
-            "url": "https://github.com/h2oai/h2o-3",
-            "description": "分布式内存机器学习平台，AutoML"
-          },
-          {
-            "name": "Rath",
-            "url": "https://github.com/Kanaries/Rath",
-            "description": "自动化探索式数据分析可视化"
-          },
-          {
-            "name": "D-Tale",
-            "url": "https://github.com/man-group/dtale",
-            "description": "Pandas 交互式可视化 GUI"
-          },
-          {
-            "name": "Lux",
-            "url": "https://github.com/lux-org/lux",
-            "description": "DataFrame 自动可视化推荐"
-          },
-          {
-            "name": "Sweetviz",
-            "url": "https://github.com/fbdesignpro/sweetviz",
-            "description": "一行代码生成 EDA 报告"
-          },
-          {
-            "name": "ydata-profiling",
-            "url": "https://github.com/ydataai/ydata-profiling",
-            "description": "数据画像报告，字段质量审查"
-          },
-          {
-            "name": "DataPrep",
-            "url": "https://github.com/sfu-db/dataprep",
-            "description": "低代码数据准备，采集清洗分析"
-          },
-          {
-            "name": "Great Expectations",
-            "url": "https://github.com/great-expectations/great_expectations",
-            "description": "数据质量校验框架，规则测试数据"
-          },
-          {
-            "name": "Airbyte",
-            "url": "https://github.com/airbytehq/airbyte",
-            "description": "开源数据集成平台，数百预构建连接器"
-          },
-          {
-            "name": "dbt Core",
-            "url": "https://github.com/dbt-labs/dbt-core",
-            "description": "数据仓库转换标准，SQL 建模测试"
-          },
-          {
-            "name": "OpenBB",
-            "url": "https://github.com/OpenBB-finance/OpenBB",
-            "description": "开源金融数据工作台，投资研究"
-          },
-          {
-            "name": "spaCy",
-            "url": "https://github.com/explosion/spaCy",
-            "description": "工业级 Python NLP 库，生产环境"
-          },
-          {
-            "name": "PaddleOCR",
-            "url": "https://github.com/PaddlePaddle/PaddleOCR",
-            "description": "百度多语言 OCR，轻量高精度"
-          },
-          {
-            "name": "Tesseract",
-            "url": "https://github.com/tesseract-ocr/tesseract",
-            "description": "经典 OCR 引擎，100 多种语言"
-          },
-          {
-            "name": "EasyOCR",
-            "url": "https://github.com/JaidedAI/EasyOCR",
-            "description": "开箱即用深度学习 OCR 库"
-          },
-          {
-            "name": "Surya",
-            "url": "https://github.com/datalab-to/surya",
-            "description": "多语言文档智能引擎，VLM 管线"
-          },
-          {
-            "name": "Marker",
-            "url": "https://github.com/datalab-to/marker",
-            "description": "PDF 转 Markdown 管线，RAG 语料"
-          },
           {
             "name": "MinerU",
             "url": "https://github.com/opendatalab/MinerU",
-            "description": "高精度文档解析，公式表格转换"
+            "description": "开源文档解析提取工具"
           },
           {
             "name": "Docling",
             "url": "https://github.com/docling-project/docling",
-            "description": "IBM 开源文档转换库，RAG 接入"
+            "description": "开源智能文档处理系统"
           },
           {
-            "name": "Unstructured",
-            "url": "https://github.com/Unstructured-IO/unstructured",
-            "description": "RAG 文档预处理标准库"
+            "name": "Marker",
+            "url": "https://github.com/datalab-to/marker",
+            "description": "PDF 转 Markdown 文档转换"
           },
           {
-            "name": "OCRmyPDF",
-            "url": "https://github.com/ocrmypdf/OCRmyPDF",
-            "description": "扫描 PDF 增加可搜索文字层"
-          },
-          {
-            "name": "Nougat",
-            "url": "https://github.com/facebookresearch/nougat",
-            "description": "学术 PDF 转 Markdown，含 LaTeX"
-          },
-          {
-            "name": "Donut",
-            "url": "https://github.com/clovaai/donut",
-            "description": "免 OCR 文档理解 Transformer"
-          },
-          {
-            "name": "RapidOCR",
-            "url": "https://github.com/RapidAI/RapidOCR",
-            "description": "PaddleOCR 的 ONNX 轻量版"
-          },
-          {
-            "name": "TrOCR",
-            "url": "https://github.com/microsoft/unilm",
-            "description": "端到端文字识别 Transformer"
-          },
-          {
-            "name": "PDFMathTranslate",
-            "url": "https://github.com/Byaidu/PDFMathTranslate",
-            "description": "科研 PDF 翻译，保留公式版式"
-          },
-          {
-            "name": "Gotenberg",
-            "url": "https://github.com/gotenberg/gotenberg",
-            "description": "Docker 文档转 PDF 转换 API"
+            "name": "spaCy",
+            "url": "https://github.com/explosion/spaCy",
+            "description": "开源工业级自然语言处理库"
           }
         ]
       },
       {
-        "name": "搜索与知识库 · 搜索与知识库",
-        "enName": "",
+        "name": "AI 搜索与知识库",
         "links": [
-          {
-            "name": "firecrawl",
-            "url": "https://github.com/firecrawl/firecrawl",
-            "description": "网页转LLM数据接口 19万★"
-          },
-          {
-            "name": "xerj",
-            "url": "https://github.com/xerj-org/xerj",
-            "description": "本地AI搜索文件夹：找代码和文档"
-          },
           {
             "name": "RAGFlow",
             "url": "https://github.com/infiniflow/ragflow",
-            "description": "深度文档理解 RAG 引擎"
+            "description": "开源 RAG 知识库引擎"
           },
           {
             "name": "Qdrant",
             "url": "https://github.com/qdrant/qdrant",
-            "description": "Rust 高性能向量搜索引擎"
+            "description": "开源向量数据库"
           },
           {
             "name": "Milvus",
             "url": "https://github.com/milvus-io/milvus",
-            "description": "云原生向量数据库，百亿级检索"
-          },
-          {
-            "name": "Weaviate",
-            "url": "https://github.com/weaviate/weaviate",
-            "description": "AI 原生向量数据库，混合检索"
+            "description": "分布式开源向量数据库"
           },
           {
             "name": "Chroma",
             "url": "https://github.com/chroma-core/chroma",
-            "description": "轻量嵌入数据库，开发友好"
-          },
-          {
-            "name": "LanceDB",
-            "url": "https://github.com/lancedb/lancedb",
-            "description": "嵌入式多模态向量数据库"
-          },
-          {
-            "name": "pgvector",
-            "url": "https://github.com/pgvector/pgvector",
-            "description": "PostgreSQL 向量检索扩展"
-          },
-          {
-            "name": "txtai",
-            "url": "https://github.com/neuml/txtai",
-            "description": "一体化语义检索与 LLM 工作流"
+            "description": "轻量开源向量数据库"
           },
           {
             "name": "Meilisearch",
             "url": "https://github.com/meilisearch/meilisearch",
-            "description": "Rust 即时搜索引擎，50ms 响应"
-          },
-          {
-            "name": "Typesense",
-            "url": "https://github.com/typesense/typesense",
-            "description": "内存搜索引擎，亚 50 毫秒"
+            "description": "开源轻量搜索引擎"
           },
           {
             "name": "SearXNG",
             "url": "https://github.com/searxng/searxng",
-            "description": "隐私元搜索引擎，聚合不追踪"
-          },
-          {
-            "name": "Vane (formerly Perplexica)",
-            "url": "https://github.com/ItzCrazyKns/Perplexica",
-            "description": "自托管 AI 问答搜索，带引用"
-          },
-          {
-            "name": "Onyx",
-            "url": "https://github.com/onyx-dot-app/onyx",
-            "description": "企业级搜索聊天 Agent 平台"
-          },
-          {
-            "name": "RAGatouille",
-            "url": "https://github.com/bclavie/RAGatouille",
-            "description": "ColBERT 晚交互检索库"
-          },
-          {
-            "name": "Elasticsearch",
-            "url": "https://github.com/elastic/elasticsearch",
-            "description": "最流行分布式搜索分析引擎"
+            "description": "开源元搜索引擎"
           }
         ]
       }
@@ -30431,1187 +25445,194 @@ window.KISSTR_DATA = [
   },
   {
     "name": "开源项目",
-    "icon": "🧩",
-    "color": "linear-gradient(135deg, #00b894, #6c5ce7)",
     "subcategories": [
       {
-        "name": "托管平台 (001-040)",
-        "enName": "Collection",
+        "name": "开源项目发现目录",
         "links": [
           {
-            "name": "GitHub",
-            "url": "https://github.com",
-            "description": "全球极大的代码托管与开发者社区，开源项目协作"
+            "name": "Find Open Source",
+            "url": "https://findopensource.dev/explore",
+            "description": "精选开源项目目录，支持分类与趋势筛选"
           },
           {
-            "name": "GitLab",
-            "url": "https://gitlab.com",
-            "description": "强大的 DevOps 平台与开源代码托管服务"
+            "name": "Potacular Open Source",
+            "url": "https://potacular.com/opensource/",
+            "description": "收录大量 GitHub 仓库，多维度检索"
           },
           {
-            "name": "Codeberg",
-            "url": "https://codeberg.org",
-            "description": "由非营利组织运营的纯粹开源托管平台"
+            "name": "Open Repo",
+            "url": "https://open-repo.shplinks.com/",
+            "description": "精选 GitHub 开源仓库，按主题发现"
           },
           {
-            "name": "SourceForge",
-            "url": "https://sourceforge.net",
-            "description": "老牌开源软件托管平台，提供庞大的桌面端与服务器端免"
+            "name": "RepoRadar",
+            "url": "https://reporadar.spreix.com/",
+            "description": "追踪热门开源仓库与分类更新动态"
           },
           {
-            "name": "Apache Software Foundation (ASF)",
-            "url": "https://www.apache.org",
-            "description": "全球极大的开源软件基金会，托管了 Spark"
+            "name": "GitDiscover",
+            "url": "https://gitdiscover.org/",
+            "description": "发现增长中的 GitHub 项目和开发者"
           },
           {
-            "name": "Linux Foundation",
-            "url": "https://www.linuxfoundation.org",
-            "description": "推动 Linux 内核及现代开源技术(云原生"
+            "name": "LibHunt",
+            "url": "https://www.libhunt.com/",
+            "description": "按编程语言和技术领域发现项目"
           },
           {
-            "name": "Eclipse Foundation",
-            "url": "https://www.eclipse.org",
-            "description": "知名开源软件基金会，提供 Eclipse IDE"
+            "name": "selfh.st Apps",
+            "url": "https://selfh.st/apps/",
+            "description": "自托管应用与开源服务目录"
           },
           {
-            "name": "Free Software Foundation (FSF)",
-            "url": "https://www.fsf.org",
-            "description": "自由软件基金会，由 Stallman 创办"
+            "name": "HelloGitHub",
+            "url": "https://hellogithub.com/",
+            "description": "中文开源项目推荐与介绍平台"
           },
           {
-            "name": "Open Source Initiative (OSI)",
-            "url": "https://opensource.org",
-            "description": "开源倡议组织，定义与认可“开源许可协议(OSI"
+            "name": "Gitee Explore",
+            "url": "https://gitee.com/explore",
+            "description": "码云开源项目发现与分类浏览"
           },
           {
-            "name": "Cloud Native Computing Foundation (CNCF)",
-            "url": "https://www.cncf.io",
-            "description": "云原生计算基金会，托管 Kubernetes"
+            "name": "OSCHINA 开源项目",
+            "url": "https://www.oschina.net/project",
+            "description": "中文开源软件、框架和工具项目库"
           },
           {
-            "name": "OpenInfra Foundation",
-            "url": "https://openinfra.dev",
-            "description": "开放基础设施基金会，推动 OpenStack"
+            "name": "Pinokio 官方应用目录",
+            "url": "https://pinokio.co/",
+            "description": "官方应用平台，浏览社区应用和启动脚本"
           },
           {
-            "name": "Python Software Foundation (PSF)",
-            "url": "https://www.python.org/psf",
-            "description": "支持与推广 Python"
+            "name": "HelloPixDig",
+            "url": "https://hellopixdig.com/en/search",
+            "description": "AI 与开源应用收集目录"
           },
           {
-            "name": "Rust Foundation",
-            "url": "https://rustfoundation.org",
-            "description": "致力于维护、发展与资助 Rust"
+            "name": "Open App Scout",
+            "url": "https://openappscout.com/",
+            "description": "人工筛选真实开源应用，分类与仓库追踪"
           },
           {
-            "name": "Node.js Foundation (OpenJS)",
-            "url": "https://openjsf.org",
-            "description": "OpenJS 基金会，托管 Node.js"
+            "name": "Open Apps Directory",
+            "url": "https://github.com/airshell/open-apps-directory",
+            "description": "开源应用目录源码，研究收集与分类方式"
           },
           {
-            "name": "Mozilla Foundation",
-            "url": "https://www.mozilla.org",
-            "description": "开源先驱基金会，致力于维护开放互联网"
-          },
-          {
-            "name": "Software Freedom Conservancy (SFC)",
-            "url": "https://sfconservancy.org",
-            "description": "为 Git、Inkscape"
-          },
-          {
-            "name": "Software in the Public Interest (SPI)",
-            "url": "https://www.spi-inc.org",
-            "description": "协助 Debian、Arch Linux"
-          },
-          {
-            "name": "OWASP Foundation",
-            "url": "https://owasp.org",
-            "description": "开放 Web 应用程序安全项目"
-          },
-          {
-            "name": "Gitee (码云)",
-            "url": "https://gitee.com",
-            "description": "中国本土知名的代码托管与研发协作平台"
-          },
-          {
-            "name": "OpenAtom Foundation (开放原子开源基金会)",
-            "url": "https://www.openatom.org",
-            "description": "中国首个开源基金会，托管 OpenHarmony"
-          },
-          {
-            "name": "Framagit",
-            "url": "https://framagit.org",
-            "description": "由法国 Framasoft 提供的非营利"
-          },
-          {
-            "name": "Savannah (GNU)",
-            "url": "https://savannah.gnu.org",
-            "description": "自由软件基金会创办的官方代码托管平台"
-          },
-          {
-            "name": "OSDN",
-            "url": "https://osdn.net",
-            "description": "开源软件开发网络，为开源项目提供下载镜像"
-          },
-          {
-            "name": "Bitbucket",
-            "url": "https://bitbucket.org",
-            "description": "Atlassian 旗下的代码托管平台"
-          },
-          {
-            "name": "Launchpad",
-            "url": "https://launchpad.net",
-            "description": "Canonical 开发的开源协作平台"
-          },
-          {
-            "name": "Radicle",
-            "url": "https://radicle.xyz",
-            "description": "基于 P2P 网络与密码学的去中心化开源代码托管与"
-          },
-          {
-            "name": "GitGutter / Forgejo",
-            "url": "https://forgejo.org",
-            "description": "由社区驱动的轻量级去中心化开源 Git 服务软件"
-          },
-          {
-            "name": "Open Source Collective",
-            "url": "https://opencollective.com/opensource",
-            "description": "为开源项目提供透明化筹款"
-          },
-          {
-            "name": "GitHub Sponsors",
-            "url": "https://github.com/sponsors",
-            "description": "GitHub 官方设立的开源资助渠道"
-          },
-          {
-            "name": "Tidelift",
-            "url": "https://tidelift.com",
-            "description": "企业级开源软件供应链保障平台"
-          },
-          {
-            "name": "NumFOCUS",
-            "url": "https://numfocus.org",
-            "description": "支持 NumPy、Pandas、SciPy"
-          },
-          {
-            "name": "Blender Foundation",
-            "url": "https://www.blender.org/foundation",
-            "description": "支持顶级开源 3D 创作套件 Blender"
-          },
-          {
-            "name": "KDE e.V.",
-            "url": "https://ev.kde.org",
-            "description": "代表 KDE 开源社区的非营利组织"
-          },
-          {
-            "name": "GNOME Foundation",
-            "url": "https://www.gnome.org/foundation",
-            "description": "支持 GNOME 自由桌面环境及周边开源生态系统发"
-          },
-          {
-            "name": "Document Foundation",
-            "url": "https://www.documentfoundation.org",
-            "description": "知名开源办公套件 LibreOffice"
-          },
-          {
-            "name": "VideoLAN",
-            "url": "https://www.videolan.org",
-            "description": "知名开源媒体播放器 VLC 以及"
-          },
-          {
-            "name": "Matrix.org Foundation",
-            "url": "https://matrix.org",
-            "description": "开放去中心化实时通信协议 Matrix"
-          },
-          {
-            "name": "RISC-V International",
-            "url": "https://riscv.org",
-            "description": "开放指令集架构 RISC-V 的国际标准化组织"
-          },
-          {
-            "name": "Open3D Engine (O3DE)",
-            "url": "https://o3de.org",
-            "description": "Linux 基金会托管的 AAA 级开源跨平台"
-          },
-          {
-            "name": "OpenSSF (Open Source Security Foundation)",
-            "url": "https://openssf.org",
-            "description": "专注于提升全球开源软件供应链安全"
+            "name": "Hugging Face Spaces",
+            "url": "https://huggingface.co/spaces",
+            "description": "可在线体验的 AI 模型和应用 Demo"
           }
         ]
       },
       {
-        "name": "操作系统 (041-080)",
-        "enName": "Collection",
+        "name": "GitHub 官方发现",
         "links": [
           {
-            "name": "Linux Kernel Archives",
-            "url": "https://www.kernel.org",
-            "description": "Linux 操作系统内核官方源码发布库与主线更新大"
+            "name": "GitHub Trending",
+            "url": "https://github.com/trending",
+            "description": "GitHub 官方热门项目榜单"
           },
           {
-            "name": "Debian",
-            "url": "https://www.debian.org",
-            "description": "老牌纯粹由社区维护的开源 Linux 发行版"
+            "name": "GitHub Explore",
+            "url": "https://github.com/explore",
+            "description": "主题、合集和推荐发现优质项目"
           },
           {
-            "name": "Ubuntu",
-            "url": "https://ubuntu.com",
-            "description": "全球极受欢迎的开源 Linux 操作系统"
+            "name": "GitHub Topics",
+            "url": "https://github.com/topics",
+            "description": "按技术领域和关键词浏览项目"
           },
           {
-            "name": "Fedora Project",
-            "url": "https://fedoraproject.org",
-            "description": "由红帽赞助的先锋开源 Linux 发行版"
+            "name": "GitHub Collections",
+            "url": "https://github.com/collections",
+            "description": "GitHub 官方整理的精选项目合集"
           },
           {
-            "name": "Arch Linux",
-            "url": "https://www.archlinux.org",
-            "description": "以极简、滚动更新(Rolling"
+            "name": "GitHub AI Topic",
+            "url": "https://github.com/topics/artificial-intelligence",
+            "description": "按 AI 领域分类发现开源项目"
           },
           {
-            "name": "Alpine Linux",
-            "url": "https://alpinelinux.org",
-            "description": "基于 musl libc 和 busybox"
-          },
-          {
-            "name": "FreeBSD",
-            "url": "https://www.freebsd.org",
-            "description": "高性能的开源类 Unix 操作系统"
-          },
-          {
-            "name": "OpenBSD",
-            "url": "https://www.openbsd.org",
-            "description": "以极致安全性、主动代码审计和严谨开发著称的开源类"
-          },
-          {
-            "name": "OpenWrt",
-            "url": "https://openwrt.org",
-            "description": "专为嵌入式设备(如无线路由器)打造的强大开源"
-          },
-          {
-            "name": "Proxmox VE",
-            "url": "https://www.proxmox.com",
-            "description": "基于 Debian 的开源企业级虚拟化管理平台"
-          },
-          {
-            "name": "Kubernetes",
-            "url": "https://kubernetes.io",
-            "description": "谷歌开源的自动化容器编排系统"
-          },
-          {
-            "name": "Docker Open Source",
-            "url": "https://www.docker.com",
-            "description": "颠覆软件交付方式的容器化平台"
-          },
-          {
-            "name": "Terraform (OpenTofu)",
-            "url": "https://opentofu.org",
-            "description": "OpenTofu 是基于 MPL"
-          },
-          {
-            "name": "Prometheus",
-            "url": "https://prometheus.io",
-            "description": "云原生计算基金会(CNCF)旗下的开源系统监控与报"
-          },
-          {
-            "name": "Grafana",
-            "url": "https://grafana.com",
-            "description": "极具影响力的开源时序数据分析与可视化面板"
-          },
-          {
-            "name": "Envoy Proxy",
-            "url": "https://www.envoyproxy.io",
-            "description": "高质轻量的开源边缘与服务网关(Service"
-          },
-          {
-            "name": "Istio",
-            "url": "https://istio.io",
-            "description": "开源的服务网关(Service"
-          },
-          {
-            "name": "Ansible",
-            "url": "https://www.ansible.com",
-            "description": "简单易用的开源自动化运维工具，支持配置管理"
-          },
-          {
-            "name": "OpenStack",
-            "url": "https://www.openstack.org",
-            "description": "巨型开源云计算平台，用于构建公共云与私有云基础设施"
-          },
-          {
-            "name": "Ceph",
-            "url": "https://ceph.io",
-            "description": "开源的分布式存储系统，提供高扩展性的对象存储"
-          },
-          {
-            "name": "PostgreSQL",
-            "url": "https://www.postgresql.org",
-            "description": "功能极其强大的开源对象关系型数据库系统"
-          },
-          {
-            "name": "MariaDB",
-            "url": "https://mariadb.org",
-            "description": "由 MySQL 原班人马打造的开源关系型数据库"
-          },
-          {
-            "name": "Redis / Valkey",
-            "url": "https://valkey.io",
-            "description": "Valkey 是由 Linux"
-          },
-          {
-            "name": "ClickHouse",
-            "url": "https://clickhouse.com",
-            "description": "面向列的开源分布式联机分析处理(OLAP)数据库"
-          },
-          {
-            "name": "Apache Kafka",
-            "url": "https://kafka.apache.org",
-            "description": "高吞吐量的分布式开源事件流处理平台"
-          },
-          {
-            "name": "Apache Spark",
-            "url": "https://spark.apache.org",
-            "description": "开源的多语言数据处理引擎，专为大规模数据分析"
-          },
-          {
-            "name": "RabbitMQ",
-            "url": "https://www.rabbitmq.com",
-            "description": "基于 AMQP 协议的经典开源分布式消息代理中间件"
-          },
-          {
-            "name": "Nginx",
-            "url": "https://nginx.org",
-            "description": "高性能开源 HTTP Web 服务器与反向代理"
-          },
-          {
-            "name": "Caddy",
-            "url": "https://caddyserver.com",
-            "description": "基于 Go 语言编写的现代开源 Web 服务器"
-          },
-          {
-            "name": "Traefik",
-            "url": "https://traefik.io",
-            "description": "现代开源反向代理与负载均衡器"
-          },
-          {
-            "name": "Keycloak",
-            "url": "https://www.keycloak.org",
-            "description": "红帽开源的单点登录(SSO)与身份认证管理解决方案"
-          },
-          {
-            "name": "HashiCorp Vault (OpenBao)",
-            "url": "https://openbao.org",
-            "description": "OpenBao 是在 Linux"
-          },
-          {
-            "name": "Home Assistant",
-            "url": "https://www.home-assistant.io",
-            "description": "全球极受欢迎的开源智能家居控制中心"
-          },
-          {
-            "name": "Pi-hole",
-            "url": "https://pi-hole.net",
-            "description": "基于 DNS 的开源网络级广告与跟踪器拦截工具"
-          },
-          {
-            "name": "TrueNAS CORE",
-            "url": "https://www.truenas.com",
-            "description": "基于 OpenZFS 文件系统的强大开源网络附加存"
-          },
-          {
-            "name": "OPNSense",
-            "url": "https://opnsense.org",
-            "description": "基于 HardenedBSD"
-          },
-          {
-            "name": "pfSense",
-            "url": "https://www.pfsense.org",
-            "description": "经典开源防火墙与路由器软件"
-          },
-          {
-            "name": "WireGuard",
-            "url": "https://www.wireguard.com",
-            "description": "极其快速、现代化且代码量小巧的开源安全网络隧道"
-          },
-          {
-            "name": "Tailscale (open-source client)",
-            "url": "https://tailscale.com/opensource",
-            "description": "基于 WireGuard 构建的打洞网络服务"
-          },
-          {
-            "name": "Headscale",
-            "url": "https://github.com/juanfont/headscale",
-            "description": "Tailscale 控制平面的开源自我托管实现"
+            "name": "GitHub Local AI Topic",
+            "url": "https://github.com/topics/local-ai",
+            "description": "收集本地运行的 AI 工具和相关项目"
           }
         ]
       },
       {
-        "name": "开发工具与AI (081-120)",
-        "enName": "Collection",
+        "name": "Awesome 资源清单",
         "links": [
           {
-            "name": "Visual Studio Code (VSCodium)",
-            "url": "https://vscodium.com",
-            "description": "VSCodium 是移除微软遥测与商业追踪的纯粹开"
-          },
-          {
-            "name": "Neovim",
-            "url": "https://neovim.io",
-            "description": "旨在重构与扩展 Vim 的开源高扩展性文本编辑器"
-          },
-          {
-            "name": "GCC (GNU Compiler Collection)",
-            "url": "https://gcc.gnu.org",
-            "description": "GNU 编译器套件，支持 C、C++"
-          },
-          {
-            "name": "LLVM / Clang",
-            "url": "https://llvm.org",
-            "description": "模块化与可重用的开源编译器和工具链技术集合"
-          },
-          {
-            "name": "Git",
-            "url": "https://git-scm.com",
-            "description": "Linus Torvalds"
-          },
-          {
-            "name": "Curl",
-            "url": "https://curl.se",
-            "description": "全球广泛使用的命令行开源数据传输工具与库"
-          },
-          {
-            "name": "FFmpeg",
-            "url": "https://ffmpeg.org",
-            "description": "极其强悍的开源音视频处理工具与音视频编解码跨平台套"
-          },
-          {
-            "name": "Python",
-            "url": "https://www.python.org",
-            "description": "广泛用于 Web 开发、数据分析"
-          },
-          {
-            "name": "Rust",
-            "url": "https://www.rust-lang.org",
-            "description": "注重内存安全与并发性能的现代开源系统级编程语言。"
-          },
-          {
-            "name": "Go Language",
-            "url": "https://go.dev",
-            "description": "谷歌开发的开源静态类型编程语言"
-          },
-          {
-            "name": "Node.js",
-            "url": "https://nodejs.org",
-            "description": "基于 Chrome V8 引擎构建的开源"
-          },
-          {
-            "name": "Deno",
-            "url": "https://deno.com",
-            "description": "由 Node.js 创造者打造的现代开源"
-          },
-          {
-            "name": "Bun",
-            "url": "https://bun.sh",
-            "description": "速度极快的全能型开源 JavaScript"
-          },
-          {
-            "name": "React",
-            "url": "https://react.dev",
-            "description": "Meta 开源的构建用户界面的"
-          },
-          {
-            "name": "Vue.js",
-            "url": "https://vuejs.org",
-            "description": "独立社区驱动的渐进式 JavaScript 框架"
-          },
-          {
-            "name": "Svelte",
-            "url": "https://svelte.dev",
-            "description": "无虚拟 DOM 的编译型开源前端框架"
-          },
-          {
-            "name": "Tailwind CSS",
-            "url": "https://tailwindcss.com",
-            "description": "实用工具优先(Utility-First)的开源"
-          },
-          {
-            "name": "Flutter",
-            "url": "https://flutter.dev",
-            "description": "谷歌开源的 UI 软件开发工具包"
-          },
-          {
-            "name": "React Native",
-            "url": "https://reactnative.dev",
-            "description": "允许使用 React 和 JavaScript"
-          },
-          {
-            "name": "Electron",
-            "url": "https://www.electronjs.org",
-            "description": "使用 Web 技术(JavaScript"
-          },
-          {
-            "name": "Tauri",
-            "url": "https://tauri.app",
-            "description": "基于 Rust 构建的轻量级跨平台桌面应用开源框架"
-          },
-          {
-            "name": "PyTorch",
-            "url": "https://pytorch.org",
-            "description": "Linux 基金会托管的开源深度学习框架"
-          },
-          {
-            "name": "TensorFlow",
-            "url": "https://www.tensorflow.org",
-            "description": "谷歌开源的端到端机器学习平台"
-          },
-          {
-            "name": "Hugging Face Transformers",
-            "url": "https://huggingface.co/docs/transformers",
-            "description": "极受欢迎的开源 NLP 与 AI 大模型库"
-          },
-          {
-            "name": "Ollama",
-            "url": "https://ollama.com",
-            "description": "在本地快速运行、配置与管理开源大语言模型(如"
-          },
-          {
-            "name": "LocalAI",
-            "url": "https://localai.io",
-            "description": "兼容 OpenAI API 规范的开源本地 AI"
-          },
-          {
-            "name": "LangChain",
-            "url": "https://www.langchain.com",
-            "description": "用于构建大语言模型(LLM)驱动的应用和"
-          },
-          {
-            "name": "LlamaIndex",
-            "url": "https://www.llamaindex.ai",
-            "description": "专门为 LLM 应用连接私有数据源与构建"
-          },
-          {
-            "name": "vLLM",
-            "url": "https://vllm.ai",
-            "description": "高吞吐量、低延迟的开源 LLM 推理与服务引擎"
-          },
-          {
-            "name": "llama.cpp",
-            "url": "https://github.com/ggerganov/llama.cpp",
-            "description": "纯 C/C++ 实现的无依赖 LLM 推理引擎"
-          },
-          {
-            "name": "Stable Diffusion WebUI",
-            "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-            "description": "基于 Gradio 构建的图像生成大模型"
-          },
-          {
-            "name": "ComfyUI",
-            "url": "https://github.com/comfyanonymous/ComfyUI",
-            "description": "基于模块化结点图(Node-based)的极高自由"
-          },
-          {
-            "name": "Dify",
-            "url": "https://dify.ai",
-            "description": "开源的大模型 LLMOps 平台"
-          },
-          {
-            "name": "AnythingLLM",
-            "url": "https://anythingllm.com",
-            "description": "全能型开源企业级 RAG 应用"
-          },
-          {
-            "name": "DB-GPT",
-            "url": "https://github.com/eosphoros-ai/DB-GPT",
-            "description": "结合大模型与原生数据库的开源 AI"
-          },
-          {
-            "name": "Supabase",
-            "url": "https://supabase.com",
-            "description": "开源的 Firebase 替代品"
-          },
-          {
-            "name": "PocketBase",
-            "url": "https://pocketbase.io",
-            "description": "由单个 Go 文件构建的开源实时后端服务"
-          },
-          {
-            "name": "Appwrite",
-            "url": "https://appwrite.io",
-            "description": "开源的开发者后端服务(BaaS)，为 Web"
-          },
-          {
-            "name": "Meilisearch",
-            "url": "https://www.meilisearch.com",
-            "description": "速度极快、开箱即用的开源搜索引擎"
-          },
-          {
-            "name": "Typesense",
-            "url": "https://typesense.org",
-            "description": "开源的容错型高实时搜索引擎"
-          },
-          {
-            "name": "yazi",
-            "url": "https://github.com/sxyazi/yazi",
-            "description": "Rust终端文件管理器，异步极速"
-          },
-          {
-            "name": "Wave Terminal",
-            "url": "https://github.com/wavetermdev/waveterm",
-            "description": "开源AI集成终端，跨平台工作流"
-          },
-          {
-            "name": "nnn",
-            "url": "https://github.com/jarun/nnn",
-            "description": "极速终端文件管理器，便携无依赖"
-          }
-        ]
-      },
-      {
-        "name": "生产力工具 (121-160)",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "LibreOffice",
-            "url": "https://www.libreoffice.org",
-            "description": "功能强大的开源免费办公套件，支持文字处理"
-          },
-          {
-            "name": "OnlyOffice",
-            "url": "https://www.onlyoffice.com",
-            "description": "高度兼容微软 Office 格式的开源办公套件"
-          },
-          {
-            "name": "Thunderbird",
-            "url": "https://www.thunderbird.net",
-            "description": "Mozilla 旗下的开源跨平台邮件客户端"
-          },
-          {
-            "name": "OBS Studio",
-            "url": "https://obsproject.com",
-            "description": "免费开源的视频录制与直播推流软件，功能极其强悍"
-          },
-          {
-            "name": "Blender",
-            "url": "https://www.blender.org",
-            "description": "全能开源 3D 建模、动画、渲染"
-          },
-          {
-            "name": "GIMP",
-            "url": "https://www.gimp.org",
-            "description": "跨平台开源图像处理与修图软件"
-          },
-          {
-            "name": "Inkscape",
-            "url": "https://inkscape.org",
-            "description": "功能强悍的开源矢量图形编辑器"
-          },
-          {
-            "name": "Krita",
-            "url": "https://krita.org",
-            "description": "专为概念艺术家、插画师与纹理画家打造的免费开源数字"
-          },
-          {
-            "name": "Darktable",
-            "url": "https://www.darktable.org",
-            "description": "开源的 RAW 格式摄影照片后期处理软件与非破坏性"
-          },
-          {
-            "name": "RawTherapee",
-            "url": "https://rawtherapee.com",
-            "description": "专注于 RAW 格式高级调色与细节还原的跨平台开源"
-          },
-          {
-            "name": "Audacity",
-            "url": "https://www.audacityteam.org",
-            "description": "开源跨平台多轨音频录制与编辑软件"
-          },
-          {
-            "name": "Shotcut",
-            "url": "https://shotcut.org",
-            "description": "免费开源的跨平台视频编辑器"
-          },
-          {
-            "name": "Kdenlive",
-            "url": "https://kdenlive.org",
-            "description": "基于 KDE 框架的开源非线性视频剪辑软件"
-          },
-          {
-            "name": "VLC Media Player",
-            "url": "https://www.videolan.org/vlc",
-            "description": "跨平台开源多媒体播放器，支持无需另外安装编解码包播"
-          },
-          {
-            "name": "HandBrake",
-            "url": "https://handbrake.fr",
-            "description": "开源的跨平台视频压制与格式转换工具"
-          },
-          {
-            "name": "KeePassXC",
-            "url": "https://keepassxc.org",
-            "description": "完全开源且本地存储的跨平台密码管理器"
-          },
-          {
-            "name": "Bitwarden Open Source",
-            "url": "https://bitwarden.com",
-            "description": "知名的跨平台开源密码管理服务"
-          },
-          {
-            "name": "7-Zip",
-            "url": "https://www.7-zip.org",
-            "description": "高压缩率的开源文件归档与解压缩软件"
-          },
-          {
-            "name": "ShareX",
-            "url": "https://getsharex.com",
-            "description": "Windows 平台下极其强大的开源截图"
-          },
-          {
-            "name": "Flameshot",
-            "url": "https://flameshot.org",
-            "description": "功能丰富、支持标注且界面美观的开源"
-          },
-          {
-            "name": "Joplin",
-            "url": "https://joplinapp.org",
-            "description": "支持端到端加密(E2EE)的开源"
-          },
-          {
-            "name": "Obsidian (Open Ecosystem)",
-            "url": "https://obsidian.md",
-            "description": "虽然核心软件闭源，但拥有完全透明的开放本地"
-          },
-          {
-            "name": "Logseq",
-            "url": "https://logseq.com",
-            "description": "专注于大纲结构与知识图谱的开源隐私优先本地知识库软"
-          },
-          {
-            "name": "AppFlowy",
-            "url": "https://www.appflowy.io",
-            "description": "基于 Flutter 和 Rust 构建的开源"
-          },
-          {
-            "name": "Focalboard",
-            "url": "https://www.focalboard.com",
-            "description": "Mattermost 开发的开源项目管理与看板工具"
-          },
-          {
-            "name": "Calibre",
-            "url": "https://calibre-ebook.com",
-            "description": "功能极其庞大的开源电子书管理、转换与阅读管理神器。"
-          },
-          {
-            "name": "Sumatrapdf",
-            "url": "https://www.sumatrapdfreader.org",
-            "description": "极其轻量、启动迅速的 Windows 平台开源"
-          },
-          {
-            "name": "Zotero",
-            "url": "https://www.zotero.org",
-            "description": "全球学者与学生广泛使用的开源文献管理工具"
-          },
-          {
-            "name": "Transmission",
-            "url": "https://transmissionbt.com",
-            "description": "极简且资源占用极低的开源 BitTorrent"
-          },
-          {
-            "name": "qBittorrent",
-            "url": "https://www.qbittorrent.org",
-            "description": "功能完备的开源 BT/PT 下载客户端"
-          },
-          {
-            "name": "Syncthing",
-            "url": "https://syncthing.net",
-            "description": "去中心化、端到端加密的开源连续文件同步程序"
-          },
-          {
-            "name": "FileZilla",
-            "url": "https://filezilla-project.org",
-            "description": "经典且功能丰富的开源 FTP"
-          },
-          {
-            "name": "Wireshark",
-            "url": "https://www.wireshark.org",
-            "description": "全球极知名的开源网络数据包分析工具"
-          },
-          {
-            "name": "BleachBit",
-            "url": "https://www.bleachbit.org",
-            "description": "开源的系统垃圾清理与隐私保护工具"
-          },
-          {
-            "name": "Nextcloud",
-            "url": "https://nextcloud.com",
-            "description": "强大的自托管开源网盘与协同云平台，包含文件同步"
-          },
-          {
-            "name": "OwnCloud",
-            "url": "https://owncloud.com",
-            "description": "经典自托管开源云存储平台"
-          },
-          {
-            "name": "Immich",
-            "url": "https://immich.app",
-            "description": "功能强悍的自托管开源相册备份与管理系统"
-          },
-          {
-            "name": "Jellyfin",
-            "url": "https://jellyfin.org",
-            "description": "完全无广告、无订阅费的开源媒体服务器"
-          },
-          {
-            "name": "Calibre-Web",
-            "url": "https://github.com/janeczku/calibre-web",
-            "description": "基于 Calibre 数据库的优雅开源 Web"
-          },
-          {
-            "name": "Paperless-ngx",
-            "url": "https://docs.paperless-ngx.com",
-            "description": "带 OCR 文字识别的开源个人文档管理系统"
-          },
-          {
-            "name": "Plane",
-            "url": "https://github.com/makeplane/plane",
-            "description": "开源项目管理平台，Jira与Linear替代"
-          },
-          {
-            "name": "AppFlowy (GitHub)",
-            "url": "https://github.com/AppFlowy-IO/AppFlowy",
-            "description": "开源AI协作空间，项目Wiki与团队协作"
-          },
-          {
-            "name": "Twenty",
-            "url": "https://github.com/twentyhq/twenty",
-            "description": "开源CRM，AI驱动的Salesforce替代"
-          },
-          {
-            "name": "Alexandrie",
-            "url": "https://github.com/Smaug6739/Alexandrie",
-            "description": "离线优先笔记，Notion与Obsidian替代"
-          },
-          {
-            "name": "Super Productivity",
-            "url": "https://github.com/super-productivity/super-productivity",
-            "description": "时间盒待办，集成Jira与任务管理"
-          },
-          {
-            "name": "Omni Tools",
-            "url": "https://github.com/iib0011/omni-tools",
-            "description": "自托管60+网页工具集，无广告无追踪"
-          },
-          {
-            "name": "Many Notes",
-            "url": "https://github.com/brufdev/many-notes",
-            "description": "极简Markdown笔记Web应用"
-          },
-          {
-            "name": "Motrix",
-            "url": "https://github.com/agalwood/Motrix",
-            "description": "全功能开源下载管理器"
-          },
-          {
-            "name": "Excalidraw",
-            "url": "https://github.com/excalidraw/excalidraw",
-            "description": "手绘风虚拟白板，支持实时协作"
-          },
-          {
-            "name": "Dashy",
-            "url": "https://github.com/lissy93/dashy",
-            "description": "自托管个人仪表盘，带状态检测组件"
-          },
-          {
-            "name": "Espanso",
-            "url": "https://github.com/espanso/espanso",
-            "description": "跨平台文本快捷展开工具"
-          }
-        ]
-      },
-      {
-        "name": "开源文化 (161-200)",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Creative Commons (CC)",
-            "url": "https://creativecommons.org",
-            "description": "知识共享组织，提供标准化的开源文化许可协议(如"
-          },
-          {
-            "name": "Choose an Open Source License",
-            "url": "https://choosealicense.com",
-            "description": "GitHub 制作的极简指南"
-          },
-          {
-            "name": "TLDRLegal",
-            "url": "https://tldrlegal.com",
-            "description": "用通俗易懂的语言解释各类开源许可协议(GPL"
-          },
-          {
-            "name": "Open Source Guides",
-            "url": "https://opensource.guides",
-            "description": "GitHub 官方编写的开源指南，涵盖如何创建"
-          },
-          {
-            "name": "First Contributions",
-            "url": "https://firstcontributions.github.io",
-            "description": "专为开源新手设计的实战引导项目"
-          },
-          {
-            "name": "Google Summer of Code (GSoC)",
-            "url": "https://summerofcode.withgoogle.com",
-            "description": "谷歌举办的全球性活动，资助学生向各类开源软件组织贡"
-          },
-          {
-            "name": "Hacktoberfest",
-            "url": "https://hacktoberfest.com",
-            "description": "每年 10 月举办的开源庆祝活动"
-          },
-          {
-            "name": "Open Source Initiative Blog",
-            "url": "https://opensource.org/blog",
-            "description": "探讨开源定义演变、许可协议合规以及 AI"
-          },
-          {
-            "name": "GNU Operating System Essay Archive",
-            "url": "https://www.gnu.org/philosophy",
-            "description": "自由软件之父 Stallman 的哲学文章合集"
-          },
-          {
-            "name": "Open Source Weekly / News",
-            "url": "https://opensource.com",
-            "description": "红帽发起的开源新闻与知识分享社区"
-          },
-          {
-            "name": "Upstream (Tidelift Podcast)",
-            "url": "https://tidelift.com/about/podcast",
-            "description": "探讨开源维护者生存现状、软件供应链安全与开源商业化"
-          },
-          {
-            "name": "SustainOSS",
-            "url": "https://sustainoss.org",
-            "description": "专注于“开源可持续性”的社区与 Podcast"
-          },
-          {
-            "name": "The Architecture of Open Source Applications (AOSA)",
-            "url": "https://aosabook.org",
-            "description": "免费在线图书，剖析 Git、LLVM"
-          },
-          {
-            "name": "Open Source Diversity",
-            "url": "https://opensourcediversity.org",
-            "description": "致力于促进开源社区多样性"
-          },
-          {
-            "name": "Changelog Podcast",
-            "url": "https://changelog.com",
-            "description": "知名开发者 PodCast"
-          },
-          {
-            "name": "GitHub Innovation Graph",
-            "url": "https://innovationgraph.github.com",
-            "description": "GitHub 推出的全球开源趋势与代码贡献数据图谱"
-          },
-          {
-            "name": "OSS Capital Blog",
-            "url": "https://oss.capital",
-            "description": "专注商业化开源(COSS)领域的风险投资机构"
-          },
-          {
-            "name": "Linux Weekly News (LWN.net)",
-            "url": "https://lwn.net",
-            "description": "深度的 Linux 内核开发动态"
-          },
-          {
-            "name": "FOSDEM",
-            "url": "https://fosdem.org",
-            "description": "欧洲极具规模的免费开源软件开发者盛会"
-          },
-          {
-            "name": "OSCON (O'Reilly Open Source Conference Archive)",
-            "url": "https://www.oreilly.com",
-            "description": "O'Reilly 经典的开源大会遗产"
-          },
-          {
-            "name": "Open Source Hardware Association (OSHWA)",
-            "url": "https://www.oshwa.org",
-            "description": "开源硬件协会，定义开源硬件标准并提供开源硬件产品认"
-          },
-          {
-            "name": "Arduino Open Source",
-            "url": "https://www.arduino.cc",
-            "description": "全球知名的开源电子原型平台"
-          },
-          {
-            "name": "Raspberry Pi Open Documentation",
-            "url": "https://www.raspberrypi.com/documentation",
-            "description": "树莓派开源文档库，展示微型计算机在教育"
-          },
-          {
-            "name": "Open Source Seeds",
-            "url": "https://opensourceseeds.org",
-            "description": "将开源许可理念延伸至农业种子领域"
-          },
-          {
-            "name": "Open COVID License",
-            "url": "https://opencovidpledge.org",
-            "description": "科技界在应对公共危机时免费共享专利与开源技术的历史"
-          },
-          {
-            "name": "Open Knowledge Foundation (OKF)",
-            "url": "https://okfn.org",
-            "description": "倡导开放数据、开放科学与开源文化在公共政策领域应用"
-          },
-          {
-            "name": "OpenStreetMap (OSM)",
-            "url": "https://www.openstreetmap.org",
-            "description": "被称为“地图界的维基百科”"
-          },
-          {
-            "name": "Wikimedia Commons",
-            "url": "https://commons.wikimedia.org",
-            "description": "维基媒体共享资源库，收录数千万张基于自由许可("
-          },
-          {
-            "name": "Gutenberg Project",
-            "url": "https://www.gutenberg.org",
-            "description": "古腾堡计划，全球极老牌的公有领域(Public"
-          },
-          {
-            "name": "Internet Archive Software Library",
-            "url": "https://archive.org/details/software",
-            "description": "互联网档案馆的开源与复古软件档案馆"
-          },
-          {
-            "name": "Open Game Art",
-            "url": "https://opengameart.org",
-            "description": "为独立游戏开发者提供的开源/自由许可游戏素材("
-          },
-          {
-            "name": "Public Domain Vectors",
-            "url": "https://publicdomainvectors.org",
-            "description": "提供数十万张完全进入公有领域(CC0)"
-          },
-          {
-            "name": "Open Music Archive",
-            "url": "https://openmusicarchive.org",
-            "description": "致力于寻找、数字录制与分发版权过期的公有领域音乐录"
-          },
-          {
-            "name": "Sourceware.org",
-            "url": "https://sourceware.org",
-            "description": "为 GDB、Valgrind"
-          },
-          {
-            "name": "Open Source Metrics (CHAOSS)",
-            "url": "https://chaoss.community",
-            "description": "Linux 基金会旗下，用科学指标与分析软件评估开"
-          },
-          {
-            "name": "Linux Foundation Research",
-            "url": "https://www.linuxfoundation.org/research",
-            "description": "发布权威的开源技术发展报告"
-          },
-          {
-            "name": "Linux Story (开源工场)",
-            "url": "https://linuxstory.org",
-            "description": "专注开源文化普及、Linux"
-          },
-          {
-            "name": "开源中国 (OSCHINA)",
-            "url": "https://www.oschina.net",
-            "description": "国内历史悠久的开源技术社区，提供开源软件资讯"
-          },
-          {
-            "name": "GitHub Awesome Lists",
+            "name": "Awesome Lists",
             "url": "https://github.com/sindresorhus/awesome",
-            "description": "GitHub 极具传奇色彩的开源项目"
+            "description": "高质量开源资源清单总目录"
+          },
+          {
+            "name": "Awesome Selfhosted",
+            "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+            "description": "可自行部署的开源软件和服务合集"
+          },
+          {
+            "name": "Awesome Lists Index",
+            "url": "https://github.com/joelio/awesome-lists",
+            "description": "各领域精选 Awesome 清单汇总"
+          },
+          {
+            "name": "Awesome Python",
+            "url": "https://github.com/vinta/awesome-python",
+            "description": "Python 生态工具、框架和项目合集"
+          },
+          {
+            "name": "Awesome Go",
+            "url": "https://github.com/avelino/awesome-go",
+            "description": "Go 语言工具和开源项目合集"
+          },
+          {
+            "name": "Public APIs",
+            "url": "https://github.com/public-apis/public-apis",
+            "description": "可供开发者使用的公共 API 合集"
+          },
+          {
+            "name": "Build Your Own X",
+            "url": "https://github.com/codecrafters-io/build-your-own-x",
+            "description": "动手实践实现各类技术项目教程"
+          },
+          {
+            "name": "Awesome for Beginners",
+            "url": "https://github.com/MunGell/awesome-for-beginners",
+            "description": "适合新手参与贡献的开源项目清单"
+          },
+          {
+            "name": "Awesome LLM Apps",
+            "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+            "description": "大语言模型应用和 AI 开源项目合集"
+          },
+          {
+            "name": "Awesome AI",
+            "url": "https://github.com/owainlewis/awesome-artificial-intelligence",
+            "description": "人工整理的人工智能资源和开源项目清单"
+          },
+          {
+            "name": "Awesome Local AI",
+            "url": "https://github.com/janhq/awesome-local-ai",
+            "description": "本地 AI、模型运行和相关工具资源清单"
           }
         ]
       },
       {
-        "name": "GitHub 本周热门",
-        "enName": "GitHub Trending",
+        "name": "开源与免费替代品",
         "links": [
           {
-            "name": "modern-web-guidance-src",
-            "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
-            "description": "让编码 Agent 跟上最新 Web 实践"
+            "name": "OpenAlternative",
+            "url": "https://openalternative.co/",
+            "description": "商业软件对应的开源替代品目录"
           },
           {
-            "name": "plannotator",
-            "url": "https://github.com/backnotprop/plannotator",
-            "description": "与 Agent 协作的规划与评审工作台"
-          },
-          {
-            "name": "Claude-BugHunter",
-            "url": "https://github.com/elementalsouls/Claude-BugHunter",
-            "description": "Claude Code 漏洞挖掘技能包"
-          },
-          {
-            "name": "astryx",
-            "url": "https://github.com/meta/astryx",
-            "description": "Meta 开源设计系统，适配 Agent"
-          },
-          {
-            "name": "sure",
-            "url": "https://github.com/we-promise/sure",
-            "description": "开源个人理财应用，记账与预算"
-          },
-          {
-            "name": "open-code-review",
-            "url": "https://github.com/alibaba/open-code-review",
-            "description": "阿里开源代码审查，LLM 混合架构"
-          },
-          {
-            "name": "stitch-skills",
-            "url": "https://github.com/google-labs-code/stitch-skills",
-            "description": "Stitch MCP 的 Agent 技能库"
-          },
-          {
-            "name": "claude-trading-skills",
-            "url": "https://github.com/tradermonty/claude-trading-skills",
-            "description": "股票投资分析的 Claude 技能集"
-          },
-          {
-            "name": "chrome-devtools-mcp",
-            "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-            "description": "把 Chrome 调试工具交给编码 Agent"
-          },
-          {
-            "name": "anthropics-skills",
-            "url": "https://github.com/anthropics/skills",
-            "description": "Anthropic 官方 Agent Skills 仓库"
-          },
-          {
-            "name": "daily_stock_analysis",
-            "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
-            "description": "LLM 多市场股票分析与推送"
-          },
-          {
-            "name": "last30days-skill",
-            "url": "https://github.com/mvanhorn/last30days-skill",
-            "description": "跨平台话题调研的 Agent 技能"
-          },
-          {
-            "name": "ag-ui",
-            "url": "https://github.com/ag-ui-protocol/ag-ui",
-            "description": "Agent 与前端交互的开放协议"
-          },
-          {
-            "name": "agent-browser",
-            "url": "https://github.com/vercel-labs/agent-browser",
-            "description": "AI Agent 用的浏览器自动化 CLI"
-          },
-          {
-            "name": "codex-security",
-            "url": "https://github.com/openai/codex-security",
-            "description": "OpenAI 代码安全漏洞检测 CLI"
-          },
-          {
-            "name": "univer",
-            "url": "https://github.com/dream-num/univer",
-            "description": "开源办公文档 SDK，表格与文档"
+            "name": "AlternativeTo",
+            "url": "https://alternativeto.net/",
+            "description": "按功能寻找开源及免费替代方案"
           }
         ]
       }
@@ -33049,6 +27070,11 @@ window.KISSTR_DATA = [
             "name": "Neocities",
             "url": "https://neocities.org/",
             "description": "重振个人主页文化的免费建站"
+          },
+          {
+            "name": "Internet Archive Software Library",
+            "url": "https://archive.org/details/software",
+            "description": "互联网档案馆复古软件馆藏"
           }
         ]
       },
@@ -35629,6 +29655,11 @@ window.KISSTR_DATA = [
             "name": "Ely Office",
             "url": "https://office.elygpui.com/",
             "description": "一个安装包含七个离线应用"
+          },
+          {
+            "name": "LibreOffice",
+            "url": "https://www.libreoffice.org",
+            "description": "开源免费办公套件"
           }
         ]
       },
@@ -35727,6 +29758,121 @@ window.KISSTR_DATA = [
             "name": "Venera",
             "url": "https://github.com/venera-app/venera",
             "description": "GitHub - Venera 漫画阅读APP"
+          }
+        ]
+      },
+      {
+        "name": "开源托管与基金会",
+        "links": [
+          {
+            "name": "GitLab",
+            "url": "https://gitlab.com",
+            "description": "一体化 DevOps 与代码托管平台"
+          },
+          {
+            "name": "Codeberg",
+            "url": "https://codeberg.org",
+            "description": "非营利运营的纯开源托管平台"
+          },
+          {
+            "name": "Apache Software Foundation (ASF)",
+            "url": "https://www.apache.org",
+            "description": "顶级开源项目孵化与基金会"
+          },
+          {
+            "name": "Mozilla Foundation",
+            "url": "https://www.mozilla.org",
+            "description": "维护开放互联网的开源基金会"
+          }
+        ]
+      },
+      {
+        "name": "开源系统与基础设施",
+        "links": [
+          {
+            "name": "Linux Kernel Archives",
+            "url": "https://www.kernel.org",
+            "description": "Linux 内核官方源码发布库"
+          },
+          {
+            "name": "Debian",
+            "url": "https://www.debian.org",
+            "description": "社区维护的经典 Linux 发行版"
+          },
+          {
+            "name": "Ubuntu",
+            "url": "https://ubuntu.com",
+            "description": "流行的开源 Linux 操作系统"
+          },
+          {
+            "name": "Arch Linux",
+            "url": "https://www.archlinux.org",
+            "description": "极简滚动更新的 Linux 发行版"
+          },
+          {
+            "name": "FreeBSD",
+            "url": "https://www.freebsd.org",
+            "description": "高性能开源类 Unix 操作系统"
+          },
+          {
+            "name": "Kubernetes",
+            "url": "https://kubernetes.io",
+            "description": "谷歌开源容器编排系统"
+          }
+        ]
+      },
+      {
+        "name": "编程语言与工具链",
+        "links": [
+          {
+            "name": "Git",
+            "url": "https://git-scm.com",
+            "description": "分布式版本控制系统"
+          },
+          {
+            "name": "Python",
+            "url": "https://www.python.org",
+            "description": "通用编程语言与AI生态基础"
+          },
+          {
+            "name": "Rust",
+            "url": "https://www.rust-lang.org",
+            "description": "内存安全的现代系统级语言"
+          },
+          {
+            "name": "Go Language",
+            "url": "https://go.dev",
+            "description": "谷歌开源静态类型编程语言"
+          },
+          {
+            "name": "React",
+            "url": "https://react.dev",
+            "description": "Meta 开源前端界面框架"
+          },
+          {
+            "name": "Visual Studio Code (VSCodium)",
+            "url": "https://vscodium.com",
+            "description": "去除遥测的开源 VS Code 分支"
+          }
+        ]
+      },
+      {
+        "name": "音视频创作工具",
+        "links": [
+          {
+            "name": "OBS Studio",
+            "url": "https://obsproject.com",
+            "description": "开源视频录制与直播推流软件"
+          }
+        ]
+      },
+      {
+        "name": "图像设计工具",
+        "links": [
+          {
+            "name": "Inkscape",
+            "url": "https://inkscape.org",
+            "description": "开源矢量图形编辑器"
           }
         ]
       }
@@ -45820,6 +39966,401 @@ window.KISSTR_DATA = [
             "description": "专注于家庭影院、听音室与居家工作室的声音扩散与减震"
           }
         ]
+      },
+      {
+        "name": "日本",
+        "links": [
+          {
+            "name": "RoomClip",
+            "url": "https://roomclip.jp",
+            "description": "日本最大 UGC 家装社区"
+          },
+          {
+            "name": "LIMIA",
+            "url": "https://limia.jp",
+            "description": "日本 DIY 手作、小空间硬装翻新与生活实操门户。"
+          },
+          {
+            "name": "Houzz Japan",
+            "url": "https://www.houzz.jp",
+            "description": "专注于狭长地形、极小卫浴干湿分离与和室改造。"
+          },
+          {
+            "name": "100%Life",
+            "url": "https://100life.jp",
+            "description": "专注于日本个人独栋与公寓的理想住宅改造记录。"
+          },
+          {
+            "name": "MUJI Renovation",
+            "url": "https://www.muji.com/jp/renovation",
+            "description": "无印良品官方一站式住宅改造与标准化空间设计。"
+          },
+          {
+            "name": "re-house",
+            "url": "https://www.rehouse.co.jp",
+            "description": "日本三井不动产旗下的旧房翻新与户型重组实战案例库。"
+          },
+          {
+            "name": "Renoveru (リノベる。)",
+            "url": "https://www.renoveru.jp",
+            "description": "日本非常著名的中古二手房全包改造与平面图解析网。"
+          },
+          {
+            "name": "Freedom Architect",
+            "url": "https://www.freedom.co.jp",
+            "description": "日本知名建筑事务所，提供海量狭小住宅与现代日式住宅"
+          },
+          {
+            "name": "Cowcamo",
+            "url": "https://cowcamo.jp",
+            "description": "日本专注于东京都市二手公寓翻新与个性化空间设计的平"
+          },
+          {
+            "name": "Sumai Kufu (すまいステップ)",
+            "url": "https://sumai-kufu.com",
+            "description": "日本实用家装避坑、工程预算评估与布局优化媒体。"
+          }
+        ]
+      },
+      {
+        "name": "韩国",
+        "links": [
+          {
+            "name": "Today's House (오늘의집)",
+            "url": "https://ohou.se",
+            "description": "韩国现象级第一家装平台，汇集海量韩系奶油风"
+          },
+          {
+            "name": "Zipdoc (집닥)",
+            "url": "https://zipdoc.co.kr",
+            "description": "韩国知名的一站式装修匹配与施工监督服务平台"
+          },
+          {
+            "name": "HouseApp (하우스앱)",
+            "url": "https://www.houseapp.co.kr",
+            "description": "专注于韩国公寓(Apartment)户型改造"
+          },
+          {
+            "name": "Design DB (한국디자인진흥원)",
+            "url": "https://www.designdb.com",
+            "description": "韩国设计振兴院官方智库，包含大量韩国前沿室内与空间"
+          },
+          {
+            "name": "Zipdeco (집데코)",
+            "url": "https://www.zipdeco.co.kr",
+            "description": "韩国专业的室内设计与装修工程案例归档平台"
+          },
+          {
+            "name": "M-Architecture / Design Press",
+            "url": "https://blog.naver.com/designpress2016",
+            "description": "Naver 旗下的设计专栏"
+          },
+          {
+            "name": "Homify Korea",
+            "url": "https://www.homify.co.kr",
+            "description": "Homify 韩国站，侧重韩国独栋住宅"
+          },
+          {
+            "name": "Interni & Decor Korea",
+            "url": "http://www.internidecor.com",
+            "description": "韩国老牌室内设计与商业/住宅空间杂志官网。"
+          },
+          {
+            "name": "Casaliving",
+            "url": "https://www.casa.co.kr",
+            "description": "韩国高级住宅、高端软装与现代生活方式专业媒体。"
+          },
+          {
+            "name": "Space Magazine (공간)",
+            "url": "https://vmspace.com",
+            "description": "韩国历史最悠久的建筑与室内空间学术级大刊。"
+          }
+        ]
+      },
+      {
+        "name": "新加坡",
+        "links": [
+          {
+            "name": "Qanvast",
+            "url": "https://qanvast.com/sg",
+            "description": "新加坡最大的室内设计匹配平台"
+          },
+          {
+            "name": "RenoNation",
+            "url": "https://www.renonation.sg",
+            "description": "新加坡老牌家装指南，包含极其详尽的 HDB"
+          },
+          {
+            "name": "HomeRenoGuru",
+            "url": "https://www.homerenoguru.sg",
+            "description": "新加坡主流一站式装修门户"
+          },
+          {
+            "name": "SquareRooms",
+            "url": "https://squarerooms.com.sg",
+            "description": "专注于新加坡中极小空间利用"
+          },
+          {
+            "name": "Lookbox Living",
+            "url": "https://www.lookboxliving.com.sg",
+            "description": "新加坡中高端住宅设计媒体"
+          },
+          {
+            "name": "Indesignlive Asia",
+            "url": "https://www.indesignlive.sg",
+            "description": "新加坡及东南亚顶尖室内建筑与现代热带空间设计智库。"
+          },
+          {
+            "name": "The Interior Lab",
+            "url": "https://www.theinteriorlab.com.sg",
+            "description": "新加坡本土知名设计事务所"
+          },
+          {
+            "name": "Dwell Asia",
+            "url": "https://dwell.asia",
+            "description": "聚焦新加坡及东南亚高品质住宅"
+          },
+          {
+            "name": "Cozypods / Stacked Homes",
+            "url": "https://stackedhomes.com",
+            "description": "新加坡房产与室内设计媒体"
+          },
+          {
+            "name": "Design Anthology Asia",
+            "url": "https://designanthology.com",
+            "description": "总部位于香港/新加坡的亚洲高端设计大刊"
+          }
+        ]
+      },
+      {
+        "name": "中国台湾",
+        "links": [
+          {
+            "name": "100室内设计(中国台湾)",
+            "url": "https://www.100.com.tw",
+            "description": "华语圈极高质量实操平台，专注小户型拆改与动线图解。"
+          },
+          {
+            "name": "DECOmyplace(中国台湾)",
+            "url": "https://decomyplace.com",
+            "description": "汇聚全球真实家居改造经验与性价比软装。"
+          },
+          {
+            "name": "设计家 Searchome(中国台湾)",
+            "url": "https://www.searchome.net",
+            "description": "老牌室内设计门户，包含海量格局拆改与建材知识。"
+          },
+          {
+            "name": "幸福空间(中国台湾)",
+            "url": "https://www.hhh.com.tw",
+            "description": "中国台湾知名影音与图文家装平台"
+          },
+          {
+            "name": "iFuzion 🏠 住宅美学(中国台湾)",
+            "url": "https://www.lmg.com.tw",
+            "description": "侧重中高端住宅、材质搭配与空间光影设计。"
+          },
+          {
+            "name": "Living&Design 住宅出版(中国台湾)",
+            "url": "https://www.livingntrend.com",
+            "description": "汇集台湾地区优秀设计师落地作品与国际建材趋势。"
+          },
+          {
+            "name": "mababy / 常春藤家装专栏",
+            "url": "https://www.idshow.com.tw",
+            "description": "专注于室内设计风格分类与建材施工工法解析。"
+          },
+          {
+            "name": "DG LIFESTYLE(中国台湾)",
+            "url": "https://www.dglife.com.tw",
+            "description": "侧重现代极简、工业风与智能家居落地方案。"
+          },
+          {
+            "name": "DECO TV(中国台湾)",
+            "url": "https://decotv.com.tw",
+            "description": "提供大量高画质室内设计案例视频与空间配置解说。"
+          },
+          {
+            "name": "Spacepic(中国台湾)",
+            "url": "https://www.spacepic.com",
+            "description": "专注于设计师作品展示与真实装修开箱。"
+          }
+        ]
+      },
+      {
+        "name": "全球风格补充",
+        "links": [
+          {
+            "name": "Casa Vogue (Brazil/Latin America)",
+            "url": "https://casavogue.globo.com",
+            "description": "南美洲/巴西顶级设计网，主打热带狂野"
+          },
+          {
+            "name": "AD Middle East",
+            "url": "https://www.admiddleeast.com",
+            "description": "中东版 AD，主打现代奢华"
+          },
+          {
+            "name": "Elle Decoration UK",
+            "url": "https://www.elledecoration.co.uk",
+            "description": "英伦现代前沿软装与先锋家居设计标杆。"
+          },
+          {
+            "name": "Casacor(巴西/拉美)",
+            "url": "https://casacor.abril.com.br",
+            "description": "拉美最大的室内设计展官网"
+          }
+        ]
+      },
+      {
+        "name": "美式现代与实用主义",
+        "links": [
+          {
+            "name": "The Spruce",
+            "url": "https://www.thespruce.com",
+            "description": "北美最庞大的硬装维修与工程干货指南。"
+          },
+          {
+            "name": "Better Homes & Gardens",
+            "url": "https://www.bhg.com",
+            "description": "实用型家庭装修、软装布局与空间预算指南。"
+          },
+          {
+            "name": "This Old House",
+            "url": "https://www.thisoldhouse.com",
+            "description": "硬核老房翻新、水电管线与结构施工工匠网。"
+          },
+          {
+            "name": "Bob Vila",
+            "url": "https://www.bobvila.com",
+            "description": "家庭修缮、防潮隔音与硬装工具技术百科。"
+          },
+          {
+            "name": "Style by Emily Henderson",
+            "url": "https://emilyhenderson.com",
+            "description": "北美极具影响力的软装搭配与配色实操博客。"
+          }
+        ]
+      },
+      {
+        "name": "英伦复古与现代混搭",
+        "links": [
+          {
+            "name": "Homes & Gardens (UK)",
+            "url": "https://www.homesandgardens.com",
+            "description": "英国历史悠久的房屋翻新与狭长户型改造网。"
+          },
+          {
+            "name": "Ideal Home (UK)",
+            "url": "https://www.idealhome.co.uk",
+            "description": "英国大众实操家装、小空间改造方案建议。"
+          }
+        ]
+      },
+      {
+        "name": "法式法典与优雅轻奢",
+        "links": [
+          {
+            "name": "Planete Deco",
+            "url": "https://www.planete-deco.fr",
+            "description": "每日更新欧洲真实公寓案例，附带精细平面图。"
+          },
+          {
+            "name": "Côté Maison",
+            "url": "https://www.cotemaison.fr",
+            "description": "法国顶尖家装生活方式网，主打法式公寓与老房改造。"
+          },
+          {
+            "name": "Marie Claire Maison",
+            "url": "https://www.marieclaire.fr/maison",
+            "description": "法式前锋软装、色彩搭配与材质碰撞灵感库。"
+          }
+        ]
+      },
+      {
+        "name": "意式极简与奢华现代",
+        "links": [
+          {
+            "name": "Interni Magazine",
+            "url": "https://www.internimagazine.com",
+            "description": "意式家具设计、高端室内空间与家具工艺标杆。"
+          },
+          {
+            "name": "Living Corriere",
+            "url": "https://living.corriere.it",
+            "description": "意大利《晚邮报》旗下高端室内设计与生活方式门户。"
+          },
+          {
+            "name": "Domus",
+            "url": "https://www.domusweb.it",
+            "description": "意大利权威建筑与高级室内空间设计智库。"
+          }
+        ]
+      },
+      {
+        "name": "北欧极简与自然温润",
+        "links": [
+          {
+            "name": "Alvhem Brokerage & Interior",
+            "url": "https://alvhem.com",
+            "description": "瑞典真实住宅改造实景，研究采光与收纳必看。"
+          },
+          {
+            "name": "My Scandinavian Home",
+            "url": "https://www.myscandinavianhome.com",
+            "description": "专注于北欧真实普通住宅的改造与极简软装。"
+          },
+          {
+            "name": "Trendenser",
+            "url": "https://trendenser.se",
+            "description": "瑞典知名家居博客，专注于北欧人本主义设计法则与避坑"
+          },
+          {
+            "name": "Elisabeth Heier",
+            "url": "https://elisabethheier.no",
+            "description": "挪威极简主义室内设计与高冷色调空间搭配示范。"
+          },
+          {
+            "name": "Nordic Design",
+            "url": "https://nordicdesign.ca",
+            "description": "汇集北欧各地(丹麦/瑞典/芬兰)极简住宅与建筑改造"
+          },
+          {
+            "name": "Coco Lapine Design",
+            "url": "https://cocolapinedesign.com",
+            "description": "专注于黑白灰低饱和度北欧小户型布置。"
+          },
+          {
+            "name": "Bjurfor",
+            "url": "https://www.bjurfors.se",
+            "description": "瑞典房产机构，展示海量原汁原味的哥德堡/斯德哥尔摩"
+          },
+          {
+            "name": "Fantastic Frank",
+            "url": "https://www.fantasticfrank.se",
+            "description": "将北欧住宅摄影与室内设计做到艺术级别的展示平台。"
+          }
+        ]
+      },
+      {
+        "name": "户型拆改与建筑空间",
+        "links": [
+          {
+            "name": "ArchDaily (Residential)",
+            "url": "https://www.archdaily.com/category/residential-interiors",
+            "description": "案例均附带极其精准的平面图(Floor"
+          },
+          {
+            "name": "Dezeen (Interiors)",
+            "url": "https://www.dezeen.com/interiors",
+            "description": "全球先锋室内设计与概念空间图库。"
+          },
+          {
+            "name": "Floorplanner Community",
+            "url": "https://floorplanner.com",
+            "description": "全球在线户型绘制与布局方案交流库。"
+          }
+        ]
       }
     ]
   },
@@ -48135,6 +42676,11 @@ window.KISSTR_DATA = [
             "name": "Maison Michel",
             "url": "https://michel-paris.com",
             "description": "香奈儿旗下高级手工制帽坊"
+          },
+          {
+            "name": "Richard Mille",
+            "url": "https://www.richardmille.com",
+            "description": "瑞士高端复杂机械腕表品牌"
           }
         ]
       },
@@ -48289,7 +42835,7 @@ window.KISSTR_DATA = [
         ]
       },
       {
-        "name": "香氛美妆与媒体",
+        "name": "香氛美妆品牌",
         "links": [
           {
             "name": "Creed (恺芮得)",
@@ -48442,106 +42988,6 @@ window.KISSTR_DATA = [
             "description": "英国超模御用彩妆师同名名媛彩妆"
           },
           {
-            "name": "Vogue",
-            "url": "https://vogue.com",
-            "description": "全球圣经级时尚杂志与秀场报道"
-          },
-          {
-            "name": "Harper's Bazaar (时尚芭莎)",
-            "url": "https://harpersbazaar.com",
-            "description": "历史悠久的顶级高端女性时尚杂志"
-          },
-          {
-            "name": "ELLE",
-            "url": "https://elle.com",
-            "description": "全球流行时尚、女性与美容指南"
-          },
-          {
-            "name": "GQ",
-            "url": "https://gq.com",
-            "description": "全球男士时尚、品味与生活方式权威"
-          },
-          {
-            "name": "W Magazine",
-            "url": "https://wmagazine.com",
-            "description": "纽约视觉艺术与高级时尚杂志"
-          },
-          {
-            "name": "Vanity Fair (名利场)",
-            "url": "https://vanityfair.com",
-            "description": "明星文化、奢华生活方式与时尚深度报道"
-          },
-          {
-            "name": "The Business of Fashion (BoF)",
-            "url": "https://businessoffashion.com",
-            "description": "全球时尚产业最权威的商业媒体"
-          },
-          {
-            "name": "WWD (Women's Wear Daily)",
-            "url": "https://wwd.com",
-            "description": "时尚界的每日商业新闻日刊"
-          },
-          {
-            "name": "Hypebeast",
-            "url": "https://hypebeast.com",
-            "description": "全球高街潮流与时尚跨界资讯巨头"
-          },
-          {
-            "name": "Highsnobiety",
-            "url": "https://highsnobiety.com",
-            "description": "柏林潮流文化、奢侈品与生活方式媒体"
-          },
-          {
-            "name": "Dazed",
-            "url": "https://dazeddigital.com",
-            "description": "英国青年亚文化与先锋时尚杂志"
-          },
-          {
-            "name": "i-D",
-            "url": "https://i-d.co",
-            "description": "英国先锋街头时尚与艺术文化杂志"
-          },
-          {
-            "name": "AnOther Magazine",
-            "url": "https://anothermag.com",
-            "description": "英国高级时尚、艺术与文学双年刊"
-          },
-          {
-            "name": "System Magazine",
-            "url": "https://systemmagazine.com",
-            "description": "时尚行业深度访谈与商业对谈杂志"
-          },
-          {
-            "name": "Purple Fashion",
-            "url": "https://purple.fr",
-            "description": "法国独立艺术、摄影与性感时尚杂志"
-          },
-          {
-            "name": "CR Fashion Book",
-            "url": "https://crfashionbook.com",
-            "description": "前 Vogue 法国主编 Carine Roitfeld 的创刊"
-          },
-          {
-            "name": "10 Magazine",
-            "url": "https://10magazine.com",
-            "description": "英国高端奢华时尚与艺术季刊"
-          },
-          {
-            "name": "Showstudio",
-            "url": "https://showstudio.com",
-            "description": "Nick Knight 创办的时尚摄影与时尚影片先锋平台"
-          },
-          {
-            "name": "Vogue Runway",
-            "url": "https://vogue.com/fashion-shows",
-            "description": "全球最完整的四大时装周高清秀场图库"
-          },
-          {
-            "name": "Models.com",
-            "url": "https://models.com",
-            "description": "全球最权威的超级模特、摄影师及造型师排名数据库"
-          },
-          {
             "name": "Xerjoff",
             "url": "https://xerjoff.com",
             "description": "意大利奢华石头瓶身与高浓度沙龙香"
@@ -48687,54 +43133,9 @@ window.KISSTR_DATA = [
             "description": "蕾哈娜创办的突破性多色号彩妆帝国"
           },
           {
-            "name": "Fragrantica",
-            "url": "https://fragrantica.com",
-            "description": "全球最大的香水数据库与香友社区"
-          },
-          {
-            "name": "Basenotes",
-            "url": "https://basenotes.com",
-            "description": "英国老牌独立香水指南与沙龙香论坛"
-          },
-          {
-            "name": "Parfumo",
-            "url": "https://parfumo.com",
-            "description": "德系精准香水成分与留香评价数据库"
-          },
-          {
-            "name": "Wikiparfum",
-            "url": "https://wikiparfum.com",
-            "description": "Puig 集团创办的互动式香水分类维基"
-          },
-          {
-            "name": "Tagwalk",
-            "url": "https://tagwalk.com",
-            "description": "时尚界的“谷歌”，按元素搜索秀场趋势"
-          },
-          {
-            "name": "FirstView",
-            "url": "https://firstview.com",
-            "description": "早期高清秀场摄影数据库与历史档案"
-          },
-          {
-            "name": "The Fashion Model Directory",
-            "url": "https://fashionmodeldirectory.com",
-            "description": "全球超模特与模特经纪公司历史档案"
-          },
-          {
-            "name": "Fashion Archive",
-            "url": "https://fashionarchive.org",
-            "description": "国际时尚博物馆与历史服饰文献库"
-          },
-          {
-            "name": "Europeana Fashion",
-            "url": "https://europeana.eu/en/collections/fashion",
-            "description": "欧洲图书馆联合时尚历史文化遗产库"
-          },
-          {
-            "name": "FIT Museum Collection",
-            "url": "https://fashionmuseum.fitnyc.edu",
-            "description": "纽约时尚理工学院博物馆时尚藏品库"
+            "name": "Tom Ford Beauty",
+            "url": "https://www.tomfordbeauty.com",
+            "description": "奢华香水和彩妆品牌"
           }
         ]
       },
@@ -49139,1491 +43540,6 @@ window.KISSTR_DATA = [
         ]
       },
       {
-        "name": "奢侈品电商与百货",
-        "links": [
-          {
-            "name": "Farfetch",
-            "url": "https://farfetch.com",
-            "description": "全球最大买手店买手网络联合平台"
-          },
-          {
-            "name": "NET-A-PORTER",
-            "url": "https://net-a-porter.com",
-            "description": "顶级女性奢侈品时尚选品电商"
-          },
-          {
-            "name": "MR PORTER",
-            "url": "https://mrporter.com",
-            "description": "顶级男士时尚与生活方式电商"
-          },
-          {
-            "name": "Mytheresa",
-            "url": "https://mytheresa.com",
-            "description": "德国知名高端设计师品牌电商"
-          },
-          {
-            "name": "SSENSE",
-            "url": "https://ssense.com",
-            "description": "加拿大先锋小众与潮牌奢侈品电商"
-          },
-          {
-            "name": "Moda Operandi",
-            "url": "https://modaoperandi.com",
-            "description": "秀场预订 (Trunkshow) 与高定电商"
-          },
-          {
-            "name": "LUISAVIAROMA",
-            "url": "https://luisaviaroma.com",
-            "description": "意大利老牌线下买手店电商平台"
-          },
-          {
-            "name": "24S",
-            "url": "https://24s.com",
-            "description": "LVMH 旗下官方线上购物平台"
-          },
-          {
-            "name": "Shopbop",
-            "url": "https://shopbop.com",
-            "description": "亚马逊旗下轻奢与设计师女性电商"
-          },
-          {
-            "name": "FWRD",
-            "url": "https://fwrd.com",
-            "description": "Revolve 旗下高端奢侈品电商"
-          },
-          {
-            "name": "Cettire",
-            "url": "https://cettire.com",
-            "description": "澳洲上市的高折扣奢侈品直邮平台"
-          },
-          {
-            "name": "HBX",
-            "url": "https://hbx.com",
-            "description": "Hypebeast 旗下的潮流奢侈品平台"
-          },
-          {
-            "name": "END. Clothing",
-            "url": "https://endclothing.com",
-            "description": "英国高端男装与限量 Sneaker 平台"
-          },
-          {
-            "name": "Italist",
-            "url": "https://italist.com",
-            "description": "意大利本土精品店直邮折扣平台"
-          },
-          {
-            "name": "Yoox",
-            "url": "https://yoox.com",
-            "description": "YNAP 集团旗下过季奢品折扣平台"
-          },
-          {
-            "name": "The Outnet",
-            "url": "https://theoutnet.com",
-            "description": "NET-A-PORTER 旗下官方折扣电商"
-          },
-          {
-            "name": "Harrods (哈洛德)",
-            "url": "https://harrods.com",
-            "description": "英国伦敦百年顶级奢华百货"
-          },
-          {
-            "name": "Selfridges (塞尔福里奇)",
-            "url": "https://selfridges.com",
-            "description": "英国先锋潮流与高端百货"
-          },
-          {
-            "name": "Saks Fifth Avenue",
-            "url": "https://saksfifthavenue.com",
-            "description": "纽约第五大道经典奢华百货"
-          },
-          {
-            "name": "Neiman Marcus",
-            "url": "https://neimanmarcus.com",
-            "description": "美国高端连锁奢华百货"
-          },
-          {
-            "name": "Bergdorf Goodman",
-            "url": "https://bergdorfgoodman.com",
-            "description": "纽约顶级奢华精品百货"
-          },
-          {
-            "name": "Bloomingdale's",
-            "url": "https://bloomingdales.com",
-            "description": "美国时尚高端综合百货"
-          },
-          {
-            "name": "Nordstrom",
-            "url": "https://nordstrom.com",
-            "description": "美国知名大型高端百货"
-          },
-          {
-            "name": "Lane Crawford (连卡佛)",
-            "url": "https://lanecrawford.com.cn",
-            "description": "亚洲顶尖大中华区高端精品百货"
-          },
-          {
-            "name": "Harvey Nichols",
-            "url": "https://harveynichols.com",
-            "description": "英国高级时尚与美容百货"
-          },
-          {
-            "name": "Galeries Lafayette (老佛爷)",
-            "url": "https://galerieslafayette.com",
-            "description": "法国巴黎旗舰高端百货"
-          },
-          {
-            "name": "Printemps (巴黎春天的)",
-            "url": "https://printemps.com",
-            "description": "法国时尚奢品与艺术百货"
-          },
-          {
-            "name": "Liberty London",
-            "url": "https://libertylondon.com",
-            "description": "英国印花与复古高端百货"
-          },
-          {
-            "name": "Flannels",
-            "url": "https://flannels.com",
-            "description": "英国高端买手店连锁平台"
-          },
-          {
-            "name": "Dover Street Market",
-            "url": "https://doverstreetmarket.com",
-            "description": "川久保玲创办的艺术概念买手店"
-          },
-          {
-            "name": "Kith",
-            "url": "https://kith.com",
-            "description": "Ronnie Fieg 创立的奢华潮牌买手店"
-          },
-          {
-            "name": "Antonioli",
-            "url": "https://antonioli.eu",
-            "description": "米兰先锋暗黑系知名买手店"
-          },
-          {
-            "name": "Slam Jam",
-            "url": "https://slamjam.com",
-            "description": "意大利地下潮流与奢侈买手店"
-          },
-          {
-            "name": "Browns Fashion",
-            "url": "https://brownsfashion.com",
-            "description": "伦敦传奇先锋买手店"
-          },
-          {
-            "name": "Machine-A",
-            "url": "https://machine-a.com",
-            "description": "伦敦支持新锐设计师的先锋买手店"
-          },
-          {
-            "name": "Voo Store",
-            "url": "https://voostore.com",
-            "description": "柏林小众时尚与生活方式概念店"
-          },
-          {
-            "name": "Tres Bien",
-            "url": "https://tres-bien.com",
-            "description": "瑞典极简与高街结合的买手店"
-          },
-          {
-            "name": "SVD (Sivasdescalzo)",
-            "url": "https://sivasdescalzo.com",
-            "description": "西班牙高端球鞋与先锋潮流店"
-          },
-          {
-            "name": "Isetan (伊势丹)",
-            "url": "https://isetan.mistore.jp",
-            "description": "日本顶级时尚潮流与奢品百货"
-          },
-          {
-            "name": "Hankyu (阪急百货)",
-            "url": "https://hankyu-dept.co.jp",
-            "description": "日本关西顶级奢品百货"
-          },
-          {
-            "name": "Shinsegae (新世界百货)",
-            "url": "https://shinsegae.com",
-            "description": "韩国顶级奢华购物中心"
-          },
-          {
-            "name": "Galleria",
-            "url": "https://galleria.co.kr",
-            "description": "韩国首尔名品馆奢华百货"
-          },
-          {
-            "name": "Boon The Shop",
-            "url": "https://boontheshop.com",
-            "description": "韩国首尔知名奢华买手店"
-          },
-          {
-            "name": "IT Official",
-            "url": "https://ithk.com",
-            "description": "香港 I.T 集团高端设计师买手店"
-          },
-          {
-            "name": "SKP-S",
-            "url": "https://skp-beijing.com",
-            "description": "北京 SKP 沉浸式奢华艺术购物中心"
-          },
-          {
-            "name": "Matches (历史/现保存域)",
-            "url": "https://matchesfashion.com",
-            "description": "英国经典高端买手平台"
-          },
-          {
-            "name": "Uncrate",
-            "url": "https://uncrate.com",
-            "description": "男士高端装备与奢华生活方式平台"
-          },
-          {
-            "name": "Huckberry",
-            "url": "https://huckberry.com",
-            "description": "美式户外高端男士选品"
-          },
-          {
-            "name": "Nitty Gritty",
-            "url": "https://nittygrittystore.com",
-            "description": "斯德哥尔摩小众精品买手店"
-          },
-          {
-            "name": "Garmentory",
-            "url": "https://garmentory.com",
-            "description": "独立设计师与精品店联合平台"
-          },
-          {
-            "name": "Goodhood",
-            "url": "https://goodhoodstore.com",
-            "description": "伦敦东区潮流生活方式买手店"
-          },
-          {
-            "name": "Couverture & The Garbstore",
-            "url": "https://garbstore.com",
-            "description": "伦敦诺丁山日系工装与小众买手店"
-          },
-          {
-            "name": "Frans Boone Store",
-            "url": "https://fransboonestore.com",
-            "description": "荷兰经典男装与美式复古买手店"
-          },
-          {
-            "name": "Bureau Belfast",
-            "url": "https://thebureaubelfast.com",
-            "description": "英国专业日系工装与户外高端买手店"
-          },
-          {
-            "name": "Peggs & Son",
-            "url": "https://peggsandson.com",
-            "description": "英国高品质男装与户外选品店"
-          },
-          {
-            "name": "Lost & Found",
-            "url": "https://shoplostfound.com",
-            "description": "多伦多小众男装与日产服饰买手店"
-          },
-          {
-            "name": "Haven",
-            "url": "https://havenshop.com",
-            "description": "加拿大知名高端机能与暗黑潮牌买手店"
-          },
-          {
-            "name": "Roden Gray",
-            "url": "https://rodengray.com",
-            "description": "温哥华现代高端设计师买手店"
-          },
-          {
-            "name": "Totokaelo (保存/历史)",
-            "url": "https://totokaelo.com",
-            "description": "纽约极简艺术感买手店"
-          },
-          {
-            "name": "Assembly New York",
-            "url": "https://assemblynewyork.com",
-            "description": "纽约先锋小众独立设计师买手店"
-          },
-          {
-            "name": "Opening Ceremony",
-            "url": "https://openingceremony.com",
-            "description": "纽约跨界潮流买手品牌"
-          },
-          {
-            "name": "Bodega",
-            "url": "https://bdgastore.com",
-            "description": "波士顿隐藏式 Sneaker 与街头奢品店"
-          },
-          {
-            "name": "Concepts (CNCPTS)",
-            "url": "https://cncpts.com",
-            "description": "波士顿著名联名球鞋与高街买手店"
-          },
-          {
-            "name": "Union Los Angeles",
-            "url": "https://unionlosangeles.com",
-            "description": "洛杉矶街头潮流与奢品跨界先驱"
-          },
-          {
-            "name": "Feature",
-            "url": "https://feature.com",
-            "description": "拉斯维加斯高端球鞋与时尚买手店"
-          },
-          {
-            "name": "RSVP Gallery",
-            "url": "https://rsvpgallery.com",
-            "description": "芝加哥艺术与高街奢品买手店"
-          },
-          {
-            "name": "Notre",
-            "url": "https://notre-shop.com",
-            "description": "芝加哥高品质生活方式与服装买手店"
-          },
-          {
-            "name": "Politics (Sneaker Politics)",
-            "url": "https://sneakerpolitics.com",
-            "description": "美国南方高端球鞋与潮流买手店"
-          },
-          {
-            "name": "Undefeated",
-            "url": "https://undefeated.com",
-            "description": "洛杉矶著名街头潮流品牌与买手店"
-          },
-          {
-            "name": "Atmos",
-            "url": "https://atmos-tokyo.com",
-            "description": "日本东京标志性 Sneaker 潮流买手店"
-          },
-          {
-            "name": "Mita Sneakers",
-            "url": "https://mita-sneakers.co.jp",
-            "description": "东京上野联名球鞋买手店"
-          },
-          {
-            "name": "GR8",
-            "url": "https://gr8.jp",
-            "description": "东京原宿先锋暗黑与高街买手店"
-          },
-          {
-            "name": "Nepenthes",
-            "url": "https://nepenthes.co.jp",
-            "description": "Needles 纺织母公司与美式日系买手店"
-          },
-          {
-            "name": "Studious",
-            "url": "https://studious.co.jp",
-            "description": "日本纯本土设计师品牌买手店"
-          },
-          {
-            "name": "United Arrows",
-            "url": "https://united-arrows.co.jp",
-            "description": "日本高端选品集团与都市优雅服饰"
-          },
-          {
-            "name": "Beams",
-            "url": "https://beams.co.jp",
-            "description": "日本潮流与生活方式选品店巨头"
-          },
-          {
-            "name": "Journal Standard",
-            "url": "https://journal-standard.jp",
-            "description": "美式复古与日系休闲选品店"
-          },
-          {
-            "name": "Ships",
-            "url": "https://shipsltd.co.jp",
-            "description": "日本三大传统高端选品店之一"
-          },
-          {
-            "name": "Tomorrowland",
-            "url": "https://tomorrowland.tokyo",
-            "description": "日本高品质正装与高端选品店"
-          },
-          {
-            "name": "Editorialist",
-            "url": "https://editorialist.com",
-            "description": "奢品时尚导购与内容推荐平台"
-          },
-          {
-            "name": "Lyst",
-            "url": "https://lyst.com",
-            "description": "全球最大的时尚搜索引擎与排名榜单"
-          },
-          {
-            "name": "ShopStyle",
-            "url": "https://shopstyle.com",
-            "description": "全球时尚与奢品聚合搜索平台"
-          },
-          {
-            "name": "Glami",
-            "url": "https://glami.com",
-            "description": "欧洲时尚与奢品搜索引擎"
-          },
-          {
-            "name": "StyleLounge",
-            "url": "https://stylelounge.de",
-            "description": "德国时尚比价与搜索平台"
-          },
-          {
-            "name": "Buyma",
-            "url": "https://buyma.com",
-            "description": "日本最大的全球买手代购买卖平台"
-          },
-          {
-            "name": "Poizon (得物国际版)",
-            "url": "https://poizon.com",
-            "description": "潮流奢品与球鞋鉴定交易平台"
-          },
-          {
-            "name": "GOAT Group",
-            "url": "https://goatgroup.com",
-            "description": "GOAT 集团官方网站"
-          },
-          {
-            "name": "Sole Supremacy",
-            "url": "https://solesupremacy.com",
-            "description": "二手限量球鞋与奢品鞋履转售平台"
-          }
-        ]
-      },
-      {
-        "name": "二手中古与拍卖平台",
-        "links": [
-          {
-            "name": "Vestiaire Collective",
-            "url": "https://vestiairecollective.com",
-            "description": "全球最大的认证二手奢侈品转售平台"
-          },
-          {
-            "name": "The RealReal",
-            "url": "https://therealreal.com",
-            "description": "美国上市的全检验寄售奢侈品电商"
-          },
-          {
-            "name": "Rebag",
-            "url": "https://rebag.com",
-            "description": "专注于二手奢侈品包袋买卖与鉴定"
-          },
-          {
-            "name": "Fashionphile",
-            "url": "https://fashionphile.com",
-            "description": "美国老牌二手顶级包袋与珠宝平台"
-          },
-          {
-            "name": "StockX",
-            "url": "https://stockx.com",
-            "description": "全球潮流 Sneaker 与奢品实时竞价平台"
-          },
-          {
-            "name": "GOAT",
-            "url": "https://goat.com",
-            "description": "验证球鞋与高端高街时装交易平台"
-          },
-          {
-            "name": "Grailed",
-            "url": "https://grailed.com",
-            "description": "全球最大的二手男士先锋与潮流社区"
-          },
-          {
-            "name": "1stDibs",
-            "url": "https://1stdibs.com",
-            "description": "全球顶尖古董、中古珠宝与艺术品平台"
-          },
-          {
-            "name": "Chrono24",
-            "url": "https://chrono24.com",
-            "description": "全球最大的奢华二手与全新名表交易网"
-          },
-          {
-            "name": "Watchfinder & Co.",
-            "url": "https://watchfinder.com",
-            "description": "历峰集团旗下的二手名表认证平台"
-          },
-          {
-            "name": "WatchBox",
-            "url": "https://the1916company.com",
-            "description": "顶级收藏级二手名表买卖平台"
-          },
-          {
-            "name": "Collector Square",
-            "url": "https://collectorsquare.com",
-            "description": "欧洲知名二手名表、包袋与珠宝平台"
-          },
-          {
-            "name": "The Luxury Closet",
-            "url": "https://theluxurycloset.com",
-            "description": "中东迪拜最大二手奢侈品转售电商"
-          },
-          {
-            "name": "Sotheby's Buy Now",
-            "url": "https://sothebys.com",
-            "description": "苏富比拍卖行旗下即买型奢品平台"
-          },
-          {
-            "name": "Christie's 360",
-            "url": "https://christies.com",
-            "description": "佳士得拍卖行奢侈品手袋与名表专场"
-          },
-          {
-            "name": "What Goes Around Comes Around",
-            "url": "https://whatgoesaroundnyc.com",
-            "description": "纽约知名顶级香奈儿与爱马仕中古店"
-          },
-          {
-            "name": "Bob's Watches",
-            "url": "https://bobswatches.com",
-            "description": "美国最权威的劳力士二手买卖平台"
-          },
-          {
-            "name": "Luxury Promise",
-            "url": "https://luxurypromise.com",
-            "description": "英国基于 Live Shopping 的二手奢品平台"
-          },
-          {
-            "name": "LXRandCo",
-            "url": "https://lxrco.com",
-            "description": "加拿大知名复古奢侈包袋零售商"
-          },
-          {
-            "name": "Sellier Bellier",
-            "url": "https://sellierknightsbridge.com",
-            "description": "伦敦金骑士桥顶级爱马仕与稀有中古店"
-          },
-          {
-            "name": "Amore Vintage Japan",
-            "url": "https://amorevintagejapan.com",
-            "description": "日本东京极具声誉的 Chanel 中古店"
-          },
-          {
-            "name": "Qoo Tokyo",
-            "url": "https://qoo-online.com",
-            "description": "日本表参道知名稀有 Chanel 及奢品中古"
-          },
-          {
-            "name": "Komehyo (米兵)",
-            "url": "https://komehyo.jp",
-            "description": "日本规模最大的综合二手奢品连琐店"
-          },
-          {
-            "name": "Daikokuya (大黑屋)",
-            "url": "https://daikokuya78.com",
-            "description": "日本百年老字号奢侈品回收与鉴定"
-          },
-          {
-            "name": "Brand Off",
-            "url": "https://brandoff-store.com",
-            "description": "日本知名二手名牌包袋与珠宝连琐"
-          },
-          {
-            "name": "Ragtag",
-            "url": "https://ragtag.jp",
-            "description": "日本最知名的设计师品牌二手服装店"
-          },
-          {
-            "name": "2nd Street Japan",
-            "url": "https://2ndstreet.jp",
-            "description": "日本大型综合潮流与奢侈品二手店"
-          },
-          {
-            "name": "Pass The Baton",
-            "url": "https://pass-the-baton.com",
-            "description": "日本个人收藏与高品质中古个人故事店"
-          },
-          {
-            "name": "Decades Inc.",
-            "url": "https://decadesinc.com",
-            "description": "洛杉矶好莱坞红毯高定古着与礼服"
-          },
-          {
-            "name": "Resurrection Vintage",
-            "url": "https://resurrectionvintage.com",
-            "description": "纽约与洛杉矶博物馆级高定古着"
-          },
-          {
-            "name": "Didier Ludot",
-            "url": "https://didierludot.fr",
-            "description": "巴黎皇家宫殿顶级古着与小黑裙"
-          },
-          {
-            "name": "Kerry Taylor Auctions",
-            "url": "https://kerrytaylorauctions.com",
-            "description": "伦敦专业古着与时尚历史拍卖行"
-          },
-          {
-            "name": "Augusta Auctions",
-            "url": "https://augusta-auction.com",
-            "description": "美国传统古董纺织品与服装拍卖"
-          },
-          {
-            "name": "Bonhams (邦瀚斯)",
-            "url": "https://bonhams.com",
-            "description": "全球古董名表与高级手袋拍卖行"
-          },
-          {
-            "name": "Phillips (富艺斯)",
-            "url": "https://phillips.com",
-            "description": "全球二十世纪及当代艺术与名表拍卖"
-          },
-          {
-            "name": "Heritage Auctions",
-            "url": "https://ha.com",
-            "description": "美国大型钱币与顶级爱马仕手袋拍卖"
-          },
-          {
-            "name": "Dorotheum",
-            "url": "https://dorotheum.com",
-            "description": "中欧维也纳历史悠久的艺术与奢品拍卖"
-          },
-          {
-            "name": "Artcurial",
-            "url": "https://artcurial.com",
-            "description": "法国巴黎顶级艺术与高端二手奢品拍卖"
-          },
-          {
-            "name": "Bukowskis",
-            "url": "https://bukowskis.com",
-            "description": "斯堪的纳维亚老牌艺术与奢品拍卖行"
-          },
-          {
-            "name": "StockX Watches",
-            "url": "https://stockx.com/watches",
-            "description": "实时二级市场名表数据与交易平台"
-          },
-          {
-            "name": "Crown & Caliber",
-            "url": "https://crownandcaliber.com",
-            "description": "美国专业二手名表线上买卖与鉴定"
-          },
-          {
-            "name": "Hodinkee Shop",
-            "url": "https://shop.hodinkee.com",
-            "description": "知名钟表媒体旗下的全新与二手表店"
-          },
-          {
-            "name": "Revolution Watch",
-            "url": "https://revolutionwatch.com",
-            "description": "钟表杂志旗下的高端合作与限量二手"
-          },
-          {
-            "name": "A Collected Man",
-            "url": "https://acollectedman.com",
-            "description": "伦敦专注于 rare & independent 手表"
-          },
-          {
-            "name": "Subdial",
-            "url": "https://subdial.co",
-            "description": "英国基于数据驱动的二手名表交易"
-          },
-          {
-            "name": "Loupe System",
-            "url": "https://loupesystem.com",
-            "description": "钟表收藏家顶级放大镜与鉴定工具"
-          },
-          {
-            "name": "L'Epee 1839",
-            "url": "https://lepee1839.ch",
-            "description": "瑞士百年来唯一专注于高定座钟品牌"
-          },
-          {
-            "name": "MB&F M.A.D.Gallery",
-            "url": "https://maddgallery.net",
-            "description": "先锋机械艺术与动能雕塑画廊"
-          },
-          {
-            "name": "Vinterior",
-            "url": "https://vinterior.co",
-            "description": "英国最大的二手与复古家具电商"
-          },
-          {
-            "name": "Pamono",
-            "url": "https://pamono.com",
-            "description": "欧洲经典复古设计与中古家具平台"
-          },
-          {
-            "name": "Design Market",
-            "url": "https://design-market.eu",
-            "description": "20世纪欧洲中古家具与灯具交易"
-          },
-          {
-            "name": "Chairish",
-            "url": "https://chairish.com",
-            "description": "美式复古高端家居与古董家具"
-          },
-          {
-            "name": "Wright 20",
-            "url": "https://wright20.com",
-            "description": "芝加哥现代艺术与二十世纪设计拍卖"
-          },
-          {
-            "name": "R & Company",
-            "url": "https://r-and-company.com",
-            "description": "纽约历史级设计与顶级古董家具"
-          },
-          {
-            "name": "Nilufar Gallery",
-            "url": "https://nilufar.com",
-            "description": "米兰设计周传奇古董与现代设计画廊"
-          },
-          {
-            "name": "Galerie Patrick Seguin",
-            "url": "https://patrickseguin.com",
-            "description": "巴黎 Jean Prouve 等设计大师建筑画廊"
-          },
-          {
-            "name": "Carpenters Workshop Gallery",
-            "url": "https://carpentersworkshopgallery.com",
-            "description": "伦敦/巴黎艺术与可佩戴高定家具"
-          }
-        ]
-      },
-      {
-        "name": "国际时装媒体 (1-40)",
-        "links": [
-          {
-            "name": "Vogue Runway",
-            "url": "https://www.vogue.com/fashion-shows",
-            "description": "全球权威时装周官方秀场高清图库"
-          },
-          {
-            "name": "The Business of Fashion (BoF)",
-            "url": "https://www.businessoffashion.com",
-            "description": "时尚商业领域的“华尔街日报”，深度剖析奢侈品集团"
-          },
-          {
-            "name": "Dazed Digital",
-            "url": "https://www.dazeddigital.com",
-            "description": "英国先锋青年文化与亚文化时尚杂志"
-          },
-          {
-            "name": "AnOther Magazine",
-            "url": "https://www.anothermag.com",
-            "description": "将高级时装、视觉艺术与文学融合的先锋双年刊视觉网。"
-          },
-          {
-            "name": "Highsnobiety",
-            "url": "https://www.highsnobiety.com",
-            "description": "潮流亚文化、高街时装与跨界联名趋势的头部商业媒体。"
-          },
-          {
-            "name": "Office Magazine",
-            "url": "https://officemagazine.net",
-            "description": "纽约独立时尚与艺术杂志，展示非主流时装大片与地下亚"
-          },
-          {
-            "name": "System Magazine",
-            "url": "https://system-magazine.com",
-            "description": "深度采访顶级时装设计师、品牌 CEO"
-          },
-          {
-            "name": "Mastermind Magazine",
-            "url": "https://mastermindmagazine.com",
-            "description": "法国高端时尚与文化半年刊"
-          },
-          {
-            "name": "Perfect Magazine",
-            "url": "https://www.theperfectmagazine.com",
-            "description": "知名造型师 Katie Grand"
-          },
-          {
-            "name": "Document Journal",
-            "url": "https://www.documentjournal.com",
-            "description": "纽约先锋文化杂志，收录大量实验性高定造型与哲思时尚"
-          },
-          {
-            "name": "Fantastic Man",
-            "url": "https://fantasticman.com",
-            "description": "荷兰极简主义男装时尚杂志"
-          },
-          {
-            "name": "Gentlewoman",
-            "url": "https://thegentlewoman.co.uk",
-            "description": "以冷静、睿智与极简美学塑造现代女性形象的高端时尚刊"
-          },
-          {
-            "name": "V Magazine",
-            "url": "https://vmagazine.com",
-            "description": "美国大型时尚流行文化杂志"
-          },
-          {
-            "name": "Interview Magazine",
-            "url": "https://www.interviewmagazine.com",
-            "description": "安迪·沃霍尔创办的传奇杂志"
-          },
-          {
-            "name": "Numéro France",
-            "url": "https://www.numero.com",
-            "description": "法国高端时尚杂志，以未来感视觉"
-          },
-          {
-            "name": "HERO Magazine",
-            "url": "https://hero-magazine.com",
-            "description": "伦敦男装与文化杂志，追踪新锐男装设计师与青年艺术家"
-          },
-          {
-            "name": "032c",
-            "url": "https://032c.com",
-            "description": "柏林先锋文化与时装品牌媒体，探讨当代艺术"
-          },
-          {
-            "name": "Metal Magazine",
-            "url": "https://metalmagazine.eu",
-            "description": "巴塞罗那独立时尚杂志，关注新锐设计"
-          },
-          {
-            "name": "Glamcult",
-            "url": "https://www.glamcult.com",
-            "description": "阿姆斯特丹地下先锋时装与独立音乐视觉杂志。"
-          },
-          {
-            "name": "Wallpaper* Fashion",
-            "url": "https://www.wallpaper.com/fashion",
-            "description": "设计圣经 Wallpaper* 旗下的时装专栏"
-          },
-          {
-            "name": "Flaunt Magazine",
-            "url": "https://flaunt.com",
-            "description": "洛杉矶时尚与文化杂志，融合好莱坞星光与先锋时装造型"
-          },
-          {
-            "name": "Buffalo Zine",
-            "url": "https://buffalozine.com",
-            "description": "形式多变的实验性时尚刊物，每期改变排版与纸张形式。"
-          },
-          {
-            "name": "Sleek Magazine",
-            "url": "https://www.sleek-mag.com",
-            "description": "柏林艺术与时尚杂志，探讨数字艺术"
-          },
-          {
-            "name": "Tank Magazine",
-            "url": "https://tankmagazine.com",
-            "description": "英国独立时尚与文化杂志，以独特的开本与深度时尚理论"
-          },
-          {
-            "name": "Kinfolk Fashion",
-            "url": "https://www.kinfolk.com/fashion",
-            "description": "慢生活美学代表，展示大地色系、舒适面料与极简时装。"
-          },
-          {
-            "name": "Vestoj",
-            "url": "https://vestoj.com",
-            "description": "探讨服装社会学、时尚理论与哲学历史的专业学术型时尚"
-          },
-          {
-            "name": "Fashion Theory Journal",
-            "url": "https://www.tandfonline.com/toc/rftf20/current",
-            "description": "国际学术界关于服装、时尚与身体政治的研讨期刊。"
-          },
-          {
-            "name": "Fashionista",
-            "url": "https://fashionista.com",
-            "description": "北美主流时尚网，报道秀场评论"
-          },
-          {
-            "name": "Fashion Network",
-            "url": "https://ww.fashionnetwork.com",
-            "description": "全球时尚与奢侈品行业实况新闻"
-          },
-          {
-            "name": "The Impression",
-            "url": "https://theimpression.com",
-            "description": "专注时尚广告大片、秀场分析与品牌视觉传达的行业智库"
-          },
-          {
-            "name": "Tagwalk",
-            "url": "https://www.tagwalk.com",
-            "description": "被称为“时尚界 Google”，按面料、色彩"
-          },
-          {
-            "name": "FirstView",
-            "url": "https://www.firstview.com",
-            "description": "老牌高清秀场细节图库，收录大量 90"
-          },
-          {
-            "name": "Catwalkpictures",
-            "url": "https://www.catwalkpictures.com",
-            "description": "专业秀场后台(Backstage)与细节摄影大片数"
-          }
-        ]
-      },
-      {
-        "name": "奢侈品电商 (41-80)",
-        "links": [
-          {
-            "name": "SSENSE",
-            "url": "https://www.ssense.com",
-            "description": "加拿大先锋奢品电商，拥有极具品味的买手阵容与独特的"
-          },
-          {
-            "name": "Farfetch",
-            "url": "https://www.farfetch.com",
-            "description": "全球买手店聚合平台，连接全球数百家独立时尚精品店的"
-          },
-          {
-            "name": "Net-a-Porter",
-            "url": "https://www.net-a-porter.com",
-            "description": "全球顶级女性奢品电商，以杂志化排版与高定包装服务著"
-          },
-          {
-            "name": "MR PORTER",
-            "url": "https://www.mrporter.com",
-            "description": "全球高端男装奢品购物平台，汇聚绅士剪裁"
-          },
-          {
-            "name": "LN-CC (Late Night Chameleon Cafe)",
-            "url": "https://www.ln-cc.com",
-            "description": "伦敦先锋概念买手店，主打暗黑先锋"
-          },
-          {
-            "name": "Dover Street Market (DSM)",
-            "url": "https://www.doverstreetmarket.com",
-            "description": "川久保玲创办的顶级概念买手店"
-          },
-          {
-            "name": "Antonioli",
-            "url": "https://www.antonioli.eu",
-            "description": "米兰知名暗黑先锋买手店，主营 Rick"
-          },
-          {
-            "name": "LuisaViaRoma (LVR)",
-            "url": "https://www.luisaviaroma.com",
-            "description": "意大利老牌奢侈品买手店，收录知名大牌与欧洲新锐设计"
-          },
-          {
-            "name": "Mytheresa",
-            "url": "https://www.mytheresa.com",
-            "description": "德国高端奢侈品电商，主打顶级大牌独家胶囊系列与高定"
-          },
-          {
-            "name": "MATCHESFASHION",
-            "url": "https://www.matchesfashion.com",
-            "description": "英国高端奢品买手网，以精选的审美眼光与优雅搭配造型"
-          },
-          {
-            "name": "Voo Store",
-            "url": "https://www.voostore.com",
-            "description": "柏林文化概念买手店，融合街头艺术"
-          },
-          {
-            "name": "Machine-A",
-            "url": "https://www.machine-a.com",
-            "description": "伦敦先锋买手店，专门扶持中央圣马丁等学院的新锐毕业"
-          },
-          {
-            "name": "SVD (Siwasdescalzo)",
-            "url": "https://www.sivasdescalzo.com",
-            "description": "西班牙高端潮流与限量球鞋买手店"
-          },
-          {
-            "name": "Browns Fashion",
-            "url": "https://www.brownsfashion.com",
-            "description": "伦敦传奇买手店，历史上最早发掘"
-          },
-          {
-            "name": "End Clothing",
-            "url": "https://www.endclothing.com",
-            "description": "英国男装潮流与先锋户外买手店"
-          },
-          {
-            "name": "Slam Jam",
-            "url": "https://www.slamjam.com",
-            "description": "意大利地下亚文化与高街潮流教父级买手店。"
-          },
-          {
-            "name": "Notre",
-            "url": "https://www.notre-shop.com",
-            "description": "芝加哥高端生活方式与先锋男装买手店。"
-          },
-          {
-            "name": "SOTF (Store of the Future)",
-            "url": "https://www.sotf.com",
-            "description": "意大利奢华街头与先锋鞋履概念买手店。"
-          },
-          {
-            "name": "The Broken Arm",
-            "url": "https://www.thebrokenarm.com",
-            "description": "巴黎时尚圈核心概念买手店"
-          },
-          {
-            "name": "Tom Greyhound",
-            "url": "https://tomgreyhound.com",
-            "description": "韩国现代集团旗下的巴黎先锋时尚买手店。"
-          },
-          {
-            "name": "KM20",
-            "url": "https://www.km20.ru",
-            "description": "莫斯科知名先锋买手店，引爆东欧高街与先锋时装风潮。"
-          },
-          {
-            "name": "Gate-194",
-            "url": "https://gate-194.com",
-            "description": "柏林暗黑先锋与工匠风格(Artisanal)概念买"
-          },
-          {
-            "name": "Darklands Berlin",
-            "url": "https://www.darklandsberlin.com",
-            "description": "全球知名暗黑工匠先锋买手店"
-          },
-          {
-            "name": "Hide M",
-            "url": "https://hidem.de",
-            "description": "德国专注于先锋皮衣、暗黑工匠与独家手工作品的小众买"
-          },
-          {
-            "name": "PNP Anti-Hero",
-            "url": "https://pnp-firenze.com",
-            "description": "佛罗伦萨先锋工匠买手店，主营 Carol"
-          },
-          {
-            "name": "Ink Hong Kong",
-            "url": "https://ink-store.com",
-            "description": "香港传奇先锋买手店，专注于极具先锋剪裁与材质实验的"
-          },
-          {
-            "name": "H Lorenzo",
-            "url": "https://www.hlorenzo.com",
-            "description": "洛杉矶先锋买手店，汇集全球前卫与高定感实验品牌。"
-          },
-          {
-            "name": "Atelier New York",
-            "url": "https://www.ateliernewyork.com",
-            "description": "纽约先锋暗黑与极简主义服装买手店。"
-          },
-          {
-            "name": "Maxfield LA",
-            "url": "https://www.maxfieldla.com",
-            "description": "洛杉矶传奇奢华古着与先锋高定买手店"
-          },
-          {
-            "name": "Restir",
-            "url": "https://www.restir.com",
-            "description": "东京港区高端先锋时尚与高科技高定概念店。"
-          },
-          {
-            "name": "Addicted Seoul",
-            "url": "https://addictedseoul.com",
-            "description": "首尔江南区先锋暗黑与先锋工匠服装买手店。"
-          },
-          {
-            "name": "Biffi Boutiques",
-            "url": "https://www.biffi.com",
-            "description": "米兰历史悠久的高端时尚买手店"
-          },
-          {
-            "name": "Selfridges Fashion",
-            "url": "https://www.selfridges.com/cat/fashion",
-            "description": "伦敦百货巨头，其 Fashion Floor"
-          },
-          {
-            "name": "Printemps Luxe",
-            "url": "https://www.printemps.com",
-            "description": "巴黎春天的奢品专区，展示法国高定与高端设计师品牌。"
-          },
-          {
-            "name": "Le Bon Marché",
-            "url": "https://www.lebonmarche.com",
-            "description": "巴黎左岸高端百货，以艺术策展式呈现奢侈品与先锋服饰"
-          },
-          {
-            "name": "Bergdorf Goodman",
-            "url": "https://www.bergdorfgoodman.com",
-            "description": "纽约第五大道老牌顶奢百货"
-          }
-        ]
-      },
-      {
-        "name": "档案馆 (81-120)",
-        "links": [
-          {
-            "name": "Grailed",
-            "url": "https://www.grailed.com",
-            "description": "全球最大的二手先锋时装、Archive"
-          },
-          {
-            "name": "Vestiaire Collective",
-            "url": "https://www.vestiairecollective.com",
-            "description": "欧洲二手奢品与 Vintage 时尚交易平台"
-          },
-          {
-            "name": "The RealReal",
-            "url": "https://www.therealreal.com",
-            "description": "美国上市二手奢侈品寄售巨头"
-          },
-          {
-            "name": "1stDibs Fashion",
-            "url": "https://www.1stdibs.com/fashion",
-            "description": "全球高端古董与 Vintage"
-          },
-          {
-            "name": "What Goes Around Comes Around (WGACA)",
-            "url": "https://www.whatgoesaroundnyc.com",
-            "description": "纽约知名 Vintage 奢品机构"
-          },
-          {
-            "name": "Resurrection Vintage",
-            "url": "https://www.resurrectionvintage.com",
-            "description": "纽约与洛杉矶传奇 Vintage 展厅"
-          },
-          {
-            "name": "Byronesque",
-            "url": "https://www.byronesque.com",
-            "description": "专门收录 80-90 年代先锋暗黑(如"
-          },
-          {
-            "name": "Archive Store Tokyo",
-            "url": "https://archivestore-tokyo.com",
-            "description": "东京涩谷地下 Archive 博物馆式买手店"
-          },
-          {
-            "name": "Middleman Store",
-            "url": "https://middlemanstore.com",
-            "description": "知名先锋男装 Archive 网站"
-          },
-          {
-            "name": "Silverwoods",
-            "url": "https://silverwoodsearch.com",
-            "description": "专注于 Helmut Lang, Raf"
-          },
-          {
-            "name": "Dotcomesoon",
-            "url": "https://dotcomesoon.com",
-            "description": "专注于收集 90 年代日本先锋设计(三宅一生"
-          },
-          {
-            "name": "Huiben Shop",
-            "url": "https://huibenshop.com",
-            "description": "严选先锋男装、工匠服装与稀有 Archive"
-          },
-          {
-            "name": "Paris Saint-Germain Vintage",
-            "url": "https://psgvintagestore.com",
-            "description": "巴黎专业古着店，专注 70-90"
-          },
-          {
-            "name": "Didier Ludot",
-            "url": "https://www.didierludot.fr",
-            "description": "巴黎皇家宫殿古苑内的传奇高定古着店"
-          },
-          {
-            "name": "Kerry Taylor Auctions",
-            "url": "https://www.kerrytaylorauctions.com",
-            "description": "伦敦拍卖行，专门拍卖皇家服饰"
-          },
-          {
-            "name": "Augusta Auctions",
-            "url": "https://www.augusta-auction.com",
-            "description": "美国专业纺织品与古着服饰拍卖行"
-          },
-          {
-            "name": "Historic Charleston Vintage",
-            "url": "https://historiccharlestonvintage.com",
-            "description": "专注于北美历史风格重构、复古工装与古董纺织品。"
-          },
-          {
-            "name": "Re-See",
-            "url": "https://www.resee.com",
-            "description": "巴黎前时尚编辑创立的高端 Vintage 平台"
-          },
-          {
-            "name": "Reluxe",
-            "url": "https://reluxefashion.com",
-            "description": "知名造型师 Clare Richardson"
-          },
-          {
-            "name": "Open24 Hours Vintage",
-            "url": "https://open24hourshop.com",
-            "description": "专注于收集 90 年代极简主义(Prada,"
-          },
-          {
-            "name": "Vintage Qoo Tokyo",
-            "url": "https://www.qoo-online.com",
-            "description": "东京著名 Chanel Vintage 收藏站"
-          },
-          {
-            "name": "Ragtag Japan",
-            "url": "https://www.ragtag.jp",
-            "description": "日本二手设计师品牌巨头，涵盖几乎所有日本与欧洲先锋"
-          },
-          {
-            "name": "Brandear Japan",
-            "url": "https://brandear.jp",
-            "description": "日本大型二手奢侈品回收与销售平台，库存量极大。"
-          },
-          {
-            "name": "2nd Street Japan",
-            "url": "https://www.2ndstreet.jp",
-            "description": "日本知名连锁古着综合店，含有海量日本本土潮牌与先锋"
-          },
-          {
-            "name": "Sekai-mon (World Door)",
-            "url": "https://www.sekaimon.com",
-            "description": "连接日本买家与全球稀有 Vintage"
-          },
-          {
-            "name": "Vintage Fashion Guild (VFG)",
-            "url": "https://vintagefashionguild.org",
-            "description": "古着时尚公会，提供权威的古着品牌 Label"
-          },
-          {
-            "name": "Decades Inc.",
-            "url": "https://www.decadesinc.com",
-            "description": "洛杉矶传奇 Vintage 店"
-          },
-          {
-            "name": "Lily et Cie",
-            "url": "https://www.lilyetcie.com",
-            "description": "比佛利山庄顶级古着店，藏有数万件博物馆级高级定制服"
-          },
-          {
-            "name": "Cherish Vintage",
-            "url": "https://cherishvintage.com",
-            "description": "专注于 20 世纪初至 70"
-          },
-          {
-            "name": "Pechuga Vintage",
-            "url": "https://pechugavintage.com",
-            "description": "知名 Vivienne Westwood"
-          },
-          {
-            "name": "Tunell Vintage",
-            "url": "https://tunellvintage.com",
-            "description": "欧洲独立古着机构，专注于 80"
-          },
-          {
-            "name": "Vintage Clothing Gallery",
-            "url": "https://www.vintageclothinggallery.com",
-            "description": "展示欧洲维多利亚时期至爱德华时期古董衣的数字画廊。"
-          },
-          {
-            "name": "Wayward Collection",
-            "url": "https://waywardcollection.com",
-            "description": "严选 20 世纪高定服装"
-          },
-          {
-            "name": "The Vintage Twin",
-            "url": "https://thevintagetwin.com",
-            "description": "纽约改造古着与复古牛仔裤定制的潮流古着站。"
-          },
-          {
-            "name": "Beyond Retro",
-            "url": "https://www.beyondretro.com",
-            "description": "英国大型复古古着连锁品牌"
-          },
-          {
-            "name": "Rokit Vintage",
-            "url": "https://www.rokit.co.uk",
-            "description": "伦敦老牌古着店，主打亚文化、摇滚风格与复古运动服。"
-          },
-          {
-            "name": "Thrifted.com",
-            "url": "https://www.thrifted.com",
-            "description": "欧洲知名在线 Thrift 店"
-          },
-          {
-            "name": "Brick Vintage",
-            "url": "https://www.brickvintage.com",
-            "description": "英国专注于 50-80 年代复古印花与年代感服装的"
-          }
-        ]
-      },
-      {
-        "name": "时尚博物馆 (121-160)",
-        "links": [
-          {
-            "name": "The Met Costume Institute",
-            "url": "https://www.metmuseum.org/prime-topics/costume-institute",
-            "description": "纽约大都会艺术博物馆服装学院"
-          },
-          {
-            "name": "V&A Fashion Collection",
-            "url": "https://www.vam.ac.uk/collections/fashion",
-            "description": "伦敦维多利亚与艾尔伯特博物馆"
-          },
-          {
-            "name": "Palais Galliera",
-            "url": "https://www.palaisgalliera.paris.fr",
-            "description": "巴黎市立时尚博物馆，记录法国高定历史"
-          },
-          {
-            "name": "Musée Yves Saint Laurent Paris",
-            "url": "https://museeyslparis.com",
-            "description": "伊夫·圣罗兰巴黎博物馆，展示 YSL 大师手稿"
-          },
-          {
-            "name": "Dior Heritage (La Galerie Dior)",
-            "url": "https://www.galeriedior.com",
-            "description": "迪奥展廊，展示 1947 年 New Look"
-          },
-          {
-            "name": "Gucci Osteria & Garden (Gucci Archive)",
-            "url": "https://www.gucci.com/us/en/st/stories/inspirations-and-codes",
-            "description": "古驰品牌档案馆与历史基因编码在线展示平台。"
-          },
-          {
-            "name": "Ferragamo Museum",
-            "url": "https://www.ferragamo.com/museo/en",
-            "description": "菲拉格慕博物馆，藏有大量 20"
-          },
-          {
-            "name": "Cristóbal Balenciaga Museoa",
-            "url": "https://www.cristobalbalenciagamuseoa.com",
-            "description": "巴伦西亚加官方博物馆，展示“高级定制建筑师”"
-          },
-          {
-            "name": "ModeMuseum Antwerp (MoMu)",
-            "url": "https://www.momu.be",
-            "description": "安特卫普时尚博物馆，安特卫普六君子("
-          },
-          {
-            "name": "Kyoto Costume Institute (KCI)",
-            "url": "https://www.kci.or.jp",
-            "description": "京都服饰文化研究财团，东西方服饰交融与西方服装历史"
-          },
-          {
-            "name": "Kobe Fashion Museum",
-            "url": "https://www.fashionmuseum.jp",
-            "description": "日本神户时尚博物馆，汇集全球纺织品"
-          },
-          {
-            "name": "Bata Shoe Museum",
-            "url": "https://batashoemuseum.ca",
-            "description": "多伦多巴塔鞋履博物馆，收藏人类历史上数万双跨越时空"
-          },
-          {
-            "name": "Museum of Fashion (Guimet/Galliera)",
-            "url": "https://www.parismusees.paris.fr",
-            "description": "巴黎各大市立博物馆联合时尚资源库。"
-          },
-          {
-            "name": "McCord Stewart Museum Costume",
-            "url": "https://www.musee-mccord-stewart.ca/en/collections/costume-fashion",
-            "description": "加拿大麦考德博物馆，专注于北美民俗服饰与 19"
-          },
-          {
-            "name": "Europeana Fashion",
-            "url": "https://www.europeana.eu/en/collections/topic/46-fashion",
-            "description": "欧洲数字图书馆时尚专题，汇集全欧洲数十家博物馆的服"
-          },
-          {
-            "name": "Fashion Institute of Design & Merchandising (FIDM) Museum",
-            "url": "https://fidmmuseum.org",
-            "description": "洛杉矶 FIDM 博物馆"
-          },
-          {
-            "name": "RISD Museum Costume and Textiles",
-            "url": "https://risdmuseum.org/art-design/collection/costume-and-textiles",
-            "description": "罗德岛设计学院博物馆，以高水准的织物结构与先锋服装"
-          },
-          {
-            "name": "Kent State University Museum",
-            "url": "https://www.kent.edu/museum",
-            "description": "肯特州立大学博物馆，拥有庞大的 20"
-          },
-          {
-            "name": "Centraal Museum Utrecht Fashion",
-            "url": "https://www.centraalmuseum.nl/en",
-            "description": "荷兰中央博物馆，以收藏 Viktor &"
-          },
-          {
-            "name": "National Gallery of Victoria (NGV) Fashion",
-            "url": "https://www.ngv.vic.gov.au/explore/collection/management/fashion-and-textiles",
-            "description": "墨尔本 NGV 博物馆，拥有出色的当代先锋高定与国"
-          },
-          {
-            "name": "Texas Fashion Collection (TFC)",
-            "url": "https://tfc.unt.edu",
-            "description": "北德克萨斯大学时尚收藏库"
-          },
-          {
-            "name": "Indianapolis Museum of Art Fashion",
-            "url": "https://discovernewfields.org/art/collections/fashion-arts",
-            "description": "印第安纳波利斯艺术博物馆"
-          },
-          {
-            "name": "Phoenix Art Museum Fashion Design",
-            "url": "https://phxart.org/art/collections/fashion-design",
-            "description": "菲尼克斯艺术博物馆，展示极具现代感的时装工程与高定"
-          },
-          {
-            "name": "Goldstein Museum of Design",
-            "url": "https://gmd.cdes.umn.edu",
-            "description": "明尼苏达大学戈德斯坦设计博物馆，关注日常服装"
-          },
-          {
-            "name": "Drexel Digital Museum Fashion Events",
-            "url": "https://www.drexel.edu/westphal/resources/digital-museum",
-            "description": "德雷塞尔大学时尚数字博物馆"
-          },
-          {
-            "name": "Museum of Applied Arts and Sciences (MAAS) Fashion",
-            "url": "https://maas.museum/fashion",
-            "description": "悉尼应用艺术与科学博物馆"
-          },
-          {
-            "name": "Design Museum London Fashion",
-            "url": "https://designmuseum.org/exhibitions/fashion",
-            "description": "伦敦设计博物馆时尚专栏，探讨现代服装工程"
-          },
-          {
-            "name": "Cooper Hewitt Smithsonian Design Museum",
-            "url": "https://www.cooperhewitt.org",
-            "description": "史密森尼库珀·休伊特设计博物馆，专注于图案设计"
-          },
-          {
-            "name": "Museum of Arts and Design (MAD) Textiles",
-            "url": "https://madmuseum.org",
-            "description": "纽约艺术与设计博物馆，聚焦手工面料"
-          },
-          {
-            "name": "Costume Society of America (CSA)",
-            "url": "https://costumesocietyamerica.com",
-            "description": "美国服装学会，发布服装史研究论文"
-          },
-          {
-            "name": "Costume Society UK",
-            "url": "https://costumesociety.org.uk",
-            "description": "英国服装学会，专注于英国及欧洲纺织品与服装历史保护"
-          },
-          {
-            "name": "Fashion History Timeline (FIT)",
-            "url": "https://fashionhistory.fitnyc.edu",
-            "description": "FIT 打造的开源时尚史时间线"
-          },
-          {
-            "name": "Commercial Pattern Archive (CoPA)",
-            "url": "https://copa.uri.edu",
-            "description": "罗德岛大学商业版型档案馆"
-          },
-          {
-            "name": "Textile Museum Washington D.C.",
-            "url": "https://museum.gwu.edu",
-            "description": "华盛顿纺织品博物馆，藏有全球古老地毯"
-          },
-          {
-            "name": "Threads Magazine",
-            "url": "https://www.threadsmagazine.com",
-            "description": "专业高级裁缝、高级定制版型与缝纫工艺深度技术杂志。"
-          },
-          {
-            "name": "University of Fashion",
-            "url": "https://www.universityoffashion.com",
-            "description": "涵盖立裁、平面打版、时装画与高级缝纫工艺的在线教育"
-          },
-          {
-            "name": "Fashion Era History",
-            "url": "https://www.fashion-era.com",
-            "description": "详尽记录维多利亚时期、爱德华时期及 20"
-          },
-          {
-            "name": "We Wear Culture (Google Arts & Culture)",
-            "url": "https://artsandculture.google.com/project/fashion",
-            "description": "谷歌艺术与文化“时尚视角”"
-          },
-          {
-            "name": "Catwalk to Collection Archive",
-            "url": "https://www.catwalktocollection.com",
-            "description": "对比分析秀场样衣与最终商业量产版演变过程的学术档案"
-          }
-        ]
-      },
-      {
         "name": "工匠先锋 (161-200)",
         "links": [
           {
@@ -50787,497 +43703,64 @@ window.KISSTR_DATA = [
             "description": "川久保玲弟子二宫启创办，无缝线"
           }
         ]
-      }
-    ]
-  },
-  {
-    "name": "时尚期刊",
-    "icon": "📰",
-    "color": "linear-gradient(135deg, #6c5ce7, #a29bfe)",
-    "subcategories": [
+      },
       {
-        "name": "日本",
-        "enName": "Collection",
+        "name": "奢侈汽车",
         "links": [
           {
-            "name": "RoomClip",
-            "url": "https://roomclip.jp",
-            "description": "日本最大 UGC 家装社区"
+            "name": "Rolls-Royce",
+            "url": "https://www.rolls-roycemotorcars.com",
+            "description": "英国超豪华汽车品牌"
           },
           {
-            "name": "LIMIA",
-            "url": "https://limia.jp",
-            "description": "日本 DIY 手作、小空间硬装翻新与生活实操门户。"
+            "name": "Bentley",
+            "url": "https://www.bentleymotors.com",
+            "description": "英国豪华汽车品牌"
           },
           {
-            "name": "Houzz Japan",
-            "url": "https://www.houzz.jp",
-            "description": "专注于狭长地形、极小卫浴干湿分离与和室改造。"
+            "name": "Ferrari",
+            "url": "https://www.ferrari.com",
+            "description": "意大利豪华跑车品牌"
           },
           {
-            "name": "100%Life",
-            "url": "https://100life.jp",
-            "description": "专注于日本个人独栋与公寓的理想住宅改造记录。"
+            "name": "Lamborghini",
+            "url": "https://www.lamborghini.com",
+            "description": "意大利超级跑车品牌"
           },
           {
-            "name": "MUJI Renovation",
-            "url": "https://www.muji.com/jp/renovation",
-            "description": "无印良品官方一站式住宅改造与标准化空间设计。"
-          },
-          {
-            "name": "re-house",
-            "url": "https://www.rehouse.co.jp",
-            "description": "日本三井不动产旗下的旧房翻新与户型重组实战案例库。"
-          },
-          {
-            "name": "Renoveru (リノベる。)",
-            "url": "https://www.renoveru.jp",
-            "description": "日本非常著名的中古二手房全包改造与平面图解析网。"
-          },
-          {
-            "name": "Freedom Architect",
-            "url": "https://www.freedom.co.jp",
-            "description": "日本知名建筑事务所，提供海量狭小住宅与现代日式住宅"
-          },
-          {
-            "name": "Cowcamo",
-            "url": "https://cowcamo.jp",
-            "description": "日本专注于东京都市二手公寓翻新与个性化空间设计的平"
-          },
-          {
-            "name": "Sumai Kufu (すまいステップ)",
-            "url": "https://sumai-kufu.com",
-            "description": "日本实用家装避坑、工程预算评估与布局优化媒体。"
+            "name": "Porsche",
+            "url": "https://www.porsche.com",
+            "description": "德国豪华跑车和汽车品牌"
           }
         ]
       },
       {
-        "name": "韩国",
-        "enName": "Collection",
+        "name": "奢侈酒店",
         "links": [
           {
-            "name": "Today's House (오늘의집)",
-            "url": "https://ohou.se",
-            "description": "韩国现象级第一家装平台，汇集海量韩系奶油风"
+            "name": "Aman",
+            "url": "https://www.aman.com",
+            "description": "全球顶级奢华度假酒店品牌"
           },
           {
-            "name": "Zipdoc (집닥)",
-            "url": "https://zipdoc.co.kr",
-            "description": "韩国知名的一站式装修匹配与施工监督服务平台"
+            "name": "Four Seasons",
+            "url": "https://www.fourseasons.com",
+            "description": "全球高端酒店和度假村品牌"
           },
           {
-            "name": "HouseApp (하우스앱)",
-            "url": "https://www.houseapp.co.kr",
-            "description": "专注于韩国公寓(Apartment)户型改造"
+            "name": "Rosewood Hotels",
+            "url": "https://www.rosewoodhotels.com",
+            "description": "全球奢华酒店和度假品牌"
           },
           {
-            "name": "Design DB (한국디자인진흥원)",
-            "url": "https://www.designdb.com",
-            "description": "韩国设计振兴院官方智库，包含大量韩国前沿室内与空间"
+            "name": "Mandarin Oriental",
+            "url": "https://www.mandarinoriental.com",
+            "description": "全球高端酒店和奢华服务品牌"
           },
           {
-            "name": "Zipdeco (집데코)",
-            "url": "https://www.zipdeco.co.kr",
-            "description": "韩国专业的室内设计与装修工程案例归档平台"
-          },
-          {
-            "name": "M-Architecture / Design Press",
-            "url": "https://blog.naver.com/designpress2016",
-            "description": "Naver 旗下的设计专栏"
-          },
-          {
-            "name": "Homify Korea",
-            "url": "https://www.homify.co.kr",
-            "description": "Homify 韩国站，侧重韩国独栋住宅"
-          },
-          {
-            "name": "Interni & Decor Korea",
-            "url": "http://www.internidecor.com",
-            "description": "韩国老牌室内设计与商业/住宅空间杂志官网。"
-          },
-          {
-            "name": "Casaliving",
-            "url": "https://www.casa.co.kr",
-            "description": "韩国高级住宅、高端软装与现代生活方式专业媒体。"
-          },
-          {
-            "name": "Space Magazine (공간)",
-            "url": "https://vmspace.com",
-            "description": "韩国历史最悠久的建筑与室内空间学术级大刊。"
-          }
-        ]
-      },
-      {
-        "name": "新加坡",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Qanvast",
-            "url": "https://qanvast.com/sg",
-            "description": "新加坡最大的室内设计匹配平台"
-          },
-          {
-            "name": "RenoNation",
-            "url": "https://www.renonation.sg",
-            "description": "新加坡老牌家装指南，包含极其详尽的 HDB"
-          },
-          {
-            "name": "HomeRenoGuru",
-            "url": "https://www.homerenoguru.sg",
-            "description": "新加坡主流一站式装修门户"
-          },
-          {
-            "name": "SquareRooms",
-            "url": "https://squarerooms.com.sg",
-            "description": "专注于新加坡中极小空间利用"
-          },
-          {
-            "name": "Lookbox Living",
-            "url": "https://www.lookboxliving.com.sg",
-            "description": "新加坡中高端住宅设计媒体"
-          },
-          {
-            "name": "Indesignlive Asia",
-            "url": "https://www.indesignlive.sg",
-            "description": "新加坡及东南亚顶尖室内建筑与现代热带空间设计智库。"
-          },
-          {
-            "name": "The Interior Lab",
-            "url": "https://www.theinteriorlab.com.sg",
-            "description": "新加坡本土知名设计事务所"
-          },
-          {
-            "name": "Dwell Asia",
-            "url": "https://dwell.asia",
-            "description": "聚焦新加坡及东南亚高品质住宅"
-          },
-          {
-            "name": "Cozypods / Stacked Homes",
-            "url": "https://stackedhomes.com",
-            "description": "新加坡房产与室内设计媒体"
-          },
-          {
-            "name": "Design Anthology Asia",
-            "url": "https://designanthology.com",
-            "description": "总部位于香港/新加坡的亚洲高端设计大刊"
-          }
-        ]
-      },
-      {
-        "name": "中国台湾",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "100室内设计(中国台湾)",
-            "url": "https://www.100.com.tw",
-            "description": "华语圈极高质量实操平台，专注小户型拆改与动线图解。"
-          },
-          {
-            "name": "DECOmyplace(中国台湾)",
-            "url": "https://decomyplace.com",
-            "description": "汇聚全球真实家居改造经验与性价比软装。"
-          },
-          {
-            "name": "设计家 Searchome(中国台湾)",
-            "url": "https://www.searchome.net",
-            "description": "老牌室内设计门户，包含海量格局拆改与建材知识。"
-          },
-          {
-            "name": "幸福空间(中国台湾)",
-            "url": "https://www.hhh.com.tw",
-            "description": "中国台湾知名影音与图文家装平台"
-          },
-          {
-            "name": "iFuzion 🏠 住宅美学(中国台湾)",
-            "url": "https://www.lmg.com.tw",
-            "description": "侧重中高端住宅、材质搭配与空间光影设计。"
-          },
-          {
-            "name": "Living&Design 住宅出版(中国台湾)",
-            "url": "https://www.livingntrend.com",
-            "description": "汇集台湾地区优秀设计师落地作品与国际建材趋势。"
-          },
-          {
-            "name": "mababy / 常春藤家装专栏",
-            "url": "https://www.idshow.com.tw",
-            "description": "专注于室内设计风格分类与建材施工工法解析。"
-          },
-          {
-            "name": "DG LIFESTYLE(中国台湾)",
-            "url": "https://www.dglife.com.tw",
-            "description": "侧重现代极简、工业风与智能家居落地方案。"
-          },
-          {
-            "name": "DECO TV(中国台湾)",
-            "url": "https://decotv.com.tw",
-            "description": "提供大量高画质室内设计案例视频与空间配置解说。"
-          },
-          {
-            "name": "Spacepic(中国台湾)",
-            "url": "https://www.spacepic.com",
-            "description": "专注于设计师作品展示与真实装修开箱。"
-          }
-        ]
-      },
-      {
-        "name": "全球风格补充",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "The Design Files(澳大利亚)",
-            "url": "https://thedesignfiles.net",
-            "description": "澳洲最大住宅设计网，主打采光、植物与自然混搭风。"
-          },
-          {
-            "name": "Hunting for George(澳大利亚)",
-            "url": "https://www.huntingforgeorge.com",
-            "description": "侧重澳洲阳光住宅、房屋翻新与视频实拍。"
-          },
-          {
-            "name": "Vogue Living (AU)",
-            "url": "https://www.vogue.com.au/vogue-living",
-            "description": "澳洲版 Vogue 家居，高饱和度自然奢华美学。"
-          },
-          {
-            "name": "Casa Vogue (Brazil/Latin America)",
-            "url": "https://casavogue.globo.com",
-            "description": "南美洲/巴西顶级设计网，主打热带狂野"
-          },
-          {
-            "name": "AD Middle East",
-            "url": "https://www.admiddleeast.com",
-            "description": "中东版 AD，主打现代奢华"
-          },
-          {
-            "name": "Yellowtrace(澳大利亚)",
-            "url": "https://www.yellowtrace.com.au",
-            "description": "全球先锋室内设计与艺术空间智库"
-          },
-          {
-            "name": "Est Living(澳大利亚)",
-            "url": "https://www.estliving.com",
-            "description": "主打极简主义、原始材质(混凝土/原木/石材)的奢华"
-          },
-          {
-            "name": "Elle Decoration UK",
-            "url": "https://www.elledecoration.co.uk",
-            "description": "英伦现代前沿软装与先锋家居设计标杆。"
-          },
-          {
-            "name": "Casacor(巴西/拉美)",
-            "url": "https://casacor.abril.com.br",
-            "description": "拉美最大的室内设计展官网"
-          },
-          {
-            "name": "Frame Magazine(荷兰/全球)",
-            "url": "https://frameweb.com",
-            "description": "荷兰权威室内空间设计智库"
-          }
-        ]
-      },
-      {
-        "name": "美式现代与实用主义",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Apartment Therapy",
-            "url": "https://www.apartmenttherapy.com",
-            "description": "全球最大中小户型与真实改造灵感库。"
-          },
-          {
-            "name": "The Spruce",
-            "url": "https://www.thespruce.com",
-            "description": "北美最庞大的硬装维修与工程干货指南。"
-          },
-          {
-            "name": "Remodelista",
-            "url": "https://www.remodelista.com",
-            "description": "专注于厨房、卫浴拆改与建材细节。"
-          },
-          {
-            "name": "House Beautiful",
-            "url": "https://www.housebeautiful.com",
-            "description": "美国家喻户晓的经典家装与色彩搭配大刊。"
-          },
-          {
-            "name": "Better Homes & Gardens",
-            "url": "https://www.bhg.com",
-            "description": "实用型家庭装修、软装布局与空间预算指南。"
-          },
-          {
-            "name": "This Old House",
-            "url": "https://www.thisoldhouse.com",
-            "description": "硬核老房翻新、水电管线与结构施工工匠网。"
-          },
-          {
-            "name": "Bob Vila",
-            "url": "https://www.bobvila.com",
-            "description": "家庭修缮、防潮隔音与硬装工具技术百科。"
-          },
-          {
-            "name": "Architectural Digest (AD US)",
-            "url": "https://www.architecturaldigest.com",
-            "description": "高端住宅与明星大宅设计标杆。"
-          },
-          {
-            "name": "Dwell",
-            "url": "https://www.dwell.com",
-            "description": "专注于北美现代中世纪(Mid-Century)与预"
-          },
-          {
-            "name": "Style by Emily Henderson",
-            "url": "https://emilyhenderson.com",
-            "description": "北美极具影响力的软装搭配与配色实操博客。"
-          }
-        ]
-      },
-      {
-        "name": "英伦复古与现代混搭",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Homes & Gardens (UK)",
-            "url": "https://www.homesandgardens.com",
-            "description": "英国历史悠久的房屋翻新与狭长户型改造网。"
-          },
-          {
-            "name": "Ideal Home (UK)",
-            "url": "https://www.idealhome.co.uk",
-            "description": "英国大众实操家装、小空间改造方案建议。"
-          },
-          {
-            "name": "House & Garden UK",
-            "url": "https://www.houseandgarden.co.uk",
-            "description": "英式乡村风(Cottage"
-          }
-        ]
-      },
-      {
-        "name": "法式法典与优雅轻奢",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Planete Deco",
-            "url": "https://www.planete-deco.fr",
-            "description": "每日更新欧洲真实公寓案例，附带精细平面图。"
-          },
-          {
-            "name": "Côté Maison",
-            "url": "https://www.cotemaison.fr",
-            "description": "法国顶尖家装生活方式网，主打法式公寓与老房改造。"
-          },
-          {
-            "name": "Marie Claire Maison",
-            "url": "https://www.marieclaire.fr/maison",
-            "description": "法式前锋软装、色彩搭配与材质碰撞灵感库。"
-          }
-        ]
-      },
-      {
-        "name": "意式极简与奢华现代",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Interni Magazine",
-            "url": "https://www.internimagazine.com",
-            "description": "意式家具设计、高端室内空间与家具工艺标杆。"
-          },
-          {
-            "name": "Living Corriere",
-            "url": "https://living.corriere.it",
-            "description": "意大利《晚邮报》旗下高端室内设计与生活方式门户。"
-          },
-          {
-            "name": "Domus",
-            "url": "https://www.domusweb.it",
-            "description": "意大利权威建筑与高级室内空间设计智库。"
-          }
-        ]
-      },
-      {
-        "name": "北欧极简与自然温润",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "Alvhem Brokerage & Interior",
-            "url": "https://alvhem.com",
-            "description": "瑞典真实住宅改造实景，研究采光与收纳必看。"
-          },
-          {
-            "name": "My Scandinavian Home",
-            "url": "https://www.myscandinavianhome.com",
-            "description": "专注于北欧真实普通住宅的改造与极简软装。"
-          },
-          {
-            "name": "Residence Magazine",
-            "url": "https://www.residencemagazine.se",
-            "description": "北欧高端住宅、极简大平层与设计师大宅案例。"
-          },
-          {
-            "name": "Designhunter (Nordic)",
-            "url": "https://www.designhunter.co.uk",
-            "description": "侧重北欧极简风与极简家具选购指南。"
-          },
-          {
-            "name": "Trendenser",
-            "url": "https://trendenser.se",
-            "description": "瑞典知名家居博客，专注于北欧人本主义设计法则与避坑"
-          },
-          {
-            "name": "Elisabeth Heier",
-            "url": "https://elisabethheier.no",
-            "description": "挪威极简主义室内设计与高冷色调空间搭配示范。"
-          },
-          {
-            "name": "Nordic Design",
-            "url": "https://nordicdesign.ca",
-            "description": "汇集北欧各地(丹麦/瑞典/芬兰)极简住宅与建筑改造"
-          },
-          {
-            "name": "Coco Lapine Design",
-            "url": "https://cocolapinedesign.com",
-            "description": "专注于黑白灰低饱和度北欧小户型布置。"
-          },
-          {
-            "name": "Bjurfor",
-            "url": "https://www.bjurfors.se",
-            "description": "瑞典房产机构，展示海量原汁原味的哥德堡/斯德哥尔摩"
-          },
-          {
-            "name": "Fantastic Frank",
-            "url": "https://www.fantasticfrank.se",
-            "description": "将北欧住宅摄影与室内设计做到艺术级别的展示平台。"
-          }
-        ]
-      },
-      {
-        "name": "户型拆改与建筑空间",
-        "enName": "Collection",
-        "links": [
-          {
-            "name": "ArchDaily (Residential)",
-            "url": "https://www.archdaily.com/category/residential-interiors",
-            "description": "案例均附带极其精准的平面图(Floor"
-          },
-          {
-            "name": "Dezeen (Interiors)",
-            "url": "https://www.dezeen.com/interiors",
-            "description": "全球先锋室内设计与概念空间图库。"
-          },
-          {
-            "name": "Designboom",
-            "url": "https://www.designboom.com",
-            "description": "全球首个工业设计与前沿建筑室内在线杂志。"
-          },
-          {
-            "name": "Archello",
-            "url": "https://archello.com",
-            "description": "主打建筑师与施工方材料清单(Spec)对照的专业落"
-          },
-          {
-            "name": "Floorplanner Community",
-            "url": "https://floorplanner.com",
-            "description": "全球在线户型绘制与布局方案交流库。"
+            "name": "The Ritz-Carlton",
+            "url": "https://www.ritzcarlton.com",
+            "description": "国际高端奢华酒店品牌"
           }
         ]
       }
@@ -55453,8419 +47936,6 @@ window.KISSTR_DATA = [
     ]
   },
   {
-    "name": "聚合索引",
-    "icon": "🧭",
-    "color": "linear-gradient(135deg, #0071e3, #8e2de2)",
-    "subcategories": [
-      {
-        "name": "精选推荐",
-        "enName": "Featured",
-        "links": [
-          {
-            "name": "龙轩导航",
-            "url": "http://ilxdh.com/cat/171",
-            "description": "龙轩导航 - 发现精彩网络世界"
-          },
-          {
-            "name": "iMyShare",
-            "url": "https://imyshare.com/",
-            "description": "分享各种令人惊艳的软件工具神器"
-          },
-          {
-            "name": "果汁导航",
-            "url": "http://guozhivip.com/",
-            "description": "果汁导航 - 你的上网首页"
-          },
-          {
-            "name": "龙喵导航",
-            "url": "http://ailongmiao.com/",
-            "description": "龙喵导航 - 简洁好用的网址导航"
-          },
-          {
-            "name": "TOP123导航",
-            "url": "https://123.topstip.com/",
-            "description": "TOP123导航 - 网址导航"
-          },
-          {
-            "name": "终极导航",
-            "url": "https://www.zjnav.com/",
-            "description": "终极导航 - 优质网站导航"
-          },
-          {
-            "name": "凌凌柒啦导航",
-            "url": "https://www.007la.com/",
-            "description": "凌凌柒啦导航 - 网址导航"
-          },
-          {
-            "name": "冷猫导航站",
-            "url": "https://www.lengcat.cn/",
-            "description": "冷猫导航站 - 网址导航"
-          },
-          {
-            "name": "青禾导航",
-            "url": "https://www.qinghedaohang.com/",
-            "description": "青禾导航 - 简洁导航"
-          },
-          {
-            "name": "小爆虾",
-            "url": "https://xiaobaoxia.com/",
-            "description": "小爆虾 - 动漫导航"
-          },
-          {
-            "name": "搜奇AI导航",
-            "url": "https://www.sjsdh.cn/",
-            "description": "搜奇AI导航 - 精选优质网站"
-          },
-          {
-            "name": "ACGN导航",
-            "url": "https://acgn.cn/",
-            "description": "ACGN导航 - ACG资源导航"
-          },
-          {
-            "name": "ACG导航网",
-            "url": "https://www.iseacg.com/",
-            "description": "ACG导航网 - ACG资源导航"
-          },
-          {
-            "name": "ACG导航",
-            "url": "https://acgtop.net/",
-            "description": "ACG导航 - 动漫游戏导航"
-          },
-          {
-            "name": "硬核影视指南",
-            "url": "https://yingheapp.com/",
-            "description": ""
-          },
-          {
-            "name": "好狗电影导航",
-            "url": "https://www.howgo.cc/",
-            "description": "好狗电影导航 - 影视资源"
-          },
-          {
-            "name": "摸鱼导航",
-            "url": "https://moyu.games/",
-            "description": "摸鱼导航 - 游戏娱乐导航"
-          },
-          {
-            "name": "Windows XP 专业版",
-            "url": "https://win32.run/",
-            "description": "Windows XP 网页模拟器"
-          },
-          {
-            "name": "NSFW",
-            "url": "https://quenq.com/nsfw/",
-            "description": "不适合在工作场所打开/观看"
-          }
-        ]
-      },
-      {
-        "name": "工具集合",
-        "enName": "Collections",
-        "links": [
-          {
-            "name": "skill工具集",
-            "url": "https://hub.cocoloop.cn/",
-            "description": "Cocoloop技能工具集合"
-          }
-        ]
-      },
-      {
-        "name": "AI导航",
-        "enName": "AI Navigation",
-        "links": [
-          {
-            "name": "AI工具集",
-            "url": "https://ai-bot.cn",
-            "description": "国内外全品类AI工具综合聚合"
-          },
-          {
-            "name": "AMZ123跨境AI导航",
-            "url": "https://www.amz123.com/ai",
-            "description": "专注电商、跨境卖家与文案运营"
-          },
-          {
-            "name": "鱼皮AI导航",
-            "url": "https://ai.codefather.cn",
-            "description": "包含提示词、课程与全套项目教程"
-          },
-          {
-            "name": "xx025/carrot",
-            "url": "https://cc.ai55.cc/",
-            "description": "GitHub开源项目，主打免费模型镜像与实用工具"
-          },
-          {
-            "name": "发现AI",
-            "url": "https://www.faxianai.com",
-            "description": "一站式涵盖办公、设计、编程与对话产品"
-          },
-          {
-            "name": "优设AI工具导航",
-            "url": "https://ai.uisdc.com",
-            "description": "优设网旗下，侧重设计、创作应用与趋势教程"
-          },
-          {
-            "name": "AIGC工具导航",
-            "url": "https://www.aigc.cn",
-            "description": "全品类生成式AI公共服务与应用商店"
-          },
-          {
-            "name": "360AI导航",
-            "url": "https://ai.hao.360.com",
-            "description": "360旗下，包含趣站、开放平台与开源项目"
-          },
-          {
-            "name": "AI导航网",
-            "url": "https://www.ai-dh.com",
-            "description": "精选前沿生产力与效率工具"
-          },
-          {
-            "name": "霖明导航",
-            "url": "https://n.mumingfang.com/ai",
-            "description": "分类清晰，涵盖写作、绘图与音频工具"
-          },
-          {
-            "name": "Toolify.ai",
-            "url": "https://www.toolify.ai",
-            "description": "检索海量工具与GPTs，AI自动更新趋势"
-          },
-          {
-            "name": "UIED AI工具导航",
-            "url": "https://hao.uied.cn",
-            "description": "面向设计师、开发者与视觉创作者"
-          },
-          {
-            "name": "考拉AI导航",
-            "url": "https://ai.kaolamedia.com",
-            "description": "专为新媒体运营与自媒体打造"
-          },
-          {
-            "name": "ailetsgo",
-            "url": "https://ailetsgo.cn",
-            "description": "超过6500+AI网站与模型的超大索引库"
-          },
-          {
-            "name": "66ai导航",
-            "url": "https://66aidh.com",
-            "description": "特色主打AI配音、声音转换与音频生成"
-          },
-          {
-            "name": "aigcbb",
-            "url": "https://www.aigcbb.com",
-            "description": "适合AI学习者与从业者的实用网址集"
-          },
-          {
-            "name": "Aibase",
-            "url": "https://top.aibase.com/topic/导航",
-            "description": "收录7000+AI产品与智能助手推荐"
-          },
-          {
-            "name": "defagi",
-            "url": "https://nav.defagi.com",
-            "description": "侧重开发者、深度学习框架、数据集与开源模型"
-          },
-          {
-            "name": "M123跨境工具导航",
-            "url": "https://ai.m123.com",
-            "description": "跨境工具与免费对话模型全套指南"
-          },
-          {
-            "name": "AIHub",
-            "url": "https://www.aihub.cn",
-            "description": "高质量中文化AI工具与应用导航"
-          },
-          {
-            "name": "墨路遥AIGC导航",
-            "url": "https://ai.moluyao.wang",
-            "description": "汇总1000+营销、搜索与智能体工具"
-          },
-          {
-            "name": "ai135精选导航",
-            "url": "https://ai135.cn",
-            "description": "全球精品AI软件快速筛选"
-          },
-          {
-            "name": "AI之家",
-            "url": "https://aiones.cn",
-            "description": "支持新品发现、设计办公与一键写论文"
-          },
-          {
-            "name": "深度导航",
-            "url": "https://www.deepdh.com/ai",
-            "description": "结合聊天、绘画、游戏与教程的二级导航"
-          },
-          {
-            "name": "AI之旅导航",
-            "url": "https://www.aijourney.vip",
-            "description": "一站式AI工具集与技术内容平台"
-          },
-          {
-            "name": "CG导航",
-            "url": "https://hao.shenyecg.com/Ai",
-            "description": "专为CG艺术制作与视觉创作者服务"
-          },
-          {
-            "name": "Doingfb AI导航",
-            "url": "https://tools.doingfb.com",
-            "description": "1000+国内外优质效率工具推荐"
-          },
-          {
-            "name": "Navtools.ai",
-            "url": "https://navtools.ai",
-            "description": "人工智能工具发现与检索"
-          },
-          {
-            "name": "曼巴比特",
-            "url": "https://mambabit.com",
-            "description": "匹配各类工作任务的AI工具"
-          },
-          {
-            "name": "Gpt Demo",
-            "url": "https://gptdemo.net",
-            "description": "生成式AI与GPTs应用示范集合"
-          },
-          {
-            "name": "Toolkitly",
-            "url": "https://toolkitly.com",
-            "description": "个人与团队生产力AI工具库"
-          },
-          {
-            "name": "Startup Ai Tools",
-            "url": "https://startupaitools.com",
-            "description": "初创AI产品与独立开发者项目目录"
-          },
-          {
-            "name": "TheBestTools.ai",
-            "url": "https://thebesttools.ai",
-            "description": "优质AI工具筛选与发现"
-          },
-          {
-            "name": "AI TOP100",
-            "url": "https://aitop100.cn",
-            "description": "国内AI资讯、工具及AIGC大赛平台"
-          },
-          {
-            "name": "比特智能AI导航",
-            "url": "https://www.bitaigpt.com/",
-            "description": "智能对话与实用工具集成"
-          },
-          {
-            "name": "MeoAI",
-            "url": "https://meoai.net",
-            "description": "17000+全球AI工具集合"
-          },
-          {
-            "name": "好导航94c",
-            "url": "https://ai.94c.cn",
-            "description": "包含免费镜像站与绘画工具"
-          },
-          {
-            "name": "Tool List Ai",
-            "url": "https://toollist.ai",
-            "description": "实用AI工具分类检索"
-          },
-          {
-            "name": "未来百科",
-            "url": "https://www.weilaibaike.com",
-            "description": "发现全球优质AI产品的百科型导航"
-          },
-          {
-            "name": "AI Valley",
-            "url": "https://aivalley.ai",
-            "description": "深度AI资源与前沿产品库"
-          },
-          {
-            "name": "图钉AI导航网",
-            "url": "https://tudingai.com",
-            "description": "轻量实用工具导航"
-          },
-          {
-            "name": "AI研究所",
-            "url": "https://aiyanjiusuo.com",
-            "description": "AI行业工具、资讯与趋势聚合"
-          },
-          {
-            "name": "AI导航",
-            "url": "https://www.ainav.cn",
-            "description": "前沿AI产品直达"
-          },
-          {
-            "name": "AI工具导航",
-            "url": "https://aigc.nav.cn",
-            "description": "实用分类AI资源"
-          },
-          {
-            "name": "图翼AI导航",
-            "url": "https://www.tuyuai.com",
-            "description": "综合性AIGC工具集合"
-          },
-          {
-            "name": "AI Depot",
-            "url": "https://aidepot.co",
-            "description": "新潮AI工具每日发现"
-          },
-          {
-            "name": "AI Tool Hunt",
-            "url": "https://www.aitoolhunt.com",
-            "description": "全网AI软件索引清单"
-          },
-          {
-            "name": "AI Tool Navigation",
-            "url": "https://aitoolnavigation.com",
-            "description": "分类AI工具推荐"
-          },
-          {
-            "name": "ExplainThis",
-            "url": "https://explainthis.io",
-            "description": "AI开发与效能工具"
-          },
-          {
-            "name": "TopAI Tools",
-            "url": "https://topai.tools",
-            "description": "热门AI工具排行榜与索引"
-          },
-          {
-            "name": "爱潮流AI",
-            "url": "https://aichaodian.com",
-            "description": "潮流与综合AI网站导航"
-          },
-          {
-            "name": "飞客AI",
-            "url": "https://feizhuke.com",
-            "description": "实用AI应用分享平台"
-          },
-          {
-            "name": "iForAI",
-            "url": "https://iforai.com",
-            "description": "精选AI导航平台"
-          },
-          {
-            "name": "0mo AI导航",
-            "url": "https://0mo.com",
-            "description": "综合网址大全"
-          },
-          {
-            "name": "Cool Tools",
-            "url": "https://cooltools.top",
-            "description": "实用网页工具与AI推荐"
-          },
-          {
-            "name": "SaaS AI Tools",
-            "url": "https://saasaitools.com",
-            "description": "SaaS模式AI应用集合"
-          },
-          {
-            "name": "AI导航星",
-            "url": "https://ainavstar.com",
-            "description": "⚠️需特殊网络 | 1万+海外AI工具，200+细分领域"
-          },
-          {
-            "name": "Creaitives",
-            "url": "https://creaitives.com",
-            "description": "⚠️需特殊网络 | 海外大型AI工具与创意数据库"
-          },
-          {
-            "name": "Futurepedia",
-            "url": "https://www.futurepedia.io",
-            "description": "⚠️需特殊网络 | 全球知名且更新极快的AI发现平台"
-          },
-          {
-            "name": "AIAGC",
-            "url": "https://aiagc.com",
-            "description": "⚠️需特殊网络 | 海外综合AIGC资源导航"
-          },
-          {
-            "name": "TopTools",
-            "url": "https://toptools.ai",
-            "description": "⚠️需特殊网络 | 海外AI目录与工具探索"
-          },
-          {
-            "name": "Future Tools",
-            "url": "https://www.futuretools.io",
-            "description": "⚠️需特殊网络 | 知名海外AI筛选平台，支持按功能精准搜寻"
-          },
-          {
-            "name": "EasyWithAI",
-            "url": "https://easywithai.com",
-            "description": "⚠️需特殊网络 | 主打零门槛易用的海外AI工具集合"
-          },
-          {
-            "name": "AllThingsAI",
-            "url": "https://allthingsai.com",
-            "description": "⚠️需特殊网络 | 全球AI软件测评与分类导航"
-          },
-          {
-            "name": "AI Tools Directory",
-            "url": "https://aitoolsdirectory.com",
-            "description": "⚠️需特殊网络 | 全球AI软件及工具索引库"
-          }
-        ]
-      },
-      {
-        "name": "软件工具",
-        "enName": "Software",
-        "links": [
-          {
-            "name": "优软汇",
-            "url": "https://www.youruanhui.com/",
-            "description": "优软汇 - 软件资源分享"
-          },
-          {
-            "name": "爱资料工具",
-            "url": "https://www.toolnb.com/",
-            "description": "在线工具大全"
-          },
-          {
-            "name": "飞鱼盘搜",
-            "url": "http://feiyu100.cn/",
-            "description": "飞鱼盘搜 - 网盘搜索利器"
-          },
-          {
-            "name": "阿酷杂货铺",
-            "url": "https://www.coolexe.com/",
-            "description": "阿酷杂货铺 - 软件分享"
-          },
-          {
-            "name": "枫音应用",
-            "url": "https://www.fy6b.com/",
-            "description": "枫音应用 - 软件推荐"
-          },
-          {
-            "name": "爱达杂货铺",
-            "url": "https://zypuu.com/",
-            "description": "收集那些有用的东西"
-          },
-          {
-            "name": "刘在野工具箱",
-            "url": "https://tool.liumingye.cn/",
-            "description": "刘在野工具箱 - 在线工具集合"
-          },
-          {
-            "name": "实用工具分享达人",
-            "url": "https://dartools.com/",
-            "description": "实用工具分享达人 - 网站资源导航"
-          },
-          {
-            "name": "马小帮",
-            "url": "https://www.maxiaobang.com/",
-            "description": "马小帮 - 实用工具导航"
-          },
-          {
-            "name": "聚神铺导航",
-            "url": "https://www.jspoo.com/",
-            "description": "聚神铺导航 - 聚合型导航网站"
-          },
-          {
-            "name": "蓝点网导航",
-            "url": "https://landian.vip/",
-            "description": "蓝点网导航 - 科技资讯"
-          },
-          {
-            "name": "老D导航",
-            "url": "https://laod.cn/",
-            "description": "老D导航 - 实用工具"
-          },
-          {
-            "name": "工具箱网址导航",
-            "url": "https://tools.voidke.com/book",
-            "description": ""
-          },
-          {
-            "name": "开源资源档案库",
-            "url": "https://fmhy.net/",
-            "description": ""
-          },
-          {
-            "name": "423软件下载",
-            "url": "https://www.423down.com/",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "name": "学习设计",
-        "enName": "Learning & Design",
-        "links": [
-          {
-            "name": "图欧学习资源导航",
-            "url": "http://tuostudy.upnb.top/",
-            "description": "上万款学习生活办公娱乐资源免费无偿分享"
-          },
-          {
-            "name": "精选设计导航",
-            "url": "https://hao.58pic.com/",
-            "description": "设计师必备网址导航"
-          },
-          {
-            "name": "AboutPPT导航",
-            "url": "https://www.aboutppt.com/",
-            "description": "PPT演示设计网址导航"
-          },
-          {
-            "name": "完美网址导航",
-            "url": "https://www.9eip.com/",
-            "description": "好用好玩的网站推荐"
-          },
-          {
-            "name": "集知盒子",
-            "url": "https://www.jizhihezi.com/",
-            "description": "集知盒子 - 资源导航"
-          }
-        ]
-      },
-      {
-        "name": "资源社区",
-        "enName": "Resources & Community",
-        "links": [
-          {
-            "name": "宝儿盒",
-            "url": "https://baoerhe.cn/",
-            "description": "想你所想 及你所及"
-          },
-          {
-            "name": "迷鹿导航",
-            "url": "http://www.hifawn.com/",
-            "description": "迷鹿导航 - 发现更多精彩"
-          },
-          {
-            "name": "硬核指南",
-            "url": "https://yinghezhinan.com/",
-            "description": "硬核指南 - 资源导航"
-          },
-          {
-            "name": "乐享软件",
-            "url": "https://www.lxapk.com/apk/media",
-            "description": "乐享软件 - APK应用下载"
-          }
-        ]
-      },
-      {
-        "name": "极客发现",
-        "enName": "Geek Discovery",
-        "links": [
-          {
-            "name": "Product Hunt",
-            "url": "https://www.producthunt.com/",
-            "description": "全球新产品首发社区"
-          },
-          {
-            "name": "Uneed",
-            "url": "https://uneed.best/",
-            "description": "每日精选小众工具站"
-          },
-          {
-            "name": "MicroLaunch",
-            "url": "https://microlaunch.net/",
-            "description": "独立开发者产品首发榜"
-          },
-          {
-            "name": "BetaList",
-            "url": "https://betalist.com/",
-            "description": "初创产品早鸟站"
-          },
-          {
-            "name": "SideProjectors",
-            "url": "https://sideprojectors.com/",
-            "description": "副业项目买卖导航"
-          },
-          {
-            "name": "Makerlog",
-            "url": "https://getmakerlog.com/",
-            "description": "极客日常打卡社区"
-          },
-          {
-            "name": "Peerlist",
-            "url": "https://peerlist.io/",
-            "description": "设计师开发者作品集"
-          },
-          {
-            "name": "SaaS Wheel",
-            "url": "https://saaswheel.com/",
-            "description": "独立SaaS工具跟踪"
-          },
-          {
-            "name": "Hacker News",
-            "url": "https://news.ycombinator.com/",
-            "description": "全球最高含金量极客社区"
-          },
-          {
-            "name": "DevHunt",
-            "url": "https://devhunt.org/",
-            "description": "开发者工具首发平台"
-          },
-          {
-            "name": "SaaSHub",
-            "url": "https://saashub.com/",
-            "description": "独立软件客观对比导航"
-          },
-          {
-            "name": "DEV Community",
-            "url": "https://dev.to/",
-            "description": "全球最大开发者博客社区"
-          },
-          {
-            "name": "There's An AI For That",
-            "url": "https://theresanaiforthat.com/",
-            "description": "全球最全AI工具编年史"
-          },
-          {
-            "name": "Futurepedia",
-            "url": "https://futurepedia.io/",
-            "description": "AI工具分类大百科"
-          },
-          {
-            "name": "Dang AI",
-            "url": "https://dang.ai/",
-            "description": "高实用性AI项目聚合"
-          },
-          {
-            "name": "TopAI.tools",
-            "url": "https://topai.tools/",
-            "description": "AI生产力工具探索"
-          },
-          {
-            "name": "Awwwards",
-            "url": "https://www.awwwards.com/",
-            "description": "全球网页设计金奖殿堂"
-          },
-          {
-            "name": "CSS Design Awards",
-            "url": "https://www.cssdesignawards.com/",
-            "description": "前沿动效与CSS艺术"
-          },
-          {
-            "name": "Land-book",
-            "url": "https://land-book.com/",
-            "description": "全球最佳落地页灵感"
-          },
-          {
-            "name": "Godly",
-            "url": "https://godly.website/",
-            "description": "创意拉满的极客风格网站"
-          }
-        ]
-      },
-      {
-        "name": "资源导航",
-        "enName": "Resource Nav",
-        "links": [
-          {
-            "name": "异次元软件",
-            "url": "https://iplaysoft.com/",
-            "description": "异次元软件世界"
-          },
-          {
-            "name": "书签地球",
-            "url": "https://bookmarkearth.cn/",
-            "description": ""
-          },
-          {
-            "name": "开发者武器库",
-            "url": "https://devtool.tech/",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "name": "网络计算",
-        "enName": "Network & Calc",
-        "links": [
-          {
-            "name": "WolframAlpha",
-            "url": "https://www.wolframalpha.com/",
-            "description": "计算型知识引擎，推导计算科学问题"
-          },
-          {
-            "name": "Speedtest",
-            "url": "https://www.speedtest.net/",
-            "description": "检查网速"
-          },
-          {
-            "name": "Down For Everyone",
-            "url": "https://downforeveryoneorjustme.com/",
-            "description": "检查任何网站是否停机"
-          },
-          {
-            "name": "Flightradar24",
-            "url": "https://www.flightradar24.com/",
-            "description": "实时追踪任何航班"
-          },
-          {
-            "name": "CamelCamelCamel",
-            "url": "https://camelcamelcamel.com/",
-            "description": "追踪亚马逊价格历史"
-          },
-          {
-            "name": "热门网站排名",
-            "url": "https://www.similarweb.com/top-websites/",
-            "description": "SimilarWeb - 热门网站排名"
-          },
-          {
-            "name": "Google地图",
-            "url": "https://www.earthol.com/g/",
-            "description": ""
-          },
-          {
-            "name": "战争局势地图",
-            "url": "https://liveuamap.com/",
-            "description": "LiveUAMap - 战争局势地图"
-          }
-        ]
-      },
-      {
-        "name": "学术科研",
-        "enName": "Academic",
-        "links": [
-          {
-            "name": "Semantic Scholar",
-            "url": "https://www.semanticscholar.org/",
-            "description": "AI驱动的免费学术搜索引擎"
-          },
-          {
-            "name": "Consensus",
-            "url": "https://consensus.app/",
-            "description": "基于科学研究提炼科学共识"
-          },
-          {
-            "name": "Elicit",
-            "url": "https://elicit.org/",
-            "description": "AI学术论文助手，快速梳理文献"
-          },
-          {
-            "name": "SciSpace",
-            "url": "https://scispace.com/",
-            "description": "AI辅助阅读，快速理解论文"
-          },
-          {
-            "name": "Connected Papers",
-            "url": "https://www.connectedpapers.com/",
-            "description": "论文引用关系可视化知识图谱"
-          },
-          {
-            "name": "Google Scholar",
-            "url": "https://scholar.google.com/",
-            "description": "免费学术搜索引擎"
-          },
-          {
-            "name": "ChatPDF",
-            "url": "https://www.chatpdf.com/",
-            "description": "AI理解任何研究论文"
-          }
-        ]
-      },
-      {
-        "name": "图像设计",
-        "enName": "Image & Design",
-        "links": [
-          {
-            "name": "Photopea",
-            "url": "https://www.photopea.com/",
-            "description": "浏览器里的免费网页版Photoshop"
-          },
-          {
-            "name": "Squoosh",
-            "url": "https://squoosh.app/",
-            "description": "谷歌出品无损高效图像压缩工具"
-          },
-          {
-            "name": "remove.bg",
-            "url": "https://www.remove.bg/",
-            "description": "一键免费移除图片背景"
-          },
-          {
-            "name": "Unscreen",
-            "url": "https://www.unscreen.com/",
-            "description": "智能移除视频背景"
-          },
-          {
-            "name": "Cleanup.pictures",
-            "url": "https://cleanup.pictures/",
-            "description": "擦除照片中多余的物体或路人"
-          },
-          {
-            "name": "Shots.so",
-            "url": "https://shots.so/",
-            "description": "快速制作精美的产品套壳截图"
-          },
-          {
-            "name": "Smartmockups",
-            "url": "https://smartmockups.com/",
-            "description": "一键将设计图应用到实物模型"
-          },
-          {
-            "name": "TinEye",
-            "url": "https://tineye.com/",
-            "description": "专业的图片反向搜索工具"
-          },
-          {
-            "name": "Playground AI",
-            "url": "https://playground.com/",
-            "description": "免费无限生图，质量能打Midjourney"
-          },
-          {
-            "name": "Krea AI",
-            "url": "https://krea.ai/",
-            "description": "实时出图，边想边生成"
-          },
-          {
-            "name": "Bigjpg",
-            "url": "https://bigjpg.com/",
-            "description": "图片无损放大，细节自动补充"
-          },
-          {
-            "name": "Photoroom",
-            "url": "https://photoroom.com/",
-            "description": "一键抠图、补光、去物体"
-          },
-          {
-            "name": "Clipdrop",
-            "url": "https://clipdrop.co/",
-            "description": "一键抠图，瞬间出效果"
-          },
-          {
-            "name": "Remaker AI",
-            "url": "https://remaker.ai/",
-            "description": "AI换脸，分钟级快速"
-          },
-          {
-            "name": "Canva 可画",
-            "url": "https://www.canva.cn/",
-            "description": "在线平面设计工具"
-          },
-          {
-            "name": "在线PS",
-            "url": "https://www.gaoding.com/",
-            "description": "稿定设计-在线图片编辑"
-          },
-          {
-            "name": "TinyPNG",
-            "url": "https://tinypng.com/",
-            "description": "智能PNG图片压缩"
-          },
-          {
-            "name": "图好快",
-            "url": "https://www.tuhaokuai.com/",
-            "description": "图片在线压缩工具"
-          }
-        ]
-      },
-      {
-        "name": "程序开发",
-        "enName": "Developer",
-        "links": [
-          {
-            "name": "Phind",
-            "url": "https://phind.com/",
-            "description": "专为开发者量身定制的AI搜索引擎"
-          },
-          {
-            "name": "Explainshell",
-            "url": "https://explainshell.com/",
-            "description": "拆解并解释复杂的Linux终端命令"
-          },
-          {
-            "name": "Regex101",
-            "url": "https://regex101.com/",
-            "description": "实时测试调试并解释正则表达式"
-          },
-          {
-            "name": "Carbon",
-            "url": "https://carbon.now.sh/",
-            "description": "将代码变成高颜值的艺术截图"
-          },
-          {
-            "name": "Ray.so",
-            "url": "https://ray.so/",
-            "description": "极简时尚的代码高亮截图工具"
-          },
-          {
-            "name": "CodeBeautify",
-            "url": "https://codebeautify.org/",
-            "description": "一键美化格式化混乱代码"
-          },
-          {
-            "name": "JSON Formatter",
-            "url": "https://jsonformatter.org/",
-            "description": "JSON数据格式化与解析工具"
-          },
-          {
-            "name": "Cursor",
-            "url": "https://cursor.sh/",
-            "description": "AI编程，免费额度够用"
-          },
-          {
-            "name": "V0 by Vercel",
-            "url": "https://v0.dev/",
-            "description": "Vercel前端生成器，描述成页面"
-          },
-          {
-            "name": "Framer",
-            "url": "https://framer.com/",
-            "description": "说话建网站，无需代码基础"
-          },
-          {
-            "name": "Replit",
-            "url": "https://replit.com/",
-            "description": "浏览器编码、AI助手、秒部署"
-          },
-          {
-            "name": "MakeReal",
-            "url": "https://makereal.tldraw.com/",
-            "description": "草图变网页，秒成现实"
-          },
-          {
-            "name": "Prettier",
-            "url": "https://prettier.io/",
-            "description": "清晰格式化任何代码"
-          },
-          {
-            "name": "在线工具",
-            "url": "https://tool.lu/",
-            "description": "程序员的在线工具箱"
-          },
-          {
-            "name": "菜鸟工具",
-            "url": "https://c.runoob.com/",
-            "description": "菜鸟教程在线工具"
-          }
-        ]
-      },
-      {
-        "name": "安全隐私",
-        "enName": "Security & Privacy",
-        "links": [
-          {
-            "name": "Have I Been Pwned",
-            "url": "https://haveibeenpwned.com/",
-            "description": "检查邮箱密码是否在泄露中被公开"
-          },
-          {
-            "name": "VirusTotal",
-            "url": "https://www.virustotal.com/",
-            "description": "聚合多款杀毒引擎在线扫描"
-          },
-          {
-            "name": "Privnote",
-            "url": "https://privnote.com/",
-            "description": "发送阅后即焚的加密自毁消息"
-          },
-          {
-            "name": "Temp Mail",
-            "url": "https://temp-mail.org/",
-            "description": "快速生成临时一次性匿名邮箱"
-          },
-          {
-            "name": "10MinuteMail",
-            "url": "https://10minutemail.com/",
-            "description": "经典的10分钟临时邮箱"
-          },
-          {
-            "name": "File.io",
-            "url": "https://file.io/",
-            "description": "下载一次后自动永久删除的文件分享"
-          },
-          {
-            "name": "Wormhole",
-            "url": "https://wormhole.app/",
-            "description": "分享自动删除的文件"
-          },
-          {
-            "name": "SayMine",
-            "url": "https://www.saymine.com/",
-            "description": "从任何网站删除自己的数据"
-          }
-        ]
-      },
-      {
-        "name": "效率资源",
-        "enName": "Productivity",
-        "links": [
-          {
-            "name": "12ft.io",
-            "url": "https://12ft.io/",
-            "description": "绕过各种新闻博客网站的付费墙"
-          },
-          {
-            "name": "Archive.today",
-            "url": "https://archive.ph/",
-            "description": "永久网页快照存档，突破内容限制"
-          },
-          {
-            "name": "Archive.org",
-            "url": "https://archive.org/",
-            "description": "互联网档案馆，访问网站旧版本"
-          },
-          {
-            "name": "AlternativeTo",
-            "url": "https://alternativeto.net/",
-            "description": "输入任意软件找出免费平替"
-          },
-          {
-            "name": "SimilarSites",
-            "url": "https://similarsites.com/",
-            "description": "推荐同类型体验相似的网站"
-          },
-          {
-            "name": "Raindrop.io",
-            "url": "https://raindrop.io/",
-            "description": "全平台高颜值书签与知识管理器"
-          },
-          {
-            "name": "Open Culture",
-            "url": "https://openculture.com/",
-            "description": "汇集全球顶尖大学免费课程"
-          },
-          {
-            "name": "Coursera",
-            "url": "https://www.coursera.org/",
-            "description": "顶级大学免费在线课程"
-          },
-          {
-            "name": "Summarize.tech",
-            "url": "https://www.summarize.tech/",
-            "description": "AI一键提取总结长视频核心摘要"
-          },
-          {
-            "name": "Smallpdf",
-            "url": "https://smallpdf.com/",
-            "description": "极简的在线PDF编辑转换压缩工具"
-          },
-          {
-            "name": "iLovePDF",
-            "url": "https://www.ilovepdf.com/",
-            "description": "免费的PDF合并拆分加解密工具"
-          },
-          {
-            "name": "Sejda",
-            "url": "https://www.sejda.com/",
-            "description": "免费在线编辑PDF"
-          },
-          {
-            "name": "TinyWow",
-            "url": "https://tinywow.com/",
-            "description": "单个网站100+免费工具"
-          },
-          {
-            "name": "SnapSave",
-            "url": "https://snapsave.app/",
-            "description": "下载社交媒体任何视频"
-          },
-          {
-            "name": "Excalidraw",
-            "url": "https://excalidraw.com/",
-            "description": "免费手绘图表"
-          },
-          {
-            "name": "tldraw",
-            "url": "https://www.tldraw.com/",
-            "description": "浏览器中无限白板"
-          },
-          {
-            "name": "Convertio",
-            "url": "https://convertio.co/zh/",
-            "description": "在线文件格式转换"
-          },
-          {
-            "name": "爱资料工具",
-            "url": "https://www.toolnb.com/",
-            "description": "在线工具大全"
-          },
-          {
-            "name": "装机猫纯净系统",
-            "url": "https://zhuangjimao.com/system",
-            "description": ""
-          },
-          {
-            "name": "萌娘百科",
-            "url": "https://zh.moegirl.org.cn/#/flow",
-            "description": ""
-          }
-        ]
-      },
-      {
-        "name": "音乐娱乐",
-        "enName": "Music & Fun",
-        "links": [
-          {
-            "name": "JustWatch",
-            "url": "https://www.justwatch.com/",
-            "description": "全网搜索电影美剧在哪个流媒体上线"
-          },
-          {
-            "name": "Tunefind",
-            "url": "https://www.tunefind.com/",
-            "description": "找出电影美剧里的背景音乐"
-          },
-          {
-            "name": "Radio Garden",
-            "url": "https://radio.garden/",
-            "description": "3D地球仪收听全球实时广播电台"
-          },
-          {
-            "name": "Every Noise",
-            "url": "https://everynoise.com/",
-            "description": "探索世界上已知的每种音乐流派"
-          },
-          {
-            "name": "Music for Programming",
-            "url": "https://musicforprogramming.net/",
-            "description": "专为写代码设计的极简背景音乐"
-          },
-          {
-            "name": "myNoise",
-            "url": "https://mynoise.net/",
-            "description": "强大的自定义白噪音生成器"
-          },
-          {
-            "name": "Coffitivity",
-            "url": "https://coffitivity.com/",
-            "description": "模拟咖啡馆环境音提升创造力"
-          },
-          {
-            "name": "Brain.fm",
-            "url": "https://www.brain.fm/",
-            "description": "专注音乐"
-          },
-          {
-            "name": "Noisli",
-            "url": "https://www.noisli.com/",
-            "description": "自定义专注声景"
-          },
-          {
-            "name": "Mojito MV",
-            "url": "https://www.mojidict.com/",
-            "description": "音乐MV在线观看"
-          }
-        ]
-      },
-      {
-        "name": "AI工具",
-        "enName": "AI Tools",
-        "links": [
-          {
-            "name": "Perplexity",
-            "url": "https://perplexity.ai/",
-            "description": "AI搜索，问题秒答+来源标注"
-          },
-          {
-            "name": "Poe",
-            "url": "https://poe.com/",
-            "description": "一站用GPT-4o、Claude、Gemini"
-          },
-          {
-            "name": "Claude",
-            "url": "https://claude.ai/",
-            "description": "Anthropic官方助手，长文处理顶级"
-          },
-          {
-            "name": "Hugging Face",
-            "url": "https://huggingface.co/spaces",
-            "description": "开源模型试玩基地"
-          },
-          {
-            "name": "ElevenLabs",
-            "url": "https://elevenlabs.io/",
-            "description": "5秒复制任何人声线"
-          },
-          {
-            "name": "Suno",
-            "url": "https://suno.com/",
-            "description": "歌词转完整歌曲"
-          },
-          {
-            "name": "Runway Gen-3",
-            "url": "https://runwayml.com/",
-            "description": "文生视频天花板，Gen-3免费"
-          },
-          {
-            "name": "快手可灵",
-            "url": "https://klingai.kuaishou.com/",
-            "description": "中文视频最流畅"
-          },
-          {
-            "name": "HeyGen",
-            "url": "https://heygen.com/",
-            "description": "照片加语音变数字人"
-          },
-          {
-            "name": "D-ID",
-            "url": "https://d-id.com/",
-            "description": "静图变说话视频"
-          },
-          {
-            "name": "Opus Clip",
-            "url": "https://opus.pro/",
-            "description": "自动剪短视频，秒找爆点"
-          },
-          {
-            "name": "Napkin AI",
-            "url": "https://napkin.ai/",
-            "description": "文本转信息图表"
-          },
-          {
-            "name": "Gamma App",
-            "url": "https://gamma.app/",
-            "description": "一键生成PPT"
-          },
-          {
-            "name": "Notion AI",
-            "url": "https://notion.so/",
-            "description": "Notion AI的写改译能力"
-          },
-          {
-            "name": "DeepL Write",
-            "url": "https://deepl.com/write",
-            "description": "写作神器，免费版日常够用"
-          },
-          {
-            "name": "Fathom",
-            "url": "https://fathom.video/",
-            "description": "会议边开边录，免费月300分钟"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "网站与企业排行",
-    "subcategories": [
-      {
-        "name": "全球网站排行",
-        "links": [
-          {
-            "name": "Google",
-            "url": "https://www.google.com",
-            "description": "全球最大的搜索引擎，提供网页搜索、地图、邮件及各类云计算服务。"
-          },
-          {
-            "name": "YouTube",
-            "url": "https://www.youtube.com",
-            "description": "全球最大的视频分享与流媒体平台，允许用户上传、观看及互动。"
-          },
-          {
-            "name": "Facebook",
-            "url": "https://www.facebook.com",
-            "description": "全球用户规模最大的社交网络服务平台，连接世界各地的用户。"
-          },
-          {
-            "name": "Baidu",
-            "url": "https://www.baidu.com",
-            "description": "中国最大的搜索引擎，提供网页、资讯、地图及人工智能服务。"
-          },
-          {
-            "name": "Wikipedia",
-            "url": "https://www.wikipedia.org",
-            "description": "全球最大的自由开放式多语言网络百科全书。"
-          },
-          {
-            "name": "Yahoo",
-            "url": "https://www.yahoo.com",
-            "description": "历史悠久的综合性门户网站，提供新闻、邮箱、财经等多元服务。"
-          },
-          {
-            "name": "Reddit",
-            "url": "https://www.reddit.com",
-            "description": "全球最大的综合性网络论坛与社交新闻聚合平台。"
-          },
-          {
-            "name": "Amazon",
-            "url": "https://www.amazon.com",
-            "description": "全球最大的电子商务与云计算服务平台。"
-          },
-          {
-            "name": "Instagram",
-            "url": "https://www.instagram.com",
-            "description": "全球极其流行的图片与短视频分享社交平台。"
-          },
-          {
-            "name": "X",
-            "url": "https://x.com",
-            "description": "全球知名的实时信息发布与微博客社交平台（原 Twitter）。"
-          },
-          {
-            "name": "WhatsApp",
-            "url": "https://www.whatsapp.com",
-            "description": "全球使用最广泛的即时通讯与跨平台通讯应用服务网站。"
-          },
-          {
-            "name": "Yandex",
-            "url": "https://www.yandex.ru",
-            "description": "俄罗斯最大的搜索引擎及综合互联网科技门户。"
-          },
-          {
-            "name": "Yahoo JP",
-            "url": "https://www.yahoo.co.jp",
-            "description": "日本访问量最高的综合性门户及电商服务网站。"
-          },
-          {
-            "name": "Netflix",
-            "url": "https://www.netflix.com",
-            "description": "全球领先的订阅制流媒体影视与原创内容播放平台。"
-          },
-          {
-            "name": "LinkedIn",
-            "url": "https://www.linkedin.com",
-            "description": "全球最大的职业社交与职场招聘平台。"
-          },
-          {
-            "name": "TikTok",
-            "url": "https://www.tiktok.com",
-            "description": "全球风靡的短视频创作与分享社交平台。"
-          },
-          {
-            "name": "Bing",
-            "url": "https://www.bing.com",
-            "description": "微软旗下的全球性搜索引擎，整合AI智能搜索体验。"
-          },
-          {
-            "name": "Microsoft",
-            "url": "https://www.microsoft.com",
-            "description": "微软官方门户，提供软件下载、Windows服务及云产品。"
-          },
-          {
-            "name": "OpenAI",
-            "url": "https://www.openai.com",
-            "description": "领先的人工智能研究机构，ChatGPT 与 GPT-image 的官方平台。"
-          },
-          {
-            "name": "Twitch",
-            "url": "https://www.twitch.tv",
-            "description": "全球最大的游戏实时直播与电子竞技社交平台。"
-          },
-          {
-            "name": "Naver",
-            "url": "https://www.naver.com",
-            "description": "韩国访问量最高的搜索引擎与综合互联网门户。"
-          },
-          {
-            "name": "VKontakte",
-            "url": "https://vk.com",
-            "description": "俄罗斯及东欧地区最受欢迎的社交网络平台。"
-          },
-          {
-            "name": "Taobao",
-            "url": "https://www.taobao.com",
-            "description": "中国规模最大的网购零售与C2C电子商务平台。"
-          },
-          {
-            "name": "AliExpress",
-            "url": "https://www.aliexpress.com",
-            "description": "阿里巴巴旗下的全球跨境跨境电商消费购物平台。"
-          },
-          {
-            "name": "Pinterest",
-            "url": "https://www.pinterest.com",
-            "description": "全球最大的视觉探索、灵感收集与图片社交网站。"
-          },
-          {
-            "name": "Discord",
-            "url": "https://www.discord.com",
-            "description": "专为玩家及各类兴趣社群打造的语音、文字与视频通讯平台。"
-          },
-          {
-            "name": "GitHub",
-            "url": "https://www.github.com",
-            "description": "全球最大的软件代码托管与开发者开源协作社区。"
-          },
-          {
-            "name": "Mail.ru",
-            "url": "https://mail.ru",
-            "description": "俄罗斯知名的综合性电子邮件与互联网门户平台。"
-          },
-          {
-            "name": "QQ",
-            "url": "https://www.qq.com",
-            "description": "腾讯旗下综合综合门户网站，提供即时通讯与全方位新闻资讯。"
-          },
-          {
-            "name": "MSN",
-            "url": "https://www.msn.com",
-            "description": "微软推出的全球新闻、财经、天气与资讯综合门户。"
-          },
-          {
-            "name": "DuckDuckGo",
-            "url": "https://duckduckgo.com",
-            "description": "主打隐私保护、不跟踪用户历史的搜索引擎。"
-          },
-          {
-            "name": "eBay",
-            "url": "https://www.ebay.com",
-            "description": "全球知名线上拍卖与C2C/B2C电子交易平台。"
-          },
-          {
-            "name": "Roblox",
-            "url": "https://www.roblox.com",
-            "description": "全球最大的多人在线游戏创作与元宇宙体验平台。"
-          },
-          {
-            "name": "Quora",
-            "url": "https://www.quora.com",
-            "description": "全球知名的英文问答社区与知识共享平台。"
-          },
-          {
-            "name": "Samsung",
-            "url": "https://www.samsung.com",
-            "description": "三星电子官方网站，展示与销售各类智能电子产品。"
-          },
-          {
-            "name": "Walmart",
-            "url": "https://www.walmart.com",
-            "description": "美国零售巨头沃尔玛的在线官方购物与电商平台。"
-          },
-          {
-            "name": "Apple",
-            "url": "https://www.apple.com",
-            "description": "苹果公司官方网站，展示产品硬件、软件服务及系统支持。"
-          },
-          {
-            "name": "Fandom",
-            "url": "https://www.fandom.com",
-            "description": "全球最大的娱乐、游戏、影视维基百科社群平台。"
-          },
-          {
-            "name": "Canva",
-            "url": "https://www.canva.com",
-            "description": "全球流行的在线图形设计、排版与创意内容制作平台。"
-          },
-          {
-            "name": "Telegram",
-            "url": "https://web.telegram.org",
-            "description": "主打安全隐私与加密通信的即时通讯Web服务端。"
-          },
-          {
-            "name": "Steampowered",
-            "url": "https://store.steampowered.com",
-            "description": "全球最大的PC数字游戏发行与社群服务平台。"
-          },
-          {
-            "name": "Spotify",
-            "url": "https://www.spotify.com",
-            "description": "全球订阅用户最多的流媒体音乐与播客听书平台。"
-          },
-          {
-            "name": "Douyin",
-            "url": "https://www.douyin.com",
-            "description": "中国领先的短视频生活分享与直播电商平台。"
-          },
-          {
-            "name": "Google Maps",
-            "url": "https://maps.google.com",
-            "description": "全球最受欢迎的地图导航与位置服务平台。"
-          },
-          {
-            "name": "Speedtest",
-            "url": "https://www.speedtest.net",
-            "description": "全球最权威的互联网宽带与移动网络测速工具。"
-          },
-          {
-            "name": "IMDb",
-            "url": "https://www.imdb.com",
-            "description": "全球最大的电影、电视节目与演职员权威数据库。"
-          },
-          {
-            "name": "Etsy",
-            "url": "https://www.etsy.com",
-            "description": "全球最大的复古物品、手工艺品与创意设计C2C交易平台。"
-          },
-          {
-            "name": "Booking.com",
-            "url": "https://www.booking.com",
-            "description": "全球领先的在线酒店住宿订购与旅游预订服务网站。"
-          },
-          {
-            "name": "CNN",
-            "url": "https://www.cnn.com",
-            "description": "美国有线电视新闻网，提供全球实时新闻与深度报道。"
-          },
-          {
-            "name": "BBC",
-            "url": "https://www.bbc.com",
-            "description": "英国广播公司官方新闻门户，权威报道国际时事与文化。"
-          },
-          {
-            "name": "The Guardian",
-            "url": "https://www.theguardian.com",
-            "description": "英国老牌独立报纸《卫报》的全球新闻网站。"
-          },
-          {
-            "name": "NYTimes",
-            "url": "https://www.nytimes.com",
-            "description": "美国《纽约时报》官网，享誉全球的综合性新闻媒体。"
-          },
-          {
-            "name": "Weather.com",
-            "url": "https://weather.com",
-            "description": "全球气象频道官网，提供全球天气预报与气象数据。"
-          },
-          {
-            "name": "Zhihu",
-            "url": "https://www.zhihu.com",
-            "description": "中国知名的深度问答社区与高质量知识分享平台。"
-          },
-          {
-            "name": "JD.com",
-            "url": "https://www.jd.com",
-            "description": "中国知名的综合性自营电商与高效物流平台。"
-          },
-          {
-            "name": "Sina",
-            "url": "https://www.sina.com.cn",
-            "description": "中国老牌新闻门户网站，提供全方位资讯与财经信息。"
-          },
-          {
-            "name": "Weibo",
-            "url": "https://weibo.com",
-            "description": "中国最具影响力的社交媒体与公共微博互动平台。"
-          },
-          {
-            "name": "Office.com",
-            "url": "https://www.office.com",
-            "description": "微软Microsoft 365在线办公套件与云端文档门户。"
-          },
-          {
-            "name": "Stack Overflow",
-            "url": "https://stackoverflow.com",
-            "description": "全球最大的程序开发与技术IT问答互动社区。"
-          },
-          {
-            "name": "Zoom",
-            "url": "https://zoom.us",
-            "description": "全球企业与个人广泛使用的在线视频会议与远程协作平台。"
-          },
-          {
-            "name": "Target",
-            "url": "https://www.target.com",
-            "description": "美国大型百货零售商塔吉特的在线官方购物网站。"
-          },
-          {
-            "name": "PayPal",
-            "url": "https://www.paypal.com",
-            "description": "全球使用最广泛的第三方跨国在线支付与转账平台。"
-          },
-          {
-            "name": "Adobe",
-            "url": "https://www.adobe.com",
-            "description": "创意设计软件巨头官网，提供PS、PR等工具与云服务。"
-          },
-          {
-            "name": "Daily Mail",
-            "url": "https://www.dailymail.co.uk",
-            "description": "英国《每日邮报》官网，以小道新闻与娱乐八卦闻名。"
-          },
-          {
-            "name": "Fox News",
-            "url": "https://www.foxnews.com",
-            "description": "美国福克斯新闻网，专注政治、新闻与实时评论。"
-          },
-          {
-            "name": "ESPN",
-            "url": "https://www.espn.com",
-            "description": "全球知名的体育新闻、实时比分与体育赛事直播平台。"
-          },
-          {
-            "name": "WordPress.com",
-            "url": "https://wordpress.com",
-            "description": "全球最流行的建站系统与博客托管服务平台。"
-          },
-          {
-            "name": "Medium",
-            "url": "https://medium.com",
-            "description": "全球优质内容创作者与深度长文阅读博客社区。"
-          },
-          {
-            "name": "SourceForge",
-            "url": "https://sourceforge.net",
-            "description": "历史悠久的开源软件托管、下载与开发合作平台。"
-          },
-          {
-            "name": "Notion",
-            "url": "https://www.notion.so",
-            "description": "全球风靡的集笔记、任务管理与知识库于一体的无缝协作平台。"
-          },
-          {
-            "name": "Archive.org",
-            "url": "https://archive.org",
-            "description": "全球互联网档案馆，保存网页历史快照、免费图书与数字资源。"
-          },
-          {
-            "name": "ChatGPT",
-            "url": "https://chatgpt.com",
-            "description": "OpenAI开发的对话式AI助手，提供智能问答与创作支持。"
-          },
-          {
-            "name": "Tripadvisor",
-            "url": "https://www.tripadvisor.com",
-            "description": "全球最大的旅行点评、酒店评价与餐饮指南平台。"
-          },
-          {
-            "name": "Rakuten",
-            "url": "https://www.rakuten.co.jp",
-            "description": "日本最大的综合性电子购物与互联网金融服务平台。"
-          },
-          {
-            "name": "LINE",
-            "url": "https://line.me",
-            "description": "日本及东南亚极受欢迎的即时通讯与生活服务平台。"
-          },
-          {
-            "name": "KakaoTalk",
-            "url": "https://www.kakaocorp.com",
-            "description": "韩国国民级即时通讯与综合互联网服务生态平台。"
-          },
-          {
-            "name": "Dailymotion",
-            "url": "https://www.dailymotion.com",
-            "description": "来自法国的全球大型视频分享与探索平台。"
-          },
-          {
-            "name": "Vimeo",
-            "url": "https://vimeo.com",
-            "description": "高清专业视频高清存储、展示与创作服务社区。"
-          },
-          {
-            "name": "Blogger",
-            "url": "https://www.blogger.com",
-            "description": "谷歌旗下的免费个人博客创建与发布平台。"
-          },
-          {
-            "name": "Tumblr",
-            "url": "https://www.tumblr.com",
-            "description": "全球流行的轻博客社交平台，支持多样化多媒体内容创作。"
-          },
-          {
-            "name": "Gitee",
-            "url": "https://gitee.com",
-            "description": "中国领先的代码托管与软件研发协作平台（码云）。"
-          },
-          {
-            "name": "CSDN",
-            "url": "https://www.csdn.net",
-            "description": "中国最大的IT技术交流、博客与软件开发者社区。"
-          },
-          {
-            "name": "Sohu",
-            "url": "https://www.sohu.com",
-            "description": "中国大型综合门户网站，涵盖新闻、娱乐、体育与视频。"
-          },
-          {
-            "name": "163.com",
-            "url": "https://www.163.com",
-            "description": "网易综合门户，提供权威新闻资讯与网易邮箱服务。"
-          },
-          {
-            "name": "Toutiao",
-            "url": "https://www.toutiao.com",
-            "description": "基于算法推荐的智能个性化资讯与新闻内容聚合平台。"
-          },
-          {
-            "name": "Xinhuanet",
-            "url": "https://www.xinhuanet.com",
-            "description": "新华网，中国权威国家通讯社官方新闻网站。"
-          },
-          {
-            "name": "People.cn",
-            "url": "https://www.people.com.cn",
-            "description": "人民网，中国国家重点新闻网站与综合资讯平台。"
-          },
-          {
-            "name": "Amazon UK",
-            "url": "https://www.amazon.co.uk",
-            "description": "亚马逊英国站，英国最大的综合线上购物网站。"
-          },
-          {
-            "name": "Amazon JP",
-            "url": "https://www.amazon.co.jp",
-            "description": "亚马逊日本站，日本极其受欢迎的网购商城。"
-          },
-          {
-            "name": "Amazon DE",
-            "url": "https://www.amazon.de",
-            "description": "亚马逊德国站，欧洲规模最大的在线零售门户之一。"
-          },
-          {
-            "name": "Mercari",
-            "url": "https://jp.mercari.com",
-            "description": "日本极其流行的二手物品跳蚤市场在线交易平台。"
-          },
-          {
-            "name": "Shopee",
-            "url": "https://shopee.com",
-            "description": "东南亚及拉美地区领先的移动社交电商与购物平台。"
-          },
-          {
-            "name": "Lazada",
-            "url": "https://www.lazada.com",
-            "description": "东南亚地区主流的综合性网购与跨境B2C商城。"
-          },
-          {
-            "name": "MercadoLibre",
-            "url": "https://www.mercadolibre.com",
-            "description": "拉丁美洲最大的电子交易与线上支付生态平台。"
-          },
-          {
-            "name": "Flipkart",
-            "url": "https://www.flipkart.com",
-            "description": "印度最大的本土电子商务与网购消费平台。"
-          },
-          {
-            "name": "Allegro",
-            "url": "https://allegro.pl",
-            "description": "波兰及东欧地区规模最大的电商与拍卖网站。"
-          },
-          {
-            "name": "Trendyol",
-            "url": "https://www.trendyol.com",
-            "description": "土耳其规模最大的时尚与综合电子购物平台。"
-          },
-          {
-            "name": "Wildberries",
-            "url": "https://www.wildberries.ru",
-            "description": "俄罗斯最大的在线零售与时尚电商网站。"
-          },
-          {
-            "name": "Ozon",
-            "url": "https://www.ozon.ru",
-            "description": "俄罗斯老牌综合性电商平台，被称为“俄罗斯亚马逊”。"
-          },
-          {
-            "name": "Avito",
-            "url": "https://www.avito.ru",
-            "description": "俄罗斯最大的分类信息、二手交易与租赁服务网站。"
-          },
-          {
-            "name": "Canva CN",
-            "url": "https://www.canva.cn",
-            "description": "Canva可画中国版，提供海量优质中文设计模板与在线排版。"
-          },
-          {
-            "name": "Figma",
-            "url": "https://www.figma.com",
-            "description": "全球UI/UX设计师首选的在线实时协作界面设计工具。"
-          },
-          {
-            "name": "Pixabay",
-            "url": "https://pixabay.com",
-            "description": "全球知名的免费无版权图片、插画、视频与音乐素材库。"
-          },
-          {
-            "name": "Unsplash",
-            "url": "https://unsplash.com",
-            "description": "全球高品质摄影图片共享与免费商用图片社区。"
-          },
-          {
-            "name": "Freepik",
-            "url": "https://www.freepik.com",
-            "description": "全球优质矢量图、PSD源文件、插画与设计素材下载网站。"
-          },
-          {
-            "name": "Behance",
-            "url": "https://www.behance.net",
-            "description": "Adobe旗下的全球创意艺术、设计作品展示与分享平台。"
-          },
-          {
-            "name": "Dribbble",
-            "url": "https://dribbble.com",
-            "description": "全球顶尖UI/UX设计师与插画师作品展示与交流社区。"
-          },
-          {
-            "name": "ArtStation",
-            "url": "https://www.artstation.com",
-            "description": "全球CG艺术家、游戏美术师与概念设计展示社区。"
-          },
-          {
-            "name": "DeviantArt",
-            "url": "https://www.deviantart.com",
-            "description": "历史悠久的全球数字艺术、插画与创作爱好者社区。"
-          },
-          {
-            "name": "Artlist",
-            "url": "https://artlist.io",
-            "description": "专为视频创作者提供正版无版权配乐与音效的资源平台。"
-          },
-          {
-            "name": "Shutterstock",
-            "url": "https://www.shutterstock.com",
-            "description": "全球最大的正版微图图片、视频及音频商业库。"
-          },
-          {
-            "name": "Getty Images",
-            "url": "https://www.gettyimages.com",
-            "description": "全球顶尖的商业媒体图片、新闻摄影与视频素材库。"
-          },
-          {
-            "name": "Envato Elements",
-            "url": "https://elements.envato.com",
-            "description": "创意数字资产订阅平台，涵盖网页模板、音效与3D模型。"
-          },
-          {
-            "name": "Pexels",
-            "url": "https://www.pexels.com",
-            "description": "免费高画质摄影图片与无版权视频共享素材网站。"
-          },
-          {
-            "name": "Iconfinder",
-            "url": "https://www.iconfinder.com",
-            "description": "全球知名的矢量图标与SVG素材搜索引擎与交易平台。"
-          },
-          {
-            "name": "Flaticon",
-            "url": "https://www.flaticon.com",
-            "description": "全球最大的免费矢量图标、扁平化图标下载网站。"
-          },
-          {
-            "name": "Fontspace",
-            "url": "https://www.fontspace.com",
-            "description": "免费西文字体与艺术字体下载社区。"
-          },
-          {
-            "name": "DaFont",
-            "url": "https://www.dafont.com",
-            "description": "海量个性化西文字体、手写体与艺术字免费下载平台。"
-          },
-          {
-            "name": "Google Fonts",
-            "url": "https://fonts.google.com",
-            "description": "谷歌推出的免费开源网络字体库与设计交互服务。"
-          },
-          {
-            "name": "DeepL",
-            "url": "https://www.deepl.com",
-            "description": "利用神经网络打造的极其精准的高质量多语言翻译工具。"
-          },
-          {
-            "name": "Google Translate",
-            "url": "https://translate.google.com",
-            "description": "谷歌免费在线多语言即时机器翻译服务。"
-          },
-          {
-            "name": "Baidu Fanyi",
-            "url": "https://fanyi.baidu.com",
-            "description": "百度多语种在线文本、文档及图片翻译平台。"
-          },
-          {
-            "name": "Youdao",
-            "url": "https://www.youdao.com",
-            "description": "中国网易旗下的智能词典、文档翻译与在线教育门户。"
-          },
-          {
-            "name": "Papago",
-            "url": "https://papago.naver.com",
-            "description": "Naver旗下的韩语及亚洲语种精准AI翻译工具。"
-          },
-          {
-            "name": "Grammarly",
-            "url": "https://www.grammarly.com",
-            "description": "基于AI的英文语法纠错、写作优化与拼写检查工具。"
-          },
-          {
-            "name": "QuillBot",
-            "url": "https://quillbot.com",
-            "description": "AI英文转述、重写、润色与论文辅助工具。"
-          },
-          {
-            "name": "Duolingo",
-            "url": "https://www.duolingo.com",
-            "description": "全球最受欢迎的趣味多语言在线学习平台。"
-          },
-          {
-            "name": "Coursera",
-            "url": "https://www.coursera.org",
-            "description": "全球顶尖大学与机构联合打造的高等在线教育与课程平台。"
-          },
-          {
-            "name": "edX",
-            "url": "https://www.edx.org",
-            "description": "由哈佛与麻省理工联合发起的开源大型在线课程平台。"
-          },
-          {
-            "name": "Udemy",
-            "url": "https://www.udemy.com",
-            "description": "全球最大的实用技能与职业技能在线视频教程平台。"
-          },
-          {
-            "name": "Khan Academy",
-            "url": "https://www.khanacademy.org",
-            "description": "享誉全球的免费非营利K12与基础科学在线教育网站。"
-          },
-          {
-            "name": "Skillshare",
-            "url": "https://www.skillshare.com",
-            "description": "专注于设计、摄影、插画等创意技能的订阅制在线学习社区。"
-          },
-          {
-            "name": "Codecademy",
-            "url": "https://www.codecademy.com",
-            "description": "交互式编程学习网站，提供多种代码语言入门课程。"
-          },
-          {
-            "name": "LeetCode",
-            "url": "https://leetcode.com",
-            "description": "全球程序员首选的算法刷题、技术面试准备与代码提升平台。"
-          },
-          {
-            "name": "W3Schools",
-            "url": "https://www.w3schools.com",
-            "description": "全球最受欢迎的WEB前端开发基础语法教程网站。"
-          },
-          {
-            "name": "MDN Web Docs",
-            "url": "https://developer.mozilla.org",
-            "description": "开发者公认的权威前端Web技术文档与标准指南。"
-          },
-          {
-            "name": "GeeksforGeeks",
-            "url": "https://www.geeksforgeeks.org",
-            "description": "专为计算机学生与程序员打造的技术学习与算法文章库。"
-          },
-          {
-            "name": "Runoob",
-            "url": "https://www.runoob.com",
-            "description": "菜鸟教程，中国简明易懂的各类编程语言与Web技术入门网站。"
-          },
-          {
-            "name": "V2EX",
-            "url": "https://www.v2ex.com",
-            "description": "中国知名的程序员、创意工作者与极客生活讨论社区。"
-          },
-          {
-            "name": "OSCHINA",
-            "url": "https://www.oschina.net",
-            "description": "开源中国，中国最大的开源技术交流与软件资讯平台。"
-          },
-          {
-            "name": "SegmentFault",
-            "url": "https://segmentfault.com",
-            "description": "思否，中国领先的开发者技术问答与知识分享社区。"
-          },
-          {
-            "name": "Juejin",
-            "url": "https://juejin.cn",
-            "description": "掘金，面向掘金者的技术社区，深耕前端、后端与移动端开发。"
-          },
-          {
-            "name": "InfoQ",
-            "url": "https://www.infoq.cn",
-            "description": "关注软件开发领袖与前沿架构的技术实践新闻媒体。"
-          },
-          {
-            "name": "Slashdot",
-            "url": "https://slashdot.org",
-            "description": "历史悠久的科技新闻、技术讨论与极客文化论坛。"
-          },
-          {
-            "name": "Hacker News",
-            "url": "https://news.ycombinator.com",
-            "description": "Y Combinator旗下专注于创业、计算机科学与科技的极客社区。"
-          },
-          {
-            "name": "TechCrunch",
-            "url": "https://techcrunch.com",
-            "description": "全球最具影响力的初创企业、科技科技新闻与创业投资媒体。"
-          },
-          {
-            "name": "The Verge",
-            "url": "https://www.theverge.com",
-            "description": "专注于前沿消费电子、科技新闻、文化与科学评论网站。"
-          },
-          {
-            "name": "Wired",
-            "url": "https://www.wired.com",
-            "description": "美国《连线》杂志官网，报道科技对文化、经济与政治的深刻影响。"
-          },
-          {
-            "name": "Engadget",
-            "url": "https://www.engadget.com",
-            "description": "追踪数码产品新品发售、消费电子测评与科技资讯网站。"
-          },
-          {
-            "name": "GSMArena",
-            "url": "https://www.gsmarena.com",
-            "description": "全球最详尽的智能手机参数规格查询与权威测评网站。"
-          },
-          {
-            "name": "Tom's Hardware",
-            "url": "https://www.tomshardware.com",
-            "description": "权威的PC硬件、CPU、显卡及组装电脑测评指南。"
-          },
-          {
-            "name": "36Kr",
-            "url": "https://36kr.com",
-            "description": "中国领先的科技新经济服务平台，报道新创业与创投资讯。"
-          },
-          {
-            "name": "Huxiu",
-            "url": "https://www.huxiu.com",
-            "description": "虎嗅网，深度剖析科技商业、商业模式与商业创新的媒体。"
-          },
-          {
-            "name": "ITHome",
-            "url": "https://www.ithome.com",
-            "description": "IT之家，提供快速前沿的数码资讯、硬件评测与软硬件新闻。"
-          },
-          {
-            "name": "cnBeta",
-            "url": "https://www.cnbeta.com",
-            "description": "历史悠久的实时科技新闻、软件更新与数码资讯聚合网站。"
-          },
-          {
-            "name": "Fast.com",
-            "url": "https://fast.com",
-            "description": "Netflix提供的极简纯粹极速网速测试网站。"
-          },
-          {
-            "name": "SpeedTest CN",
-            "url": "https://www.speedtest.cn",
-            "description": "测速网，中国本土的网络质量检测与网速测试服务平台。"
-          },
-          {
-            "name": "Ping.pe",
-            "url": "https://ping.pe",
-            "description": "便捷的全球节点Ping与网络连通性测试工具。"
-          },
-          {
-            "name": "IP138",
-            "url": "https://www.ip138.com",
-            "description": "历史悠久的IP地址查询、网络工具与手机号码归属地查询。"
-          },
-          {
-            "name": "站长工具",
-            "url": "https://chinaz.com",
-            "description": "中国网站管理者常用的SEO查询、IP检测与域名综合工具。"
-          },
-          {
-            "name": "Ahrefs",
-            "url": "https://ahrefs.com",
-            "description": "全球顶尖的SEO优化分析、关键词挖掘与竞争对手研究平台。"
-          },
-          {
-            "name": "SEMrush",
-            "url": "https://www.semrush.com",
-            "description": "一站式数字营销、搜索引擎优化与网络广告竞品分析工具。"
-          },
-          {
-            "name": "Similarweb",
-            "url": "https://www.similarweb.com",
-            "description": "全球网站流量分析、APP数据与行业竞争分析服务平台。"
-          },
-          {
-            "name": "Google Analytics",
-            "url": "https://analytics.google.com",
-            "description": "谷歌免费的大型网站与移动应用数据统计与分析系统。"
-          },
-          {
-            "name": "Cloudflare",
-            "url": "https://www.cloudflare.com",
-            "description": "全球最大的网络安全、CDN加速、DNS解析与DDoS防护平台。"
-          },
-          {
-            "name": "Namecheap",
-            "url": "https://www.namecheap.com",
-            "description": "全球知名且价格亲民的域名注册、托管与网络安全服务商。"
-          },
-          {
-            "name": "GoDaddy",
-            "url": "https://www.godaddy.com",
-            "description": "全球最大的域名注册商及网站基础托管服务提供商。"
-          },
-          {
-            "name": "DigitalOcean",
-            "url": "https://www.digitalocean.com",
-            "description": "专为开发者打造的简洁高效云服务器与VPS云计算服务。"
-          },
-          {
-            "name": "Vultr",
-            "url": "https://www.vultr.com",
-            "description": "提供全球多节点高性能云服务器部署的VPS供应商。"
-          },
-          {
-            "name": "Linode",
-            "url": "https://www.linode.com",
-            "description": "Akamai旗下的经典云计算服务商，专注于开发者基础设施。"
-          },
-          {
-            "name": "AWS",
-            "url": "https://aws.amazon.com",
-            "description": "亚马逊云计算，全球市场份额第一的综合云基础设施服务平台。"
-          },
-          {
-            "name": "Azure",
-            "url": "https://azure.microsoft.com",
-            "description": "微软企业级云计算平台，提供全面的AI与云端算力解决方案。"
-          },
-          {
-            "name": "Google Cloud",
-            "url": "https://cloud.google.com",
-            "description": "谷歌云服务，主打大数据处理、人工智能与云原生计算。"
-          },
-          {
-            "name": "Aliyun",
-            "url": "https://www.aliyun.com",
-            "description": "阿里云，中国最大的云计算与云基础设施服务平台。"
-          },
-          {
-            "name": "Tencent Cloud",
-            "url": "https://cloud.tencent.com",
-            "description": "腾讯云，提供音视频、游戏云与综合企业级云端解决方案。"
-          },
-          {
-            "name": "Huawei Cloud",
-            "url": "https://www.huaweicloud.com",
-            "description": "华为云，赋能政企数字化的全球公有云与AI算力平台。"
-          },
-          {
-            "name": "Vercel",
-            "url": "https://vercel.com",
-            "description": "前端开发者最爱的全栈自动化部署与Next.js无缝云托管平台。"
-          },
-          {
-            "name": "Netlify",
-            "url": "https://www.netlify.com",
-            "description": "专注于现代JAMstack静态网站构建、自动化部署与云托管平台。"
-          },
-          {
-            "name": "Firebase",
-            "url": "https://firebase.google.com",
-            "description": "谷歌推出的无服务器移动与Web应用开发综合平台。"
-          },
-          {
-            "name": "Docker",
-            "url": "https://www.docker.com",
-            "description": "容器化技术鼻祖，提供容器镜像托管Hub与开发者工具。"
-          },
-          {
-            "name": "Supabase",
-            "url": "https://supabase.com",
-            "description": "开源的Firebase替代方案，基于PostgreSQL提供即用型后端。"
-          },
-          {
-            "name": "MongoDB",
-            "url": "https://www.mongodb.com",
-            "description": "领先的NoSQL非关系型数据库官方平台与云端Atlas数据库。"
-          },
-          {
-            "name": "NPM",
-            "url": "https://www.npmjs.com",
-            "description": "全球最大的JavaScript代码包与前端依赖库托管注册表。"
-          },
-          {
-            "name": "PyPI",
-            "url": "https://pypi.org",
-            "description": "Python官方软件包索引仓库，Python开发者的核心工具依赖库。"
-          },
-          {
-            "name": "Docker Hub",
-            "url": "https://hub.docker.com",
-            "description": "全球最大的容器镜像存储、搜索与分发中心。"
-          },
-          {
-            "name": "Hugging Face",
-            "url": "https://huggingface.co",
-            "description": "全球AI开源社区，汇聚海量AI预训练模型、数据集与Demo。"
-          },
-          {
-            "name": "Kaggle",
-            "url": "https://www.kaggle.com",
-            "description": "全球最大的数据科学、机器学习竞赛与数据挖掘社区。"
-          },
-          {
-            "name": "Midjourney",
-            "url": "https://www.midjourney.com",
-            "description": "享誉全球的文字生成高质量AI艺术画像创作平台。"
-          },
-          {
-            "name": "Civitai",
-            "url": "https://civitai.com",
-            "description": "全球最大的Stable Diffusion开源AI绘画模型分享与交流社区。"
-          },
-          {
-            "name": "Claude",
-            "url": "https://claude.ai",
-            "description": "Anthropic开发的高智能对话AI，在逻辑分析与长文本阅读上表现优异。"
-          },
-          {
-            "name": "Perplexity",
-            "url": "https://www.perplexity.ai",
-            "description": "基于AI大模型的下一代实时对话式智能搜索引擎。"
-          },
-          {
-            "name": "RunWay",
-            "url": "https://runwayml.com",
-            "description": "领先的生成式AI视频制作与AI多媒体艺术创作工具平台。"
-          },
-          {
-            "name": "Suno",
-            "url": "https://suno.com",
-            "description": "生成式AI音乐创作平台，输入文字即可自动生成全套歌曲。"
-          },
-          {
-            "name": "ElevenLabs",
-            "url": "https://elevenlabs.io",
-            "description": "顶尖的AI语音合成、克隆与多语言文本转语音平台。"
-          },
-          {
-            "name": "Product Hunt",
-            "url": "https://www.producthunt.com",
-            "description": "全球新科技产品、独立应用与创新工具每日首发揭榜平台。"
-          },
-          {
-            "name": "Kickstarter",
-            "url": "https://www.kickstarter.com",
-            "description": "全球最大的创意科技、游戏与文化项目众筹平台。"
-          },
-          {
-            "name": "Indiegogo",
-            "url": "https://www.indiegogo.com",
-            "description": "知名的全球科技新品与创业项目众筹与预购平台。"
-          },
-          {
-            "name": "Steam Community",
-            "url": "https://steamcommunity.com",
-            "description": "Steam玩家社群，涵盖玩家组、组内讨论与玩家市场。"
-          },
-          {
-            "name": "Epic Games",
-            "url": "https://store.epicgames.com",
-            "description": "知名游戏开发商与数字游戏商城，以每周赠送免费游戏闻名。"
-          },
-          {
-            "name": "GOG",
-            "url": "https://www.gog.com",
-            "description": "CD Projekt旗下的无DRM保护老游戏与独立PC游戏销售平台。"
-          },
-          {
-            "name": "IGN",
-            "url": "https://www.ign.com",
-            "description": "全球规模最大的综合性游戏新闻、评测、攻略与娱乐媒体。"
-          },
-          {
-            "name": "GameSpot",
-            "url": "https://www.gamespot.com",
-            "description": "历史悠久的全球知名电子游戏新闻、专业评测与视频门户。"
-          },
-          {
-            "name": "PCGamer",
-            "url": "https://www.pcgamer.com",
-            "description": "专注于PC电子游戏硬件、新游评测与行业新闻的权威媒体。"
-          },
-          {
-            "name": "Kotaku",
-            "url": "https://kotaku.com",
-            "description": "关注游戏文化、行业内幕与玩家社群的知名游戏博客。"
-          },
-          {
-            "name": "Polygon",
-            "url": "https://www.polygon.com",
-            "description": "聚焦游戏、动漫与流行文化的现代综合娱乐资讯网站。"
-          },
-          {
-            "name": "Nexus Mods",
-            "url": "https://www.nexusmods.com",
-            "description": "全球最大的单机游戏MOD（模组）玩家下载与分享社区。"
-          },
-          {
-            "name": "CurseForge",
-            "url": "https://www.curseforge.com",
-            "description": "全球最大的《我的世界》与《魔兽世界》插件模组托管平台。"
-          },
-          {
-            "name": "TapTap",
-            "url": "https://www.taptap.com",
-            "description": "高品质手游分享社区，提供正版手机游戏下载与玩家真实点评。"
-          },
-          {
-            "name": "Gamersky",
-            "url": "https://www.gamersky.com",
-            "description": "游民星空，中国领先的单机游戏门户，提供单机资讯与单机攻略。"
-          },
-          {
-            "name": "3DMGame",
-            "url": "https://www.3dmgame.com",
-            "description": "中国知名的单机游戏资讯、MOD汉化与玩家交流论坛。"
-          },
-          {
-            "name": "NGA",
-            "url": "https://bbs.nga.cn",
-            "description": "艾泽拉斯国家地理，中国极其活跃的游戏精英玩家深度讨论论坛。"
-          },
-          {
-            "name": "GameRant",
-            "url": "https://gamerant.com",
-            "description": "涵盖主流游戏新闻、角色攻略、硬件与行业见解的网媒。"
-          },
-          {
-            "name": "Eurogamer",
-            "url": "https://www.eurogamer.net",
-            "description": "来自欧洲的权威游戏评论、深度行业访谈与独立评测网站。"
-          },
-          {
-            "name": "Roblox Developer",
-            "url": "https://create.roblox.com",
-            "description": "专为Roblox游戏开发者打造的创作中心与开发文档。"
-          },
-          {
-            "name": "Chess.com",
-            "url": "https://www.chess.com",
-            "description": "全球最大的国际象棋在线对弈、学习与大师赛事直播平台。"
-          },
-          {
-            "name": "Lichess",
-            "url": "https://lichess.org",
-            "description": "全球最受欢迎的完全免费、无广告开源国际象棋平台。"
-          },
-          {
-            "name": "Speedrun.com",
-            "url": "https://www.speedrun.com",
-            "description": "全球游戏速通排行榜与速通爱好者官方记录社区。"
-          },
-          {
-            "name": "Spotify for Artists",
-            "url": "https://artists.spotify.com",
-            "description": "音乐人音乐管理平台，提供流媒体播放数据与音乐发布。"
-          },
-          {
-            "name": "Soundcloud",
-            "url": "https://soundcloud.com",
-            "description": "全球独立音乐人、DJ分享与探索原创音频内容的云端社区。"
-          },
-          {
-            "name": "Bandcamp",
-            "url": "https://bandcamp.com",
-            "description": "独立音乐人直面歌迷销售无损音乐与周边商品的在线音乐平台。"
-          },
-          {
-            "name": "Apple Music",
-            "url": "https://music.apple.com",
-            "description": "苹果旗下的无损音质流媒体音乐播放服务Web端。"
-          },
-          {
-            "name": "Last.fm",
-            "url": "https://www.last.fm",
-            "description": "记录用户听歌习惯、推荐音乐与探索同类歌手的音乐社交网站。"
-          },
-          {
-            "name": "Genius",
-            "url": "https://genius.com",
-            "description": "全球最大的歌词分析、音乐背景介绍与歌词注释互动社区。"
-          },
-          {
-            "name": "NetEase Music",
-            "url": "https://music.163.com",
-            "description": "网易云音乐，以特色歌单与情感网易云评论闻名的音乐社交平台。"
-          },
-          {
-            "name": "QQ Music",
-            "url": "https://y.qq.com",
-            "description": "腾讯QQ音乐，中国音乐曲库庞大的正版数字流媒体音乐平台。"
-          },
-          {
-            "name": "Billboard",
-            "url": "https://www.billboard.com",
-            "description": "全球最权威的音乐排行榜《公告牌》官方新闻与榜单网站。"
-          },
-          {
-            "name": "Discogs",
-            "url": "https://www.discogs.com",
-            "description": "全球最大的实体唱片（黑胶、CD）数据库与实体音乐交易平台。"
-          },
-          {
-            "name": "Letterboxd",
-            "url": "https://letterboxd.com",
-            "description": "全球影迷最喜爱的电影观影记录、影评分享与电影社交社区。"
-          },
-          {
-            "name": "Rotten Tomatoes",
-            "url": "https://www.rottentomatoes.com",
-            "description": "全球著名的电影评论聚合网站（烂番茄），以新鲜度闻名。"
-          },
-          {
-            "name": "Metacritic",
-            "url": "https://www.metacritic.com",
-            "description": "整合游戏、电影、电视与音乐权威媒体评分的综合评分网。"
-          },
-          {
-            "name": "Douban",
-            "url": "https://www.douban.com",
-            "description": "中国极富文化气息的书影音标记、生活小组与兴趣社区。"
-          },
-          {
-            "name": "MyAnimeList",
-            "url": "https://myanimelist.net",
-            "description": "全球最大的动漫数据库、追番记录与欧美漫迷讨论社区。"
-          },
-          {
-            "name": "Crunchyroll",
-            "url": "https://www.crunchyroll.com",
-            "description": "全球最大的海外正版日本动漫流媒体在线播放平台。"
-          },
-          {
-            "name": "Pixiv",
-            "url": "https://www.pixiv.net",
-            "description": "日本乃至全球二次元插画师、漫画家作品交流与展示社群。"
-          },
-          {
-            "name": "Bahamut",
-            "url": "https://www.gamer.com.tw",
-            "description": "巴哈姆特，台湾地区最大的电玩、动漫与二次元综合论坛（动画疯）。"
-          },
-          {
-            "name": "PTT",
-            "url": "https://www.ptt.cc",
-            "description": "台湾地区历史最悠久、用户规模极大的BBS电子布告栏论坛。"
-          },
-          {
-            "name": "Dcard",
-            "url": "https://www.dcard.tw",
-            "description": "台湾地区深受年轻人与大学生欢迎的匿名社交论坛。"
-          },
-          {
-            "name": "Mobile01",
-            "url": "https://www.mobile01.com",
-            "description": "台湾地区知名的开箱测评、数码产品、汽车与生活讨论网。"
-          },
-          {
-            "name": "HKEPC",
-            "url": "https://www.hkepc.com",
-            "description": "香港电脑领域权威的前沿电脑硬件资讯、电脑评测与科技论坛。"
-          },
-          {
-            "name": "LIHKG",
-            "url": "https://lihkg.com",
-            "description": "香港流行的综合网络论坛（连登），讨论时事、娱乐与生活。"
-          },
-          {
-            "name": "Naver Webtoon",
-            "url": "https://comic.naver.com",
-            "description": "韩国Naver旗下的官方网络条漫阅读与条漫创作发布平台。"
-          },
-          {
-            "name": "Kakao Page",
-            "url": "https://page.kakao.com",
-            "description": "韩国Kakao旗下主流的网络小说、韩国漫画阅读门户。"
-          },
-          {
-            "name": "Webtoon",
-            "url": "https://www.webtoons.com",
-            "description": "全球广泛使用的免费在线网络条漫阅读网站。"
-          },
-          {
-            "name": "MangaDex",
-            "url": "https://mangadex.org",
-            "description": "全球多语言免费线上漫画阅读与民间翻译组共享社区。"
-          },
-          {
-            "name": "BookWalker",
-            "url": "https://bookwalker.jp",
-            "description": "角川旗下著名的正版电子书、轻小说与日本漫画购买平台。"
-          },
-          {
-            "name": "Syosetu",
-            "url": "https://syosetu.com",
-            "description": "日本最大的原创网络小说投稿与免费阅读网站（成为小说家吧）。"
-          },
-          {
-            "name": "Ciweimao",
-            "url": "https://www.ciweimao.com",
-            "description": "刺猬猫，中国知名的二次元轻小说与宅文原创阅读平台。"
-          },
-          {
-            "name": "Qidian",
-            "url": "https://www.qidian.com",
-            "description": "中国最大的原创网络文学创作与网络小说阅读门户。"
-          },
-          {
-            "name": "Jinjiang",
-            "url": "https://www.jjwxc.net",
-            "description": "晋江文学城，中国极具影响力的女性向网络文学与言情小说网站。"
-          },
-          {
-            "name": "ReadFree",
-            "url": "https://readfree.me",
-            "description": "电子书爱好者分享与交流Kindle电子书资源的社区。"
-          },
-          {
-            "name": "Z-Library",
-            "url": "https://z-lib.gs",
-            "description": "全球最大的数字图书馆之一，提供海量免费电子书与学术文章。"
-          },
-          {
-            "name": "ResearchGate",
-            "url": "https://www.researchgate.net",
-            "description": "全球科学家与科研人员交流学术论文与科研成果的社交平台。"
-          },
-          {
-            "name": "Google Scholar",
-            "url": "https://scholar.google.com",
-            "description": "谷歌旗下的免费学术文献、论文与专利搜索引擎。"
-          },
-          {
-            "name": "CNKI",
-            "url": "https://www.cnki.net",
-            "description": "中国知网，中国最权威的学术期刊、学位论文与知识基础设施库。"
-          },
-          {
-            "name": "Wanfang Data",
-            "url": "https://www.wanfangdata.com.cn",
-            "description": "中国大型学术数据资源库，涵盖科技期刊与学位论文。"
-          },
-          {
-            "name": "arXiv",
-            "url": "https://arxiv.org",
-            "description": "由康奈尔大学维护的物理学、计算机科学与数学预印本学术论文库。"
-          },
-          {
-            "name": "ScienceDirect",
-            "url": "https://www.sciencedirect.com",
-            "description": "爱思唯尔旗下的全球知名科学、技术与医学学术期刊平台。"
-          },
-          {
-            "name": "SpringerLink",
-            "url": "https://link.springer.com",
-            "description": "施普林格旗下的全球科研学术图书与权威期刊数据库。"
-          },
-          {
-            "name": "Nature",
-            "url": "https://www.nature.com",
-            "description": "《自然》周刊官网，全球最顶尖的科学学术期刊之一。"
-          },
-          {
-            "name": "Science",
-            "url": "https://www.science.org",
-            "description": "《科学》杂志官网，发表全球前沿科学研究突破的权威期刊。"
-          },
-          {
-            "name": "IEEE Xplore",
-            "url": "https://ieeexplore.ieee.org",
-            "description": "全球电气电子工程师学会旗下电子、电气与计算机学术文献库。"
-          },
-          {
-            "name": "JSTOR",
-            "url": "https://www.jstor.org",
-            "description": "数字图书馆平台，收录大量人文社科领域学术期刊与图书。"
-          },
-          {
-            "name": "Sci-Hub",
-            "url": "https://sci-hub.se",
-            "description": "致力于打破学术壁垒、提供免费学术论文下载的公开平台。"
-          },
-          {
-            "name": "PubMed",
-            "url": "https://pubmed.ncbi.nlm.nih.gov",
-            "description": "全球最大的生物医学与生命科学文献数据库。"
-          },
-          {
-            "name": "Web of Science",
-            "url": "https://www.webofscience.com",
-            "description": "全球权威引文索引数据库，收录SCI、SSCI等优质学术期刊。"
-          },
-          {
-            "name": "Overleaf",
-            "url": "https://www.overleaf.com",
-            "description": "基于云端的在线LaTeX学术论文实时协作与排版编辑器。"
-          },
-          {
-            "name": "WolframAlpha",
-            "url": "https://www.wolframalpha.com",
-            "description": "全球知名的计算知识引擎，解答数学、科学与数据计算问题。"
-          },
-          {
-            "name": "Mathway",
-            "url": "https://www.mathway.com",
-            "description": "强大的在线一步步自动解答代数、微积分与几何数学题网站。"
-          },
-          {
-            "name": "Symbolab",
-            "url": "https://www.symbolab.com",
-            "description": "提供详细解题步骤的高级在线数学计算与方程求解工具。"
-          },
-          {
-            "name": "Desmos",
-            "url": "https://www.desmos.com",
-            "description": "免费且功能强大的在线图形计算器，广泛用于数学教学。"
-          },
-          {
-            "name": "GeoGebra",
-            "url": "https://www.geogebra.org",
-            "description": "动态几何、代数、统计与微积分融合的数学教学软件平台。"
-          },
-          {
-            "name": "Chegg",
-            "url": "https://www.chegg.com",
-            "description": "美国大学生常用的在线教材租赁、作业辅导与答疑平台。"
-          },
-          {
-            "name": "Quizlet",
-            "url": "https://quizlet.com",
-            "description": "全球流行的卡片记忆法、语言学习与考试背诵工具网站。"
-          },
-          {
-            "name": "Grammarly Business",
-            "url": "https://www.grammarly.com/business",
-            "description": "专为企业团队打造的英文写作规范与公文润色服务。"
-          },
-          {
-            "name": "Bloomberg",
-            "url": "https://www.bloomberg.com",
-            "description": "全球顶尖的财经商业新闻、市场实时数据与金融分析平台。"
-          },
-          {
-            "name": "Reuters",
-            "url": "https://www.reuters.com",
-            "description": "路透社官方网站，提供全球即时财经资讯与国际新闻报道。"
-          },
-          {
-            "name": "Wall Street Journal",
-            "url": "https://www.wsj.com",
-            "description": "《华尔街日报》官网，全球知名的商业财经与政治新闻媒体。"
-          },
-          {
-            "name": "Financial Times",
-            "url": "https://www.ft.com",
-            "description": "英国《金融时报》官网，关注国际商业、经济与金融市场。"
-          },
-          {
-            "name": "CNBC",
-            "url": "https://www.cnbc.com",
-            "description": "全球著名的财经新闻频道官网，实时跟进美股与全球金融动态。"
-          },
-          {
-            "name": "MarketWatch",
-            "url": "https://www.marketwatch.com",
-            "description": "提供实时股市行情、金融资讯与投资分析的财经门户。"
-          },
-          {
-            "name": "Investing.com",
-            "url": "https://www.investing.com",
-            "description": "全球知名的金融市场数据分析、外汇、股票与期货行情平台。"
-          },
-          {
-            "name": "Yahoo Finance",
-            "url": "https://finance.yahoo.com",
-            "description": "全球访问量极高的免费财经门户，提供股票行情与财务数据。"
-          },
-          {
-            "name": "TradingView",
-            "url": "https://www.tradingview.com",
-            "description": "全球交易员与投资者最爱的在线股票、外汇与加密货币K线图表平台。"
-          },
-          {
-            "name": "CoinMarketCap",
-            "url": "https://coinmarketcap.com",
-            "description": "全球最大的加密货币价格、市值、交易量与行情追踪网站。"
-          },
-          {
-            "name": "CoinGecko",
-            "url": "https://www.coingecko.com",
-            "description": "全球领先的独立加密货币市场数据与去中心化金融统计网站。"
-          },
-          {
-            "name": "Binance",
-            "url": "https://www.binance.com",
-            "description": "全球交易量最大的加密货币交易与区块链生态服务平台。"
-          },
-          {
-            "name": "Coinbase",
-            "url": "https://www.coinbase.com",
-            "description": "美国合规上市的加密货币资产交易与数字钱包托管平台。"
-          },
-          {
-            "name": "OKX",
-            "url": "https://www.okx.com",
-            "description": "全球知名的加密货币与Web3数字资产交易综合服务平台。"
-          },
-          {
-            "name": "Bybit",
-            "url": "https://www.bybit.com",
-            "description": "全球发展迅猛的数字货币衍生品与现货交易服务平台。"
-          },
-          {
-            "name": "Eastmoney",
-            "url": "https://www.eastmoney.com",
-            "description": "东方财富网，中国规模巨大的财经资讯与证券理财门户。"
-          },
-          {
-            "name": "Xueqiu",
-            "url": "https://xueqiu.com",
-            "description": "雪球，中国知名的投资者社交沟通与股票证券投资交流社区。"
-          },
-          {
-            "name": "Sina Finance",
-            "url": "https://finance.sina.com.cn",
-            "description": "新浪财经，提供全面的A股、港美股行情与宏观经济报道。"
-          },
-          {
-            "name": "Yicai",
-            "url": "https://www.yicai.com",
-            "description": "第一财经，中国领先的原创财经媒体与商业资讯平台。"
-          },
-          {
-            "name": "Caixin",
-            "url": "https://www.caixin.com",
-            "description": "财新网，以深度调查报道与宏观经济分析著称的财经媒体。"
-          },
-          {
-            "name": "Wind",
-            "url": "https://www.wind.com.cn",
-            "description": "万得，中国金融机构广泛使用的金融数据与分析终端提供商。"
-          },
-          {
-            "name": "Zhaopin",
-            "url": "https://www.zhaopin.com",
-            "description": "智联招聘，中国历史悠久的大型企业招聘与人才求职门户。"
-          },
-          {
-            "name": "51job",
-            "url": "https://www.51job.com",
-            "description": "前程无忧，中国领先的人力资源综合服务与招聘网。"
-          },
-          {
-            "name": "Boss Zhipin",
-            "url": "https://www.zhipin.com",
-            "description": "BOSS直聘，采用“直聊”模式的中国高效人才招聘平台。"
-          },
-          {
-            "name": "Liepin",
-            "url": "https://www.liepin.com",
-            "description": "猎聘网，专注于中高端人才猎头招聘与职业发展服务平台。"
-          },
-          {
-            "name": "Glassdoor",
-            "url": "https://www.glassdoor.com",
-            "description": "全球知名的企业薪酬查询、面试经验与员工真实评价网站。"
-          },
-          {
-            "name": "Indeed",
-            "url": "https://www.indeed.com",
-            "description": "全球最大的综合招聘搜索引擎，聚合全球海量职位信息。"
-          },
-          {
-            "name": "Monster",
-            "url": "https://www.monster.com",
-            "description": "全球老牌的网络招聘平台，提供求职简历投递与职业指南。"
-          },
-          {
-            "name": "Upwork",
-            "url": "https://www.upwork.com",
-            "description": "全球最大的自由职业者外包、远程工作与项目接单平台。"
-          },
-          {
-            "name": "Fiverr",
-            "url": "https://www.fiverr.com",
-            "description": "全球流行的按件计料、5美元起步的自由职业微服务交易市场。"
-          },
-          {
-            "name": "Freelancer",
-            "url": "https://www.freelancer.com",
-            "description": "全球大型众包与自由职业者竞标接单平台。"
-          },
-          {
-            "name": "Toptal",
-            "url": "https://www.toptal.com",
-            "description": "高度筛选全球前3%顶尖开发者、设计师与财务专家的自由职业平台。"
-          },
-          {
-            "name": "Remote OK",
-            "url": "https://remoteok.com",
-            "description": "全球知名的IT与数字游民远程工作机会聚合网站。"
-          },
-          {
-            "name": "We Work Remotely",
-            "url": "https://weworkremotely.com",
-            "description": "全球极具规模的远程全职与兼职工作招聘平台。"
-          },
-          {
-            "name": "TaskRabbit",
-            "url": "https://www.taskrabbit.com",
-            "description": "专注于本地家政、组装家具与线下零工服务的自由职业平台。"
-          },
-          {
-            "name": "Airbnb",
-            "url": "https://www.airbnb.com",
-            "description": "全球最大的民宿预订、特色短租与独特体验在线平台。"
-          },
-          {
-            "name": "Expedia",
-            "url": "https://www.expedia.com",
-            "description": "全球著名的在线旅游预订巨头，提供机票、酒店与租车服务。"
-          },
-          {
-            "name": "Skyscanner",
-            "url": "https://www.skyscanner.com",
-            "description": "天巡，全球领先的机票对比、酒店与租车搜索比价引擎。"
-          },
-          {
-            "name": "Kayak",
-            "url": "https://www.kayak.com",
-            "description": "享誉全球的元搜索旅游比价网站，覆盖机票、酒店与度假套餐。"
-          },
-          {
-            "name": "Agoda",
-            "url": "https://www.agoda.com",
-            "description": "深耕亚太地区的在线酒店、度假村与民宿优惠预订网站。"
-          },
-          {
-            "name": "Ctrip",
-            "url": "https://www.ctrip.com",
-            "description": "携程旅行，中国最大的在线旅游预订、机票酒店与商务出行平台。"
-          },
-          {
-            "name": "Qunar",
-            "url": "https://www.qunar.com",
-            "description": "去哪儿网，中国知名的机票酒店搜索比价与旅游预订服务商。"
-          },
-          {
-            "name": "Fliggy",
-            "url": "https://www.fliggy.com",
-            "description": "飞猪旅行，阿里巴巴旗下的综合在线旅游服务与度假平台。"
-          },
-          {
-            "name": "Mafengwo",
-            "url": "https://www.mafengwo.cn",
-            "description": "马蜂窝，中国知名的旅游攻略自由行分享与路书社区。"
-          },
-          {
-            "name": "Klook",
-            "url": "https://www.klook.com",
-            "description": "客路，全球领先的当地景点门票、一日游与交通卡预订平台。"
-          },
-          {
-            "name": "KKday",
-            "url": "https://www.kkday.com",
-            "description": "亚洲著名的深度自由行体验、当地一日游与门票预订网站。"
-          },
-          {
-            "name": "Flightradar24",
-            "url": "https://www.flightradar24.com",
-            "description": "全球最受欢迎的实时航班跟踪、雷达地图与飞行轨迹网站。"
-          },
-          {
-            "name": "MarineTraffic",
-            "url": "https://www.marinetraffic.com",
-            "description": "全球船舶实时位置定位、AIS航运轨迹与港口数据平台。"
-          },
-          {
-            "name": "Uber",
-            "url": "https://www.uber.com",
-            "description": "全球最大的在线网约车、出租车与出行服务官方平台。"
-          },
-          {
-            "name": "Grab",
-            "url": "https://www.grab.com",
-            "description": "东南亚规模最大的网约车、打车与外卖配送综合生活服务商。"
-          },
-          {
-            "name": "Lyft",
-            "url": "https://www.lyft.com",
-            "description": "北美地区知名的在线网约车与共享出行服务平台。"
-          },
-          {
-            "name": "DiDi",
-            "url": "https://www.didiglobal.com",
-            "description": "滴滴出行，中国领先的一站式移动出行与网约车服务平台。"
-          },
-          {
-            "name": "AutoNavi",
-            "url": "https://www.amap.com",
-            "description": "高德地图，中国领先的数字地图内容、导航与出行服务提供商。"
-          },
-          {
-            "name": "Baidu Maps",
-            "url": "https://map.baidu.com",
-            "description": "百度地图，提供智能化路线规划、精准导航与POI搜索服务。"
-          },
-          {
-            "name": "OpenStreetMap",
-            "url": "https://www.openstreetmap.org",
-            "description": "全球最大的自由开源可编辑免费地图数据社区。"
-          },
-          {
-            "name": "Yelp",
-            "url": "https://www.yelp.com",
-            "description": "美国最大的本地商家点评、餐厅吃喝玩乐评价网站。"
-          },
-          {
-            "name": "OpenTable",
-            "url": "https://www.opentable.com",
-            "description": "全球领先的餐厅在线预订与美食用餐指南网站。"
-          },
-          {
-            "name": "Dianping",
-            "url": "https://www.dianping.com",
-            "description": "大众点评，中国本土最具影响力的生活吃喝玩乐点评与团购平台。"
-          },
-          {
-            "name": "Meituan",
-            "url": "https://www.meituan.com",
-            "description": "中国领先的生活服务与外卖订餐综合电子商务平台。"
-          },
-          {
-            "name": "Ele.me",
-            "url": "https://www.ele.me",
-            "description": "饿了么，中国知名的本地生活服务与即时外卖配送平台。"
-          },
-          {
-            "name": "DoorDash",
-            "url": "https://www.doordash.com",
-            "description": "北美市场份额领先的在线餐饮外卖与配送服务网站。"
-          },
-          {
-            "name": "Uber Eats",
-            "url": "https://www.ubereats.com",
-            "description": "Uber旗下的全球在线美食外卖订购与配送平台。"
-          },
-          {
-            "name": "Deliveroo",
-            "url": "https://deliveroo.co.uk",
-            "description": "英国及欧洲著名的餐饮外卖在线派送服务网站。"
-          },
-          {
-            "name": "Delivery Hero",
-            "url": "https://www.deliveryhero.com",
-            "description": "总部位于德国的全球跨国外卖订餐与即时零售巨头。"
-          },
-          {
-            "name": "Foodpanda",
-            "url": "https://www.foodpanda.com",
-            "description": "亚太及中东地区极具影响力的外卖配送与生鲜送达平台。"
-          },
-          {
-            "name": "Just Eat",
-            "url": "https://www.justeattakeaway.com",
-            "description": "欧洲领先的跨国在线订餐与外卖派送门户。"
-          },
-          {
-            "name": "Instacart",
-            "url": "https://www.instacart.com",
-            "description": "北美最大的杂货生鲜在线代购与小时达配送服务平台。"
-          },
-          {
-            "name": "Boxed",
-            "url": "https://www.boxed.com",
-            "description": "美国知名的大容量批量杂货在线购物与送货上门网站。"
-          },
-          {
-            "name": "Target Circle",
-            "url": "https://www.target.com/circle",
-            "description": "塔吉特百货的忠诚会员打折与专属积分平台。"
-          },
-          {
-            "name": "Best Buy",
-            "url": "https://www.bestbuy.com",
-            "description": "全球大型消费电子产品与家电零售商百思买在线商城。"
-          },
-          {
-            "name": "Home Depot",
-            "url": "https://www.homedepot.com",
-            "description": "全球最大的家居建材、家具与家居装修用品零售商城。"
-          },
-          {
-            "name": "Lowe's",
-            "url": "https://www.lowes.com",
-            "description": "美国著名的大型家装、建材与家电在线购物服务门户。"
-          },
-          {
-            "name": "IKEA",
-            "url": "https://www.ikea.com",
-            "description": "宜家家居官方网站，展示与销售现代简约风家居用品。"
-          },
-          {
-            "name": "Wayfair",
-            "url": "https://www.wayfair.com",
-            "description": "北美最大的家居家具、装饰品在线垂直电商平台。"
-          },
-          {
-            "name": "Overstock",
-            "url": "https://www.overstock.com",
-            "description": "北美著名的折扣家居、寝具与家具电商购物网站。"
-          },
-          {
-            "name": "Newegg",
-            "url": "https://www.newegg.com",
-            "description": "新蛋网，全球知名的电脑硬件、数码3C专营电子商城。"
-          },
-          {
-            "name": "B&H Photo Video",
-            "url": "https://www.bhphotovideo.com",
-            "description": "美国著名的摄影器材、专业影音设备与数码购物天堂。"
-          },
-          {
-            "name": "Adorama",
-            "url": "https://www.adorama.com",
-            "description": "享誉北美的专业摄影设备、相机镜头与电子消费品商城。"
-          },
-          {
-            "name": "Micro Center",
-            "url": "https://www.microcenter.com",
-            "description": "美国极具口碑的DIY电脑配件、电子产品零售线上网站。"
-          },
-          {
-            "name": "ASOS",
-            "url": "https://www.asos.com",
-            "description": "英国知名的高街时尚与青年服饰在线购物门户。"
-          },
-          {
-            "name": "SHEIN",
-            "url": "https://www.shein.com",
-            "description": "全球风靡的快时尚跨境电商平台，主打高性价比女装与服饰。"
-          },
-          {
-            "name": "Temu",
-            "url": "https://www.temu.com",
-            "description": "拼多多旗下的跨境电商平台，以超高性价比全品类风靡全球。"
-          },
-          {
-            "name": "Pinduoduo",
-            "url": "https://www.pinduoduo.com",
-            "description": "拼多多，中国领先的社交拼团电商与高性价比购物平台。"
-          },
-          {
-            "name": "Vipshop",
-            "url": "https://www.vip.com",
-            "description": "唯品会，中国知名的名牌折扣特卖与品牌正品电商平台。"
-          },
-          {
-            "name": "Suning",
-            "url": "https://www.suning.com",
-            "description": "苏宁易购，中国大型综合性3C家电与零售购物平台。"
-          },
-          {
-            "name": "Xianyu",
-            "url": "https://2.taobao.com",
-            "description": "闲鱼，阿里巴巴旗下的中国最大二手闲置物品交易社区。"
-          },
-          {
-            "name": "Zhuanzhuan",
-            "url": "https://www.zhuanzhuan.com",
-            "description": "转转，中国知名的二手手机与3C数码闲置交易平台。"
-          },
-          {
-            "name": "Poshmark",
-            "url": "https://poshmark.com",
-            "description": "北美著名的二手服装、时尚名牌与配饰C2C交易社交平台。"
-          },
-          {
-            "name": "ThredUp",
-            "url": "https://www.thredup.com",
-            "description": "全球最大的二手女性与儿童服装寄售在线平台。"
-          },
-          {
-            "name": "The RealReal",
-            "url": "https://www.therealreal.com",
-            "description": "美国正品二手奢侈品时装、珠宝与名表寄售平台。"
-          },
-          {
-            "name": "Chrono24",
-            "url": "https://www.chrono24.com",
-            "description": "全球最大的奢华手表买卖、交易与名表行情评估平台。"
-          },
-          {
-            "name": "StockX",
-            "url": "https://stockx.com",
-            "description": "全球著名的潮流球鞋、限量潮服与卡牌动态竞价交易平台。"
-          },
-          {
-            "name": "GOAT",
-            "url": "https://www.goat.com",
-            "description": "全球知名的正品限量球鞋、高街服装与潮流单品交易平台。"
-          },
-          {
-            "name": "Poizon",
-            "url": "https://www.dewu.com",
-            "description": "得物，中国知名的正品潮流装备鉴别与潮流生活社区。"
-          },
-          {
-            "name": "Farfetch",
-            "url": "https://www.farfetch.com",
-            "description": "全球领先的独立奢侈品买手店与高端时装聚合购物平台。"
-          },
-          {
-            "name": "SSENSE",
-            "url": "https://www.ssense.com",
-            "description": "加拿大知名的高端独立设计师品牌与奢华街头时尚电商。"
-          },
-          {
-            "name": "Net-A-Porter",
-            "url": "https://www.net-a-porter.com",
-            "description": "全球顶尖的女装奢侈品时尚电子零售网站。"
-          },
-          {
-            "name": "End Clothing",
-            "url": "https://www.endclothing.com",
-            "description": "英国著名的男士高端潮牌、球鞋与设计师时装购物网站。"
-          },
-          {
-            "name": "Revolve",
-            "url": "https://www.revolve.com",
-            "description": "美国时尚轻奢与网红时尚品牌线上购物平台。"
-          },
-          {
-            "name": "Zara",
-            "url": "https://www.zara.com",
-            "description": "西班牙快时尚巨头ZARA官方在线购物与新品发售门户。"
-          },
-          {
-            "name": "H&M",
-            "url": "https://www.hm.com",
-            "description": "瑞典著名快时尚品牌H&M官方网店，提供全家时装购买。"
-          },
-          {
-            "name": "Uniqlo",
-            "url": "https://www.uniqlo.com",
-            "description": "优衣库官方商城，主打舒适高品质基础款服饰与功能内衣。"
-          },
-          {
-            "name": "Nike",
-            "url": "https://www.nike.com",
-            "description": "耐克官方网站，销售各类运动鞋、运动健身服饰与限定装备。"
-          },
-          {
-            "name": "Adidas",
-            "url": "https://www.adidas.com",
-            "description": "阿迪达斯官网，提供经典三条纹运动系列与潮流合作款。"
-          },
-          {
-            "name": "Lululemon",
-            "url": "https://www.lululemon.com",
-            "description": "高端瑜伽服饰与专业运动生活方式品牌官方商城。"
-          },
-          {
-            "name": "Under Armour",
-            "url": "https://www.underarmour.com",
-            "description": "安德玛官网，主打专业高端功能性运动紧身衣与装备。"
-          },
-          {
-            "name": "Decathlon",
-            "url": "https://www.decathlon.com",
-            "description": "迪卡侬官方网站，提供高性价比全品类体育运动装备。"
-          },
-          {
-            "name": "Sephora",
-            "url": "https://www.sephora.com",
-            "description": "丝芙兰官网，全球美妆彩妆、护肤品与香水综合零售天堂。"
-          },
-          {
-            "name": "Ulta Beauty",
-            "url": "https://www.ulta.com",
-            "description": "美国大型美妆护肤品综合在线零售商城。"
-          },
-          {
-            "name": "Lookfantastic",
-            "url": "https://www.lookfantastic.com",
-            "description": "英国知名的欧洲美妆护肤品与美发产品海淘网站。"
-          },
-          {
-            "name": "Cult Beauty",
-            "url": "https://www.cultbeauty.co.uk",
-            "description": "英国深受美妆达人喜爱的独立小众护肤品电商。"
-          },
-          {
-            "name": "iHerb",
-            "url": "https://www.iherb.com",
-            "description": "全球知名的天然保健品、膳食补充剂与母婴用品海淘平台。"
-          },
-          {
-            "name": "Vitacost",
-            "url": "https://www.vitacost.com",
-            "description": "北美大型有机食品、天然营养补剂与健康产品电商。"
-          },
-          {
-            "name": "Myprotein",
-            "url": "https://www.myprotein.com",
-            "description": "欧洲领先的运动营养品、蛋白粉与健身补剂品牌官网。"
-          },
-          {
-            "name": "Bodybuilding.com",
-            "url": "https://www.bodybuilding.com",
-            "description": "健身爱好者喜爱的专业补剂商城与健身训练计划库。"
-          },
-          {
-            "name": "Strava",
-            "url": "https://www.strava.com",
-            "description": "全球户外骑行与跑步爱好者最爱的GPS运动追踪与社交社区。"
-          },
-          {
-            "name": "Garmin",
-            "url": "https://www.garmin.com",
-            "description": "佳明官网，领先的户外智能运动手表与GPS导航设备展示平台。"
-          },
-          {
-            "name": "Fitbit",
-            "url": "https://www.fitbit.com",
-            "description": "智能健康手环与睡眠健康监测设备官方网站。"
-          },
-          {
-            "name": "Healthline",
-            "url": "https://www.healthline.com",
-            "description": "美国极其权威的医疗健康知识、营养学与健康资讯网站。"
-          },
-          {
-            "name": "WebMD",
-            "url": "https://www.webmd.com",
-            "description": "全球知名的医疗健康信息、症状自查与医药知识门户。"
-          },
-          {
-            "name": "Mayo Clinic",
-            "url": "https://www.mayoclinic.org",
-            "description": "梅奥诊所官网，全球顶尖的医疗机构与权威医学健康科普。"
-          },
-          {
-            "name": "Medical News Today",
-            "url": "https://www.medicalnewstoday.com",
-            "description": "提供最新医学研究进展与健康前沿新闻的网站。"
-          },
-          {
-            "name": "DXY",
-            "url": "https://www.dxy.cn",
-            "description": "丁香园，中国领先的医疗领域连接者，提供专业医学知识与健康服务。"
-          },
-          {
-            "name": "GoodRx",
-            "url": "https://www.goodrx.com",
-            "description": "美国著名的处方药价格对比与购药打折优惠券平台。"
-          },
-          {
-            "name": "RxList",
-            "url": "https://www.rxlist.com",
-            "description": "详尽的药品索引、副作用说明与医学专业术语查询网站。"
-          },
-          {
-            "name": "NYGov",
-            "url": "https://www.ny.gov",
-            "description": "美国纽约州政府官方政务与公共服务门户网站。"
-          },
-          {
-            "name": "USA.gov",
-            "url": "https://www.usa.gov",
-            "description": "美国联邦政府官方政务信息与公众服务统一入口。"
-          },
-          {
-            "name": "GOV.UK",
-            "url": "https://www.gov.uk",
-            "description": "英国政府公共服务与官方信息的极简高效统一门户。"
-          },
-          {
-            "name": "France.fr",
-            "url": "https://www.france.fr",
-            "description": "法国官方旅游与文化推广门户网站。"
-          },
-          {
-            "name": "Japan.go.jp",
-            "url": "https://www.japan.go.jp",
-            "description": "日本政府官方对外门户，展示政策、文化与国家资讯。"
-          },
-          {
-            "name": "Gov.cn",
-            "url": "https://www.gov.cn",
-            "description": "中国政府网，中国国务院及各部门权威政策发布的官方门户。"
-          },
-          {
-            "name": "IRS",
-            "url": "https://www.irs.gov",
-            "description": "美国国家税务局官网，办理税务申报与政策查询。"
-          },
-          {
-            "name": "USPS",
-            "url": "https://www.usps.com",
-            "description": "美国邮政署官网，提供邮政寄递、邮编查询与追踪。"
-          },
-          {
-            "name": "FedEx",
-            "url": "https://www.fedex.com",
-            "description": "联邦快递官网，全球国际快递寄递与包裹实时追踪。"
-          },
-          {
-            "name": "UPS",
-            "url": "https://www.ups.com",
-            "description": "联合包裹服务官网，全球物流运输与供应链管理。"
-          },
-          {
-            "name": "DHL",
-            "url": "https://www.dhl.com",
-            "description": "敦豪快递官网，专业的国际航空快递与物流服务。"
-          },
-          {
-            "name": "SF Express",
-            "url": "https://www.sf-express.com",
-            "description": "顺丰速运，中国领先的高效综合物流与快递服务平台。"
-          },
-          {
-            "name": "Cainiao",
-            "url": "https://www.cainiao.com",
-            "description": "菜鸟网络，阿里巴巴旗下的全球智慧物流与跨境包裹追踪平台。"
-          },
-          {
-            "name": "12306",
-            "url": "https://www.12306.cn",
-            "description": "中国铁路客户服务中心官方网站，唯一官方火车票预订平台。"
-          },
-          {
-            "name": "FlightAware",
-            "url": "https://www.flightaware.com",
-            "description": "全球航班跟踪、机场延误数据与航空大数据平台。"
-          },
-          {
-            "name": "SeatGuru",
-            "url": "https://www.seatguru.com",
-            "description": "各大航空公司客机座位图查询与最佳座位推荐指南。"
-          },
-          {
-            "name": "Booking.com JP",
-            "url": "https://www.booking.com/index.ja.html",
-            "description": "Booking日本站，日本精致旅馆与住宿预订。"
-          },
-          {
-            "name": "Agoda JP",
-            "url": "https://www.agoda.com/ja-jp/",
-            "description": "Agoda日本站，极受日本自由行游客喜爱的订房网。"
-          },
-          {
-            "name": "Jalan",
-            "url": "https://www.jalan.net",
-            "description": "日本著名的温泉旅馆、酒店预订与当地旅游指南网站。"
-          },
-          {
-            "name": "Rakuten Travel",
-            "url": "https://travel.rakuten.co.jp",
-            "description": "乐天旅游，日本规模巨大的国内与国际旅游预订网。"
-          },
-          {
-            "name": "Trivago",
-            "url": "https://www.trivago.com",
-            "description": "全球知名的在线酒店搜索与跨平台价格对比网站。"
-          },
-          {
-            "name": "Hotels.com",
-            "url": "https://www.hotels.com",
-            "description": "好订网，全球酒店预订平台，以“住十晚送一晚”闻名。"
-          },
-          {
-            "name": "Hostelworld",
-            "url": "https://www.hostelworld.com",
-            "description": "全球青年旅舍、背包客栈在线预订首选平台。"
-          },
-          {
-            "name": "Couchsurfing",
-            "url": "https://www.couchsurfing.com",
-            "description": "全球沙发客沙龙，提供免费互助住宿与国际文化交流。"
-          },
-          {
-            "name": "Workaway",
-            "url": "https://www.workaway.info",
-            "description": "全球文化交流与换宿义工旅行申请社区。"
-          },
-          {
-            "name": "Worldpackers",
-            "url": "https://www.worldpackers.com",
-            "description": "用技能交换住宿的全球义工旅行与背包客平台。"
-          },
-          {
-            "name": "Meetup",
-            "url": "https://www.meetup.com",
-            "description": "全球线上与线下兴趣社群聚会、同城活动发起平台。"
-          },
-          {
-            "name": "Eventbrite",
-            "url": "https://www.eventbrite.com",
-            "description": "全球知名的活动票务发售、展会管理与同城活动聚合网。"
-          },
-          {
-            "name": "Ticketmaster",
-            "url": "https://www.ticketmaster.com",
-            "description": "全球最大的演唱会、体育赛事与戏剧门票发售平台。"
-          },
-          {
-            "name": "StubHub",
-            "url": "https://www.stubhub.com",
-            "description": "全球大型二手门票买卖与演出票务转让交易市场。"
-          },
-          {
-            "name": "Live Nation",
-            "url": "https://www.livenation.com",
-            "description": "全球顶尖的音乐现场演出制作与演唱会票务官方平台。"
-          },
-          {
-            "name": "Damai",
-            "url": "https://www.damai.cn",
-            "description": "大麦网，中国领先的演唱会、话剧、体育比赛演出票务总代理。"
-          },
-          {
-            "name": "Maoyan",
-            "url": "https://www.maoyan.com",
-            "description": "猫眼电影，中国知名的电影票在线预订与影视娱乐大数据平台。"
-          },
-          {
-            "name": "Tao Piaopiao",
-            "url": "https://www.taopiaopiao.com",
-            "description": "淘票票，阿里影业旗下在线电影观影选座与优惠购票平台。"
-          },
-          {
-            "name": "Box Office Mojo",
-            "url": "https://www.boxofficemojo.com",
-            "description": "全球最权威的电影票房数据统计与排行榜网站。"
-          },
-          {
-            "name": "The Numbers",
-            "url": "https://www.the-numbers.com",
-            "description": "详尽的电影市场票房、财务分析与影业数据追踪。"
-          },
-          {
-            "name": "Rotten Tomatoes Movies",
-            "url": "https://www.rottentomatoes.com/browse/movies_in_theaters",
-            "description": "影院热映电影评价与口碑榜。"
-          },
-          {
-            "name": "Hollywood Reporter",
-            "url": "https://www.hollywoodreporter.com",
-            "description": "好莱坞权威影视新闻、娱乐内幕与行业趋势报道。"
-          },
-          {
-            "name": "Variety",
-            "url": "https://variety.com",
-            "description": "享誉百年的美国娱乐界行业报刊《综艺》官方新闻网站。"
-          },
-          {
-            "name": "Deadline",
-            "url": "https://deadline.com",
-            "description": "实时跟进好莱坞选角、影视破产与娱乐票房突发新闻网站。"
-          },
-          {
-            "name": "IndieWire",
-            "url": "https://www.indiewire.com",
-            "description": "专注于独立电影、艺术电影评测与电影节动态的专业媒体。"
-          },
-          {
-            "name": "Vulture",
-            "url": "https://www.vulture.com",
-            "description": "探讨电视、电影、音乐与流行文化的深度评论与文化网。"
-          },
-          {
-            "name": "Pitchfork",
-            "url": "https://pitchfork.com",
-            "description": "全球独立音乐与流行音乐界最具影响力的音乐评论网站。"
-          },
-          {
-            "name": "NME",
-            "url": "https://www.nme.com",
-            "description": "英国老牌音乐与流行文化杂志《新音乐快递》官方网站。"
-          },
-          {
-            "name": "Rolling Stone",
-            "url": "https://www.rollingstone.com",
-            "description": "《滚石》杂志官网，报道音乐、政治与大众文化。"
-          },
-          {
-            "name": "Stereogum",
-            "url": "https://www.stereogum.com",
-            "description": "专注独立音乐新闻、新歌首发与乐评的音乐博客。"
-          },
-          {
-            "name": "AllMusic",
-            "url": "https://www.allmusic.com",
-            "description": "极详尽的音乐唱片目录、曲风分类与专辑深度评论库。"
-          },
-          {
-            "name": "Discogs Marketplace",
-            "url": "https://www.discogs.com/sell/list",
-            "description": "全球实体唱片集市，买卖珍稀黑胶与磁带。"
-          },
-          {
-            "name": "Ultimate Guitar",
-            "url": "https://www.ultimate-guitar.com",
-            "description": "全球最大的吉他吉他谱、贝斯谱与尤克里里谱社区。"
-          },
-          {
-            "name": "Songsterr",
-            "url": "https://www.songsterr.com",
-            "description": "带真音试听功能的交互式在线吉他Tab乐谱网站。"
-          },
-          {
-            "name": "Musescore",
-            "url": "https://musescore.com",
-            "description": "全球免费制谱软件社区，共享数百万份管弦乐与钢琴谱。"
-          },
-          {
-            "name": "IMSLP",
-            "url": "https://imslp.org",
-            "description": "国际乐谱库项目，全球最大的公有领域古典音乐乐谱数字图书馆。"
-          },
-          {
-            "name": "Pianofiles",
-            "url": "https://pianofiles.com",
-            "description": "经典钢琴乐谱交流与钢琴曲探索者论坛。"
-          },
-          {
-            "name": "BandLab",
-            "url": "https://www.bandlab.com",
-            "description": "跨平台免费云端音乐制作与在线音乐创作社区。"
-          },
-          {
-            "name": "Soundtrap",
-            "url": "https://www.soundtrap.com",
-            "description": "Spotify旗下的在线网页版音乐制作与录音室工具。"
-          },
-          {
-            "name": "Splice",
-            "url": "https://splice.com",
-            "description": "全球音乐人最爱的采样库、声音素材与插件云端订阅服务。"
-          },
-          {
-            "name": "Native Instruments",
-            "url": "https://www.native-instruments.com",
-            "description": "著名音乐生产软件、虚拟乐器与硬件开发商官网。"
-          },
-          {
-            "name": "Ableton",
-            "url": "https://www.ableton.com",
-            "description": "知名音乐制作软件Live与Push硬件官方网站。"
-          },
-          {
-            "name": "FL Studio",
-            "url": "https://www.image-line.com",
-            "description": "热门音乐制作软件水果（FL Studio）官方发售与教程网。"
-          },
-          {
-            "name": "KVR Audio",
-            "url": "https://www.kvraudio.com",
-            "description": "全球音频插件、VST音色库与音频软件新闻枢纽。"
-          },
-          {
-            "name": "Gearspace",
-            "url": "https://gearspace.com",
-            "description": "全球最大的录音室硬件、混音师与录音工程师讨论论坛。"
-          },
-          {
-            "name": "Sound on Sound",
-            "url": "https://www.soundonsound.com",
-            "description": "英国权威录音技术、音频设备测评与混音教程杂志。"
-          },
-          {
-            "name": "PCPartPicker",
-            "url": "https://pcpartpicker.com",
-            "description": "装机爱好者首选的电脑硬件兼容性匹配与极速比价网站。"
-          },
-          {
-            "name": "UserBenchmark",
-            "url": "https://www.userbenchmark.com",
-            "description": "基于海量真实用户数据的PC硬件性能对比测试网。"
-          },
-          {
-            "name": "PassMark",
-            "url": "https://www.passmark.com",
-            "description": "权威的CPU与显卡跑分性能排行榜查询网站。"
-          },
-          {
-            "name": "TechPowerUp",
-            "url": "https://www.techpowerup.com",
-            "description": "知名显卡GPU-Z软件母站，提供硬件评测与BIOS数据库。"
-          },
-          {
-            "name": "Guru3D",
-            "url": "https://www.guru3d.com",
-            "description": "专注于PC显卡超频、驱动更新与PC游戏硬件测评。"
-          },
-          {
-            "name": "Overclock.net",
-            "url": "https://www.overclock.net",
-            "description": "全球极客与硬件超频爱好者深度技术讨论论坛。"
-          },
-          {
-            "name": "CPU-Z",
-            "url": "https://www.cpuid.com",
-            "description": "权威CPU检测软件CPU-Z与硬件诊断工具官方网站。"
-          },
-          {
-            "name": "Geeks3D",
-            "url": "https://www.geeks3d.com",
-            "description": "显卡烤机软件FurMark（甜甜圈）开发商官方网站。"
-          },
-          {
-            "name": "TechSpot",
-            "url": "https://www.techspot.com",
-            "description": "面向电脑爱好者与技术专家的PC硬件分析与科技新闻。"
-          },
-          {
-            "name": "Notebookcheck",
-            "url": "https://www.notebookcheck.net",
-            "description": "全球最全面严谨的笔记本电脑与移动芯片测评网站。"
-          },
-          {
-            "name": "RTINGS",
-            "url": "https://www.rtings.com",
-            "description": "以极度客观科学的数据实测电视、耳机与显示器的网站。"
-          },
-          {
-            "name": "DisplaySpecifications",
-            "url": "https://www.displayspecifications.com",
-            "description": "详尽查询显示器与电视面板参数规格的数据库。"
-          },
-          {
-            "name": "TFTCentral",
-            "url": "https://tftcentral.co.uk",
-            "description": "深入探讨显示器面板技术、色彩校准与响应时间的专业网。"
-          },
-          {
-            "name": "Hongkiat",
-            "url": "https://www.hongkiat.com",
-            "description": "专为设计师与技术爱好者提供实用网页设计技巧的博客。"
-          },
-          {
-            "name": "Smashing Magazine",
-            "url": "https://www.smashingmagazine.com",
-            "description": "享誉全球的前端开发与网页设计高质量深度文章网。"
-          },
-          {
-            "name": "CSS-Tricks",
-            "url": "https://css-tricks.com",
-            "description": "全球最受欢迎的Web前端CSS样式与前端开发技巧网站。"
-          },
-          {
-            "name": "Codepen",
-            "url": "https://codepen.io",
-            "description": "前端开发者在线编写、展示HTML/CSS/JS代码片段的沙盒社区。"
-          },
-          {
-            "name": "JSFiddle",
-            "url": "https://jsfiddle.net",
-            "description": "极简高效的在线JavaScript代码测试与原型调试平台。"
-          },
-          {
-            "name": "Replit",
-            "url": "https://replit.com",
-            "description": "支持50+语言的在线云端IDE，支持协作与一键代码部署。"
-          },
-          {
-            "name": "Glitch",
-            "url": "https://glitch.com",
-            "description": "友好的云端Web应用开发与前端项目快速构建社区。"
-          },
-          {
-            "name": "CodeSandbox",
-            "url": "https://codesandbox.io",
-            "description": "专为React、Vue等现代前端框架打造的云端开发环境。"
-          },
-          {
-            "name": "StackBlitz",
-            "url": "https://stackblitz.com",
-            "description": "基于WebContainers技术的极速云端IDE，瞬间启动Node.js。"
-          },
-          {
-            "name": "Postman",
-            "url": "https://www.postman.com",
-            "description": "全球API开发、调试、测试与团队协作的首选平台。"
-          },
-          {
-            "name": "Insomnia",
-            "url": "https://insomnia.rest",
-            "description": "开源的高质感REST与GraphQL API调试与测试客户端官网。"
-          },
-          {
-            "name": "RegEx101",
-            "url": "https://regex101.com",
-            "description": "强大的在线正则表达式测试、调试与一步一步语法解释工具。"
-          },
-          {
-            "name": "JSONLint",
-            "url": "https://jsonlint.com",
-            "description": "经典易用的在线JSON格式化、校验与语法排错工具。"
-          },
-          {
-            "name": "Crontab.guru",
-            "url": "https://crontab.guru",
-            "description": "极简直观的定时任务Cron表达式在线生成与验证表达式工具。"
-          },
-          {
-            "name": "Carbon",
-            "url": "https://carbon.now.sh",
-            "description": "将代码片段快速生成高颜值漂亮图片的在线分享工具。"
-          },
-          {
-            "name": "Shield.io",
-            "url": "https://shields.io",
-            "description": "为GitHub项目README提供各类简洁矢量徽章的平台。"
-          },
-          {
-            "name": "Badgen",
-            "url": "https://badgen.net",
-            "description": "极速矢量SVG状态徽章生成服务，常用于开源项目。"
-          },
-          {
-            "name": "DevDocs",
-            "url": "https://devdocs.io",
-            "description": "离线可用的多编程语言API官方文档快速查询一站式平台。"
-          },
-          {
-            "name": "Explainshell",
-            "url": "https://explainshell.com",
-            "description": "输入Linux复杂命令行自动拆解并匹配帮助文档的利器。"
-          },
-          {
-            "name": "DistroWatch",
-            "url": "https://distrowatch.com",
-            "description": "全球各大Linux发行版更新资讯、排行榜与下载聚合站。"
-          },
-          {
-            "name": "Linux.org",
-            "url": "https://www.linux.org",
-            "description": "Linux操作系统官方社区，提供学习论坛与系统指南。"
-          },
-          {
-            "name": "Ubuntu",
-            "url": "https://ubuntu.com",
-            "description": "全球极受欢迎的开源Linux发行版Ubuntu官方网站。"
-          },
-          {
-            "name": "Debian",
-            "url": "https://www.debian.org",
-            "description": "历史悠久、以极其稳定著称的自由Linux操作系统社区。"
-          }
-        ]
-      },
-      {
-        "name": "全球网站500强",
-        "links": [
-          {
-            "name": "google.com",
-            "url": "https://google.com/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "youtube.com",
-            "url": "https://youtube.com/",
-            "description": "全球最大视频平台，支持创作观看直播"
-          },
-          {
-            "name": "facebook.com",
-            "url": "https://facebook.com/",
-            "description": "全球最大社交网络，连接亲友分享生活"
-          },
-          {
-            "name": "instagram.com",
-            "url": "https://instagram.com/",
-            "description": "图片与短视频社交平台"
-          },
-          {
-            "name": "reddit.com",
-            "url": "https://reddit.com/",
-            "description": "全球热门论坛社区，话题讨论投票"
-          },
-          {
-            "name": "wikipedia.org",
-            "url": "https://wikipedia.org/",
-            "description": "全球最大免费在线百科全书"
-          },
-          {
-            "name": "pornhub.com",
-            "url": "https://pornhub.com/",
-            "description": "成人内容网站"
-          },
-          {
-            "name": "whatsapp.com",
-            "url": "https://whatsapp.com/",
-            "description": "全球用户最多的即时通讯应用"
-          },
-          {
-            "name": "tiktok.com",
-            "url": "https://tiktok.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "amazon.com",
-            "url": "https://amazon.com/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "xvideos.com",
-            "url": "https://xvideos.com/",
-            "description": "成人内容网站"
-          },
-          {
-            "name": "yahoo.com",
-            "url": "https://yahoo.com/",
-            "description": "老牌门户网站，新闻邮箱搜索"
-          },
-          {
-            "name": "bing.com",
-            "url": "https://bing.com/",
-            "description": "微软旗下搜索引擎，深度集成生态"
-          },
-          {
-            "name": "yahoo.co.jp",
-            "url": "https://yahoo.co.jp/",
-            "description": "老牌门户网站，新闻邮箱搜索"
-          },
-          {
-            "name": "xhamster.com",
-            "url": "https://xhamster.com/",
-            "description": "成人内容网站"
-          },
-          {
-            "name": "linkedin.com",
-            "url": "https://linkedin.com/",
-            "description": "全球职业社交平台，招聘与人脉"
-          },
-          {
-            "name": "msn.com",
-            "url": "https://msn.com/",
-            "description": "微软门户，聚合新闻资讯"
-          },
-          {
-            "name": "netflix.com",
-            "url": "https://netflix.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "temu.com",
-            "url": "https://temu.com/",
-            "description": "拼多多海外平价购物平台"
-          },
-          {
-            "name": "pinterest.com",
-            "url": "https://pinterest.com/",
-            "description": "图片灵感收藏社区"
-          },
-          {
-            "name": "microsoft.com",
-            "url": "https://microsoft.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "yandex.ru",
-            "url": "https://yandex.ru/",
-            "description": "俄罗斯最大的搜索引擎与门户"
-          },
-          {
-            "name": "live.com",
-            "url": "https://live.com/",
-            "description": "微软办公套件与邮箱"
-          },
-          {
-            "name": "twitch.tv",
-            "url": "https://twitch.tv/",
-            "description": "全球最大游戏与电竞直播平台"
-          },
-          {
-            "name": "xnxx.com",
-            "url": "https://xnxx.com/",
-            "description": "成人内容网站"
-          },
-          {
-            "name": "github.com",
-            "url": "https://github.com/",
-            "description": "全球最大代码托管与开源平台"
-          },
-          {
-            "name": "discord.com",
-            "url": "https://discord.com/",
-            "description": "游戏玩家社群聊天平台"
-          },
-          {
-            "name": "spotify.com",
-            "url": "https://spotify.com/",
-            "description": "全球最大音乐流媒体平台"
-          },
-          {
-            "name": "naver.com",
-            "url": "https://naver.com/",
-            "description": "韩国最大的搜索引擎与门户"
-          },
-          {
-            "name": "imdb.com",
-            "url": "https://imdb.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "canva.com",
-            "url": "https://canva.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "apple.com",
-            "url": "https://apple.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "paypal.com",
-            "url": "https://paypal.com/",
-            "description": "在线支付解决方案平台"
-          },
-          {
-            "name": "roblox.com",
-            "url": "https://roblox.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "globo.com",
-            "url": "https://globo.com/",
-            "description": "巴西主流新闻门户"
-          },
-          {
-            "name": "aliexpress.com",
-            "url": "https://aliexpress.com/",
-            "description": "阿里面向全球的跨境电商"
-          },
-          {
-            "name": "dailymotion.com",
-            "url": "https://dailymotion.com/",
-            "description": "国际视频分享平台"
-          },
-          {
-            "name": "twitter.com",
-            "url": "https://twitter.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "espn.com",
-            "url": "https://espn.com/",
-            "description": "体育资讯与赛事媒体"
-          },
-          {
-            "name": "openai.com",
-            "url": "https://openai.com/",
-            "description": "全球领先 AI 研究机构官网"
-          },
-          {
-            "name": "walmart.com",
-            "url": "https://walmart.com/",
-            "description": "美国大型零售电商"
-          },
-          {
-            "name": "ebay.com",
-            "url": "https://ebay.com/",
-            "description": "全球拍卖与二手购物平台"
-          },
-          {
-            "name": "booking.com",
-            "url": "https://booking.com/",
-            "description": "全球酒店预订平台"
-          },
-          {
-            "name": "office.com",
-            "url": "https://office.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "telegram.org",
-            "url": "https://telegram.org/",
-            "description": "安全加密的即时通讯应用"
-          },
-          {
-            "name": "nytimes.com",
-            "url": "https://nytimes.com/",
-            "description": "美国权威大报纽约时报官网"
-          },
-          {
-            "name": "amazon.de",
-            "url": "https://amazon.de/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "usps.com",
-            "url": "https://usps.com/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "bbc.com",
-            "url": "https://bbc.com/",
-            "description": "英国广播公司新闻官网"
-          },
-          {
-            "name": "bbc.co.uk",
-            "url": "https://bbc.co.uk/",
-            "description": "英国广播公司新闻官网"
-          },
-          {
-            "name": "indeed.com",
-            "url": "https://indeed.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "amazon.co.jp",
-            "url": "https://amazon.co.jp/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "onlyfans.com",
-            "url": "https://onlyfans.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "fifa.com",
-            "url": "https://fifa.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "uol.com.br",
-            "url": "https://uol.com.br/",
-            "description": "巴西主流新闻门户"
-          },
-          {
-            "name": "adobe.com",
-            "url": "https://adobe.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "shopify.com",
-            "url": "https://shopify.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "etsy.com",
-            "url": "https://etsy.com/",
-            "description": "手工艺品与创意商品平台"
-          },
-          {
-            "name": "rakuten.co.jp",
-            "url": "https://rakuten.co.jp/",
-            "description": "日本乐天综合电商平台"
-          },
-          {
-            "name": "samsung.com",
-            "url": "https://samsung.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "accuweather.com",
-            "url": "https://accuweather.com/",
-            "description": "全球天气资讯与预报网站"
-          },
-          {
-            "name": "primevideo.com",
-            "url": "https://primevideo.com/",
-            "description": "亚马逊视频流媒体平台"
-          },
-          {
-            "name": "deepseek.com",
-            "url": "https://deepseek.com/",
-            "description": "国产开源 AI 大模型平台"
-          },
-          {
-            "name": "ecosia.org",
-            "url": "https://ecosia.org/",
-            "description": "用搜索收益种树的环保引擎"
-          },
-          {
-            "name": "disneyplus.com",
-            "url": "https://disneyplus.com/",
-            "description": "迪士尼旗下流媒体平台"
-          },
-          {
-            "name": "quora.com",
-            "url": "https://quora.com/",
-            "description": "知识问答社区，专业内容分享"
-          },
-          {
-            "name": "marca.com",
-            "url": "https://marca.com/",
-            "description": "体育资讯与赛事媒体"
-          },
-          {
-            "name": "amazon.co.uk",
-            "url": "https://amazon.co.uk/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "amazon.in",
-            "url": "https://amazon.in/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "scribd.com",
-            "url": "https://scribd.com/",
-            "description": "创作与阅读发布平台"
-          },
-          {
-            "name": "cnn.com",
-            "url": "https://cnn.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "shein.com",
-            "url": "https://shein.com/",
-            "description": "快时尚跨境电商平台"
-          },
-          {
-            "name": "threads.com",
-            "url": "https://threads.com/",
-            "description": "Meta 推出的文字社交平台"
-          },
-          {
-            "name": "ozon.ru",
-            "url": "https://ozon.ru/",
-            "description": "俄罗斯主流电商平台"
-          },
-          {
-            "name": "note.com",
-            "url": "https://note.com/",
-            "description": "创作与阅读发布平台"
-          },
-          {
-            "name": "zillow.com",
-            "url": "https://zillow.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "yandex.com",
-            "url": "https://yandex.com/",
-            "description": "俄罗斯最大的搜索引擎与门户"
-          },
-          {
-            "name": "theporndude.com",
-            "url": "https://theporndude.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "hbomax.com",
-            "url": "https://hbomax.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "opera.com",
-            "url": "https://opera.com/",
-            "description": "网络浏览器官网"
-          },
-          {
-            "name": "snapchat.com",
-            "url": "https://snapchat.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "theguardian.com",
-            "url": "https://theguardian.com/",
-            "description": "英国主流新闻媒体"
-          },
-          {
-            "name": "patreon.com",
-            "url": "https://patreon.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "amazon.it",
-            "url": "https://amazon.it/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "fedex.com",
-            "url": "https://fedex.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "homedepot.com",
-            "url": "https://homedepot.com/",
-            "description": "美国家居建材零售电商"
-          },
-          {
-            "name": "xvideos.es",
-            "url": "https://xvideos.es/",
-            "description": "成人内容网站"
-          },
-          {
-            "name": "atlassian.net",
-            "url": "https://atlassian.net/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "dzen.ru",
-            "url": "https://dzen.ru/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "icloud.com",
-            "url": "https://icloud.com/",
-            "description": "云存储网盘服务"
-          },
-          {
-            "name": "wordpress.org",
-            "url": "https://wordpress.org/",
-            "description": "在线建站平台"
-          },
-          {
-            "name": "skype.com",
-            "url": "https://skype.com/",
-            "description": "即时通讯与远程工具"
-          },
-          {
-            "name": "baidu.com",
-            "url": "https://baidu.com/",
-            "description": "中文互联网最大的搜索引擎"
-          },
-          {
-            "name": "qq.com",
-            "url": "https://qq.com/",
-            "description": "中国腾讯门户网站"
-          },
-          {
-            "name": "amazonvideo.com",
-            "url": "https://amazonvideo.com/",
-            "description": "亚马逊视频流媒体平台"
-          },
-          {
-            "name": "mozilla.org",
-            "url": "https://mozilla.org/",
-            "description": "网络浏览器官网"
-          },
-          {
-            "name": "f5.com",
-            "url": "https://f5.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "epicgames.com",
-            "url": "https://epicgames.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "ui.com",
-            "url": "https://ui.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "europa.eu",
-            "url": "https://europa.eu/",
-            "description": "国际组织官方网站"
-          },
-          {
-            "name": "nic.ru",
-            "url": "https://nic.ru/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "office365.com",
-            "url": "https://office365.com/",
-            "description": "微软办公套件与邮箱"
-          },
-          {
-            "name": "intuit.com",
-            "url": "https://intuit.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "outlook.com",
-            "url": "https://outlook.com/",
-            "description": "微软办公套件与邮箱"
-          },
-          {
-            "name": "windows.com",
-            "url": "https://windows.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "dropbox.com",
-            "url": "https://dropbox.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "apache.org",
-            "url": "https://apache.org/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "android.com",
-            "url": "https://android.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nih.gov",
-            "url": "https://nih.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "vk.ru",
-            "url": "https://vk.ru/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "reg.ru",
-            "url": "https://reg.ru/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "t-online.de",
-            "url": "https://t-online.de/",
-            "description": "德国新闻媒体"
-          },
-          {
-            "name": "webex.com",
-            "url": "https://webex.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "godaddy.com",
-            "url": "https://godaddy.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "kaspersky.com",
-            "url": "https://kaspersky.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "tumblr.com",
-            "url": "https://tumblr.com/",
-            "description": "轻博客社交社区"
-          },
-          {
-            "name": "gravatar.com",
-            "url": "https://gravatar.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "mts.ru",
-            "url": "https://mts.ru/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "flickr.com",
-            "url": "https://flickr.com/",
-            "description": "图片分享社区"
-          },
-          {
-            "name": "afternic.com",
-            "url": "https://afternic.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "unity3d.com",
-            "url": "https://unity3d.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "w3.org",
-            "url": "https://w3.org/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "creativecommons.org",
-            "url": "https://creativecommons.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "xiaomi.com",
-            "url": "https://xiaomi.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "oracle.com",
-            "url": "https://oracle.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "stripe.com",
-            "url": "https://stripe.com/",
-            "description": "在线支付解决方案平台"
-          },
-          {
-            "name": "comcast.net",
-            "url": "https://comcast.net/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "forbes.com",
-            "url": "https://forbes.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "sciencedirect.com",
-            "url": "https://sciencedirect.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "researchgate.net",
-            "url": "https://researchgate.net/",
-            "description": "科研人员学术平台"
-          },
-          {
-            "name": "mit.edu",
-            "url": "https://mit.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "wikimedia.org",
-            "url": "https://wikimedia.org/",
-            "description": "新闻媒体网站"
-          },
-          {
-            "name": "cisco.com",
-            "url": "https://cisco.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nist.gov",
-            "url": "https://nist.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "namecheap.com",
-            "url": "https://namecheap.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "playstation.net",
-            "url": "https://playstation.net/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "roku.com",
-            "url": "https://roku.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "hubspot.com",
-            "url": "https://hubspot.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "linktr.ee",
-            "url": "https://linktr.ee/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "who.int",
-            "url": "https://who.int/",
-            "description": "国际组织官方网站"
-          },
-          {
-            "name": "googleblog.com",
-            "url": "https://googleblog.com/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "ibm.com",
-            "url": "https://ibm.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "reuters.com",
-            "url": "https://reuters.com/",
-            "description": "全球通讯社路透社官网"
-          },
-          {
-            "name": "hp.com",
-            "url": "https://hp.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "miui.com",
-            "url": "https://miui.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "salesforce.com",
-            "url": "https://salesforce.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nature.com",
-            "url": "https://nature.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "autodesk.com",
-            "url": "https://autodesk.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "steampowered.com",
-            "url": "https://steampowered.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "springer.com",
-            "url": "https://springer.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "gamepass.com",
-            "url": "https://gamepass.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "brave.com",
-            "url": "https://brave.com/",
-            "description": "网络浏览器官网"
-          },
-          {
-            "name": "alibaba.com",
-            "url": "https://alibaba.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "ok.ru",
-            "url": "https://ok.ru/",
-            "description": "俄罗斯主流社交网络"
-          },
-          {
-            "name": "harvard.edu",
-            "url": "https://harvard.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "avast.com",
-            "url": "https://avast.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "debian.org",
-            "url": "https://debian.org/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "wiley.com",
-            "url": "https://wiley.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "mi.com",
-            "url": "https://mi.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "slack.com",
-            "url": "https://slack.com/",
-            "description": "企业团队协作通讯平台"
-          },
-          {
-            "name": "gmail.com",
-            "url": "https://gmail.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "weebly.com",
-            "url": "https://weebly.com/",
-            "description": "在线建站平台"
-          },
-          {
-            "name": "php.net",
-            "url": "https://php.net/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "aliyun.com",
-            "url": "https://aliyun.com/",
-            "description": "阿里云云计算平台"
-          },
-          {
-            "name": "tp-link.com",
-            "url": "https://tp-link.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "gnu.org",
-            "url": "https://gnu.org/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "ea.com",
-            "url": "https://ea.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "trustpilot.com",
-            "url": "https://trustpilot.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "dell.com",
-            "url": "https://dell.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "cdc.gov",
-            "url": "https://cdc.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "checkpoint.com",
-            "url": "https://checkpoint.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "zendesk.com",
-            "url": "https://zendesk.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "un.org",
-            "url": "https://un.org/",
-            "description": "国际组织官方网站"
-          },
-          {
-            "name": "tradingview.com",
-            "url": "https://tradingview.com/",
-            "description": "金融行情与图表分析平台"
-          },
-          {
-            "name": "nasa.gov",
-            "url": "https://nasa.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "nvidia.com",
-            "url": "https://nvidia.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "gitlab.com",
-            "url": "https://gitlab.com/",
-            "description": "代码托管与研发协作平台"
-          },
-          {
-            "name": "drom.ru",
-            "url": "https://drom.ru/",
-            "description": "俄罗斯汽车资讯论坛"
-          },
-          {
-            "name": "google.cn",
-            "url": "https://google.cn/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "issuu.com",
-            "url": "https://issuu.com/",
-            "description": "创作与阅读发布平台"
-          },
-          {
-            "name": "sberbank.ru",
-            "url": "https://sberbank.ru/",
-            "description": "俄罗斯银行官网"
-          },
-          {
-            "name": "washingtonpost.com",
-            "url": "https://washingtonpost.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "stanford.edu",
-            "url": "https://stanford.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "bloomberg.com",
-            "url": "https://bloomberg.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "grammarly.com",
-            "url": "https://grammarly.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "wsj.com",
-            "url": "https://wsj.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "name.com",
-            "url": "https://name.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "bsky.app",
-            "url": "https://bsky.app/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "calendly.com",
-            "url": "https://calendly.com/",
-            "description": "在线办公与问卷工具"
-          },
-          {
-            "name": "hostgator.com",
-            "url": "https://hostgator.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "anthropic.com",
-            "url": "https://anthropic.com/",
-            "description": "全球领先 AI 研究机构官网"
-          },
-          {
-            "name": "expireddomains.com",
-            "url": "https://expireddomains.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "paloaltonetworks.com",
-            "url": "https://paloaltonetworks.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "netease.com",
-            "url": "https://netease.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "go.com",
-            "url": "https://go.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "163.com",
-            "url": "https://163.com/",
-            "description": "中国网易门户网站"
-          },
-          {
-            "name": "dropcatch.com",
-            "url": "https://dropcatch.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "okta.com",
-            "url": "https://okta.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "aol.com",
-            "url": "https://aol.com/",
-            "description": "美国老牌门户网站"
-          },
-          {
-            "name": "substack.com",
-            "url": "https://substack.com/",
-            "description": "深度文章与订阅写作平台"
-          },
-          {
-            "name": "intel.com",
-            "url": "https://intel.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "taobao.com",
-            "url": "https://taobao.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "bluehost.com",
-            "url": "https://bluehost.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "huawei.com",
-            "url": "https://huawei.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "fandom.com",
-            "url": "https://fandom.com/",
-            "description": "影视游戏粉丝维基平台"
-          },
-          {
-            "name": "duolingo.com",
-            "url": "https://duolingo.com/",
-            "description": "免费语言学习应用"
-          },
-          {
-            "name": "businessinsider.com",
-            "url": "https://businessinsider.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "speedtest.net",
-            "url": "https://speedtest.net/",
-            "description": "网速测试网站"
-          },
-          {
-            "name": "cnbc.com",
-            "url": "https://cnbc.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "goodreads.com",
-            "url": "https://goodreads.com/",
-            "description": "读书分享与书评社区"
-          },
-          {
-            "name": "wps.com",
-            "url": "https://wps.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "supercell.com",
-            "url": "https://supercell.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "ietf.org",
-            "url": "https://ietf.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "mcafee.com",
-            "url": "https://mcafee.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "mozilla.com",
-            "url": "https://mozilla.com/",
-            "description": "网络浏览器官网"
-          },
-          {
-            "name": "statista.com",
-            "url": "https://statista.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "xboxlive.com",
-            "url": "https://xboxlive.com/",
-            "description": "微软办公套件与邮箱"
-          },
-          {
-            "name": "noaa.gov",
-            "url": "https://noaa.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "npr.org",
-            "url": "https://npr.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "sina.com.cn",
-            "url": "https://sina.com.cn/",
-            "description": "中国新浪门户与新闻"
-          },
-          {
-            "name": "ivi.ru",
-            "url": "https://ivi.ru/",
-            "description": "俄罗斯影视流媒体平台"
-          },
-          {
-            "name": "eventbrite.com",
-            "url": "https://eventbrite.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "foxnews.com",
-            "url": "https://foxnews.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "indiatimes.com",
-            "url": "https://indiatimes.com/",
-            "description": "印度最大报纸印度时报官网"
-          },
-          {
-            "name": "blogger.com",
-            "url": "https://blogger.com/",
-            "description": "在线建站平台"
-          },
-          {
-            "name": "google.de",
-            "url": "https://google.de/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "google.com.hk",
-            "url": "https://google.com.hk/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "behance.net",
-            "url": "https://behance.net/",
-            "description": "艺术设计与创作社区"
-          },
-          {
-            "name": "docker.com",
-            "url": "https://docker.com/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "trendmicro.com",
-            "url": "https://trendmicro.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "openstreetmap.org",
-            "url": "https://openstreetmap.org/",
-            "description": "地图与地理信息服务"
-          },
-          {
-            "name": "mysql.com",
-            "url": "https://mysql.com/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "slideshare.net",
-            "url": "https://slideshare.net/",
-            "description": "创作与阅读发布平台"
-          },
-          {
-            "name": "wildberries.ru",
-            "url": "https://wildberries.ru/",
-            "description": "俄罗斯主流电商平台"
-          },
-          {
-            "name": "sohu.com",
-            "url": "https://sohu.com/",
-            "description": "中国搜狐门户与新闻"
-          },
-          {
-            "name": "capcut.com",
-            "url": "https://capcut.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "ft.com",
-            "url": "https://ft.com/",
-            "description": "全球财经新闻媒体"
-          },
-          {
-            "name": "mediatek.com",
-            "url": "https://mediatek.com/",
-            "description": "新闻媒体网站"
-          },
-          {
-            "name": "oup.com",
-            "url": "https://oup.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "firefox.com",
-            "url": "https://firefox.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "visualstudio.com",
-            "url": "https://visualstudio.com/",
-            "description": "软件开发工具官网"
-          },
-          {
-            "name": "wired.com",
-            "url": "https://wired.com/",
-            "description": "科技与商业新闻媒体"
-          },
-          {
-            "name": "chinamobile.com",
-            "url": "https://chinamobile.com/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "gosuslugi.ru",
-            "url": "https://gosuslugi.ru/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "tandfonline.com",
-            "url": "https://tandfonline.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "squarespace.com",
-            "url": "https://squarespace.com/",
-            "description": "在线建站平台"
-          },
-          {
-            "name": "cornell.edu",
-            "url": "https://cornell.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "tripadvisor.com",
-            "url": "https://tripadvisor.com/",
-            "description": "全球旅游点评平台"
-          },
-          {
-            "name": "jquery.com",
-            "url": "https://jquery.com/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "time.com",
-            "url": "https://time.com/",
-            "description": "科技与商业新闻媒体"
-          },
-          {
-            "name": "dreamhost.com",
-            "url": "https://dreamhost.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "deviantart.com",
-            "url": "https://deviantart.com/",
-            "description": "艺术设计与创作社区"
-          },
-          {
-            "name": "comcast.com",
-            "url": "https://comcast.com/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "mobile.de",
-            "url": "https://mobile.de/",
-            "description": "德国汽车交易平台"
-          },
-          {
-            "name": "eset.com",
-            "url": "https://eset.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "ca.gov",
-            "url": "https://ca.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "bitrix24.ru",
-            "url": "https://bitrix24.ru/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "atlassian.com",
-            "url": "https://atlassian.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "playstation.com",
-            "url": "https://playstation.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "digitalocean.com",
-            "url": "https://digitalocean.com/",
-            "description": "开发者云服务器平台"
-          },
-          {
-            "name": "target.com",
-            "url": "https://target.com/",
-            "description": "美国大型零售电商"
-          },
-          {
-            "name": "usatoday.com",
-            "url": "https://usatoday.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "ieee.org",
-            "url": "https://ieee.org/",
-            "description": "顶尖大学与研究机构官网"
-          },
-          {
-            "name": "mdpi.com",
-            "url": "https://mdpi.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "wix.com",
-            "url": "https://wix.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "avito.ru",
-            "url": "https://avito.ru/",
-            "description": "分类信息交易平台"
-          },
-          {
-            "name": "unesco.org",
-            "url": "https://unesco.org/",
-            "description": "国际组织官方网站"
-          },
-          {
-            "name": "berkeley.edu",
-            "url": "https://berkeley.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "sagepub.com",
-            "url": "https://sagepub.com/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "archive.ph",
-            "url": "https://archive.ph/",
-            "description": "互联网档案馆，数字资料保存"
-          },
-          {
-            "name": "telegraph.co.uk",
-            "url": "https://telegraph.co.uk/",
-            "description": "英国主流新闻媒体"
-          },
-          {
-            "name": "amazon.fr",
-            "url": "https://amazon.fr/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "dailymail.com",
-            "url": "https://dailymail.com/",
-            "description": "英国主流新闻媒体"
-          },
-          {
-            "name": "nintendo.com",
-            "url": "https://nintendo.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "amazon.ca",
-            "url": "https://amazon.ca/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "ikea.com",
-            "url": "https://ikea.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "ups.com",
-            "url": "https://ups.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "verisign.com",
-            "url": "https://verisign.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "merriam-webster.com",
-            "url": "https://merriam-webster.com/",
-            "description": "在线英语词典网站"
-          },
-          {
-            "name": "mega.co.nz",
-            "url": "https://mega.co.nz/",
-            "description": "云存储网盘服务"
-          },
-          {
-            "name": "jotform.com",
-            "url": "https://jotform.com/",
-            "description": "在线办公与问卷工具"
-          },
-          {
-            "name": "archive.is",
-            "url": "https://archive.is/",
-            "description": "互联网档案馆，数字资料保存"
-          },
-          {
-            "name": "2gis.com",
-            "url": "https://2gis.com/",
-            "description": "地图与地理信息服务"
-          },
-          {
-            "name": "tencent.com",
-            "url": "https://tencent.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "sophos.com",
-            "url": "https://sophos.com/",
-            "description": "网络安全软件官网"
-          },
-          {
-            "name": "meta.com",
-            "url": "https://meta.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "loc.gov",
-            "url": "https://loc.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "samsungapps.com",
-            "url": "https://samsungapps.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "mikrotik.com",
-            "url": "https://mikrotik.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "iso.org",
-            "url": "https://iso.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "elpais.com",
-            "url": "https://elpais.com/",
-            "description": "欧洲主流新闻媒体"
-          },
-          {
-            "name": "britannica.com",
-            "url": "https://britannica.com/",
-            "description": "大英百科全书官网"
-          },
-          {
-            "name": "redhat.com",
-            "url": "https://redhat.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "perplexity.ai",
-            "url": "https://perplexity.ai/",
-            "description": "AI 驱动的智能搜索引擎"
-          },
-          {
-            "name": "nike.com",
-            "url": "https://nike.com/",
-            "description": "国际运动品牌官网"
-          },
-          {
-            "name": "surveymonkey.com",
-            "url": "https://surveymonkey.com/",
-            "description": "在线办公与问卷工具"
-          },
-          {
-            "name": "my.com",
-            "url": "https://my.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "binance.com",
-            "url": "https://binance.com/",
-            "description": "全球最大加密货币交易所"
-          },
-          {
-            "name": "anydesk.com",
-            "url": "https://anydesk.com/",
-            "description": "即时通讯与远程工具"
-          },
-          {
-            "name": "cambridge.org",
-            "url": "https://cambridge.org/",
-            "description": "顶尖大学与研究机构官网"
-          },
-          {
-            "name": "kick.com",
-            "url": "https://kick.com/",
-            "description": "游戏直播平台"
-          },
-          {
-            "name": "box.com",
-            "url": "https://box.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "360.cn",
-            "url": "https://360.cn/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "lemonde.fr",
-            "url": "https://lemonde.fr/",
-            "description": "欧洲主流新闻媒体"
-          },
-          {
-            "name": "cbsnews.com",
-            "url": "https://cbsnews.com/",
-            "description": "新闻媒体网站"
-          },
-          {
-            "name": "ring.com",
-            "url": "https://ring.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "gotinder.com",
-            "url": "https://gotinder.com/",
-            "description": "约会交友应用"
-          },
-          {
-            "name": "yelp.com",
-            "url": "https://yelp.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "vivoglobal.com",
-            "url": "https://vivoglobal.com/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "fb.com",
-            "url": "https://fb.com/",
-            "description": "全球最大社交网络，连接亲友分享生活"
-          },
-          {
-            "name": "rustore.ru",
-            "url": "https://rustore.ru/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "dailymail.co.uk",
-            "url": "https://dailymail.co.uk/",
-            "description": "英国主流新闻媒体"
-          },
-          {
-            "name": "amazon.es",
-            "url": "https://amazon.es/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "linode.com",
-            "url": "https://linode.com/",
-            "description": "开发者云服务器平台"
-          },
-          {
-            "name": "marriott.com",
-            "url": "https://marriott.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "stripchat.com",
-            "url": "https://stripchat.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "itch.io",
-            "url": "https://itch.io/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "uber.com",
-            "url": "https://uber.com/",
-            "description": "全球网约车平台"
-          },
-          {
-            "name": "viber.com",
-            "url": "https://viber.com/",
-            "description": "即时通讯与远程工具"
-          },
-          {
-            "name": "independent.co.uk",
-            "url": "https://independent.co.uk/",
-            "description": "英国主流新闻媒体"
-          },
-          {
-            "name": "cnet.com",
-            "url": "https://cnet.com/",
-            "description": "科技与商业新闻媒体"
-          },
-          {
-            "name": "fda.gov",
-            "url": "https://fda.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "fontawesome.com",
-            "url": "https://fontawesome.com/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "shopee.co.id",
-            "url": "https://shopee.co.id/",
-            "description": "亚洲主流电商平台"
-          },
-          {
-            "name": "mediafire.com",
-            "url": "https://mediafire.com/",
-            "description": "新闻媒体网站"
-          },
-          {
-            "name": "asus.com",
-            "url": "https://asus.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "vkontakte.ru",
-            "url": "https://vkontakte.ru/",
-            "description": "俄罗斯主流社交网络"
-          },
-          {
-            "name": "hostgator.com.br",
-            "url": "https://hostgator.com.br/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "python.org",
-            "url": "https://python.org/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "google.co.uk",
-            "url": "https://google.co.uk/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "airbnb.com",
-            "url": "https://airbnb.com/",
-            "description": "民宿短租预订平台"
-          },
-          {
-            "name": "mailchimp.com",
-            "url": "https://mailchimp.com/",
-            "description": "邮件营销自动化平台"
-          },
-          {
-            "name": "bild.de",
-            "url": "https://bild.de/",
-            "description": "德国新闻媒体"
-          },
-          {
-            "name": "imgur.com",
-            "url": "https://imgur.com/",
-            "description": "图片分享社区"
-          },
-          {
-            "name": "hugedomains.com",
-            "url": "https://hugedomains.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "mlb.com",
-            "url": "https://mlb.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nikkei.com",
-            "url": "https://nikkei.com/",
-            "description": "日本经济新闻官网"
-          },
-          {
-            "name": "craigslist.org",
-            "url": "https://craigslist.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "mckinsey.com",
-            "url": "https://mckinsey.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "shopee.com.br",
-            "url": "https://shopee.com.br/",
-            "description": "亚洲主流电商平台"
-          },
-          {
-            "name": "google.com.br",
-            "url": "https://google.com.br/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "livejournal.com",
-            "url": "https://livejournal.com/",
-            "description": "轻博客社交社区"
-          },
-          {
-            "name": "zoom.com",
-            "url": "https://zoom.com/",
-            "description": "视频会议软件，远程办公首选"
-          },
-          {
-            "name": "amazon.co.za",
-            "url": "https://amazon.co.za/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "welt.de",
-            "url": "https://welt.de/",
-            "description": "德国新闻媒体"
-          },
-          {
-            "name": "wattpad.com",
-            "url": "https://wattpad.com/",
-            "description": "创作与阅读发布平台"
-          },
-          {
-            "name": "apnews.com",
-            "url": "https://apnews.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "lenovo.com",
-            "url": "https://lenovo.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "warnerbros.com",
-            "url": "https://warnerbros.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "bestbuy.com",
-            "url": "https://bestbuy.com/",
-            "description": "美国消费电子零售电商"
-          },
-          {
-            "name": "ameblo.jp",
-            "url": "https://ameblo.jp/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "deepl.com",
-            "url": "https://deepl.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "sedo.com",
-            "url": "https://sedo.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "wp.pl",
-            "url": "https://wp.pl/",
-            "description": "综合门户网站"
-          },
-          {
-            "name": "rakuten.com",
-            "url": "https://rakuten.com/",
-            "description": "日本乐天综合电商平台"
-          },
-          {
-            "name": "zoho.com",
-            "url": "https://zoho.com/",
-            "description": "中小企业办公软件套件"
-          },
-          {
-            "name": "fiverr.com",
-            "url": "https://fiverr.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "prnewswire.com",
-            "url": "https://prnewswire.com/",
-            "description": "企业新闻稿发布平台"
-          },
-          {
-            "name": "ted.com",
-            "url": "https://ted.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "discordapp.com",
-            "url": "https://discordapp.com/",
-            "description": "游戏玩家社群聊天平台"
-          },
-          {
-            "name": "people.com",
-            "url": "https://people.com/",
-            "description": "美国娱乐人物杂志官网"
-          },
-          {
-            "name": "erome.com",
-            "url": "https://erome.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "seznam.cz",
-            "url": "https://seznam.cz/",
-            "description": "综合门户网站"
-          },
-          {
-            "name": "usda.gov",
-            "url": "https://usda.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "vivo.com.cn",
-            "url": "https://vivo.com.cn/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "att.com",
-            "url": "https://att.com/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "discogs.com",
-            "url": "https://discogs.com/",
-            "description": "全球音乐唱片数据库"
-          },
-          {
-            "name": "myspace.com",
-            "url": "https://myspace.com/",
-            "description": "音乐与社交网站"
-          },
-          {
-            "name": "cursor.sh",
-            "url": "https://cursor.sh/",
-            "description": "AI 辅助编程代码编辑器"
-          },
-          {
-            "name": "life360.com",
-            "url": "https://life360.com/",
-            "description": "家庭成员位置共享应用"
-          },
-          {
-            "name": "agoda.com",
-            "url": "https://agoda.com/",
-            "description": "全球酒店预订平台"
-          },
-          {
-            "name": "academia.edu",
-            "url": "https://academia.edu/",
-            "description": "科研人员学术平台"
-          },
-          {
-            "name": "theverge.com",
-            "url": "https://theverge.com/",
-            "description": "科技与商业新闻媒体"
-          },
-          {
-            "name": "amazon.com.br",
-            "url": "https://amazon.com.br/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "pikabu.ru",
-            "url": "https://pikabu.ru/",
-            "description": "俄罗斯社交新闻社区"
-          },
-          {
-            "name": "synology.com",
-            "url": "https://synology.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "frontiersin.org",
-            "url": "https://frontiersin.org/",
-            "description": "学术出版与文献平台"
-          },
-          {
-            "name": "pexels.com",
-            "url": "https://pexels.com/",
-            "description": "免费图片素材网站"
-          },
-          {
-            "name": "chess.com",
-            "url": "https://chess.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "ebay.co.uk",
-            "url": "https://ebay.co.uk/",
-            "description": "全球拍卖与二手购物平台"
-          },
-          {
-            "name": "no-ip.com",
-            "url": "https://no-ip.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "stackexchange.com",
-            "url": "https://stackexchange.com/",
-            "description": "专业技术问答社区"
-          },
-          {
-            "name": "www.gov.br",
-            "url": "https://www.gov.br/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "focus.de",
-            "url": "https://focus.de/",
-            "description": "德国新闻媒体"
-          },
-          {
-            "name": "biblegateway.com",
-            "url": "https://biblegateway.com/",
-            "description": "圣经在线阅读网站"
-          },
-          {
-            "name": "ebay.de",
-            "url": "https://ebay.de/",
-            "description": "全球拍卖与二手购物平台"
-          },
-          {
-            "name": "agora.io",
-            "url": "https://agora.io/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nbcnews.com",
-            "url": "https://nbcnews.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "allaboutcookies.org",
-            "url": "https://allaboutcookies.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "maricopa.gov",
-            "url": "https://maricopa.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "figma.com",
-            "url": "https://figma.com/",
-            "description": "在线 UI 设计与协作工具"
-          },
-          {
-            "name": "worldbank.org",
-            "url": "https://worldbank.org/",
-            "description": "国际组织官方网站"
-          },
-          {
-            "name": "deloitte.com",
-            "url": "https://deloitte.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "flipkart.com",
-            "url": "https://flipkart.com/",
-            "description": "亚洲主流电商平台"
-          },
-          {
-            "name": "arcgis.com",
-            "url": "https://arcgis.com/",
-            "description": "地图与地理信息服务"
-          },
-          {
-            "name": "hbr.org",
-            "url": "https://hbr.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "readthedocs.io",
-            "url": "https://readthedocs.io/",
-            "description": "开源软件与标准官网"
-          },
-          {
-            "name": "daum.net",
-            "url": "https://daum.net/",
-            "description": "综合门户网站"
-          },
-          {
-            "name": "princeton.edu",
-            "url": "https://princeton.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "disqus.com",
-            "url": "https://disqus.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "porkbun.com",
-            "url": "https://porkbun.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "latimes.com",
-            "url": "https://latimes.com/",
-            "description": "美国主流新闻媒体"
-          },
-          {
-            "name": "wyzecam.com",
-            "url": "https://wyzecam.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "bankofamerica.com",
-            "url": "https://bankofamerica.com/",
-            "description": "美国银行官网"
-          },
-          {
-            "name": "lg.com",
-            "url": "https://lg.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "epa.gov",
-            "url": "https://epa.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "blackberry.com",
-            "url": "https://blackberry.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "qualtrics.com",
-            "url": "https://qualtrics.com/",
-            "description": "在线办公与问卷工具"
-          },
-          {
-            "name": "coupang.com",
-            "url": "https://coupang.com/",
-            "description": "韩国最大电商平台"
-          },
-          {
-            "name": "jetbrains.com",
-            "url": "https://jetbrains.com/",
-            "description": "软件开发工具官网"
-          },
-          {
-            "name": "classlink.com",
-            "url": "https://classlink.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "curseforge.com",
-            "url": "https://curseforge.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "mercadolivre.com.br",
-            "url": "https://mercadolivre.com.br/",
-            "description": "拉美最大电商平台"
-          },
-          {
-            "name": "amazon.com.au",
-            "url": "https://amazon.com.au/",
-            "description": "全球最大电商平台，自营与三方商品"
-          },
-          {
-            "name": "poki.com",
-            "url": "https://poki.com/",
-            "description": "在线游戏平台"
-          },
-          {
-            "name": "odoo.com",
-            "url": "https://odoo.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "state.gov",
-            "url": "https://state.gov/",
-            "description": "政府官方网站"
-          },
-          {
-            "name": "tailscale.com",
-            "url": "https://tailscale.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "kleinanzeigen.de",
-            "url": "https://kleinanzeigen.de/",
-            "description": "分类信息交易平台"
-          },
-          {
-            "name": "mercadolibre.com.ar",
-            "url": "https://mercadolibre.com.ar/",
-            "description": "拉美最大电商平台"
-          },
-          {
-            "name": "telefonica.de",
-            "url": "https://telefonica.de/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "chaturbate.com",
-            "url": "https://chaturbate.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "youku.com",
-            "url": "https://youku.com/",
-            "description": "中国综合视频平台"
-          },
-          {
-            "name": "repubblica.it",
-            "url": "https://repubblica.it/",
-            "description": "欧洲主流新闻媒体"
-          },
-          {
-            "name": "t2.ru",
-            "url": "https://t2.ru/",
-            "description": "电信运营商官网"
-          },
-          {
-            "name": "character.ai",
-            "url": "https://character.ai/",
-            "description": "AI 角色扮演对话平台"
-          },
-          {
-            "name": "tbank.ru",
-            "url": "https://tbank.ru/",
-            "description": "俄罗斯银行官网"
-          },
-          {
-            "name": "xiaohongshu.com",
-            "url": "https://xiaohongshu.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "washington.edu",
-            "url": "https://washington.edu/",
-            "description": "大学官方网站"
-          },
-          {
-            "name": "otto.de",
-            "url": "https://otto.de/",
-            "description": "欧洲综合电商平台"
-          },
-          {
-            "name": "tubi.io",
-            "url": "https://tubi.io/",
-            "description": "免费广告支持的流媒体平台"
-          },
-          {
-            "name": "eporner.com",
-            "url": "https://eporner.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "corriere.it",
-            "url": "https://corriere.it/",
-            "description": "欧洲主流新闻媒体"
-          },
-          {
-            "name": "buydomains.com",
-            "url": "https://buydomains.com/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "thenai.org",
-            "url": "https://thenai.org/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "hm.com",
-            "url": "https://hm.com/",
-            "description": "快时尚服装品牌官网"
-          },
-          {
-            "name": "trendyol.com",
-            "url": "https://trendyol.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "incapdns.net",
-            "url": "https://incapdns.net/",
-            "description": "域名注册与主机服务商"
-          },
-          {
-            "name": "mailchi.mp",
-            "url": "https://mailchi.mp/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "auth0.com",
-            "url": "https://auth0.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "hulu.com",
-            "url": "https://hulu.com/",
-            "description": "美剧与综艺流媒体平台"
-          },
-          {
-            "name": "max.com",
-            "url": "https://max.com/",
-            "description": "全球资讯社交平台，实时热点讨论"
-          },
-          {
-            "name": "paramountplus.com",
-            "url": "https://paramountplus.com/",
-            "description": "美国影视流媒体平台"
-          },
-          {
-            "name": "peacocktv.com",
-            "url": "https://peacocktv.com/",
-            "description": "游戏直播平台"
-          },
-          {
-            "name": "yahoo.co.uk",
-            "url": "https://yahoo.co.uk/",
-            "description": "老牌门户网站，新闻邮箱搜索"
-          },
-          {
-            "name": "google.it",
-            "url": "https://google.it/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "google.com.mx",
-            "url": "https://google.com.mx/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "google.ca",
-            "url": "https://google.ca/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "google.com.au",
-            "url": "https://google.com.au/",
-            "description": "全球最大搜索引擎，搜索邮箱地图等服务"
-          },
-          {
-            "name": "livejasmin.com",
-            "url": "https://livejasmin.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "cricbuzz.com",
-            "url": "https://cricbuzz.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "espncricinfo.com",
-            "url": "https://espncricinfo.com/",
-            "description": "体育资讯与赛事媒体"
-          },
-          {
-            "name": "flashscore.com",
-            "url": "https://flashscore.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "sofascore.com",
-            "url": "https://sofascore.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "livescore.com",
-            "url": "https://livescore.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nfl.com",
-            "url": "https://nfl.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "nba.com",
-            "url": "https://nba.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "uefa.com",
-            "url": "https://uefa.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "premierleague.com",
-            "url": "https://premierleague.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "bet365.com",
-            "url": "https://bet365.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "draftkings.com",
-            "url": "https://draftkings.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "fanduel.com",
-            "url": "https://fanduel.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "hotstar.com",
-            "url": "https://hotstar.com/",
-            "description": "印度影视流媒体平台"
-          },
-          {
-            "name": "jiocinema.com",
-            "url": "https://jiocinema.com/",
-            "description": "企业官方网站，提供产品与服务信息"
-          },
-          {
-            "name": "sonyliv.com",
-            "url": "https://sonyliv.com/",
-            "description": "印度影视流媒体平台"
-          },
-          {
-            "name": "zee5.com",
-            "url": "https://zee5.com/",
-            "description": "印度影视流媒体平台"
-          },
-          {
-            "name": "timesofindia.indiatimes.com",
-            "url": "https://timesofindia.indiatimes.com/",
-            "description": "印度最大报纸印度时报官网"
-          },
-          {
-            "name": "ndtv.com",
-            "url": "https://ndtv.com/",
-            "description": "游戏直播平台"
-          },
-          {
-            "name": "aajtak.in",
-            "url": "https://aajtak.in/",
-            "description": "印度主流新闻媒体"
-          },
-          {
-            "name": "thehindu.com",
-            "url": "https://thehindu.com/",
-            "description": "印度主流新闻媒体"
-          }
-        ]
-      },
-      {
-        "name": "1-50",
-        "links": [
-          {
-            "name": "State Grid (国家电网)",
-            "url": "http://www.sgcc.com.cn/",
-            "description": "中国特大型能源供应央企，全球最大的电力输送与分销企"
-          },
-          {
-            "name": "UnitedHealth Group",
-            "url": "https://www.unitedhealthgroup.com/",
-            "description": "全球领先的健康保险与医疗健康服务综合巨头。"
-          },
-          {
-            "name": "Saudi Aramco (沙特阿美)",
-            "url": "https://www.aramco.com/",
-            "description": "全球最大的综合石油与天然气勘探、生产与炼化企业。"
-          },
-          {
-            "name": "China National Petroleum (中国石油)",
-            "url": "http://www.cnpc.com.cn/",
-            "description": "中国综合性能源巨头，涵盖油气勘探、炼化与零售业务。"
-          },
-          {
-            "name": "Sinopec Group (中国石化)",
-            "url": "http://www.sinopecgroup.com/",
-            "description": "全球主要的炼油、石油化工与能源零售企业集团。"
-          },
-          {
-            "name": "CVS Health",
-            "url": "https://www.cvshealth.com/",
-            "description": "美国领先的综合医疗保健公司"
-          },
-          {
-            "name": "Berkshire Hathaway",
-            "url": "https://www.berkshirehathaway.com/",
-            "description": "沃伦·巴菲特领导的跨国多元化投资控股集团。"
-          },
-          {
-            "name": "McKesson",
-            "url": "https://www.mckesson.com/",
-            "description": "全球主要的医药分销、医疗信息技术与医疗供应链企业。"
-          },
-          {
-            "name": "Volkswagen Group (大众汽车)",
-            "url": "https://www.volkswagen-group.com/",
-            "description": "德国跨国汽车制造巨头，旗下拥有多个知名汽车品牌。"
-          },
-          {
-            "name": "Alphabet (Google)",
-            "url": "https://abc.xyz/",
-            "description": "Google母公司，专注于互联网搜索、云计算"
-          },
-          {
-            "name": "ExxonMobil (埃克森美孚)",
-            "url": "https://corporate.exxonmobil.com/",
-            "description": "全球主要的跨国石油、天然气与能源化工企业。"
-          },
-          {
-            "name": "Toyota Motor (丰田汽车)",
-            "url": "https://global.toyota/",
-            "description": "全球销量领先的日本汽车制造巨头"
-          },
-          {
-            "name": "Shell (壳牌)",
-            "url": "https://www.shell.com/",
-            "description": "全球能源与石油化工跨国集团"
-          },
-          {
-            "name": "Cencora",
-            "url": "https://www.cencora.com/",
-            "description": "全球医药供应链与健康解决方案提供商(前身"
-          },
-          {
-            "name": "JPMorgan Chase (摩根大通)",
-            "url": "https://www.jpmorganchase.com/",
-            "description": "全球最大的金融服务与投资银行机构之一。"
-          },
-          {
-            "name": "Costco Wholesale",
-            "url": "https://www.costco.com/",
-            "description": "全球著名的仓储会员制连锁超市与全渠道零售商。"
-          },
-          {
-            "name": "Cigna Group",
-            "url": "https://www.thecignagroup.com/",
-            "description": "全球化健康服务与医疗保险企业。"
-          },
-          {
-            "name": "Trafigura Group (托克集团)",
-            "url": "https://www.trafigura.com/",
-            "description": "全球顶尖的大宗商品独立贸易与物流供应链集团。"
-          },
-          {
-            "name": "Glencore (嘉能可)",
-            "url": "https://www.glencore.com/",
-            "description": "全球主要的自然资源与金属、矿产大宗商品贸易巨头。"
-          },
-          {
-            "name": "Cardinal Health",
-            "url": "https://www.cardinalhealth.com/",
-            "description": "美国跨国医疗保健与医药分销服务企业。"
-          },
-          {
-            "name": "Hon Hai Precision (鸿海精密/富士康)",
-            "url": "https://www.honhai.com/",
-            "description": "全球最大的电子代工制造与先进智造服务企业。"
-          },
-          {
-            "name": "Chevron (雪佛龙)",
-            "url": "https://www.chevron.com/",
-            "description": "全球大型跨国能源公司，从事石油天然气勘探"
-          },
-          {
-            "name": "Agricultural Bank of China (中国农业银行)",
-            "url": "https://www.abchina.com/",
-            "description": "中国大型国有商业银行，提供全方位综合金融服务。"
-          },
-          {
-            "name": "China Construction Bank (中国建设银行)",
-            "url": "https://www.ccb.com/",
-            "description": "中国四大国有商业银行之一"
-          },
-          {
-            "name": "TotalEnergies (道达尔能源)",
-            "url": "https://totalenergies.com/",
-            "description": "法国多元化跨国能源公司，涵盖石油"
-          },
-          {
-            "name": "BP (毕辟)",
-            "url": "https://www.bp.com/",
-            "description": "英国跨国石油与天然气巨头"
-          },
-          {
-            "name": "Bank of America (美国银行)",
-            "url": "https://www.bankofamerica.com/",
-            "description": "美国主要的多元化零售银行与投资银行机构。"
-          },
-          {
-            "name": "General Motors (通用汽车)",
-            "url": "https://www.gm.com/",
-            "description": "美国跨国汽车制造巨头，拥有雪佛兰、别克"
-          },
-          {
-            "name": "Ford Motor (福特汽车)",
-            "url": "https://www.ford.com/",
-            "description": "美国知名百年汽车制造商，深耕商用车与电动汽车研发。"
-          },
-          {
-            "name": "Elevance Health",
-            "url": "https://www.elevancehealth.com/",
-            "description": "美国大型健康保险与医疗解决方案提供商(原"
-          },
-          {
-            "name": "Bank of China (中国银行)",
-            "url": "https://www.boc.cn/",
-            "description": "中国国际化程度极高的国有商业银行"
-          },
-          {
-            "name": "Citigroup (花旗集团)",
-            "url": "https://www.citigroup.com/",
-            "description": "全球领先的跨国金融服务公司与投资银行。"
-          },
-          {
-            "name": "Stellantis",
-            "url": "https://www.stellantis.com/",
-            "description": "全球跨国汽车集团，拥有标致、雪铁龙、吉普"
-          },
-          {
-            "name": "Meta Platforms",
-            "url": "https://about.meta.com/",
-            "description": "全球社交网络与元宇宙技术巨头"
-          },
-          {
-            "name": "Centene",
-            "url": "https://www.centene.com/",
-            "description": "美国大型健康护理企业，专注于政府资助的医疗保障计划"
-          },
-          {
-            "name": "Industrial and Commercial Bank of China (中国工商银行)",
-            "url": "https://www.icbc.com.cn/",
-            "description": "全球资产规模巨大的国有商业银行。"
-          },
-          {
-            "name": "China State Construction (中国建筑)",
-            "url": "http://www.cscec.com/",
-            "description": "全球投资建设集团巨头，承建大量重大基础设施与房屋建"
-          },
-          {
-            "name": "BMW Group (宝马集团)",
-            "url": "https://www.bmwgroup.com/",
-            "description": "德国豪华汽车与摩托车制造商，旗下拥有BMW"
-          },
-          {
-            "name": "Mercedes-Benz Group (梅赛德斯-奔驰)",
-            "url": "https://group.mercedes-benz.com/",
-            "description": "德国顶级豪华汽车与商用车制造巨头。"
-          },
-          {
-            "name": "Marathon Petroleum",
-            "url": "https://www.marathonpetroleum.com/",
-            "description": "美国大型炼油、营销及中游能源管道运输企业。"
-          },
-          {
-            "name": "Kroger",
-            "url": "https://www.kroger.com/",
-            "description": "美国大型连锁超市企业，提供食品与零售服务。"
-          },
-          {
-            "name": "E.ON",
-            "url": "https://www.eon.com/",
-            "description": "欧洲大型能源网络与客户解决方案提供商。"
-          },
-          {
-            "name": "AXA (安盛)",
-            "url": "https://www.axa.com/",
-            "description": "法国跨国保险与资产管理巨头。"
-          },
-          {
-            "name": "Allianz (安联)",
-            "url": "https://www.allianz.com/",
-            "description": "德国全球金融服务巨头，主营保险与资产管理。"
-          }
-        ]
-      },
-      {
-        "name": "51-100",
-        "links": [
-          {
-            "name": "SAIC Motor (上汽集团)",
-            "url": "https://www.saicmotor.com/",
-            "description": "中国大型汽车制造企业集团"
-          },
-          {
-            "name": "Stellantis / Peugeot / Renault",
-            "url": "https://www.renaultgroup.com/",
-            "description": "雷诺集团，法国传统汽车制造与出行方案服务商。"
-          },
-          {
-            "name": "Honda Motor (本田)",
-            "url": "https://global.honda/",
-            "description": "日本跨国汽车、摩托车与动力产品制造企业。"
-          },
-          {
-            "name": "Hyundai Motor (现代汽车)",
-            "url": "https://www.hyundai.com/",
-            "description": "韩国大型汽车制造集团，业务涵盖新能源与智能出行。"
-          },
-          {
-            "name": "Ping An Insurance (中国平安)",
-            "url": "https://www.pingan.cn/",
-            "description": "中国综合金融服务集团，涵盖保险、银行、资产管理。"
-          },
-          {
-            "name": "China Mobile (中国移动)",
-            "url": "http://www.chinamobileltd.com/",
-            "description": "中国电信运营商巨头，提供移动通信、宽带与算力网络。"
-          },
-          {
-            "name": "Comcast",
-            "url": "https://corporate.comcast.com/",
-            "description": "美国跨国媒体与电信巨头，拥有"
-          },
-          {
-            "name": "Sony Group (索尼)",
-            "url": "https://www.sony.com/",
-            "description": "日本跨国电子、游戏、娱乐、影视与金融综合集团。"
-          },
-          {
-            "name": "Siemens (西门子)",
-            "url": "https://www.siemens.com/",
-            "description": "德国工业自动化、电气化、数字化与医疗诊断基础设施巨"
-          },
-          {
-            "name": "Nestlé (雀巢)",
-            "url": "https://www.nestle.com/",
-            "description": "全球食品与饮料制造巨头，拥有丰富的知名消费品品牌。"
-          },
-          {
-            "name": "Procter & Gamble (宝洁)",
-            "url": "https://pg.com/",
-            "description": "全球日用消费品与个人护理巨头，拥有帮宝适"
-          },
-          {
-            "name": "Tencent (腾讯)",
-            "url": "https://www.tencent.com/",
-            "description": "中国互联网与科技巨头，主营社交、游戏"
-          },
-          {
-            "name": "Alibaba Group (阿里巴巴)",
-            "url": "https://www.alibabagroup.com/",
-            "description": "全球电商与科技公司，业务涵盖淘天、阿里云、菜鸟等。"
-          },
-          {
-            "name": "Nissan Motor (日产汽车)",
-            "url": "https://www.nissan-global.com/",
-            "description": "日本跨国汽车制造商，提供全球整车研发与销售。"
-          },
-          {
-            "name": "Panasonic (松下)",
-            "url": "https://holdings.panasonic/",
-            "description": "日本跨国电子企业，涵盖车载电池、家电与工业系统。"
-          },
-          {
-            "name": "BASF (巴斯夫)",
-            "url": "https://www.basf.com/",
-            "description": "德国全球化学品制造巨头，产品覆盖材料"
-          },
-          {
-            "name": "Airbus (空中客车)",
-            "url": "https://www.airbus.com/",
-            "description": "欧洲跨国航空航天制造巨头，主营民用飞机"
-          },
-          {
-            "name": "Boeing (波音)",
-            "url": "https://www.boeing.com/",
-            "description": "美国航空航天制造商，生产民用飞机"
-          },
-          {
-            "name": "Pfizer (辉瑞)",
-            "url": "https://www.pfizer.com/",
-            "description": "全球生物制药巨头，专注于疫苗、肿瘤与重症药物研发。"
-          },
-          {
-            "name": "Johnson & Johnson (强生)",
-            "url": "https://www.jnj.com/",
-            "description": "全球医疗科技与生物制药综合健康巨头。"
-          },
-          {
-            "name": "Roche Group (罗氏)",
-            "url": "https://www.roche.com/",
-            "description": "瑞士生物科技与医疗诊断巨头"
-          },
-          {
-            "name": "Novartis (诺华)",
-            "url": "https://www.novartis.com/",
-            "description": "瑞士跨国制药企业，专注于创新药物与基因疗法。"
-          },
-          {
-            "name": "AstraZeneca (阿斯利康)",
-            "url": "https://www.astrazeneca.com/",
-            "description": "英苏跨国生物制药公司，专注于心血管"
-          },
-          {
-            "name": "Sanofi (赛诺菲)",
-            "url": "https://www.sanofi.com/",
-            "description": "法国跨国医疗保健与制药巨头，主营疫苗与免疫诊疗。"
-          },
-          {
-            "name": "Bayer (拜耳)",
-            "url": "https://www.bayer.com/",
-            "description": "德国生命科学巨头，涵盖作物科学"
-          },
-          {
-            "name": "Nvidia (英伟达)",
-            "url": "https://www.nvidia.com/",
-            "description": "全球图形计算、AI芯片与算力加速技术领军企业。"
-          },
-          {
-            "name": "Intel (英特尔)",
-            "url": "https://www.intel.com/",
-            "description": "全球半导体设计与芯片制造巨头"
-          },
-          {
-            "name": "TSMC (台积电)",
-            "url": "https://www.tsmc.com/",
-            "description": "全球最大的半导体专营代工制造企业。"
-          },
-          {
-            "name": "ASML",
-            "url": "https://www.asml.com/",
-            "description": "荷兰半导体设备巨头，全球高阶光刻机核心供应商。"
-          },
-          {
-            "name": "Cisco Systems (思科)",
-            "url": "https://www.cisco.com/",
-            "description": "全球网络连接设备、安全与云计算基础设施龙头。"
-          },
-          {
-            "name": "Oracle (甲骨文)",
-            "url": "https://www.oracle.com/",
-            "description": "全球企业级软件、数据库与云基础设施服务商。"
-          },
-          {
-            "name": "IBM",
-            "url": "https://www.ibm.com/",
-            "description": "全球信息技术与混合云、人工智能解决方案提供商。"
-          },
-          {
-            "name": "Dell Technologies (戴尔)",
-            "url": "https://www.dell.com/",
-            "description": "全球个人电脑、服务器、数据存储与IT解决方案提供商"
-          },
-          {
-            "name": "HP Inc. (惠普)",
-            "url": "https://www.hp.com/",
-            "description": "全球个人电脑与打印成像设备制造商。"
-          },
-          {
-            "name": "Qualcomm (高通)",
-            "url": "https://www.qualcomm.com/",
-            "description": "全球无线通信与移动芯片技术研发巨头。"
-          },
-          {
-            "name": "Broadcom (博通)",
-            "url": "https://www.broadcom.com/",
-            "description": "全球半导体与基础设施软件设计龙头。"
-          },
-          {
-            "name": "Schneider Electric (施耐德电气)",
-            "url": "https://www.se.com/",
-            "description": "法国能源管理与自动化数字化转型巨头。"
-          },
-          {
-            "name": "ABB",
-            "url": "https://global.abb/",
-            "description": "瑞典-瑞士电气产品、机器人与工业自动化技术巨头。"
-          },
-          {
-            "name": "Honeywell (霍尼韦尔)",
-            "url": "https://www.honeywell.com/",
-            "description": "美国高科技制造企业，涉及航空航天"
-          },
-          {
-            "name": "General Electric (GE Aerospace)",
-            "url": "https://www.geaerospace.com/",
-            "description": "全球航空发动机与航空动力技术巨头。"
-          },
-          {
-            "name": "Caterpillar (卡特彼勒)",
-            "url": "https://www.caterpillar.com/",
-            "description": "全球工程机械、矿山设备与柴油发动机制造巨头。"
-          },
-          {
-            "name": "Deere & Company (约翰迪尔)",
-            "url": "https://www.deere.com/",
-            "description": "全球农业机械、工程机械与林业设备龙头。"
-          },
-          {
-            "name": "Lockheed Martin (洛克希德·马丁)",
-            "url": "https://www.lockheedmartin.com/",
-            "description": "美国航空航天与国防安全科技巨头。"
-          },
-          {
-            "name": "Volvo Group (沃尔沃集团)",
-            "url": "https://www.volvogroup.com/",
-            "description": "瑞典商用车辆、卡车、客车与建筑设备制造集团。"
-          },
-          {
-            "name": "Michelin (米其林)",
-            "url": "https://www.michelin.com/",
-            "description": "法国全球轮胎制造与出行生活服务企业。"
-          },
-          {
-            "name": "Continental (大陆集团)",
-            "url": "https://www.continental.com/",
-            "description": "德国汽车底盘、轮胎与车载电子系统供应商。"
-          },
-          {
-            "name": "Denso (电装)",
-            "url": "https://www.denso.com/",
-            "description": "日本主要的汽车核心零部件与系统供应商。"
-          },
-          {
-            "name": "Hitachi (日立)",
-            "url": "https://www.hitachi.com/",
-            "description": "日本社会创新事业巨头，涵盖电力、IT与铁路系统。"
-          }
-        ]
-      },
-      {
-        "name": "101-150",
-        "links": [
-          {
-            "name": "Mitsubishi Heavy Industries (三菱重工)",
-            "url": "https://www.mhi.com/",
-            "description": "日本重型工业、能源装备与国防机械制造集团。"
-          },
-          {
-            "name": "Sumitomo Corporation (住友商事)",
-            "url": "https://www.sumitomocorp.com/",
-            "description": "日本大型综合商社，业务覆盖贸易、矿业与基础设施。"
-          },
-          {
-            "name": "Mitsui & Co. (三井物产)",
-            "url": "https://www.mitsui.com/",
-            "description": "日本大型综合商社，投资全球能源、金属"
-          },
-          {
-            "name": "Mitsubishi Corporation (三菱商事)",
-            "url": "https://www.mitsubishicorp.com/",
-            "description": "日本规模顶尖的综合商社，涵盖能源、食品与科技金融。"
-          },
-          {
-            "name": "Itochu (伊藤忠商事)",
-            "url": "https://www.itochu.co.jp/",
-            "description": "日本大型综合商社，在纺织、机械"
-          },
-          {
-            "name": "Marubeni (丸红)",
-            "url": "https://www.marubeni.com/",
-            "description": "日本综合商社，专注于粮食、电力、能源与化学品贸易。"
-          },
-          {
-            "name": "LG Electronics (LG电子)",
-            "url": "https://www.lg.com/",
-            "description": "韩国消费电子、家电与车用电子解决方案巨头。"
-          },
-          {
-            "name": "SK Hynix (SK海力士)",
-            "url": "https://www.skhynix.com/",
-            "description": "韩国半导体巨头，全球存储芯片(DRAM与NAND)"
-          },
-          {
-            "name": "POSCO Holdings (浦项制铁)",
-            "url": "https://www.posco.com/",
-            "description": "韩国钢材与二次电池材料制造巨头。"
-          },
-          {
-            "name": "Tata Group (塔塔集团)",
-            "url": "https://www.tata.com/",
-            "description": "印度大型跨国综合企业，业务涵盖汽车、钢铁"
-          },
-          {
-            "name": "Reliance Industries (信实工业)",
-            "url": "https://www.ril.com/",
-            "description": "印度大型综合能源、石化、电信与零售巨头。"
-          },
-          {
-            "name": "State Bank of India (印度州立银行)",
-            "url": "https://sbi.co.in/",
-            "description": "印度最大的国有商业金融服务机构。"
-          },
-          {
-            "name": "BHP",
-            "url": "https://www.bhp.com/",
-            "description": "澳大利亚全球多元化矿业与资源巨头，开采铁矿石"
-          },
-          {
-            "name": "Rio Tinto (力拓)",
-            "url": "https://www.riotinto.com/",
-            "description": "英澳跨国矿业与金属巨头，主营铁矿石、铝与铜。"
-          },
-          {
-            "name": "Anglo American (英美资源)",
-            "url": "https://www.angloamerican.com/",
-            "description": "全球自然资源与矿业集团，涵盖贵金属与铜。"
-          },
-          {
-            "name": "GlaxoSmithKline (GSK / 葛兰素史克)",
-            "url": "https://www.gsk.com/",
-            "description": "英国跨国生物制药与疫苗研发企业。"
-          },
-          {
-            "name": "Danone (达能)",
-            "url": "https://www.danone.com/",
-            "description": "法国跨国食品巨头，主营基础乳制品"
-          },
-          {
-            "name": "Unilever (联合利华)",
-            "url": "https://www.unilever.com/",
-            "description": "全球消费品巨头，涵盖个人护理、家庭护理与食品。"
-          },
-          {
-            "name": "L'Oréal (欧莱雅)",
-            "url": "https://www.loreal.com/",
-            "description": "全球美妆与美发护肤品巨头。"
-          },
-          {
-            "name": "LVMH",
-            "url": "https://www.lvmh.com/",
-            "description": "全球奢侈品集团，旗下拥有时尚皮具、香水珠宝与名酒。"
-          },
-          {
-            "name": "Kering (开云集团)",
-            "url": "https://www.kering.com/",
-            "description": "法国国际高端时尚与奢侈品集团。"
-          },
-          {
-            "name": "Hermes International (爱马仕)",
-            "url": "https://www.hermes.com/",
-            "description": "法国传统高定皮革与奢华生活方式品牌。"
-          },
-          {
-            "name": "Richemont (历峰集团)",
-            "url": "https://www.richemont.com/",
-            "description": "瑞士高级珠宝与名表制造集团。"
-          },
-          {
-            "name": "Compass Group",
-            "url": "https://www.compass-group.com/",
-            "description": "英国全球餐饮与综合设施管理服务提供商。"
-          },
-          {
-            "name": "Sodexo (索迪斯)",
-            "url": "https://www.sodexo.com/",
-            "description": "法国餐饮服务与综合设施管理企业。"
-          },
-          {
-            "name": "McDonald's (麦当劳)",
-            "url": "https://corporate.mcdonalds.com/",
-            "description": "全球连锁快餐餐饮服务巨头。"
-          },
-          {
-            "name": "Starbucks (星巴克)",
-            "url": "https://www.starbucks.com/",
-            "description": "全球连锁专业咖啡与烘焙饮品品牌。"
-          },
-          {
-            "name": "Yum! Brands",
-            "url": "https://www.yum.com/",
-            "description": "肯德基、必胜客与塔可钟的母公司。"
-          },
-          {
-            "name": "Coca-Cola Company (可口可乐)",
-            "url": "https://www.coca-colacompany.com/",
-            "description": "全球非酒精饮料制造与营销巨头。"
-          },
-          {
-            "name": "PepsiCo (百事公司)",
-            "url": "https://www.pepsico.com/",
-            "description": "全球食品与饮料巨头，拥有百事可乐、乐事等品牌。"
-          },
-          {
-            "name": "Anheuser-Busch InBev (百威英博)",
-            "url": "https://www.ab-inbev.com/",
-            "description": "全球大型酿酒集团与啤酒生产商。"
-          },
-          {
-            "name": "Heineken (喜力)",
-            "url": "https://www.theheinekencompany.com/",
-            "description": "荷兰跨国啤酒酿造与分销集团。"
-          },
-          {
-            "name": "Diageo (帝亚吉欧)",
-            "url": "https://www.diageo.com/",
-            "description": "全球洋酒与高级烈酒制造营销企业。"
-          },
-          {
-            "name": "Mondelēz International (亿滋国际)",
-            "url": "https://www.mondelezinternational.com/",
-            "description": "全球零食、饼干与巧克力制造巨头。"
-          },
-          {
-            "name": "Mars, Incorporated (玛氏)",
-            "url": "https://www.mars.com/",
-            "description": "美国食品、巧克力与宠物护理综合家族企业。"
-          },
-          {
-            "name": "Kraft Heinz (卡夫亨氏)",
-            "url": "https://www.kraftheinzcompany.com/",
-            "description": "全球知名调味品与酱料食品制造集团。"
-          },
-          {
-            "name": "General Mills (通用磨坊)",
-            "url": "https://www.generalmills.com/",
-            "description": "美国消费食品制造商，拥有哈根达斯、湾仔码头等品牌。"
-          },
-          {
-            "name": "Colgate-Palmolive (高露洁-棕榄)",
-            "url": "https://www.colgatepalmolive.com/",
-            "description": "全球口腔护理与家庭护理消费品巨头。"
-          },
-          {
-            "name": "Kimberly-Clark (金佰利)",
-            "url": "https://www.kimberly-clark.com/",
-            "description": "全球个人护理与卫生用纸制造企业。"
-          },
-          {
-            "name": "Reckitt (利洁时)",
-            "url": "https://www.reckitt.com/",
-            "description": "英国健康与卫生护理消费品巨头(滴露、杜蕾斯等)。"
-          },
-          {
-            "name": "DHL Group",
-            "url": "https://group.dhl.com/",
-            "description": "德国物流与国际快递服务巨头。"
-          },
-          {
-            "name": "A.P. Moller - Maersk (马士基)",
-            "url": "https://www.maersk.com/",
-            "description": "丹麦航运与综合集装箱物流服务巨头。"
-          },
-          {
-            "name": "COSCO Shipping (中远海运)",
-            "url": "https://www.coscoshipping.com/",
-            "description": "中国航运与港口综合物流服务巨头。"
-          },
-          {
-            "name": "Kuehne+Nagel (德迅)",
-            "url": "https://www.kuehne-nagel.com/",
-            "description": "瑞士海运与空运货代物流服务提供商。"
-          },
-          {
-            "name": "Hapag-Lloyd (赫伯罗特)",
-            "url": "https://www.hapag-lloyd.com/",
-            "description": "德国班轮集装箱航运公司。"
-          },
-          {
-            "name": "Union Pacific (联合太平洋)",
-            "url": "https://www.up.com/",
-            "description": "北美大型铁路货运网络运营商。"
-          },
-          {
-            "name": "Delta Air Lines (达美航空)",
-            "url": "https://www.delta.com/",
-            "description": "美国大型全球客运航空公司。"
-          },
-          {
-            "name": "United Airlines (美国联合航空)",
-            "url": "https://www.united.com/",
-            "description": "美国大型跨国航空运输企业。"
-          }
-        ]
-      },
-      {
-        "name": "151-200",
-        "links": [
-          {
-            "name": "American Airlines (美国航空)",
-            "url": "https://www.aa.com/",
-            "description": "全球客运量领先的航空公司之一。"
-          },
-          {
-            "name": "Lufthansa Group (汉莎航空)",
-            "url": "https://www.lufthansagroup.com/",
-            "description": "欧洲航空运输与航空维修服务集团。"
-          },
-          {
-            "name": "Air France-KLM (法航荷航)",
-            "url": "https://www.airfranceklm.com/",
-            "description": "法国与荷兰联合航空公司集团。"
-          },
-          {
-            "name": "Emirates Group (阿联酋航空)",
-            "url": "https://www.emirates.com/",
-            "description": "阿联酋国际航空与机场地勤服务公司。"
-          },
-          {
-            "name": "Singapore Airlines (新加坡航空)",
-            "url": "https://www.singaporeair.com/",
-            "description": "国际高品质航空客运服务商。"
-          },
-          {
-            "name": "Deutsche Post (德国邮政)",
-            "url": "https://www.dpdhl.com/",
-            "description": "欧洲邮政与快递物流集团。"
-          },
-          {
-            "name": "Nippon Telegraph and Telephone (NTT)",
-            "url": "https://group.ntt/",
-            "description": "日本综合电信与信息技术服务巨头。"
-          },
-          {
-            "name": "SoftBank Group (软银集团)",
-            "url": "https://group.softbank/",
-            "description": "日本科技投资与电信通信集团，运营愿景基金。"
-          },
-          {
-            "name": "KDDI",
-            "url": "https://www.kddi.com/",
-            "description": "日本大型综合电信与数字解决方案运营商。"
-          },
-          {
-            "name": "Deutsche Telekom (德国电信)",
-            "url": "https://www.telekom.com/",
-            "description": "欧洲大型电信运营商，旗下拥有T-Mobile。"
-          },
-          {
-            "name": "Vodafone Group (沃达丰)",
-            "url": "https://www.vodafone.com/",
-            "description": "英国跨国移动通信运营商。"
-          },
-          {
-            "name": "Telefónica (西班牙电信)",
-            "url": "https://www.telefonica.com/",
-            "description": "西班牙与拉丁美洲大型电信运营商。"
-          },
-          {
-            "name": "Orange",
-            "url": "https://www.orange.com/",
-            "description": "法国跨国电信与数字服务运营商。"
-          },
-          {
-            "name": "AT&T",
-            "url": "https://www.att.com/",
-            "description": "美国电信与宽带网络服务龙头。"
-          },
-          {
-            "name": "Verizon Communications",
-            "url": "https://www.verizon.com/",
-            "description": "美国移动网络与通信基础设施提供商。"
-          },
-          {
-            "name": "China Telecom (中国电信)",
-            "url": "https://www.chinatelecom-h.com/",
-            "description": "中国综合智能信息服务运营商。"
-          },
-          {
-            "name": "China Unicom (中国联通)",
-            "url": "http://www.chinaunicom.com.cn/",
-            "description": "中国数字基础设施与通信服务商。"
-          },
-          {
-            "name": "SK Telecom",
-            "url": "https://www.sktelecom.com/",
-            "description": "韩国电信与5G通信服务运营商。"
-          },
-          {
-            "name": "KT Corporation",
-            "url": "https://www.kt.com/",
-            "description": "韩国电信与综合通信基础设施提供商。"
-          },
-          {
-            "name": "Prudential Financial (普洛斯/保德信)",
-            "url": "https://www.prudential.com/",
-            "description": "美国人寿保险与资产管理金融机构。"
-          },
-          {
-            "name": "MetLife (大都会人寿)",
-            "url": "https://www.metlife.com/",
-            "description": "全球人寿保险、年金与员工福利服务商。"
-          },
-          {
-            "name": "American International Group (AIG)",
-            "url": "https://www.aig.com/",
-            "description": "全球财产与保险金融服务公司。"
-          },
-          {
-            "name": "China Life (中国人寿)",
-            "url": "https://www.chinalife.com.cn/",
-            "description": "中国大型国有人寿保险与资产管理机构。"
-          },
-          {
-            "name": "Tokio Marine (东京海上)",
-            "url": "https://www.tokiomarinehd.com/",
-            "description": "日本财产与责任保险跨国集团。"
-          },
-          {
-            "name": "SOMPO Holdings",
-            "url": "https://www.sompo-hd.com/",
-            "description": "日本保险与养老健康服务集团。"
-          },
-          {
-            "name": "MS&AD Insurance",
-            "url": "https://www.ms-ad-hd.com/",
-            "description": "日本非寿险与金融保险控股集团。"
-          },
-          {
-            "name": "HSBC Holdings (汇丰集团)",
-            "url": "https://www.hsbc.com/",
-            "description": "英资全球跨国银行与金融服务机构。"
-          },
-          {
-            "name": "BNP Paribas (法国巴黎银行)",
-            "url": "https://group.bnpparibas/",
-            "description": "欧洲大型综合银行与金融机构。"
-          },
-          {
-            "name": "Crédit Agricole (法国农业信贷银行)",
-            "url": "https://www.credit-agricole.com/",
-            "description": "法国合作制零售银行与资产管理巨头。"
-          },
-          {
-            "name": "Banco Santander (桑坦德银行)",
-            "url": "https://www.santander.com/",
-            "description": "西班牙与拉丁美洲大型跨国银行。"
-          },
-          {
-            "name": "UBS Group (瑞银集团)",
-            "url": "https://www.ubs.com/",
-            "description": "瑞士全球财富管理与投资银行巨头。"
-          },
-          {
-            "name": "Morgan Stanley (摩根士丹利)",
-            "url": "https://www.morganstanley.com/",
-            "description": "全球投资银行与机构证券服务商。"
-          },
-          {
-            "name": "Goldman Sachs (高盛)",
-            "url": "https://www.goldmansachs.com/",
-            "description": "全球高管财富管理与投资银行业务机构。"
-          },
-          {
-            "name": "Charles Schwab (嘉信理财)",
-            "url": "https://www.schwab.com/",
-            "description": "美国财富管理与个人经纪交易服务巨头。"
-          },
-          {
-            "name": "BlackRock (贝莱德)",
-            "url": "https://www.blackrock.com/",
-            "description": "全球规模顶尖的资产管理与风险控制平台("
-          },
-          {
-            "name": "Vanguard (先锋领航)",
-            "url": "https://corporate.vanguard.com/",
-            "description": "全球指数基金与ETF投资管理巨头。"
-          },
-          {
-            "name": "Fidelity Investments (富达投资)",
-            "url": "https://www.fidelity.com/",
-            "description": "全球金融服务与退休金理财提供商。"
-          },
-          {
-            "name": "American Express (美国运通)",
-            "url": "https://www.americanexpress.com/",
-            "description": "全球信用卡、支付与商务出行服务商。"
-          },
-          {
-            "name": "Visa",
-            "url": "https://www.visa.com/",
-            "description": "全球数字支付网络与电子支付卡服务机构。"
-          },
-          {
-            "name": "Mastercard (万事达卡)",
-            "url": "https://www.mastercard.com/",
-            "description": "全球支付技术与清算网络提供商。"
-          },
-          {
-            "name": "Block (Square)",
-            "url": "https://block.xyz/",
-            "description": "专注于小微企业支付与数字金融的科技公司。"
-          },
-          {
-            "name": "Booking Holdings",
-            "url": "https://www.bookingholdings.com/",
-            "description": "全球在线旅游预订与酒店机票平台(Booking."
-          },
-          {
-            "name": "AMD (超威半导体)",
-            "url": "https://www.amd.com/",
-            "description": "全球高性能与自适应计算领军企业"
-          },
-          {
-            "name": "Texas Instruments (德州仪器)",
-            "url": "https://www.ti.com/",
-            "description": "全球模拟芯片与嵌入式处理器设计制造巨头。"
-          },
-          {
-            "name": "Applied Materials (应用材料)",
-            "url": "https://www.appliedmaterials.com/",
-            "description": "全球半导体制造设备与材料工程解决方案龙头。"
-          },
-          {
-            "name": "Lam Research (泛林集团)",
-            "url": "https://www.lamresearch.com/",
-            "description": "全球刻蚀与薄膜沉积半导体设备核心供应商。"
-          },
-          {
-            "name": "KLA Corporation (科磊)",
-            "url": "https://www.kla.com/",
-            "description": "全球半导体工艺检测与良率管理设备巨头。"
-          }
-        ]
-      },
-      {
-        "name": "201-250",
-        "links": [
-          {
-            "name": "Tokyo Electron (东京电子)",
-            "url": "https://www.tel.com/",
-            "description": "日本最大的半导体制造与涂布显影设备企业。"
-          },
-          {
-            "name": "Micron Technology (美光)",
-            "url": "https://www.micron.com/",
-            "description": "美国主要的存储半导体与数据存储技术企业。"
-          },
-          {
-            "name": "ARM Holdings",
-            "url": "https://www.arm.com/",
-            "description": "全球芯片架构设计龙头，其架构被广泛应用于移动设备。"
-          },
-          {
-            "name": "Analog Devices (ADI)",
-            "url": "https://www.analog.com/",
-            "description": "全球高性能模拟、混合信号与数字信号处理芯片龙头。"
-          },
-          {
-            "name": "NXP Semiconductors (恩智浦)",
-            "url": "https://www.nxp.com/",
-            "description": "荷兰汽车半导体、物联网与安全连接芯片领军企业。"
-          },
-          {
-            "name": "Infineon Technologies (英飞凌)",
-            "url": "https://www.infineon.com/",
-            "description": "德国功率半导体与汽车芯片全球龙头。"
-          },
-          {
-            "name": "STMicroelectronics (意法半导体)",
-            "url": "https://www.st.com/",
-            "description": "欧洲半导体巨头，主营微控制器、传感器与功率器件。"
-          },
-          {
-            "name": "Microchip Technology",
-            "url": "https://www.microchip.com/",
-            "description": "全球微控制器(MCU)与混合信号半导体供应商。"
-          },
-          {
-            "name": "MediaTek (联发科)",
-            "url": "https://www.mediatek.com/",
-            "description": "全球智能手机芯片与智能家居半导体龙头。"
-          },
-          {
-            "name": "Synopsys (新思科技)",
-            "url": "https://www.synopsys.com/",
-            "description": "全球电子设计自动化(EDA)软件与芯片IP巨头。"
-          },
-          {
-            "name": "Cadence Design Systems",
-            "url": "https://www.cadence.com/",
-            "description": "全球芯片设计与电子系统设计自动化(EDA)供应商。"
-          },
-          {
-            "name": "Western Digital (西部数据)",
-            "url": "https://www.westerndigital.com/",
-            "description": "全球数据存储解决方案与硬盘、闪存制造企业。"
-          },
-          {
-            "name": "Seagate Technology (希捷)",
-            "url": "https://www.seagate.com/",
-            "description": "全球机械硬盘(HDD)与数据存储技术龙头。"
-          },
-          {
-            "name": "ASML Holding NV",
-            "url": "https://www.asml.com/en",
-            "description": "荷兰先进微米/纳米级光刻系统与半导体装备供应商。"
-          },
-          {
-            "name": "Salesforce",
-            "url": "https://www.salesforce.com/",
-            "description": "全球CRM客户关系管理软件与云端企业服务龙头。"
-          },
-          {
-            "name": "ServiceNow",
-            "url": "https://www.servicenow.com/",
-            "description": "全球企业级数字工作流自动化与ITSM云服务巨头。"
-          },
-          {
-            "name": "Workday",
-            "url": "https://www.workday.com/",
-            "description": "全球企业云端财务与人力资源管理(HCM)软件供应商"
-          },
-          {
-            "name": "Intuit",
-            "url": "https://www.intuit.com/",
-            "description": "全球个人与中小企业财税软件巨头(TurboTax"
-          },
-          {
-            "name": "SAP",
-            "url": "https://www.sap.com/",
-            "description": "德国企业级ERP系统、供应链管理与软件服务巨头。"
-          },
-          {
-            "name": "VMware",
-            "url": "https://www.vmware.com/",
-            "description": "全球云基础设施与云端虚拟化技术领军企业。"
-          },
-          {
-            "name": "Snowflake",
-            "url": "https://www.snowflake.com/",
-            "description": "全球基于云端的数据仓库与数据云分析平台。"
-          },
-          {
-            "name": "Datadog",
-            "url": "https://www.datadoghq.com/",
-            "description": "全球现代云端应用监控、日志管理与云安全服务商。"
-          },
-          {
-            "name": "Palo Alto Networks",
-            "url": "https://www.paloaltonetworks.com/",
-            "description": "全球网络安全、防火墙与云端安全解决方案龙头。"
-          },
-          {
-            "name": "CrowdStrike",
-            "url": "https://www.crowdstrike.com/",
-            "description": "全球端点安全、云安全与威胁情报技术服务商。"
-          },
-          {
-            "name": "Fortinet (飞塔)",
-            "url": "https://www.fortinet.com/",
-            "description": "全球高质效网络安全设备与安全网关供应商。"
-          },
-          {
-            "name": "Akamai Technologies",
-            "url": "https://www.akamai.com/",
-            "description": "全球早期的CDN内容分发与网络安全服务巨头。"
-          },
-          {
-            "name": "Atlassian",
-            "url": "https://www.atlassian.com/",
-            "description": "软件协同研发与团队协作平台(Jira"
-          },
-          {
-            "name": "Electronic Arts (EA)",
-            "url": "https://www.ea.com/",
-            "description": "美国互动娱乐游戏巨头(《FIFA》"
-          },
-          {
-            "name": "Take-Two Interactive",
-            "url": "https://www.take2games.com/",
-            "description": "知名游戏发行商(《GTA》、《NBA 2K》等)。"
-          },
-          {
-            "name": "Ubisoft (育碧)",
-            "url": "https://www.ubisoft.com/",
-            "description": "法国跨国游戏开发与发行巨头(《刺客信条》等)。"
-          },
-          {
-            "name": "Nintendo (任天堂)",
-            "url": "https://www.nintendo.com/",
-            "description": "日本主机游戏与游戏IP开发巨头(Switch"
-          },
-          {
-            "name": "Bandai Namco (万代南梦宫)",
-            "url": "https://www.bandainamco.co.jp/",
-            "description": "日本动漫IP衍生品、街机与游戏开发综合企业。"
-          },
-          {
-            "name": "Square Enix",
-            "url": "https://www.square-enix.com/",
-            "description": "日本知名游戏企业(《最终幻想》、《勇者斗恶龙》)。"
-          },
-          {
-            "name": "Capcom (卡普空)",
-            "url": "https://www.capcom.com/",
-            "description": "日本动作游戏开发巨头(《生化危机》"
-          },
-          {
-            "name": "Expedia Group",
-            "url": "https://www.expediagroup.com/",
-            "description": "全球旅行预订平台，包含Expedia与"
-          }
-        ]
-      },
-      {
-        "name": "251-300",
-        "links": [
-          {
-            "name": "Coupang",
-            "url": "https://www.coupang.com/",
-            "description": "韩国自建高效物流网络的大型电商平台。"
-          },
-          {
-            "name": "Shopee (Sea Limited)",
-            "url": "https://www.shopee.com/",
-            "description": "东南亚与拉美主流的综合移动电商平台。"
-          },
-          {
-            "name": "GoTo (Gojek / Tokopedia)",
-            "url": "https://www.goto-group.com/",
-            "description": "印尼科技集团，结合网约车、外卖与电子商务。"
-          },
-          {
-            "name": "Shopify",
-            "url": "https://www.shopify.com/",
-            "description": "全球独立站建站与DTC电子商务基础设施服务商。"
-          },
-          {
-            "name": "Adyen",
-            "url": "https://www.adyen.com/",
-            "description": "荷兰全球化端到端支付与跨境结算平台。"
-          },
-          {
-            "name": "Robinhood",
-            "url": "https://robinhood.com/",
-            "description": "美国免佣金证券交易与零碎股投资移动平台。"
-          },
-          {
-            "name": "S&P Global (标普全球)",
-            "url": "https://www.spglobal.com/",
-            "description": "全球金融市场评级、指数、基准与数据分析供应商。"
-          },
-          {
-            "name": "Moody's (摩根信用/信用评级)",
-            "url": "https://www.moodys.com/",
-            "description": "全球信用评级、风险评估与研究服务机构。"
-          },
-          {
-            "name": "Fitch Ratings (惠誉评级)",
-            "url": "https://www.fitchratings.com/",
-            "description": "国际三大信用评级机构之一。"
-          },
-          {
-            "name": "MSCI (明晟)",
-            "url": "https://www.msci.com/",
-            "description": "全球投资决策支持工具、ESG评级与MSCI指数提供"
-          },
-          {
-            "name": "FactSet",
-            "url": "https://www.factset.com/",
-            "description": "全球金融投资机构数据分析与分析师终端服务商。"
-          },
-          {
-            "name": "Thomson Reuters (汤森路透)",
-            "url": "https://www.thomsonreuters.com/",
-            "description": "全球法律、财税与商业专业信息与新闻供应商。"
-          },
-          {
-            "name": "RELX (励讯集团)",
-            "url": "https://www.relx.com/",
-            "description": "全球学术出版(Elsevier)与专业风险分析集团"
-          },
-          {
-            "name": "Wolters Kluwer (威科集团)",
-            "url": "https://www.wolterskluwer.com/",
-            "description": "荷兰财税、法律与医疗健康信息服务巨头。"
-          },
-          {
-            "name": "Pearson (培生)",
-            "url": "https://www.pearson.com/",
-            "description": "英国跨国教育出版与测评数字化服务集团。"
-          },
-          {
-            "name": "McGraw Hill",
-            "url": "https://www.mheducation.com/",
-            "description": "北美知名教育出版与数字化学习解决方案供应商。"
-          },
-          {
-            "name": "Wiley",
-            "url": "https://www.wiley.com/",
-            "description": "全球学术研究、期刊出版与知识服务巨头。"
-          },
-          {
-            "name": "Springer Nature",
-            "url": "https://www.springernature.com/",
-            "description": "全球科研与学术出版集团(出版《Nature》等)。"
-          },
-          {
-            "name": "Informa",
-            "url": "https://www.informa.com/",
-            "description": "英国国际展会、B2B情报与学术出版服务集团。"
-          },
-          {
-            "name": "Compass",
-            "url": "https://www.compass.com/",
-            "description": "美国科技驱动型高档房地产经纪服务平台。"
-          },
-          {
-            "name": "CoStar Group",
-            "url": "https://www.costargroup.com/",
-            "description": "全球商业地产数据、分析与在线市场(LoopNet)"
-          },
-          {
-            "name": "Zillow",
-            "url": "https://www.zillow.com/",
-            "description": "美国房产买卖、租赁与估价(Zestimate)平台"
-          },
-          {
-            "name": "Prologis (安博)",
-            "url": "https://www.prologis.com/",
-            "description": "全球物流基础设施与现代仓储地产REITs巨头。"
-          },
-          {
-            "name": "Simon Property Group",
-            "url": "https://www.simon.com/",
-            "description": "美国商业地产与购物中心开发与运营REITs巨头。"
-          },
-          {
-            "name": "Crown Castle",
-            "url": "https://www.crowncastle.com/",
-            "description": "北美通信塔、小型基站与光纤基础设施REITs。"
-          },
-          {
-            "name": "American Tower",
-            "url": "https://www.americantower.com/",
-            "description": "全球无线通信基础设施与通信塔运营REITs。"
-          },
-          {
-            "name": "Equinix",
-            "url": "https://www.equinix.com/",
-            "description": "全球数据中心、云互联与网络中立机房基础设施巨头。"
-          },
-          {
-            "name": "Digital Realty",
-            "url": "https://www.digitalrealty.com/",
-            "description": "全球数据中心、主机托管与云解决方案REITs。"
-          },
-          {
-            "name": "Realty Income",
-            "url": "https://www.realtyincome.com/",
-            "description": "著名单租户商业地产与按月分红REITs。"
-          },
-          {
-            "name": "Vici Properties",
-            "url": "https://viciproperties.com/",
-            "description": "北美博彩、娱乐与体验型地产REITs巨头。"
-          },
-          {
-            "name": "Welltower",
-            "url": "https://welltower.com/",
-            "description": "北美医疗保健、养老地产与基础设施REITs。"
-          },
-          {
-            "name": "AvalonBay Communities",
-            "url": "https://www.avalonbay.com/",
-            "description": "北美高品质公寓住宅地产开发与管理REITs。"
-          },
-          {
-            "name": "Eli Lilly (礼来)",
-            "url": "https://www.lilly.com/",
-            "description": "全球糖尿病、GLP-1减肥药与肿瘤创新药巨头。"
-          },
-          {
-            "name": "Novo Nordisk (诺和诺德)",
-            "url": "https://www.novonordisk.com/",
-            "description": "丹麦胰岛素与减肥药(司美格鲁肽)领军企业。"
-          },
-          {
-            "name": "Merck & Co. (默沙东)",
-            "url": "https://www.merck.com/",
-            "description": "全球创新药与疫苗巨头(Keytruda肿瘤免疫疗法"
-          },
-          {
-            "name": "AbbVie (艾伯维)",
-            "url": "https://www.abbvie.com/",
-            "description": "美国生物制药巨头，主营免疫学"
-          },
-          {
-            "name": "BMS (百时美施贵宝)",
-            "url": "https://www.bms.com/",
-            "description": "全球肿瘤学、心血管与免疫学药物研发巨头。"
-          },
-          {
-            "name": "Gilead Sciences (吉利德)",
-            "url": "https://www.gilead.com/",
-            "description": "专注于抗病毒(HIV、乙肝/丙肝)与肿瘤"
-          },
-          {
-            "name": "Amgen (安进)",
-            "url": "https://www.amgen.com/",
-            "description": "全球生物科技先驱，专注于严重疾病的生物疗法。"
-          },
-          {
-            "name": "Regeneron (再生元)",
-            "url": "https://www.regeneron.com/",
-            "description": "美国创新抗体药物与眼科、免疫用药研发企业。"
-          },
-          {
-            "name": "Vertex Pharmaceuticals",
-            "url": "https://www.vrtx.com/",
-            "description": "囊性纤维化与小分子基因疗法研发领军企业。"
-          },
-          {
-            "name": "Moderna",
-            "url": "https://www.modernatx.com/",
-            "description": "专注于mRNA疫苗与mRNA精准治疗药物研发。"
-          },
-          {
-            "name": "BioNTech",
-            "url": "https://biontech.de/",
-            "description": "德国mRNA技术与个性化癌症免疫疗法先驱。"
-          },
-          {
-            "name": "Stryker (史赛克)",
-            "url": "https://www.stryker.com/",
-            "description": "全球骨科植入物、手术机器人与医疗设备巨头。"
-          },
-          {
-            "name": "Intuitive Surgical",
-            "url": "https://www.intuitive.com/",
-            "description": "达芬奇(da Vinci)手术机器人研发制造绝对巨"
-          }
-        ]
-      },
-      {
-        "name": "301-350",
-        "links": [
-          {
-            "name": "Medtronic (美敦力)",
-            "url": "https://www.medtronic.com/",
-            "description": "全球医疗器械巨头，主营心脏起搏器、脊柱与微创外科。"
-          },
-          {
-            "name": "Boston Scientific (波士顿科学)",
-            "url": "https://www.bostonscientific.com/",
-            "description": "心血管介入、神经调控与微创医疗器械巨头。"
-          },
-          {
-            "name": "Edwards Lifesciences",
-            "url": "https://www.edwards.com/",
-            "description": "经导管心脏瓣膜(TAVR)与血流动力学监测领军企业"
-          },
-          {
-            "name": "Zimmer Biomet",
-            "url": "https://www.zimmerbiomet.com/",
-            "description": "全球关节置换与骨科重建医疗器械巨头。"
-          },
-          {
-            "name": "Becton, Dickinson (BD)",
-            "url": "https://www.bd.com/",
-            "description": "全球医疗用品、给药系统与实验室设备供应商。"
-          },
-          {
-            "name": "Thermo Fisher Scientific (赛默飞)",
-            "url": "https://www.thermofisher.com/",
-            "description": "全球科学服务与生命科学分析仪器巨头。"
-          },
-          {
-            "name": "Danaher (丹纳赫)",
-            "url": "https://www.danaher.com/",
-            "description": "生命科学、医学诊断与水质测试工具平台巨头。"
-          },
-          {
-            "name": "Agilent Technologies (安捷伦)",
-            "url": "https://www.agilent.com/",
-            "description": "全球分析化学仪器、测试与生命科学诊断公司。"
-          },
-          {
-            "name": "Waters Corporation",
-            "url": "https://www.waters.com/",
-            "description": "液相色谱(LC)与质谱(MS)分析仪器龙头。"
-          },
-          {
-            "name": "Illumina (因美纳)",
-            "url": "https://www.illumina.com/",
-            "description": "全球基因测序仪与NGS测序技术绝对龙头。"
-          },
-          {
-            "name": "Charles River Laboratories",
-            "url": "https://www.criver.com/",
-            "description": "全球药物临床前研发与CRO合同研究服务机构。"
-          },
-          {
-            "name": "Lonza (龙沙)",
-            "url": "https://www.lonza.com/",
-            "description": "瑞士生物药CDMO合同定制研发与生产服务巨头。"
-          },
-          {
-            "name": "WuXi AppTec (药明康德)",
-            "url": "https://www.wuxiapptec.com/",
-            "description": "全球小分子与生物医药研发服务(CRO/CDMO)巨"
-          },
-          {
-            "name": "IQVIA (艾昆纬)",
-            "url": "https://www.iqvia.com/",
-            "description": "全球临床试验CRO与医疗健康数据分析服务商。"
-          },
-          {
-            "name": "Catalent",
-            "url": "https://www.catalent.com/",
-            "description": "全球先进给药技术、药物制剂与基因疗法CDMO。"
-          },
-          {
-            "name": "HCA Healthcare",
-            "url": "https://hcahealthcare.com/",
-            "description": "美国大型私立医院与医疗护理设施运营集团。"
-          },
-          {
-            "name": "NextEra Energy",
-            "url": "https://www.nexteraenergy.com/",
-            "description": "全球规模顶尖的可再生能源(风能、太阳能)发电企业。"
-          },
-          {
-            "name": "Duke Energy",
-            "url": "https://www.duke-energy.com/",
-            "description": "美国大型电力与天然气基础设施服务公司。"
-          },
-          {
-            "name": "Southern Company",
-            "url": "https://www.southerncompany.com/",
-            "description": "美国能源巨头，为数百万客户提供电力与天然气。"
-          },
-          {
-            "name": "Dominion Energy",
-            "url": "https://www.dominionenergy.com/",
-            "description": "美国区域性电力与清洁能源基础设施运营商。"
-          },
-          {
-            "name": "Constellation Energy",
-            "url": "https://www.constellationenergy.com/",
-            "description": "美国无碳能源与核能发电无碳电力供应商。"
-          },
-          {
-            "name": "Iberdrola",
-            "url": "https://www.iberdrola.com/",
-            "description": "西班牙跨国清洁能源与电网设施龙头。"
-          },
-          {
-            "name": "Enel",
-            "url": "https://www.enel.com/",
-            "description": "意大利跨国电力与可再生能源运营巨头。"
-          },
-          {
-            "name": "ENGIE",
-            "url": "https://www.engie.com/",
-            "description": "法国低碳能源、天然气与低碳服务巨头。"
-          },
-          {
-            "name": "National Grid",
-            "url": "https://www.nationalgrid.com/",
-            "description": "英国与美东输电、天然气网络基础运载商。"
-          },
-          {
-            "name": "Orsted (奥斯特)",
-            "url": "https://orsted.com/",
-            "description": "丹麦全球海上风电开发与绿色能源转型领军企业。"
-          },
-          {
-            "name": "Vestas",
-            "url": "https://www.vestas.com/",
-            "description": "丹麦全球风力发电机组设计、制造与服务巨头。"
-          },
-          {
-            "name": "Enphase Energy",
-            "url": "https://enphase.com/",
-            "description": "全球微型逆变器与家用储能系统领军企业。"
-          },
-          {
-            "name": "SolarEdge Technologies",
-            "url": "https://www.solaredge.com/",
-            "description": "全球光伏优化器与逆变器技术解决方案商。"
-          },
-          {
-            "name": "First Solar",
-            "url": "https://www.firstsolar.com/",
-            "description": "美国薄膜光伏组件制造与大型地面电站服务商。"
-          },
-          {
-            "name": "Canadian Solar (阿特斯)",
-            "url": "https://www.canadiansolar.com/",
-            "description": "全球光伏组件与光伏储能系统供应商。"
-          },
-          {
-            "name": "LONGi Green Energy (隆基绿能)",
-            "url": "https://www.longi.com/",
-            "description": "全球单晶硅片与高效光伏组件制造巨头。"
-          },
-          {
-            "name": "JinkoSolar (晶科能源)",
-            "url": "https://www.jinkosolar.com/",
-            "description": "全球出货量领先的光伏组件研发制造商。"
-          },
-          {
-            "name": "Trina Solar (天合光能)",
-            "url": "https://www.trinasolar.com/",
-            "description": "全球光伏智慧能源与储能整体解决方案商。"
-          },
-          {
-            "name": "Contemporary Amperex Technology (CATL/宁德时代)",
-            "url": "https://www.catl.com/",
-            "description": "全球动力电池与储能电池制造巨头。"
-          },
-          {
-            "name": "LG Energy Solution",
-            "url": "https://www.lgensol.com/",
-            "description": "韩国动力电池巨头，为全球主流车企提供电池。"
-          },
-          {
-            "name": "Panasonic Energy",
-            "url": "https://www.panasonic.com/global/energy",
-            "description": "松下旗下动力电池与锂电池制造业务。"
-          },
-          {
-            "name": "BYD (比亚迪)",
-            "url": "https://www.bydglobal.com/",
-            "description": "全球新能源汽车与刀片电池制造巨头。"
-          },
-          {
-            "name": "Tesla",
-            "url": "https://www.tesla.com/",
-            "description": "全球电动汽车、太阳能与家用/商用储能系统领头羊。"
-          },
-          {
-            "name": "Rivian",
-            "url": "https://rivian.com/",
-            "description": "美国纯电动皮卡与SUV研发制造企业。"
-          },
-          {
-            "name": "Lucid Motors",
-            "url": "https://lucidmotors.com/",
-            "description": "美国豪华纯电动轿车研发制造企业。"
-          },
-          {
-            "name": "Li Auto (理想汽车)",
-            "url": "https://www.lixiang.com/",
-            "description": "中国增程式与纯电动豪华智能SUV制造企业。"
-          },
-          {
-            "name": "NIO (蔚来)",
-            "url": "https://www.nio.com/",
-            "description": "中国高端智能电动汽车与换电网络运营商。"
-          },
-          {
-            "name": "XPeng (小鹏汽车)",
-            "url": "https://www.xpeng.com/",
-            "description": "中国智能电动汽车与自动驾驶技术研发企业。"
-          },
-          {
-            "name": "Xiaomi (小米)",
-            "url": "https://www.mi.com/",
-            "description": "中国消费电子、智能家居与智能电动汽车集团。"
-          },
-          {
-            "name": "Geely Holdings (吉利控股)",
-            "url": "https://www.zgh.com/",
-            "description": "中国大型汽车集团，拥有沃尔沃、极氪、领克等品牌。"
-          },
-          {
-            "name": "Great Wall Motor (长城汽车)",
-            "url": "https://www.gwm.cn/",
-            "description": "中国SUV与皮卡研发制造企业(哈弗、坦克)。"
-          },
-          {
-            "name": "Chery Automobile (奇瑞)",
-            "url": "https://www.chery.cn/",
-            "description": "中国自主品牌汽车制造与出口巨头。"
-          },
-          {
-            "name": "Tata Motors",
-            "url": "https://www.tatamotors.com/",
-            "description": "印度商用车与乘用车制造商，捷豹路虎母公司。"
-          },
-          {
-            "name": "Suzuki Motor (铃木)",
-            "url": "https://www.globalsuzuki.com/",
-            "description": "日本小型汽车与小型SUV制造企业。"
-          }
-        ]
-      },
-      {
-        "name": "351-400",
-        "links": [
-          {
-            "name": "Subaru",
-            "url": "https://www.subaru-global.com/",
-            "description": "日本汽车制造企业，以水平对置发动机与全时四驱著称。"
-          },
-          {
-            "name": "Mazda",
-            "url": "https://www.mazda.com/",
-            "description": "日本汽车制造企业，以创驰蓝天技术与魂动设计闻名。"
-          },
-          {
-            "name": "Isuzu Motors (五十铃)",
-            "url": "https://www.isuzu.co.jp/",
-            "description": "日本轻型/重型卡车与柴油发动机制造巨头。"
-          },
-          {
-            "name": "Volvo Trucks",
-            "url": "https://www.volvotrucks.com/",
-            "description": "瑞典重型卡车与运输解决方案供应商。"
-          },
-          {
-            "name": "Daimler Truck",
-            "url": "https://www.daimlertruck.com/",
-            "description": "全球规模顶尖的商用车与重卡制造集团。"
-          },
-          {
-            "name": "PACCAR (佩卡)",
-            "url": "https://www.paccar.com/",
-            "description": "北美重型卡车制造巨头(肯沃斯Kenworth"
-          },
-          {
-            "name": "Cummins (康明斯)",
-            "url": "https://www.cummins.com/",
-            "description": "全球柴油/天然气发动机与动力系统制造巨头。"
-          },
-          {
-            "name": "Komatsu (小松)",
-            "url": "https://www.komatsu.jp/",
-            "description": "日本工程机械、矿山机械与工业设备制造巨头。"
-          },
-          {
-            "name": "Hitachi Construction Machinery (日立建机)",
-            "url": "https://www.hitachicm.com/",
-            "description": "日本大型液压挖掘机与工程机械企业。"
-          },
-          {
-            "name": "Kubota (久保田)",
-            "url": "https://www.kubota.com/",
-            "description": "日本农业机械、引擎与小型工程机械领军企业。"
-          },
-          {
-            "name": "SANY Group (三一重工)",
-            "url": "https://www.sanygroup.com/",
-            "description": "中国装备制造企业，主营混凝土机械与挖掘机。"
-          },
-          {
-            "name": "XCMG (徐工集团)",
-            "url": "http://www.xcmg.com/",
-            "description": "中国工程机械巨头，主营起重机械与土方机械。"
-          },
-          {
-            "name": "Zoomlion (中联重科)",
-            "url": "https://www.zoomlion.com/",
-            "description": "中国高端装备制造企业，主营工程机械与农业机械。"
-          },
-          {
-            "name": "Fanuc (发那科)",
-            "url": "https://www.fanuc.co.jp/",
-            "description": "日本工业机器人与数控(CNC)系统绝对龙头。"
-          },
-          {
-            "name": "Yaskawa Electric (安川电机)",
-            "url": "https://www.yaskawa.co.jp/",
-            "description": "日本伺服电机、变频器与工业机器人巨头。"
-          },
-          {
-            "name": "KUKA (库卡)",
-            "url": "https://www.kuka.com/",
-            "description": "德国工业自动化与工业机器人制造巨头。"
-          },
-          {
-            "name": "Keyence (基恩士)",
-            "url": "https://www.keyence.com/",
-            "description": "日本工业自动化传感器、测量系统与显微镜巨头。"
-          },
-          {
-            "name": "Omron (欧姆龙)",
-            "url": "https://www.omron.com/",
-            "description": "日本自动化控制、电子元器件与健康医疗设备企业。"
-          },
-          {
-            "name": "SMC Corporation",
-            "url": "https://www.smcworld.com/",
-            "description": "日本气动控制元件与工业自动化组件供应商。"
-          },
-          {
-            "name": "Parker Hannifin (派克汉尼汾)",
-            "url": "https://www.parker.com/",
-            "description": "全球运动与控制技术、液压气动组件龙头。"
-          },
-          {
-            "name": "Eaton (伊顿)",
-            "url": "https://www.eaton.com/",
-            "description": "全球电气产品、电气系统与动力管理公司。"
-          },
-          {
-            "name": "Emerson Electric (艾默生)",
-            "url": "https://www.emerson.com/",
-            "description": "全球过程自动化、工业软件与测试测量巨头。"
-          },
-          {
-            "name": "Rockwell Automation (罗克韦尔)",
-            "url": "https://www.rockwellautomation.com/",
-            "description": "美国工业自动化与数字化转型解决方案商。"
-          },
-          {
-            "name": "Johnson Controls (江森自控)",
-            "url": "https://www.johnsoncontrols.com/",
-            "description": "全球智慧建筑、HVAC暖通与安防控制巨头。"
-          },
-          {
-            "name": "Carrier Global (开利)",
-            "url": "https://www.carrier.com/",
-            "description": "全球暖通空调(HVAC)"
-          },
-          {
-            "name": "Trane Technologies (特灵)",
-            "url": "https://www.tranetechnologies.com/",
-            "description": "温控系统与绿色建筑温控解决方案巨头。"
-          },
-          {
-            "name": "Daikin Industries (大金)",
-            "url": "https://www.daikin.com/",
-            "description": "日本全球跨国空调、制冷剂与空气滤清巨头。"
-          },
-          {
-            "name": "Lennox International",
-            "url": "https://www.lennoxinternational.com/",
-            "description": "北美住宅与商业暖通空调及制冷设备供应商。"
-          },
-          {
-            "name": "Otis Worldwide (奥的斯)",
-            "url": "https://www.otis.com/",
-            "description": "全球电梯、自动扶梯与人行道制造维修巨头。"
-          },
-          {
-            "name": "Schindler Group (迅达)",
-            "url": "https://www.schindler.com/",
-            "description": "瑞士全球电梯、自动扶梯与相关服务供应商。"
-          },
-          {
-            "name": "Kone (通力)",
-            "url": "https://www.kone.com/",
-            "description": "芬兰电梯与自动扶梯创新企业，主领无机房技术。"
-          },
-          {
-            "name": "3M",
-            "url": "https://www.3m.com/",
-            "description": "美国多元化科技制造巨头，涵盖工业、消费品与医疗。"
-          },
-          {
-            "name": "DuPont (杜邦)",
-            "url": "https://www.dupont.com/",
-            "description": "美国特种材料、电子材料与防护方案创新巨头。"
-          },
-          {
-            "name": "Dow (陶氏)",
-            "url": "https://www.dow.com/",
-            "description": "全球包装材料、基础设施与消费护理化学品巨头。"
-          },
-          {
-            "name": "LyondellBasell (利安德巴塞尔)",
-            "url": "https://www.lyondellbasell.com/",
-            "description": "全球塑料、化工与聚烯烃技术许可巨头。"
-          },
-          {
-            "name": "Air Liquide (液空集团)",
-            "url": "https://www.airliquide.com/",
-            "description": "法国工业与医疗气体供应全球龙头。"
-          },
-          {
-            "name": "Linde (林德)",
-            "url": "https://www.linde.com/",
-            "description": "全球规模顶尖的工业气体与工程技术跨国公司。"
-          },
-          {
-            "name": "Air Products",
-            "url": "https://www.airproducts.com/",
-            "description": "美国工业气体、氢能与大型气化设备供应商。"
-          },
-          {
-            "name": "Shin-Etsu Chemical (信越化学)",
-            "url": "https://www.shinetsu.co.jp/",
-            "description": "日本半导体硅片与有机硅材料绝对龙头。"
-          },
-          {
-            "name": "Toray Industries (东丽)",
-            "url": "https://www.toray.com/",
-            "description": "日本高分子化学、碳纤维与合成纤维材料巨头。"
-          },
-          {
-            "name": "Asahi Kasei (旭化成)",
-            "url": "https://www.asahi-kasei.com/",
-            "description": "日本化学、湿法隔离膜与医疗住房综合材料企业。"
-          },
-          {
-            "name": "Sumitomo Chemical (住友化学)",
-            "url": "https://www.sumitomo-chem.co.jp/",
-            "description": "日本综合化学巨头，涵盖农药、石化与电子材料。"
-          },
-          {
-            "name": "Mitsubishi Chemical (三菱化学)",
-            "url": "https://www.mitchm.jp/",
-            "description": "日本大型综合化学企业，主营功能材料与特种气体。"
-          },
-          {
-            "name": "Evonik Industries (赢创)",
-            "url": "https://corporate.evonik.com/",
-            "description": "德国特种化工巨头，专注于高品质特种化学品。"
-          },
-          {
-            "name": "Covestro (科思创)",
-            "url": "https://www.covestro.com/",
-            "description": "德国聚氨酯与聚碳酸酯高分子材料领军企业。"
-          },
-          {
-            "name": "Solvay (索尔维)",
-            "url": "https://www.solvay.com/",
-            "description": "比利时特种化学品与高级材料制造商。"
-          },
-          {
-            "name": "Arkema (阿科玛)",
-            "url": "https://www.arkema.com/",
-            "description": "法国特种化学品与高功能材料设计者。"
-          },
-          {
-            "name": "AkzoNobel (阿克苏诺贝尔)",
-            "url": "https://www.akzonobel.com/",
-            "description": "荷兰油漆与涂料制造巨头(多乐士母公司)。"
-          },
-          {
-            "name": "PPG Industries",
-            "url": "https://www.ppg.com/",
-            "description": "美国涂料、特种材料与玻璃制造巨头。"
-          },
-          {
-            "name": "Sherwin-Williams (宣伟)",
-            "url": "https://www.sherwin-williams.com/",
-            "description": "美国建筑涂料与工业漆制造销售巨头。"
-          }
-        ]
-      },
-      {
-        "name": "401-450",
-        "links": [
-          {
-            "name": "Ecolab (艺康)",
-            "url": "https://www.ecolab.com/",
-            "description": "全球水处理、卫生清洗与感染预防技术服务商。"
-          },
-          {
-            "name": "Nutrien",
-            "url": "https://www.nutrien.com/",
-            "description": "加拿大全球农业作物营养素(钾肥、氮肥)制造巨头。"
-          },
-          {
-            "name": "Mosaic Company",
-            "url": "https://www.mosaicco.com/",
-            "description": "美国浓缩磷酸盐与钾肥作物营养素生产商。"
-          },
-          {
-            "name": "CF Industries",
-            "url": "https://www.cfindustries.com/",
-            "description": "北美大型氮肥与氢/氨清洁能源制造企业。"
-          },
-          {
-            "name": "Yara International",
-            "url": "https://www.yara.com/",
-            "description": "挪威农用氮肥与作物营养解决方案跨国公司。"
-          },
-          {
-            "name": "Corteva Agriscience",
-            "url": "https://www.corteva.com/",
-            "description": "美国纯农业科技巨头，专注于种子与作物保护。"
-          },
-          {
-            "name": "Syngenta (先正达)",
-            "url": "https://www.syngenta.com/",
-            "description": "全球植保产品与高品质种子研发制造巨头。"
-          },
-          {
-            "name": "Archer-Daniels-Midland (ADM)",
-            "url": "https://www.adm.com/",
-            "description": "全球四大粮商(ABCD)之一"
-          },
-          {
-            "name": "Bunge (邦吉)",
-            "url": "https://www.bunge.com/",
-            "description": "全球四大粮商之一，专注于油籽加工与大宗农产品。"
-          },
-          {
-            "name": "Cargill (嘉吉)",
-            "url": "https://www.cargill.com/",
-            "description": "美国非上市农业与食品大宗商品贸易巨头(ABCD之一"
-          },
-          {
-            "name": "Louis Dreyfus Company (路易达孚)",
-            "url": "https://www.ldc.com/",
-            "description": "法国农产品贸易与加工巨头(ABCD之一)。"
-          },
-          {
-            "name": "Wilmar International (丰益国际)",
-            "url": "https://www.wilmar-international.com/",
-            "description": "综合型农业集团，益海嘉里(金龙鱼)母公司。"
-          },
-          {
-            "name": "Tyson Foods (泰森食品)",
-            "url": "https://www.tysonfoods.com/",
-            "description": "美国肉类加工与蛋白质食品供应巨头。"
-          },
-          {
-            "name": "JBS S.A.",
-            "url": "https://www.jbs.com.br/",
-            "description": "巴西跨国肉类加工巨头，全球最大的牛肉与猪肉加工商。"
-          },
-          {
-            "name": "WH Group (万洲国际/双汇)",
-            "url": "https://www.wh-group.com/",
-            "description": "全球规模顶尖的猪肉食品精深加工与肉制品集团。"
-          },
-          {
-            "name": "Marfrig Global Foods",
-            "url": "https://www.marfrig.com.br/",
-            "description": "巴西牛肉加工与汉堡肉饼制造跨国企业。"
-          },
-          {
-            "name": "NH Foods (日本火腿)",
-            "url": "https://www.nhfoods.co.jp/",
-            "description": "日本肉类加工、水产与方便食品制造企业。"
-          },
-          {
-            "name": "Charoen Pokphand Group (正大集团/卜蜂)",
-            "url": "https://www.cpthailand.com/",
-            "description": "泰国家族式农牧食品、零售与电信综合集团。"
-          },
-          {
-            "name": "Associated British Foods (ABF)",
-            "url": "https://www.abf.co.uk/",
-            "description": "英国食品加工与零售集团(旗下含Primark)。"
-          },
-          {
-            "name": "Kerry Group",
-            "url": "https://www.kerry.com/",
-            "description": "爱尔兰风味与营养配料研发制造巨头。"
-          },
-          {
-            "name": "Givaudan (奇华顿)",
-            "url": "https://www.givaudan.com/",
-            "description": "瑞士日用香精与食用香料研发制造绝对龙头。"
-          },
-          {
-            "name": "Firmenich (芬美意)",
-            "url": "https://www.dsm-firmenich.com/",
-            "description": "瑞士香精香料与营养配料巨头(现与DSM合并)。"
-          },
-          {
-            "name": "Symrise (德之馨)",
-            "url": "https://www.symrise.com/",
-            "description": "德国香精、香料、化妆品原料与营养配料供应商。"
-          },
-          {
-            "name": "IFF (国际香精香料)",
-            "url": "https://www.iff.com/",
-            "description": "美国香料、食品配料与生物科学解决方案商。"
-          },
-          {
-            "name": "Tate & Lyle (泰莱)",
-            "url": "https://www.tateandlyle.com/",
-            "description": "英国食品配料、甜味剂与膳食纤维技术提供商。"
-          },
-          {
-            "name": "Barry Callebaut (百乐嘉利宝)",
-            "url": "https://www.barry-callebaut.com/",
-            "description": "全球巧克力与可可制品B2B制造龙头。"
-          },
-          {
-            "name": "Lindt & Sprüngli (瑞士莲)",
-            "url": "https://www.lindt-spruengli.com/",
-            "description": "瑞士高端巧克力研发与零售企业。"
-          },
-          {
-            "name": "Ferrero (费列罗)",
-            "url": "https://www.ferrero.com/",
-            "description": "意大利家族式甜品与巧克力制造巨头。"
-          },
-          {
-            "name": "Hershey's (好时)",
-            "url": "https://www.thehersheycompany.com/",
-            "description": "北美知名巧克力与糖果休闲食品制造企业。"
-          },
-          {
-            "name": "Haribo",
-            "url": "https://www.haribo.com/",
-            "description": "德国知名凝胶糖果与软糖制造品牌。"
-          },
-          {
-            "name": "Perfetti Van Melle (不二家/不凡帝范梅勒)",
-            "url": "https://www.perfettivanmelle.com/",
-            "description": "意大利糖果巨头(阿尔卑斯、曼妥思)。"
-          },
-          {
-            "name": "Keurig Dr Pepper",
-            "url": "https://www.keurigdrpepper.com/",
-            "description": "北美知名饮料与胶囊咖啡机制造企业。"
-          },
-          {
-            "name": "Monster Beverage",
-            "url": "https://www.monsterenergy.com/",
-            "description": "北美能量饮料品牌(魔爪)制造销售商。"
-          },
-          {
-            "name": "Red Bull (红牛)",
-            "url": "https://www.redbull.com/",
-            "description": "奥地利功能性能量饮料品牌与体育营销巨头。"
-          },
-          {
-            "name": "Suntory (三得利)",
-            "url": "https://www.suntory.com/",
-            "description": "日本综合饮料、威士忌与软饮制造集团。"
-          },
-          {
-            "name": "Asahi Group (朝日)",
-            "url": "https://www.asahigroup-holdings.com/",
-            "description": "日本啤酒、软饮料与食品制造集团。"
-          },
-          {
-            "name": "Kirin Holdings (麒麟)",
-            "url": "https://www.kirinholdings.com/",
-            "description": "日本酒精饮料、饮料与健康科学综合集团。"
-          },
-          {
-            "name": "Sapporo Holdings",
-            "url": "https://www.sapporoholdings.jp/",
-            "description": "日本历史悠久的啤酒酿造与地产综合企业。"
-          },
-          {
-            "name": "Pernod Ricard (保乐力加)",
-            "url": "https://www.pernod-ricard.com/",
-            "description": "法国洋酒巨头(芝华士、马爹利)。"
-          },
-          {
-            "name": "Bacardi (百加得)",
-            "url": "https://www.bacardilimited.com/",
-            "description": "全球家族式烈酒公司，主营朗姆酒与金酒。"
-          },
-          {
-            "name": "Campari Group (金巴利)",
-            "url": "https://www.camparigroup.com/",
-            "description": "意大利烈酒集团，主营开胃酒与烈酒。"
-          },
-          {
-            "name": "Brown-Forman (百富门)",
-            "url": "https://www.brown-forman.com/",
-            "description": "美国烈酒巨头，旗下拥有杰克丹尼威士忌。"
-          },
-          {
-            "name": "Molson Coors",
-            "url": "https://www.molsoncoors.com/",
-            "description": "美加跨国啤酒酿造与饮料制造集团。"
-          },
-          {
-            "name": "Constellation Brands",
-            "url": "https://www.cbrands.com/",
-            "description": "美国啤酒、葡萄酒与烈酒进口营销巨头(科罗娜)。"
-          },
-          {
-            "name": "Imperial Brands",
-            "url": "https://www.imperialbrandsplc.com/",
-            "description": "英国国际烟草与烟草替代品制造集团。"
-          },
-          {
-            "name": "British American Tobacco (BAT/英美烟草)",
-            "url": "https://www.bat.com/",
-            "description": "跨国烟草与新型新型烟草产品制造巨头。"
-          },
-          {
-            "name": "Philip Morris International (PMI/菲利普莫里斯)",
-            "url": "https://www.pmi.com/",
-            "description": "全球无烟无灰替代品与烟草巨头(IQOS)。"
-          },
-          {
-            "name": "Japan Tobacco (JT/日本烟草)",
-            "url": "https://www.jt.com/",
-            "description": "日本烟草与制药、食品综合跨国集团。"
-          },
-          {
-            "name": "Altria Group (奥驰亚)",
-            "url": "https://www.altria.com/",
-            "description": "美国大型烟草与卷烟制造企业(万宝路北美)。"
-          },
-          {
-            "name": "Swatch Group (斯沃琪)",
-            "url": "https://www.swatchgroup.com/",
-            "description": "瑞士钟表制造集团(欧米茄、浪琴、宝玑)。"
-          }
-        ]
-      },
-      {
-        "name": "451-484",
-        "links": [
-          {
-            "name": "Pandora",
-            "url": "https://corporate.pandora.net/",
-            "description": "丹麦快时尚定制珠宝设计制造与零售商。"
-          },
-          {
-            "name": "Chow Tai Fook (周大福)",
-            "url": "https://www.ctf.com.hk/",
-            "description": "中国知名珠宝首饰研发、制造与零售集团。"
-          },
-          {
-            "name": "Signet Jewelers",
-            "url": "https://www.signetjewelers.com/",
-            "description": "全球钻石珠宝零售巨头(Kay、Zales)。"
-          },
-          {
-            "name": "Samsonite (新秀丽)",
-            "url": "https://www.samsonite.com/",
-            "description": "全球箱包、旅行袋与出行配件设计制造巨头。"
-          },
-          {
-            "name": "VF Corporation",
-            "url": "https://www.vfc.com/",
-            "description": "美国户外与休闲服饰集团(The North"
-          },
-          {
-            "name": "Hanesbrands",
-            "url": "https://www.hanes.com/",
-            "description": "美国基础内衣与运动服饰制造零售商。"
-          },
-          {
-            "name": "PVH Corp.",
-            "url": "https://www.pvh.com/",
-            "description": "美国服装巨头，旗下拥有Tommy"
-          },
-          {
-            "name": "Capri Holdings",
-            "url": "https://www.capriholdings.com/",
-            "description": "时尚奢侈品集团(Versace"
-          },
-          {
-            "name": "Tapestry",
-            "url": "https://www.tapestry.com/",
-            "description": "纽约现代奢华配饰与生活方式集团(Coach"
-          },
-          {
-            "name": "Ralph Lauren",
-            "url": "https://corporate.ralphlauren.com/",
-            "description": "美国高端休闲美式风尚服装与生活方式品牌。"
-          },
-          {
-            "name": "Levi Strauss & Co. (李维斯)",
-            "url": "https://www.levistrauss.com/",
-            "description": "经典牛仔裤与休闲服饰设计制造品牌。"
-          },
-          {
-            "name": "Gap Inc.",
-            "url": "https://www.gapinc.com/",
-            "description": "北美休闲服饰零售集团(Gap、Old Navy"
-          },
-          {
-            "name": "Fast Retailing (迅销/优衣库)",
-            "url": "https://www.fastretailing.com/",
-            "description": "日本快时尚巨头，优衣库(Uniqlo)母公司。"
-          },
-          {
-            "name": "Inditex (Zara母公司)",
-            "url": "https://www.inditex.com/",
-            "description": "西班牙全球快时尚服饰设计与零售巨头。"
-          },
-          {
-            "name": "H&M Group",
-            "url": "https://hmgroup.com/",
-            "description": "瑞典时尚服饰零售集团，旗下含H&M、COS等。"
-          },
-          {
-            "name": "Zalando",
-            "url": "https://corporate.zalando.com/",
-            "description": "欧洲大型时尚与生活方式在线电商平台。"
-          },
-          {
-            "name": "Boohoo Group",
-            "url": "https://www.boohooplc.com/",
-            "description": "英国超快时尚(Ultra-fast"
-          },
-          {
-            "name": "Shein",
-            "url": "https://www.sheingroup.com/",
-            "description": "实时按需供应链驱动的跨国快时尚电商平台。"
-          },
-          {
-            "name": "Adidas",
-            "url": "https://www.adidas-group.com/",
-            "description": "德国跨国运动鞋服与体育用品设计制造巨头。"
-          },
-          {
-            "name": "Puma",
-            "url": "https://about.puma.com/",
-            "description": "德国运动鞋服与专业体育用品制造品牌。"
-          },
-          {
-            "name": "Under Armour",
-            "url": "https://about.underarmour.com/",
-            "description": "美国专业功能性运动鞋服与装备品牌。"
-          },
-          {
-            "name": "Lululemon Athletica",
-            "url": "https://corporate.lululemon.com/",
-            "description": "加拿大高端瑜伽服饰与运动生活方式品牌。"
-          },
-          {
-            "name": "Anta Sports (安踏)",
-            "url": "https://www.anta-pro.com/",
-            "description": "中国体育用品集团，旗下含安踏、斐乐(FILA)"
-          },
-          {
-            "name": "Li-Ning (李宁)",
-            "url": "https://www.lining.com/",
-            "description": "中国专业运动品牌，融汇国潮与专业体育装备。"
-          },
-          {
-            "name": "ASICS (亚瑟士)",
-            "url": "https://corp.asics.com/",
-            "description": "日本专业跑鞋与体育用品制造品牌。"
-          },
-          {
-            "name": "Mizuno (美津浓)",
-            "url": "https://mizunomfg.com/",
-            "description": "日本综合性体育用品与高尔夫、跑步装备制造企业。"
-          },
-          {
-            "name": "Foot Locker",
-            "url": "https://www.footlocker-inc.com/",
-            "description": "全球运动鞋服连锁零售巨头。"
-          },
-          {
-            "name": "Dick's Sporting Goods",
-            "url": "https://www.dicks-sporting-goods.com/",
-            "description": "北美大型全品类户外与体育用品零售商。"
-          },
-          {
-            "name": "Shimano (禧玛诺)",
-            "url": "https://www.shimano.com/",
-            "description": "日本自行车变速器零件与钓具制造绝对龙头。"
-          },
-          {
-            "name": "Giant Bicycles (巨大机械/捷安特)",
-            "url": "https://www.giant-bicycles.com/",
-            "description": "台湾自行车与电动辅助自行车制造巨头。"
-          },
-          {
-            "name": "Merida Bikes (美利达)",
-            "url": "https://www.merida-bikes.com/",
-            "description": "知名自行车研发设计与高阶制造企业。"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "没有用的网站",
     "icon": "🌀",
     "color": "linear-gradient(135deg, #fdcb6e, #e17055)",
@@ -66291,6 +50361,11 @@ window.KISSTR_DATA = [
             "name": "故宫博物院",
             "url": "https://www.dpm.org.cn",
             "description": "故宫藏品数字资料库"
+          },
+          {
+            "name": "Creative Commons (CC)",
+            "url": "https://creativecommons.org",
+            "description": "知识共享开放许可组织"
           }
         ]
       },
@@ -69263,6 +53338,3846 @@ window.KISSTR_DATA = [
             "name": "Lifelong Learning UK",
             "url": "https://www.gov.uk/further-education-skills",
             "description": "英国官方倡导的终身学习与成人教育导航门户。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "医学与健康",
+    "subcategories": [
+      {
+        "name": "医学与健康",
+        "links": [
+          {
+            "name": "PubMed 医学文献库",
+            "url": "https://pubmed.ncbi.nlm.nih.gov",
+            "description": "NIH 生物医学文献摘要检索库"
+          },
+          {
+            "name": "MedlinePlus（NIH）",
+            "url": "https://medlineplus.gov",
+            "description": "美国国立医学图书馆出品的免费健康科普"
+          },
+          {
+            "name": "美国国家癌症研究所",
+            "url": "https://www.cancer.gov",
+            "description": "NCI 癌症科普、治疗与统计资料"
+          },
+          {
+            "name": "Drugs.com",
+            "url": "https://www.drugs.com",
+            "description": "免费药品说明书、相互作用与药片识别查询"
+          },
+          {
+            "name": "默沙东诊疗手册（大众版）",
+            "url": "https://www.msdmanuals.com/zh/home",
+            "description": "默沙东诊疗手册中文大众版，疾病与用药参考"
+          },
+          {
+            "name": "OpenStax 解剖生理学教材",
+            "url": "https://openstax.org/details/books/anatomy-and-physiology-2e",
+            "description": "开源解剖生理学大学教材，免费在线阅读"
+          },
+          {
+            "name": "美国疾控中心 CDC",
+            "url": "https://www.cdc.gov",
+            "description": "美国疾病控制与预防中心，公共卫生权威机构"
+          },
+          {
+            "name": "NHS 疾病与症状",
+            "url": "https://www.nhs.uk/conditions/",
+            "description": "英国国家医疗服务体系疾病与症状指南"
+          },
+          {
+            "name": "ClinicalTrials.gov",
+            "url": "https://clinicaltrials.gov",
+            "description": "美国 NIH 临床试验注册与结果查询库"
+          },
+          {
+            "name": "中国疾病预防控制中心",
+            "url": "https://www.chinacdc.cn",
+            "description": "中国疾控中心官网，传染病与公共卫生信息"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "法律与政策",
+    "subcategories": [
+      {
+        "name": "法律与政策",
+        "links": [
+          {
+            "name": "国家法律法规数据库",
+            "url": "https://flk.npc.gov.cn",
+            "description": "全国人大常委会官方法律法规全文库"
+          },
+          {
+            "name": "Cornell LII 法律信息研究所",
+            "url": "https://www.law.cornell.edu",
+            "description": "美国联邦法律、判例与法条免费检索"
+          },
+          {
+            "name": "CourtListener",
+            "url": "https://www.courtlistener.com",
+            "description": "免费判例与法律文书检索库"
+          },
+          {
+            "name": "Justia 法律门户",
+            "url": "https://law.justia.com",
+            "description": "美国联邦与州法律、判例、法规免费检索"
+          },
+          {
+            "name": "EUR-Lex 欧盟法律数据库",
+            "url": "https://eur-lex.europa.eu",
+            "description": "欧盟法规、判例与立法文件官方库"
+          },
+          {
+            "name": "中国政府网政策文件库",
+            "url": "https://www.gov.cn/zhengce/",
+            "description": "国务院政策文件与解读官方发布"
+          },
+          {
+            "name": "最高人民法院",
+            "url": "https://www.court.gov.cn",
+            "description": "中国最高人民法院官网，司法解释与典型案例"
+          },
+          {
+            "name": "联合国条约集",
+            "url": "https://treaties.un.org",
+            "description": "联合国官方条约与协定全文库"
+          },
+          {
+            "name": "WIPO Lex 知识产权法库",
+            "url": "https://www.wipo.int/wipolex/",
+            "description": "世界知识产权组织各国知识产权法规库"
+          },
+          {
+            "name": "Oyez 最高法院口述档案",
+            "url": "https://www.oyez.org",
+            "description": "美国最高法院庭审录音与案件档案"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "天文与航天",
+    "subcategories": [
+      {
+        "name": "天文与航天",
+        "links": [
+          {
+            "name": "NASA 官网",
+            "url": "https://www.nasa.gov",
+            "description": "美国航天局官方新闻、任务与图像"
+          },
+          {
+            "name": "Stellarium Web 星图",
+            "url": "https://stellarium.com/sky/",
+            "description": "开源虚拟星图，浏览器中查看星空"
+          },
+          {
+            "name": "EarthSky",
+            "url": "https://earthsky.org",
+            "description": "天文观测、月相与天象科普"
+          },
+          {
+            "name": "In-The-Sky.org",
+            "url": "https://in-the-sky.org",
+            "description": "按地点生成的可见行星与卫星星图"
+          },
+          {
+            "name": "Hubble 哈勃望远镜",
+            "url": "https://science.nasa.gov/mission/hubble/",
+            "description": "哈勃空间望远镜官方图像与任务资料"
+          },
+          {
+            "name": "国际天文学联合会 IAU",
+            "url": "https://www.iau.org",
+            "description": "国际天文学联合会官网，命名与天文标准"
+          },
+          {
+            "name": "Sky & Telescope",
+            "url": "https://skyandtelescope.org",
+            "description": "老牌天文杂志，观测指南与天象新闻"
+          },
+          {
+            "name": "中国国家航天局 CNSA",
+            "url": "https://www.cnsa.gov.cn",
+            "description": "中国国家航天局官网，探月与深空任务"
+          },
+          {
+            "name": "国家天文台",
+            "url": "http://www.nao.cas.cn",
+            "description": "中国科学院国家天文台官网"
+          },
+          {
+            "name": "AAVSO 变星观测者协会",
+            "url": "https://aavso.org/",
+            "description": "美国变星观测者协会，业余天文观测数据"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "金融与经济数据",
+    "subcategories": [
+      {
+        "name": "金融与经济数据",
+        "links": [
+          {
+            "name": "OECD Data",
+            "url": "https://data.oecd.org",
+            "description": "经合组织成员国经济与社会指标"
+          },
+          {
+            "name": "美国劳工统计局 BLS",
+            "url": "https://www.bls.gov",
+            "description": "美国就业、物价与生产率官方统计"
+          },
+          {
+            "name": "国家统计局",
+            "url": "https://www.stats.gov.cn",
+            "description": "中国官方经济社会统计数据"
+          },
+          {
+            "name": "EU Open Data",
+            "url": "https://data.europa.eu",
+            "description": "欧盟开放数据门户"
+          },
+          {
+            "name": "中国人民银行",
+            "url": "https://www.pbc.gov.cn/",
+            "description": "中国人民银行官网，货币政策与金融数据"
+          },
+          {
+            "name": "财政部",
+            "url": "http://www.mof.gov.cn",
+            "description": "中国财政部官网，财政收支与政策"
+          },
+          {
+            "name": "美联储",
+            "url": "https://www.federalreserve.gov",
+            "description": "美国联邦储备委员会官方数据与公告"
+          },
+          {
+            "name": "联合国统计司",
+            "url": "https://unstats.un.org/UNSDWebsite/",
+            "description": "联合国官方统计数据库与指标"
+          },
+          {
+            "name": "上海证券交易所",
+            "url": "https://www.sse.com.cn",
+            "description": "上海证券交易所官网，行情与上市公司信息"
+          },
+          {
+            "name": "国际清算银行 BIS",
+            "url": "https://www.bis.org",
+            "description": "国际清算银行，全球金融统计与研究报告"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "语言与翻译",
+    "subcategories": [
+      {
+        "name": "语言与翻译",
+        "links": [
+          {
+            "name": "维基词典",
+            "url": "https://en.wiktionary.org",
+            "description": "多语言免费词典与词源"
+          },
+          {
+            "name": "Omniglot 语言百科",
+            "url": "https://www.omniglot.com",
+            "description": "世界文字与书写系统科普"
+          },
+          {
+            "name": "WALS 世界语言结构地图",
+            "url": "https://wals.info",
+            "description": "跨语言语法特征对比数据库"
+          },
+          {
+            "name": "PHOIBLE 音系数据库",
+            "url": "https://phoible.org",
+            "description": "全球语言音位清单数据库"
+          },
+          {
+            "name": "台湾国语辞典",
+            "url": "https://dict.revised.moe.edu.tw",
+            "description": "台湾教育部重编国语辞典"
+          },
+          {
+            "name": "教育部成语典",
+            "url": "https://dict.idioms.moe.edu.tw",
+            "description": "台湾教育部成语典，成语释义与典故"
+          },
+          {
+            "name": "粤语审音配词字库",
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/",
+            "description": "香港中文大学粤语审音配词字库"
+          },
+          {
+            "name": "汉字全息资源应用系统",
+            "url": "https://qxk.bnu.edu.cn",
+            "description": "北京师范大学汉字形音义资源库"
+          },
+          {
+            "name": "汉字字源网",
+            "url": "https://hanziyuan.net",
+            "description": "汉字字形演变与字源查询"
+          },
+          {
+            "name": "BCC 汉语语料库",
+            "url": "https://bcc.blcu.edu.cn",
+            "description": "北京语言大学 BCC 汉语语料库"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "安全与隐私",
+    "subcategories": [
+      {
+        "name": "安全与隐私",
+        "links": [
+          {
+            "name": "Privacy Guides",
+            "url": "https://www.privacyguides.org/",
+            "description": "隐私工具与最佳实践开源指南"
+          },
+          {
+            "name": "EFF 自保指南",
+            "url": "https://ssd.eff.org",
+            "description": "电子前哨基金会安全与隐私自保教程"
+          },
+          {
+            "name": "KeePass 密码管理器",
+            "url": "https://keepass.info",
+            "description": "开源本地密码管理器"
+          },
+          {
+            "name": "OSINT Framework",
+            "url": "https://osintframework.com",
+            "description": "开源情报收集工具分类框架"
+          },
+          {
+            "name": "Exodus Privacy",
+            "url": "https://exodus-privacy.eu.org",
+            "description": "安卓应用隐私追踪器分析"
+          },
+          {
+            "name": "CryptPad",
+            "url": "https://cryptpad.org",
+            "description": "端到端加密的开源协作文档"
+          },
+          {
+            "name": "Have I Been Pwned",
+            "url": "https://haveibeenpwned.com/",
+            "description": "检查邮箱密码是否在泄露中被公开"
+          },
+          {
+            "name": "VirusTotal",
+            "url": "https://www.virustotal.com/",
+            "description": "聚合多款杀毒引擎在线扫描"
+          },
+          {
+            "name": "Privnote",
+            "url": "https://privnote.com/",
+            "description": "发送阅后即焚的加密自毁消息"
+          },
+          {
+            "name": "Temp Mail",
+            "url": "https://temp-mail.org/",
+            "description": "快速生成临时一次性匿名邮箱"
+          },
+          {
+            "name": "10MinuteMail",
+            "url": "https://10minutemail.com/",
+            "description": "经典的10分钟临时邮箱"
+          },
+          {
+            "name": "File.io",
+            "url": "https://file.io/",
+            "description": "下载一次后自动永久删除的文件分享"
+          },
+          {
+            "name": "Wormhole",
+            "url": "https://wormhole.app/",
+            "description": "分享自动删除的文件"
+          },
+          {
+            "name": "SayMine",
+            "url": "https://www.saymine.com/",
+            "description": "从任何网站删除自己的数据"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "旅行与交通",
+    "subcategories": [
+      {
+        "name": "旅行与交通",
+        "links": [
+          {
+            "name": "FlightAware 航班追踪",
+            "url": "https://www.flightaware.com/",
+            "description": "全球民航航班实时追踪"
+          },
+          {
+            "name": "ADS-B Exchange",
+            "url": "https://www.adsbexchange.com",
+            "description": "开源众包 ADS-B 航班数据平台"
+          },
+          {
+            "name": "Seat61 火车旅行指南",
+            "url": "https://www.seat61.com",
+            "description": "全球铁路与火车旅行免费指南"
+          },
+          {
+            "name": "维基导游 Wikivoyage",
+            "url": "https://zh.wikivoyage.org",
+            "description": "自由编辑的全球旅行指南"
+          },
+          {
+            "name": "交通运输部",
+            "url": "https://www.mot.gov.cn",
+            "description": "中国交通运输部官网"
+          },
+          {
+            "name": "中国民用航空局",
+            "url": "http://www.caac.gov.cn",
+            "description": "中国民航局官网，航班与行业数据"
+          },
+          {
+            "name": "中国国家铁路集团",
+            "url": "http://www.china-railway.com.cn",
+            "description": "国铁集团官网，铁路运输与服务"
+          },
+          {
+            "name": "Rome2Rio",
+            "url": "https://www.rome2rio.com",
+            "description": "全球多点路线与交通方式规划"
+          },
+          {
+            "name": "中国海事局",
+            "url": "https://www.msa.gov.cn",
+            "description": "中国海事局官网，船舶与航行通告"
+          },
+          {
+            "name": "Google Flights",
+            "url": "https://www.google.com/travel/flights",
+            "description": "谷歌航班查询与比价"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "学习与考试",
+    "subcategories": [
+      {
+        "name": "学习与考试",
+        "links": [
+          {
+            "name": "code.org",
+            "url": "https://code.org/en-US",
+            "description": "面向入门者的免费编程课程"
+          },
+          {
+            "name": "AnkiWeb 记忆卡片",
+            "url": "https://ankiweb.net",
+            "description": "间隔重复记忆卡片同步平台"
+          },
+          {
+            "name": "国家中小学智慧教育平台",
+            "url": "https://basic.smartedu.cn",
+            "description": "教育部中小学课程与教学资源平台"
+          },
+          {
+            "name": "国家智慧教育公共服务平台",
+            "url": "https://www.smartedu.cn",
+            "description": "教育部一站式教育服务平台"
+          },
+          {
+            "name": "中国研究生招生信息网",
+            "url": "https://yz.chsi.com.cn",
+            "description": "考研官方报名、调剂与院校信息"
+          },
+          {
+            "name": "IELTS 雅思官网",
+            "url": "https://www.ielts.org",
+            "description": "雅思考试官方报名与备考信息"
+          },
+          {
+            "name": "全国大学英语四六级考试网",
+            "url": "http://cet.neea.edu.cn",
+            "description": "四六级考试官方报名与成绩查询"
+          },
+          {
+            "name": "国家公务员局",
+            "url": "http://www.scs.gov.cn",
+            "description": "国家公务员局官网，考试录用信息"
+          },
+          {
+            "name": "托福 ETS 官网",
+            "url": "https://www.ets.org/toefl.html",
+            "description": "ETS 托福考试官方报名与备考"
+          },
+          {
+            "name": "学信网",
+            "url": "https://www.chsi.com.cn",
+            "description": "中国高等教育学生信息网，学历学籍查询"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "新媒体数据",
+    "subcategories": [
+      {
+        "name": "综合榜单",
+        "links": [
+          {
+            "name": "新榜",
+            "url": "https://www.newrank.cn/",
+            "description": "全平台榜单与账号指数"
+          },
+          {
+            "name": "MCNDATA",
+            "url": "https://www.mcndata.cn/",
+            "description": "短视频综合榜与带货榜"
+          },
+          {
+            "name": "克劳锐 TopKlout",
+            "url": "https://www.topklout.com/",
+            "description": "达人商业价值评估"
+          }
+        ]
+      },
+      {
+        "name": "抖音数据",
+        "links": [
+          {
+            "name": "飞瓜数据",
+            "url": "https://www.feigua.cn/",
+            "description": "抖音达人商品直播数据"
+          },
+          {
+            "name": "蝉妈妈",
+            "url": "https://www.chanmama.com/",
+            "description": "抖音电商选品与洞察"
+          },
+          {
+            "name": "达多多",
+            "url": "https://www.daduoduo.com/",
+            "description": "抖音直播电商免费查"
+          },
+          {
+            "name": "考古加",
+            "url": "https://www.kaogujia.com/",
+            "description": "爆品素材与潜力达人"
+          },
+          {
+            "name": "抖查查",
+            "url": "https://www.douchacha.com/",
+            "description": "短视频直播全量数据"
+          },
+          {
+            "name": "新抖",
+            "url": "https://xd.newrank.cn/",
+            "description": "抖音热门视频与涨粉榜"
+          }
+        ]
+      },
+      {
+        "name": "小红书数据",
+        "links": [
+          {
+            "name": "千瓜数据",
+            "url": "https://www.qian-gua.com/",
+            "description": "小红书达人品牌分析"
+          },
+          {
+            "name": "新红",
+            "url": "https://xh.newrank.cn/",
+            "description": "小红书红人榜与投放"
+          },
+          {
+            "name": "蝉小红",
+            "url": "https://www.chanxiaohong.com/",
+            "description": "小红书博主笔记数据"
+          },
+          {
+            "name": "灰豚红薯版",
+            "url": "https://xhs.huitun.com/",
+            "description": "小红书大盘与竞品监控"
+          },
+          {
+            "name": "火烧云数据",
+            "url": "https://www.hsydata.com/home",
+            "description": "小红书达人品牌营销"
+          }
+        ]
+      },
+      {
+        "name": "视频号数据",
+        "links": [
+          {
+            "name": "灰豚数据",
+            "url": "https://www.huitun.com/",
+            "description": "多平台直播带货数据"
+          },
+          {
+            "name": "友望数据",
+            "url": "https://www.youwant.cn/",
+            "description": "视频号账号投放监测"
+          },
+          {
+            "name": "百准数据",
+            "url": "https://www.baizhun.cn/",
+            "description": "视频号榜单与商品数据"
+          },
+          {
+            "name": "新视",
+            "url": "https://xs.newrank.cn/",
+            "description": "视频号内容与直播数据"
+          }
+        ]
+      },
+      {
+        "name": "B站数据",
+        "links": [
+          {
+            "name": "新站",
+            "url": "https://xz.newrank.cn/",
+            "description": "B站UP主与热门视频"
+          }
+        ]
+      },
+      {
+        "name": "公众号与舆情",
+        "links": [
+          {
+            "name": "西瓜数据",
+            "url": "https://data.xiguaji.com/",
+            "description": "公众号榜单与文章监测"
+          },
+          {
+            "name": "清博指数",
+            "url": "https://www.gsdata.cn/",
+            "description": "微信微博传播指数"
+          }
+        ]
+      },
+      {
+        "name": "官方数据源",
+        "links": [
+          {
+            "name": "巨量算数",
+            "url": "https://trendinsight.oceanengine.com/",
+            "description": "抖音官方趋势洞察"
+          },
+          {
+            "name": "抖音电商罗盘",
+            "url": "https://compass.jinritemai.com/",
+            "description": "商家经营数据后台"
+          },
+          {
+            "name": "小红书蒲公英",
+            "url": "https://pgy.xiaohongshu.com/",
+            "description": "官方达人合作平台"
+          },
+          {
+            "name": "小红书千帆",
+            "url": "https://ark.xiaohongshu.com/",
+            "description": "官方商家经营后台"
+          }
+        ]
+      },
+      {
+        "name": "数据接口",
+        "links": [
+          {
+            "name": "极致了数据",
+            "url": "https://www.jzl.com/",
+            "description": "多平台数据采集 API"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "企业数据",
+    "subcategories": [
+      {
+        "name": "域名与网络数据",
+        "links": [
+          {
+            "name": "NetAPI",
+            "url": "https://netapi.com",
+            "description": "域名区、WHOIS 与 DNS 数据查询"
+          }
+        ]
+      },
+      {
+        "name": "企业榜单",
+        "links": [
+          {
+            "name": "财富中文网",
+            "url": "https://www.fortunechina.com",
+            "description": "世界500强与中国企业榜单"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "榜单与数据",
+    "subcategories": [
+      {
+        "name": "企业榜单与数据库",
+        "links": [
+          {
+            "name": "Fortune Global 500",
+            "url": "https://fortune.com/ranking/global500/",
+            "description": "全球500强企业营收榜"
+          },
+          {
+            "name": "Forbes Global 2000",
+            "url": "https://www.forbes.com/lists/global2000/",
+            "description": "福布斯全球2000强排行榜"
+          },
+          {
+            "name": "Fortune China 500",
+            "url": "https://www.fortunechina.com/fortune500/",
+            "description": "财富中国500强排行榜"
+          },
+          {
+            "name": "Fortune Southeast Asia 500",
+            "url": "https://fortune.com/ranking/southeast-asia-500/",
+            "description": "东南亚500强企业排行榜"
+          },
+          {
+            "name": "CompaniesMarketCap",
+            "url": "https://companiesmarketcap.com/",
+            "description": "全球上市公司市值榜"
+          },
+          {
+            "name": "Stock Analysis",
+            "url": "https://stockanalysis.com/",
+            "description": "上市公司财报与估值数据"
+          },
+          {
+            "name": "MarketScreener",
+            "url": "https://www.marketscreener.com/",
+            "description": "全球上市公司行情与财报"
+          },
+          {
+            "name": "TradingView",
+            "url": "https://www.tradingview.com/",
+            "description": "全球行情图表与交易工具"
+          },
+          {
+            "name": "Finviz",
+            "url": "https://finviz.com/",
+            "description": "美股筛选与可视化行情"
+          },
+          {
+            "name": "OpenCorporates",
+            "url": "https://opencorporates.com/",
+            "description": "全球企业注册信息数据库"
+          },
+          {
+            "name": "Dun & Bradstreet",
+            "url": "https://www.dnb.com/",
+            "description": "全球企业档案与信用数据"
+          },
+          {
+            "name": "Crunchbase",
+            "url": "https://www.crunchbase.com/",
+            "description": "全球初创企业与投融资库"
+          },
+          {
+            "name": "Dealroom",
+            "url": "https://dealroom.co/",
+            "description": "创业公司与投资生态数据库"
+          },
+          {
+            "name": "Tracxn",
+            "url": "https://tracxn.com/",
+            "description": "全球创业公司数据平台"
+          },
+          {
+            "name": "ZoomInfo",
+            "url": "https://www.zoominfo.com/",
+            "description": "B2B企业与联系人数据"
+          },
+          {
+            "name": "Apollo.io",
+            "url": "https://www.apollo.io/",
+            "description": "B2B企业客户线索库"
+          },
+          {
+            "name": "Companies House",
+            "url": "https://find-and-update.company-information.service.gov.uk/",
+            "description": "英国官方企业注册查询平台"
+          },
+          {
+            "name": "SEC EDGAR",
+            "url": "https://www.sec.gov/edgar/search/",
+            "description": "美国上市公司披露文件库"
+          },
+          {
+            "name": "Brand Finance",
+            "url": "https://brandfinance.com/",
+            "description": "全球品牌价值评估榜"
+          },
+          {
+            "name": "Kantar BrandZ",
+            "url": "https://www.kantar.com/campaigns/brandz",
+            "description": "全球品牌价值百强榜"
+          },
+          {
+            "name": "Interbrand Best Global Brands",
+            "url": "https://interbrand.com/best-global-brands/",
+            "description": "全球最佳品牌排行榜"
+          },
+          {
+            "name": "TIME World's Best Companies",
+            "url": "https://time.com/collection/worlds-best-companies/",
+            "description": "时代全球最佳企业榜"
+          },
+          {
+            "name": "Hurun Report 胡润百富",
+            "url": "https://www.hurun.net/",
+            "description": "中国及全球富豪、独角兽、企业和品牌榜单"
+          },
+          {
+            "name": "World Brand Lab",
+            "url": "https://www.worldbrandlab.com/",
+            "description": "世界品牌500强、中国品牌价值等品牌研究"
+          },
+          {
+            "name": "中国企业联合会",
+            "url": "https://www.cec-ceda.org.cn/",
+            "description": "中国企业500强及企业发展相关榜单"
+          },
+          {
+            "name": "国家企业信用信息公示系统",
+            "url": "https://www.gsxt.gov.cn/",
+            "description": "中国企业工商登记查询"
+          }
+        ]
+      },
+      {
+        "name": "榜单聚合索引",
+        "links": [
+          {
+            "name": "Ranklist",
+            "url": "https://www.ranklist.cc/en/",
+            "description": "全球多领域排行榜集合"
+          },
+          {
+            "name": "AllRanks",
+            "url": "https://allranks.world/",
+            "description": "各国各领域排行榜聚合"
+          },
+          {
+            "name": "Folotop",
+            "url": "https://www.folotop.com/",
+            "description": "全球Top5与Top10榜单集"
+          },
+          {
+            "name": "TopListPicker",
+            "url": "https://toplistpicker.com/",
+            "description": "多主题榜单收集与整理"
+          },
+          {
+            "name": "Gov Capital Toplist",
+            "url": "https://gov.capital/toplist",
+            "description": "金融与资产类榜单集"
+          },
+          {
+            "name": "美国国会图书馆企业排名指南",
+            "url": "https://guides.loc.gov/company-research/rankings-lists",
+            "description": "企业榜单查询指南"
+          },
+          {
+            "name": "OnlyTraction",
+            "url": "https://onlytraction.com/directories/best-website-directories",
+            "description": "网站目录与榜单导航"
+          },
+          {
+            "name": "PRKatalog",
+            "url": "https://prkatalog.info/",
+            "description": "多行业榜单与名录索引"
+          },
+          {
+            "name": "Directoryo",
+            "url": "https://directoryo.com/ranking",
+            "description": "全球网站目录排名"
+          },
+          {
+            "name": "TopDirs",
+            "url": "https://topdirs.com/",
+            "description": "网站目录排行与收录"
+          },
+          {
+            "name": "World Ranked List",
+            "url": "https://worldrankedlist.com/",
+            "description": "各国各领域排名汇总"
+          },
+          {
+            "name": "Global Rating",
+            "url": "https://global-rating.com/",
+            "description": "全球多主题评分榜"
+          },
+          {
+            "name": "GenRank",
+            "url": "https://www.genrank.com/",
+            "description": "通用排名榜单聚合"
+          },
+          {
+            "name": "The Rank Index",
+            "url": "https://therankindex.com/",
+            "description": "多领域排名索引站"
+          },
+          {
+            "name": "SumRank",
+            "url": "https://sumrank.com/rankings",
+            "description": "聚合型排名榜单站"
+          },
+          {
+            "name": "cv.cm Rankings",
+            "url": "https://cv.cm/en/rankings/",
+            "description": "多行业综合排名站"
+          }
+        ]
+      },
+      {
+        "name": "网站流量与域名排名",
+        "links": [
+          {
+            "name": "WebAtla",
+            "url": "https://webatla.com/datasets/websites-ranking",
+            "description": "全球网站域名排名数据库"
+          },
+          {
+            "name": "GeoRanker",
+            "url": "https://www.georanker.com/",
+            "description": "国家、地区和城市相关数据分析工具"
+          },
+          {
+            "name": "NetAPI Top 1 Million",
+            "url": "https://netapi.com/top-1-mln-websites/",
+            "description": "全球热门网站前100万名录"
+          },
+          {
+            "name": "Rank.to",
+            "url": "https://rank.to/",
+            "description": "多维度网站排名查询"
+          },
+          {
+            "name": "Rankeez",
+            "url": "https://rankeez.com/",
+            "description": "网站排名查询与对比"
+          },
+          {
+            "name": "Semrush Trending Websites",
+            "url": "https://www.semrush.com/trending-websites/",
+            "description": "全球热门网站趋势榜"
+          },
+          {
+            "name": "Tranco List",
+            "url": "https://tranco-list.eu/",
+            "description": "全球网站排名数据库"
+          },
+          {
+            "name": "Cisco Umbrella Top 1 Million",
+            "url": "https://umbrella.cisco.com/",
+            "description": "全球热门域名排名数据资源"
+          },
+          {
+            "name": "Majestic Million",
+            "url": "https://majestic.com/reports/majestic-million",
+            "description": "全球网站链接影响力排行榜"
+          },
+          {
+            "name": "Semrush",
+            "url": "https://www.semrush.com/",
+            "description": "网站流量与 SEO 数据平台"
+          },
+          {
+            "name": "Similarweb",
+            "url": "https://www.similarweb.com/",
+            "description": "全球网站流量排行榜"
+          },
+          {
+            "name": "DigestSEO",
+            "url": "https://digestseo.com/zh-cn/top-websites/",
+            "description": "Majestic 引用网络网站排名"
+          },
+          {
+            "name": "Rankmeter",
+            "url": "https://rankmeter.io/",
+            "description": "整合不同来源的网站排名"
+          },
+          {
+            "name": "Web Map",
+            "url": "https://web-map.net/",
+            "description": "可视化探索全球网站域名"
+          },
+          {
+            "name": "Open PageRank",
+            "url": "https://www.domcop.com/top-10-million-websites",
+            "description": "百万级网站排名与域名权重"
+          },
+          {
+            "name": "Ahrefs",
+            "url": "https://ahrefs.com/",
+            "description": "SEO 与外链分析工具"
+          },
+          {
+            "name": "Moz",
+            "url": "https://moz.com/",
+            "description": "域名权重、搜索引擎优化、关键词和链接数据"
+          },
+          {
+            "name": "SE Ranking",
+            "url": "https://seranking.com/",
+            "description": "关键词排名、搜索流量、竞争对手及 SEO"
+          }
+        ]
+      },
+      {
+        "name": "网站技术与网络状态",
+        "links": [
+          {
+            "name": "ITU DataHub",
+            "url": "https://datahub.itu.int/",
+            "description": "全球电信与数字发展统计"
+          },
+          {
+            "name": "RIPE NCC",
+            "url": "https://www.ripe.net/",
+            "description": "欧洲 IP 与路由注册库"
+          },
+          {
+            "name": "StatCounter",
+            "url": "https://gs.statcounter.com/",
+            "description": "浏览器与操作系统份额统计"
+          },
+          {
+            "name": "Cloudflare Radar Outage Center",
+            "url": "https://radar.cloudflare.com/outage-center",
+            "description": "全球互联网中断与故障监测"
+          },
+          {
+            "name": "Internet Society Pulse",
+            "url": "https://pulse.internetsociety.org/",
+            "description": "全球互联网连接与开放度监测"
+          },
+          {
+            "name": "Ookla Speedtest Global Index",
+            "url": "https://www.speedtest.net/global-index",
+            "description": "全球宽带与移动网速排名"
+          },
+          {
+            "name": "Downdetector",
+            "url": "https://downdetector.com/",
+            "description": "网站与应用故障报告聚合"
+          },
+          {
+            "name": "StatusGator",
+            "url": "https://statusgator.com/",
+            "description": "SaaS 与云服务状态监控"
+          },
+          {
+            "name": "Pingdom",
+            "url": "https://www.pingdom.com/",
+            "description": "网站响应速度与可用性监控"
+          },
+          {
+            "name": "Internet Society",
+            "url": "https://www.internetsociety.org/",
+            "description": "全球互联网政策组织"
+          },
+          {
+            "name": "W3Techs",
+            "url": "https://w3techs.com/",
+            "description": "全球网站技术使用率统计"
+          },
+          {
+            "name": "BuiltWith Trends",
+            "url": "https://trends.builtwith.com/",
+            "description": "网站技术市场份额趋势"
+          },
+          {
+            "name": "HTTP Archive",
+            "url": "https://httparchive.org/",
+            "description": "全球网页性能与技术数据"
+          },
+          {
+            "name": "Chrome UX Report",
+            "url": "https://developer.chrome.com/docs/crux/",
+            "description": "网站真实用户体验与性能数据"
+          },
+          {
+            "name": "MDN HTTP Observatory",
+            "url": "https://developer.mozilla.org/en-US/observatory",
+            "description": "HTTP 安全配置检测"
+          },
+          {
+            "name": "DNSPerf",
+            "url": "https://www.dnsperf.com/",
+            "description": "DNS 服务商速度与可靠性排名"
+          },
+          {
+            "name": "HostingSeekers",
+            "url": "https://www.hostingseekers.com/",
+            "description": "主机与托管服务商评测"
+          },
+          {
+            "name": "StackShare",
+            "url": "https://stackshare.io/",
+            "description": "技术栈与开发工具目录"
+          },
+          {
+            "name": "Netcraft",
+            "url": "https://www.netcraft.com/",
+            "description": "网站与服务器安全数据"
+          },
+          {
+            "name": "BGP.Tools",
+            "url": "https://bgp.tools/",
+            "description": "BGP 路由与自治系统查询"
+          }
+        ]
+      },
+      {
+        "name": "搜索与关键词趋势",
+        "links": [
+          {
+            "name": "Ahrefs Keywords Explorer",
+            "url": "https://ahrefs.com/keyword-generator",
+            "description": "关键词搜索量、关键词难度和相关搜索词研究"
+          },
+          {
+            "name": "Google Trends",
+            "url": "https://trends.google.com/trends/",
+            "description": "全球搜索热度、地区趋势、热门关键词及历史"
+          },
+          {
+            "name": "Google Trends Trending Now",
+            "url": "https://trends.google.com/trending",
+            "description": "实时热门搜索话题和全球趋势发现"
+          },
+          {
+            "name": "Google Keyword Planner",
+            "url": "https://ads.google.com/home/tools/keyword-planner/",
+            "description": "关键词搜索量、竞争程度和广告关键词数据"
+          },
+          {
+            "name": "Exploding Topics",
+            "url": "https://explodingtopics.com/",
+            "description": "发现正在增长的新兴关键词、产品、行业和市"
+          },
+          {
+            "name": "Glimpse",
+            "url": "https://meetglimpse.com/",
+            "description": "Google Trends 趋势放大工具"
+          },
+          {
+            "name": "AnswerThePublic",
+            "url": "https://answerthepublic.com/",
+            "description": "整理用户搜索问题、关键词联想及内容需求"
+          },
+          {
+            "name": "AlsoAsked",
+            "url": "https://alsoasked.com/",
+            "description": "探索搜索引擎相关问题及用户搜索意图关系"
+          },
+          {
+            "name": "Keyword Tool",
+            "url": "https://keywordtool.io/",
+            "description": "多平台关键词建议工具"
+          },
+          {
+            "name": "Keyword Surfer",
+            "url": "https://surferseo.com/keyword-surfer/",
+            "description": "搜索关键词数据、相关关键词和搜索量研究"
+          },
+          {
+            "name": "Google Search Console",
+            "url": "https://search.google.com/search-console/",
+            "description": "搜索曝光量、点击量、关键词表现和搜索排名"
+          }
+        ]
+      },
+      {
+        "name": "内容创作者数据",
+        "links": [
+          {
+            "name": "Social Blade",
+            "url": "https://socialblade.com/",
+            "description": "多平台创作者数据与排名"
+          },
+          {
+            "name": "HypeAuditor",
+            "url": "https://hypeauditor.com/",
+            "description": "网红真实度与受众分析"
+          },
+          {
+            "name": "Favikon",
+            "url": "https://www.favikon.com/",
+            "description": "全球内容创作者发现、影响力分析和账号排行"
+          },
+          {
+            "name": "Modash",
+            "url": "https://www.modash.io/",
+            "description": "网红搜索与受众数据"
+          },
+          {
+            "name": "NoxInfluencer",
+            "url": "https://www.noxinfluencer.com/",
+            "description": "YouTube与TikTok网红数据"
+          },
+          {
+            "name": "vidIQ",
+            "url": "https://vidiq.com/",
+            "description": "YouTube 频道增长工具"
+          },
+          {
+            "name": "Tubular Labs",
+            "url": "https://tubularlabs.com/",
+            "description": "全球社交视频内容、创作者及视频表现分析"
+          },
+          {
+            "name": "Playboard",
+            "url": "https://playboard.co/",
+            "description": "YouTube 频道与直播数据"
+          },
+          {
+            "name": "DataReportal",
+            "url": "https://datareportal.com/",
+            "description": "全球数字与社媒用户报告"
+          }
+        ]
+      },
+      {
+        "name": "开源与软件市场",
+        "links": [
+          {
+            "name": "GitHub Rankings",
+            "url": "https://githubrankings.io/",
+            "description": "GitHub 开发者与组织排名"
+          },
+          {
+            "name": "SrcLog",
+            "url": "https://srclog.com/",
+            "description": "开源项目、开发者和项目增长趋势发现"
+          },
+          {
+            "name": "Star History",
+            "url": "https://star-history.com/",
+            "description": "追踪 GitHub 项目 Star 数量"
+          },
+          {
+            "name": "OSS Insight",
+            "url": "https://ossinsight.io/",
+            "description": "GitHub 开源数据洞察"
+          },
+          {
+            "name": "Ecosyste.ms",
+            "url": "https://ecosyste.ms/",
+            "description": "全球开源软件生态、依赖关系及项目数据库"
+          },
+          {
+            "name": "Libraries.io",
+            "url": "https://libraries.io/",
+            "description": "全球开源软件包、开发库及依赖关系数据库"
+          },
+          {
+            "name": "OpenAlternative",
+            "url": "https://openalternative.co/",
+            "description": "商业软件的开源替代品"
+          },
+          {
+            "name": "Repology",
+            "url": "https://repology.org/",
+            "description": "Linux 软件包版本追踪"
+          },
+          {
+            "name": "Uneed",
+            "url": "https://www.uneed.best/",
+            "description": "独立开发者产品、新网站及互联网工具排行榜"
+          },
+          {
+            "name": "SaaSHub",
+            "url": "https://www.saashub.com/",
+            "description": "SaaS 产品、在线服务和软件替代品目录"
+          },
+          {
+            "name": "G2",
+            "url": "https://www.g2.com/",
+            "description": "全球软件产品评分、用户评价和行业分类排行"
+          },
+          {
+            "name": "Capterra",
+            "url": "https://www.capterra.com/",
+            "description": "商业软件评价与分类"
+          },
+          {
+            "name": "Appfigures",
+            "url": "https://appfigures.com/",
+            "description": "全球移动应用下载量、收入、商店排名和市场"
+          },
+          {
+            "name": "AppWinners",
+            "url": "https://appwinners.eu/",
+            "description": "应用商店历史排行榜和移动应用排名数据"
+          },
+          {
+            "name": "AppBrain",
+            "url": "https://www.appbrain.com/stats/",
+            "description": "Android 应用与开发者统计"
+          },
+          {
+            "name": "Google Play",
+            "url": "https://play.google.com/store/apps",
+            "description": "Google 官方应用商店"
+          },
+          {
+            "name": "Apple App Store",
+            "url": "https://www.apple.com/app-store/",
+            "description": "Apple 官方应用商店"
+          },
+          {
+            "name": "AppMagic",
+            "url": "https://appmagic.rocks/",
+            "description": "移动应用市场、应用收入、下载量和产品表现"
+          },
+          {
+            "name": "AppTweak",
+            "url": "https://www.apptweak.com/",
+            "description": "应用商店优化与排名数据"
+          },
+          {
+            "name": "App Radar",
+            "url": "https://appradar.com/",
+            "description": "移动应用排名、关键词优化及应用市场数据"
+          },
+          {
+            "name": "42matters",
+            "url": "https://42matters.com/",
+            "description": "全球移动应用数据库、开发者信息、应用分类"
+          }
+        ]
+      },
+      {
+        "name": "教育与科研排名",
+        "links": [
+          {
+            "name": "U.S. News",
+            "url": "https://www.usnews.com/",
+            "description": "全球大学、国家、医院等领域排行榜"
+          },
+          {
+            "name": "CWTS Leiden Ranking",
+            "url": "https://www.leidenranking.com/",
+            "description": "全球大学科研排名平台"
+          },
+          {
+            "name": "Nature Index",
+            "url": "https://www.nature.com/nature-index/",
+            "description": "全球科研机构和大学科研贡献排行榜"
+          },
+          {
+            "name": "EduRank",
+            "url": "https://edurank.org/",
+            "description": "全球大学与学科排名"
+          },
+          {
+            "name": "AD Scientific Index",
+            "url": "https://www.adscientificindex.com/",
+            "description": "全球科学家及学术机构排名平台"
+          },
+          {
+            "name": "SCImago Institutions Rankings",
+            "url": "https://www.scimagoir.com/",
+            "description": "全球大学及科研机构排名"
+          }
+        ]
+      },
+      {
+        "name": "国家与经济数据",
+        "links": [
+          {
+            "name": "The 311 Indexes",
+            "url": "https://www.311institute.com/indexes/",
+            "description": "全球治理与政策指数库"
+          },
+          {
+            "name": "Henley & Partners",
+            "url": "https://www.henleyglobal.com/",
+            "description": "全球护照指数及国际流动性排名"
+          },
+          {
+            "name": "WorldData.info",
+            "url": "https://www.worlddata.info/",
+            "description": "全球国家和地区数据百科"
+          },
+          {
+            "name": "UNDP Human Development Reports",
+            "url": "https://hdr.undp.org/",
+            "description": "联合国人类发展指数及国家发展排名"
+          },
+          {
+            "name": "Transparency International",
+            "url": "https://www.transparency.org/en/cpi",
+            "description": "全球清廉指数排行榜"
+          },
+          {
+            "name": "World Justice Project",
+            "url": "https://worldjusticeproject.org/rule-of-law-index/",
+            "description": "全球法治指数排行榜"
+          },
+          {
+            "name": "Sustainable Development Report",
+            "url": "https://www.sustainabledevelopment.report/",
+            "description": "全球可持续发展目标指数及国家排名"
+          },
+          {
+            "name": "UNICEF Data",
+            "url": "https://data.unicef.org/",
+            "description": "联合国儿童基金会数据库"
+          },
+          {
+            "name": "ILOSTAT",
+            "url": "https://ilostat.ilo.org/data/",
+            "description": "国际劳工组织开放统计数据库"
+          },
+          {
+            "name": "FAOSTAT",
+            "url": "https://www.fao.org/faostat/",
+            "description": "联合国粮农组织数据库"
+          },
+          {
+            "name": "UNESCO Institute for Statistics",
+            "url": "https://uis.unesco.org/",
+            "description": "联合国教科文组织统计数据库"
+          },
+          {
+            "name": "GSMA Intelligence",
+            "url": "https://www.gsmaintelligence.com/",
+            "description": "全球移动通信、移动设备、运营商和通信市场"
+          },
+          {
+            "name": "GWI",
+            "url": "https://www.gwi.com/",
+            "description": "全球消费者与数字受众数据"
+          },
+          {
+            "name": "EMARKETER",
+            "url": "https://www.emarketer.com/",
+            "description": "数字广告与电商市场研究"
+          },
+          {
+            "name": "IDC",
+            "url": "https://www.idc.com/",
+            "description": "全球 IT 市场与出货量数据"
+          },
+          {
+            "name": "Gartner",
+            "url": "https://www.gartner.com/",
+            "description": "全球企业技术市场、科技产业研究和行业趋势"
+          }
+        ]
+      },
+      {
+        "name": "开放数据集",
+        "links": [
+          {
+            "name": "OpenML",
+            "url": "https://www.openml.org/",
+            "description": "开放机器学习数据平台"
+          },
+          {
+            "name": "DataHub",
+            "url": "https://datahub.io/",
+            "description": "开放数据集目录与托管平台"
+          },
+          {
+            "name": "data.world",
+            "url": "https://data.world/",
+            "description": "数据集托管与协作平台"
+          },
+          {
+            "name": "Open Data Network",
+            "url": "https://www.opendatanetwork.com/",
+            "description": "跨政府机构和公共数据门户检索数据"
+          },
+          {
+            "name": "Open Data Inception",
+            "url": "https://opendatainception.io/",
+            "description": "全球开放数据门户索引"
+          },
+          {
+            "name": "OpenDataSoft",
+            "url": "https://www.opendatasoft.com/",
+            "description": "开放数据门户及数据目录平台"
+          },
+          {
+            "name": "Data.gov",
+            "url": "https://data.gov/",
+            "description": "美国联邦政府开放数据门户"
+          },
+          {
+            "name": "Data.gov.uk",
+            "url": "https://www.data.gov.uk/",
+            "description": "英国政府开放数据门户"
+          },
+          {
+            "name": "Open Canada",
+            "url": "https://open.canada.ca/en/open-data",
+            "description": "加拿大政府开放数据门户"
+          },
+          {
+            "name": "data.gov.au",
+            "url": "https://data.gov.au/",
+            "description": "澳大利亚政府开放数据门户"
+          },
+          {
+            "name": "Data.govt.nz",
+            "url": "https://www.data.govt.nz/",
+            "description": "新西兰政府开放数据平台"
+          },
+          {
+            "name": "Data.go.jp",
+            "url": "https://www.data.go.jp/",
+            "description": "日本政府开放数据门户"
+          },
+          {
+            "name": "Data.gov.tw",
+            "url": "https://data.gov.tw/",
+            "description": "台湾地区政府开放数据平台"
+          },
+          {
+            "name": "Data.go.kr",
+            "url": "https://www.data.go.kr/",
+            "description": "韩国国家开放数据门户"
+          },
+          {
+            "name": "data.gouv.fr",
+            "url": "https://www.data.gouv.fr/",
+            "description": "法国国家开放数据平台"
+          },
+          {
+            "name": "Mendeley Data",
+            "url": "https://data.mendeley.com/",
+            "description": "Elsevier 研究数据存储平台"
+          },
+          {
+            "name": "ICPSR",
+            "url": "https://www.icpsr.umich.edu/",
+            "description": "密歇根大学社会研究数据档案馆"
+          },
+          {
+            "name": "Dataverse",
+            "url": "https://dataverse.org/",
+            "description": "开源研究数据仓库软件及数据共享生态"
+          },
+          {
+            "name": "OpenAIRE",
+            "url": "https://www.openaire.eu/",
+            "description": "欧洲开放科研基础设施"
+          },
+          {
+            "name": "Dryad Data",
+            "url": "https://datadryad.org/stash",
+            "description": "科研论文相关原始数据和补充材料的开放存储"
+          },
+          {
+            "name": "OpenDataLab",
+            "url": "https://opendatalab.com/",
+            "description": "上海人工智能实验室推出的数据平台"
+          },
+          {
+            "name": "ModelScope 魔搭",
+            "url": "https://modelscope.cn/datasets",
+            "description": "开放模型和数据集社区"
+          },
+          {
+            "name": "OpenXLab 浦源",
+            "url": "https://openxlab.org.cn/datasets",
+            "description": "开放 AI 数据和模型平台"
+          },
+          {
+            "name": "Roboflow Universe",
+            "url": "https://universe.roboflow.com/",
+            "description": "计算机视觉数据集社区"
+          },
+          {
+            "name": "TensorFlow Datasets",
+            "url": "https://www.tensorflow.org/datasets",
+            "description": "TensorFlow 官方数据集集合"
+          },
+          {
+            "name": "PyTorch Torchvision Datasets",
+            "url": "https://pytorch.org/vision/stable/datasets.html",
+            "description": "PyTorch 视觉数据集接口"
+          },
+          {
+            "name": "Papers with Code Datasets",
+            "url": "https://paperswithcode.com/datasets",
+            "description": "论文、代码与数据集索引"
+          },
+          {
+            "name": "LAION",
+            "url": "https://laion.ai/",
+            "description": "开放大规模机器学习数据项目"
+          },
+          {
+            "name": "EleutherAI",
+            "url": "https://www.eleuther.ai/",
+            "description": "开放人工智能研究组织"
+          },
+          {
+            "name": "AWS Registry of Open Data",
+            "url": "https://registry.opendata.aws/",
+            "description": "亚马逊云开放数据注册表"
+          },
+          {
+            "name": "Google Cloud Public Datasets",
+            "url": "https://cloud.google.com/datasets",
+            "description": "Google Cloud 公共数据资源"
+          },
+          {
+            "name": "Microsoft Open Data",
+            "url": "https://msropendata.com/",
+            "description": "微软研究开放数据平台"
+          },
+          {
+            "name": "Azure Open Datasets",
+            "url": "https://azure.microsoft.com/products/open-datasets",
+            "description": "微软 Azure 公共数据资源"
+          },
+          {
+            "name": "BigQuery Public Datasets",
+            "url": "https://cloud.google.com/bigquery/public-data",
+            "description": "Google BigQuery 公共数据"
+          },
+          {
+            "name": "Databricks Marketplace",
+            "url": "https://marketplace.databricks.com/",
+            "description": "数据和 AI 资源市场"
+          },
+          {
+            "name": "Snowflake Marketplace",
+            "url": "https://www.snowflake.com/en/data-cloud/marketplace/",
+            "description": "云上数据产品交易市场"
+          },
+          {
+            "name": "IBM Data Asset Exchange",
+            "url": "https://developer.ibm.com/exchanges/data/",
+            "description": "IBM 数据资源平台"
+          },
+          {
+            "name": "Academic Torrents",
+            "url": "https://academictorrents.com/",
+            "description": "通过分布式文件传输方式共享大型科研数据集"
+          },
+          {
+            "name": "Geofabrik",
+            "url": "https://download.geofabrik.de/",
+            "description": "OpenStreetMap 数据下载"
+          },
+          {
+            "name": "NASA Earthdata",
+            "url": "https://www.earthdata.nasa.gov/",
+            "description": "NASA 地球科学数据中心"
+          },
+          {
+            "name": "NASA POWER",
+            "url": "https://power.larc.nasa.gov/",
+            "description": "全球太阳辐射、气象和气候数据"
+          },
+          {
+            "name": "ECMWF Open Data",
+            "url": "https://www.ecmwf.int/en/forecasts/datasets/open-data",
+            "description": "欧洲中期天气预报中心开放数据"
+          },
+          {
+            "name": "Ocean Biodiversity Information System",
+            "url": "https://obis.org/",
+            "description": "全球海洋生物多样性数据平台"
+          },
+          {
+            "name": "GenBank",
+            "url": "https://www.ncbi.nlm.nih.gov/genbank/",
+            "description": "全球核酸序列数据库"
+          },
+          {
+            "name": "EMBL-EBI",
+            "url": "https://www.ebi.ac.uk/",
+            "description": "欧洲生物信息学研究所"
+          },
+          {
+            "name": "European Nucleotide Archive",
+            "url": "https://www.ebi.ac.uk/ena/",
+            "description": "欧洲核酸序列数据库"
+          },
+          {
+            "name": "UniProt",
+            "url": "https://www.uniprot.org/",
+            "description": "全球蛋白质序列和功能信息数据库"
+          },
+          {
+            "name": "Protein Data Bank",
+            "url": "https://www.rcsb.org/",
+            "description": "全球蛋白质结构数据库"
+          },
+          {
+            "name": "OpenNeuro",
+            "url": "https://openneuro.org/",
+            "description": "开放神经影像数据平台"
+          },
+          {
+            "name": "PhysioNet",
+            "url": "https://physionet.org/",
+            "description": "开放生理信号和医学研究数据平台"
+          },
+          {
+            "name": "Allen Brain Map",
+            "url": "https://portal.brain-map.org/",
+            "description": "艾伦脑科学研究平台"
+          },
+          {
+            "name": "Common Voice",
+            "url": "https://commonvoice.mozilla.org/",
+            "description": "Mozilla 开放语音数据项目"
+          },
+          {
+            "name": "Leipzig Corpora Collection",
+            "url": "https://wortschatz.uni-leipzig.de/en",
+            "description": "莱比锡大学多语言语料库"
+          },
+          {
+            "name": "CLARIN",
+            "url": "https://www.clarin.eu/",
+            "description": "欧洲语言资源基础设施"
+          },
+          {
+            "name": "DBpedia",
+            "url": "https://www.dbpedia.org/",
+            "description": "从维基百科提取结构化知识"
+          },
+          {
+            "name": "Crossref",
+            "url": "https://www.crossref.org/",
+            "description": "全球学术出版元数据数据库"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vibe Coding",
+    "subcategories": [
+      {
+        "name": "Vibe Coding 作品与 Demo",
+        "links": [
+          {
+            "name": "SoyCodeTrail",
+            "url": "https://soycodetrail.top/vibe-coding",
+            "description": "Vibe Coding 作品分类浏览"
+          },
+          {
+            "name": "Awesome Vibe Coding Websites",
+            "url": "https://github.com/liyupi/awesome-vibe-coding-websites",
+            "description": "模板、Demo 与提示词合集"
+          },
+          {
+            "name": "WarmIndex",
+            "url": "https://warmindex.com/",
+            "description": "持续活跃的 Web App 项目"
+          },
+          {
+            "name": "wvw.dev",
+            "url": "https://wvw.dev/",
+            "description": "Vibe Coding 项目目录"
+          },
+          {
+            "name": "Awesome Vibe-Coded Apps",
+            "url": "https://github.com/JefferyLee/awesome-vibe-coded-apps",
+            "description": "AI 编程应用集合"
+          },
+          {
+            "name": "VibCod",
+            "url": "https://vibcod.dev/projects?include=demos",
+            "description": "Vibe Coding 软件与 Demo"
+          },
+          {
+            "name": "Made with Lovable",
+            "url": "https://madewithlovable.com/projects",
+            "description": "Lovable 制作的真实应用"
+          },
+          {
+            "name": "v0 Community Showcase",
+            "url": "https://v0.app/community/newest",
+            "description": "v0 社区最新生成的网站"
+          },
+          {
+            "name": "Awesome v0",
+            "url": "https://github.com/fmerian/awesome-v0",
+            "description": "v0 资源与作品整理"
+          },
+          {
+            "name": "Hugging Face Spaces",
+            "url": "https://huggingface.co/spaces",
+            "description": "AI 应用与交互式 Demo"
+          }
+        ]
+      },
+      {
+        "name": "开源项目发现",
+        "links": [
+          {
+            "name": "Open App Scout",
+            "url": "https://openappscout.com/",
+            "description": "开源应用，同步 GitHub 数据"
+          },
+          {
+            "name": "Find Open Source",
+            "url": "https://findopensource.dev/",
+            "description": "发现和探索各类开源项目"
+          },
+          {
+            "name": "OpenSourceSwap",
+            "url": "https://opensourceswap.com/",
+            "description": "商业产品的开源替代品"
+          },
+          {
+            "name": "GitHub Web Development",
+            "url": "https://github.com/topics/web-development",
+            "description": "GitHub Web 开发项目"
+          },
+          {
+            "name": "Frontend Projects",
+            "url": "https://github.com/topics/frontend-projects",
+            "description": "各类前端开发项目"
+          }
+        ]
+      },
+      {
+        "name": "产品发布与目录",
+        "links": [
+          {
+            "name": "Uneed",
+            "url": "https://www.uneed.best/",
+            "description": "独立开发者每日新品"
+          },
+          {
+            "name": "Peerlist Launchpad",
+            "url": "https://peerlist.io/launchpad",
+            "description": "开发者独立产品发布"
+          },
+          {
+            "name": "DevHunt",
+            "url": "https://devhunt.org/",
+            "description": "开发者工具与编程产品"
+          },
+          {
+            "name": "Startup Launch List",
+            "url": "https://github.com/volodstaimi/Startup-Launch-List",
+            "description": "独立产品发布平台合集"
+          },
+          {
+            "name": "Awesome Launch Directories",
+            "url": "https://github.com/0xvibly/awesome-launch-directories",
+            "description": "产品发布与推广目录"
+          }
+        ]
+      },
+      {
+        "name": "网站设计与灵感",
+        "links": [
+          {
+            "name": "CoolSites",
+            "url": "https://github.com/SysAdminDoc/CoolSites",
+            "description": "实用网站、工具与开源资源"
+          },
+          {
+            "name": "Collected",
+            "url": "https://collected.li/",
+            "description": "高质量网站与创意网页"
+          },
+          {
+            "name": "One Page Love",
+            "url": "https://onepagelove.com/",
+            "description": "Landing Page 与单页设计"
+          },
+          {
+            "name": "Godly",
+            "url": "https://godly.design/",
+            "description": "创意网站与交互动画"
+          },
+          {
+            "name": "Awwwards SOTD Index",
+            "url": "https://esirop.github.io/awwwards-sotd-index/",
+            "description": "Awwwards 获奖网站索引"
+          },
+          {
+            "name": "Taste Index",
+            "url": "https://github.com/admud/taste-index",
+            "description": "设计灵感库与前端资源"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AI 模型与资讯",
+    "subcategories": [
+      {
+        "name": "模型排行榜与评测",
+        "links": [
+          {
+            "name": "LMArena",
+            "url": "https://lmarena.ai/",
+            "description": "真人盲测投票的模型竞技场"
+          },
+          {
+            "name": "Artificial Analysis",
+            "url": "https://artificialanalysis.ai/",
+            "description": "模型智能、速度与价格对比"
+          },
+          {
+            "name": "Hugging Face Open LLM Leaderboard",
+            "url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+            "description": "开源大模型评测排名"
+          },
+          {
+            "name": "Scale AI Leaderboard",
+            "url": "https://labs.scale.com/leaderboard",
+            "description": "推理与编程能力评测"
+          },
+          {
+            "name": "MTEB Leaderboard",
+            "url": "https://huggingface.co/spaces/mteb/leaderboard",
+            "description": "文本 Embedding 模型榜"
+          },
+          {
+            "name": "HELM Leaderboard",
+            "url": "https://crfm.stanford.edu/helm/",
+            "description": "斯坦福多维模型评测体系"
+          },
+          {
+            "name": "Vellum LLM Leaderboard",
+            "url": "https://www.vellum.ai/llm-leaderboard",
+            "description": "主流大模型性能汇总榜"
+          },
+          {
+            "name": "LLM Stats",
+            "url": "https://llm-stats.com/",
+            "description": "全球 LLM 参数与性能"
+          },
+          {
+            "name": "BenchLM",
+            "url": "https://benchlm.ai/",
+            "description": "多模型基准测试对比"
+          },
+          {
+            "name": "LLMBenchmark",
+            "url": "https://llmbenchmark.ai/",
+            "description": "模型排名与推理测试"
+          }
+        ]
+      },
+      {
+        "name": "AI 资讯媒体",
+        "links": [
+          {
+            "name": "TechCrunch AI",
+            "url": "https://techcrunch.com/category/artificial-intelligence/",
+            "description": "AI 创业、融资与产品新闻"
+          },
+          {
+            "name": "MIT Technology Review",
+            "url": "https://www.technologyreview.com/",
+            "description": "AI 技术与产业深度报道"
+          },
+          {
+            "name": "The Verge AI",
+            "url": "https://www.theverge.com/ai-artificial-intelligence",
+            "description": "AI 产品与科技公司动态"
+          },
+          {
+            "name": "VentureBeat AI",
+            "url": "https://venturebeat.com/category/ai/",
+            "description": "AI 企业应用与商业动态"
+          },
+          {
+            "name": "Ars Technica AI",
+            "url": "https://arstechnica.com/ai/",
+            "description": "AI 技术突破与产业新闻"
+          },
+          {
+            "name": "Wired AI",
+            "url": "https://www.wired.com/tag/artificial-intelligence/",
+            "description": "AI 与科技社会议题报道"
+          },
+          {
+            "name": "The Next Web",
+            "url": "https://thenextweb.com/",
+            "description": "科技创新与 AI 创业趋势"
+          },
+          {
+            "name": "MIT Technology Review - The Algorithm",
+            "url": "https://www.technologyreview.com/newsletters/the-algorithm/",
+            "description": "每周 AI 新闻与深度分析"
+          },
+          {
+            "name": "DeepLearning.AI - The Batch",
+            "url": "https://www.deeplearning.ai/the-batch/",
+            "description": "AI 研究与行业趋势汇总"
+          },
+          {
+            "name": "The Rundown AI",
+            "url": "https://www.therundown.ai/",
+            "description": "每日 AI 快讯与产品动态"
+          },
+          {
+            "name": "TLDR AI",
+            "url": "https://tldr.tech/ai",
+            "description": "每日 AI 与开发者资讯"
+          },
+          {
+            "name": "Import AI",
+            "url": "https://importai.substack.com/",
+            "description": "AI 研究、政策与产业进展"
+          },
+          {
+            "name": "Latent Space",
+            "url": "https://www.latent.space/",
+            "description": "AI 工程与 Agent 生态"
+          },
+          {
+            "name": "Ben's Bites",
+            "url": "https://www.bensbites.com/",
+            "description": "AI 新产品与创业案例"
+          },
+          {
+            "name": "Interconnects",
+            "url": "https://www.interconnects.ai/",
+            "description": "开源模型与训练技术分析"
+          },
+          {
+            "name": "Last Week in AI",
+            "url": "https://lastweekin.ai/",
+            "description": "每周 AI 新闻与研究汇总"
+          },
+          {
+            "name": "CassadyNet",
+            "url": "https://www.cassadynet.com/",
+            "description": "聚合 84 个 AI 新闻来源"
+          },
+          {
+            "name": "daily.dev",
+            "url": "https://daily.dev/",
+            "description": "开发者资讯与 AI 新闻聚合"
+          }
+        ]
+      },
+      {
+        "name": "官方研究与博客",
+        "links": [
+          {
+            "name": "OpenAI News",
+            "url": "https://openai.com/news/",
+            "description": "OpenAI 产品与研究动态"
+          },
+          {
+            "name": "OpenAI Research",
+            "url": "https://openai.com/research/",
+            "description": "OpenAI 前沿研究成果"
+          },
+          {
+            "name": "Google DeepMind",
+            "url": "https://deepmind.google/discover/blog/",
+            "description": "DeepMind 官方研究与技术"
+          },
+          {
+            "name": "Anthropic News",
+            "url": "https://www.anthropic.com/news",
+            "description": "Anthropic 产品与研究动态"
+          },
+          {
+            "name": "Hugging Face Blog",
+            "url": "https://huggingface.co/blog",
+            "description": "开源模型与工具技术文章"
+          },
+          {
+            "name": "NVIDIA AI Blog",
+            "url": "https://blogs.nvidia.com/blog/category/deep-learning/",
+            "description": "AI 芯片与训练基础设施"
+          },
+          {
+            "name": "Meta AI",
+            "url": "https://ai.meta.com/blog/",
+            "description": "Meta AI 研究与开源模型"
+          },
+          {
+            "name": "Microsoft Research",
+            "url": "https://www.microsoft.com/en-us/research/blog/",
+            "description": "微软 AI 研究成果"
+          },
+          {
+            "name": "Google AI Blog",
+            "url": "https://blog.google/technology/google-labs/",
+            "description": "Google AI 产品与研究资讯"
+          },
+          {
+            "name": "arXiv AI",
+            "url": "https://arxiv.org/list/cs.AI/recent",
+            "description": "人工智能最新学术论文"
+          }
+        ]
+      },
+      {
+        "name": "资讯聚合与前沿",
+        "links": [
+          {
+            "name": "AI News",
+            "url": "https://www.artificialintelligence-news.com/",
+            "description": "全球 AI 产业新闻"
+          },
+          {
+            "name": "MarkTechPost",
+            "url": "https://www.marktechpost.com/",
+            "description": "AI 研究与模型发布"
+          },
+          {
+            "name": "The Decoder",
+            "url": "https://the-decoder.com/",
+            "description": "AI 模型与产业动态"
+          },
+          {
+            "name": "Synced Review",
+            "url": "https://syncedreview.com/",
+            "description": "AI 研究与科技创新"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "时尚媒体与平台",
+    "subcategories": [
+      {
+        "name": "时尚媒体与杂志",
+        "links": [
+          {
+            "name": "Vogue",
+            "url": "https://vogue.com",
+            "description": "全球圣经级时尚杂志与秀场报道"
+          },
+          {
+            "name": "Harper's Bazaar (时尚芭莎)",
+            "url": "https://harpersbazaar.com",
+            "description": "历史悠久的顶级高端女性时尚杂志"
+          },
+          {
+            "name": "ELLE",
+            "url": "https://elle.com",
+            "description": "全球流行时尚、女性与美容指南"
+          },
+          {
+            "name": "GQ",
+            "url": "https://gq.com",
+            "description": "全球男士时尚、品味与生活方式权威"
+          },
+          {
+            "name": "W Magazine",
+            "url": "https://wmagazine.com",
+            "description": "纽约视觉艺术与高级时尚杂志"
+          },
+          {
+            "name": "Vanity Fair (名利场)",
+            "url": "https://vanityfair.com",
+            "description": "明星文化、奢华生活方式与时尚深度报道"
+          },
+          {
+            "name": "The Business of Fashion (BoF)",
+            "url": "https://businessoffashion.com",
+            "description": "全球时尚产业最权威的商业媒体"
+          },
+          {
+            "name": "WWD (Women's Wear Daily)",
+            "url": "https://wwd.com",
+            "description": "时尚界的每日商业新闻日刊"
+          },
+          {
+            "name": "Hypebeast",
+            "url": "https://hypebeast.com",
+            "description": "全球高街潮流与时尚跨界资讯巨头"
+          },
+          {
+            "name": "Highsnobiety",
+            "url": "https://highsnobiety.com",
+            "description": "柏林潮流文化、奢侈品与生活方式媒体"
+          },
+          {
+            "name": "Dazed",
+            "url": "https://dazeddigital.com",
+            "description": "英国青年亚文化与先锋时尚杂志"
+          },
+          {
+            "name": "i-D",
+            "url": "https://i-d.co",
+            "description": "英国先锋街头时尚与艺术文化杂志"
+          },
+          {
+            "name": "AnOther Magazine",
+            "url": "https://anothermag.com",
+            "description": "英国高级时尚、艺术与文学双年刊"
+          },
+          {
+            "name": "System Magazine",
+            "url": "https://systemmagazine.com",
+            "description": "时尚行业深度访谈与商业对谈杂志"
+          },
+          {
+            "name": "Purple Fashion",
+            "url": "https://purple.fr",
+            "description": "法国独立艺术、摄影与性感时尚杂志"
+          },
+          {
+            "name": "CR Fashion Book",
+            "url": "https://crfashionbook.com",
+            "description": "前 Vogue 法国主编 Carine Roitfeld 的创刊"
+          },
+          {
+            "name": "10 Magazine",
+            "url": "https://10magazine.com",
+            "description": "英国高端奢华时尚与艺术季刊"
+          },
+          {
+            "name": "Showstudio",
+            "url": "https://showstudio.com",
+            "description": "Nick Knight 创办的时尚摄影与时尚影片先锋平台"
+          },
+          {
+            "name": "Vogue Runway",
+            "url": "https://vogue.com/fashion-shows",
+            "description": "全球最完整的四大时装周高清秀场图库"
+          },
+          {
+            "name": "Models.com",
+            "url": "https://models.com",
+            "description": "全球最权威的超级模特、摄影师及造型师排名数据库"
+          },
+          {
+            "name": "Fragrantica",
+            "url": "https://fragrantica.com",
+            "description": "全球最大的香水数据库与香友社区"
+          },
+          {
+            "name": "Basenotes",
+            "url": "https://basenotes.com",
+            "description": "英国老牌独立香水指南与沙龙香论坛"
+          },
+          {
+            "name": "Parfumo",
+            "url": "https://parfumo.com",
+            "description": "德系精准香水成分与留香评价数据库"
+          },
+          {
+            "name": "Wikiparfum",
+            "url": "https://wikiparfum.com",
+            "description": "Puig 集团创办的互动式香水分类维基"
+          },
+          {
+            "name": "Tagwalk",
+            "url": "https://tagwalk.com",
+            "description": "时尚界的“谷歌”，按元素搜索秀场趋势"
+          },
+          {
+            "name": "FirstView",
+            "url": "https://firstview.com",
+            "description": "早期高清秀场摄影数据库与历史档案"
+          },
+          {
+            "name": "The Fashion Model Directory",
+            "url": "https://fashionmodeldirectory.com",
+            "description": "全球超模特与模特经纪公司历史档案"
+          },
+          {
+            "name": "Fashion Archive",
+            "url": "https://fashionarchive.org",
+            "description": "国际时尚博物馆与历史服饰文献库"
+          },
+          {
+            "name": "Europeana Fashion",
+            "url": "https://europeana.eu/en/collections/fashion",
+            "description": "欧洲图书馆联合时尚历史文化遗产库"
+          },
+          {
+            "name": "FIT Museum Collection",
+            "url": "https://fashionmuseum.fitnyc.edu",
+            "description": "纽约时尚理工学院博物馆时尚藏品库"
+          },
+          {
+            "name": "Vogue Runway",
+            "url": "https://www.vogue.com/fashion-shows",
+            "description": "全球权威时装周官方秀场高清图库"
+          },
+          {
+            "name": "The Business of Fashion (BoF)",
+            "url": "https://www.businessoffashion.com",
+            "description": "时尚商业领域的“华尔街日报”，深度剖析奢侈品集团"
+          },
+          {
+            "name": "Dazed Digital",
+            "url": "https://www.dazeddigital.com",
+            "description": "英国先锋青年文化与亚文化时尚杂志"
+          },
+          {
+            "name": "AnOther Magazine",
+            "url": "https://www.anothermag.com",
+            "description": "将高级时装、视觉艺术与文学融合的先锋双年刊视觉网。"
+          },
+          {
+            "name": "Highsnobiety",
+            "url": "https://www.highsnobiety.com",
+            "description": "潮流亚文化、高街时装与跨界联名趋势的头部商业媒体。"
+          },
+          {
+            "name": "Office Magazine",
+            "url": "https://officemagazine.net",
+            "description": "纽约独立时尚与艺术杂志，展示非主流时装大片与地下亚"
+          },
+          {
+            "name": "System Magazine",
+            "url": "https://system-magazine.com",
+            "description": "深度采访顶级时装设计师、品牌 CEO"
+          },
+          {
+            "name": "Mastermind Magazine",
+            "url": "https://mastermindmagazine.com",
+            "description": "法国高端时尚与文化半年刊"
+          },
+          {
+            "name": "Perfect Magazine",
+            "url": "https://www.theperfectmagazine.com",
+            "description": "知名造型师 Katie Grand"
+          },
+          {
+            "name": "Document Journal",
+            "url": "https://www.documentjournal.com",
+            "description": "纽约先锋文化杂志，收录大量实验性高定造型与哲思时尚"
+          },
+          {
+            "name": "Fantastic Man",
+            "url": "https://fantasticman.com",
+            "description": "荷兰极简主义男装时尚杂志"
+          },
+          {
+            "name": "Gentlewoman",
+            "url": "https://thegentlewoman.co.uk",
+            "description": "以冷静、睿智与极简美学塑造现代女性形象的高端时尚刊"
+          },
+          {
+            "name": "V Magazine",
+            "url": "https://vmagazine.com",
+            "description": "美国大型时尚流行文化杂志"
+          },
+          {
+            "name": "Interview Magazine",
+            "url": "https://www.interviewmagazine.com",
+            "description": "安迪·沃霍尔创办的传奇杂志"
+          },
+          {
+            "name": "Numéro France",
+            "url": "https://www.numero.com",
+            "description": "法国高端时尚杂志，以未来感视觉"
+          },
+          {
+            "name": "HERO Magazine",
+            "url": "https://hero-magazine.com",
+            "description": "伦敦男装与文化杂志，追踪新锐男装设计师与青年艺术家"
+          },
+          {
+            "name": "032c",
+            "url": "https://032c.com",
+            "description": "柏林先锋文化与时装品牌媒体，探讨当代艺术"
+          },
+          {
+            "name": "Metal Magazine",
+            "url": "https://metalmagazine.eu",
+            "description": "巴塞罗那独立时尚杂志，关注新锐设计"
+          },
+          {
+            "name": "Glamcult",
+            "url": "https://www.glamcult.com",
+            "description": "阿姆斯特丹地下先锋时装与独立音乐视觉杂志。"
+          },
+          {
+            "name": "Wallpaper* Fashion",
+            "url": "https://www.wallpaper.com/fashion",
+            "description": "设计圣经 Wallpaper* 旗下的时装专栏"
+          },
+          {
+            "name": "Flaunt Magazine",
+            "url": "https://flaunt.com",
+            "description": "洛杉矶时尚与文化杂志，融合好莱坞星光与先锋时装造型"
+          },
+          {
+            "name": "Buffalo Zine",
+            "url": "https://buffalozine.com",
+            "description": "形式多变的实验性时尚刊物，每期改变排版与纸张形式。"
+          },
+          {
+            "name": "Sleek Magazine",
+            "url": "https://www.sleek-mag.com",
+            "description": "柏林艺术与时尚杂志，探讨数字艺术"
+          },
+          {
+            "name": "Tank Magazine",
+            "url": "https://tankmagazine.com",
+            "description": "英国独立时尚与文化杂志，以独特的开本与深度时尚理论"
+          },
+          {
+            "name": "Kinfolk Fashion",
+            "url": "https://www.kinfolk.com/fashion",
+            "description": "慢生活美学代表，展示大地色系、舒适面料与极简时装。"
+          },
+          {
+            "name": "Vestoj",
+            "url": "https://vestoj.com",
+            "description": "探讨服装社会学、时尚理论与哲学历史的专业学术型时尚"
+          },
+          {
+            "name": "Fashion Theory Journal",
+            "url": "https://www.tandfonline.com/toc/rftf20/current",
+            "description": "国际学术界关于服装、时尚与身体政治的研讨期刊。"
+          },
+          {
+            "name": "Fashionista",
+            "url": "https://fashionista.com",
+            "description": "北美主流时尚网，报道秀场评论"
+          },
+          {
+            "name": "Fashion Network",
+            "url": "https://ww.fashionnetwork.com",
+            "description": "全球时尚与奢侈品行业实况新闻"
+          },
+          {
+            "name": "The Impression",
+            "url": "https://theimpression.com",
+            "description": "专注时尚广告大片、秀场分析与品牌视觉传达的行业智库"
+          },
+          {
+            "name": "Tagwalk",
+            "url": "https://www.tagwalk.com",
+            "description": "被称为“时尚界 Google”，按面料、色彩"
+          },
+          {
+            "name": "FirstView",
+            "url": "https://www.firstview.com",
+            "description": "老牌高清秀场细节图库，收录大量 90"
+          },
+          {
+            "name": "Catwalkpictures",
+            "url": "https://www.catwalkpictures.com",
+            "description": "专业秀场后台(Backstage)与细节摄影大片数"
+          }
+        ]
+      },
+      {
+        "name": "电商与百货",
+        "links": [
+          {
+            "name": "Farfetch",
+            "url": "https://farfetch.com",
+            "description": "全球最大买手店买手网络联合平台"
+          },
+          {
+            "name": "NET-A-PORTER",
+            "url": "https://net-a-porter.com",
+            "description": "顶级女性奢侈品时尚选品电商"
+          },
+          {
+            "name": "MR PORTER",
+            "url": "https://mrporter.com",
+            "description": "顶级男士时尚与生活方式电商"
+          },
+          {
+            "name": "Mytheresa",
+            "url": "https://mytheresa.com",
+            "description": "德国知名高端设计师品牌电商"
+          },
+          {
+            "name": "SSENSE",
+            "url": "https://ssense.com",
+            "description": "加拿大先锋小众与潮牌奢侈品电商"
+          },
+          {
+            "name": "Moda Operandi",
+            "url": "https://modaoperandi.com",
+            "description": "秀场预订 (Trunkshow) 与高定电商"
+          },
+          {
+            "name": "LUISAVIAROMA",
+            "url": "https://luisaviaroma.com",
+            "description": "意大利老牌线下买手店电商平台"
+          },
+          {
+            "name": "24S",
+            "url": "https://24s.com",
+            "description": "LVMH 旗下官方线上购物平台"
+          },
+          {
+            "name": "Shopbop",
+            "url": "https://shopbop.com",
+            "description": "亚马逊旗下轻奢与设计师女性电商"
+          },
+          {
+            "name": "FWRD",
+            "url": "https://fwrd.com",
+            "description": "Revolve 旗下高端奢侈品电商"
+          },
+          {
+            "name": "Cettire",
+            "url": "https://cettire.com",
+            "description": "澳洲上市的高折扣奢侈品直邮平台"
+          },
+          {
+            "name": "HBX",
+            "url": "https://hbx.com",
+            "description": "Hypebeast 旗下的潮流奢侈品平台"
+          },
+          {
+            "name": "END. Clothing",
+            "url": "https://endclothing.com",
+            "description": "英国高端男装与限量 Sneaker 平台"
+          },
+          {
+            "name": "Italist",
+            "url": "https://italist.com",
+            "description": "意大利本土精品店直邮折扣平台"
+          },
+          {
+            "name": "Yoox",
+            "url": "https://yoox.com",
+            "description": "YNAP 集团旗下过季奢品折扣平台"
+          },
+          {
+            "name": "The Outnet",
+            "url": "https://theoutnet.com",
+            "description": "NET-A-PORTER 旗下官方折扣电商"
+          },
+          {
+            "name": "Harrods (哈洛德)",
+            "url": "https://harrods.com",
+            "description": "英国伦敦百年顶级奢华百货"
+          },
+          {
+            "name": "Selfridges (塞尔福里奇)",
+            "url": "https://selfridges.com",
+            "description": "英国先锋潮流与高端百货"
+          },
+          {
+            "name": "Saks Fifth Avenue",
+            "url": "https://saksfifthavenue.com",
+            "description": "纽约第五大道经典奢华百货"
+          },
+          {
+            "name": "Neiman Marcus",
+            "url": "https://neimanmarcus.com",
+            "description": "美国高端连锁奢华百货"
+          },
+          {
+            "name": "Bergdorf Goodman",
+            "url": "https://bergdorfgoodman.com",
+            "description": "纽约顶级奢华精品百货"
+          },
+          {
+            "name": "Bloomingdale's",
+            "url": "https://bloomingdales.com",
+            "description": "美国时尚高端综合百货"
+          },
+          {
+            "name": "Nordstrom",
+            "url": "https://nordstrom.com",
+            "description": "美国知名大型高端百货"
+          },
+          {
+            "name": "Lane Crawford (连卡佛)",
+            "url": "https://lanecrawford.com.cn",
+            "description": "亚洲顶尖大中华区高端精品百货"
+          },
+          {
+            "name": "Harvey Nichols",
+            "url": "https://harveynichols.com",
+            "description": "英国高级时尚与美容百货"
+          },
+          {
+            "name": "Galeries Lafayette (老佛爷)",
+            "url": "https://galerieslafayette.com",
+            "description": "法国巴黎旗舰高端百货"
+          },
+          {
+            "name": "Printemps (巴黎春天的)",
+            "url": "https://printemps.com",
+            "description": "法国时尚奢品与艺术百货"
+          },
+          {
+            "name": "Liberty London",
+            "url": "https://libertylondon.com",
+            "description": "英国印花与复古高端百货"
+          },
+          {
+            "name": "Flannels",
+            "url": "https://flannels.com",
+            "description": "英国高端买手店连锁平台"
+          },
+          {
+            "name": "Dover Street Market",
+            "url": "https://doverstreetmarket.com",
+            "description": "川久保玲创办的艺术概念买手店"
+          },
+          {
+            "name": "Kith",
+            "url": "https://kith.com",
+            "description": "Ronnie Fieg 创立的奢华潮牌买手店"
+          },
+          {
+            "name": "Antonioli",
+            "url": "https://antonioli.eu",
+            "description": "米兰先锋暗黑系知名买手店"
+          },
+          {
+            "name": "Slam Jam",
+            "url": "https://slamjam.com",
+            "description": "意大利地下潮流与奢侈买手店"
+          },
+          {
+            "name": "Browns Fashion",
+            "url": "https://brownsfashion.com",
+            "description": "伦敦传奇先锋买手店"
+          },
+          {
+            "name": "Machine-A",
+            "url": "https://machine-a.com",
+            "description": "伦敦支持新锐设计师的先锋买手店"
+          },
+          {
+            "name": "Voo Store",
+            "url": "https://voostore.com",
+            "description": "柏林小众时尚与生活方式概念店"
+          },
+          {
+            "name": "Tres Bien",
+            "url": "https://tres-bien.com",
+            "description": "瑞典极简与高街结合的买手店"
+          },
+          {
+            "name": "SVD (Sivasdescalzo)",
+            "url": "https://sivasdescalzo.com",
+            "description": "西班牙高端球鞋与先锋潮流店"
+          },
+          {
+            "name": "Isetan (伊势丹)",
+            "url": "https://isetan.mistore.jp",
+            "description": "日本顶级时尚潮流与奢品百货"
+          },
+          {
+            "name": "Hankyu (阪急百货)",
+            "url": "https://hankyu-dept.co.jp",
+            "description": "日本关西顶级奢品百货"
+          },
+          {
+            "name": "Shinsegae (新世界百货)",
+            "url": "https://shinsegae.com",
+            "description": "韩国顶级奢华购物中心"
+          },
+          {
+            "name": "Galleria",
+            "url": "https://galleria.co.kr",
+            "description": "韩国首尔名品馆奢华百货"
+          },
+          {
+            "name": "Boon The Shop",
+            "url": "https://boontheshop.com",
+            "description": "韩国首尔知名奢华买手店"
+          },
+          {
+            "name": "IT Official",
+            "url": "https://ithk.com",
+            "description": "香港 I.T 集团高端设计师买手店"
+          },
+          {
+            "name": "SKP-S",
+            "url": "https://skp-beijing.com",
+            "description": "北京 SKP 沉浸式奢华艺术购物中心"
+          },
+          {
+            "name": "Matches (历史/现保存域)",
+            "url": "https://matchesfashion.com",
+            "description": "英国经典高端买手平台"
+          },
+          {
+            "name": "Uncrate",
+            "url": "https://uncrate.com",
+            "description": "男士高端装备与奢华生活方式平台"
+          },
+          {
+            "name": "Huckberry",
+            "url": "https://huckberry.com",
+            "description": "美式户外高端男士选品"
+          },
+          {
+            "name": "Nitty Gritty",
+            "url": "https://nittygrittystore.com",
+            "description": "斯德哥尔摩小众精品买手店"
+          },
+          {
+            "name": "Garmentory",
+            "url": "https://garmentory.com",
+            "description": "独立设计师与精品店联合平台"
+          },
+          {
+            "name": "Goodhood",
+            "url": "https://goodhoodstore.com",
+            "description": "伦敦东区潮流生活方式买手店"
+          },
+          {
+            "name": "Couverture & The Garbstore",
+            "url": "https://garbstore.com",
+            "description": "伦敦诺丁山日系工装与小众买手店"
+          },
+          {
+            "name": "Frans Boone Store",
+            "url": "https://fransboonestore.com",
+            "description": "荷兰经典男装与美式复古买手店"
+          },
+          {
+            "name": "Bureau Belfast",
+            "url": "https://thebureaubelfast.com",
+            "description": "英国专业日系工装与户外高端买手店"
+          },
+          {
+            "name": "Peggs & Son",
+            "url": "https://peggsandson.com",
+            "description": "英国高品质男装与户外选品店"
+          },
+          {
+            "name": "Lost & Found",
+            "url": "https://shoplostfound.com",
+            "description": "多伦多小众男装与日产服饰买手店"
+          },
+          {
+            "name": "Haven",
+            "url": "https://havenshop.com",
+            "description": "加拿大知名高端机能与暗黑潮牌买手店"
+          },
+          {
+            "name": "Roden Gray",
+            "url": "https://rodengray.com",
+            "description": "温哥华现代高端设计师买手店"
+          },
+          {
+            "name": "Totokaelo (保存/历史)",
+            "url": "https://totokaelo.com",
+            "description": "纽约极简艺术感买手店"
+          },
+          {
+            "name": "Assembly New York",
+            "url": "https://assemblynewyork.com",
+            "description": "纽约先锋小众独立设计师买手店"
+          },
+          {
+            "name": "Opening Ceremony",
+            "url": "https://openingceremony.com",
+            "description": "纽约跨界潮流买手品牌"
+          },
+          {
+            "name": "Bodega",
+            "url": "https://bdgastore.com",
+            "description": "波士顿隐藏式 Sneaker 与街头奢品店"
+          },
+          {
+            "name": "Concepts (CNCPTS)",
+            "url": "https://cncpts.com",
+            "description": "波士顿著名联名球鞋与高街买手店"
+          },
+          {
+            "name": "Union Los Angeles",
+            "url": "https://unionlosangeles.com",
+            "description": "洛杉矶街头潮流与奢品跨界先驱"
+          },
+          {
+            "name": "Feature",
+            "url": "https://feature.com",
+            "description": "拉斯维加斯高端球鞋与时尚买手店"
+          },
+          {
+            "name": "RSVP Gallery",
+            "url": "https://rsvpgallery.com",
+            "description": "芝加哥艺术与高街奢品买手店"
+          },
+          {
+            "name": "Notre",
+            "url": "https://notre-shop.com",
+            "description": "芝加哥高品质生活方式与服装买手店"
+          },
+          {
+            "name": "Politics (Sneaker Politics)",
+            "url": "https://sneakerpolitics.com",
+            "description": "美国南方高端球鞋与潮流买手店"
+          },
+          {
+            "name": "Undefeated",
+            "url": "https://undefeated.com",
+            "description": "洛杉矶著名街头潮流品牌与买手店"
+          },
+          {
+            "name": "Atmos",
+            "url": "https://atmos-tokyo.com",
+            "description": "日本东京标志性 Sneaker 潮流买手店"
+          },
+          {
+            "name": "Mita Sneakers",
+            "url": "https://mita-sneakers.co.jp",
+            "description": "东京上野联名球鞋买手店"
+          },
+          {
+            "name": "GR8",
+            "url": "https://gr8.jp",
+            "description": "东京原宿先锋暗黑与高街买手店"
+          },
+          {
+            "name": "Nepenthes",
+            "url": "https://nepenthes.co.jp",
+            "description": "Needles 纺织母公司与美式日系买手店"
+          },
+          {
+            "name": "Studious",
+            "url": "https://studious.co.jp",
+            "description": "日本纯本土设计师品牌买手店"
+          },
+          {
+            "name": "United Arrows",
+            "url": "https://united-arrows.co.jp",
+            "description": "日本高端选品集团与都市优雅服饰"
+          },
+          {
+            "name": "Beams",
+            "url": "https://beams.co.jp",
+            "description": "日本潮流与生活方式选品店巨头"
+          },
+          {
+            "name": "Journal Standard",
+            "url": "https://journal-standard.jp",
+            "description": "美式复古与日系休闲选品店"
+          },
+          {
+            "name": "Ships",
+            "url": "https://shipsltd.co.jp",
+            "description": "日本三大传统高端选品店之一"
+          },
+          {
+            "name": "Tomorrowland",
+            "url": "https://tomorrowland.tokyo",
+            "description": "日本高品质正装与高端选品店"
+          },
+          {
+            "name": "Editorialist",
+            "url": "https://editorialist.com",
+            "description": "奢品时尚导购与内容推荐平台"
+          },
+          {
+            "name": "Lyst",
+            "url": "https://lyst.com",
+            "description": "全球最大的时尚搜索引擎与排名榜单"
+          },
+          {
+            "name": "ShopStyle",
+            "url": "https://shopstyle.com",
+            "description": "全球时尚与奢品聚合搜索平台"
+          },
+          {
+            "name": "Glami",
+            "url": "https://glami.com",
+            "description": "欧洲时尚与奢品搜索引擎"
+          },
+          {
+            "name": "StyleLounge",
+            "url": "https://stylelounge.de",
+            "description": "德国时尚比价与搜索平台"
+          },
+          {
+            "name": "Buyma",
+            "url": "https://buyma.com",
+            "description": "日本最大的全球买手代购买卖平台"
+          },
+          {
+            "name": "Poizon (得物国际版)",
+            "url": "https://poizon.com",
+            "description": "潮流奢品与球鞋鉴定交易平台"
+          },
+          {
+            "name": "GOAT Group",
+            "url": "https://goatgroup.com",
+            "description": "GOAT 集团官方网站"
+          },
+          {
+            "name": "Sole Supremacy",
+            "url": "https://solesupremacy.com",
+            "description": "二手限量球鞋与奢品鞋履转售平台"
+          },
+          {
+            "name": "SSENSE",
+            "url": "https://www.ssense.com",
+            "description": "加拿大先锋奢品电商，拥有极具品味的买手阵容与独特的"
+          },
+          {
+            "name": "Farfetch",
+            "url": "https://www.farfetch.com",
+            "description": "全球买手店聚合平台，连接全球数百家独立时尚精品店的"
+          },
+          {
+            "name": "Net-a-Porter",
+            "url": "https://www.net-a-porter.com",
+            "description": "全球顶级女性奢品电商，以杂志化排版与高定包装服务著"
+          },
+          {
+            "name": "MR PORTER",
+            "url": "https://www.mrporter.com",
+            "description": "全球高端男装奢品购物平台，汇聚绅士剪裁"
+          },
+          {
+            "name": "LN-CC (Late Night Chameleon Cafe)",
+            "url": "https://www.ln-cc.com",
+            "description": "伦敦先锋概念买手店，主打暗黑先锋"
+          },
+          {
+            "name": "Dover Street Market (DSM)",
+            "url": "https://www.doverstreetmarket.com",
+            "description": "川久保玲创办的顶级概念买手店"
+          },
+          {
+            "name": "Antonioli",
+            "url": "https://www.antonioli.eu",
+            "description": "米兰知名暗黑先锋买手店，主营 Rick"
+          },
+          {
+            "name": "LuisaViaRoma (LVR)",
+            "url": "https://www.luisaviaroma.com",
+            "description": "意大利老牌奢侈品买手店，收录知名大牌与欧洲新锐设计"
+          },
+          {
+            "name": "Mytheresa",
+            "url": "https://www.mytheresa.com",
+            "description": "德国高端奢侈品电商，主打顶级大牌独家胶囊系列与高定"
+          },
+          {
+            "name": "MATCHESFASHION",
+            "url": "https://www.matchesfashion.com",
+            "description": "英国高端奢品买手网，以精选的审美眼光与优雅搭配造型"
+          },
+          {
+            "name": "Voo Store",
+            "url": "https://www.voostore.com",
+            "description": "柏林文化概念买手店，融合街头艺术"
+          },
+          {
+            "name": "Machine-A",
+            "url": "https://www.machine-a.com",
+            "description": "伦敦先锋买手店，专门扶持中央圣马丁等学院的新锐毕业"
+          },
+          {
+            "name": "SVD (Siwasdescalzo)",
+            "url": "https://www.sivasdescalzo.com",
+            "description": "西班牙高端潮流与限量球鞋买手店"
+          },
+          {
+            "name": "Browns Fashion",
+            "url": "https://www.brownsfashion.com",
+            "description": "伦敦传奇买手店，历史上最早发掘"
+          },
+          {
+            "name": "End Clothing",
+            "url": "https://www.endclothing.com",
+            "description": "英国男装潮流与先锋户外买手店"
+          },
+          {
+            "name": "Slam Jam",
+            "url": "https://www.slamjam.com",
+            "description": "意大利地下亚文化与高街潮流教父级买手店。"
+          },
+          {
+            "name": "Notre",
+            "url": "https://www.notre-shop.com",
+            "description": "芝加哥高端生活方式与先锋男装买手店。"
+          },
+          {
+            "name": "SOTF (Store of the Future)",
+            "url": "https://www.sotf.com",
+            "description": "意大利奢华街头与先锋鞋履概念买手店。"
+          },
+          {
+            "name": "The Broken Arm",
+            "url": "https://www.thebrokenarm.com",
+            "description": "巴黎时尚圈核心概念买手店"
+          },
+          {
+            "name": "Tom Greyhound",
+            "url": "https://tomgreyhound.com",
+            "description": "韩国现代集团旗下的巴黎先锋时尚买手店。"
+          },
+          {
+            "name": "KM20",
+            "url": "https://www.km20.ru",
+            "description": "莫斯科知名先锋买手店，引爆东欧高街与先锋时装风潮。"
+          },
+          {
+            "name": "Gate-194",
+            "url": "https://gate-194.com",
+            "description": "柏林暗黑先锋与工匠风格(Artisanal)概念买"
+          },
+          {
+            "name": "Darklands Berlin",
+            "url": "https://www.darklandsberlin.com",
+            "description": "全球知名暗黑工匠先锋买手店"
+          },
+          {
+            "name": "Hide M",
+            "url": "https://hidem.de",
+            "description": "德国专注于先锋皮衣、暗黑工匠与独家手工作品的小众买"
+          },
+          {
+            "name": "PNP Anti-Hero",
+            "url": "https://pnp-firenze.com",
+            "description": "佛罗伦萨先锋工匠买手店，主营 Carol"
+          },
+          {
+            "name": "Ink Hong Kong",
+            "url": "https://ink-store.com",
+            "description": "香港传奇先锋买手店，专注于极具先锋剪裁与材质实验的"
+          },
+          {
+            "name": "H Lorenzo",
+            "url": "https://www.hlorenzo.com",
+            "description": "洛杉矶先锋买手店，汇集全球前卫与高定感实验品牌。"
+          },
+          {
+            "name": "Atelier New York",
+            "url": "https://www.ateliernewyork.com",
+            "description": "纽约先锋暗黑与极简主义服装买手店。"
+          },
+          {
+            "name": "Maxfield LA",
+            "url": "https://www.maxfieldla.com",
+            "description": "洛杉矶传奇奢华古着与先锋高定买手店"
+          },
+          {
+            "name": "Restir",
+            "url": "https://www.restir.com",
+            "description": "东京港区高端先锋时尚与高科技高定概念店。"
+          },
+          {
+            "name": "Addicted Seoul",
+            "url": "https://addictedseoul.com",
+            "description": "首尔江南区先锋暗黑与先锋工匠服装买手店。"
+          },
+          {
+            "name": "Biffi Boutiques",
+            "url": "https://www.biffi.com",
+            "description": "米兰历史悠久的高端时尚买手店"
+          },
+          {
+            "name": "Selfridges Fashion",
+            "url": "https://www.selfridges.com/cat/fashion",
+            "description": "伦敦百货巨头，其 Fashion Floor"
+          },
+          {
+            "name": "Printemps Luxe",
+            "url": "https://www.printemps.com",
+            "description": "巴黎春天的奢品专区，展示法国高定与高端设计师品牌。"
+          },
+          {
+            "name": "Le Bon Marché",
+            "url": "https://www.lebonmarche.com",
+            "description": "巴黎左岸高端百货，以艺术策展式呈现奢侈品与先锋服饰"
+          },
+          {
+            "name": "Bergdorf Goodman",
+            "url": "https://www.bergdorfgoodman.com",
+            "description": "纽约第五大道老牌顶奢百货"
+          }
+        ]
+      },
+      {
+        "name": "二手中古与拍卖",
+        "links": [
+          {
+            "name": "Vestiaire Collective",
+            "url": "https://vestiairecollective.com",
+            "description": "全球最大的认证二手奢侈品转售平台"
+          },
+          {
+            "name": "The RealReal",
+            "url": "https://therealreal.com",
+            "description": "美国上市的全检验寄售奢侈品电商"
+          },
+          {
+            "name": "Rebag",
+            "url": "https://rebag.com",
+            "description": "专注于二手奢侈品包袋买卖与鉴定"
+          },
+          {
+            "name": "Fashionphile",
+            "url": "https://fashionphile.com",
+            "description": "美国老牌二手顶级包袋与珠宝平台"
+          },
+          {
+            "name": "StockX",
+            "url": "https://stockx.com",
+            "description": "全球潮流 Sneaker 与奢品实时竞价平台"
+          },
+          {
+            "name": "GOAT",
+            "url": "https://goat.com",
+            "description": "验证球鞋与高端高街时装交易平台"
+          },
+          {
+            "name": "Grailed",
+            "url": "https://grailed.com",
+            "description": "全球最大的二手男士先锋与潮流社区"
+          },
+          {
+            "name": "1stDibs",
+            "url": "https://1stdibs.com",
+            "description": "全球顶尖古董、中古珠宝与艺术品平台"
+          },
+          {
+            "name": "Chrono24",
+            "url": "https://chrono24.com",
+            "description": "全球最大的奢华二手与全新名表交易网"
+          },
+          {
+            "name": "Watchfinder & Co.",
+            "url": "https://watchfinder.com",
+            "description": "历峰集团旗下的二手名表认证平台"
+          },
+          {
+            "name": "WatchBox",
+            "url": "https://the1916company.com",
+            "description": "顶级收藏级二手名表买卖平台"
+          },
+          {
+            "name": "Collector Square",
+            "url": "https://collectorsquare.com",
+            "description": "欧洲知名二手名表、包袋与珠宝平台"
+          },
+          {
+            "name": "The Luxury Closet",
+            "url": "https://theluxurycloset.com",
+            "description": "中东迪拜最大二手奢侈品转售电商"
+          },
+          {
+            "name": "Sotheby's Buy Now",
+            "url": "https://sothebys.com",
+            "description": "苏富比拍卖行旗下即买型奢品平台"
+          },
+          {
+            "name": "Christie's 360",
+            "url": "https://christies.com",
+            "description": "佳士得拍卖行奢侈品手袋与名表专场"
+          },
+          {
+            "name": "What Goes Around Comes Around",
+            "url": "https://whatgoesaroundnyc.com",
+            "description": "纽约知名顶级香奈儿与爱马仕中古店"
+          },
+          {
+            "name": "Bob's Watches",
+            "url": "https://bobswatches.com",
+            "description": "美国最权威的劳力士二手买卖平台"
+          },
+          {
+            "name": "Luxury Promise",
+            "url": "https://luxurypromise.com",
+            "description": "英国基于 Live Shopping 的二手奢品平台"
+          },
+          {
+            "name": "LXRandCo",
+            "url": "https://lxrco.com",
+            "description": "加拿大知名复古奢侈包袋零售商"
+          },
+          {
+            "name": "Sellier Bellier",
+            "url": "https://sellierknightsbridge.com",
+            "description": "伦敦金骑士桥顶级爱马仕与稀有中古店"
+          },
+          {
+            "name": "Amore Vintage Japan",
+            "url": "https://amorevintagejapan.com",
+            "description": "日本东京极具声誉的 Chanel 中古店"
+          },
+          {
+            "name": "Qoo Tokyo",
+            "url": "https://qoo-online.com",
+            "description": "日本表参道知名稀有 Chanel 及奢品中古"
+          },
+          {
+            "name": "Komehyo (米兵)",
+            "url": "https://komehyo.jp",
+            "description": "日本规模最大的综合二手奢品连琐店"
+          },
+          {
+            "name": "Daikokuya (大黑屋)",
+            "url": "https://daikokuya78.com",
+            "description": "日本百年老字号奢侈品回收与鉴定"
+          },
+          {
+            "name": "Brand Off",
+            "url": "https://brandoff-store.com",
+            "description": "日本知名二手名牌包袋与珠宝连琐"
+          },
+          {
+            "name": "Ragtag",
+            "url": "https://ragtag.jp",
+            "description": "日本最知名的设计师品牌二手服装店"
+          },
+          {
+            "name": "2nd Street Japan",
+            "url": "https://2ndstreet.jp",
+            "description": "日本大型综合潮流与奢侈品二手店"
+          },
+          {
+            "name": "Pass The Baton",
+            "url": "https://pass-the-baton.com",
+            "description": "日本个人收藏与高品质中古个人故事店"
+          },
+          {
+            "name": "Decades Inc.",
+            "url": "https://decadesinc.com",
+            "description": "洛杉矶好莱坞红毯高定古着与礼服"
+          },
+          {
+            "name": "Resurrection Vintage",
+            "url": "https://resurrectionvintage.com",
+            "description": "纽约与洛杉矶博物馆级高定古着"
+          },
+          {
+            "name": "Didier Ludot",
+            "url": "https://didierludot.fr",
+            "description": "巴黎皇家宫殿顶级古着与小黑裙"
+          },
+          {
+            "name": "Kerry Taylor Auctions",
+            "url": "https://kerrytaylorauctions.com",
+            "description": "伦敦专业古着与时尚历史拍卖行"
+          },
+          {
+            "name": "Augusta Auctions",
+            "url": "https://augusta-auction.com",
+            "description": "美国传统古董纺织品与服装拍卖"
+          },
+          {
+            "name": "Bonhams (邦瀚斯)",
+            "url": "https://bonhams.com",
+            "description": "全球古董名表与高级手袋拍卖行"
+          },
+          {
+            "name": "Phillips (富艺斯)",
+            "url": "https://phillips.com",
+            "description": "全球二十世纪及当代艺术与名表拍卖"
+          },
+          {
+            "name": "Heritage Auctions",
+            "url": "https://ha.com",
+            "description": "美国大型钱币与顶级爱马仕手袋拍卖"
+          },
+          {
+            "name": "Dorotheum",
+            "url": "https://dorotheum.com",
+            "description": "中欧维也纳历史悠久的艺术与奢品拍卖"
+          },
+          {
+            "name": "Artcurial",
+            "url": "https://artcurial.com",
+            "description": "法国巴黎顶级艺术与高端二手奢品拍卖"
+          },
+          {
+            "name": "Bukowskis",
+            "url": "https://bukowskis.com",
+            "description": "斯堪的纳维亚老牌艺术与奢品拍卖行"
+          },
+          {
+            "name": "StockX Watches",
+            "url": "https://stockx.com/watches",
+            "description": "实时二级市场名表数据与交易平台"
+          },
+          {
+            "name": "Crown & Caliber",
+            "url": "https://crownandcaliber.com",
+            "description": "美国专业二手名表线上买卖与鉴定"
+          },
+          {
+            "name": "Hodinkee Shop",
+            "url": "https://shop.hodinkee.com",
+            "description": "知名钟表媒体旗下的全新与二手表店"
+          },
+          {
+            "name": "Revolution Watch",
+            "url": "https://revolutionwatch.com",
+            "description": "钟表杂志旗下的高端合作与限量二手"
+          },
+          {
+            "name": "A Collected Man",
+            "url": "https://acollectedman.com",
+            "description": "伦敦专注于 rare & independent 手表"
+          },
+          {
+            "name": "Subdial",
+            "url": "https://subdial.co",
+            "description": "英国基于数据驱动的二手名表交易"
+          },
+          {
+            "name": "Loupe System",
+            "url": "https://loupesystem.com",
+            "description": "钟表收藏家顶级放大镜与鉴定工具"
+          },
+          {
+            "name": "L'Epee 1839",
+            "url": "https://lepee1839.ch",
+            "description": "瑞士百年来唯一专注于高定座钟品牌"
+          },
+          {
+            "name": "MB&F M.A.D.Gallery",
+            "url": "https://maddgallery.net",
+            "description": "先锋机械艺术与动能雕塑画廊"
+          },
+          {
+            "name": "Vinterior",
+            "url": "https://vinterior.co",
+            "description": "英国最大的二手与复古家具电商"
+          },
+          {
+            "name": "Pamono",
+            "url": "https://pamono.com",
+            "description": "欧洲经典复古设计与中古家具平台"
+          },
+          {
+            "name": "Design Market",
+            "url": "https://design-market.eu",
+            "description": "20世纪欧洲中古家具与灯具交易"
+          },
+          {
+            "name": "Chairish",
+            "url": "https://chairish.com",
+            "description": "美式复古高端家居与古董家具"
+          },
+          {
+            "name": "Wright 20",
+            "url": "https://wright20.com",
+            "description": "芝加哥现代艺术与二十世纪设计拍卖"
+          },
+          {
+            "name": "R & Company",
+            "url": "https://r-and-company.com",
+            "description": "纽约历史级设计与顶级古董家具"
+          },
+          {
+            "name": "Nilufar Gallery",
+            "url": "https://nilufar.com",
+            "description": "米兰设计周传奇古董与现代设计画廊"
+          },
+          {
+            "name": "Galerie Patrick Seguin",
+            "url": "https://patrickseguin.com",
+            "description": "巴黎 Jean Prouve 等设计大师建筑画廊"
+          },
+          {
+            "name": "Carpenters Workshop Gallery",
+            "url": "https://carpentersworkshopgallery.com",
+            "description": "伦敦/巴黎艺术与可佩戴高定家具"
+          },
+          {
+            "name": "Grailed",
+            "url": "https://www.grailed.com",
+            "description": "全球最大的二手先锋时装、Archive"
+          },
+          {
+            "name": "Vestiaire Collective",
+            "url": "https://www.vestiairecollective.com",
+            "description": "欧洲二手奢品与 Vintage 时尚交易平台"
+          },
+          {
+            "name": "The RealReal",
+            "url": "https://www.therealreal.com",
+            "description": "美国上市二手奢侈品寄售巨头"
+          },
+          {
+            "name": "1stDibs Fashion",
+            "url": "https://www.1stdibs.com/fashion",
+            "description": "全球高端古董与 Vintage"
+          },
+          {
+            "name": "What Goes Around Comes Around (WGACA)",
+            "url": "https://www.whatgoesaroundnyc.com",
+            "description": "纽约知名 Vintage 奢品机构"
+          },
+          {
+            "name": "Resurrection Vintage",
+            "url": "https://www.resurrectionvintage.com",
+            "description": "纽约与洛杉矶传奇 Vintage 展厅"
+          },
+          {
+            "name": "Byronesque",
+            "url": "https://www.byronesque.com",
+            "description": "专门收录 80-90 年代先锋暗黑(如"
+          },
+          {
+            "name": "Archive Store Tokyo",
+            "url": "https://archivestore-tokyo.com",
+            "description": "东京涩谷地下 Archive 博物馆式买手店"
+          },
+          {
+            "name": "Middleman Store",
+            "url": "https://middlemanstore.com",
+            "description": "知名先锋男装 Archive 网站"
+          },
+          {
+            "name": "Silverwoods",
+            "url": "https://silverwoodsearch.com",
+            "description": "专注于 Helmut Lang, Raf"
+          },
+          {
+            "name": "Dotcomesoon",
+            "url": "https://dotcomesoon.com",
+            "description": "专注于收集 90 年代日本先锋设计(三宅一生"
+          },
+          {
+            "name": "Huiben Shop",
+            "url": "https://huibenshop.com",
+            "description": "严选先锋男装、工匠服装与稀有 Archive"
+          },
+          {
+            "name": "Paris Saint-Germain Vintage",
+            "url": "https://psgvintagestore.com",
+            "description": "巴黎专业古着店，专注 70-90"
+          },
+          {
+            "name": "Didier Ludot",
+            "url": "https://www.didierludot.fr",
+            "description": "巴黎皇家宫殿古苑内的传奇高定古着店"
+          },
+          {
+            "name": "Kerry Taylor Auctions",
+            "url": "https://www.kerrytaylorauctions.com",
+            "description": "伦敦拍卖行，专门拍卖皇家服饰"
+          },
+          {
+            "name": "Augusta Auctions",
+            "url": "https://www.augusta-auction.com",
+            "description": "美国专业纺织品与古着服饰拍卖行"
+          },
+          {
+            "name": "Historic Charleston Vintage",
+            "url": "https://historiccharlestonvintage.com",
+            "description": "专注于北美历史风格重构、复古工装与古董纺织品。"
+          },
+          {
+            "name": "Re-See",
+            "url": "https://www.resee.com",
+            "description": "巴黎前时尚编辑创立的高端 Vintage 平台"
+          },
+          {
+            "name": "Reluxe",
+            "url": "https://reluxefashion.com",
+            "description": "知名造型师 Clare Richardson"
+          },
+          {
+            "name": "Open24 Hours Vintage",
+            "url": "https://open24hourshop.com",
+            "description": "专注于收集 90 年代极简主义(Prada,"
+          },
+          {
+            "name": "Vintage Qoo Tokyo",
+            "url": "https://www.qoo-online.com",
+            "description": "东京著名 Chanel Vintage 收藏站"
+          },
+          {
+            "name": "Ragtag Japan",
+            "url": "https://www.ragtag.jp",
+            "description": "日本二手设计师品牌巨头，涵盖几乎所有日本与欧洲先锋"
+          },
+          {
+            "name": "Brandear Japan",
+            "url": "https://brandear.jp",
+            "description": "日本大型二手奢侈品回收与销售平台，库存量极大。"
+          },
+          {
+            "name": "2nd Street Japan",
+            "url": "https://www.2ndstreet.jp",
+            "description": "日本知名连锁古着综合店，含有海量日本本土潮牌与先锋"
+          },
+          {
+            "name": "Sekai-mon (World Door)",
+            "url": "https://www.sekaimon.com",
+            "description": "连接日本买家与全球稀有 Vintage"
+          },
+          {
+            "name": "Vintage Fashion Guild (VFG)",
+            "url": "https://vintagefashionguild.org",
+            "description": "古着时尚公会，提供权威的古着品牌 Label"
+          },
+          {
+            "name": "Decades Inc.",
+            "url": "https://www.decadesinc.com",
+            "description": "洛杉矶传奇 Vintage 店"
+          },
+          {
+            "name": "Lily et Cie",
+            "url": "https://www.lilyetcie.com",
+            "description": "比佛利山庄顶级古着店，藏有数万件博物馆级高级定制服"
+          },
+          {
+            "name": "Cherish Vintage",
+            "url": "https://cherishvintage.com",
+            "description": "专注于 20 世纪初至 70"
+          },
+          {
+            "name": "Pechuga Vintage",
+            "url": "https://pechugavintage.com",
+            "description": "知名 Vivienne Westwood"
+          },
+          {
+            "name": "Tunell Vintage",
+            "url": "https://tunellvintage.com",
+            "description": "欧洲独立古着机构，专注于 80"
+          },
+          {
+            "name": "Vintage Clothing Gallery",
+            "url": "https://www.vintageclothinggallery.com",
+            "description": "展示欧洲维多利亚时期至爱德华时期古董衣的数字画廊。"
+          },
+          {
+            "name": "Wayward Collection",
+            "url": "https://waywardcollection.com",
+            "description": "严选 20 世纪高定服装"
+          },
+          {
+            "name": "The Vintage Twin",
+            "url": "https://thevintagetwin.com",
+            "description": "纽约改造古着与复古牛仔裤定制的潮流古着站。"
+          },
+          {
+            "name": "Beyond Retro",
+            "url": "https://www.beyondretro.com",
+            "description": "英国大型复古古着连锁品牌"
+          },
+          {
+            "name": "Rokit Vintage",
+            "url": "https://www.rokit.co.uk",
+            "description": "伦敦老牌古着店，主打亚文化、摇滚风格与复古运动服。"
+          },
+          {
+            "name": "Thrifted.com",
+            "url": "https://www.thrifted.com",
+            "description": "欧洲知名在线 Thrift 店"
+          },
+          {
+            "name": "Brick Vintage",
+            "url": "https://www.brickvintage.com",
+            "description": "英国专注于 50-80 年代复古印花与年代感服装的"
+          }
+        ]
+      },
+      {
+        "name": "博物馆与学术档案",
+        "links": [
+          {
+            "name": "The Met Costume Institute",
+            "url": "https://www.metmuseum.org/prime-topics/costume-institute",
+            "description": "纽约大都会艺术博物馆服装学院"
+          },
+          {
+            "name": "V&A Fashion Collection",
+            "url": "https://www.vam.ac.uk/collections/fashion",
+            "description": "伦敦维多利亚与艾尔伯特博物馆"
+          },
+          {
+            "name": "Palais Galliera",
+            "url": "https://www.palaisgalliera.paris.fr",
+            "description": "巴黎市立时尚博物馆，记录法国高定历史"
+          },
+          {
+            "name": "Musée Yves Saint Laurent Paris",
+            "url": "https://museeyslparis.com",
+            "description": "伊夫·圣罗兰巴黎博物馆，展示 YSL 大师手稿"
+          },
+          {
+            "name": "Dior Heritage (La Galerie Dior)",
+            "url": "https://www.galeriedior.com",
+            "description": "迪奥展廊，展示 1947 年 New Look"
+          },
+          {
+            "name": "Gucci Osteria & Garden (Gucci Archive)",
+            "url": "https://www.gucci.com/us/en/st/stories/inspirations-and-codes",
+            "description": "古驰品牌档案馆与历史基因编码在线展示平台。"
+          },
+          {
+            "name": "Ferragamo Museum",
+            "url": "https://www.ferragamo.com/museo/en",
+            "description": "菲拉格慕博物馆，藏有大量 20"
+          },
+          {
+            "name": "Cristóbal Balenciaga Museoa",
+            "url": "https://www.cristobalbalenciagamuseoa.com",
+            "description": "巴伦西亚加官方博物馆，展示“高级定制建筑师”"
+          },
+          {
+            "name": "ModeMuseum Antwerp (MoMu)",
+            "url": "https://www.momu.be",
+            "description": "安特卫普时尚博物馆，安特卫普六君子("
+          },
+          {
+            "name": "Kyoto Costume Institute (KCI)",
+            "url": "https://www.kci.or.jp",
+            "description": "京都服饰文化研究财团，东西方服饰交融与西方服装历史"
+          },
+          {
+            "name": "Kobe Fashion Museum",
+            "url": "https://www.fashionmuseum.jp",
+            "description": "日本神户时尚博物馆，汇集全球纺织品"
+          },
+          {
+            "name": "Bata Shoe Museum",
+            "url": "https://batashoemuseum.ca",
+            "description": "多伦多巴塔鞋履博物馆，收藏人类历史上数万双跨越时空"
+          },
+          {
+            "name": "Museum of Fashion (Guimet/Galliera)",
+            "url": "https://www.parismusees.paris.fr",
+            "description": "巴黎各大市立博物馆联合时尚资源库。"
+          },
+          {
+            "name": "McCord Stewart Museum Costume",
+            "url": "https://www.musee-mccord-stewart.ca/en/collections/costume-fashion",
+            "description": "加拿大麦考德博物馆，专注于北美民俗服饰与 19"
+          },
+          {
+            "name": "Europeana Fashion",
+            "url": "https://www.europeana.eu/en/collections/topic/46-fashion",
+            "description": "欧洲数字图书馆时尚专题，汇集全欧洲数十家博物馆的服"
+          },
+          {
+            "name": "Fashion Institute of Design & Merchandising (FIDM) Museum",
+            "url": "https://fidmmuseum.org",
+            "description": "洛杉矶 FIDM 博物馆"
+          },
+          {
+            "name": "RISD Museum Costume and Textiles",
+            "url": "https://risdmuseum.org/art-design/collection/costume-and-textiles",
+            "description": "罗德岛设计学院博物馆，以高水准的织物结构与先锋服装"
+          },
+          {
+            "name": "Kent State University Museum",
+            "url": "https://www.kent.edu/museum",
+            "description": "肯特州立大学博物馆，拥有庞大的 20"
+          },
+          {
+            "name": "Centraal Museum Utrecht Fashion",
+            "url": "https://www.centraalmuseum.nl/en",
+            "description": "荷兰中央博物馆，以收藏 Viktor &"
+          },
+          {
+            "name": "National Gallery of Victoria (NGV) Fashion",
+            "url": "https://www.ngv.vic.gov.au/explore/collection/management/fashion-and-textiles",
+            "description": "墨尔本 NGV 博物馆，拥有出色的当代先锋高定与国"
+          },
+          {
+            "name": "Texas Fashion Collection (TFC)",
+            "url": "https://tfc.unt.edu",
+            "description": "北德克萨斯大学时尚收藏库"
+          },
+          {
+            "name": "Indianapolis Museum of Art Fashion",
+            "url": "https://discovernewfields.org/art/collections/fashion-arts",
+            "description": "印第安纳波利斯艺术博物馆"
+          },
+          {
+            "name": "Phoenix Art Museum Fashion Design",
+            "url": "https://phxart.org/art/collections/fashion-design",
+            "description": "菲尼克斯艺术博物馆，展示极具现代感的时装工程与高定"
+          },
+          {
+            "name": "Goldstein Museum of Design",
+            "url": "https://gmd.cdes.umn.edu",
+            "description": "明尼苏达大学戈德斯坦设计博物馆，关注日常服装"
+          },
+          {
+            "name": "Drexel Digital Museum Fashion Events",
+            "url": "https://www.drexel.edu/westphal/resources/digital-museum",
+            "description": "德雷塞尔大学时尚数字博物馆"
+          },
+          {
+            "name": "Museum of Applied Arts and Sciences (MAAS) Fashion",
+            "url": "https://maas.museum/fashion",
+            "description": "悉尼应用艺术与科学博物馆"
+          },
+          {
+            "name": "Design Museum London Fashion",
+            "url": "https://designmuseum.org/exhibitions/fashion",
+            "description": "伦敦设计博物馆时尚专栏，探讨现代服装工程"
+          },
+          {
+            "name": "Cooper Hewitt Smithsonian Design Museum",
+            "url": "https://www.cooperhewitt.org",
+            "description": "史密森尼库珀·休伊特设计博物馆，专注于图案设计"
+          },
+          {
+            "name": "Museum of Arts and Design (MAD) Textiles",
+            "url": "https://madmuseum.org",
+            "description": "纽约艺术与设计博物馆，聚焦手工面料"
+          },
+          {
+            "name": "Costume Society of America (CSA)",
+            "url": "https://costumesocietyamerica.com",
+            "description": "美国服装学会，发布服装史研究论文"
+          },
+          {
+            "name": "Costume Society UK",
+            "url": "https://costumesociety.org.uk",
+            "description": "英国服装学会，专注于英国及欧洲纺织品与服装历史保护"
+          },
+          {
+            "name": "Fashion History Timeline (FIT)",
+            "url": "https://fashionhistory.fitnyc.edu",
+            "description": "FIT 打造的开源时尚史时间线"
+          },
+          {
+            "name": "Commercial Pattern Archive (CoPA)",
+            "url": "https://copa.uri.edu",
+            "description": "罗德岛大学商业版型档案馆"
+          },
+          {
+            "name": "Textile Museum Washington D.C.",
+            "url": "https://museum.gwu.edu",
+            "description": "华盛顿纺织品博物馆，藏有全球古老地毯"
+          },
+          {
+            "name": "Threads Magazine",
+            "url": "https://www.threadsmagazine.com",
+            "description": "专业高级裁缝、高级定制版型与缝纫工艺深度技术杂志。"
+          },
+          {
+            "name": "University of Fashion",
+            "url": "https://www.universityoffashion.com",
+            "description": "涵盖立裁、平面打版、时装画与高级缝纫工艺的在线教育"
+          },
+          {
+            "name": "Fashion Era History",
+            "url": "https://www.fashion-era.com",
+            "description": "详尽记录维多利亚时期、爱德华时期及 20"
+          },
+          {
+            "name": "We Wear Culture (Google Arts & Culture)",
+            "url": "https://artsandculture.google.com/project/fashion",
+            "description": "谷歌艺术与文化“时尚视角”"
+          },
+          {
+            "name": "Catwalk to Collection Archive",
+            "url": "https://www.catwalktocollection.com",
+            "description": "对比分析秀场样衣与最终商业量产版演变过程的学术档案"
+          }
+        ]
+      },
+      {
+        "name": "品牌目录与榜单",
+        "links": [
+          {
+            "name": "From The Labels",
+            "url": "https://fromthelabels.com",
+            "description": "收集全球独立时尚、珠宝和生活方式品牌"
+          },
+          {
+            "name": "NOT JUST A LABEL",
+            "url": "https://www.notjustalabel.com",
+            "description": "收集全球新锐设计师和独立时尚品牌"
+          },
+          {
+            "name": "INDIZIO Apparel Index",
+            "url": "https://indizio.com",
+            "description": "收集独立服装品牌和设计师品牌"
+          },
+          {
+            "name": "Luxe Digital",
+            "url": "https://luxe.digital",
+            "description": "收集奢侈品牌及不同品类排行榜"
+          },
+          {
+            "name": "Traackr",
+            "url": "https://www.traackr.com",
+            "description": "分析奢侈品牌社交媒体影响力"
+          },
+          {
+            "name": "WCRC",
+            "url": "https://wcrcint.com/",
+            "description": "品牌影响力与全球品牌榜"
+          },
+          {
+            "name": "LuxuryGuide",
+            "url": "https://www.luxuryguide.com",
+            "description": "探索全球奢侈品牌及高端生活方式"
+          }
+        ]
+      },
+      {
+        "name": "官网设计案例",
+        "links": [
+          {
+            "name": "Shop Site Awards",
+            "url": "https://shopsites.com",
+            "description": "收集全球优秀电商和时尚品牌官网"
+          },
+          {
+            "name": "Ecommerce Design Awards",
+            "url": "https://www.ecomdesignawards.com/",
+            "description": "电商品牌官网设计案例"
+          },
+          {
+            "name": "Ecomm.Design",
+            "url": "https://ecomm.design",
+            "description": "收集全球电商品牌官网设计案例"
+          },
+          {
+            "name": "No-Code Supply",
+            "url": "https://nocodesupply.co",
+            "description": "收集创意网站和品牌官网设计案例"
+          },
+          {
+            "name": "Website Motive",
+            "url": "https://websitemotive.com",
+            "description": "收集不同品类的电商网站设计"
           }
         ]
       }

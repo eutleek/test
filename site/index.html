@@ -14,13 +14,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
 <script>
 (function initColors() {
-  const layoutDefaultVersion = 'v143-magazine-default';
+  const layoutDefaultVersion = 'v144-clear-default';
   if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
-    localStorage.setItem('layout', 'minimal');
+    localStorage.setItem('layout', 'clear');
     localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
   }
 
-  const savedLayout = localStorage.getItem('layout') || 'minimal';
+  const savedLayout = localStorage.getItem('layout') || 'clear';
   const backgroundStorageKey = 'kisstr_background_picker_selection_v1';
   let savedBackgroundOption = null;
   let isSavedImageBackground = false;
@@ -818,6 +818,44 @@ try {
     gap: 8px;
     margin-bottom: 20px;
     justify-content: center;
+  }
+
+  .tabs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .category-tabs.tabs-collapsed .tabs-list {
+    display: none;
+  }
+
+  .tabs-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tabs-toggle-current {
+    color: var(--accent);
+    font-weight: 600;
+    max-width: 12em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tabs-toggle-arrow {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1;
   }
 
   .tab-btn {
@@ -1992,6 +2030,84 @@ try {
   .site-footer {
     padding: 30px 24px;
     text-align: center;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+    flex: none;
+    color: #ffffff;
+  }
+
+  .footer-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+  }
+
+  .footer-title {
+    font-family: 'Noto Sans SC', 'Arial Black', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+  }
+
+  .footer-tagline {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+  }
+
+  .footer-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .footer-side .footer-badges {
+    margin-bottom: 0;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links .disclaimer-btn {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .footer-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-side {
+      align-items: flex-start;
+    }
   }
 
   .footer-badges {
@@ -3195,7 +3311,7 @@ try {
   .layout-clear .footer-badges .badge:hover {
     background: transparent;
     color: #1d1d1f;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   .layout-clear .disclaimer-btn {
@@ -3235,7 +3351,7 @@ try {
   .layout-minimal .footer-badges .badge:hover {
     background: transparent;
     color: #1d1d1f;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   .layout-minimal .disclaimer-btn {
@@ -5112,6 +5228,8 @@ try {
   body.background-image-mode .hide-toggle,
   body.background-image-mode .search-inline input,
   body.background-image-mode .footer-badges .badge,
+  body.background-image-mode .footer-title,
+  body.background-image-mode .footer-logo,
   body.background-image-mode .disclaimer-btn,
   body.background-image-mode .background-picker-trigger {
     color: rgba(255, 255, 255, 0.96) !important;
@@ -5151,6 +5269,7 @@ try {
   body.background-image-mode .link-url,
   body.background-image-mode .hidden-link-url,
   body.background-image-mode .link-desc,
+  body.background-image-mode .footer-tagline,
   body.background-image-mode .ai-card-desc,
   body.background-image-mode .ai-card-company,
   body.background-image-mode .ai-card-close-reason,
@@ -6434,10 +6553,10 @@ try {
 
 </style>
 </head>
-<body class="layout-minimal">
+<body class="layout-minimal layout-clear">
 <script>
   (function() {
-    var saved = localStorage.getItem('layout') || 'minimal';
+    var saved = localStorage.getItem('layout') || 'clear';
     if (saved === 'clear') {
       document.body.classList.add('layout-minimal', 'layout-clear');
     } else {
@@ -6568,14 +6687,26 @@ try {
 <audio id="lofiAudio" src="https://ice5.somafm.com/groovesalad-128-mp3"></audio>
 
 <footer class="site-footer">
-  <div class="footer-badges">
-    <span class="badge">✨ 无广告</span>
-    <span class="badge">✨ 无弹窗</span>
-    <span class="badge">✨ 无盈利</span>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg class="footer-logo" viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg>
+      <div class="footer-brand-text">
+        <div class="footer-title">Kisstr</div>
+        <p class="footer-tagline">阅读是一座随身携带的避难所</p>
+      </div>
+    </div>
+    <div class="footer-side">
+      <div class="footer-badges">
+        <span class="badge">无广告</span>
+        <span class="badge">无弹窗</span>
+        <span class="badge">无盈利</span>
+      </div>
+      <div class="footer-links">
+        <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>
+        <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
+      </div>
+    </div>
   </div>
-  <a href="disclaimer.html" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">免责声明</a>&nbsp;&nbsp;
-  <a href="https://m.baike.com/wikiid/7316069310949130294" class="disclaimer-btn" target="_blank" rel="noopener noreferrer">关于作者</a>
-  <p class="footer-copy">书影音 · 优质网站收藏</p>
 </footer>
 
 <script src="assets/data.js"></script>
@@ -6746,23 +6877,39 @@ function renderCategories() {
   const tabsContainer = document.getElementById('categoryTabs');
   tabsContainer.innerHTML = '';
 
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'tab-btn tabs-toggle';
+  toggleBtn.id = 'tabsToggle';
+  const currentName = (typeof currentCategory !== 'undefined' && currentCategory) || (linksData[0] && linksData[0].name) || '';
+  toggleBtn.innerHTML =
+    '<span class="tabs-toggle-label">分类索引</span>' +
+    '<span class="tabs-toggle-current">' + currentName + '</span>' +
+    '<span class="tabs-toggle-arrow" aria-hidden="true">▾</span>';
+
+  const tabsList = document.createElement('div');
+  tabsList.className = 'tabs-list';
+  tabsList.id = 'tabsList';
+
+  tabsContainer.appendChild(toggleBtn);
+  tabsContainer.appendChild(tabsList);
+
   if (!window.__KISSTR_INDEX__) {
-  const homeBtn = document.createElement('button');
-  homeBtn.className = 'tab-btn return-home-tab';
-  homeBtn.textContent = '\u8FD4\u56DE\u9996\u9875';
-  homeBtn.title = '\u8FD4\u56DE\u9996\u9875';
-  homeBtn.addEventListener('click', (e) => {
-    if (window.__SPA_NAV__) window.__SPA_NAV__('index.html');
-    else window.location.href = 'index.html';
-    e.currentTarget.blur();
-  });
-  tabsContainer.appendChild(homeBtn);
+    const homeBtn = document.createElement('button');
+    homeBtn.className = 'tab-btn return-home-tab';
+    homeBtn.textContent = '\u8FD4\u56DE\u9996\u9875';
+    homeBtn.title = '\u8FD4\u56DE\u9996\u9875';
+    homeBtn.addEventListener('click', (e) => {
+      if (window.__SPA_NAV__) window.__SPA_NAV__('index.html');
+      else window.location.href = 'index.html';
+      e.currentTarget.blur();
+    });
+    tabsList.appendChild(homeBtn);
   }
 
   linksData.forEach((cat, index) => {
     if (cat.name === '索引' && !window.__KISSTR_INDEX__) return;
     const btn = document.createElement('button');
-    btn.className = 'tab-btn' + (index === 0 ? ' active' : '');
+    btn.className = 'tab-btn' + (cat.name === currentName ? ' active' : '');
     btn.textContent = cat.name;
     btn.dataset.category = cat.name;
 
@@ -6785,7 +6932,7 @@ function renderCategories() {
     }
 
     btn.addEventListener('click', (e) => { filterByCategory(cat.name); e.currentTarget.blur(); });
-    tabsContainer.appendChild(btn);
+    tabsList.appendChild(btn);
   });
 
   const searchWrapper = document.createElement('div');
@@ -6799,6 +6946,15 @@ function renderCategories() {
     </div>
   `;
   tabsContainer.appendChild(searchWrapper);
+
+  const arrowEl = toggleBtn.querySelector('.tabs-toggle-arrow');
+  toggleBtn.addEventListener('click', () => {
+    const collapsed = tabsContainer.classList.toggle('tabs-collapsed');
+    toggleBtn.classList.toggle('open', !collapsed);
+    if (arrowEl) arrowEl.textContent = collapsed ? '▾' : '▴';
+    toggleBtn.blur();
+  });
+  tabsContainer.classList.add('tabs-collapsed');
 }
 
 function openUrlInNewTab(url) {
@@ -6917,11 +7073,6 @@ function prepareStealthLinkCard(card, url) {
 
 function createLinkCard(link, catIndex, linkIndex, rank) {
   const cat = linksData[catIndex];
-
-  // ===== 全球AI分类：渲染附件风格卡片 =====
-  if (cat && cat.name === '全球 AI' && link._aiCompany) {
-    return createAiCard(link, linkIndex);
-  }
 
   const card = document.createElement('a');
   card.className = 'link-card';
@@ -7153,7 +7304,7 @@ function doRenderLinks(filterText, category) {
 
         let globalRank = 0;
         const grid = document.createElement('div');
-        grid.className = (cat.name === '全球 AI') ? 'ai-grid' : 'links-grid';
+        grid.className = 'links-grid';
 
         if (isMinimalLayout && subcat.name && !subcat.hideTitle) {
           const titleCard = document.createElement('div');
@@ -7236,6 +7387,8 @@ function filterByCategory(category) {
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.category === category);
   });
+  const toggleCurrent = document.querySelector('.tabs-toggle-current');
+  if (toggleCurrent) toggleCurrent.textContent = category;
   const searchInput = document.getElementById('searchInput');
   const searchValue = searchInput ? searchInput.value : '';
   renderLinks(searchValue, category);
@@ -7470,12 +7623,12 @@ function setLayout(layout) {
   renderLinks(searchValue, currentCategory);
 }
 
-const layoutDefaultVersion = 'v143-magazine-default';
+const layoutDefaultVersion = 'v144-clear-default';
 if (localStorage.getItem('layoutDefaultVersion') !== layoutDefaultVersion) {
-  localStorage.setItem('layout', 'minimal');
+  localStorage.setItem('layout', 'clear');
   localStorage.setItem('layoutDefaultVersion', layoutDefaultVersion);
 }
-const savedLayout = localStorage.getItem('layout') || 'minimal';
+const savedLayout = localStorage.getItem('layout') || 'clear';
 setLayout(savedLayout);
 
 layoutBtn.addEventListener('click', (e) => {
