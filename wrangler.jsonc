@@ -6,7 +6,7 @@
     "enabled": true
   },
   "assets": {
-    "directory": ".",
+    "directory": "site",
     "not_found_handling": "single-page-application"
   },
   "compatibility_flags": [
