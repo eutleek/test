@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 <title>百年孤独 · 人物关系图谱</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232A251E'/%3E%3Ctext x='16' y='22.5' font-size='17' text-anchor='middle' fill='%23F2ECDF' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
@@ -112,6 +112,7 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   border-right:1px solid var(--line);
   overflow-y:auto;overflow-x:hidden;
   padding:14px 14px 20px;
+  display:flex;flex-direction:column;
 }
 .fp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .fp-head .t{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.08em}
@@ -125,6 +126,11 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   font-size:11px;color:var(--ink-faint);letter-spacing:.18em;font-weight:500;
   margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--line);
 }
+.fp-sec-title.fold{cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
+.fp-sec-title.fold:hover{color:var(--ink-soft)}
+.fold-arrow{font-size:10px;transition:transform .18s;letter-spacing:0}
+.vol-sec.collapsed .vol-chips{display:none}
+.vol-sec:not(.collapsed) .fold-arrow{transform:rotate(90deg)}
 .radio-row{display:flex;gap:6px;flex-wrap:wrap}
 .radio-chip{
   font-size:12px;padding:4px 10px;border-radius:13px;border:1px solid var(--line-strong);
@@ -193,7 +199,7 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 }
 .fn-btn:hover{border-color:var(--ink-soft)}
 .fn-btn.on{background:var(--ink);border-color:var(--ink);color:var(--paper-card)}
-#cy{position:absolute;inset:0}
+#cy{position:absolute;inset:0;touch-action:none}
 #emptyOverlay{
   position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:15;
   background:rgba(242,236,223,.82);text-align:center;
@@ -343,6 +349,17 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 .view-btn:hover{background:var(--paper-deep);color:var(--ink)}
 .view-btn.on{background:var(--ink);color:var(--paper-card)}
 
+/* 顶栏视图切换（平板/手机：视图按钮上移页眉，书名下移左侧栏底） */
+.tb-switch{display:none}
+.fp-book{display:none}
+/* v2.15：书名随左侧边栏一起滚动（去掉 sticky 固定），初始仍贴底 */
+.fp-book{margin-top:auto;background:var(--paper-deep);
+  padding-top:10px;border-top:1px solid var(--line);
+  font-family:var(--serif);font-size:12px;color:var(--ink-faint);line-height:1.5;text-align:center}
+.fp-book .fp-book-t{font-weight:600;color:var(--ink-soft)}
+.fp-book .brand-short{display:none}
+.fp-book .fp-book-s{font-size:10.5px;font-style:italic;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
 /* 视图面板（时间线 / 家族 / 社交圈） */
 .view-pane{
   position:absolute;inset:0;z-index:5;overflow-y:auto;overflow-x:hidden;
@@ -390,10 +407,7 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 .tl-pchip:hover{border-color:var(--accent);color:var(--accent)}
 .tl-pchip .pi{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint)}
 .tl-pchip.imp3{border-color:rgba(158,59,44,.45);background:rgba(158,59,44,.05);font-weight:600}
-.tl-more{
-  margin-top:8px;font-size:11.5px;color:var(--accent);cursor:pointer;
-  border:1px dashed rgba(158,59,44,.45);border-radius:12px;padding:3px 10px;background:transparent;
-}
+.tl-pchip:active{border-color:var(--accent);color:var(--accent);background:rgba(158,59,44,.08)}
 .tl-all{display:none;margin-top:8px;flex-wrap:wrap;gap:6px}
 .tl-vol.open .tl-all{display:flex}
 .tl-all .tl-pchip{font-size:11.5px;padding:3px 9px;border-color:var(--line)}
@@ -433,18 +447,19 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 .timeline-person-link.is-selected{color:var(--accent);background:rgba(158,59,44,.11);border-radius:3px;text-decoration-style:solid}
 .tl-relrow .timeline-person-link{white-space:nowrap}
 .tt-name .timeline-person-link{text-decoration-color:rgba(158,59,44,.6)}
-/* 卷块 chips 已有胶囊样式：去掉下划线，selected 用边框强调 */
-.tl-pchip.timeline-person-link{text-decoration:none}
-.tl-pchip.is-selected{border-color:var(--accent);box-shadow:0 0 0 1px rgba(158,59,44,.35)}
+/* 卷块 chips 已有胶囊样式：去掉下划线，selected 用边框强调；圆角锁定 14px 防止被 .timeline-person-link 的 3px 覆盖 */
+.tl-pchip.timeline-person-link{text-decoration:none;border-radius:14px}
+.tl-pchip.is-selected{border-radius:14px;border-color:var(--accent);background:rgba(158,59,44,.08);font-weight:600}
 .tl-empty{text-align:center;color:var(--ink-faint);font-size:13px;padding:60px 20px;line-height:1.9}
 
 /* 家族 / 社交圈视图 */
 .fv-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:252px 1fr;gap:16px;align-items:start}
 .fv-list{background:rgba(247,242,231,.85);border:1px solid var(--line);border-radius:12px;padding:10px}
 .fv-list-t{font-family:var(--serif);font-size:13px;font-weight:600;padding:6px 10px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;letter-spacing:.1em}
-.fv-item{padding:8px 10px;border-radius:9px;cursor:pointer;transition:all .15s;border:1px solid transparent}
+.fv-item{padding:8px 10px;border-radius:9px;cursor:pointer;transition:all .15s;border:1px solid var(--line)}
 .fv-item:hover{background:var(--paper-deep)}
 .fv-item.on{background:var(--paper-card);border-color:var(--accent)}
+.fv-item:active{border-color:var(--accent);background:var(--paper-card)}
 .fv-item .fn{font-family:var(--serif);font-size:13.5px;font-weight:600}
 .fv-item .fm{font-size:11px;color:var(--ink-faint);margin-top:2px;line-height:1.5}
 .fv-main{background:rgba(247,242,231,.85);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-height:320px}
@@ -460,6 +475,8 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   font-size:12.5px;color:var(--ink);max-width:100%;
 }
 .fv-card:hover{border-color:var(--accent)}
+.fv-card:active{border-color:var(--accent);background:rgba(158,59,44,.06)}
+.fv-card .fn2{display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .fv-card .fi{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
 .fv-card.core{border-color:rgba(158,59,44,.55);background:rgba(158,59,44,.06);font-weight:600}
 .fv-card.marriage{border-style:double;border-width:3px}
@@ -633,29 +650,45 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 /* ===== 平板 768–1023：不是大手机，不是缩小桌面（TAB-01） ===== */
 @media (min-width:768px) and (max-width:1023px){
   #topbar{--topbar-h:52px;gap:8px;padding:0 12px;
-    display:grid;grid-template-columns:1fr auto auto 1fr;align-items:center}
-  .brand-title{font-size:17px}
-  .brand-sub{font-size:13px}
-  .brand-full{display:none}
-  .brand-short{display:inline}
-  /* HEADER 2.0 平板：历史 + 书名 + 搜索 + 更多 */
+    display:grid;grid-template-columns:auto 1fr auto auto;align-items:center}
+  /* HEADER 2.1 平板：历史 + 视图切换(居中) + 搜索 + 更多；书名下移左侧栏底 */
+  .brand{display:none}
+  .tb-switch{display:inline-flex;justify-self:center}
+  .fp-book{display:block}
+  .gtoolbar .view-switch{display:none}
   .hist-wrap{display:flex;gap:0;align-items:center;justify-self:start}
-  #bookTitle{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink);
-    letter-spacing:.04em;max-width:26vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;justify-self:center}
+  #bookTitle{display:none}
+  .search-wrap{justify-self:stretch;max-width:300px;margin-left:0}
   #moreBtn{display:inline-flex;flex:0 0 auto;width:44px;height:44px;border-radius:12px;
     border:1px solid transparent;background:transparent;color:var(--ink-soft);
     align-items:center;justify-content:center;justify-self:end}
   #moreBtn svg{width:18px;height:18px}
   #moreBtn:active{background:var(--paper-deep)}
   #searchInput{height:34px;font-size:13px}
-  #filterPanel{flex:0 0 210px;width:210px;padding:12px 12px 18px}
-  #detailPanel{flex:0 0 296px;width:296px}
+  /* 平板：筛选/工具按钮隐藏（收进「更多」），header 保持单行不溢出压时间线 */
+  #menuBtn{display:none}
+  #toolsBtn{display:none}
+  #filterPanel{flex:0 0 200px;width:200px;padding:12px 12px 18px}
+  #detailPanel{flex:0 0 264px;width:264px}
   #detailContent{padding:18px 18px 26px}
-  /* 工具渐进折叠：share/export/图例/缩放 收纳进「工具」；保留 适应 + 缩放 */
+  /* 工具渐进折叠：share/export/图例/缩放/章节按钮 收纳；保留 适应 + 缩放 */
   #legendBtn{display:none}
-  #toolsBtn{display:inline-flex}
+  #volSelBtn{display:none}
   #legend{width:214px;left:10px;bottom:10px}
   .view-pane{padding:60px 18px 30px}
+  /* 平板：家族/社交圈视图单栏（列表两列小方块 + 主区在下），内容不再溢出盖住详情 */
+  .fv-wrap{grid-template-columns:1fr;gap:12px}
+  .fv-list{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:8px}
+  .fv-list-t{grid-column:1/-1;margin-bottom:2px}
+  .fv-item{display:flex;flex-direction:column;gap:1px;min-height:52px;padding:8px 10px;justify-content:center}
+  .fv-item .fn{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fv-item .fm{font-size:10px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fv-main{padding:12px 12px}
+  .fv-card{flex-wrap:wrap;padding:10px 12px}
+  .fv-card .fi{max-width:100%;flex-basis:100%;white-space:normal;overflow:hidden;display:-webkit-box;
+    -webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:11px;line-height:1.45}
+  /* 详情字体平板微调 */
+  .dh-name{font-size:19px}
 }
 
 /* ===== 手机 <768：Mobile First Progressive Disclosure（MOB-02~MOB-13） ===== */
@@ -666,9 +699,12 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   /* HEADER 2.0：品牌隐藏；历史 + 书名居中 + 更多 */
   .brand{display:none}
   .hist-wrap{display:flex;gap:0;align-items:center;justify-self:start}
-  #bookTitle{display:block;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);
-    letter-spacing:.04em;max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    text-align:center;justify-self:center}
+  #bookTitle{display:none}
+  .tb-switch{display:inline-flex;justify-self:center}
+  .tb-switch .view-btn{height:28px;padding:0 9px;font-size:12px}
+  /* 手机：书名只在「更多」菜单最底部（ms-book）；筛选抽屉内不再重复显示 */
+  .fp-book{display:none}
+  .fp-book.ms-book{display:block;margin-top:auto;position:sticky;bottom:0;padding:12px 18px 16px;background:var(--paper-deep)}
   .search-wrap{margin-left:0;flex:0 0 auto;display:none}
   #searchInput,#searchResults{display:none}
   #searchBtn{display:none}
@@ -806,7 +842,6 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   .gbtn{min-width:42px;min-height:42px}
   .tl-chip{padding:7px 13px}
   .tl-dot{width:32px;height:32px;font-size:11.5px}
-  .tl-more{padding:8px 14px}
   .tt-gobtn{padding:8px 14px}
   .dh-go{padding:8px 14px}
   .timeline-person-link{padding:5px 3px;margin:-4px -3px}
@@ -815,7 +850,6 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   .chk{min-height:42px}
   .fv-item{padding:12px 10px}
   .tl-vol-head{padding:13px 14px}
-  .tl-more{padding:9px 16px}
 }
 
 /* 刘海屏 / 手势条安全区 */
@@ -893,6 +927,12 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
       </button>
     </div>
     <span id="bookTitle" aria-label="当前书籍">百年孤独</span>
+    <span class="view-switch tb-switch" id="viewSwitchTop" aria-label="视图切换">
+      <button class="view-btn on" data-view="network" aria-pressed="true">网络</button>
+      <button class="view-btn" data-view="family" aria-pressed="false">家族</button>
+      <button class="view-btn" data-view="social" aria-pressed="false">社交圈</button>
+      <button class="view-btn" data-view="timeline" aria-pressed="false">时间线</button>
+    </span>
     <div class="search-wrap">
       <input id="searchInput" placeholder="搜索人物：布恩迪亚 / 乌尔苏拉 / 奥雷里亚诺…" autocomplete="off">
       <div id="searchResults"></div>
@@ -934,8 +974,8 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
         <div id="typeFilters"></div>
       </div>
 
-      <div class="fp-sec">
-        <div class="fp-sec-title">章节</div>
+      <div class="fp-sec vol-sec collapsed">
+        <div class="fp-sec-title fold" id="volFoldBtn">章节 <span class="fold-arrow" id="volFoldArrow">▸</span></div>
         <div class="vol-chips" id="volFilters"></div>
       </div>
 
@@ -953,6 +993,10 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 
       <div id="stats">共 <b id="statP">0</b> 位人物 · <b id="statR">0</b> 段关系</div>
       <div class="fp-hint">提示：点击人物进入聚焦模式，再点空白处返回全局。</div>
+      <div class="fp-book">
+        <span class="fp-book-t"><span class="brand-full">百年孤独 · 人物关系图谱</span><span class="brand-short">人物关系图谱</span></span>
+        <span class="fp-book-s">加西亚·马尔克斯 著 · 中译通行本</span>
+      </div>
       <button id="filterDoneBtn">完成</button>
     </aside>
 
@@ -1101,6 +1145,10 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
         <button class="tool-cell" data-more-tool="reset" aria-label="重置视图"><span class="ms-dot"></span>重置</button>
       </div>
     </div>
+  </div>
+  <div class="fp-book ms-book">
+    <span class="fp-book-t"><span class="brand-full">百年孤独 · 人物关系图谱</span><span class="brand-short">人物关系图谱</span></span>
+    <span class="fp-book-s">加西亚·马尔克斯 著 · 中译通行本</span>
   </div>
 </div>
 <div id="volSheet" class="sheet-panel" role="dialog" aria-label="选择章节" aria-hidden="true">
@@ -10787,7 +10835,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__281__;
 ;
 });</script>
 <script>
-window.LKG={"config":{"bookId":"bainiangu","title":"百年孤独 · 人物关系图谱","shortTitle":"人物关系图谱","fullTitle":"百年孤独 · 人物关系图谱","subtitle":"加西亚·马尔克斯 著 · 中译通行本","chapterMode":"section","volumeCount":20,"volumeLabels":["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],"views":["network","family","social","timeline"],"defaultView":"network","searchPlaceholder":"搜索人物：布恩迪亚 / 乌尔苏拉 / 奥雷里亚诺…","relationTypes":[{"label":"亲属","color":"#6E6455","dash":"solid","w":1.5},{"label":"婚姻","color":"#2A251E","dash":"solid","w":2.6},{"label":"爱慕","color":"#B0442E","dash":"dashed","w":2},{"label":"对立","color":"#A07A2B","dash":"dashed","w":1.6},{"label":"共同出场","color":"#9E5A68","dash":"dotted","w":1.1},{"label":"神话渊源","color":"#6D5B8C","dash":"dashed","w":1.4},{"label":"友谊","color":"#4E6E63","dash":"solid","w":1.4},{"label":"主仆","color":"#8F897C","dash":"dotted","w":1.1}],"circles":[{"name":"布恩迪亚家族","color":"#3E6B5E"},{"name":"关联人物","color":"#A98A4B"},{"name":"神话人物","color":"#6D5B8C"},{"name":"地点","color":"#9E3B2C"}],"excludedFamily":"","attribution":"项目基源：加西亚·马尔克斯《百年孤独》（Cien años de soledad, 1967）中译通行本（EPUB 底本核对中文译名与首次出场章）。数据出自百年孤独人物关系图谱工程（2026-10-10 提取）。「十七个奥雷里亚诺」按原著统称聚合为群体节点。","legendDataNote":"来源：《百年孤独》中译通行本人物关系图谱（2026-10-10）。<br>群体/地点节点按原数据保留；可点击关系查看证据。","appName":"百年孤独·人物关系图谱","version":"v1.0","exportPrefix":"百年孤独-关系图","engineVersion":"LKG v1.0","headerTitle":"百年孤独","extract_chapters":false},"data":{"people":[{"id":"jose_arcadio_buendia","name":"何塞·阿尔卡蒂奥·布恩迪亚","aliases":["José Arcadio Buendía","马孔多创始人"],"identity":"家族创始人 · 族长","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":3,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"布恩迪亚家族始祖。与表妹乌尔苏拉成婚，因决斗杀人后率众迁离故地，创建马孔多。痴迷吉普赛人的炼金术与发明创造，晚年精神失常被绑在院中栗树上。","events":[{"v":1,"t":"首次出场：布恩迪亚家族始祖。与表妹乌尔苏拉成婚，因决斗杀人…"}],"group":false},{"id":"ursula_iguarán","name":"乌尔苏拉·伊瓜兰","aliases":["Úrsula Iguarán","乌尔苏拉"],"identity":"女族长","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"家族支柱，活逾百岁。以惊人韧性与记忆力维系家族数代，是贯穿全书的“活历史”。","events":[{"v":1,"t":"首次出场：家族支柱，活逾百岁。以惊人韧性与记忆力维系家族数…"}],"group":false},{"id":"jose_arcadio","name":"何塞·阿尔卡蒂奥（长子）","aliases":["José Arcadio","大何塞·阿尔卡蒂奥"],"identity":"长子","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":3,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"始祖长子。少年随吉普赛人出走，成年归来时遍体纹身；先后娶蕾梅黛丝·摩斯科特、后与养妹丽贝卡成婚，最终被神秘枪杀，鲜血一路流回母亲脚下。","events":[{"v":2,"t":"首次出场：始祖长子。少年随吉普赛人出走，成年归来时遍体纹身…"}],"group":false},{"id":"coronel_aureliano","name":"奥雷里亚诺·布恩迪亚（上校）","aliases":["Coronel Aureliano Buendía","奥雷里亚诺上校","上校"],"identity":"次子 · 军阀/上校","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"始祖次子，自由党上校。发动三十二场武装起义无一成功；与十七名女子生下十七个同名儿子；晚年于金银器作坊反复重铸小金鱼。","events":[{"v":1,"t":"首次出场：始祖次子，自由党上校。发动三十二场武装起义无一成…"}],"group":false},{"id":"amaranta","name":"阿玛兰妲","aliases":["Amaranta"],"identity":"女儿","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"始祖之女。与侄子奥雷里亚诺·何塞有暧昧却始终拒斥；终身未嫁，晚年自织寿衣而终。","events":[{"v":2,"t":"首次出场：始祖之女。与侄子奥雷里亚诺·何塞有暧昧却始终拒斥…"}],"group":false},{"id":"rebeca","name":"丽贝卡","aliases":["Rebeca"],"identity":"养女","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"随父母遗骨而来的孤女，初到时嗜食泥土与墙灰，经乌尔苏拉收养。先与皮埃特罗·克雷斯皮订婚，后嫁长子何塞·阿尔卡蒂奥；丈夫死后深居寡居。","events":[{"v":3,"t":"首次出场：随父母遗骨而来的孤女，初到时嗜食泥土与墙灰，经乌…"}],"group":false},{"id":"remedios_moscote","name":"蕾梅黛丝·摩斯科特","aliases":["Remedios Moscote"],"identity":"幼新娘","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":1,"firstAppearance":4,"volumes":[4],"confidence":"high","description":"马孔多镇长阿波利纳尔·摩斯科特之幼女，长子何塞·阿尔卡蒂奥的童养妻，早逝（疑遭误下之毒）。","events":[{"v":4,"t":"首次出场：马孔多镇长阿波利纳尔·摩斯科特之幼女，长子何塞·…"}],"group":false},{"id":"arcadio","name":"阿尔卡蒂奥","aliases":["Arcadio"],"identity":"孙辈 · 镇长/暴君","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"长子何塞·阿尔卡蒂奥与庇拉尔·特尔内拉之私生子，由家族抚养。曾任马孔多长官，残暴统治；保守派得势后被枪决。","events":[{"v":3,"t":"首次出场：长子何塞·阿尔卡蒂奥与庇拉尔·特尔内拉之私生子，…"}],"group":false},{"id":"aureliano_jose","name":"奥雷里亚诺·何塞","aliases":["Aureliano José"],"identity":"孙辈","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":1,"firstAppearance":5,"volumes":[5],"confidence":"high","description":"上校与庇拉尔·特尔内拉之子。恋慕姑母阿玛兰妲，被保守派士兵枪杀。","events":[{"v":5,"t":"首次出场：上校与庇拉尔·特尔内拉之子。恋慕姑母阿玛兰妲，被…"}],"group":false},{"id":"pilar_ternera","name":"庇拉尔·特尔内拉","aliases":["Pilar Ternera","庇拉尔"],"identity":"情妇 · 纸牌算命","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"先后与长子何塞·阿尔卡蒂奥及上校生下阿尔卡蒂奥与奥雷里亚诺·何塞；经营纸牌摊与妓院，寿逾百岁，临终前预知自己的死期。","events":[{"v":2,"t":"首次出场：先后与长子何塞·阿尔卡蒂奥及上校生下阿尔卡蒂奥与…"}],"group":false},{"id":"santa_sofia","name":"桑塔索菲亚·德拉·彼达","aliases":["Santa Sofía de la Piedad"],"identity":"妻子 · 沉默劳作者","family":"关联人物","circles":["关联人物"],"importance":2,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"阿尔卡蒂奥之妻，生下美人蕾梅黛丝与双胞胎（何塞·阿尔卡蒂奥第二、奥雷里亚诺第二）。数十年默默操持家务，后被家人遗忘、悄然离去。","events":[{"v":6,"t":"首次出场：阿尔卡蒂奥之妻，生下美人蕾梅黛丝与双胞胎（何塞·…"}],"group":false},{"id":"remedios_la_bella","name":"蕾梅黛丝（美人）","aliases":["Remedios la bella","美人蕾梅黛丝"],"identity":"孙女","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":1,"firstAppearance":8,"volumes":[8],"confidence":"high","description":"阿尔卡蒂奥与桑塔索菲亚之女，绝世美貌，拒斥一切求爱，某日晾衣时随风升天而去。","events":[{"v":8,"t":"首次出场：阿尔卡蒂奥与桑塔索菲亚之女，绝世美貌，拒斥一切求…"}],"group":false},{"id":"jose_arcadio_segundo","name":"何塞·阿尔卡蒂奥第二","aliases":["José Arcadio Segundo","何塞·阿尔卡蒂奥第二"],"identity":"双胞胎 · 工会领袖","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":7,"volumes":[7],"confidence":"high","description":"双胞胎之一。香蕉公司罢工领袖，大屠杀唯一幸存者；余生蛰居于作坊钻研梅尔基亚德斯的羊皮卷。","events":[{"v":7,"t":"首次出场：双胞胎之一。香蕉公司罢工领袖，大屠杀唯一幸存者；…"}],"group":false},{"id":"aureliano_segundo","name":"奥雷里亚诺第二","aliases":["Aureliano Segundo","奥雷里亚诺第二"],"identity":"双胞胎 · 地主","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":3,"firstAppearance":7,"volumes":[7],"confidence":"high","description":"双胞胎之一。与情妇佩特拉·科特斯纵情享乐，牲畜在其爱情中成倍繁衍而带来财富；与费尔南达成婚却仍蓄外室。","events":[{"v":7,"t":"首次出场：双胞胎之一。与情妇佩特拉·科特斯纵情享乐，牲畜在…"}],"group":false},{"id":"fernanda","name":"费尔南达·德尔·卡皮奥","aliases":["Fernanda del Carpio"],"identity":"妻子 · 没落贵族","family":"关联人物","circles":["关联人物"],"importance":2,"firstAppearance":10,"volumes":[10],"confidence":"high","description":"奥雷里亚诺第二之妻，出身衰败贵族，带来宗教禁欲风气，晚年独撑家门。","events":[{"v":10,"t":"首次出场：奥雷里亚诺第二之妻，出身衰败贵族，带来宗教禁欲风…"}],"group":false},{"id":"petra_cotes","name":"佩特拉·科特斯","aliases":["Petra Cotes"],"identity":"情妇","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":10,"volumes":[10],"confidence":"high","description":"奥雷里亚诺第二的情妇。其牲畜与爱情使家业兴旺，与上校妻费尔南达形成鲜明对照。","events":[{"v":10,"t":"首次出场：奥雷里亚诺第二的情妇。其牲畜与爱情使家业兴旺，与…"}],"group":false},{"id":"meme","name":"梅梅（蕾娜塔·蕾梅黛丝）","aliases":["Renata Remedios","Meme"],"identity":"曾孙女","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":11,"volumes":[11],"confidence":"high","description":"奥雷里亚诺第二与费尔南达之长女，习音乐，与机修工马乌里肖·巴比洛尼亚相恋；事发被遣入修道院，终生缄默。","events":[{"v":11,"t":"首次出场：奥雷里亚诺第二与费尔南达之长女，习音乐，与机修工…"}],"group":false},{"id":"jose_arcadio_rome","name":"何塞·阿尔卡蒂奥（罗马）","aliases":["José Arcadio (el papa)","罗马的何塞·阿尔卡蒂奥"],"identity":"曾孙","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":1,"firstAppearance":18,"volumes":[18],"confidence":"high","description":"奥雷里亚诺第二与费尔南达之子，被送罗马习神学、望成教皇；归国后挥霍家财，掘得埋金后被孩童溺杀。","events":[{"v":18,"t":"首次出场：奥雷里亚诺第二与费尔南达之子，被送罗马习神学、望…"}],"group":false},{"id":"amaranta_ursula","name":"阿玛兰妲·乌尔苏拉","aliases":["Amaranta Úrsula"],"identity":"曾孙女","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":14,"volumes":[14],"confidence":"high","description":"奥雷里亚诺第二与费尔南达幼女。欧洲归国带回丈夫加斯通，与侄子奥雷里亚诺乱伦，产下带猪尾男婴后亡故。","events":[{"v":14,"t":"首次出场：奥雷里亚诺第二与费尔南达幼女。欧洲归国带回丈夫加…"}],"group":false},{"id":"aureliano_last","name":"奥雷里亚诺（末代）","aliases":["Aureliano","最后的奥雷里亚诺"],"identity":"玄孙","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":2,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"梅梅与马乌里肖·巴比洛尼亚之子，由费尔南达伪称“修女遗孤”抚养。通梵文，破译羊皮卷预言；与姑母阿玛兰妲·乌尔苏拉相爱，见证家族与马孔多随飓风湮灭。","events":[{"v":1,"t":"首次出场：梅梅与马乌里肖·巴比洛尼亚之子，由费尔南达伪称“…"}],"group":false},{"id":"mauricio_babilonia","name":"马乌里肖·巴比洛尼亚","aliases":["Mauricio Babilonia"],"identity":"恋人 · 机修工","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":14,"volumes":[14],"confidence":"high","description":"梅梅的恋人，周身黄蝴蝶环绕；被费尔南达买通武修炼士射伤并囚禁。","events":[{"v":14,"t":"首次出场：梅梅的恋人，周身黄蝴蝶环绕；被费尔南达买通武修炼…"}],"group":false},{"id":"gaston","name":"加斯通","aliases":["Gastón"],"identity":"丈夫","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":19,"volumes":[19],"confidence":"high","description":"阿玛兰妲·乌尔苏拉的丈夫，比利时人；筹划航空邮政未果，最终离开马孔多。","events":[{"v":19,"t":"首次出场：阿玛兰妲·乌尔苏拉的丈夫，比利时人；筹划航空邮政…"}],"group":false},{"id":"melquiades","name":"梅尔基亚德斯","aliases":["Melquíades"],"identity":"吉普赛智者 · 预言者","family":"神话人物","circles":["神话人物"],"importance":1,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"吉普赛人，携冰块、磁铁与炼金术造访马孔多，撰写家族命运羊皮卷；死后复活以完成手稿。","events":[{"v":1,"t":"首次出场：吉普赛人，携冰块、磁铁与炼金术造访马孔多，撰写家…"}],"group":false},{"id":"pietro_crespi","name":"皮埃特罗·克雷斯皮","aliases":["Pietro Crespi"],"identity":"恋人 · 工匠","family":"关联人物","circles":["关联人物"],"importance":2,"firstAppearance":4,"volumes":[4],"confidence":"high","description":"意大利工匠/乐师，先后求爱丽贝卡与阿玛兰妲，屡遭拒后悬梁自尽。","events":[{"v":4,"t":"首次出场：意大利工匠/乐师，先后求爱丽贝卡与阿玛兰妲，屡遭…"}],"group":false},{"id":"prudencio_agilar","name":"普鲁邓希奥·阿吉拉尔","aliases":["Prudencio Aguilar"],"identity":"决斗对手 · 鬼魂","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"被始祖何塞·阿尔卡蒂奥·布恩迪亚在决斗中刺死，化为鬼魂长期纠缠。","events":[{"v":2,"t":"首次出场：被始祖何塞·阿尔卡蒂奥·布恩迪亚在决斗中刺死，化…"}],"group":false},{"id":"apolinar_moscote","name":"阿波利纳尔·摩斯科特","aliases":["Apolinar Moscote"],"identity":"镇长 · 岳父","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"马孔多镇长，蕾梅黛丝之父，将幼女许配长子何塞·阿尔卡蒂奥。","events":[{"v":3,"t":"首次出场：马孔多镇长，蕾梅黛丝之父，将幼女许配长子何塞·阿…"}],"group":false},{"id":"diecisiete","name":"十七个奥雷里亚诺","aliases":["los diecisiete Aurelianos","奥雷里亚诺们"],"identity":"群体","family":"布恩迪亚家族","circles":["布恩迪亚家族"],"importance":1,"firstAppearance":20,"volumes":[20],"confidence":"high","description":"上校与十七名女子所生之子，额有灰烬十字，于同一天遭神秘暗杀殆尽。","events":[{"v":20,"t":"首次出场：上校与十七名女子所生之子，额有灰烬十字，于同一天…"}],"group":true},{"id":"macondo","name":"马孔多","aliases":["Macondo"],"identity":"虚构城镇","family":"地点","circles":["地点"],"importance":2,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"布恩迪亚家族创建的村落：由初创繁华，历香蕉热、大屠杀与衰朽，终被飓风抹去。","events":[{"v":1,"t":"首次出场：布恩迪亚家族创建的村落：由初创繁华，历香蕉热、大…"}],"group":false},{"id":"nigromanta","name":"尼格罗曼塔","aliases":["Nigromanta"],"identity":"妓院主顾/助手","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":19,"volumes":[19],"confidence":"high","description":"末代奥雷里亚诺常去的妓院老鸨兼慰藉者，助其筹措生计。","events":[{"v":19,"t":"首次出场：末代奥雷里亚诺常去的妓院老鸨兼慰藉者，助其筹措生…"}],"group":false},{"id":"visitacion","name":"维希塔西翁","aliases":["Visitación"],"identity":"印第安女仆","family":"关联人物","circles":["关联人物"],"importance":1,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"随兄卡塔乌雷为避瘟疫来到马孔多，预言失眠症，长期服侍家族。","events":[{"v":2,"t":"首次出场：随兄卡塔乌雷为避瘟疫来到马孔多，预言失眠症，长期…"}],"group":false}],"relationships":[{"id":"r_0001","source":"jose_arcadio_buendia","target":"ursula_iguarán","type":"婚姻","strength":5,"description":"夫妻（表兄妹联姻）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0002","source":"jose_arcadio_buendia","target":"jose_arcadio","type":"亲属","strength":5,"description":"父子（长子）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0003","source":"jose_arcadio_buendia","target":"coronel_aureliano","type":"亲属","strength":5,"description":"父子（次子）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0004","source":"jose_arcadio_buendia","target":"amaranta","type":"亲属","strength":5,"description":"父女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0005","source":"jose_arcadio_buendia","target":"rebeca","type":"亲属","strength":5,"description":"养父女（收养孤女）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0006","source":"ursula_iguarán","target":"jose_arcadio","type":"亲属","strength":5,"description":"母子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0007","source":"ursula_iguarán","target":"coronel_aureliano","type":"亲属","strength":5,"description":"母子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0008","source":"ursula_iguarán","target":"amaranta","type":"亲属","strength":5,"description":"母女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0009","source":"ursula_iguarán","target":"rebeca","type":"亲属","strength":5,"description":"养母女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0010","source":"jose_arcadio","target":"coronel_aureliano","type":"亲属","strength":5,"description":"兄弟","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0011","source":"jose_arcadio","target":"amaranta","type":"亲属","strength":5,"description":"兄妹","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0012","source":"coronel_aureliano","target":"amaranta","type":"亲属","strength":5,"description":"兄妹","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0013","source":"jose_arcadio","target":"arcadio","type":"亲属","strength":5,"description":"父子（私生，与庇拉尔）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0014","source":"coronel_aureliano","target":"aureliano_jose","type":"亲属","strength":5,"description":"父子（与庇拉尔）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0015","source":"coronel_aureliano","target":"diecisiete","type":"亲属","strength":5,"description":"父子（十七子）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0016","source":"pilar_ternera","target":"arcadio","type":"亲属","strength":5,"description":"母子（私生）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0017","source":"pilar_ternera","target":"aureliano_jose","type":"亲属","strength":5,"description":"母子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0018","source":"arcadio","target":"santa_sofia","type":"婚姻","strength":5,"description":"夫妻","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0019","source":"arcadio","target":"remedios_la_bella","type":"亲属","strength":5,"description":"父女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0020","source":"arcadio","target":"jose_arcadio_segundo","type":"亲属","strength":5,"description":"父子（双胞胎）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0021","source":"arcadio","target":"aureliano_segundo","type":"亲属","strength":5,"description":"父子（双胞胎）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0022","source":"santa_sofia","target":"remedios_la_bella","type":"亲属","strength":5,"description":"母女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0023","source":"santa_sofia","target":"jose_arcadio_segundo","type":"亲属","strength":5,"description":"母子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0024","source":"santa_sofia","target":"aureliano_segundo","type":"亲属","strength":5,"description":"母子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0025","source":"jose_arcadio_segundo","target":"aureliano_segundo","type":"亲属","strength":5,"description":"孪生兄弟","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0026","source":"aureliano_segundo","target":"fernanda","type":"婚姻","strength":5,"description":"夫妻","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0027","source":"aureliano_segundo","target":"petra_cotes","type":"婚姻","strength":5,"description":"外室（情妇）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0028","source":"aureliano_segundo","target":"meme","type":"亲属","strength":5,"description":"父女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0029","source":"aureliano_segundo","target":"jose_arcadio_rome","type":"亲属","strength":5,"description":"父子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0030","source":"aureliano_segundo","target":"amaranta_ursula","type":"亲属","strength":5,"description":"父女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0031","source":"fernanda","target":"meme","type":"亲属","strength":5,"description":"母女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0032","source":"fernanda","target":"jose_arcadio_rome","type":"亲属","strength":5,"description":"母子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0033","source":"fernanda","target":"amaranta_ursula","type":"亲属","strength":5,"description":"母女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0034","source":"meme","target":"aureliano_last","type":"亲属","strength":5,"description":"母女（与马乌里肖）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0035","source":"mauricio_babilonia","target":"aureliano_last","type":"亲属","strength":5,"description":"父子","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0036","source":"amaranta_ursula","target":"gaston","type":"婚姻","strength":5,"description":"夫妻","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0037","source":"aureliano_last","target":"amaranta_ursula","type":"爱慕","strength":5,"description":"姑侄乱伦之恋","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0038","source":"amaranta_ursula","target":"aureliano_last","type":"亲属","strength":5,"description":"姑侄","volumes":[],"confidence":"high","directed":false,"evidence":"explicit 原著明示"},{"id":"r_0039","source":"jose_arcadio_buendia","target":"melquiades","type":"神话渊源","strength":5,"description":"被吉普赛发明启蒙","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0040","source":"melquiades","target":"aureliano_last","type":"神话渊源","strength":5,"description":"羊皮卷预言（末代破译）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0041","source":"jose_arcadio_buendia","target":"prudencio_agilar","type":"对立","strength":5,"description":"决斗刺杀","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0042","source":"prudencio_agilar","target":"jose_arcadio_buendia","type":"共同出场","strength":5,"description":"鬼魂纠缠（死后显灵）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0043","source":"jose_arcadio_buendia","target":"macondo","type":"共同出场","strength":5,"description":"创建马孔多","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0044","source":"jose_arcadio_segundo","target":"macondo","type":"共同出场","strength":5,"description":"香蕉工人罢工与大屠杀","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0045","source":"diecisiete","target":"macondo","type":"共同出场","strength":5,"description":"十七子同日遭暗杀","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0046","source":"visitacion","target":"macondo","type":"共同出场","strength":5,"description":"失眠症瘟疫预警","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0047","source":"ursula_iguarán","target":"aureliano_last","type":"亲属","strength":5,"description":"曾祖母—玄孙","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0048","source":"rebeca","target":"pietro_crespi","type":"婚姻","strength":5,"description":"订婚（后解除）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0049","source":"amaranta","target":"pietro_crespi","type":"婚姻","strength":5,"description":"订婚（拒婚）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0050","source":"pietro_crespi","target":"rebeca","type":"爱慕","strength":5,"description":"爱慕","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0051","source":"pietro_crespi","target":"amaranta","type":"爱慕","strength":5,"description":"爱慕（转投）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0052","source":"rebeca","target":"jose_arcadio","type":"婚姻","strength":5,"description":"夫妻（与长子）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0053","source":"remedios_moscote","target":"jose_arcadio","type":"婚姻","strength":5,"description":"夫妻（童养妻）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0054","source":"apolinar_moscote","target":"remedios_moscote","type":"亲属","strength":5,"description":"父女","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0055","source":"apolinar_moscote","target":"jose_arcadio","type":"婚姻","strength":5,"description":"姻亲（岳父）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0056","source":"meme","target":"mauricio_babilonia","type":"爱慕","strength":5,"description":"恋情","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0057","source":"fernanda","target":"petra_cotes","type":"对立","strength":5,"description":"妻妾对立","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0058","source":"amaranta","target":"aureliano_jose","type":"爱慕","strength":5,"description":"姑侄暧昧（拒绝）","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0059","source":"aureliano_last","target":"nigromanta","type":"友谊","strength":5,"description":"妓院慰藉与资助","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"},{"id":"r_0060","source":"ursula_iguarán","target":"visitacion","type":"主仆","strength":5,"description":"主仆","volumes":[],"confidence":"high","directed":true,"evidence":"explicit 原著明示"}],"families":[{"id":"fam_0","name":"关联人物","memberIds":["pilar_ternera","santa_sofia","fernanda","petra_cotes","mauricio_babilonia","gaston","pietro_crespi","prudencio_agilar","apolinar_moscote","nigromanta","visitacion"],"memberCount":11,"confidence":"confirmed"},{"id":"fam_1","name":"地点","memberIds":["macondo"],"memberCount":1,"confidence":"confirmed"},{"id":"fam_2","name":"布恩迪亚家族","memberIds":["jose_arcadio_buendia","ursula_iguarán","jose_arcadio","coronel_aureliano","amaranta","rebeca","remedios_moscote","arcadio","aureliano_jose","remedios_la_bella","jose_arcadio_segundo","aureliano_segundo","meme","jose_arcadio_rome","amaranta_ursula","aureliano_last","diecisiete"],"memberCount":17,"confidence":"confirmed"},{"id":"fam_3","name":"神话人物","memberIds":["melquiades"],"memberCount":1,"confidence":"confirmed"}],"circles":[{"id":"c_0","name":"关联人物","memberIds":["pilar_ternera","santa_sofia","fernanda","petra_cotes","mauricio_babilonia","gaston","pietro_crespi","prudencio_agilar","apolinar_moscote","nigromanta","visitacion"],"memberCount":11},{"id":"c_1","name":"地点","memberIds":["macondo"],"memberCount":1},{"id":"c_2","name":"布恩迪亚家族","memberIds":["jose_arcadio_buendia","ursula_iguarán","jose_arcadio","coronel_aureliano","amaranta","rebeca","remedios_moscote","arcadio","aureliano_jose","remedios_la_bella","jose_arcadio_segundo","aureliano_segundo","meme","jose_arcadio_rome","amaranta_ursula","aureliano_last","diecisiete"],"memberCount":17},{"id":"c_3","name":"神话人物","memberIds":["melquiades"],"memberCount":1}],"timeline":[{"volume":1,"text":"梅梅与马乌里肖·巴比洛尼亚之子，由费尔南达伪称“…","personId":"aureliano_last","personName":"奥雷里亚诺（末代）","kind":"person_event","confidence":"high"},{"volume":1,"text":"始祖次子，自由党上校。发动三十二场武装起义无一成…","personId":"coronel_aureliano","personName":"奥雷里亚诺·布恩迪亚（上校）","kind":"person_event","confidence":"high"},{"volume":1,"text":"布恩迪亚家族始祖。与表妹乌尔苏拉成婚，因决斗杀人…","personId":"jose_arcadio_buendia","personName":"何塞·阿尔卡蒂奥·布恩迪亚","kind":"person_event","confidence":"high"},{"volume":1,"text":"布恩迪亚家族创建的村落：由初创繁华，历香蕉热、大…","personId":"macondo","personName":"马孔多","kind":"person_event","confidence":"high"},{"volume":1,"text":"吉普赛人，携冰块、磁铁与炼金术造访马孔多，撰写家…","personId":"melquiades","personName":"梅尔基亚德斯","kind":"person_event","confidence":"high"},{"volume":1,"text":"家族支柱，活逾百岁。以惊人韧性与记忆力维系家族数…","personId":"ursula_iguarán","personName":"乌尔苏拉·伊瓜兰","kind":"person_event","confidence":"high"},{"volume":2,"text":"始祖之女。与侄子奥雷里亚诺·何塞有暧昧却始终拒斥…","personId":"amaranta","personName":"阿玛兰妲","kind":"person_event","confidence":"high"},{"volume":2,"text":"始祖长子。少年随吉普赛人出走，成年归来时遍体纹身…","personId":"jose_arcadio","personName":"何塞·阿尔卡蒂奥（长子）","kind":"person_event","confidence":"high"},{"volume":2,"text":"先后与长子何塞·阿尔卡蒂奥及上校生下阿尔卡蒂奥与…","personId":"pilar_ternera","personName":"庇拉尔·特尔内拉","kind":"person_event","confidence":"high"},{"volume":2,"text":"被始祖何塞·阿尔卡蒂奥·布恩迪亚在决斗中刺死，化…","personId":"prudencio_agilar","personName":"普鲁邓希奥·阿吉拉尔","kind":"person_event","confidence":"high"},{"volume":2,"text":"随兄卡塔乌雷为避瘟疫来到马孔多，预言失眠症，长期…","personId":"visitacion","personName":"维希塔西翁","kind":"person_event","confidence":"high"},{"volume":3,"text":"马孔多镇长，蕾梅黛丝之父，将幼女许配长子何塞·阿…","personId":"apolinar_moscote","personName":"阿波利纳尔·摩斯科特","kind":"person_event","confidence":"high"},{"volume":3,"text":"长子何塞·阿尔卡蒂奥与庇拉尔·特尔内拉之私生子，…","personId":"arcadio","personName":"阿尔卡蒂奥","kind":"person_event","confidence":"high"},{"volume":3,"text":"随父母遗骨而来的孤女，初到时嗜食泥土与墙灰，经乌…","personId":"rebeca","personName":"丽贝卡","kind":"person_event","confidence":"high"},{"volume":4,"text":"意大利工匠/乐师，先后求爱丽贝卡与阿玛兰妲，屡遭…","personId":"pietro_crespi","personName":"皮埃特罗·克雷斯皮","kind":"person_event","confidence":"high"},{"volume":4,"text":"马孔多镇长阿波利纳尔·摩斯科特之幼女，长子何塞·…","personId":"remedios_moscote","personName":"蕾梅黛丝·摩斯科特","kind":"person_event","confidence":"high"},{"volume":5,"text":"上校与庇拉尔·特尔内拉之子。恋慕姑母阿玛兰妲，被…","personId":"aureliano_jose","personName":"奥雷里亚诺·何塞","kind":"person_event","confidence":"high"},{"volume":6,"text":"阿尔卡蒂奥之妻，生下美人蕾梅黛丝与双胞胎（何塞·…","personId":"santa_sofia","personName":"桑塔索菲亚·德拉·彼达","kind":"person_event","confidence":"high"},{"volume":7,"text":"双胞胎之一。与情妇佩特拉·科特斯纵情享乐，牲畜在…","personId":"aureliano_segundo","personName":"奥雷里亚诺第二","kind":"person_event","confidence":"high"},{"volume":7,"text":"双胞胎之一。香蕉公司罢工领袖，大屠杀唯一幸存者；…","personId":"jose_arcadio_segundo","personName":"何塞·阿尔卡蒂奥第二","kind":"person_event","confidence":"high"},{"volume":8,"text":"阿尔卡蒂奥与桑塔索菲亚之女，绝世美貌，拒斥一切求…","personId":"remedios_la_bella","personName":"蕾梅黛丝（美人）","kind":"person_event","confidence":"high"},{"volume":10,"text":"奥雷里亚诺第二之妻，出身衰败贵族，带来宗教禁欲风…","personId":"fernanda","personName":"费尔南达·德尔·卡皮奥","kind":"person_event","confidence":"high"},{"volume":10,"text":"奥雷里亚诺第二的情妇。其牲畜与爱情使家业兴旺，与…","personId":"petra_cotes","personName":"佩特拉·科特斯","kind":"person_event","confidence":"high"},{"volume":11,"text":"奥雷里亚诺第二与费尔南达之长女，习音乐，与机修工…","personId":"meme","personName":"梅梅（蕾娜塔·蕾梅黛丝）","kind":"person_event","confidence":"high"},{"volume":14,"text":"奥雷里亚诺第二与费尔南达幼女。欧洲归国带回丈夫加…","personId":"amaranta_ursula","personName":"阿玛兰妲·乌尔苏拉","kind":"person_event","confidence":"high"},{"volume":14,"text":"梅梅的恋人，周身黄蝴蝶环绕；被费尔南达买通武修炼…","personId":"mauricio_babilonia","personName":"马乌里肖·巴比洛尼亚","kind":"person_event","confidence":"high"},{"volume":18,"text":"奥雷里亚诺第二与费尔南达之子，被送罗马习神学、望…","personId":"jose_arcadio_rome","personName":"何塞·阿尔卡蒂奥（罗马）","kind":"person_event","confidence":"high"},{"volume":19,"text":"阿玛兰妲·乌尔苏拉的丈夫，比利时人；筹划航空邮政…","personId":"gaston","personName":"加斯通","kind":"person_event","confidence":"high"},{"volume":19,"text":"末代奥雷里亚诺常去的妓院老鸨兼慰藉者，助其筹措生…","personId":"nigromanta","personName":"尼格罗曼塔","kind":"person_event","confidence":"high"}]}};
+window.LKG={"config":{"bookId":"bainiangu","title":"百年孤独 · 人物关系图谱","shortTitle":"人物关系图谱","fullTitle":"百年孤独 · 人物关系图谱","subtitle":"加西亚·马尔克斯 著 · 中译通行本","chapterMode":"part","volumeCount":7,"volumeLabels":["第一代","第二代","第三代","第四代","第五代","第六代","第七代"],"views":["network","family","social","timeline"],"defaultView":"network","searchPlaceholder":"搜索人物：布恩迪亚 / 乌尔苏拉 / 奥雷里亚诺…","relationTypes":[{"label":"婚姻","color":"#2A251E","dash":"solid","w":2.6,"group":"core","note":"夫妻"},{"label":"亲属","color":"#6E6455","dash":"solid","w":1.5,"group":"core","note":"父母子女·兄弟姐妹·祖孙"},{"label":"养亲","color":"#7A6A3E","dash":"dotted","w":1.4,"group":"core","note":"收养"},{"label":"爱慕","color":"#B0442E","dash":"dashed","w":2,"group":"core","note":"恋人·情妇"},{"label":"对立","color":"#A07A2B","dash":"dashed","w":1.6,"group":"core","note":"仇敌·情敌"},{"label":"友谊","color":"#4E6E63","dash":"solid","w":1.4,"group":"sup","note":"挚友·战友"},{"label":"主仆","color":"#8F897C","dash":"dotted","w":1.1,"group":"sup","note":"雇佣·服侍"},{"label":"神话渊源","color":"#6D5B8C","dash":"dashed","w":1.4,"group":"sup","note":"羊皮卷·隔世"},{"label":"交往","color":"#9E5A68","dash":"dotted","w":1,"group":"sup","note":"求情·继任·鼓动"}],"circles":[{"name":"第一代","color":"#2F5D52"},{"name":"第二代","color":"#3E6B5E"},{"name":"第三代","color":"#57795F"},{"name":"第四代","color":"#718867"},{"name":"第五代","color":"#8E8B52"},{"name":"第六代","color":"#A98A4B"},{"name":"第七代","color":"#B0542E"},{"name":"关联人物","color":"#8A8172"},{"name":"神话人物","color":"#6D5B8C"},{"name":"布恩迪亚家族","color":"#3E6B5E"}],"excludedFamily":"","attribution":"项目基源：加西亚·马尔克斯《百年孤独》（Cien años de soledad, 1967）中译通行本（EPUB 底本核对中文译名与首次出场章）。数据出自百年孤独人物关系图谱工程（2026-10-10 提取）。「十七个奥雷里亚诺」按原著统称聚合为群体节点。","legendDataNote":"来源：《百年孤独》中译通行本人物关系图谱（2026-10-10）。<br>群体/地点节点按原数据保留；可点击关系查看证据。","appName":"百年孤独·人物关系图谱","version":"v1.0","exportPrefix":"百年孤独-关系图","engineVersion":"LKG v1.0","headerTitle":"百年孤独","extract_chapters":false},"data":{"people":[{"id":"hb","name":"何塞·阿尔卡蒂奥·布恩迪亚","aliases":["José Arcadio Buendía","老布恩迪亚","族长"],"identity":"马孔多创建者·族长","family":"布恩迪亚家族","circles":["第一代","布恩迪亚家族"],"importance":3,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"与表妹乌尔苏拉成婚，因斗鸡决斗刺死普鲁邓希奥·阿基拉尔，率众出走创建马孔多。痴迷磁铁、放大镜与炼金术，晚年精神失常，被绑在院中栗树上死去。","events":[{"v":1,"t":"斗鸡决斗中刺死普鲁邓希奥·阿吉拉尔，随后率众离开里奥阿查，创建马孔多"},{"v":1,"t":"痴迷磁铁、放大镜与炼金术，把家宅变成实验室"},{"v":2,"t":"精神失常，被家人绑在院中栗树下，多年后死去"}],"group":false,"generation":"第一代","kin":false},{"id":"ursula","name":"乌尔苏拉·伊瓜兰","aliases":["Úrsula Iguarán","乌苏拉（异译）"],"identity":"女族长·家族支柱","family":"布恩迪亚家族","circles":["第一代","布恩迪亚家族"],"importance":3,"firstAppearance":1,"volumes":[1,2,3,4,5,6],"confidence":"high","description":"操持家业逾百年，靠卖糖果小动物积攒家底，数度重整家宅；晚年失明仍凭记忆行走，是家族唯一的活历史。","events":[{"v":1,"t":"随丈夫出走创建马孔多，靠卖糖果小动物攒下家底"},{"v":3,"t":"历经战乱与香蕉公司入侵，数度重整家宅"},{"v":5,"t":"双目失明，仍凭记忆与气味在家中行走，成为家族唯一的活历史"},{"v":6,"t":"在漫长的雨季中萎缩成胎儿大小，安然死去"}],"group":false,"generation":"第一代","kin":false},{"id":"jose1","name":"何塞·阿尔卡蒂奥（长子）","aliases":["José Arcadio","大何塞·阿尔卡蒂奥"],"identity":"长子·浪游者","family":"布恩迪亚家族","circles":["第二代","布恩迪亚家族"],"importance":3,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"生于迁徙途中，随吉卜赛人出走多年，归来时遍体纹身、食量惊人；与养妹丽贝卡成婚，后被不明来处的枪弹击毙。","events":[{"v":2,"t":"随吉卜赛人出走多年，归来时遍体纹身、食量惊人"},{"v":2,"t":"与养妹丽贝卡成婚，被乌尔苏拉逐出家门"},{"v":2,"t":"被不明来处的枪弹击毙，屋内久久不散火药味"}],"group":false,"generation":"第二代","kin":false},{"id":"col","name":"奥雷里亚诺·布恩迪亚上校","aliases":["Coronel Aureliano Buendía","奥雷里亚诺·布恩迪亚","上校"],"identity":"自由党上校·三十二场起义","family":"布恩迪亚家族","circles":["第二代","布恩迪亚家族"],"importance":3,"firstAppearance":2,"volumes":[2,3,4],"confidence":"high","description":"睁着眼睛出生、自幼能预感祸事；娶里正幼女蕾梅黛丝，内战后成为自由军上校，三十二场起义无一成功。晚年闭门熔铸小金鱼，做满二十五条再化掉重做。","events":[{"v":2,"t":"睁着眼睛出生，自幼能预感祸事"},{"v":2,"t":"娶里正幼女蕾梅黛丝，妻子误饮毒咖啡身亡"},{"v":3,"t":"发动三十二场武装起义，全部失败，官至革命军上校"},{"v":3,"t":"十七个私生子先后来马孔多认父"},{"v":4,"t":"晚年闭门熔铸小金鱼，做满二十五条再化掉重做"},{"v":4,"t":"在院中栗树下小便时死去，与父亲同一处"}],"group":false,"generation":"第二代","kin":false},{"id":"amar","name":"阿玛兰妲","aliases":["Amaranta Buendía","阿玛兰塔（异译）"],"identity":"次女·终身不嫁","family":"布恩迪亚家族","circles":["第二代","布恩迪亚家族"],"importance":3,"firstAppearance":2,"volumes":[2,3,4],"confidence":"high","description":"与丽贝卡争爱皮埃特罗，投毒时误杀蕾梅黛丝；用炭火自伤一手、缠黑纱终身不嫁，余生反复缝织自己的殓衣。","events":[{"v":2,"t":"与丽贝卡争夺皮埃特罗·克雷斯皮，屡屡作梗拖延婚事"},{"v":2,"t":"在咖啡里下鸦片酊欲害丽贝卡，却毒死了蕾梅黛丝"},{"v":2,"t":"用炭火自伤一手，缠上黑纱，从此终身不嫁"},{"v":4,"t":"缝完自己的殓衣后平静死去"}],"group":false,"generation":"第二代","kin":false},{"id":"reb","name":"丽贝卡","aliases":["Rebeca","吃土的女孩","雷贝卡（异译）"],"identity":"养女·吃土的孤女","family":"布恩迪亚家族","circles":["第二代","布恩迪亚家族"],"importance":3,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"十一岁带着父母骨灰袋被送到布恩迪亚家，有吃泥土与墙灰的怪癖；与皮埃特罗订婚后移情何塞·阿尔卡蒂奥，丈夫死后闭门不出，孤独老死。","events":[{"v":2,"t":"十一岁带着父母骨灰袋被送到布恩迪亚家，有吃泥土与墙灰的怪癖"},{"v":2,"t":"与皮埃特罗订婚后移情何塞·阿尔卡蒂奥，并与之成婚"},{"v":2,"t":"丈夫死后闭门不出，孤独老死"}],"group":false,"generation":"第二代","kin":false},{"id":"arc","name":"阿尔卡蒂奥","aliases":["Arcadio","何塞·阿尔卡蒂奥（私生子）","小阿尔卡蒂奥"],"identity":"私生子·马孔多军政首领","family":"布恩迪亚家族","circles":["第三代","布恩迪亚家族"],"importance":2,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"何塞·阿尔卡蒂奥与庇拉尔之子，始终不知生母是谁，狂热地爱上庇拉尔本人。被自由派任命为马孔多军政首领后专横暴虐，终被保守派军队枪决。","events":[{"v":3,"t":"被自由派任命为马孔多军政首领，专横暴虐"},{"v":3,"t":"被保守派军队枪决，尸体被示众"}],"group":false,"generation":"第三代","kin":false},{"id":"ajo","name":"奥雷里亚诺·何塞","aliases":["Aureliano José"],"identity":"私生子·军营书信人","family":"布恩迪亚家族","circles":["第三代","布恩迪亚家族"],"importance":2,"firstAppearance":3,"volumes":[3,4],"confidence":"high","description":"上校与庇拉尔之子，由姑母阿玛兰妲抚养长大，终生苦恋她而不得；参军后仍不能忘情，最终在马孔多街头被保守派上尉阿基莱斯·里卡多枪杀。","events":[{"v":3,"t":"由姑母阿玛兰妲抚养长大，终生苦恋她而不得"},{"v":3,"t":"在马孔多街头被保守派上尉阿基莱斯·里卡多枪杀"}],"group":false,"generation":"第三代","kin":false},{"id":"d17","name":"奥雷里亚诺上校的十七个儿子","aliases":["十七个奥雷里亚诺","十七个私生子","额印灰十字的十七人"],"identity":"群体节点·十七个私生子","family":"布恩迪亚家族","circles":["第三代","布恩迪亚家族"],"importance":2,"firstAppearance":3,"volumes":[3,4],"confidence":"high","description":"上校征战期间与十七位女子所生，额上均有洗不掉的灰十字，先后来马孔多寻根，一星期内被政府警察逐一暗杀。其中奥雷里亚诺·特里斯特修通铁路、把火车引进马孔多。按原著统称合并为一个节点，不拆分为十七人。","events":[{"v":3,"t":"十七人先后来马孔多认父，额上灰十字洗不掉"},{"v":3,"t":"一周之内几乎全被政府警察逐一暗杀，仅个别人失踪幸存"}],"group":true,"generation":"第三代","kin":false},{"id":"rlb","name":"美人儿蕾梅黛丝","aliases":["Remedios la Bella","蕾梅黛丝·布恩迪亚","俏姑娘蕾梅黛丝"],"identity":"第四代长女·白日升天者","family":"布恩迪亚家族","circles":["第四代","布恩迪亚家族"],"importance":2,"firstAppearance":4,"volumes":[4],"confidence":"high","description":"美貌惊人却不谙世事，终日在浴室里消磨时间，身上气味能致男人丧命；三月的一个下午抓着床单升天而去，从此消失。","events":[{"v":4,"t":"美貌惊动远近，多名男子因她丧命"},{"v":4,"t":"三月的一个下午抓着床单升天而去，从此消失"}],"group":false,"generation":"第四代","kin":false},{"id":"jas","name":"何塞·阿尔卡蒂奥第二","aliases":["José Arcadio Segundo"],"identity":"孪生兄·香蕉公司罢工领袖","family":"布恩迪亚家族","circles":["第四代","布恩迪亚家族"],"importance":2,"firstAppearance":4,"volumes":[4,5,6],"confidence":"high","description":"双胞胎之一，在香蕉公司当监工并鼓动工人罢工，亲历三千余人被屠杀而独活。余生闭门研读羊皮手稿，与孪生兄弟同日死去。","events":[{"v":4,"t":"在香蕉公司当监工，暗中鼓动工人罢工"},{"v":5,"t":"亲历三千余人被机枪扫射的集体屠杀，是唯一坚持此事的人"},{"v":6,"t":"余生闭关研读羊皮手稿，与孪生兄弟同日死去"}],"group":false,"generation":"第四代","kin":false},{"id":"as2","name":"奥雷里亚诺第二","aliases":["Aureliano Segundo"],"identity":"孪生弟·牲畜繁殖者","family":"布恩迪亚家族","circles":["第四代","布恩迪亚家族"],"importance":3,"firstAppearance":4,"volumes":[4,5,6],"confidence":"high","description":"双胞胎之一，与情妇佩特拉同居时牲畜疯狂繁殖而暴富，钱多到糊墙；娶费尔南达后家业渐败，与孪生兄弟同日死去。","events":[{"v":4,"t":"与佩特拉·科特斯同居，牲畜疯狂繁殖，暴富到用钱糊墙"},{"v":4,"t":"娶费尔南达·德尔·卡皮奥，家业自此渐渐败落"},{"v":6,"t":"与孪生兄弟同日死去，两人下葬时被抬错了坟"}],"group":false,"generation":"第四代","kin":false},{"id":"au","name":"阿玛兰妲·乌尔苏拉","aliases":["Amaranta Úrsula"],"identity":"归乡者·家族最后的母亲","family":"布恩迪亚家族","circles":["第五代","布恩迪亚家族"],"importance":3,"firstAppearance":5,"volumes":[5,6,7],"confidence":"high","description":"费尔南达幼女，在布鲁塞尔求学并与加斯通成婚，归乡后三月之内重整荒宅；与侄甥奥雷里亚诺相恋，生下长猪尾巴的男孩后大出血而死。","events":[{"v":5,"t":"赴布鲁塞尔求学，与加斯通成婚"},{"v":6,"t":"归乡后三个月内重整荒宅"},{"v":6,"t":"与侄甥奥雷里亚诺相恋，生下长猪尾巴的男孩后大出血而死"}],"group":false,"generation":"第五代","kin":false},{"id":"jarc","name":"小何塞·阿尔卡蒂奥","aliases":["何塞·阿尔卡蒂奥（罗马）","何塞·阿尔卡蒂奥（第五代）"],"identity":"神学院学生·败家之子","family":"布恩迪亚家族","circles":["第五代","布恩迪亚家族"],"importance":2,"firstAppearance":5,"volumes":[5,6],"confidence":"high","description":"被母亲送往罗马学神学，却谎称在神学院以便继承遗产；回乡后变卖家产度日，发现乌尔苏拉埋藏的金币后纵情挥霍，被抢金币的歹徒溺死在水池。","events":[{"v":5,"t":"被母亲送往罗马学神职，却一直谎称在神学院"},{"v":6,"t":"归乡后变卖家产，发现乌尔苏拉埋藏的金币后纵情挥霍，被歹徒溺死在水池"}],"group":false,"generation":"第五代","kin":false},{"id":"meme","name":"梅梅","aliases":["雷纳塔·蕾梅黛丝","Renata Remedios","梅梅·布恩迪亚"],"identity":"修女院中的母亲","family":"布恩迪亚家族","circles":["第五代","布恩迪亚家族"],"importance":3,"firstAppearance":5,"volumes":[5,6],"confidence":"high","description":"费尔南达次女，与美国姑娘们往来，爱上香蕉公司机修工马乌里肖·巴比洛尼亚；恋情被母亲拆散后送入修道院，终生沉默，老死于异国医院。","events":[{"v":5,"t":"与美国姑娘往来，爱上香蕉公司机修工马乌里肖·巴比洛尼亚"},{"v":5,"t":"恋情被母亲拆散，被送入修道院，终生沉默"}],"group":false,"generation":"第五代","kin":false},{"id":"aur6","name":"奥雷里亚诺·巴比洛尼亚","aliases":["Aureliano Babilonia","奥雷里亚诺·巴比伦尼亚（异译）","小奥雷里亚诺","破译羊皮卷者"],"identity":"羊皮卷破译者","family":"布恩迪亚家族","circles":["第六代","布恩迪亚家族"],"importance":3,"firstAppearance":6,"volumes":[6,7],"confidence":"high","description":"梅梅与马乌里肖的私生子，被外祖母藏在家中抚养，终生埋头梅尔基亚德斯的房间研读梵文羊皮卷；与姨母阿玛兰妲·乌尔苏拉相恋，最终译出家族预言，与马孔多一同被飓风抹去。","events":[{"v":6,"t":"被外祖母藏在家中抚养，终生埋头研读梵文羊皮卷"},{"v":7,"t":"与姨母阿玛兰妲·乌尔苏拉相恋，生下家族末代"},{"v":7,"t":"译出羊皮卷全部预言，马孔多在同一刻被飓风抹去"}],"group":false,"generation":"第六代","kin":false},{"id":"aur7","name":"奥雷里亚诺（末代）","aliases":["长猪尾巴的孩子","罗德里戈（乌尔苏拉提议之名）"],"identity":"家族末代","family":"布恩迪亚家族","circles":["第七代","布恩迪亚家族"],"importance":1,"firstAppearance":7,"volumes":[7],"confidence":"high","description":"阿玛兰妲·乌尔苏拉与奥雷里亚诺所生，是家族百年中唯一因爱情受胎的婴儿，生来带着一条猪尾巴，被蚂蚁拖走吃掉。","events":[{"v":7,"t":"生来带着一条猪尾巴，是家族百年中唯一因爱情受胎的婴儿"},{"v":7,"t":"被蚂蚁拖走吃掉，马孔多随之消失"}],"group":false,"generation":"第七代","kin":false},{"id":"mel","name":"梅尔基亚德斯","aliases":["Melquíades","吉卜赛智者","羊皮卷的作者"],"identity":"吉卜赛头人·预言者","family":"神话人物","circles":["神话人物","第一代"],"importance":3,"firstAppearance":1,"volumes":[1,2,3,6,7],"confidence":"high","description":"吉卜赛部落的头人，带来磁铁、放大镜与炼金术，留下写满家族命运的梵文羊皮卷；死后仍与布恩迪亚家的后人隔世对谈，指引其破译手稿。","events":[{"v":1,"t":"随吉卜赛部落来到马孔多，带来磁铁、放大镜与炼金术"},{"v":2,"t":"死于热病，又因不堪孤独而复活，住进布恩迪亚家"},{"v":3,"t":"再次死去，留下写满梵文预言的羊皮卷"},{"v":6,"t":"其房间在家族末代手中重新被打开，手稿开始被破译"}],"group":false,"generation":"跨代","kin":false},{"id":"pilar","name":"庇拉尔·特尔内拉","aliases":["Pilar Ternera","纸牌占卜的女人"],"identity":"纸牌占卜者·妓院主","family":"关联人物","circles":["第一代","关联人物"],"importance":2,"firstAppearance":1,"volumes":[1,2,3,4,6],"confidence":"high","description":"马孔多创建者之一，以纸牌算命为生，先后成为何塞·阿尔卡蒂奥与上校的情人，生下阿尔卡蒂奥与奥雷里亚诺·何塞；活到一百四十余岁，死在藤摇椅上。","events":[{"v":2,"t":"以纸牌算命为生，先后成为何塞·阿尔卡蒂奥与上校的情人"},{"v":3,"t":"生下阿尔卡蒂奥与奥雷里亚诺·何塞，却始终未被认作母亲"},{"v":6,"t":"活到一百四十余岁，死在藤摇椅上"}],"group":false,"generation":"第一至六代","kin":false},{"id":"rmos","name":"蕾梅黛丝·摩斯科特","aliases":["Remedios Moscote"],"identity":"里正幼女·上校之妻","family":"关联人物","circles":["第二代","关联人物"],"importance":2,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"里正阿波利纳尔·摩斯科特的女儿，十四岁嫁给上校，怀双胞胎时误饮阿玛兰妲为丽贝卡准备的鸦片酊而死。","events":[{"v":2,"t":"十四岁嫁给上校，怀上双胞胎"},{"v":2,"t":"误饮阿玛兰妲为丽贝卡准备的鸦片酊而死"}],"group":false,"generation":"第二代","kin":false},{"id":"sof","name":"桑塔索菲亚·德拉·彼达","aliases":["Santa Sofía de la Piedad","桑塔索菲亚"],"identity":"阿尔卡蒂奥的伴侣·家中劳力","family":"布恩迪亚家族","circles":["第三代","布恩迪亚家族"],"importance":2,"firstAppearance":3,"volumes":[3,4,5,6],"confidence":"high","description":"庇拉尔为阿尔卡蒂奥招来的女子，生下美人儿蕾梅黛丝与双胞胎；丈夫被枪决后在布恩迪亚家操劳一生，晚年悄然出走，再无人知其下落。","events":[{"v":3,"t":"被庇拉尔送给阿尔卡蒂奥，生下三个子女"},{"v":6,"t":"在布恩迪亚家操劳一生后悄然出走，再无人知其下落"}],"group":false,"generation":"第三至六代","kin":true},{"id":"fern","name":"费尔南达·德尔·卡皮奥","aliases":["Fernanda del Carpio"],"identity":"没落贵族之妻·家宅女主人","family":"布恩迪亚家族","circles":["第四代","布恩迪亚家族"],"importance":3,"firstAppearance":4,"volumes":[4,5,6],"confidence":"high","description":"出身内陆地主的没落贵族之家，嫁给奥雷里亚诺第二后用繁复礼仪统治家宅；拆散女儿梅梅的恋情，把私生外孙藏了半生。","events":[{"v":4,"t":"由父母送嫁到马孔多，以繁复礼仪统治家宅"},{"v":5,"t":"拆散女儿梅梅与马乌里肖，把梅梅送进修道院"},{"v":6,"t":"死守空宅，把私生外孙藏在房中抚养"}],"group":false,"generation":"第四至六代","kin":true},{"id":"petra","name":"佩特拉·科特斯","aliases":["Petra Cotes"],"identity":"奥雷里亚诺第二的情妇","family":"关联人物","circles":["第四代","关联人物"],"importance":2,"firstAppearance":4,"volumes":[4,5,6],"confidence":"high","description":"奥雷里亚诺第二的情妇，与他同居时家中牲畜奇迹般繁殖；家业败落后仍暗中接济费尔南达一家，直至为他送葬。","events":[{"v":4,"t":"与奥雷里亚诺第二同居，家中牲畜奇迹般繁殖"},{"v":6,"t":"家业败落后仍暗中接济费尔南达一家，最后为他送葬"}],"group":false,"generation":"第四至六代","kin":false},{"id":"gas","name":"加斯通","aliases":["Gastón"],"identity":"阿玛兰妲·乌尔苏拉的丈夫","family":"布恩迪亚家族","circles":["第六代","布恩迪亚家族"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"阿玛兰妲·乌尔苏拉在布鲁塞尔结识的丈夫，随她回到马孔多，带来飞机与各种机械，最终独自返回欧洲。","events":[{"v":6,"t":"随妻子阿玛兰妲·乌尔苏拉回到马孔多，带来飞机与各种机械"},{"v":6,"t":"久等零件不至，最终独自返回欧洲"}],"group":false,"generation":"第六代","kin":true},{"id":"mau","name":"马乌里肖·巴比洛尼亚","aliases":["Mauricio Babilonia","巴比伦（异译）"],"identity":"香蕉公司机修工","family":"关联人物","circles":["第五代","关联人物"],"importance":2,"firstAppearance":5,"volumes":[5],"confidence":"high","description":"香蕉公司汽修厂的学徒，梅梅的恋人，走到哪里都有黄蝴蝶跟随；夜入浴室相会时被守夜人当作偷鸡贼开枪击伤，卧床至死。","events":[{"v":5,"t":"香蕉公司机修工，走到哪里都有黄蝴蝶跟随"},{"v":5,"t":"夜入浴室与梅梅相会，被守门人开枪击伤，卧床而死"}],"group":false,"generation":"第五代","kin":false},{"id":"pie","name":"皮埃特罗·克雷斯皮","aliases":["Pietro Crespi","克列斯比（异译）","意大利钢琴师"],"identity":"意大利钢琴技师","family":"关联人物","circles":["第二代","关联人物"],"importance":2,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"为布恩迪亚家安装自动钢琴的意大利人，先后与丽贝卡、阿玛兰妲相恋，两次求爱皆被拒，最终在乐器店里割腕自尽。","events":[{"v":2,"t":"为布恩迪亚家安装自动钢琴，教习舞蹈"},{"v":2,"t":"两次求婚皆被拒，在乐器店里割腕自尽"}],"group":false,"generation":"第二代","kin":false},{"id":"ger","name":"赫里内勒多·马尔克斯","aliases":["Gerineldo Márquez","格林列尔多·马克斯（异译）"],"identity":"上校的战友·马孔多军政首领","family":"关联人物","circles":["第二代","关联人物"],"importance":2,"firstAppearance":2,"volumes":[2,3,4],"confidence":"high","description":"马孔多建村元老之子，随上校转战多年，官至上校，曾任马孔多军政首领；苦恋阿玛兰妲多年终被拒绝，晚年孤独等待一封永不到来的抚恤信。","events":[{"v":3,"t":"随上校转战多年，官至上校，曾任马孔多军政首领"},{"v":4,"t":"苦恋阿玛兰妲多年终被拒绝"},{"v":4,"t":"晚年孤独等待一封永不到来的抚恤信"}],"group":false,"generation":"第二至四代","kin":false},{"id":"pru","name":"普鲁邓希奥·阿基拉尔","aliases":["Prudencio Aguilar","阿吉拉尔（异译）"],"identity":"被刺死的村邻·鬼魂","family":"关联人物","circles":["第一代","关联人物"],"importance":1,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"与何塞·阿尔卡蒂奥·布恩迪亚因斗鸡结怨，决斗中被长矛刺穿咽喉；死后鬼魂追随他到马孔多，晚年常与他隔空交谈。","events":[{"v":1,"t":"因斗鸡与何塞·阿尔卡蒂奥·布恩迪亚结怨，决斗中被长矛刺穿咽喉"},{"v":1,"t":"死后鬼魂追随他到马孔多，晚年常与他隔空交谈"}],"group":false,"generation":"第一代","kin":false},{"id":"mos","name":"堂阿波利纳尔·摩斯科特","aliases":["Apolinar Moscote","里正","镇长"],"identity":"政府委派的里正","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"政府派到马孔多的里正，带着七个女儿与成车家具进驻，强令家家把房屋漆成蓝色；后被掌权的阿尔卡蒂奥挟持羞辱。","events":[{"v":2,"t":"带七个女儿与成车家具进驻马孔多，强令各家把房屋漆成蓝色"},{"v":3,"t":"阿尔卡蒂奥掌权时被从家中拖出，被迫交出权柄"}],"group":false,"generation":"第二代","kin":false},{"id":"amp","name":"安帕萝·摩斯科特","aliases":["Amparo Moscote"],"identity":"里正长女","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2],"confidence":"high","description":"蕾梅黛丝的姐姐，随父亲来到马孔多，后嫁给布鲁诺·克雷斯皮，成为克雷斯皮家在马孔多的女主人。","events":[{"v":2,"t":"随父亲来到马孔多，与妹妹蕾梅黛丝一同被人议论"},{"v":2,"t":"嫁给意大利人布鲁诺·克雷斯皮"}],"group":false,"generation":"第二代","kin":false},{"id":"vis","name":"比西塔西翁","aliases":["Visitación","维希塔西翁（异译）"],"identity":"瓜希拉印第安女仆","family":"关联人物","circles":["第一代","关联人物"],"importance":1,"firstAppearance":1,"volumes":[1,2],"confidence":"high","description":"为逃避故乡蔓延的失眠症，与弟弟卡塔乌雷流亡到马孔多，被乌尔苏拉收留；能解梦、识预兆，照料布恩迪亚家的孩子长大。","events":[{"v":1,"t":"为逃避故乡蔓延的失眠症，与弟弟流亡到马孔多"},{"v":1,"t":"照料布恩迪亚家的孩子，并从梦中认出失眠症的征兆"}],"group":false,"generation":"第一代","kin":false},{"id":"cat","name":"卡塔乌雷","aliases":["Cataure"],"identity":"印第安男仆·出逃者","family":"关联人物","circles":["第一代","关联人物"],"importance":1,"firstAppearance":1,"volumes":[1],"confidence":"high","description":"比西塔西翁的弟弟，随姐姐流亡马孔多；失眠症蔓延全镇时独自逃回故乡，留下姐姐一人在布恩迪亚家。","events":[{"v":1,"t":"失眠症蔓延全镇时独自逃回故乡，留下姐姐一人在此"}],"group":false,"generation":"第一代","kin":false},{"id":"fra","name":"好汉弗朗西斯科","aliases":["Francisco el Hombre"],"identity":"游走大泽区的说唱艺人","family":"关联人物","circles":["第一代","关联人物"],"importance":1,"firstAppearance":1,"volumes":[1,2],"confidence":"high","description":"据说两百岁的游吟歌手，带着手风琴往来于沼泽各村镇，与何塞·阿尔卡蒂奥·布恩迪亚对歌；是把外界消息带进马孔多的人。","events":[{"v":1,"t":"带着手风琴往来于沼泽各村，与老布恩迪亚对歌"},{"v":1,"t":"把外界的消息与歌曲带进尚与世隔绝的马孔多"}],"group":false,"generation":"第一代","kin":false},{"id":"kat","name":"卡塔利诺","aliases":["Catarino"],"identity":"马孔多妓院老板","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"在马孔多开设妓院，用手风琴与留声机招揽客人；何塞·阿尔卡蒂奥的旧部与上校麾下士兵都曾出入其间。","events":[{"v":2,"t":"在马孔多开店，用手风琴与留声机招揽客人"}],"group":false,"generation":"第二至三代","kin":false},{"id":"mag","name":"马格尼菲科·比斯巴勒","aliases":["Magnifico Visbal"],"identity":"上校的挚友·元老之子","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"马孔多建村元老的儿子，上校最亲密的朋友之一，随他一同参军；在马纳乌雷军营中被敌方刺客误认作上校而刺死。","events":[{"v":3,"t":"随上校参军，在马纳乌雷军营中被敌方刺客误认作上校而刺死"}],"group":false,"generation":"第二代","kin":false},{"id":"nic","name":"尼卡诺尔·雷伊纳","aliases":["Nicanor Reyna","尼卡诺尔神甫"],"identity":"首任本堂神甫·升空者","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"来自大泽区的神甫，为证明上帝的存在，当众喝下一杯巧克力便离地升空；此后留在马孔多建教堂，年老后神智昏乱。","events":[{"v":2,"t":"当众喝下一杯巧克力后离地升空，以此证明上帝的存在"},{"v":3,"t":"留在马孔多募款修建教堂，年老后神智昏乱"}],"group":false,"generation":"第二代","kin":false},{"id":"cor","name":"科罗奈尔","aliases":["Coronel","科罗奈尔神甫"],"identity":"尼卡诺尔的继任本堂","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"尼卡诺尔·雷伊纳的继任者，第一次内战后接掌马孔多堂区，在自由派当局与教会之间周旋。","events":[{"v":3,"t":"第一次内战后接掌马孔多堂区，在军政当局与教会之间周旋"}],"group":false,"generation":"第三代","kin":false},{"id":"mel2","name":"堂梅尔乔·埃斯卡洛纳","aliases":["Melchor Escalona"],"identity":"战后学校负责人","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"第一次内战后重建的马孔多学校负责人，主持复课与庆典，与军政当局往来周旋。","events":[{"v":3,"t":"第一次内战后主持马孔多学校复课与庆典"}],"group":false,"generation":"第三代","kin":false},{"id":"nog","name":"阿利黎奥·诺格拉","aliases":["Alirio Noguera","阿利里奥·诺格拉（异译）"],"identity":"假冒医生的自由派","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"自由派人士，逃亡到马孔多后假冒医生行医，暗中鼓动镇民造反；不久被政府军枪毙，尸体示众。","events":[{"v":3,"t":"假冒医生在马孔多行医，暗中鼓动镇民造反，后被枪决示众"}],"group":false,"generation":"第三代","kin":false},{"id":"med","name":"维多利奥·梅迪纳","aliases":["Victorio Medina","梅迪纳将军"],"identity":"自由军将领","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"自由派革命军将领，在里奥阿查被政府军处决；上校曾率七人驰援营救而未果，此事使他再度兴兵。","events":[{"v":3,"t":"自由军将领，在里奥阿查被政府军处决"},{"v":3,"t":"上校率七人驰援营救未果，此事使他再度兴兵"}],"group":false,"generation":"第三代","kin":false},{"id":"bru","name":"布鲁诺·克雷斯皮","aliases":["Bruno Crespi"],"identity":"皮埃特罗之弟·剧院建造者","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2,3],"confidence":"high","description":"随兄长来到马孔多的意大利人，接管乐器玩具店，娶安帕萝·摩斯科特为妻，后来出资建起马孔多的剧院。","events":[{"v":2,"t":"随兄长来到马孔多，接管乐器与玩具店"},{"v":3,"t":"娶安帕萝·摩斯科特为妻，出资建起马孔多的剧院"}],"group":false,"generation":"第二代","kin":false},{"id":"roq","name":"罗格·卡尔尼塞罗","aliases":["Roque Carnicero"],"identity":"政府军上尉·转投自由军","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"政府军上尉，奉命押解被俘的上校回马孔多执行死刑；途中被上校说服，转而投效自由军，随他转战各地。","events":[{"v":3,"t":"奉命押解被俘的上校回马孔多执行死刑"},{"v":3,"t":"途中被上校说服，转而投效自由军"}],"group":false,"generation":"第三代","kin":false},{"id":"arg","name":"阿尔赫尼妲","aliases":["Argénida"],"identity":"丽贝卡的女仆与心腹","family":"关联人物","circles":["第二代","关联人物"],"importance":1,"firstAppearance":2,"volumes":[2,3,4],"confidence":"high","description":"丽贝卡的女仆与心腹，在女主人闭门隐居的漫长岁月里替她采买、传话、守门，直至她孤独死去。","events":[{"v":2,"t":"在丽贝卡闭门隐居的岁月里替她采买、传话，直至她死去"}],"group":false,"generation":"第二至四代","kin":false},{"id":"mon","name":"何塞·拉克尔·蒙卡达","aliases":["José Raquel Moncada","蒙卡达将军"],"identity":"保守党将军·马孔多市长","family":"关联人物","circles":["第三代","关联人物"],"importance":2,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"保守党将军，第一次内战后出任马孔多市长，与上校私交甚好；第二次内战时被自由军判处死刑，乌尔苏拉率老妇上庭求情仍未能免。","events":[{"v":3,"t":"第一次内战后出任马孔多市长，与上校私交甚好"},{"v":3,"t":"第二次内战被自由军判处死刑，乌尔苏拉率老妇上庭求情未果"}],"group":false,"generation":"第三代","kin":false},{"id":"aqu","name":"阿基莱斯·里卡多","aliases":["Aquiles Ricardo"],"identity":"保守派上尉·驻军首领","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"保守派军人，马孔多驻军上尉，在街头开枪打死奥雷里亚诺·何塞；同一时刻，他自己也死于不明来处的枪击。","events":[{"v":3,"t":"在街头开枪打死奥雷里亚诺·何塞，同日自己也死于不明来处的枪击"}],"group":false,"generation":"第三代","kin":false},{"id":"car","name":"卡梅莉塔·蒙铁尔","aliases":["Carmelita Montiel"],"identity":"纸牌占卜女","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"在庇拉尔·特尔内拉处摆摊的纸牌占卜女，被许配给奥雷里亚诺·何塞过夜；约定的当晚，他已死在街头。","events":[{"v":3,"t":"被庇拉尔许配给奥雷里亚诺·何塞，约定的当晚他已死在街头"}],"group":false,"generation":"第三代","kin":false},{"id":"teo","name":"特奥菲洛·巴尔加斯","aliases":["Teófilo Vargas"],"identity":"起义军印第安将军","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"第二次内战中起义军的将军，印第安人出身，因内部权力之争，被上校的部下伏击身亡。","events":[{"v":3,"t":"第二次内战中因内部权力之争，被上校的部下伏击身亡"}],"group":false,"generation":"第三代","kin":false},{"id":"ant","name":"安东尼奥·伊莎贝尔","aliases":["Antonio Isabel","安东尼奥·伊莎贝尔神甫"],"identity":"高龄本堂神甫","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3,4],"confidence":"high","description":"接任马孔多堂区的老神甫，年迈昏聩，常在教堂里与幻影交谈；主持过镇上多场婚丧仪式。","events":[{"v":4,"t":"年迈昏聩，仍主持镇上多场婚丧仪式，常与幻影交谈"}],"group":false,"generation":"第三至四代","kin":false},{"id":"pet","name":"佩特洛尼奥","aliases":["Petronio"],"identity":"教堂圣器保管人·钟楼居民","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3,4],"confidence":"high","description":"马孔多教堂的圣器保管人，独居钟楼，负责敲钟与打理堂务；教堂的兴衰都在他眼下。","events":[{"v":4,"t":"独居教堂钟楼，负责敲钟与打理堂务"}],"group":false,"generation":"第三至四代","kin":false},{"id":"fdo","name":"堂费尔南多·德尔·卡皮奥","aliases":["Fernando del Carpio"],"identity":"费尔南达之父·没落贵族","family":"关联人物","circles":["第四代","关联人物"],"importance":1,"firstAppearance":4,"volumes":[4],"confidence":"high","description":"内陆某座没落庄园的主人，靠糊纸花与典当家什维持体面，把女儿费尔南达送进修道院受教育，一心盼她嫁入豪门。","events":[{"v":4,"t":"靠糊纸花与典当家什维持体面，把女儿送进修道院受教育"}],"group":false,"generation":"第四代","kin":false},{"id":"ren","name":"堂娜雷纳塔·阿尔戈特","aliases":["Renata Argote"],"identity":"费尔南达之母","family":"关联人物","circles":["第四代","关联人物"],"importance":1,"firstAppearance":4,"volumes":[4],"confidence":"high","description":"费尔南达的母亲，与丈夫一同在衰败的宅子里维持贵族排场，把全部体面寄托在女儿身上。","events":[{"v":4,"t":"与丈夫一同在衰败的宅子里维持贵族排场"}],"group":false,"generation":"第四代","kin":false},{"id":"herb","name":"赫伯特先生","aliases":["Herbert","赫伯特"],"identity":"美国香蕉商·马戏班主","family":"关联人物","circles":["第五代","关联人物"],"importance":1,"firstAppearance":5,"volumes":[5],"confidence":"high","description":"随马戏班来到马孔多的美国人，吃香蕉后断定此地宜种香蕉，随后引来资本与铁路，是香蕉公司进驻的开端。","events":[{"v":5,"t":"随马戏班来到马孔多，吃香蕉后断定此地宜种香蕉"},{"v":5,"t":"引来资本与铁路，是香蕉公司进驻马孔多的开端"}],"group":false,"generation":"第五代","kin":false},{"id":"bro","name":"杰克·布朗先生","aliases":["Jack Brown","布朗先生"],"identity":"香蕉公司老板","family":"关联人物","circles":["第五代","关联人物"],"importance":1,"firstAppearance":5,"volumes":[5,6],"confidence":"high","description":"香蕉公司的美国老板，住进专为他划出的隔离区，用电网与围墙把公司与小镇隔开；罢工时站在政府一边。","events":[{"v":5,"t":"率香蕉公司进驻马孔多，住进带电网与围墙的隔离区"},{"v":6,"t":"罢工时站在政府一边，公司撤离后仍留在镇上"}],"group":false,"generation":"第五至六代","kin":false},{"id":"gav","name":"洛伦索·加比兰","aliases":["Lorenzo Gavilán","加维兰上校"],"identity":"香蕉公司工会领袖","family":"关联人物","circles":["第五代","关联人物"],"importance":1,"firstAppearance":5,"volumes":[5],"confidence":"high","description":"曾在墨西哥革命中当上校的流亡者，隐居马孔多，成为香蕉公司工会的领导人之一；在罢工镇压的集体屠杀中死去。","events":[{"v":5,"t":"成为香蕉公司工会领袖之一，卷入罢工与谈判"},{"v":5,"t":"在罢工镇压的集体屠杀中死去"}],"group":false,"generation":"第五代","kin":false},{"id":"nig","name":"尼格罗曼妲","aliases":["Nigromanta","尼格罗曼塔（异译）"],"identity":"黑人妓女·六代的引路人","family":"关联人物","circles":["第六代","关联人物"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"住在马孔多下层的黑人妓女，教少年奥雷里亚诺认识女人；后来在集市摆摊，见证小镇最后的凋敝。","events":[{"v":6,"t":"教少年奥雷里亚诺认识女人，是他少年时代唯一的慰藉"},{"v":7,"t":"在集市摆摊，见证小镇最后的凋敝"}],"group":false,"generation":"第六代","kin":false},{"id":"alv","name":"阿尔瓦罗","aliases":["Álvaro"],"identity":"四友之一·书店常客","family":"关联人物","circles":["第六代","关联人物"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"马孔多最后的年轻人之一，与奥雷里亚诺每天下午在书店聚会；城毁之前第一个离开马孔多。","events":[{"v":6,"t":"与奥雷里亚诺每天下午在书店聚会"},{"v":7,"t":"城毁之前第一个离开马孔多"}],"group":false,"generation":"第六代","kin":false},{"id":"her","name":"赫尔曼","aliases":["Germán"],"identity":"四友之一","family":"关联人物","circles":["第六代","关联人物"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"与奥雷里亚诺、加夫列尔等人每日聚谈的朋友之一；城毁之前与阿尔丰索一道离开马孔多。","events":[{"v":7,"t":"城毁之前与阿尔丰索一同离开马孔多"}],"group":false,"generation":"第六代","kin":false},{"id":"alf","name":"阿尔丰索","aliases":["Alfonso"],"identity":"四友之一","family":"关联人物","circles":["第六代","关联人物"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"四人小圈子中的一员，与奥雷里亚诺在书店消磨下午；城毁之前与赫尔曼一同离开。","events":[{"v":7,"t":"城毁之前与赫尔曼一同离开马孔多"}],"group":false,"generation":"第六代","kin":false},{"id":"gab","name":"加夫列尔","aliases":["Gabriel","加夫列尔·马尔克斯"],"identity":"四友之一·与六代最亲近","family":"关联人物","circles":["第六代","关联人物"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"四友中与奥雷里亚诺最亲近的一个，后来离开马孔多去巴黎；书中形象常被视为作者本人的影子。","events":[{"v":6,"t":"四友中与奥雷里亚诺最亲近，常一同出入书店与妓院"},{"v":7,"t":"离开马孔多前往巴黎"}],"group":false,"generation":"第六代","kin":false},{"id":"cat2","name":"加泰罗尼亚智者","aliases":["加泰罗尼亚人","书店老板"],"identity":"书店主人·流亡老者","family":"关联人物","circles":["第六代","关联人物"],"importance":1,"firstAppearance":6,"volumes":[6],"confidence":"high","description":"在马孔多开书店的加泰罗尼亚流亡者，藏书与见识为四友所敬；晚年关闭书店返回故乡，不久便传来死讯。","events":[{"v":6,"t":"在马孔多开书店，藏书与见识为四友所敬"},{"v":7,"t":"关闭书店返回故乡，不久便传来死讯"}],"group":false,"generation":"第六代","kin":false},{"id":"pat","name":"帕特里夏·布朗","aliases":["Patricia Brown"],"identity":"梅梅的美国女友","family":"关联人物","circles":["第五代","关联人物"],"importance":1,"firstAppearance":5,"volumes":[5],"confidence":"high","description":"随香蕉公司家属来到马孔多的美国姑娘，与梅梅一同出入俱乐部与电影院，是梅梅那段短暂快活日子的同伴。","events":[{"v":5,"t":"与梅梅一同出入俱乐部、电影院与美国人的聚会"}],"group":false,"generation":"第五代","kin":false},{"id":"gre","name":"格雷戈里奥·史蒂文森","aliases":["Gregorio Stevenson"],"identity":"自由军上校·信使","family":"关联人物","circles":["第三代","关联人物"],"importance":1,"firstAppearance":3,"volumes":[3],"confidence":"high","description":"自由军上校，受上校之命潜入马孔多，向掌权的阿尔卡蒂奥传达战况并劝其投降；一个月后战死于马孔多。","events":[{"v":3,"t":"受上校之命潜入马孔多，向掌权的阿尔卡蒂奥传达战况"},{"v":3,"t":"一个月后战死于马孔多"}],"group":false,"generation":"第三代","kin":false}],"relationships":[{"id":"r_0001","source":"hb","target":"ursula","type":"婚姻","strength":5,"description":"夫妻·表兄妹","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0002","source":"hb","target":"jose1","type":"亲属","strength":5,"description":"父子","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0003","source":"hb","target":"col","type":"亲属","strength":5,"description":"父子","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0004","source":"hb","target":"amar","type":"亲属","strength":5,"description":"父女","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0005","source":"hb","target":"reb","type":"养亲","strength":5,"description":"收养","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0006","source":"hb","target":"pru","type":"对立","strength":4,"description":"决斗中将其刺死","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0007","source":"hb","target":"mel","type":"友谊","strength":3,"description":"吉卜赛老友·炼金术启蒙","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0008","source":"hb","target":"fra","type":"友谊","strength":3,"description":"对歌的老友","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0009","source":"ursula","target":"jose1","type":"亲属","strength":5,"description":"母子","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0010","source":"ursula","target":"col","type":"亲属","strength":5,"description":"母子","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0011","source":"ursula","target":"amar","type":"亲属","strength":5,"description":"母女","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0012","source":"ursula","target":"reb","type":"养亲","strength":5,"description":"收养","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0013","source":"ursula","target":"vis","type":"主仆","strength":2,"description":"收留为家中女仆","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0014","source":"ursula","target":"cat","type":"主仆","strength":2,"description":"收留为家中男仆","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0015","source":"ursula","target":"pru","type":"交往","strength":1,"description":"鬼魂寄居家中·时相对谈","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0016","source":"jose1","target":"reb","type":"婚姻","strength":5,"description":"夫妻","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0017","source":"jose1","target":"pilar","type":"爱慕","strength":4,"description":"情人","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0018","source":"jose1","target":"arc","type":"亲属","strength":5,"description":"父子·私生","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0019","source":"jose1","target":"col","type":"亲属","strength":5,"description":"兄弟","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0020","source":"jose1","target":"amar","type":"亲属","strength":5,"description":"兄妹","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0021","source":"col","target":"rmos","type":"婚姻","strength":5,"description":"夫妻","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0022","source":"col","target":"pilar","type":"爱慕","strength":4,"description":"情人","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0023","source":"col","target":"ajo","type":"亲属","strength":5,"description":"父子·私生","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0024","source":"col","target":"d17","type":"亲属","strength":5,"description":"父与十七个私生子","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0025","source":"col","target":"amar","type":"亲属","strength":5,"description":"兄妹","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0026","source":"col","target":"reb","type":"亲属","strength":5,"description":"养兄妹","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0027","source":"col","target":"arc","type":"亲属","strength":5,"description":"叔侄","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0028","source":"col","target":"ger","type":"友谊","strength":3,"description":"战友·挚友","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0029","source":"col","target":"mag","type":"友谊","strength":3,"description":"战友·挚友","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0030","source":"col","target":"mon","type":"对立","strength":4,"description":"判处其死刑·二人私交甚好","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0031","source":"col","target":"med","type":"友谊","strength":3,"description":"驰援未果的自由军将领","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0032","source":"col","target":"roq","type":"友谊","strength":3,"description":"被其押解后反收为部属","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0033","source":"col","target":"teo","type":"对立","strength":4,"description":"内讧中伏击其部","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0034","source":"col","target":"gre","type":"友谊","strength":3,"description":"部属·信使","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0035","source":"col","target":"kat","type":"交往","strength":1,"description":"部下常出入其妓院","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0036","source":"amar","target":"pie","type":"爱慕","strength":4,"description":"拒绝其求婚","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0037","source":"amar","target":"ger","type":"爱慕","strength":4,"description":"长年求爱被拒","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0038","source":"amar","target":"reb","type":"对立","strength":4,"description":"争爱皮埃特罗·终身宿怨","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0039","source":"amar","target":"ajo","type":"亲属","strength":5,"description":"姑母兼抚养者","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0040","source":"amar","target":"rmos","type":"对立","strength":4,"description":"投毒误杀·毒本为丽贝卡而设","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0041","source":"amar","target":"arc","type":"亲属","strength":5,"description":"姑侄","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0042","source":"reb","target":"pie","type":"爱慕","strength":4,"description":"未婚夫·后移情","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0043","source":"reb","target":"arg","type":"主仆","strength":2,"description":"女仆与心腹","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0044","source":"rmos","target":"mos","type":"亲属","strength":5,"description":"父女","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0045","source":"rmos","target":"amp","type":"亲属","strength":5,"description":"姐妹","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0046","source":"mos","target":"amp","type":"亲属","strength":5,"description":"父女","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0047","source":"mos","target":"arc","type":"对立","strength":4,"description":"被掌权的阿尔卡蒂奥挟持羞辱","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0048","source":"pie","target":"bru","type":"亲属","strength":5,"description":"兄弟","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0049","source":"bru","target":"amp","type":"婚姻","strength":5,"description":"夫妻","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0050","source":"vis","target":"cat","type":"亲属","strength":5,"description":"姐弟","volumes":[1],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0051","source":"nic","target":"ursula","type":"交往","strength":1,"description":"支持其建堂传教","volumes":[2],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0052","source":"nic","target":"cor","type":"交往","strength":1,"description":"继任其堂区","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0053","source":"cor","target":"ant","type":"交往","strength":1,"description":"再继其任","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0054","source":"arc","target":"pilar","type":"亲属","strength":5,"description":"母子","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0055","source":"arc","target":"sof","type":"爱慕","strength":4,"description":"终身伴侣·同居未行仪式","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0056","source":"arc","target":"rlb","type":"亲属","strength":5,"description":"父女","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0057","source":"arc","target":"jas","type":"亲属","strength":5,"description":"父子","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0058","source":"arc","target":"as2","type":"亲属","strength":5,"description":"父子","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0059","source":"arc","target":"kat","type":"交往","strength":1,"description":"掌权时的去处","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0060","source":"arc","target":"ursula","type":"亲属","strength":5,"description":"祖孙·抚养成人","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0061","source":"ajo","target":"pilar","type":"亲属","strength":5,"description":"母子","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0062","source":"ajo","target":"car","type":"爱慕","strength":4,"description":"庇拉尔为他安排的伴侣","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0063","source":"ajo","target":"aqu","type":"对立","strength":4,"description":"街头被其枪杀","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0064","source":"ajo","target":"ursula","type":"亲属","strength":5,"description":"祖孙","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0065","source":"pilar","target":"sof","type":"友谊","strength":3,"description":"为阿尔卡蒂奥招来的女子","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0066","source":"mel2","target":"col","type":"交往","strength":1,"description":"战后重建学校·与军政当局往来","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0067","source":"nog","target":"col","type":"交往","strength":1,"description":"同为自由派·在马孔多鼓动造反","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0068","source":"ant","target":"pet","type":"主仆","strength":2,"description":"教堂圣器保管人","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0069","source":"mon","target":"ursula","type":"交往","strength":1,"description":"率老妇上庭为其求情","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0070","source":"rlb","target":"sof","type":"亲属","strength":5,"description":"母女","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0071","source":"rlb","target":"jas","type":"亲属","strength":5,"description":"兄妹","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0072","source":"rlb","target":"as2","type":"亲属","strength":5,"description":"兄妹","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0073","source":"rlb","target":"au","type":"亲属","strength":5,"description":"姑侄","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0074","source":"rlb","target":"ursula","type":"亲属","strength":5,"description":"曾祖孙","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0075","source":"sof","target":"jas","type":"亲属","strength":5,"description":"母子","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0076","source":"sof","target":"as2","type":"亲属","strength":5,"description":"母子","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0077","source":"sof","target":"au","type":"亲属","strength":5,"description":"祖孙","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0078","source":"sof","target":"ursula","type":"亲属","strength":5,"description":"婆媳","volumes":[3],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0079","source":"jas","target":"as2","type":"亲属","strength":5,"description":"孪生兄弟","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0080","source":"jas","target":"au","type":"亲属","strength":5,"description":"叔侄","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0081","source":"jas","target":"gav","type":"友谊","strength":3,"description":"工会同志","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0082","source":"jas","target":"mel","type":"神话渊源","strength":3,"description":"在其旧居闭关研读羊皮手稿","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0083","source":"jas","target":"bro","type":"对立","strength":4,"description":"香蕉公司与罢工工人","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0084","source":"jas","target":"ursula","type":"亲属","strength":5,"description":"曾祖孙","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0085","source":"as2","target":"fern","type":"婚姻","strength":5,"description":"夫妻","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0086","source":"as2","target":"petra","type":"爱慕","strength":4,"description":"情妇·同居至死","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0087","source":"as2","target":"jarc","type":"亲属","strength":5,"description":"父子","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0088","source":"as2","target":"meme","type":"亲属","strength":5,"description":"父女","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0089","source":"as2","target":"au","type":"亲属","strength":5,"description":"父女","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0090","source":"as2","target":"aur6","type":"亲属","strength":5,"description":"外祖孙","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0091","source":"as2","target":"ursula","type":"亲属","strength":5,"description":"曾祖孙","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0092","source":"fern","target":"jarc","type":"亲属","strength":5,"description":"母子","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0093","source":"fern","target":"meme","type":"亲属","strength":5,"description":"母女","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0094","source":"fern","target":"au","type":"亲属","strength":5,"description":"母女","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0095","source":"fern","target":"fdo","type":"亲属","strength":5,"description":"父女","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0096","source":"fern","target":"ren","type":"亲属","strength":5,"description":"母女","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0097","source":"fern","target":"aur6","type":"亲属","strength":5,"description":"外祖母兼抚养者","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0098","source":"fern","target":"pet","type":"主仆","strength":2,"description":"命其为家中亡者敲钟","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0099","source":"fern","target":"petra","type":"对立","strength":4,"description":"情敌·终生敌对","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0100","source":"fern","target":"mau","type":"对立","strength":4,"description":"视其为偷鸡贼·令守夜人开枪","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0101","source":"fern","target":"ursula","type":"亲属","strength":5,"description":"婆媳","volumes":[4],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0102","source":"jarc","target":"meme","type":"亲属","strength":5,"description":"兄妹","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0103","source":"jarc","target":"au","type":"亲属","strength":5,"description":"兄妹","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0104","source":"jarc","target":"aur6","type":"亲属","strength":5,"description":"舅甥·曾欺凌他","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0105","source":"ursula","target":"jarc","type":"亲属","strength":5,"description":"玄孙","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0106","source":"meme","target":"au","type":"亲属","strength":5,"description":"姐妹","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0107","source":"meme","target":"mau","type":"爱慕","strength":4,"description":"恋人","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0108","source":"meme","target":"aur6","type":"亲属","strength":5,"description":"母子","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0109","source":"meme","target":"pat","type":"友谊","strength":3,"description":"美国女友","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0110","source":"meme","target":"ursula","type":"亲属","strength":5,"description":"玄孙","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0111","source":"herb","target":"bro","type":"友谊","strength":3,"description":"先后来马孔多的美国人","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0112","source":"au","target":"gas","type":"婚姻","strength":5,"description":"夫妻","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0113","source":"au","target":"aur6","type":"爱慕","strength":4,"description":"姨甥之恋","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0114","source":"au","target":"aur7","type":"亲属","strength":5,"description":"母子","volumes":[7],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0115","source":"au","target":"ursula","type":"亲属","strength":5,"description":"玄孙","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0116","source":"gas","target":"aur6","type":"对立","strength":4,"description":"情敌","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0117","source":"pat","target":"meme","type":"友谊","strength":3,"description":"同伴","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0118","source":"mau","target":"aur6","type":"亲属","strength":5,"description":"父子","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0119","source":"aur6","target":"nig","type":"爱慕","strength":4,"description":"少年时的情人","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0120","source":"aur6","target":"mel","type":"神话渊源","strength":3,"description":"隔世对谈·授以梵文","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0121","source":"aur6","target":"jas","type":"友谊","strength":3,"description":"同一屋檐下研读羊皮卷的忘年交","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0122","source":"aur6","target":"gab","type":"友谊","strength":3,"description":"挚友","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0123","source":"aur6","target":"alv","type":"友谊","strength":3,"description":"四友之一","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0124","source":"aur6","target":"alf","type":"友谊","strength":3,"description":"四友之一","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0125","source":"aur6","target":"her","type":"友谊","strength":3,"description":"四友之一","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0126","source":"aur6","target":"cat2","type":"友谊","strength":3,"description":"书店长者","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0127","source":"aur6","target":"aur7","type":"亲属","strength":5,"description":"父子","volumes":[7],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0128","source":"gab","target":"cat2","type":"友谊","strength":3,"description":"书店常客与流亡长者","volumes":[6],"confidence":"high","directed":true,"evidence":"原著明示"},{"id":"r_0129","source":"bro","target":"gav","type":"对立","strength":4,"description":"公司与工会领袖","volumes":[5],"confidence":"high","directed":true,"evidence":"原著明示"}],"families":[{"id":"fam_0","name":"关联人物","memberIds":["pilar_ternera","santa_sofia","fernanda","petra_cotes","mauricio_babilonia","gaston","pietro_crespi","prudencio_agilar","apolinar_moscote","nigromanta","visitacion","gerineldo_marquez","moncada","bruno_crespi","cataure","nicanor_reyna","sabio_catalan","alfonso","gabriel","alvaro","gavilan","magnifico_visbal","amparo_moscote","herbert","brown","noguera","francisco_man","antonio_isabel","medina","carmelita_montiel"],"memberCount":30,"confidence":"confirmed"},{"id":"fam_1","name":"地点","memberIds":["macondo"],"memberCount":1,"confidence":"confirmed"},{"id":"fam_2","name":"布恩迪亚家族","memberIds":["jose_arcadio_buendia","ursula_iguarán","jose_arcadio","coronel_aureliano","amaranta","rebeca","remedios_moscote","arcadio","aureliano_jose","remedios_la_bella","jose_arcadio_segundo","aureliano_segundo","meme","jose_arcadio_rome","amaranta_ursula","aureliano_last","diecisiete","aureliano_triste","aureliano_centeno"],"memberCount":19,"confidence":"confirmed"},{"id":"fam_3","name":"神话人物","memberIds":["melquiades"],"memberCount":1,"confidence":"confirmed"}],"circles":[{"id":"c_0","name":"关联人物","memberIds":["pilar_ternera","santa_sofia","fernanda","petra_cotes","mauricio_babilonia","gaston","pietro_crespi","prudencio_agilar","apolinar_moscote","nigromanta","visitacion","gerineldo_marquez","moncada","bruno_crespi","cataure","nicanor_reyna","sabio_catalan","alfonso","gabriel","alvaro","gavilan","magnifico_visbal","amparo_moscote","herbert","brown","noguera","francisco_man","antonio_isabel","medina","carmelita_montiel"],"memberCount":30},{"id":"c_1","name":"地点","memberIds":["macondo"],"memberCount":1},{"id":"c_2","name":"布恩迪亚家族","memberIds":["jose_arcadio_buendia","ursula_iguarán","jose_arcadio","coronel_aureliano","amaranta","rebeca","remedios_moscote","arcadio","aureliano_jose","remedios_la_bella","jose_arcadio_segundo","aureliano_segundo","meme","jose_arcadio_rome","amaranta_ursula","aureliano_last","diecisiete","aureliano_triste","aureliano_centeno"],"memberCount":19},{"id":"c_3","name":"神话人物","memberIds":["melquiades"],"memberCount":1}],"timeline":[{"volume":1,"text":"梅梅与马乌里肖·巴比洛尼亚之子，由费尔南达伪称“…","personId":"aureliano_last","personName":"奥雷里亚诺（末代）","kind":"person_event","confidence":"high"},{"volume":1,"text":"始祖次子，自由党上校。发动三十二场武装起义无一成…","personId":"coronel_aureliano","personName":"奥雷里亚诺·布恩迪亚（上校）","kind":"person_event","confidence":"high"},{"volume":1,"text":"布恩迪亚家族始祖。与表妹乌尔苏拉成婚，因决斗杀人…","personId":"jose_arcadio_buendia","personName":"何塞·阿尔卡蒂奥·布恩迪亚","kind":"person_event","confidence":"high"},{"volume":1,"text":"布恩迪亚家族创建的村落：由初创繁华，历香蕉热、大…","personId":"macondo","personName":"马孔多","kind":"person_event","confidence":"high"},{"volume":1,"text":"吉普赛人，携冰块、磁铁与炼金术造访马孔多，撰写家…","personId":"melquiades","personName":"梅尔基亚德斯","kind":"person_event","confidence":"high"},{"volume":1,"text":"家族支柱，活逾百岁。以惊人韧性与记忆力维系家族数…","personId":"ursula_iguarán","personName":"乌尔苏拉·伊瓜兰","kind":"person_event","confidence":"high"},{"volume":2,"text":"始祖之女。与侄子奥雷里亚诺·何塞有暧昧却始终拒斥…","personId":"amaranta","personName":"阿玛兰妲","kind":"person_event","confidence":"high"},{"volume":2,"text":"始祖长子。少年随吉普赛人出走，成年归来时遍体纹身…","personId":"jose_arcadio","personName":"何塞·阿尔卡蒂奥（长子）","kind":"person_event","confidence":"high"},{"volume":2,"text":"先后与长子何塞·阿尔卡蒂奥及上校生下阿尔卡蒂奥与…","personId":"pilar_ternera","personName":"庇拉尔·特尔内拉","kind":"person_event","confidence":"high"},{"volume":2,"text":"被始祖何塞·阿尔卡蒂奥·布恩迪亚在决斗中刺死，化…","personId":"prudencio_agilar","personName":"普鲁邓希奥·阿吉拉尔","kind":"person_event","confidence":"high"},{"volume":2,"text":"随兄卡塔乌雷为避瘟疫来到马孔多，预言失眠症，长期…","personId":"visitacion","personName":"维希塔西翁","kind":"person_event","confidence":"high"},{"volume":3,"text":"马孔多镇长，蕾梅黛丝之父，将幼女许配长子何塞·阿…","personId":"apolinar_moscote","personName":"阿波利纳尔·摩斯科特","kind":"person_event","confidence":"high"},{"volume":3,"text":"长子何塞·阿尔卡蒂奥与庇拉尔·特尔内拉之私生子，…","personId":"arcadio","personName":"阿尔卡蒂奥","kind":"person_event","confidence":"high"},{"volume":3,"text":"随父母遗骨而来的孤女，初到时嗜食泥土与墙灰，经乌…","personId":"rebeca","personName":"丽贝卡","kind":"person_event","confidence":"high"},{"volume":4,"text":"意大利工匠/乐师，先后求爱丽贝卡与阿玛兰妲，屡遭…","personId":"pietro_crespi","personName":"皮埃特罗·克雷斯皮","kind":"person_event","confidence":"high"},{"volume":4,"text":"马孔多镇长阿波利纳尔·摩斯科特之幼女，长子何塞·…","personId":"remedios_moscote","personName":"蕾梅黛丝·摩斯科特","kind":"person_event","confidence":"high"},{"volume":5,"text":"上校与庇拉尔·特尔内拉之子。恋慕姑母阿玛兰妲，被…","personId":"aureliano_jose","personName":"奥雷里亚诺·何塞","kind":"person_event","confidence":"high"},{"volume":6,"text":"阿尔卡蒂奥之妻，生下美人蕾梅黛丝与双胞胎（何塞·…","personId":"santa_sofia","personName":"桑塔索菲亚·德拉·彼达","kind":"person_event","confidence":"high"},{"volume":7,"text":"双胞胎之一。与情妇佩特拉·科特斯纵情享乐，牲畜在…","personId":"aureliano_segundo","personName":"奥雷里亚诺第二","kind":"person_event","confidence":"high"},{"volume":7,"text":"双胞胎之一。香蕉公司罢工领袖，大屠杀唯一幸存者；…","personId":"jose_arcadio_segundo","personName":"何塞·阿尔卡蒂奥第二","kind":"person_event","confidence":"high"},{"volume":8,"text":"阿尔卡蒂奥与桑塔索菲亚之女，绝世美貌，拒斥一切求…","personId":"remedios_la_bella","personName":"蕾梅黛丝（美人）","kind":"person_event","confidence":"high"},{"volume":10,"text":"奥雷里亚诺第二之妻，出身衰败贵族，带来宗教禁欲风…","personId":"fernanda","personName":"费尔南达·德尔·卡皮奥","kind":"person_event","confidence":"high"},{"volume":10,"text":"奥雷里亚诺第二的情妇。其牲畜与爱情使家业兴旺，与…","personId":"petra_cotes","personName":"佩特拉·科特斯","kind":"person_event","confidence":"high"},{"volume":11,"text":"奥雷里亚诺第二与费尔南达之长女，习音乐，与机修工…","personId":"meme","personName":"梅梅（蕾娜塔·蕾梅黛丝）","kind":"person_event","confidence":"high"},{"volume":14,"text":"奥雷里亚诺第二与费尔南达幼女。欧洲归国带回丈夫加…","personId":"amaranta_ursula","personName":"阿玛兰妲·乌尔苏拉","kind":"person_event","confidence":"high"},{"volume":14,"text":"梅梅的恋人，周身黄蝴蝶环绕；被费尔南达买通武修炼…","personId":"mauricio_babilonia","personName":"马乌里肖·巴比洛尼亚","kind":"person_event","confidence":"high"},{"volume":18,"text":"奥雷里亚诺第二与费尔南达之子，被送罗马习神学、望…","personId":"jose_arcadio_rome","personName":"何塞·阿尔卡蒂奥（罗马）","kind":"person_event","confidence":"high"},{"volume":19,"text":"阿玛兰妲·乌尔苏拉的丈夫，比利时人；筹划航空邮政…","personId":"gaston","personName":"加斯通","kind":"person_event","confidence":"high"},{"volume":19,"text":"末代奥雷里亚诺常去的妓院老鸨兼慰藉者，助其筹措生…","personId":"nigromanta","personName":"尼格罗曼塔","kind":"person_event","confidence":"high"},{"volume":5,"text":"马孔多奠基者之子，自由党上校奥雷里亚诺·布恩迪亚的战友与挚友；战后任马孔多军政长官，苦恋阿玛兰妲未果，被乌尔苏拉视如己出。","personId":"gerineldo_marquez","personName":"赫里内尔多·马尔克斯","kind":"person_event","confidence":"high"},{"volume":5,"text":"温和的“反军国主义”保守党将军，与上校奥雷里亚诺战场为敌却私交甚笃、常对弈；战争结束后出任马孔多市长，后被保守党处决。","personId":"moncada","personName":"何塞·拉奎尔·蒙卡达（蒙卡达将军）","kind":"person_event","confidence":"high"},{"volume":4,"text":"意大利人皮埃特罗·克雷斯皮的弟弟，兄长自尽后接手店铺，经营音乐盒与照相馆；娶阿波利纳尔·摩斯科特之女安帕罗。","personId":"bruno_crespi","personName":"布鲁诺·克雷斯皮","kind":"person_event","confidence":"high"},{"volume":1,"text":"维希塔西翁的兄弟，瓜希罗印第安王子，为躲避失眠症瘟疫随妹逃至马孔多，照料布恩迪亚家的孩子，后发现丽贝卡染疫而离去。","personId":"cataure","personName":"卡塔乌雷","kind":"person_event","confidence":"high"},{"volume":4,"text":"马孔多第一位神父，前来主持奥雷里亚诺与蕾梅黛丝的婚礼并留驻传教；以饮热巧克力腾空而起展示神迹，却在与绑于栗树的始祖论道后信仰动摇。","personId":"nicanor_reyna","personName":"尼卡诺尔·雷伊纳神父","kind":"person_event","confidence":"high"},{"volume":16,"text":"马孔多旧书店的加泰罗尼亚老学者，收留末代奥雷里亚诺研读羊皮卷；目睹马孔多衰朽，临别留下对故土与虚妄的著名箴言。","personId":"sabio_catalan","personName":"加泰罗尼亚智者","kind":"person_event","confidence":"high"},{"volume":16,"text":"末代奥雷里亚诺在妓院与书店结识的三友之一，与加夫列尔、阿尔瓦罗结伴，常混迹于尼格罗曼塔的妓院。","personId":"alfonso","personName":"阿尔丰索","kind":"person_event","confidence":"high"},{"volume":16,"text":"与作者同名的青年，赫里内尔多·马尔克斯的曾曾孙；因通晓马孔多往事而与末代奥雷里亚诺交好，后赢得竞赛赴巴黎，成为少数逃离灭世者之一。","personId":"gabriel","personName":"加夫列尔（马尔克斯）","kind":"person_event","confidence":"high"},{"volume":16,"text":"末代奥雷里亚诺在妓院与书店结识的三友之一，与阿尔丰索、加夫列尔结伴。","personId":"alvaro","personName":"阿尔瓦罗","kind":"person_event","confidence":"high"},{"volume":15,"text":"流亡马孔多的墨西哥革命老上校，投身香蕉工人运动、与何塞·阿尔卡蒂奥第二一同被捕入狱；其革命经历与马孔多的罢工命运交织。","personId":"gavilan","personName":"洛伦索·加维兰上校","kind":"person_event","confidence":"high"},{"volume":5,"text":"上校奥雷里亚诺的密友与战友；尼兰迪亚和约签订后，与孙儿一同被警方杀害。","personId":"magnifico_visbal","personName":"马格尼菲科·维斯巴尔","kind":"person_event","confidence":"high"},{"volume":8,"text":"上校十七个私生子之一，香蕉热时期回到马孔多，建起始祖梦寐的制冰厂，并开凿水道、引来第一列轰鸣的黄色火车，连通马孔多与外界。","personId":"aureliano_triste","personName":"奥雷里亚诺·特里斯特","kind":"person_event","confidence":"high"},{"volume":4,"text":"阿波利纳尔·摩斯科特的女儿，与丽贝卡交好、为其传递皮埃特罗的情书，后嫁给布鲁诺·克雷斯皮。","personId":"amparo_moscote","personName":"安帕罗·摩斯科特","kind":"person_event","confidence":"high"},{"volume":8,"text":"到布恩迪亚家用餐时尝到香蕉、惊为天人，遂引香蕉公司来马孔多辟种植园，开启小镇的香蕉繁荣与随后的大屠杀。","personId":"herbert","personName":"赫伯特先生","kind":"person_event","confidence":"high"},{"volume":8,"text":"香蕉种植园的独裁式管理者，下令镇压工人罢工、制造广场大屠杀，并与政府合谋掩盖真相。","personId":"brown","personName":"杰克·布朗先生","kind":"person_event","confidence":"high"},{"volume":5,"text":"携糖丸与伪造文凭来马孔多的冒牌医生、政治流亡者，一度行医，后被军队杀害。","personId":"noguera","personName":"阿利里奥·诺格拉","kind":"person_event","confidence":"high"},{"volume":3,"text":"近乎两百岁的流浪歌手，常到马孔多传唱他目睹的世态歌谣；其曲调被奥雷里亚诺第二以手风琴演奏。","personId":"francisco_man","personName":"弗朗西斯科（游吟歌手）","kind":"person_event","confidence":"high"},{"volume":10,"text":"接替尼卡诺尔·雷伊纳成为马孔多神父，年迈昏聩，常对鹦鹉说话。","personId":"antonio_isabel","personName":"安东尼奥·伊萨贝尔神父","kind":"person_event","confidence":"high"},{"volume":4,"text":"被保守党判死刑的革命将军，上校奥雷里亚诺率七人驰援里奥阿查营救，未果，由此再启战端。","personId":"medina","personName":"维克托里奥·梅迪纳将军","kind":"person_event","confidence":"high"},{"volume":8,"text":"上校十七个私生子之一，香蕉热时期留在马孔多，与其他十六子同日额印灰十字、遭神秘暗杀。","personId":"aureliano_centeno","personName":"奥雷里亚诺·森滕诺","kind":"person_event","confidence":"high"},{"volume":5,"text":"在庇拉尔·特尔内拉处摆摊的纸牌占卜女巫，被许配给奥雷里亚诺·何塞；当他被枪杀时，她正候在庇拉尔家中。","personId":"carmelita_montiel","personName":"卡梅利塔·蒙蒂埃尔","kind":"person_event","confidence":"high"}]}};
 (function(){
 'use strict';
 
@@ -10817,10 +10865,16 @@ var CIRCLE_COLORS={},CIRCLES=[],TYPE_STYLES={},TYPES=[];
 (BOOK.relationTypes||[]).forEach(function(t){TYPES.push(t.label);TYPE_STYLES[t.label]={color:t.color,dash:t.dash,w:t.w};});
 var VOLUME_COUNT=BOOK.volumeCount||7;
 var VOLUME_LABELS=BOOK.volumeLabels||[];
-/* 章回单位：volume=卷 / chapter=回 / section=章（多书适配） */
-var CHAPTER_UNIT=BOOK.chapterMode==='chapter'?'回':(BOOK.chapterMode==='section'?'章':'卷');
-var VOL_ALL='全部'+CHAPTER_UNIT;
-function volName(v){return CHAPTER_UNIT+(VOLUME_LABELS[v-1]||v);}
+/* 章回单位：volume=卷 / chapter=回 / section=章 / part=部（多书适配） */
+var IS_PART=BOOK.chapterMode==='part';
+var CHAPTER_UNIT=BOOK.chapterMode==='chapter'?'回':(BOOK.chapterMode==='section'?'章':(IS_PART?'部':'卷'));
+var VOL_ALL=IS_PART?'全部':('全部'+CHAPTER_UNIT);
+var VOL_PHRASE=IS_PART?'部':CHAPTER_UNIT;
+function volName(v){
+  var lab=VOLUME_LABELS[v-1];
+  if(!lab) lab=IS_PART?('第'+v+'部'):(v+CHAPTER_UNIT);
+  return IS_PART?lab:(CHAPTER_UNIT+lab);
+}
 var EXCLUDED_FAMILY=BOOK.excludedFamily||'';
 var VIEW_WHITELIST=BOOK.views||['network','family','social','timeline'];
 var MODE_MIN={core:3,std:2,full:0};
@@ -10850,6 +10904,7 @@ var FAMS=[];(function(){var seen={};PEOPLE.forEach(function(p){if(p.family&&!see
 var state={mode:'std',types:new Set(),vols:new Set(),circles:new Set(),family:'',focused:null,relFocused:null,neighbor:0,view:'network'};
 var cy=null;
 var layoutTimer=null,urlTimer=null;
+var selfUrlChange=false; /* 自身 updateUrl 触发的 hash 变更标记（v2.11） */
 
 /* ===== 可见性计算 ===== */
 function computeVisible(){
@@ -10901,12 +10956,12 @@ function makeCy(){
       'border-color':function(ele){return ele.data('circ2')||'#F7F2E7';},
       'width':'data(size)','height':'data(size)',
       'shape':function(ele){return ele.data('group')?'round-rectangle':'ellipse';},
-      'label':function(ele){return ele.data('imp')>=3?ele.data('name'):'';},
+      'label':function(ele){return ele.data('name');},
       'font-family':'"Noto Serif SC","Songti SC",Georgia,serif',
       'font-size':function(ele){return ele.data('imp')>=3?13:11;},
       'color':'#2A251E','font-weight':600,
       'text-valign':'bottom','text-halign':'center','text-margin-y':7,
-      'text-wrap':'wrap','text-max-width':110,
+      'text-wrap':'wrap','text-max-width':150,
       'text-outline-width':2.5,'text-outline-color':'#F2ECDF',
       'opacity':1,
       'z-index':function(ele){return (ele.data('imp')||0)*100+10;}
@@ -10932,7 +10987,8 @@ function makeCy(){
     elements:{nodes:cytoNodes,edges:cytoEdges},
     style:styleSheet,
     layout:{name:'preset'},
-    minZoom:0.15,maxZoom:2.6
+    minZoom:0.15,maxZoom:2.6,
+    wheelSensitivity:0.12
   });
   /* 测试钩子（Agent 24）：暴露图谱实例供自动化测试驱动，非生产功能 */
   window.__cy=cy;
@@ -10942,17 +10998,80 @@ function makeCy(){
 function runLayout(animate){
   var vis=cy.elements(':visible');
   if(vis.length===0) return;
-  var opts={animate:!!animate,animationDuration:500,randomize:false,
-    nodeRepulsion:function(){return 8000;},idealEdgeLength:function(){return 100;},
-    edgeElasticity:0.5,gravity:0.28,numIter:2000,tile:true};
+  /* 布局参数按节点数分三档：<30 小图（树状链易拉条，加大斥力/减重力/关 tile）；
+     30~120 中图（如西游记 std 53 节点，标签长易重叠，需更分散）；
+     >120 大图（多节点时平铺分组）。
+     当前已是长条（竖/横比>1.7）时用随机初始位置重排，避免 randomize:false 保持长条 */
+  var n=vis.length;
+  var small=n<30, mid=n<=120;
+  var rep=small?17000:(mid?13000:8000);
+  var iel=small?180:(mid?155:100);
+  var grav=small?0.05:(mid?0.12:0.28);
+  var tile=!small&&!mid; /* 仅大图开 tile 平铺子图；小/中图关 tile 防网格化紧凑排列 */
+  var bb=vis.boundingBox();
+  var sx=Math.max(bb.w,1),sy=Math.max(bb.h,1);
+  var elongated=sy/sx>1.7||sx/sy>1.7;
+  /* 中图（30~120 节点，长标签易重叠）固定随机初始位置让 fcose 分散更均匀；
+     小/大图仅在已拉成长条时随机（保持布局稳定） */
+  var randomize=mid?true:elongated;
+  var opts={animate:!!animate,animationDuration:500,randomize:randomize,
+    nodeRepulsion:function(){return rep;},idealEdgeLength:function(){return iel;},
+    edgeElasticity:0.5,gravity:grav,numIter:2500,tile:tile};
   var ly;
   try{
     ly=vis.layout(Object.assign({name:'fcose'},opts));
   }catch(e){
-    ly=vis.layout(Object.assign({name:'cose'},{animate:!!animate,animationDuration:500,randomize:false,nodeRepulsion:function(){return 8000;},idealEdgeLength:function(){return 100;}}));
+    ly=vis.layout(Object.assign({name:'cose'},{animate:!!animate,animationDuration:500,randomize:randomize,nodeRepulsion:function(){return rep;},idealEdgeLength:function(){return iel;}}));
   }
-  ly.one('layoutstop',function(){cy.fit(cy.elements(':visible'),40);});
+  ly.one('layoutstop',function(){
+    /* v2.19 防长条：布局后检测包围盒，竖/横比例>1.7 说明仍被拉成条，
+       随机初始位置 + 更强参数重排一次 */
+    var bb2=cy.elements(':visible').boundingBox();
+    var s2x=Math.max(bb2.w,1),s2y=Math.max(bb2.h,1);
+    if(!window.__layoutRetried&&(s2y/s2x>1.7||s2x/s2y>1.7)){
+      window.__layoutRetried=true;
+      var v2=cy.elements(':visible');
+      var ly2=v2.layout({name:'fcose',animate:!!animate,animationDuration:500,randomize:true,
+        nodeRepulsion:function(){return small?32000:(mid?20000:12000);},idealEdgeLength:function(){return small?260:(mid?210:130);},
+        edgeElasticity:0.4,gravity:small?0.02:(mid?0.06:0.25),numIter:3500,tile:false});
+      ly2.one('layoutstop',function(){deoverlapLabels();cy.fit(cy.elements(':visible'),40);});
+      ly2.run();
+    }else{
+      deoverlapLabels();
+      cy.fit(cy.elements(':visible'),40);
+    }
+  });
   ly.run();
+}
+/* v2.19b 标签防重叠后处理：布局完成后检测节点标签矩形冲突，迭代沿 x 推开，
+   保证长名字（四大天王/五方揭谛等群体角色）不被遮挡；不破坏整体关系结构 */
+function deoverlapLabels(){
+  var zoom=cy.zoom();
+  var nodes=cy.nodes(':visible');
+  var arr=nodes.map(function(n){
+    var p=n.renderedPosition();
+    var lb=n.style('label')||'';
+    var w=Math.min(lb.length*12+12,170);   /* 标签估算宽（text-max-width 内） */
+    return {n:n,x:p.x,y:p.y,w:w,h:22};
+  });
+  for(var it=0;it<80;it++){
+    var moved=false;
+    for(var i=0;i<arr.length;i++)for(var j=i+1;j<arr.length;j++){
+      var a=arr[i],b=arr[j];
+      var dx=Math.abs(a.x-b.x),dy=Math.abs(a.y-b.y);
+      /* 标签在节点下方约 4~30px 处；标签区域 x 向重叠且 y 向接近时推开 */
+      if(dx<(a.w/2+b.w/2)*0.85&&dy<42&&dy>4){
+        var push=((a.w/2+b.w/2)*0.85-dx)*0.6+4;
+        var dir=a.x<b.x?-1:1;
+        var pa=a.n.position(),pb=b.n.position();
+        a.n.position({x:pa.x-dir*push/zoom,y:pa.y});
+        b.n.position({x:pb.x+dir*push/zoom,y:pb.y});
+        a.x-=dir*push;b.x+=dir*push;
+        moved=true;
+      }
+    }
+    if(!moved)break;
+  }
 }
 function scheduleLayout(){
   if(layoutTimer) clearTimeout(layoutTimer);
@@ -11026,7 +11145,7 @@ function applyFocus(){
     visE.removeClass('f1');
     visN.style('opacity',1);
     visE.forEach(function(e){e.style({opacity:0.85,width:e.data('ewidth')});});
-    visN.forEach(function(n){ if(n.data('imp')<3) n.style('label',''); });
+    /* v2.18：所有可见节点常显名字，不再清空次要节点 label */
     if(state.focused){
       var F=cy.getElementById(state.focused);
       if(F.length&&F.visible()){
@@ -11109,7 +11228,6 @@ function relChips(p){
   p.circles.forEach(function(c){
     out.push('<span class="badge circ" style="color:'+CIRCLE_COLORS[c]+'">'+esc(c)+'</span>');
   });
-  if(p.volumes&&p.volumes.length) out.push('<span class="badge vol">'+volText(p.volumes)+'</span>');
   if(p.firstAppearance) out.push('<span class="badge">首见 '+volText([p.firstAppearance])+'</span>');
   if(p.confidence) out.push('<span class="badge conf-'+p.confidence+'">置信度·'+CONF_LABEL[p.confidence]+'</span>');
   return out.join('');
@@ -11205,16 +11323,6 @@ function renderPersonDetailImpl(id){
     });
     html+='</div>';
   }
-  if(p.volumes&&p.volumes.length){
-    var vs=[];p.volumes.forEach(function(v){if(v>0&&vs.indexOf(v)<0)vs.push(v);});
-    vs.sort(function(a,b){return a-b;});
-    html+='<div class="dh-block"><div class="dh-block-title">'+CHAPTER_UNIT+'次轨迹</div><div class="vol-track"><span class="vt-lbl">出现</span>';
-    vs.forEach(function(v){
-      var active=state.vols.size>0&&state.vols.has(v);
-      html+='<span class="vol-dot on'+(active?' sel':'')+'" data-v="'+v+'" title="'+volName(v)+'">'+v+'</span>';
-    });
-    html+='</div></div>';
-  }
   if(p.description) html+='<div class="dh-block"><div class="dh-block-title">人物简介</div><div class="dh-text">'+esc(p.description)+'</div></div>';
   if(p.events&&p.events.length){
     html+='<div class="dh-block"><div class="dh-block-title">关键事件</div><ul class="ev-list">';
@@ -11247,14 +11355,6 @@ function renderPersonDetailImpl(id){
       e.stopPropagation();
       var other=el.getAttribute('data-other');
       selectPerson(other);
-    });
-  });
-  $$('#detailContent .vol-dot').forEach(function(el){
-    el.addEventListener('click',function(){
-      var v=parseInt(this.getAttribute('data-v'),10);
-      if(state.vols.has(v)){state.vols.delete(v);if(state.vols.size===0)state.vols.clear();}
-      else{state.vols.clear();state.vols.add(v);}
-      renderFilterUI();applyFilters(true);
     });
   });
   requestAnimationFrame(function(){
@@ -11495,7 +11595,9 @@ function updateUrl(push){
     var h=parts.length?'#'+parts.join('&'):'';
     if(push){
       if(location.hash!==h){
+        selfUrlChange=true;
         try{location.hash=h;}catch(e){}
+        setTimeout(function(){selfUrlChange=false;},80);
       }
     }else{
       try{history.replaceState(null,'',location.pathname+location.search+h);}catch(e){}
@@ -11539,10 +11641,12 @@ function parseUrl(first){
 /* ===== 视图切换 ===== */
 function setView(v){
   state.view=v;
-  $$('#viewSwitch .view-btn').forEach(function(b){
-    var on=b.getAttribute('data-view')===v;
-    b.classList.toggle('on',on);
-    b.setAttribute('aria-pressed',on?'true':'false');
+  ['#viewSwitch','#viewSwitchTop'].forEach(function(sel){
+    $$(sel+' .view-btn').forEach(function(b){
+      var on=b.getAttribute('data-view')===v;
+      b.classList.toggle('on',on);
+      b.setAttribute('aria-pressed',on?'true':'false');
+    });
   });
   var isNet=v==='network';
   $('#cy').style.display=isNet?'':'none';
@@ -11667,12 +11771,6 @@ function renderTimeline(opts){
   html+='<span class="ts">家族 <b>'+famSet.size+'</b></span>';
   html+='<span class="ts">社交圈 <b>'+cirSet.size+'</b></span>';
   html+='</div>';
-  html+='<div class="tl-chips">';
-  html+='<button class="tl-chip'+(cur===0?' on':'')+'" data-v="0">全部</button>';
-  for(var v=1;v<=VOLUME_COUNT;v++){
-    html+='<button class="tl-chip'+(cur===v?' on':'')+'" data-v="'+v+'">'+volName(v)+'</button>';
-  }
-  html+='</div>';
   if(state.focused&&P[state.focused]) html+=personTrack(P[state.focused]);
   html+='<div class="tl-vols">';
   for(var v=1;v<=VOLUME_COUNT;v++){
@@ -11695,7 +11793,7 @@ function renderTimeline(opts){
       core.forEach(function(p){html+=personChip(p,true);});
       html+='</div>';
       if(rest.length){
-        html+='<button class="tl-more">+ 展开其余 '+rest.length+' 人</button>';
+        /* v2.14：卷展开即显示全部人物，去掉「展开其余 N 人」按钮 */
         html+='<div class="tl-all">';
         rest.forEach(function(p){html+=personChip(p,false);});
         html+='</div>';
@@ -11709,21 +11807,8 @@ function renderTimeline(opts){
 }
 
 function bindTimeline(root){
-  root.querySelectorAll('.tl-chip').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var v=parseInt(this.getAttribute('data-v'),10);
-      if(v===0) state.vols.clear();
-      else{state.vols.clear();state.vols.add(v);}
-      renderFilterUI();applyFilters(true);renderTimeline({openOnly:true});
-      var curEl=root.querySelector('.tl-vol[data-v="'+v+'"]');
-      if(curEl&&curEl.scrollIntoView) curEl.scrollIntoView({behavior:'smooth',block:'center'});
-    });
-  });
   root.querySelectorAll('.tl-vol-head').forEach(function(h){
     h.addEventListener('click',function(){this.parentNode.classList.toggle('open');});
-  });
-  root.querySelectorAll('.tl-more').forEach(function(b){
-    b.addEventListener('click',function(){this.style.display='none';this.parentNode.querySelector('.tl-all').style.display='flex';});
   });
   /* 人物实体点击：事件委托，点击任何 [data-p] 按钮 → 统一 selectPerson；
      增量更新：只重建轨迹卡与 selected 类，不重建卷块（Agent 17 性能） */
@@ -11874,7 +11959,7 @@ function fvOk(p){
 function fvCard(p,cls){
   var c=cls||'';
   if(p.confidence==='low')c+=' uncertain';
-  return '<span class="fv-card '+c+'" data-p="'+p.id+'" tabindex="0">'+esc(p.name)
+  return '<span class="fv-card '+c+'" data-p="'+p.id+'" tabindex="0"><span class="fn2">'+esc(p.name)+'</span>'
     +(p.identity?'<span class="fi">'+esc(p.identity)+'</span>':'')
     +(cls==='marriage'?'<span class="mar">姻亲</span>':'')+'</span>';
 }
@@ -11902,7 +11987,7 @@ function renderFamMain(f,s){
   var h='<div class="fv-main">';
   h+='<div class="fv-main-t">'+esc(f)+'</div>';
   h+='<div class="fv-main-s">核心成员 '+core.length+' · 扩展亲属 '+ext.length+' · 姻亲 '+Object.keys(marSet).length+' · 关联人物 '+Object.keys(assocSet).length
-    +(state.vols.size?' · '+CHAPTER_UNIT+'次筛选生效':'')+(state.circles.size?' · 社交圈筛选生效':'')+'</div>';
+    +(state.vols.size?' · '+VOL_PHRASE+'次筛选生效':'')+(state.circles.size?' · 社交圈筛选生效':'')+'</div>';
   h+='<div class="fv-sec"><div class="fv-sec-t">核心家族成员</div><div class="fv-cards">';
   core.forEach(function(p){h+=fvCard(p,'core');});
   if(!core.length)h+='<span style="font-size:12px;color:var(--ink-faint)">无</span>';
@@ -12009,12 +12094,12 @@ function renderSocialView(){
       .sort(function(a,b){return (b.importance||0)-(a.importance||0);});
     var h='<div class="fv-main">';
     h+='<div class="fv-main-t">'+esc(selC)+'</div>';
-    h+='<div class="fv-main-s">共 '+members.length+' 人 · 按重要程度排序'+(state.vols.size?' · '+CHAPTER_UNIT+'次筛选生效':'')+'</div>';
+    h+='<div class="fv-main-s">共 '+members.length+' 人 · 按重要程度排序'+(state.vols.size?' · '+VOL_PHRASE+'次筛选生效':'')+'</div>';
     h+='<div class="fv-cards">';
     members.forEach(function(p){
       var multi=p.circles.length>1;
       var cls=p.importance>=3?'core':'';if(p.confidence==='low')cls+=' uncertain';
-      h+='<span class="fv-card '+cls+'" data-p="'+p.id+'" tabindex="0">'+esc(p.name)
+      h+='<span class="fv-card '+cls+'" data-p="'+p.id+'" tabindex="0"><span class="fn2">'+esc(p.name)+'</span>'
         +(p.identity?'<span class="fi">'+esc(p.identity)+'</span>':'')
         +(multi?'<span class="mar">'+p.circles.length+' 圈</span>':'')+'</span>';
     });
@@ -12165,18 +12250,53 @@ function showToast(msg){
 }
 
 
+var cyTapLast=0;
 function bindCyEvents(){
-  cy.on('tap','node',function(e){selectPerson(e.target.id());});
+  cy.on('tap','node',function(e){cyTapLast=Date.now();selectPerson(e.target.id());});
   cy.on('tap','edge',function(e){renderRelDetail(e.target.id());});
   cy.on('tap',function(e){ if(e.target===cy){clearFocus();} });
   cy.on('dbltap','node',function(e){
     var n=e.target;
     cy.animate({center:{eles:n},zoom:Math.min(cy.zoom()*1.35,2.6),duration:300});
   });
+  /* v2.16 兜底点击：部分线上/移动端环境 cy.on('tap') 不触发（浏览器手势/触摸合成差异），
+     在容器上监听原生 click / touchend，用坐标命中节点后走 selectPerson；
+     350ms 去重防与 cy tap 双触发；拖动不触发（touchend 位移阈值） */
+  var cont=cy.container();
+  if(cont&&!cont.__tapFallback){
+    cont.__tapFallback=true;
+    var fx=0,fy=0,fdown=false;
+    function fallback(x,y){
+      if(Date.now()-cyTapLast<350)return;
+      var bb=cont.getBoundingClientRect();
+      var rx=x-bb.left, ry=y-bb.top;   /* renderedPosition 是容器内像素坐标 */
+      var hit=null,best=1e18;
+      cy.nodes(':visible').forEach(function(n){
+        var np=n.renderedPosition();
+        var rw=(typeof n.renderedWidth==='function'?n.renderedWidth():36)/2+7;
+        var rh=(typeof n.renderedHeight==='function'?n.renderedHeight():36)/2+7;
+        var dx=rx-np.x,dy=ry-np.y;
+        if(Math.abs(dx)<=rw&&Math.abs(dy)<=rh){
+          var d=dx*dx+dy*dy;
+          if(d<best){best=d;hit=n;}
+        }
+      });
+      if(hit){cyTapLast=Date.now();selectPerson(hit.id());}
+    }
+    cont.addEventListener('click',function(e){fallback(e.clientX,e.clientY);});
+    cont.addEventListener('touchstart',function(e){
+      var t=e.changedTouches&&e.changedTouches[0];
+      if(t){fx=t.clientX;fy=t.clientY;fdown=true;}
+    },{passive:true});
+    cont.addEventListener('touchend',function(e){
+      var t=e.changedTouches&&e.changedTouches[0];
+      if(t&&fdown&&Math.abs(t.clientX-fx)<10&&Math.abs(t.clientY-fy)<10)fallback(t.clientX,t.clientY);
+      fdown=false;
+    },{passive:true});
+  }
   cy.on('mouseover','node',function(e){
     var n=e.target;
     n.addClass('hov');
-    if(n.data('imp')<3&&!state.focused) n.style('label',n.data('name'));
     if(e.originalEvent){
       var p=P[n.id()]||{};
       showTip('<div class="tt-n">'+esc(n.data('name'))+'</div><div class="tt-i">'+esc(p.identity||'')+'</div>',
@@ -12186,7 +12306,6 @@ function bindCyEvents(){
   cy.on('mouseout','node',function(e){
     var n=e.target;
     n.removeClass('hov');
-    if(n.data('imp')<3&&!state.focused) n.style('label','');
     hideTip();
   });
   cy.on('mouseover','edge',function(e){
@@ -12198,11 +12317,6 @@ function bindCyEvents(){
     }
   });
   cy.on('mouseout','edge',hideTip);
-  cy.on('viewport',function(){
-    cy.nodes().forEach(function(n){
-      if(n.data('imp')<3&&!state.focused&&!n.hasClass('hov')) n.style('label','');
-    });
-  });
 }
 
 /* ===== 移动端面板 / 工具（MOB-02~MOB-10 合并实现） ===== */
@@ -12335,6 +12449,9 @@ function bindGlobal(){
   $$('#viewSwitch .view-btn').forEach(function(b){
     b.addEventListener('click',function(){setView(b.getAttribute('data-view'));});
   });
+  $$('#viewSwitchTop .view-btn').forEach(function(b){
+    b.addEventListener('click',function(){setView(b.getAttribute('data-view'));});
+  });
   $('#resetBtn').addEventListener('click',resetAll);
   $('#emptyReset').addEventListener('click',resetAll);
   $('#menuBtn').addEventListener('click',function(){
@@ -12454,6 +12571,9 @@ function bindGlobal(){
     }
   });
   window.addEventListener('hashchange',function(){
+    /* 自身 updateUrl 触发的 hash 变更已由调用方设置好完整状态，跳过重放，
+       避免残留 p= 角色被 selectPerson 重新弹出详情（v2.11 修复） */
+    if(selfUrlChange)return;
     closeSheets();
     parseUrl(false);
   });
@@ -12477,6 +12597,11 @@ function resetAll(){
 /* ===== 启动 ===== */
 function init(){
   buildFilterUI();
+  var volFold=$('#volFoldBtn');
+  if(volFold) volFold.addEventListener('click',function(){
+    var sec=volFold.closest('.vol-sec');
+    if(sec) sec.classList.toggle('collapsed');
+  });
   buildVolSheet();
   updateVolSelBtn();
   updateMoreCtx();

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 <title>红楼梦 · 人物关系图谱</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232A251E'/%3E%3Ctext x='16' y='22.5' font-size='17' text-anchor='middle' fill='%23F2ECDF' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
@@ -112,6 +112,7 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   border-right:1px solid var(--line);
   overflow-y:auto;overflow-x:hidden;
   padding:14px 14px 20px;
+  display:flex;flex-direction:column;
 }
 .fp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .fp-head .t{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.08em}
@@ -125,6 +126,11 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   font-size:11px;color:var(--ink-faint);letter-spacing:.18em;font-weight:500;
   margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--line);
 }
+.fp-sec-title.fold{cursor:pointer;user-select:none;display:flex;align-items:center;justify-content:space-between}
+.fp-sec-title.fold:hover{color:var(--ink-soft)}
+.fold-arrow{font-size:10px;transition:transform .18s;letter-spacing:0}
+.vol-sec.collapsed .vol-chips{display:none}
+.vol-sec:not(.collapsed) .fold-arrow{transform:rotate(90deg)}
 .radio-row{display:flex;gap:6px;flex-wrap:wrap}
 .radio-chip{
   font-size:12px;padding:4px 10px;border-radius:13px;border:1px solid var(--line-strong);
@@ -193,7 +199,7 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 }
 .fn-btn:hover{border-color:var(--ink-soft)}
 .fn-btn.on{background:var(--ink);border-color:var(--ink);color:var(--paper-card)}
-#cy{position:absolute;inset:0}
+#cy{position:absolute;inset:0;touch-action:none}
 #emptyOverlay{
   position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:15;
   background:rgba(242,236,223,.82);text-align:center;
@@ -343,6 +349,17 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 .view-btn:hover{background:var(--paper-deep);color:var(--ink)}
 .view-btn.on{background:var(--ink);color:var(--paper-card)}
 
+/* 顶栏视图切换（平板/手机：视图按钮上移页眉，书名下移左侧栏底） */
+.tb-switch{display:none}
+.fp-book{display:none}
+/* v2.15：书名随左侧边栏一起滚动（去掉 sticky 固定），初始仍贴底 */
+.fp-book{margin-top:auto;background:var(--paper-deep);
+  padding-top:10px;border-top:1px solid var(--line);
+  font-family:var(--serif);font-size:12px;color:var(--ink-faint);line-height:1.5;text-align:center}
+.fp-book .fp-book-t{font-weight:600;color:var(--ink-soft)}
+.fp-book .brand-short{display:none}
+.fp-book .fp-book-s{font-size:10.5px;font-style:italic;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
 /* 视图面板（时间线 / 家族 / 社交圈） */
 .view-pane{
   position:absolute;inset:0;z-index:5;overflow-y:auto;overflow-x:hidden;
@@ -390,10 +407,7 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 .tl-pchip:hover{border-color:var(--accent);color:var(--accent)}
 .tl-pchip .pi{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint)}
 .tl-pchip.imp3{border-color:rgba(158,59,44,.45);background:rgba(158,59,44,.05);font-weight:600}
-.tl-more{
-  margin-top:8px;font-size:11.5px;color:var(--accent);cursor:pointer;
-  border:1px dashed rgba(158,59,44,.45);border-radius:12px;padding:3px 10px;background:transparent;
-}
+.tl-pchip:active{border-color:var(--accent);color:var(--accent);background:rgba(158,59,44,.08)}
 .tl-all{display:none;margin-top:8px;flex-wrap:wrap;gap:6px}
 .tl-vol.open .tl-all{display:flex}
 .tl-all .tl-pchip{font-size:11.5px;padding:3px 9px;border-color:var(--line)}
@@ -433,18 +447,19 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 .timeline-person-link.is-selected{color:var(--accent);background:rgba(158,59,44,.11);border-radius:3px;text-decoration-style:solid}
 .tl-relrow .timeline-person-link{white-space:nowrap}
 .tt-name .timeline-person-link{text-decoration-color:rgba(158,59,44,.6)}
-/* 卷块 chips 已有胶囊样式：去掉下划线，selected 用边框强调 */
-.tl-pchip.timeline-person-link{text-decoration:none}
-.tl-pchip.is-selected{border-color:var(--accent);box-shadow:0 0 0 1px rgba(158,59,44,.35)}
+/* 卷块 chips 已有胶囊样式：去掉下划线，selected 用边框强调；圆角锁定 14px 防止被 .timeline-person-link 的 3px 覆盖 */
+.tl-pchip.timeline-person-link{text-decoration:none;border-radius:14px}
+.tl-pchip.is-selected{border-radius:14px;border-color:var(--accent);background:rgba(158,59,44,.08);font-weight:600}
 .tl-empty{text-align:center;color:var(--ink-faint);font-size:13px;padding:60px 20px;line-height:1.9}
 
 /* 家族 / 社交圈视图 */
 .fv-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:252px 1fr;gap:16px;align-items:start}
 .fv-list{background:rgba(247,242,231,.85);border:1px solid var(--line);border-radius:12px;padding:10px}
 .fv-list-t{font-family:var(--serif);font-size:13px;font-weight:600;padding:6px 10px 10px;border-bottom:1px solid var(--line);margin-bottom:8px;letter-spacing:.1em}
-.fv-item{padding:8px 10px;border-radius:9px;cursor:pointer;transition:all .15s;border:1px solid transparent}
+.fv-item{padding:8px 10px;border-radius:9px;cursor:pointer;transition:all .15s;border:1px solid var(--line)}
 .fv-item:hover{background:var(--paper-deep)}
 .fv-item.on{background:var(--paper-card);border-color:var(--accent)}
+.fv-item:active{border-color:var(--accent);background:var(--paper-card)}
 .fv-item .fn{font-family:var(--serif);font-size:13.5px;font-weight:600}
 .fv-item .fm{font-size:11px;color:var(--ink-faint);margin-top:2px;line-height:1.5}
 .fv-main{background:rgba(247,242,231,.85);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-height:320px}
@@ -460,6 +475,8 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   font-size:12.5px;color:var(--ink);max-width:100%;
 }
 .fv-card:hover{border-color:var(--accent)}
+.fv-card:active{border-color:var(--accent);background:rgba(158,59,44,.06)}
+.fv-card .fn2{display:block;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
 .fv-card .fi{font-family:var(--sans);font-size:10.5px;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
 .fv-card.core{border-color:rgba(158,59,44,.55);background:rgba(158,59,44,.06);font-weight:600}
 .fv-card.marriage{border-style:double;border-width:3px}
@@ -633,29 +650,45 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 /* ===== 平板 768–1023：不是大手机，不是缩小桌面（TAB-01） ===== */
 @media (min-width:768px) and (max-width:1023px){
   #topbar{--topbar-h:52px;gap:8px;padding:0 12px;
-    display:grid;grid-template-columns:1fr auto auto 1fr;align-items:center}
-  .brand-title{font-size:17px}
-  .brand-sub{font-size:13px}
-  .brand-full{display:none}
-  .brand-short{display:inline}
-  /* HEADER 2.0 平板：历史 + 书名 + 搜索 + 更多 */
+    display:grid;grid-template-columns:auto 1fr auto auto;align-items:center}
+  /* HEADER 2.1 平板：历史 + 视图切换(居中) + 搜索 + 更多；书名下移左侧栏底 */
+  .brand{display:none}
+  .tb-switch{display:inline-flex;justify-self:center}
+  .fp-book{display:block}
+  .gtoolbar .view-switch{display:none}
   .hist-wrap{display:flex;gap:0;align-items:center;justify-self:start}
-  #bookTitle{display:block;font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink);
-    letter-spacing:.04em;max-width:26vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;justify-self:center}
+  #bookTitle{display:none}
+  .search-wrap{justify-self:stretch;max-width:300px;margin-left:0}
   #moreBtn{display:inline-flex;flex:0 0 auto;width:44px;height:44px;border-radius:12px;
     border:1px solid transparent;background:transparent;color:var(--ink-soft);
     align-items:center;justify-content:center;justify-self:end}
   #moreBtn svg{width:18px;height:18px}
   #moreBtn:active{background:var(--paper-deep)}
   #searchInput{height:34px;font-size:13px}
-  #filterPanel{flex:0 0 210px;width:210px;padding:12px 12px 18px}
-  #detailPanel{flex:0 0 296px;width:296px}
+  /* 平板：筛选/工具按钮隐藏（收进「更多」），header 保持单行不溢出压时间线 */
+  #menuBtn{display:none}
+  #toolsBtn{display:none}
+  #filterPanel{flex:0 0 200px;width:200px;padding:12px 12px 18px}
+  #detailPanel{flex:0 0 264px;width:264px}
   #detailContent{padding:18px 18px 26px}
-  /* 工具渐进折叠：share/export/图例/缩放 收纳进「工具」；保留 适应 + 缩放 */
+  /* 工具渐进折叠：share/export/图例/缩放/章节按钮 收纳；保留 适应 + 缩放 */
   #legendBtn{display:none}
-  #toolsBtn{display:inline-flex}
+  #volSelBtn{display:none}
   #legend{width:214px;left:10px;bottom:10px}
   .view-pane{padding:60px 18px 30px}
+  /* 平板：家族/社交圈视图单栏（列表两列小方块 + 主区在下），内容不再溢出盖住详情 */
+  .fv-wrap{grid-template-columns:1fr;gap:12px}
+  .fv-list{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;padding:8px}
+  .fv-list-t{grid-column:1/-1;margin-bottom:2px}
+  .fv-item{display:flex;flex-direction:column;gap:1px;min-height:52px;padding:8px 10px;justify-content:center}
+  .fv-item .fn{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fv-item .fm{font-size:10px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fv-main{padding:12px 12px}
+  .fv-card{flex-wrap:wrap;padding:10px 12px}
+  .fv-card .fi{max-width:100%;flex-basis:100%;white-space:normal;overflow:hidden;display:-webkit-box;
+    -webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:11px;line-height:1.45}
+  /* 详情字体平板微调 */
+  .dh-name{font-size:19px}
 }
 
 /* ===== 手机 <768：Mobile First Progressive Disclosure（MOB-02~MOB-13） ===== */
@@ -666,9 +699,12 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   /* HEADER 2.0：品牌隐藏；历史 + 书名居中 + 更多 */
   .brand{display:none}
   .hist-wrap{display:flex;gap:0;align-items:center;justify-self:start}
-  #bookTitle{display:block;font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink);
-    letter-spacing:.04em;max-width:46vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    text-align:center;justify-self:center}
+  #bookTitle{display:none}
+  .tb-switch{display:inline-flex;justify-self:center}
+  .tb-switch .view-btn{height:28px;padding:0 9px;font-size:12px}
+  /* 手机：书名只在「更多」菜单最底部（ms-book）；筛选抽屉内不再重复显示 */
+  .fp-book{display:none}
+  .fp-book.ms-book{display:block;margin-top:auto;position:sticky;bottom:0;padding:12px 18px 16px;background:var(--paper-deep)}
   .search-wrap{margin-left:0;flex:0 0 auto;display:none}
   #searchInput,#searchResults{display:none}
   #searchBtn{display:none}
@@ -806,7 +842,6 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   .gbtn{min-width:42px;min-height:42px}
   .tl-chip{padding:7px 13px}
   .tl-dot{width:32px;height:32px;font-size:11.5px}
-  .tl-more{padding:8px 14px}
   .tt-gobtn{padding:8px 14px}
   .dh-go{padding:8px 14px}
   .timeline-person-link{padding:5px 3px;margin:-4px -3px}
@@ -815,7 +850,6 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
   .chk{min-height:42px}
   .fv-item{padding:12px 10px}
   .tl-vol-head{padding:13px 14px}
-  .tl-more{padding:9px 16px}
 }
 
 /* 刘海屏 / 手势条安全区 */
@@ -893,6 +927,12 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
       </button>
     </div>
     <span id="bookTitle" aria-label="当前书籍">红楼梦</span>
+    <span class="view-switch tb-switch" id="viewSwitchTop" aria-label="视图切换">
+      <button class="view-btn on" data-view="network" aria-pressed="true">网络</button>
+      <button class="view-btn" data-view="family" aria-pressed="false">家族</button>
+      <button class="view-btn" data-view="social" aria-pressed="false">社交圈</button>
+      <button class="view-btn" data-view="timeline" aria-pressed="false">时间线</button>
+    </span>
     <div class="search-wrap">
       <input id="searchInput" placeholder="搜索人物：宝玉 / 黛玉 / 宝钗…" autocomplete="off">
       <div id="searchResults"></div>
@@ -934,8 +974,8 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
         <div id="typeFilters"></div>
       </div>
 
-      <div class="fp-sec">
-        <div class="fp-sec-title">章节</div>
+      <div class="fp-sec vol-sec collapsed">
+        <div class="fp-sec-title fold" id="volFoldBtn">章节 <span class="fold-arrow" id="volFoldArrow">▸</span></div>
         <div class="vol-chips" id="volFilters"></div>
       </div>
 
@@ -953,6 +993,10 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
 
       <div id="stats">共 <b id="statP">0</b> 位人物 · <b id="statR">0</b> 段关系</div>
       <div class="fp-hint">提示：点击人物进入聚焦模式，再点空白处返回全局。</div>
+      <div class="fp-book">
+        <span class="fp-book-t"><span class="brand-full">红楼梦 · 人物关系图谱</span><span class="brand-short">人物关系图谱</span></span>
+        <span class="fp-book-s">曹雪芹 著 · 一百二十回通行本</span>
+      </div>
       <button id="filterDoneBtn">完成</button>
     </aside>
 
@@ -1101,6 +1145,10 @@ input{font-family:inherit;border:none;outline:none;background:transparent;color:
         <button class="tool-cell" data-more-tool="reset" aria-label="重置视图"><span class="ms-dot"></span>重置</button>
       </div>
     </div>
+  </div>
+  <div class="fp-book ms-book">
+    <span class="fp-book-t"><span class="brand-full">红楼梦 · 人物关系图谱</span><span class="brand-short">人物关系图谱</span></span>
+    <span class="fp-book-s">曹雪芹 著 · 一百二十回通行本</span>
   </div>
 </div>
 <div id="volSheet" class="sheet-panel" role="dialog" aria-label="选择章节" aria-hidden="true">
@@ -10850,6 +10898,7 @@ var FAMS=[];(function(){var seen={};PEOPLE.forEach(function(p){if(p.family&&!see
 var state={mode:'std',types:new Set(),vols:new Set(),circles:new Set(),family:'',focused:null,relFocused:null,neighbor:0,view:'network'};
 var cy=null;
 var layoutTimer=null,urlTimer=null;
+var selfUrlChange=false; /* 自身 updateUrl 触发的 hash 变更标记（v2.11） */
 
 /* ===== 可见性计算 ===== */
 function computeVisible(){
@@ -10901,12 +10950,12 @@ function makeCy(){
       'border-color':function(ele){return ele.data('circ2')||'#F7F2E7';},
       'width':'data(size)','height':'data(size)',
       'shape':function(ele){return ele.data('group')?'round-rectangle':'ellipse';},
-      'label':function(ele){return ele.data('imp')>=3?ele.data('name'):'';},
+      'label':function(ele){return ele.data('name');},
       'font-family':'"Noto Serif SC","Songti SC",Georgia,serif',
       'font-size':function(ele){return ele.data('imp')>=3?13:11;},
       'color':'#2A251E','font-weight':600,
       'text-valign':'bottom','text-halign':'center','text-margin-y':7,
-      'text-wrap':'wrap','text-max-width':110,
+      'text-wrap':'wrap','text-max-width':150,
       'text-outline-width':2.5,'text-outline-color':'#F2ECDF',
       'opacity':1,
       'z-index':function(ele){return (ele.data('imp')||0)*100+10;}
@@ -10932,7 +10981,8 @@ function makeCy(){
     elements:{nodes:cytoNodes,edges:cytoEdges},
     style:styleSheet,
     layout:{name:'preset'},
-    minZoom:0.15,maxZoom:2.6
+    minZoom:0.15,maxZoom:2.6,
+    wheelSensitivity:0.12
   });
   /* 测试钩子（Agent 24）：暴露图谱实例供自动化测试驱动，非生产功能 */
   window.__cy=cy;
@@ -10942,17 +10992,80 @@ function makeCy(){
 function runLayout(animate){
   var vis=cy.elements(':visible');
   if(vis.length===0) return;
-  var opts={animate:!!animate,animationDuration:500,randomize:false,
-    nodeRepulsion:function(){return 8000;},idealEdgeLength:function(){return 100;},
-    edgeElasticity:0.5,gravity:0.28,numIter:2000,tile:true};
+  /* 布局参数按节点数分三档：<30 小图（树状链易拉条，加大斥力/减重力/关 tile）；
+     30~120 中图（如西游记 std 53 节点，标签长易重叠，需更分散）；
+     >120 大图（多节点时平铺分组）。
+     当前已是长条（竖/横比>1.7）时用随机初始位置重排，避免 randomize:false 保持长条 */
+  var n=vis.length;
+  var small=n<30, mid=n<=120;
+  var rep=small?17000:(mid?13000:8000);
+  var iel=small?180:(mid?155:100);
+  var grav=small?0.05:(mid?0.12:0.28);
+  var tile=!small&&!mid; /* 仅大图开 tile 平铺子图；小/中图关 tile 防网格化紧凑排列 */
+  var bb=vis.boundingBox();
+  var sx=Math.max(bb.w,1),sy=Math.max(bb.h,1);
+  var elongated=sy/sx>1.7||sx/sy>1.7;
+  /* 中图（30~120 节点，长标签易重叠）固定随机初始位置让 fcose 分散更均匀；
+     小/大图仅在已拉成长条时随机（保持布局稳定） */
+  var randomize=mid?true:elongated;
+  var opts={animate:!!animate,animationDuration:500,randomize:randomize,
+    nodeRepulsion:function(){return rep;},idealEdgeLength:function(){return iel;},
+    edgeElasticity:0.5,gravity:grav,numIter:2500,tile:tile};
   var ly;
   try{
     ly=vis.layout(Object.assign({name:'fcose'},opts));
   }catch(e){
-    ly=vis.layout(Object.assign({name:'cose'},{animate:!!animate,animationDuration:500,randomize:false,nodeRepulsion:function(){return 8000;},idealEdgeLength:function(){return 100;}}));
+    ly=vis.layout(Object.assign({name:'cose'},{animate:!!animate,animationDuration:500,randomize:randomize,nodeRepulsion:function(){return rep;},idealEdgeLength:function(){return iel;}}));
   }
-  ly.one('layoutstop',function(){cy.fit(cy.elements(':visible'),40);});
+  ly.one('layoutstop',function(){
+    /* v2.19 防长条：布局后检测包围盒，竖/横比例>1.7 说明仍被拉成条，
+       随机初始位置 + 更强参数重排一次 */
+    var bb2=cy.elements(':visible').boundingBox();
+    var s2x=Math.max(bb2.w,1),s2y=Math.max(bb2.h,1);
+    if(!window.__layoutRetried&&(s2y/s2x>1.7||s2x/s2y>1.7)){
+      window.__layoutRetried=true;
+      var v2=cy.elements(':visible');
+      var ly2=v2.layout({name:'fcose',animate:!!animate,animationDuration:500,randomize:true,
+        nodeRepulsion:function(){return small?32000:(mid?20000:12000);},idealEdgeLength:function(){return small?260:(mid?210:130);},
+        edgeElasticity:0.4,gravity:small?0.02:(mid?0.06:0.25),numIter:3500,tile:false});
+      ly2.one('layoutstop',function(){deoverlapLabels();cy.fit(cy.elements(':visible'),40);});
+      ly2.run();
+    }else{
+      deoverlapLabels();
+      cy.fit(cy.elements(':visible'),40);
+    }
+  });
   ly.run();
+}
+/* v2.19b 标签防重叠后处理：布局完成后检测节点标签矩形冲突，迭代沿 x 推开，
+   保证长名字（四大天王/五方揭谛等群体角色）不被遮挡；不破坏整体关系结构 */
+function deoverlapLabels(){
+  var zoom=cy.zoom();
+  var nodes=cy.nodes(':visible');
+  var arr=nodes.map(function(n){
+    var p=n.renderedPosition();
+    var lb=n.style('label')||'';
+    var w=Math.min(lb.length*12+12,170);   /* 标签估算宽（text-max-width 内） */
+    return {n:n,x:p.x,y:p.y,w:w,h:22};
+  });
+  for(var it=0;it<80;it++){
+    var moved=false;
+    for(var i=0;i<arr.length;i++)for(var j=i+1;j<arr.length;j++){
+      var a=arr[i],b=arr[j];
+      var dx=Math.abs(a.x-b.x),dy=Math.abs(a.y-b.y);
+      /* 标签在节点下方约 4~30px 处；标签区域 x 向重叠且 y 向接近时推开 */
+      if(dx<(a.w/2+b.w/2)*0.85&&dy<42&&dy>4){
+        var push=((a.w/2+b.w/2)*0.85-dx)*0.6+4;
+        var dir=a.x<b.x?-1:1;
+        var pa=a.n.position(),pb=b.n.position();
+        a.n.position({x:pa.x-dir*push/zoom,y:pa.y});
+        b.n.position({x:pb.x+dir*push/zoom,y:pb.y});
+        a.x-=dir*push;b.x+=dir*push;
+        moved=true;
+      }
+    }
+    if(!moved)break;
+  }
 }
 function scheduleLayout(){
   if(layoutTimer) clearTimeout(layoutTimer);
@@ -11026,7 +11139,7 @@ function applyFocus(){
     visE.removeClass('f1');
     visN.style('opacity',1);
     visE.forEach(function(e){e.style({opacity:0.85,width:e.data('ewidth')});});
-    visN.forEach(function(n){ if(n.data('imp')<3) n.style('label',''); });
+    /* v2.18：所有可见节点常显名字，不再清空次要节点 label */
     if(state.focused){
       var F=cy.getElementById(state.focused);
       if(F.length&&F.visible()){
@@ -11109,7 +11222,6 @@ function relChips(p){
   p.circles.forEach(function(c){
     out.push('<span class="badge circ" style="color:'+CIRCLE_COLORS[c]+'">'+esc(c)+'</span>');
   });
-  if(p.volumes&&p.volumes.length) out.push('<span class="badge vol">'+volText(p.volumes)+'</span>');
   if(p.firstAppearance) out.push('<span class="badge">首见 '+volText([p.firstAppearance])+'</span>');
   if(p.confidence) out.push('<span class="badge conf-'+p.confidence+'">置信度·'+CONF_LABEL[p.confidence]+'</span>');
   return out.join('');
@@ -11205,16 +11317,6 @@ function renderPersonDetailImpl(id){
     });
     html+='</div>';
   }
-  if(p.volumes&&p.volumes.length){
-    var vs=[];p.volumes.forEach(function(v){if(v>0&&vs.indexOf(v)<0)vs.push(v);});
-    vs.sort(function(a,b){return a-b;});
-    html+='<div class="dh-block"><div class="dh-block-title">'+CHAPTER_UNIT+'次轨迹</div><div class="vol-track"><span class="vt-lbl">出现</span>';
-    vs.forEach(function(v){
-      var active=state.vols.size>0&&state.vols.has(v);
-      html+='<span class="vol-dot on'+(active?' sel':'')+'" data-v="'+v+'" title="'+volName(v)+'">'+v+'</span>';
-    });
-    html+='</div></div>';
-  }
   if(p.description) html+='<div class="dh-block"><div class="dh-block-title">人物简介</div><div class="dh-text">'+esc(p.description)+'</div></div>';
   if(p.events&&p.events.length){
     html+='<div class="dh-block"><div class="dh-block-title">关键事件</div><ul class="ev-list">';
@@ -11247,14 +11349,6 @@ function renderPersonDetailImpl(id){
       e.stopPropagation();
       var other=el.getAttribute('data-other');
       selectPerson(other);
-    });
-  });
-  $$('#detailContent .vol-dot').forEach(function(el){
-    el.addEventListener('click',function(){
-      var v=parseInt(this.getAttribute('data-v'),10);
-      if(state.vols.has(v)){state.vols.delete(v);if(state.vols.size===0)state.vols.clear();}
-      else{state.vols.clear();state.vols.add(v);}
-      renderFilterUI();applyFilters(true);
     });
   });
   requestAnimationFrame(function(){
@@ -11495,7 +11589,9 @@ function updateUrl(push){
     var h=parts.length?'#'+parts.join('&'):'';
     if(push){
       if(location.hash!==h){
+        selfUrlChange=true;
         try{location.hash=h;}catch(e){}
+        setTimeout(function(){selfUrlChange=false;},80);
       }
     }else{
       try{history.replaceState(null,'',location.pathname+location.search+h);}catch(e){}
@@ -11539,10 +11635,12 @@ function parseUrl(first){
 /* ===== 视图切换 ===== */
 function setView(v){
   state.view=v;
-  $$('#viewSwitch .view-btn').forEach(function(b){
-    var on=b.getAttribute('data-view')===v;
-    b.classList.toggle('on',on);
-    b.setAttribute('aria-pressed',on?'true':'false');
+  ['#viewSwitch','#viewSwitchTop'].forEach(function(sel){
+    $$(sel+' .view-btn').forEach(function(b){
+      var on=b.getAttribute('data-view')===v;
+      b.classList.toggle('on',on);
+      b.setAttribute('aria-pressed',on?'true':'false');
+    });
   });
   var isNet=v==='network';
   $('#cy').style.display=isNet?'':'none';
@@ -11667,12 +11765,6 @@ function renderTimeline(opts){
   html+='<span class="ts">家族 <b>'+famSet.size+'</b></span>';
   html+='<span class="ts">社交圈 <b>'+cirSet.size+'</b></span>';
   html+='</div>';
-  html+='<div class="tl-chips">';
-  html+='<button class="tl-chip'+(cur===0?' on':'')+'" data-v="0">全部</button>';
-  for(var v=1;v<=VOLUME_COUNT;v++){
-    html+='<button class="tl-chip'+(cur===v?' on':'')+'" data-v="'+v+'">'+volName(v)+'</button>';
-  }
-  html+='</div>';
   if(state.focused&&P[state.focused]) html+=personTrack(P[state.focused]);
   html+='<div class="tl-vols">';
   for(var v=1;v<=VOLUME_COUNT;v++){
@@ -11695,7 +11787,7 @@ function renderTimeline(opts){
       core.forEach(function(p){html+=personChip(p,true);});
       html+='</div>';
       if(rest.length){
-        html+='<button class="tl-more">+ 展开其余 '+rest.length+' 人</button>';
+        /* v2.14：卷展开即显示全部人物，去掉「展开其余 N 人」按钮 */
         html+='<div class="tl-all">';
         rest.forEach(function(p){html+=personChip(p,false);});
         html+='</div>';
@@ -11709,21 +11801,8 @@ function renderTimeline(opts){
 }
 
 function bindTimeline(root){
-  root.querySelectorAll('.tl-chip').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var v=parseInt(this.getAttribute('data-v'),10);
-      if(v===0) state.vols.clear();
-      else{state.vols.clear();state.vols.add(v);}
-      renderFilterUI();applyFilters(true);renderTimeline({openOnly:true});
-      var curEl=root.querySelector('.tl-vol[data-v="'+v+'"]');
-      if(curEl&&curEl.scrollIntoView) curEl.scrollIntoView({behavior:'smooth',block:'center'});
-    });
-  });
   root.querySelectorAll('.tl-vol-head').forEach(function(h){
     h.addEventListener('click',function(){this.parentNode.classList.toggle('open');});
-  });
-  root.querySelectorAll('.tl-more').forEach(function(b){
-    b.addEventListener('click',function(){this.style.display='none';this.parentNode.querySelector('.tl-all').style.display='flex';});
   });
   /* 人物实体点击：事件委托，点击任何 [data-p] 按钮 → 统一 selectPerson；
      增量更新：只重建轨迹卡与 selected 类，不重建卷块（Agent 17 性能） */
@@ -11874,7 +11953,7 @@ function fvOk(p){
 function fvCard(p,cls){
   var c=cls||'';
   if(p.confidence==='low')c+=' uncertain';
-  return '<span class="fv-card '+c+'" data-p="'+p.id+'" tabindex="0">'+esc(p.name)
+  return '<span class="fv-card '+c+'" data-p="'+p.id+'" tabindex="0"><span class="fn2">'+esc(p.name)+'</span>'
     +(p.identity?'<span class="fi">'+esc(p.identity)+'</span>':'')
     +(cls==='marriage'?'<span class="mar">姻亲</span>':'')+'</span>';
 }
@@ -12014,7 +12093,7 @@ function renderSocialView(){
     members.forEach(function(p){
       var multi=p.circles.length>1;
       var cls=p.importance>=3?'core':'';if(p.confidence==='low')cls+=' uncertain';
-      h+='<span class="fv-card '+cls+'" data-p="'+p.id+'" tabindex="0">'+esc(p.name)
+      h+='<span class="fv-card '+cls+'" data-p="'+p.id+'" tabindex="0"><span class="fn2">'+esc(p.name)+'</span>'
         +(p.identity?'<span class="fi">'+esc(p.identity)+'</span>':'')
         +(multi?'<span class="mar">'+p.circles.length+' 圈</span>':'')+'</span>';
     });
@@ -12165,18 +12244,53 @@ function showToast(msg){
 }
 
 
+var cyTapLast=0;
 function bindCyEvents(){
-  cy.on('tap','node',function(e){selectPerson(e.target.id());});
+  cy.on('tap','node',function(e){cyTapLast=Date.now();selectPerson(e.target.id());});
   cy.on('tap','edge',function(e){renderRelDetail(e.target.id());});
   cy.on('tap',function(e){ if(e.target===cy){clearFocus();} });
   cy.on('dbltap','node',function(e){
     var n=e.target;
     cy.animate({center:{eles:n},zoom:Math.min(cy.zoom()*1.35,2.6),duration:300});
   });
+  /* v2.16 兜底点击：部分线上/移动端环境 cy.on('tap') 不触发（浏览器手势/触摸合成差异），
+     在容器上监听原生 click / touchend，用坐标命中节点后走 selectPerson；
+     350ms 去重防与 cy tap 双触发；拖动不触发（touchend 位移阈值） */
+  var cont=cy.container();
+  if(cont&&!cont.__tapFallback){
+    cont.__tapFallback=true;
+    var fx=0,fy=0,fdown=false;
+    function fallback(x,y){
+      if(Date.now()-cyTapLast<350)return;
+      var bb=cont.getBoundingClientRect();
+      var rx=x-bb.left, ry=y-bb.top;   /* renderedPosition 是容器内像素坐标 */
+      var hit=null,best=1e18;
+      cy.nodes(':visible').forEach(function(n){
+        var np=n.renderedPosition();
+        var rw=(typeof n.renderedWidth==='function'?n.renderedWidth():36)/2+7;
+        var rh=(typeof n.renderedHeight==='function'?n.renderedHeight():36)/2+7;
+        var dx=rx-np.x,dy=ry-np.y;
+        if(Math.abs(dx)<=rw&&Math.abs(dy)<=rh){
+          var d=dx*dx+dy*dy;
+          if(d<best){best=d;hit=n;}
+        }
+      });
+      if(hit){cyTapLast=Date.now();selectPerson(hit.id());}
+    }
+    cont.addEventListener('click',function(e){fallback(e.clientX,e.clientY);});
+    cont.addEventListener('touchstart',function(e){
+      var t=e.changedTouches&&e.changedTouches[0];
+      if(t){fx=t.clientX;fy=t.clientY;fdown=true;}
+    },{passive:true});
+    cont.addEventListener('touchend',function(e){
+      var t=e.changedTouches&&e.changedTouches[0];
+      if(t&&fdown&&Math.abs(t.clientX-fx)<10&&Math.abs(t.clientY-fy)<10)fallback(t.clientX,t.clientY);
+      fdown=false;
+    },{passive:true});
+  }
   cy.on('mouseover','node',function(e){
     var n=e.target;
     n.addClass('hov');
-    if(n.data('imp')<3&&!state.focused) n.style('label',n.data('name'));
     if(e.originalEvent){
       var p=P[n.id()]||{};
       showTip('<div class="tt-n">'+esc(n.data('name'))+'</div><div class="tt-i">'+esc(p.identity||'')+'</div>',
@@ -12186,7 +12300,6 @@ function bindCyEvents(){
   cy.on('mouseout','node',function(e){
     var n=e.target;
     n.removeClass('hov');
-    if(n.data('imp')<3&&!state.focused) n.style('label','');
     hideTip();
   });
   cy.on('mouseover','edge',function(e){
@@ -12198,11 +12311,6 @@ function bindCyEvents(){
     }
   });
   cy.on('mouseout','edge',hideTip);
-  cy.on('viewport',function(){
-    cy.nodes().forEach(function(n){
-      if(n.data('imp')<3&&!state.focused&&!n.hasClass('hov')) n.style('label','');
-    });
-  });
 }
 
 /* ===== 移动端面板 / 工具（MOB-02~MOB-10 合并实现） ===== */
@@ -12335,6 +12443,9 @@ function bindGlobal(){
   $$('#viewSwitch .view-btn').forEach(function(b){
     b.addEventListener('click',function(){setView(b.getAttribute('data-view'));});
   });
+  $$('#viewSwitchTop .view-btn').forEach(function(b){
+    b.addEventListener('click',function(){setView(b.getAttribute('data-view'));});
+  });
   $('#resetBtn').addEventListener('click',resetAll);
   $('#emptyReset').addEventListener('click',resetAll);
   $('#menuBtn').addEventListener('click',function(){
@@ -12454,6 +12565,9 @@ function bindGlobal(){
     }
   });
   window.addEventListener('hashchange',function(){
+    /* 自身 updateUrl 触发的 hash 变更已由调用方设置好完整状态，跳过重放，
+       避免残留 p= 角色被 selectPerson 重新弹出详情（v2.11 修复） */
+    if(selfUrlChange)return;
     closeSheets();
     parseUrl(false);
   });
@@ -12477,6 +12591,11 @@ function resetAll(){
 /* ===== 启动 ===== */
 function init(){
   buildFilterUI();
+  var volFold=$('#volFoldBtn');
+  if(volFold) volFold.addEventListener('click',function(){
+    var sec=volFold.closest('.vol-sec');
+    if(sec) sec.classList.toggle('collapsed');
+  });
   buildVolSheet();
   updateVolSelBtn();
   updateMoreCtx();
