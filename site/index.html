@@ -1080,6 +1080,7 @@ try {
     color: inherit;
     display: block;
     overflow: hidden;
+    min-width: 0;
   }
   /* restore card border in non-wallpaper mode */
   html:not(.background-image-mode) .link-card,
@@ -2990,7 +2991,7 @@ try {
     }
 
     .layout-minimal .links-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px 20px;
     }
 
@@ -3032,6 +3033,24 @@ try {
 
     .layout-minimal.hide-mode .link-card-inner {
       gap: 0;
+    }
+  }
+
+  /* 小屏手机：单列铺满，避免每列过窄把站名截断 */
+  @media (max-width: 480px) {
+    .layout-minimal .links-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .footer-logo {
+      width: 56px;
+      height: 56px;
+    }
+    .footer-title {
+      font-size: 24px;
+    }
+    .footer-tagline {
+      font-size: 12px;
     }
   }
 
@@ -6551,6 +6570,23 @@ try {
     color: #ffffff !important;
   }
 
+  /* 全平台适配收口：大屏不再挤成 7 列窄卡，桌面维持 4-5 列 */
+  @media (min-width: 1600px) {
+    .layout-minimal .links-grid,
+    .links-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px 36px;
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1599px) {
+    .layout-minimal .links-grid,
+    .links-grid {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px 28px;
+    }
+  }
+
 </style>
 </head>
 <body class="layout-minimal layout-clear">
@@ -6709,13 +6745,102 @@ try {
   </div>
 </footer>
 
-<script src="assets/data.js"></script>
+<script src="assets/data_toc.js"></script>
+<script src="assets/data_books.js"></script>
 <script>
 
 // 为主页面标签页命名，便于子页面通过 window.open 跳转回来
 window.name = 'kisstr_home';
 
-var linksData = window.KISSTR_DATA;
+// 首屏只拿「目录骨架 + 书籍」两小块，其余分类放到 data_rest.js 后台异步加载
+var linksData = (function () {
+  var toc = window.KISSTR_DATA_TOC || [];
+  var books = window.KISSTR_DATA_BOOKS || [];
+  var list = toc.slice();
+  if (books.length && list.length && list[0] && books[0].name === list[0].name) {
+    list[0] = books[0];
+  }
+  return list;
+})();
+
+var __pendingCategory = null;
+var __restLoading = false;
+
+function loadRestData(onDone) {
+  if (window.__KISSTR_REST_LOADED__) { if (onDone) onDone(); return; }
+  if (__restLoading) { if (onDone) window.__restCallbacks.push(onDone); return; }
+  __restLoading = true;
+  window.__restCallbacks = onDone ? [onDone] : [];
+  var s = document.createElement('script');
+  s.src = 'assets/data_rest.js';
+  s.onload = function () {
+    window.__KISSTR_REST_LOADED__ = true;
+    __restLoading = false;
+    var rest = window.KISSTR_DATA_REST || [];
+    linksData = [linksData[0]].concat(rest);
+    if (typeof updateCategoryTabs === 'function') updateCategoryTabs();
+    var cbs = window.__restCallbacks || [];
+    window.__restCallbacks = [];
+    cbs.forEach(function (cb) { try { cb(); } catch (e) { console.warn(e); } });
+    if (__pendingCategory) {
+      var cat = __pendingCategory;
+      __pendingCategory = null;
+      if (typeof renderLinks === 'function') {
+        var input = document.getElementById('searchInput');
+        renderLinks(input ? input.value : '', cat);
+      }
+    }
+  };
+  s.onerror = function () {
+    __restLoading = false;
+    console.warn('data_rest.js 加载失败');
+    var cbs = window.__restCallbacks || [];
+    window.__restCallbacks = [];
+    cbs.forEach(function (cb) { try { cb(); } catch (e) {} });
+  };
+  document.body.appendChild(s);
+}
+
+function updateCategoryTabs() {
+  var tabsList = document.getElementById('tabsList');
+  if (!tabsList || !linksData) return;
+  tabsList.innerHTML = '';
+  if (!window.__KISSTR_INDEX__) {
+    var homeBtn = document.createElement('button');
+    homeBtn.className = 'tab-btn return-home-tab';
+    homeBtn.textContent = '返回首页';
+    homeBtn.title = '返回首页';
+    homeBtn.addEventListener('click', function (e) {
+      if (window.__SPA_NAV__) window.__SPA_NAV__('index.html');
+      else window.location.href = 'index.html';
+      e.currentTarget.blur();
+    });
+    tabsList.appendChild(homeBtn);
+  }
+  linksData.forEach(function (cat) {
+    if (cat.name === '索引' && !window.__KISSTR_INDEX__) return;
+    var btn = document.createElement('button');
+    btn.className = 'tab-btn' + (cat.name === currentCategory ? ' active' : '');
+    btn.textContent = cat.name;
+    btn.dataset.category = cat.name;
+    if (cat.easterEggUrl) {
+      btn.dataset.eggClicks = '0';
+      btn.addEventListener('click', function () {
+        var clicks = Number(btn.dataset.eggClicks || '0') + 1;
+        btn.dataset.eggClicks = String(clicks);
+        clearTimeout(btn._eggTimer);
+        if (clicks >= 3) {
+          btn.dataset.eggClicks = '0';
+          window.open(cat.easterEggUrl, '_blank', 'noopener');
+        } else {
+          btn._eggTimer = setTimeout(function () { btn.dataset.eggClicks = '0'; }, 900);
+        }
+      });
+    }
+    btn.addEventListener('click', function (e) { filterByCategory(cat.name); e.currentTarget.blur(); });
+    tabsList.appendChild(btn);
+  });
+}
 
 const literaryQuotes = [
   '满地都是六便士，他却抬头看见了月亮。——毛姆《月亮与六便士》',
@@ -7265,6 +7390,16 @@ function doRenderLinks(filterText, category) {
   const main = document.getElementById('mainContent');
   if (!main) return;
   main.innerHTML = '';
+
+  if (category !== 'all') {
+    const target = linksData.find(c => c.name === category);
+    if (target && target.__pending) {
+      main.innerHTML = '<div class="empty-message">正在加载「' + category + '」…</div>';
+      __pendingCategory = category;
+      loadRestData();
+      return;
+    }
+  }
 
   let hasResults = false;
 
@@ -8133,7 +8268,8 @@ function updateStationListHighlight() {
 
 renderLinks('', currentCategory);
 
-// 搜索框展开/收起交互
+// 首屏书籍先出来，稍后再在后台补全其余 64 个分类，避免首屏被 2MB 数据阻塞
+setTimeout(function () { loadRestData(); }, 1200);
 const searchInline = document.getElementById('searchInline');
 const searchInputEl = document.getElementById('searchInput');
 
@@ -8168,6 +8304,13 @@ if (searchInline && searchInputEl) {
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('active');
       });
+      // 全量数据还没到：先按已加载内容出结果，加载完成后自动补搜
+      if (!window.__KISSTR_REST_LOADED__) {
+        loadRestData(function () {
+          const v = document.getElementById('searchInput');
+          if (v && v.value) renderLinks(v.value, 'all');
+        });
+      }
       renderLinks(searchValue, 'all');
     } else {
       document.querySelectorAll('.tab-btn').forEach(btn => {

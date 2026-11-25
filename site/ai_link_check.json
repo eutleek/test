@@ -1,0 +1,702 @@
+[
+ {
+  "cat": "AI应用",
+  "name": "ChatGPT",
+  "url": "https://chatgpt.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "Perplexity",
+  "url": "https://www.perplexity.ai",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "Gemini Advanced",
+  "url": "https://gemini.google.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "豆包 Doubao",
+  "url": "https://www.doubao.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "文心一言 / 文心App",
+  "url": "https://yiyan.baidu.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "腾讯元宝",
+  "url": "https://yuanbao.tencent.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "Microsoft Copilot",
+  "url": "https://copilot.microsoft.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "Poe",
+  "url": "https://poe.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "通义千问 App",
+  "url": "https://tongyi.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "Character.AI",
+  "url": "https://character.ai",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "即梦 AI",
+  "url": "https://jimeng.jianying.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "通义听悟",
+  "url": "https://tingwu.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "ima 知识库",
+  "url": "https://ima.qq.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "飞书 AI",
+  "url": "https://www.feishu.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "剪映 AI",
+  "url": "https://www.capcut.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "腾讯文档 AI",
+  "url": "https://docs.qq.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "腾讯会议 AI",
+  "url": "https://meeting.tencent.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "猫箱",
+  "url": "https://maoxiangai.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "星野",
+  "url": "https://www.xingyeai.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "通义星尘",
+  "url": "https://tongyi.aliyun.com/xingchen",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "通义点金",
+  "url": "https://tongyi.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "DuMate",
+  "url": "https://dumate.baidu.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "HuggingChat",
+  "url": "https://huggingface.co/chat",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "Meta AI",
+  "url": "https://ai.meta.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "Meta Muse",
+  "url": "https://www.meta.ai",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI应用",
+  "name": "Notion AI",
+  "url": "https://www.notion.so/product/ai",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "Canva Magic Studio",
+  "url": "https://www.canva.com/magic-studio",
+  "code": 403,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "Kimi App",
+  "url": "https://kimi.moonshot.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "天工 AI App",
+  "url": "https://www.tiangong.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "Handy",
+  "url": "https://github.com/cjpais/Handy",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI应用",
+  "name": "Open Notebook",
+  "url": "https://github.com/lfnovo/open-notebook",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "GPT-6 Astra",
+  "url": "https://openai.com",
+  "code": 403,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Claude Fable 5",
+  "url": "https://www.anthropic.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Gemini 3.8 Pro",
+  "url": "https://deepmind.google",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Kimi K3",
+  "url": "https://kimi.moonshot.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Grok 4.6",
+  "url": "https://x.ai",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "大模型",
+  "name": "GLM-5.3",
+  "url": "https://www.zhipuai.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "文心大模型 5.1",
+  "url": "https://yiyan.baidu.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Qwen 3.8",
+  "url": "https://tongyi.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Llama 4 / 5 系列",
+  "url": "https://ai.meta.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "大模型",
+  "name": "Mistral 系列",
+  "url": "https://mistral.ai",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "大模型",
+  "name": "豆包 Seed 2.1 Pro",
+  "url": "https://www.doubao.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "混元 Hy3",
+  "url": "https://hunyuan.tencent.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "DeepSeek V4",
+  "url": "https://www.deepseek.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "星火 X2",
+  "url": "https://xinghuo.xfyun.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Command R+",
+  "url": "https://cohere.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Gemma 4",
+  "url": "https://ai.google.dev/gemma",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "大模型",
+  "name": "Phi-4",
+  "url": "https://azure.microsoft.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "MiniMax 海螺",
+  "url": "https://www.minimaxi.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "阶跃星辰 Step-2",
+  "url": "https://www.stepfun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "百川 Baichuan 4",
+  "url": "https://www.baichuan-ai.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "日日新 SenseNova",
+  "url": "https://platform.sensenova.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Midjourney V8.2",
+  "url": "https://www.midjourney.com",
+  "code": 403,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "FLUX 2 Pro",
+  "url": "https://blackforestlabs.ai",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "GPT-image-2",
+  "url": "https://openai.com",
+  "code": 403,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Runway Gen-4.5",
+  "url": "https://runwayml.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Suno V5",
+  "url": "https://suno.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "大模型",
+  "name": "Stable Diffusion 3",
+  "url": "https://stability.ai",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Pika 2.2",
+  "url": "https://pika.art",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "大模型",
+  "name": "Udio",
+  "url": "https://www.udio.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "天工大模型",
+  "url": "https://www.tiangong.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Gemini Omni 1.1 Flash",
+  "url": "https://deepmind.google",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Seedance 2.5",
+  "url": "https://jimeng.jianying.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "Seedream 5.0 Pro",
+  "url": "https://jimeng.jianying.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "通义万相 Wan 3.0",
+  "url": "https://tongyi.aliyun.com/wan",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "HappyHorse 1.1",
+  "url": "https://tongyi.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "文心一格",
+  "url": "https://yige.baidu.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "大模型",
+  "name": "豆包音频大模型",
+  "url": "https://www.doubao.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "扣子 Coze",
+  "url": "https://www.coze.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "ChatGPT Work",
+  "url": "https://chatgpt.com",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Claude Computer Use",
+  "url": "https://www.anthropic.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Cursor Agent",
+  "url": "https://cursor.sh",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Claude Code",
+  "url": "https://www.anthropic.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Microsoft Copilot Studio",
+  "url": "https://www.microsoft.com/copilot",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "腾讯元器",
+  "url": "https://yuanqi.tencent.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "通义灵码 / Qoder",
+  "url": "https://tongyi.aliyun.com/lingma",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "AutoGLM",
+  "url": "https://www.zhipuai.cn",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Zapier Central",
+  "url": "https://zapier.com/central",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "TRAE",
+  "url": "https://trae.ai",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "WorkBuddy / CodeBuddy",
+  "url": "https://workbuddy.qq.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "QClaw / ClawPro",
+  "url": "https://qclaw.qq.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Relevance AI Agents",
+  "url": "https://relevanceai.com/agents",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Salesforce Agent Builder",
+  "url": "https://www.salesforce.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Voiceflow",
+  "url": "https://www.voiceflow.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "蚂蚁数科 Agentar",
+  "url": "https://www.antgroup.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "文心千帆智能体平台",
+  "url": "https://qianfan.cloud.baidu.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Betteryeah",
+  "url": "https://www.betteryeah.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Wegic",
+  "url": "https://js.design",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "MindStudio",
+  "url": "https://www.mindstudio.ai",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "百炼平台",
+  "url": "https://bailian.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Devin Desktop",
+  "url": "https://devin.ai",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "GitHub Copilot",
+  "url": "https://github.com/copilot",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Gemini Code Assist",
+  "url": "https://cloud.google.com/products/gemini/code-assist",
+  "code": null,
+  "err": "URLError"
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Cline",
+  "url": "https://github.com/cline/cline",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Aider",
+  "url": "https://aider.chat",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Continue",
+  "url": "https://www.continue.dev",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "QoderWork",
+  "url": "https://tongyi.aliyun.com",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Manus",
+  "url": "https://manus.im",
+  "code": 200,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Lovable",
+  "url": "https://lovable.dev",
+  "code": 403,
+  "err": ""
+ },
+ {
+  "cat": "AI Agent",
+  "name": "Genspark",
+  "url": "https://www.genspark.ai",
+  "code": 403,
+  "err": ""
+ }
+]
