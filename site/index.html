@@ -6681,6 +6681,61 @@ try {
     }
   }
 
+  /* 平板与窄窗口（481-768）：与手机同一套逻辑，按钮居中、搜索紧跟、展开时独占一行 */
+  @media (min-width: 481px) and (max-width: 768px) {
+    body.layout-minimal .category-tabs {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px 6px;
+    }
+
+    body.layout-minimal .category-tabs .tabs-toggle {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+      padding: 0 16px;
+      min-width: 0;
+    }
+
+    body.layout-minimal .category-tabs .search-wrapper {
+      order: 1 !important;
+      flex: 0 0 32px !important;
+      margin-left: 8px !important;
+    }
+
+    body.layout-minimal .category-tabs .tabs-list {
+      order: 2;
+      flex: 0 0 100%;
+      width: 100%;
+      justify-content: center;
+    }
+
+    body.layout-minimal .category-tabs .search-wrapper.search-expanded {
+      order: 1 !important;
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      margin: 8px 0 0 !important;
+    }
+
+    body.layout-minimal .category-tabs.search-expanded {
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      transform: none !important;
+      overflow-x: visible !important;
+    }
+
+    body.layout-minimal .category-tabs .search-inline.expanded {
+      width: 100% !important;
+      min-width: 0 !important;
+      flex: 1 1 auto !important;
+    }
+
+    body.layout-minimal .category-tabs .search-inline.expanded input {
+      width: calc(100% - 44px) !important;
+    }
+  }
+
 </style>
 </head>
 <body class="layout-minimal layout-clear">
