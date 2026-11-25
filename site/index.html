@@ -7872,8 +7872,18 @@ layoutBtn.addEventListener('click', (e) => {
 
 const backToTop = document.getElementById('backToTop');
 
+// 尾页进入视口时隐藏返回顶部按钮，避免压住免责声明与关于作者
+let footerInView = false;
+const footerEl = document.querySelector('.footer-inner');
+if (footerEl && 'IntersectionObserver' in window) {
+  new IntersectionObserver((entries) => {
+    footerInView = entries[0].isIntersecting;
+    if (footerInView) backToTop.classList.remove('visible');
+  }, { threshold: 0, rootMargin: '0px 0px 80px 0px' }).observe(footerEl);
+}
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
+  if (!footerInView && window.scrollY > 300) {
     backToTop.classList.add('visible');
   } else {
     backToTop.classList.remove('visible');
