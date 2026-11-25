@@ -2222,6 +2222,236 @@ window.KISSTR_DATA_REST = [
     ]
   },
   {
+    "name": "TOP 数据",
+    "subcategories": [
+      {
+        "name": "网站流量排名",
+        "links": [
+          {
+            "name": "Rankeez",
+            "url": "https://rankeez.com/top",
+            "description": "全球网站与域名流量排名"
+          }
+        ]
+      },
+      {
+        "name": "企业榜单",
+        "links": [
+          {
+            "name": "财富中文网",
+            "url": "https://www.fortunechina.com",
+            "description": "世界500强与中国企业榜单"
+          }
+        ]
+      },
+      {
+        "name": "平台入口",
+        "links": [
+          {
+            "name": "YouTube 热门账号",
+            "url": "youtube_creators.html",
+            "description": "YouTube 平台热门订阅账号清单"
+          },
+          {
+            "name": "X 平台热门账号",
+            "url": "x_creators.html",
+            "description": "X（Twitter）平台热门账号清单"
+          },
+          {
+            "name": "TikTok 热门账号",
+            "url": "tiktok_creators.html",
+            "description": "TikTok 平台热门账号清单"
+          },
+          {
+            "name": "Instagram 热门账号",
+            "url": "instagram_creators.html",
+            "description": "Instagram 平台热门账号清单"
+          }
+        ]
+      },
+      {
+        "name": "域名与网络数据",
+        "links": [
+          {
+            "name": "NetAPI",
+            "url": "https://netapi.com",
+            "description": "域名区、WHOIS 与 DNS 数据查询"
+          }
+        ]
+      },
+      {
+        "name": "综合榜单",
+        "links": [
+          {
+            "name": "新榜",
+            "url": "https://www.newrank.cn/",
+            "description": "全平台榜单与账号指数"
+          },
+          {
+            "name": "MCNDATA",
+            "url": "https://www.mcndata.cn/",
+            "description": "短视频综合榜与带货榜"
+          },
+          {
+            "name": "克劳锐 TopKlout",
+            "url": "https://www.topklout.com/",
+            "description": "达人商业价值评估"
+          }
+        ]
+      },
+      {
+        "name": "抖音数据",
+        "links": [
+          {
+            "name": "飞瓜数据",
+            "url": "https://www.feigua.cn/",
+            "description": "抖音达人商品直播数据"
+          },
+          {
+            "name": "蝉妈妈",
+            "url": "https://www.chanmama.com/",
+            "description": "抖音电商选品与洞察"
+          },
+          {
+            "name": "达多多",
+            "url": "https://www.daduoduo.com/",
+            "description": "抖音直播电商免费查"
+          },
+          {
+            "name": "考古加",
+            "url": "https://www.kaogujia.com/",
+            "description": "爆品素材与潜力达人"
+          },
+          {
+            "name": "抖查查",
+            "url": "https://www.douchacha.com/",
+            "description": "短视频直播全量数据"
+          },
+          {
+            "name": "新抖",
+            "url": "https://xd.newrank.cn/",
+            "description": "抖音热门视频与涨粉榜"
+          }
+        ]
+      },
+      {
+        "name": "小红书数据",
+        "links": [
+          {
+            "name": "千瓜数据",
+            "url": "https://www.qian-gua.com/",
+            "description": "小红书达人品牌分析"
+          },
+          {
+            "name": "新红",
+            "url": "https://xh.newrank.cn/",
+            "description": "小红书红人榜与投放"
+          },
+          {
+            "name": "蝉小红",
+            "url": "https://www.chanxiaohong.com/",
+            "description": "小红书博主笔记数据"
+          },
+          {
+            "name": "灰豚红薯版",
+            "url": "https://xhs.huitun.com/",
+            "description": "小红书大盘与竞品监控"
+          },
+          {
+            "name": "火烧云数据",
+            "url": "https://www.hsydata.com/home",
+            "description": "小红书达人品牌营销"
+          }
+        ]
+      },
+      {
+        "name": "视频号数据",
+        "links": [
+          {
+            "name": "灰豚数据",
+            "url": "https://www.huitun.com/",
+            "description": "多平台直播带货数据"
+          },
+          {
+            "name": "友望数据",
+            "url": "https://www.youwant.cn/",
+            "description": "视频号账号投放监测"
+          },
+          {
+            "name": "百准数据",
+            "url": "https://www.baizhun.cn/",
+            "description": "视频号榜单与商品数据"
+          },
+          {
+            "name": "新视",
+            "url": "https://xs.newrank.cn/",
+            "description": "视频号内容与直播数据"
+          }
+        ]
+      },
+      {
+        "name": "B站数据",
+        "links": [
+          {
+            "name": "新站",
+            "url": "https://xz.newrank.cn/",
+            "description": "B站UP主与热门视频"
+          }
+        ]
+      },
+      {
+        "name": "公众号与舆情",
+        "links": [
+          {
+            "name": "西瓜数据",
+            "url": "https://data.xiguaji.com/",
+            "description": "公众号榜单与文章监测"
+          },
+          {
+            "name": "清博指数",
+            "url": "https://www.gsdata.cn/",
+            "description": "微信微博传播指数"
+          }
+        ]
+      },
+      {
+        "name": "官方数据源",
+        "links": [
+          {
+            "name": "巨量算数",
+            "url": "https://trendinsight.oceanengine.com/",
+            "description": "抖音官方趋势洞察"
+          },
+          {
+            "name": "抖音电商罗盘",
+            "url": "https://compass.jinritemai.com/",
+            "description": "商家经营数据后台"
+          },
+          {
+            "name": "小红书蒲公英",
+            "url": "https://pgy.xiaohongshu.com/",
+            "description": "官方达人合作平台"
+          },
+          {
+            "name": "小红书千帆",
+            "url": "https://ark.xiaohongshu.com/",
+            "description": "官方商家经营后台"
+          }
+        ]
+      },
+      {
+        "name": "数据接口",
+        "links": [
+          {
+            "name": "极致了数据",
+            "url": "https://www.jzl.com/",
+            "description": "多平台数据采集 API"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "种子与下载",
     "subcategories": [
       {
@@ -49894,36 +50124,6 @@ window.KISSTR_DATA_REST = [
     ]
   },
   {
-    "name": "热门账号",
-    "subcategories": [
-      {
-        "name": "平台入口",
-        "links": [
-          {
-            "name": "YouTube 热门账号",
-            "url": "youtube_creators.html",
-            "description": "YouTube 平台热门订阅账号清单"
-          },
-          {
-            "name": "X 平台热门账号",
-            "url": "x_creators.html",
-            "description": "X（Twitter）平台热门账号清单"
-          },
-          {
-            "name": "TikTok 热门账号",
-            "url": "tiktok_creators.html",
-            "description": "TikTok 平台热门账号清单"
-          },
-          {
-            "name": "Instagram 热门账号",
-            "url": "instagram_creators.html",
-            "description": "Instagram 平台热门账号清单"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "百科数据库",
     "icon": "📚",
     "color": "linear-gradient(135deg, #0984e3, #74b9ff)",
@@ -53509,206 +53709,6 @@ window.KISSTR_DATA_REST = [
     ]
   },
   {
-    "name": "新媒体数据",
-    "subcategories": [
-      {
-        "name": "综合榜单",
-        "links": [
-          {
-            "name": "新榜",
-            "url": "https://www.newrank.cn/",
-            "description": "全平台榜单与账号指数"
-          },
-          {
-            "name": "MCNDATA",
-            "url": "https://www.mcndata.cn/",
-            "description": "短视频综合榜与带货榜"
-          },
-          {
-            "name": "克劳锐 TopKlout",
-            "url": "https://www.topklout.com/",
-            "description": "达人商业价值评估"
-          }
-        ]
-      },
-      {
-        "name": "抖音数据",
-        "links": [
-          {
-            "name": "飞瓜数据",
-            "url": "https://www.feigua.cn/",
-            "description": "抖音达人商品直播数据"
-          },
-          {
-            "name": "蝉妈妈",
-            "url": "https://www.chanmama.com/",
-            "description": "抖音电商选品与洞察"
-          },
-          {
-            "name": "达多多",
-            "url": "https://www.daduoduo.com/",
-            "description": "抖音直播电商免费查"
-          },
-          {
-            "name": "考古加",
-            "url": "https://www.kaogujia.com/",
-            "description": "爆品素材与潜力达人"
-          },
-          {
-            "name": "抖查查",
-            "url": "https://www.douchacha.com/",
-            "description": "短视频直播全量数据"
-          },
-          {
-            "name": "新抖",
-            "url": "https://xd.newrank.cn/",
-            "description": "抖音热门视频与涨粉榜"
-          }
-        ]
-      },
-      {
-        "name": "小红书数据",
-        "links": [
-          {
-            "name": "千瓜数据",
-            "url": "https://www.qian-gua.com/",
-            "description": "小红书达人品牌分析"
-          },
-          {
-            "name": "新红",
-            "url": "https://xh.newrank.cn/",
-            "description": "小红书红人榜与投放"
-          },
-          {
-            "name": "蝉小红",
-            "url": "https://www.chanxiaohong.com/",
-            "description": "小红书博主笔记数据"
-          },
-          {
-            "name": "灰豚红薯版",
-            "url": "https://xhs.huitun.com/",
-            "description": "小红书大盘与竞品监控"
-          },
-          {
-            "name": "火烧云数据",
-            "url": "https://www.hsydata.com/home",
-            "description": "小红书达人品牌营销"
-          }
-        ]
-      },
-      {
-        "name": "视频号数据",
-        "links": [
-          {
-            "name": "灰豚数据",
-            "url": "https://www.huitun.com/",
-            "description": "多平台直播带货数据"
-          },
-          {
-            "name": "友望数据",
-            "url": "https://www.youwant.cn/",
-            "description": "视频号账号投放监测"
-          },
-          {
-            "name": "百准数据",
-            "url": "https://www.baizhun.cn/",
-            "description": "视频号榜单与商品数据"
-          },
-          {
-            "name": "新视",
-            "url": "https://xs.newrank.cn/",
-            "description": "视频号内容与直播数据"
-          }
-        ]
-      },
-      {
-        "name": "B站数据",
-        "links": [
-          {
-            "name": "新站",
-            "url": "https://xz.newrank.cn/",
-            "description": "B站UP主与热门视频"
-          }
-        ]
-      },
-      {
-        "name": "公众号与舆情",
-        "links": [
-          {
-            "name": "西瓜数据",
-            "url": "https://data.xiguaji.com/",
-            "description": "公众号榜单与文章监测"
-          },
-          {
-            "name": "清博指数",
-            "url": "https://www.gsdata.cn/",
-            "description": "微信微博传播指数"
-          }
-        ]
-      },
-      {
-        "name": "官方数据源",
-        "links": [
-          {
-            "name": "巨量算数",
-            "url": "https://trendinsight.oceanengine.com/",
-            "description": "抖音官方趋势洞察"
-          },
-          {
-            "name": "抖音电商罗盘",
-            "url": "https://compass.jinritemai.com/",
-            "description": "商家经营数据后台"
-          },
-          {
-            "name": "小红书蒲公英",
-            "url": "https://pgy.xiaohongshu.com/",
-            "description": "官方达人合作平台"
-          },
-          {
-            "name": "小红书千帆",
-            "url": "https://ark.xiaohongshu.com/",
-            "description": "官方商家经营后台"
-          }
-        ]
-      },
-      {
-        "name": "数据接口",
-        "links": [
-          {
-            "name": "极致了数据",
-            "url": "https://www.jzl.com/",
-            "description": "多平台数据采集 API"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "企业数据",
-    "subcategories": [
-      {
-        "name": "域名与网络数据",
-        "links": [
-          {
-            "name": "NetAPI",
-            "url": "https://netapi.com",
-            "description": "域名区、WHOIS 与 DNS 数据查询"
-          }
-        ]
-      },
-      {
-        "name": "企业榜单",
-        "links": [
-          {
-            "name": "财富中文网",
-            "url": "https://www.fortunechina.com",
-            "description": "世界500强与中国企业榜单"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "榜单与数据",
     "subcategories": [
       {
@@ -53935,59 +53935,19 @@ window.KISSTR_DATA_REST = [
         "name": "网站流量与域名排名",
         "links": [
           {
-            "name": "WebAtla",
-            "url": "https://webatla.com/datasets/websites-ranking",
-            "description": "全球网站域名排名数据库"
-          },
-          {
-            "name": "GeoRanker",
-            "url": "https://www.georanker.com/",
-            "description": "国家、地区和城市相关数据分析工具"
-          },
-          {
             "name": "NetAPI Top 1 Million",
             "url": "https://netapi.com/top-1-mln-websites/",
             "description": "全球热门网站前100万名录"
           },
           {
-            "name": "Rank.to",
-            "url": "https://rank.to/",
-            "description": "多维度网站排名查询"
-          },
-          {
             "name": "Rankeez",
-            "url": "https://rankeez.com/",
+            "url": "https://rankeez.com/top",
             "description": "网站排名查询与对比"
-          },
-          {
-            "name": "Semrush Trending Websites",
-            "url": "https://www.semrush.com/trending-websites/",
-            "description": "全球热门网站趋势榜"
-          },
-          {
-            "name": "Tranco List",
-            "url": "https://tranco-list.eu/",
-            "description": "全球网站排名数据库"
-          },
-          {
-            "name": "Cisco Umbrella Top 1 Million",
-            "url": "https://umbrella.cisco.com/",
-            "description": "全球热门域名排名数据资源"
           },
           {
             "name": "Majestic Million",
             "url": "https://majestic.com/reports/majestic-million",
             "description": "全球网站链接影响力排行榜"
-          },
-          {
-            "name": "Semrush",
-            "url": "https://www.semrush.com/",
-            "description": "网站流量与 SEO 数据平台"
-          },
-          {
-            "name": "Similarweb",
-            "url": "https://www.similarweb.com/",
-            "description": "全球网站流量排行榜"
           },
           {
             "name": "DigestSEO",
@@ -54008,21 +53968,6 @@ window.KISSTR_DATA_REST = [
             "name": "Open PageRank",
             "url": "https://www.domcop.com/top-10-million-websites",
             "description": "百万级网站排名与域名权重"
-          },
-          {
-            "name": "Ahrefs",
-            "url": "https://ahrefs.com/",
-            "description": "SEO 与外链分析工具"
-          },
-          {
-            "name": "Moz",
-            "url": "https://moz.com/",
-            "description": "域名权重、搜索引擎优化、关键词和链接数据"
-          },
-          {
-            "name": "SE Ranking",
-            "url": "https://seranking.com/",
-            "description": "关键词排名、搜索流量、竞争对手及 SEO"
           }
         ]
       },

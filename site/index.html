@@ -5474,11 +5474,37 @@ try {
   }
 
   @media (max-width: 480px) {
-    .category-tabs {
+    .category-tabs,
+    .layout-minimal .category-tabs {
       justify-content: flex-start;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: 6px;
       padding: 0 12px 4px;
+      margin-bottom: 18px;
+    }
+
+    /* 手机端：分类索引按钮独占首行剩余宽度，搜索贴右，避免行内半截空档 */
+    .category-tabs .tabs-toggle,
+    .layout-minimal .category-tabs .tabs-toggle {
+      flex: 1 1 0;
+      max-width: calc(100% - 38px);
+      justify-content: space-between;
+      padding: 0 14px;
+      min-width: 0;
+    }
+
+    .category-tabs .search-wrapper,
+    .layout-minimal .category-tabs .search-wrapper {
+      flex: 0 0 32px;
+      margin-left: 2px;
+    }
+
+    /* 展开后标签整体换到下一行并铺满宽度，不再被压成窄列 */
+    .category-tabs .tabs-list,
+    .layout-minimal .category-tabs .tabs-list {
+      flex: 0 0 100%;
+      width: 100%;
+      justify-content: flex-start;
     }
 
     .tab-btn {
@@ -6584,6 +6610,44 @@ try {
     .links-grid {
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 22px 28px;
+    }
+  }
+
+  /* 手机端分类栏收口：按钮占首行剩余宽，搜索同排靠右，展开的标签换行铺满 */
+  @media (max-width: 480px) {
+    body.layout-minimal .category-tabs {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 6px;
+      padding: 0 12px 4px;
+      margin-bottom: 18px;
+    }
+
+    body.layout-minimal .category-tabs .tabs-toggle {
+      flex: 1 1 0;
+      justify-content: space-between;
+      padding: 0 14px;
+      min-width: 0;
+    }
+
+    body.layout-minimal .category-tabs .search-wrapper {
+      order: 1 !important;
+      flex: 0 0 32px !important;
+      margin-left: 2px;
+    }
+
+    body.layout-minimal .category-tabs .search-wrapper.search-expanded {
+      order: 1 !important;
+      flex: 0 0 140px !important;
+      width: 140px !important;
+      min-width: 140px !important;
+    }
+
+    body.layout-minimal .category-tabs .tabs-list {
+      order: 2;
+      flex: 0 0 100%;
+      width: 100%;
+      justify-content: flex-start;
     }
   }
 
