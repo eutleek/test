@@ -6649,9 +6649,28 @@ try {
 
     body.layout-minimal .category-tabs .search-wrapper.search-expanded {
       order: 1 !important;
-      flex: 0 0 140px !important;
-      width: 140px !important;
-      min-width: 140px !important;
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      margin: 6px 0 0 !important;
+    }
+
+    /* 搜索展开后独占一行，输入框铺满 */
+    body.layout-minimal .category-tabs.search-expanded {
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      transform: none !important;
+      overflow-x: visible !important;
+    }
+
+    body.layout-minimal .category-tabs .search-inline.expanded {
+      width: 100% !important;
+      min-width: 0 !important;
+      flex: 1 1 auto !important;
+    }
+
+    body.layout-minimal .category-tabs .search-inline.expanded input {
+      width: calc(100% - 44px) !important;
     }
 
     body.layout-minimal .category-tabs .tabs-list {
