@@ -46,6 +46,12 @@ try {
         ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
         : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
       bgImageValue = `linear-gradient(to bottom, ${overlay[0]}, ${overlay[1]}), url('${new URL(bgUrl, document.baseURI).href}')`;
+    } else {
+      /* 无保存值时首屏默认壁纸：朱 */
+      const defaultOverlay = savedLayout === 'grid'
+        ? ['rgba(18, 18, 36, 0.34)', 'rgba(18, 18, 36, 0.43)']
+        : ['rgba(18, 18, 36, 0.42)', 'rgba(18, 18, 36, 0.52)'];
+      bgImageValue = `linear-gradient(to bottom, ${defaultOverlay[0]}, ${defaultOverlay[1]}), url('${new URL('wallpapers/22_朱.webp', document.baseURI).href}')`;
     }
 
     document.documentElement.classList.add('background-image-mode');
@@ -7673,7 +7679,11 @@ function doRenderLinks(filterText, category) {
       section.appendChild(grid);
     }
 
-    if (hasResults || (cat.subcategories && cat.subcategories.some(s => filterLinks(s.links, filterText).length > 0)) || (!cat.subcategories && filterLinks(cat.links, filterText).length > 0)) {
+    /* 搜索时只渲染真正有命中的分类，避免把 60 多个空分类标题全铺出来 */
+    const catHit = cat.subcategories
+      ? cat.subcategories.some(s => filterLinks(s.links, filterText).length > 0)
+      : filterLinks(cat.links, filterText).length > 0;
+    if (catHit) {
       main.appendChild(section);
     }
   });
@@ -9635,11 +9645,11 @@ mbObserver.observe(musicPlay, { attributes: true, attributeFilter: ['class'] });
         localStorage.removeItem(storageKey);
       }
     }
-    /* 没有用户选择时，默认从「荷 / 墨 / 锦 / 庭 / 契」中随机一张；用户手动选择后仍按保存值恢复 */
-    var defaultImageIds = ['荷', '墨', '锦', '庭', '契'];
+    /* 没有用户选择时，默认固定「朱」；用户手动选择后仍按保存值恢复 */
+    var defaultImageIds = ['朱'];
     var defaultPool = imageBackgrounds.filter(function(o) { return defaultImageIds.indexOf(o.id) !== -1; });
     if (defaultPool.length > 0) {
-      applySelection(defaultPool[Math.floor(Math.random() * defaultPool.length)], false, false);
+      applySelection(defaultPool[0], false, false);
     } else if (imageBackgrounds.length > 0) {
       applySelection(imageBackgrounds[0], false, false);
     } else {
