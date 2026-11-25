@@ -6736,6 +6736,31 @@ try {
     }
   }
 
+  /* 宽屏桌面：搜索框固定在按钮同一行，展开时不落到标签列表底部 */
+  @media (min-width: 769px) {
+    body.layout-minimal .category-tabs .search-wrapper,
+    body.layout-minimal .category-tabs .search-wrapper.search-expanded {
+      order: 1 !important;
+      margin-left: 8px !important;
+    }
+
+    body.layout-minimal .category-tabs .tabs-list {
+      order: 2;
+    }
+
+    body.layout-minimal .category-tabs .search-wrapper.search-expanded {
+      flex: 0 0 160px !important;
+      width: 160px !important;
+      min-width: 160px !important;
+    }
+
+    body.layout-minimal .category-tabs .search-inline.expanded {
+      width: 160px !important;
+      min-width: 160px !important;
+      flex: 0 0 160px !important;
+    }
+  }
+
 </style>
 </head>
 <body class="layout-minimal layout-clear">

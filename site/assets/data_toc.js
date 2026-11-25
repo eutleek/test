@@ -27,7 +27,122 @@ window.KISSTR_DATA_TOC = [
     "name": "音乐",
     "subcategories": [
       {
-        "name": "音乐与电台",
+        "name": "音乐平台",
+        "description": "在线听歌平台、流媒体与音乐客户端。",
+        "links": []
+      },
+      {
+        "name": "播放器与收听工具",
+        "links": []
+      },
+      {
+        "name": "全球必收电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "全球电台目录",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "电子氛围音乐",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "爵士与蓝调",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "摇滚独立音乐",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "古典音乐",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "怀旧金曲",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "二次元音乐",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "白噪音与放松",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "Lofi学习",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "世界民族音乐",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "新闻与广播",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "日本电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "亚洲电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "欧洲电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "美国电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "拉丁美洲",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "非洲中东电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "地下独立电台",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "怀旧广播史",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "短波世界广播",
+        "enName": null,
+        "links": []
+      },
+      {
+        "name": "电台地图",
+        "enName": null,
         "links": []
       }
     ],
@@ -185,34 +300,6 @@ window.KISSTR_DATA_TOC = [
       },
       {
         "name": "综合榜单",
-        "links": []
-      },
-      {
-        "name": "抖音数据",
-        "links": []
-      },
-      {
-        "name": "小红书数据",
-        "links": []
-      },
-      {
-        "name": "视频号数据",
-        "links": []
-      },
-      {
-        "name": "B站数据",
-        "links": []
-      },
-      {
-        "name": "公众号与舆情",
-        "links": []
-      },
-      {
-        "name": "官方数据源",
-        "links": []
-      },
-      {
-        "name": "数据接口",
         "links": []
       }
     ],
@@ -444,129 +531,6 @@ window.KISSTR_DATA_TOC = [
     "__pending": true
   },
   {
-    "name": "全球网络电台",
-    "icon": "📻",
-    "color": "linear-gradient(135deg, #00c6ff, #0072ff)",
-    "subcategories": [
-      {
-        "name": "全球必收电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "全球电台目录",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "电子氛围音乐",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "爵士与蓝调",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "摇滚独立音乐",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "古典音乐",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "怀旧金曲",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "二次元音乐",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "白噪音与放松",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "Lofi学习",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "世界民族音乐",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "新闻与广播",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "日本电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "亚洲电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "欧洲电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "美国电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "拉丁美洲",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "非洲中东电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "地下独立电台",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "怀旧广播史",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "短波世界广播",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "电台地图",
-        "enName": null,
-        "links": []
-      },
-      {
-        "name": "多电台播放器",
-        "enName": null,
-        "links": []
-      }
-    ],
-    "__pending": true
-  },
-  {
     "name": "声学艺术",
     "subcategories": [
       {
@@ -603,6 +567,10 @@ window.KISSTR_DATA_TOC = [
       },
       {
         "name": "音乐资源 (121-160)",
+        "links": []
+      },
+      {
+        "name": "音频工具",
         "links": []
       },
       {
