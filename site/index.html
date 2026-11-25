@@ -858,6 +858,16 @@ try {
     line-height: 1;
   }
 
+  .tabs-toggle-state {
+    flex-shrink: 0;
+    font-size: 0.78em;
+    color: inherit;
+    opacity: 1;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
   .tab-btn {
     padding: 10px 20px;
     border: 1px solid var(--card-border);
@@ -6617,15 +6627,16 @@ try {
   @media (max-width: 480px) {
     body.layout-minimal .category-tabs {
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: center;
       gap: 6px;
       padding: 0 12px 4px;
       margin-bottom: 18px;
     }
 
     body.layout-minimal .category-tabs .tabs-toggle {
-      flex: 1 1 0;
-      justify-content: space-between;
+      flex: 0 0 auto;
+      max-width: calc(100% - 42px);
+      justify-content: flex-start;
       padding: 0 14px;
       min-width: 0;
     }
@@ -6633,7 +6644,7 @@ try {
     body.layout-minimal .category-tabs .search-wrapper {
       order: 1 !important;
       flex: 0 0 32px !important;
-      margin-left: 2px;
+      margin-left: 6px;
     }
 
     body.layout-minimal .category-tabs .search-wrapper.search-expanded {
@@ -6792,7 +6803,7 @@ try {
       <svg class="footer-logo" viewBox="0 0 32 32" fill="currentColor"><path d="M28,16l-6,6H10l-6-6l6-6l6,5.994L22,10L28,16z"/></svg>
       <div class="footer-brand-text">
         <div class="footer-title">Kisstr</div>
-        <p class="footer-tagline">阅读是一座随身携带的避难所</p>
+        <p class="footer-tagline">雨的印记</p>
       </div>
     </div>
     <div class="footer-side">
@@ -7073,7 +7084,8 @@ function renderCategories() {
   toggleBtn.innerHTML =
     '<span class="tabs-toggle-label">分类索引</span>' +
     '<span class="tabs-toggle-current">' + currentName + '</span>' +
-    '<span class="tabs-toggle-arrow" aria-hidden="true">▾</span>';
+    '<span class="tabs-toggle-arrow" aria-hidden="true">▾</span>' +
+    '<span class="tabs-toggle-state">展开</span>';
 
   const tabsList = document.createElement('div');
   tabsList.className = 'tabs-list';
@@ -7137,10 +7149,12 @@ function renderCategories() {
   tabsContainer.appendChild(searchWrapper);
 
   const arrowEl = toggleBtn.querySelector('.tabs-toggle-arrow');
+  const stateEl = toggleBtn.querySelector('.tabs-toggle-state');
   toggleBtn.addEventListener('click', () => {
     const collapsed = tabsContainer.classList.toggle('tabs-collapsed');
     toggleBtn.classList.toggle('open', !collapsed);
     if (arrowEl) arrowEl.textContent = collapsed ? '▾' : '▴';
+    if (stateEl) stateEl.textContent = collapsed ? '展开' : '折叠';
     toggleBtn.blur();
   });
   tabsContainer.classList.add('tabs-collapsed');

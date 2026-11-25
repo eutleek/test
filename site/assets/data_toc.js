@@ -219,6 +219,78 @@ window.KISSTR_DATA_TOC = [
     "__pending": true
   },
   {
+    "name": "时尚品牌",
+    "subcategories": [
+      {
+        "name": "链接",
+        "links": []
+      },
+      {
+        "name": "珠宝名表与配饰",
+        "links": []
+      },
+      {
+        "name": "高级鞋履与皮具",
+        "links": []
+      },
+      {
+        "name": "香氛美妆品牌",
+        "links": []
+      },
+      {
+        "name": "高街潮奢品牌",
+        "links": []
+      },
+      {
+        "name": "奢华家居与生活方式",
+        "links": []
+      },
+      {
+        "name": "工匠先锋 (161-200)",
+        "links": []
+      },
+      {
+        "name": "奢侈汽车",
+        "links": []
+      },
+      {
+        "name": "奢侈酒店",
+        "links": []
+      }
+    ],
+    "__pending": true
+  },
+  {
+    "name": "时尚媒体与平台",
+    "subcategories": [
+      {
+        "name": "时尚媒体与杂志",
+        "links": []
+      },
+      {
+        "name": "电商与百货",
+        "links": []
+      },
+      {
+        "name": "二手中古与拍卖",
+        "links": []
+      },
+      {
+        "name": "博物馆与学术档案",
+        "links": []
+      },
+      {
+        "name": "品牌目录与榜单",
+        "links": []
+      },
+      {
+        "name": "官网设计案例",
+        "links": []
+      }
+    ],
+    "__pending": true
+  },
+  {
     "name": "种子与下载",
     "subcategories": [
       {
@@ -1063,6 +1135,22 @@ window.KISSTR_DATA_TOC = [
       {
         "name": "开源与免费替代品",
         "links": []
+      },
+      {
+        "name": "Vibe Coding 作品与 Demo",
+        "links": []
+      },
+      {
+        "name": "开源项目发现",
+        "links": []
+      },
+      {
+        "name": "产品发布与目录",
+        "links": []
+      },
+      {
+        "name": "网站设计与灵感",
+        "links": []
       }
     ],
     "__pending": true
@@ -1111,7 +1199,7 @@ window.KISSTR_DATA_TOC = [
     "__pending": true
   },
   {
-    "name": "软件资源论坛",
+    "name": "俄国论坛",
     "icon": "🌐",
     "color": "linear-gradient(135deg, #0ea5e9, #6366f1)",
     "subcategories": [
@@ -1765,48 +1853,6 @@ window.KISSTR_DATA_TOC = [
     "__pending": true
   },
   {
-    "name": "时尚品牌",
-    "subcategories": [
-      {
-        "name": "链接",
-        "links": []
-      },
-      {
-        "name": "珠宝名表与配饰",
-        "links": []
-      },
-      {
-        "name": "高级鞋履与皮具",
-        "links": []
-      },
-      {
-        "name": "香氛美妆品牌",
-        "links": []
-      },
-      {
-        "name": "高街潮奢品牌",
-        "links": []
-      },
-      {
-        "name": "奢华家居与生活方式",
-        "links": []
-      },
-      {
-        "name": "工匠先锋 (161-200)",
-        "links": []
-      },
-      {
-        "name": "奢侈汽车",
-        "links": []
-      },
-      {
-        "name": "奢侈酒店",
-        "links": []
-      }
-    ],
-    "__pending": true
-  },
-  {
     "name": "植物美学",
     "icon": "🌸",
     "color": "linear-gradient(135deg, #fd79a8, #e84393)",
@@ -2396,28 +2442,6 @@ window.KISSTR_DATA_TOC = [
     "__pending": true
   },
   {
-    "name": "Vibe Coding",
-    "subcategories": [
-      {
-        "name": "Vibe Coding 作品与 Demo",
-        "links": []
-      },
-      {
-        "name": "开源项目发现",
-        "links": []
-      },
-      {
-        "name": "产品发布与目录",
-        "links": []
-      },
-      {
-        "name": "网站设计与灵感",
-        "links": []
-      }
-    ],
-    "__pending": true
-  },
-  {
     "name": "AI 模型与资讯",
     "subcategories": [
       {
@@ -2434,36 +2458,6 @@ window.KISSTR_DATA_TOC = [
       },
       {
         "name": "资讯聚合与前沿",
-        "links": []
-      }
-    ],
-    "__pending": true
-  },
-  {
-    "name": "时尚媒体与平台",
-    "subcategories": [
-      {
-        "name": "时尚媒体与杂志",
-        "links": []
-      },
-      {
-        "name": "电商与百货",
-        "links": []
-      },
-      {
-        "name": "二手中古与拍卖",
-        "links": []
-      },
-      {
-        "name": "博物馆与学术档案",
-        "links": []
-      },
-      {
-        "name": "品牌目录与榜单",
-        "links": []
-      },
-      {
-        "name": "官网设计案例",
         "links": []
       }
     ],
